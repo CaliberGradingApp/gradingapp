@@ -6,6 +6,7 @@ gem 'rails', '3.2.16'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'haml'
 
 
 # Gems used only for assets and not required
@@ -36,3 +37,12 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+group :development, :test do
+  gem 'ruby-debug19'
+  gem 'sqlite3'
+end
+
+group :production do
+  gem 'pg'
+end
