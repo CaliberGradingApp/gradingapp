@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"anon_method_add:EFI",Cane::AbcCheck::RubyAst#anon_method_add;FI"RW;F:protectedo:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"HStateful flag used to determine whether we are currently parsing an;TI"+anonymous class. See #container_label.;T:
+@fileI"lib/cane/abc_check.rb;TF@

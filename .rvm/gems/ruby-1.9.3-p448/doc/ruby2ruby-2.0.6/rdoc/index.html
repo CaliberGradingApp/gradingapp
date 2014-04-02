@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>ruby2ruby-2.0.6 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body>
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./History_txt.html">History</a>
+  
+    <li class="file"><a href="./Manifest_txt.html">Manifest</a>
+  
+    <li class="file"><a href="./README_txt.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Ruby2Ruby.html">Ruby2Ruby</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<h1 id="label-ruby2ruby">ruby2ruby</h1>
+<dl class="rdoc-list note-list"><dt>home 
+<dd>
+<p><a
+href="https://github.com/seattlerb/ruby2ruby">github.com/seattlerb/ruby2ruby</a></p>
+</dd><dt>rdoc 
+<dd>
+<p><a
+href="http://seattlerb.rubyforge.org/ruby2ruby">seattlerb.rubyforge.org/ruby2ruby</a></p>
+</dd></dl>
+
+<h2 id="label-DESCRIPTION%3A">DESCRIPTION:</h2>
+
+<p>ruby2ruby provides a means of generating pure ruby code easily from
+RubyParser compatible Sexps. This makes making dynamic language processors
+in ruby easier than ever!</p>
+
+<h2 id="label-FEATURES%2FPROBLEMS%3A">FEATURES/PROBLEMS:</h2>
+<ul><li>
+<p>Clean, simple SexpProcessor generates ruby code from RubyParser compatible
+sexps.</p>
+</li></ul>
+
+<h2 id="label-SYNOPSIS%3A">SYNOPSIS:</h2>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">'rubygems'</span>
+<span class="ruby-identifier">require</span> <span class="ruby-string">'ruby2ruby'</span>
+<span class="ruby-identifier">require</span> <span class="ruby-string">'ruby_parser'</span>
+<span class="ruby-identifier">require</span> <span class="ruby-string">'pp'</span>
+
+<span class="ruby-identifier">ruby</span>      = <span class="ruby-string">&quot;def a\n  puts 'A'\nend\n\ndef b\n  a\nend&quot;</span>
+<span class="ruby-identifier">parser</span>    = <span class="ruby-constant">RubyParser</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-identifier">ruby2ruby</span> = <span class="ruby-constant">Ruby2Ruby</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-identifier">sexp</span>      = <span class="ruby-identifier">parser</span>.<span class="ruby-identifier">process</span>(<span class="ruby-identifier">ruby</span>)
+
+<span class="ruby-identifier">pp</span> <span class="ruby-identifier">sexp</span>
+
+<span class="ruby-identifier">p</span> <span class="ruby-identifier">ruby2ruby</span>.<span class="ruby-identifier">process</span>(<span class="ruby-identifier">sexp</span>)
+
+<span class="ruby-comment">## outputs:</span>
+
+<span class="ruby-identifier">s</span>(:<span class="ruby-identifier">block</span>,
+ <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">defn</span>,
+  :<span class="ruby-identifier">a</span>,
+  <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">args</span>),
+  <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">scope</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">block</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">call</span>, <span class="ruby-keyword">nil</span>, :<span class="ruby-identifier">puts</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">arglist</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">str</span>, <span class="ruby-string">&quot;A&quot;</span>)))))),
+ <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">defn</span>, :<span class="ruby-identifier">b</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">args</span>), <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">scope</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">block</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">call</span>, <span class="ruby-keyword">nil</span>, :<span class="ruby-identifier">a</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">arglist</span>))))))
+<span class="ruby-string">&quot;def a\n  puts(\&quot;A\&quot;)\nend\ndef b\n  a\nend\n&quot;</span>
+</pre>
+
+<h2 id="label-REQUIREMENTS%3A">REQUIREMENTS:</h2>
+
+<p>+ sexp_processor + ruby_parser</p>
+
+<h2 id="label-INSTALL%3A">INSTALL:</h2>
+
+<p>+ sudo gem install ruby2ruby</p>
+
+<h2 id="label-How+to+Contribute%3A">How to Contribute:</h2>
+
+<p>To get started all you need is a checkout, rake, and hoe. The easiest way
+is:</p>
+
+<pre>% git clone seattlerb/ruby2ruby # assumes you use the `hub` wrapper.
+% gem i rake hoe
+% rake install_plugins # installs hoe-seattlerb &amp; isolate
+% rake install_plugins # installs minitest (referenced from hoe-seattlerb)</pre>
+
+<p>From here you should be good to go. We accept pull requests on github.</p>
+
+<h2 id="label-LICENSE%3A">LICENSE:</h2>
+
+<p>(The MIT License)</p>
+
+<p>Copyright © Ryan Davis, seattle.rb</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the ‘Software’),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED ‘AS IS’, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.</p>
+
+</div>
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

@@ -1,0 +1,19 @@
+Thu, 07 Nov 2013 23:10:57 -0400
+lib/redcard.rb	Thu, 07 Nov 2013 23:09:47 -0400
+lib/redcard/maglev/2.0.rb	Thu, 07 Nov 2013 23:09:47 -0400
+lib/redcard/maglev/1.1.rb	Thu, 07 Nov 2013 23:09:47 -0400
+lib/redcard/maglev/1.0.rb	Thu, 07 Nov 2013 23:09:47 -0400
+lib/redcard/1.8.rb	Thu, 07 Nov 2013 23:09:47 -0400
+lib/redcard/rubinius/2.0.rb	Thu, 07 Nov 2013 23:09:47 -0400
+lib/redcard/topaz.rb	Thu, 07 Nov 2013 23:09:47 -0400
+lib/redcard/1.9.rb	Thu, 07 Nov 2013 23:09:47 -0400
+lib/redcard/2.0.rb	Thu, 07 Nov 2013 23:09:47 -0400
+lib/redcard/jruby.rb	Thu, 07 Nov 2013 23:09:47 -0400
+lib/redcard/version.rb	Thu, 07 Nov 2013 23:09:47 -0400
+lib/redcard/jruby/1.7.rb	Thu, 07 Nov 2013 23:09:47 -0400
+lib/redcard/engine.rb	Thu, 07 Nov 2013 23:09:47 -0400
+lib/redcard/rubinius.rb	Thu, 07 Nov 2013 23:09:47 -0400
+lib/redcard/ironruby.rb	Thu, 07 Nov 2013 23:09:47 -0400
+lib/redcard/maglev.rb	Thu, 07 Nov 2013 23:09:47 -0400
+README.md	Thu, 07 Nov 2013 23:09:47 -0400
+LICENSE	Thu, 07 Nov 2013 23:09:47 -0400

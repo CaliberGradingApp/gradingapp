@@ -1,0 +1,8 @@
+{:ancestors{
+I"FlogCLI:EF[I"Object;FI"FlogTask;F[I"Rake::TaskLib;FI"	File;F[I"Object;FI"	Flog;F[I"MethodBasedSexpProcessor;FI"FlogGauntlet;F[I"Gauntlet;F:attributes{I"FlogTask;F[
+I"attr_accessor dirs;FI"attr_accessor method;FI"attr_accessor name;FI"attr_accessor threshold;FI"attr_accessor verbose;F:class_methods{I"FlogCLI;F[
+I"expand_dirs_to_files;FI"load_plugins;FI"new;FI"parse_options;FI"plugins;FI"FlogTask;F[I"new;FI"	Flog;F[I"new;F:encodingIu:Encoding
+UTF-8;F:instance_methods{I"FlogCLI;F[
+I"	flog;FI"output_details;FI"output_details_grouped;FI"print_score;FI"report;FI"FlogTask;F[I"define;FI"	dirs;FI"method;FI"	name;FI"threshold;FI"verbose;FI"	Flog;F[I"add_to_score;FI"average;FI"calculate;FI"calculate_total_scores;FI"dsl_name?;FI"each_by_score;FI"	flog;FI"flog_ruby;FI"flog_ruby!;FI"max_method;FI"max_score;FI"penalize_by;FI"
+reset;FI"score_method;FI"threshold;F:modules[
+I"	File;FI"	Flog;FI"FlogCLI;FI"FlogGauntlet;FI"FlogTask;F

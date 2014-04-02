@@ -1,0 +1,21 @@
+{:ancestors{I"ProgressBar:EF[I"Object;FI"!ProgressBar::Components::Bar;F[I"Object;FI"*ProgressBar::Components::Progressable;FI",ProgressBar::Components::EstimatedTimer;F[I"Object;F@I"#ProgressBar::Components::Timer;FI"0ProgressBar::Components::EstimatedTimer::As;F[I"Object;FI"&ProgressBar::Components::Throttle;F[I"Object;F@I"*ProgressBar::Components::ElapsedTimer;F[I"Object;F@I"ProgressBar::Time;F[I"Object;FI""ProgressBar::Format::Molecule;F[I"Object;FI"ProgressBar::Format::Base;F[I"Object;FI"ProgressBar::Base;F[I"Object;FI"ProgressBar::Formatter;FI""ProgressBar::LengthCalculator;FI"*ProgressBar::RunningAverageCalculator;F[I"Object;F:attributes{	@
+[I"attr_accessor length;FI" attr_accessor progress_mark;FI"3attr_accessor unknown_progress_animation_steps;F@[I"attr_reader key;FI"!attr_reader method_arguments;FI"attr_reader method_name;F@![I"attr_reader molecules;FI"*ProgressBar::Components::Progressable;F[
+I""attr_accessor running_average;FI"attr_accessor smoothing;FI"$attr_accessor starting_position;FI"attr_reader progress;FI"attr_reader total;F:class_methods{I"ProgressBar;F[I"create;F@
+[I"new;F@[I"new;F@[I"new;F@[I"new;F@[I"now;F@[I"new;F@![I"new;F@$[I"new;F@)[I"calculate;F@7[I"new;FI""ProgressBar::LengthCalculator;F[I"new;FI"ProgressBar::Formatter;F[I"new;F:encodingIu:Encoding
+UTF-8;F:instance_methods{@
+[I"empty_string;FI"*integrated_percentage_complete_string;FI"length;FI"progress_mark;FI"standard_complete_string;FI"	to_s;FI"%unknown_progress_animation_steps;F@[	I"out_of_bounds_time_format=;FI"
+reset;FI"
+start;FI"	to_s;F@[I"method_missing;FI"
+start;F@[I"
+choke;F@[I"	to_s;F@[	I"bar_molecule?;FI"key;FI"method_arguments;FI"method_name;F@![I"molecules;FI"process;F@$[I"
+clear;FI"decrement;FI"finish;FI"finished?;FI"increment;FI"inspect;FI"log;FI"
+pause;FI"paused?;FI"progress=;FI"progress_mark=;FI"refresh;FI"
+reset;FI"resume;FI"
+start;FI"	stop;FI"stopped?;FI"title=;FI"	to_s;FI"total=;FI"#ProgressBar::Components::Timer;F[I"
+pause;FI"
+reset;FI"resume;FI"
+start;FI"started?;FI"	stop;FI"stopped?;F@7[I"decrement;FI"finish;FI"increment;FI"percentage_completed;FI"(percentage_completed_with_precision;FI"progress;FI"progress=;FI"
+reset;FI"running_average;FI"smoothing;FI"
+start;FI"started?;FI"starting_position;FI"
+total;FI"total=;F@Y[	I"format;FI"progress;FI"title=;FI"
+total;F:modules[I"ProgressBar;FI"ProgressBar::Base;FI"ProgressBar::Components;FI"!ProgressBar::Components::Bar;FI"*ProgressBar::Components::ElapsedTimer;FI",ProgressBar::Components::EstimatedTimer;FI"0ProgressBar::Components::EstimatedTimer::As;F@I"&ProgressBar::Components::Throttle;F@I"ProgressBar::Format;FI"ProgressBar::Format::Base;FI""ProgressBar::Format::Molecule;F@'@(I"*ProgressBar::RunningAverageCalculator;FI"ProgressBar::Time;F

@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"	name:EFI"FlogTask#name;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I",The name of the task. Defaults to :flog;T:
+@fileI"lib/flog_task.rb;TF@

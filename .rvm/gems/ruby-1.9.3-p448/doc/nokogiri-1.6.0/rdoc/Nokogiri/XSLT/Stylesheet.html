@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Nokogiri::XSLT::Stylesheet - nokogiri-1.6.0 Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/nokogiri/xslt/stylesheet.rb
+    <li>ext/nokogiri/xslt_stylesheet.c
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="../../Object.html">Object</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-parse_stylesheet_doc">::parse_stylesheet_doc</a>
+    
+    <li><a href="#method-i-apply_to">#apply_to</a>
+    
+    <li><a href="#method-i-serialize">#serialize</a>
+    
+    <li><a href="#method-i-transform">#transform</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../CHANGELOG_ja_rdoc.html">CHANGELOG.ja</a>
+  
+    <li class="file"><a href="../../CHANGELOG_rdoc.html">CHANGELOG</a>
+  
+    <li class="file"><a href="../../C_CODING_STYLE_rdoc.html">C_CODING_STYLE</a>
+  
+    <li class="file"><a href="../../Manifest_txt.html">Manifest</a>
+  
+    <li class="file"><a href="../../README_ja_rdoc.html">README.ja</a>
+  
+    <li class="file"><a href="../../README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../Nokogiri.html">Nokogiri</a>
+  
+    <li><a href="../../Nokogiri/CSS.html">Nokogiri::CSS</a>
+  
+    <li><a href="../../Nokogiri/CSS/Node.html">Nokogiri::CSS::Node</a>
+  
+    <li><a href="../../Nokogiri/CSS/Parser.html">Nokogiri::CSS::Parser</a>
+  
+    <li><a href="../../Nokogiri/CSS/SyntaxError.html">Nokogiri::CSS::SyntaxError</a>
+  
+    <li><a href="../../Nokogiri/CSS/Tokenizer.html">Nokogiri::CSS::Tokenizer</a>
+  
+    <li><a href="../../Nokogiri/CSS/Tokenizer/ScanError.html">Nokogiri::CSS::Tokenizer::ScanError</a>
+  
+    <li><a href="../../Nokogiri/Decorators.html">Nokogiri::Decorators</a>
+  
+    <li><a href="../../Nokogiri/Decorators/Slop.html">Nokogiri::Decorators::Slop</a>
+  
+    <li><a href="../../Nokogiri/EncodingHandler.html">Nokogiri::EncodingHandler</a>
+  
+    <li><a href="../../Nokogiri/HTML.html">Nokogiri::HTML</a>
+  
+    <li><a href="../../Nokogiri/HTML/Builder.html">Nokogiri::HTML::Builder</a>
+  
+    <li><a href="../../Nokogiri/HTML/Document.html">Nokogiri::HTML::Document</a>
+  
+    <li><a href="../../Nokogiri/HTML/Document/EncodingReader.html">Nokogiri::HTML::Document::EncodingReader</a>
+  
+    <li><a href="../../Nokogiri/HTML/Document/EncodingReader/JumpSAXHandler.html">Nokogiri::HTML::Document::EncodingReader::JumpSAXHandler</a>
+  
+    <li><a href="../../Nokogiri/HTML/DocumentFragment.html">Nokogiri::HTML::DocumentFragment</a>
+  
+    <li><a href="../../Nokogiri/HTML/ElementDescription.html">Nokogiri::HTML::ElementDescription</a>
+  
+    <li><a href="../../Nokogiri/HTML/EntityDescription.html">Nokogiri::HTML::EntityDescription</a>
+  
+    <li><a href="../../Nokogiri/HTML/EntityLookup.html">Nokogiri::HTML::EntityLookup</a>
+  
+    <li><a href="../../Nokogiri/HTML/SAX.html">Nokogiri::HTML::SAX</a>
+  
+    <li><a href="../../Nokogiri/HTML/SAX/Parser.html">Nokogiri::HTML::SAX::Parser</a>
+  
+    <li><a href="../../Nokogiri/HTML/SAX/ParserContext.html">Nokogiri::HTML::SAX::ParserContext</a>
+  
+    <li><a href="../../Nokogiri/HTML/SAX/PushParser.html">Nokogiri::HTML::SAX::PushParser</a>
+  
+    <li><a href="../../Nokogiri/SyntaxError.html">Nokogiri::SyntaxError</a>
+  
+    <li><a href="../../Nokogiri/XML.html">Nokogiri::XML</a>
+  
+    <li><a href="../../Nokogiri/XML/Attr.html">Nokogiri::XML::Attr</a>
+  
+    <li><a href="../../Nokogiri/XML/AttributeDecl.html">Nokogiri::XML::AttributeDecl</a>
+  
+    <li><a href="../../Nokogiri/XML/Builder.html">Nokogiri::XML::Builder</a>
+  
+    <li><a href="../../Nokogiri/XML/CDATA.html">Nokogiri::XML::CDATA</a>
+  
+    <li><a href="../../Nokogiri/XML/CharacterData.html">Nokogiri::XML::CharacterData</a>
+  
+    <li><a href="../../Nokogiri/XML/Comment.html">Nokogiri::XML::Comment</a>
+  
+    <li><a href="../../Nokogiri/XML/DTD.html">Nokogiri::XML::DTD</a>
+  
+    <li><a href="../../Nokogiri/XML/Document.html">Nokogiri::XML::Document</a>
+  
+    <li><a href="../../Nokogiri/XML/DocumentFragment.html">Nokogiri::XML::DocumentFragment</a>
+  
+    <li><a href="../../Nokogiri/XML/Element.html">Nokogiri::XML::Element</a>
+  
+    <li><a href="../../Nokogiri/XML/ElementContent.html">Nokogiri::XML::ElementContent</a>
+  
+    <li><a href="../../Nokogiri/XML/ElementDecl.html">Nokogiri::XML::ElementDecl</a>
+  
+    <li><a href="../../Nokogiri/XML/EntityDecl.html">Nokogiri::XML::EntityDecl</a>
+  
+    <li><a href="../../Nokogiri/XML/EntityReference.html">Nokogiri::XML::EntityReference</a>
+  
+    <li><a href="../../Nokogiri/XML/Namespace.html">Nokogiri::XML::Namespace</a>
+  
+    <li><a href="../../Nokogiri/XML/Node.html">Nokogiri::XML::Node</a>
+  
+    <li><a href="../../Nokogiri/XML/Node/SaveOptions.html">Nokogiri::XML::Node::SaveOptions</a>
+  
+    <li><a href="../../Nokogiri/XML/NodeSet.html">Nokogiri::XML::NodeSet</a>
+  
+    <li><a href="../../Nokogiri/XML/Notation.html">Nokogiri::XML::Notation</a>
+  
+    <li><a href="../../Nokogiri/XML/PP.html">Nokogiri::XML::PP</a>
+  
+    <li><a href="../../Nokogiri/XML/PP/CharacterData.html">Nokogiri::XML::PP::CharacterData</a>
+  
+    <li><a href="../../Nokogiri/XML/PP/Node.html">Nokogiri::XML::PP::Node</a>
+  
+    <li><a href="../../Nokogiri/XML/ParseOptions.html">Nokogiri::XML::ParseOptions</a>
+  
+    <li><a href="../../Nokogiri/XML/ProcessingInstruction.html">Nokogiri::XML::ProcessingInstruction</a>
+  
+    <li><a href="../../Nokogiri/XML/Reader.html">Nokogiri::XML::Reader</a>
+  
+    <li><a href="../../Nokogiri/XML/RelaxNG.html">Nokogiri::XML::RelaxNG</a>
+  
+    <li><a href="../../Nokogiri/XML/SAX.html">Nokogiri::XML::SAX</a>
+  
+    <li><a href="../../Nokogiri/XML/SAX/Document.html">Nokogiri::XML::SAX::Document</a>
+  
+    <li><a href="../../Nokogiri/XML/SAX/Parser.html">Nokogiri::XML::SAX::Parser</a>
+  
+    <li><a href="../../Nokogiri/XML/SAX/Parser/Attribute.html">Nokogiri::XML::SAX::Parser::Attribute</a>
+  
+    <li><a href="../../Nokogiri/XML/SAX/ParserContext.html">Nokogiri::XML::SAX::ParserContext</a>
+  
+    <li><a href="../../Nokogiri/XML/SAX/PushParser.html">Nokogiri::XML::SAX::PushParser</a>
+  
+    <li><a href="../../Nokogiri/XML/Schema.html">Nokogiri::XML::Schema</a>
+  
+    <li><a href="../../Nokogiri/XML/SyntaxError.html">Nokogiri::XML::SyntaxError</a>
+  
+    <li><a href="../../Nokogiri/XML/Text.html">Nokogiri::XML::Text</a>
+  
+    <li><a href="../../Nokogiri/XML/XPath.html">Nokogiri::XML::XPath</a>
+  
+    <li><a href="../../Nokogiri/XML/XPath/SyntaxError.html">Nokogiri::XML::XPath::SyntaxError</a>
+  
+    <li><a href="../../Nokogiri/XML/XPathContext.html">Nokogiri::XML::XPathContext</a>
+  
+    <li><a href="../../Nokogiri/XSLT.html">Nokogiri::XSLT</a>
+  
+    <li><a href="../../Nokogiri/XSLT/Stylesheet.html">Nokogiri::XSLT::Stylesheet</a>
+  
+    <li><a href="../../XSD.html">XSD</a>
+  
+    <li><a href="../../XSD/XMLParser.html">XSD::XMLParser</a>
+  
+    <li><a href="../../XSD/XMLParser/Nokogiri.html">XSD::XMLParser::Nokogiri</a>
+  
+    <li><a href="../../Object.html">Object</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Nokogiri::XSLT::Stylesheet</h1>
+
+  <div id="description" class="description">
+    
+<p>A <a href="Stylesheet.html">Stylesheet</a> represents an <a
+href="../XSLT.html">XSLT</a> <a href="Stylesheet.html">Stylesheet</a>
+object.  <a href="Stylesheet.html">Stylesheet</a> creation is done through
+<a href="../../Nokogiri.html">Nokogiri</a>.<a href="../XSLT.html">XSLT</a>.
+Here is an example of transforming an <a
+href="../XML/Document.html">XML::Document</a> with a Stylesheet:</p>
+
+<pre>doc   = Nokogiri::XML(File.read('some_file.xml'))
+xslt  = Nokogiri::XSLT(File.read('some_transformer.xslt'))
+
+puts xslt.transform(doc)</pre>
+
+<p>See <a href="Stylesheet.html#method-i-transform">#transform</a> for more
+transformation information.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-parse_stylesheet_doc" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            parse_stylesheet_doc(document)
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Parse a stylesheet from <code>document</code>.</p>
+          
+
+          
+          <div class="method-source-code" id="parse_stylesheet_doc-source">
+            <pre>static VALUE parse_stylesheet_doc(VALUE klass, VALUE xmldocobj)
+{
+    xmlDocPtr xml, xml_cpy;
+    VALUE errstr, exception;
+    xsltStylesheetPtr ss ;
+    Data_Get_Struct(xmldocobj, xmlDoc, xml);
+    exsltRegisterAll();
+
+    errstr = rb_str_new(0, 0);
+    xsltSetGenericErrorFunc((void *)errstr, xslt_generic_error_handler);
+
+    xml_cpy = xmlCopyDoc(xml, 1); /* 1 =&gt; recursive */
+    ss = xsltParseStylesheetDoc(xml_cpy);
+
+    xsltSetGenericErrorFunc(NULL, NULL);
+
+    if (!ss) {
+        xmlFreeDoc(xml_cpy);
+        exception = rb_exc_new3(rb_eRuntimeError, errstr);
+        rb_exc_raise(exception);
+    }
+
+    return Nokogiri_wrap_xslt_stylesheet(ss);
+}</pre>
+          </div><!-- parse_stylesheet_doc-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- parse_stylesheet_doc-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-apply_to" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">apply_to</span><span
+            class="method-args">(document, params = [])</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Apply an <a href="../XSLT.html">XSLT</a> stylesheet to an <a
+href="../XML/Document.html">XML::Document</a>. <code>params</code> is an
+array of strings used as <a href="../XSLT.html">XSLT</a> parameters.
+returns serialized document</p>
+          
+
+          
+          <div class="method-source-code" id="apply_to-source">
+            <pre><span class="ruby-comment"># File lib/nokogiri/xslt/stylesheet.rb, line 20</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">apply_to</span> <span class="ruby-identifier">document</span>, <span class="ruby-identifier">params</span> = []
+  <span class="ruby-identifier">serialize</span>(<span class="ruby-identifier">transform</span>(<span class="ruby-identifier">document</span>, <span class="ruby-identifier">params</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- apply_to-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- apply_to-method -->
+
+    
+      <div id="method-i-serialize" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            serialize(document)
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Serialize <code>document</code> to an xml string.</p>
+          
+
+          
+          <div class="method-source-code" id="serialize-source">
+            <pre>static VALUE serialize(VALUE self, VALUE xmlobj)
+{
+    xmlDocPtr xml ;
+    nokogiriXsltStylesheetTuple *wrapper;
+    xmlChar* doc_ptr ;
+    int doc_len ;
+    VALUE rval ;
+
+    Data_Get_Struct(xmlobj, xmlDoc, xml);
+    Data_Get_Struct(self, nokogiriXsltStylesheetTuple, wrapper);
+    xsltSaveResultToString(&amp;doc_ptr, &amp;doc_len, xml, wrapper-&gt;ss);
+    rval = NOKOGIRI_STR_NEW(doc_ptr, doc_len);
+    xmlFree(doc_ptr);
+    return rval ;
+}</pre>
+          </div><!-- serialize-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- serialize-method -->
+
+    
+      <div id="method-i-transform" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            transform(document, params = [])
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Apply an <a href="../XSLT.html">XSLT</a> stylesheet to an <a
+href="../XML/Document.html">XML::Document</a>. <code>params</code> is an
+array of strings used as <a href="../XSLT.html">XSLT</a> parameters.
+returns <a href="../XML/Document.html">Nokogiri::XML::Document</a></p>
+
+<p>Example:</p>
+
+<pre>doc   = Nokogiri::XML(File.read(ARGV[0]))
+xslt  = Nokogiri::XSLT(File.read(ARGV[1]))
+puts xslt.transform(doc, ['key', 'value'])</pre>
+          
+
+          
+          <div class="method-source-code" id="transform-source">
+            <pre>static VALUE transform(int argc, VALUE* argv, VALUE self)
+{
+    VALUE xmldoc, paramobj, errstr, exception ;
+    xmlDocPtr xml ;
+    xmlDocPtr result ;
+    nokogiriXsltStylesheetTuple *wrapper;
+    const char** params ;
+    long param_len, j ;
+    int parse_error_occurred ;
+
+    rb_scan_args(argc, argv, &quot;11&quot;, &amp;xmldoc, &amp;paramobj);
+    if (NIL_P(paramobj)) { paramobj = rb_ary_new2(0L) ; }
+    if (!rb_obj_is_kind_of(xmldoc, cNokogiriXmlDocument))
+      rb_raise(rb_eArgError, &quot;argument must be a Nokogiri::XML::Document&quot;);
+
+    /* handle hashes as arguments. */
+    if(T_HASH == TYPE(paramobj)) {
+      paramobj = rb_funcall(paramobj, rb_intern(&quot;to_a&quot;), 0);
+      paramobj = rb_funcall(paramobj, rb_intern(&quot;flatten&quot;), 0);
+    }
+
+    Check_Type(paramobj, T_ARRAY);
+
+    Data_Get_Struct(xmldoc, xmlDoc, xml);
+    Data_Get_Struct(self, nokogiriXsltStylesheetTuple, wrapper);
+
+    param_len = RARRAY_LEN(paramobj);
+    params = calloc((size_t)param_len+1, sizeof(char*));
+    for (j = 0 ; j &lt; param_len ; j++) {
+      VALUE entry = rb_ary_entry(paramobj, j);
+      const char * ptr = StringValuePtr(entry);
+      params[j] = ptr;
+    }
+    params[param_len] = 0 ;
+
+    errstr = rb_str_new(0, 0);
+    xsltSetGenericErrorFunc((void *)errstr, xslt_generic_error_handler);
+    xmlSetGenericErrorFunc(NULL, (xmlGenericErrorFunc)&amp;swallow_superfluous_xml_errors);
+
+    result = xsltApplyStylesheet(wrapper-&gt;ss, xml, params);
+    free(params);
+
+    xsltSetGenericErrorFunc(NULL, NULL);
+    xmlSetGenericErrorFunc(NULL, NULL);
+
+    parse_error_occurred = (Qfalse == rb_funcall(errstr, rb_intern(&quot;empty?&quot;), 0));
+
+    if (parse_error_occurred) {
+      exception = rb_exc_new3(rb_eRuntimeError, errstr);
+      rb_exc_raise(exception);
+    }
+
+    return Nokogiri_wrap_xml_document((VALUE)0, result) ;
+}</pre>
+          </div><!-- transform-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- transform-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

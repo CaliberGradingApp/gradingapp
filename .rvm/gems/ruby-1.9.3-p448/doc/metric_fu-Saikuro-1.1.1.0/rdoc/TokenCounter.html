@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class TokenCounter - metric_fu-Saikuro-1.1.1.0 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/saikuro.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><span class="include">RubyToken</span>
+  
+  
+  </ul>
+</nav>
+
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-count_token">#count_token</a>
+    
+    <li><a href="#method-i-list_tokens_per_line">#list_tokens_per_line</a>
+    
+    <li><a href="#method-i-set_current_file">#set_current_file</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./README.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./BaseFormater.html">BaseFormater</a>
+  
+    <li><a href="./EndableParseState.html">EndableParseState</a>
+  
+    <li><a href="./Filter.html">Filter</a>
+  
+    <li><a href="./HTMLStyleSheet.html">HTMLStyleSheet</a>
+  
+    <li><a href="./HTMLTokenCounterFormater.html">HTMLTokenCounterFormater</a>
+  
+    <li><a href="./ParseBlock.html">ParseBlock</a>
+  
+    <li><a href="./ParseClass.html">ParseClass</a>
+  
+    <li><a href="./ParseComment.html">ParseComment</a>
+  
+    <li><a href="./ParseCond.html">ParseCond</a>
+  
+    <li><a href="./ParseDef.html">ParseDef</a>
+  
+    <li><a href="./ParseDoCond.html">ParseDoCond</a>
+  
+    <li><a href="./ParseModule.html">ParseModule</a>
+  
+    <li><a href="./ParseState.html">ParseState</a>
+  
+    <li><a href="./ParseStateFormater.html">ParseStateFormater</a>
+  
+    <li><a href="./ParseSymbol.html">ParseSymbol</a>
+  
+    <li><a href="./RDoc.html">RDoc</a>
+  
+    <li><a href="./ResultIndexGenerator.html">ResultIndexGenerator</a>
+  
+    <li><a href="./Saikuro.html">Saikuro</a>
+  
+    <li><a href="./SaikuroCMDLineRunner.html">SaikuroCMDLineRunner</a>
+  
+    <li><a href="./StateHTMLComplexityFormater.html">StateHTMLComplexityFormater</a>
+  
+    <li><a href="./TokenCounter.html">TokenCounter</a>
+  
+    <li><a href="./TokenCounterFormater.html">TokenCounterFormater</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class TokenCounter</h1>
+
+  <div id="description" class="description">
+    
+<p>Counts the number of tokens in each line.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-current_file" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">current_file</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/saikuro.rb, line 102</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>
+  <span class="ruby-ivar">@files</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@tokens_per_line</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">0</span>)
+  <span class="ruby-ivar">@current_file</span> = <span class="ruby-string">&quot;&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-count_token" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">count_token</span><span
+            class="method-args">(line_no,token)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Count the token for the passed line.</p>
+          
+
+          
+          <div class="method-source-code" id="count_token-source">
+            <pre><span class="ruby-comment"># File lib/saikuro.rb, line 129</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">count_token</span>(<span class="ruby-identifier">line_no</span>,<span class="ruby-identifier">token</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">token</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">TkSPACE</span>, <span class="ruby-constant">TkNL</span>, <span class="ruby-constant">TkRD_COMMENT</span>
+    <span class="ruby-comment"># Do not count these as tokens</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">TkCOMMENT</span>
+    <span class="ruby-comment"># Ignore this only for comments in a statement?</span>
+    <span class="ruby-comment"># Ignore TkCOLON,TkCOLON2  and operators? like &quot;.&quot; etc..</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">TkRBRACK</span>, <span class="ruby-constant">TkRPAREN</span>, <span class="ruby-constant">TkRBRACE</span>
+    <span class="ruby-comment"># Ignore the closing of an array/index/hash/paren</span>
+    <span class="ruby-comment"># The opening is counted, but no more.</span>
+    <span class="ruby-comment"># Thus [], () {} is counted as 1 token not 2.</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-comment"># may want to filter out comments...</span>
+    <span class="ruby-ivar">@tokens_per_line</span>[<span class="ruby-identifier">line_no</span>] <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- count_token-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- count_token-method -->
+
+    
+      <div id="method-i-list_tokens_per_line" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">list_tokens_per_line</span><span
+            class="method-args">(formater)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Iterate through all tracked files, passing the the provided formater the
+token counts.</p>
+          
+
+          
+          <div class="method-source-code" id="list_tokens_per_line-source">
+            <pre><span class="ruby-comment"># File lib/saikuro.rb, line 117</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">list_tokens_per_line</span>(<span class="ruby-identifier">formater</span>)
+  <span class="ruby-identifier">formater</span>.<span class="ruby-identifier">start_count</span>(<span class="ruby-ivar">@files</span>.<span class="ruby-identifier">size</span>)
+  <span class="ruby-ivar">@files</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">fname</span>, <span class="ruby-identifier">tok_per_line</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">formater</span>.<span class="ruby-identifier">start_file</span>(<span class="ruby-identifier">fname</span>)
+    <span class="ruby-identifier">tok_per_line</span>.<span class="ruby-identifier">sort</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span>,<span class="ruby-identifier">num</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">formater</span>.<span class="ruby-identifier">line_token_count</span>(<span class="ruby-identifier">line</span>,<span class="ruby-identifier">num</span>)
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">formater</span>.<span class="ruby-identifier">end_file</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- list_tokens_per_line-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- list_tokens_per_line-method -->
+
+    
+      <div id="method-i-set_current_file" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">set_current_file</span><span
+            class="method-args">(file)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Mark file to associate with the token count.</p>
+          
+
+          
+          <div class="method-source-code" id="set_current_file-source">
+            <pre><span class="ruby-comment"># File lib/saikuro.rb, line 109</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">set_current_file</span>(<span class="ruby-identifier">file</span>)
+  <span class="ruby-ivar">@current_file</span> = <span class="ruby-identifier">file</span>
+  <span class="ruby-ivar">@tokens_per_line</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">0</span>)
+  <span class="ruby-ivar">@files</span>[<span class="ruby-ivar">@current_file</span>] = <span class="ruby-ivar">@tokens_per_line</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- set_current_file-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- set_current_file-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

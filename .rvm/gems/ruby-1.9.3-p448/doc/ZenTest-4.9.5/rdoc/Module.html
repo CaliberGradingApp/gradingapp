@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Module - ZenTest-4.9.5 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/zentest.rb
+    <li>lib/focus.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-blur">#blur</a>
+    
+    <li><a href="#method-i-focus">#focus</a>
+    
+    <li><a href="#method-i-focus_re">#focus_re</a>
+    
+    <li><a href="#method-i-zentest">#zentest</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./History_txt.html">History</a>
+  
+    <li class="file"><a href="./Manifest_txt.html">Manifest</a>
+  
+    <li class="file"><a href="./README_txt.html">README</a>
+  
+    <li class="file"><a href="./articles/how_to_use_zentest_txt.html">how_to_use_zentest</a>
+  
+    <li class="file"><a href="./example_txt.html">example</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Autotest.html">Autotest</a>
+  
+    <li><a href="./Autotest/AutoUpdate.html">Autotest::AutoUpdate</a>
+  
+    <li><a href="./Autotest/Bundler.html">Autotest::Bundler</a>
+  
+    <li><a href="./Autotest/Isolate.html">Autotest::Isolate</a>
+  
+    <li><a href="./Autotest/Once.html">Autotest::Once</a>
+  
+    <li><a href="./Autotest/Preload.html">Autotest::Preload</a>
+  
+    <li><a href="./Autotest/RCov.html">Autotest::RCov</a>
+  
+    <li><a href="./Autotest/Restart.html">Autotest::Restart</a>
+  
+    <li><a href="./Autotest/Timestamp.html">Autotest::Timestamp</a>
+  
+    <li><a href="./FunctionalTestMatrix.html">FunctionalTestMatrix</a>
+  
+    <li><a href="./Module.html">Module</a>
+  
+    <li><a href="./Multiruby.html">Multiruby</a>
+  
+    <li><a href="./UnitDiff.html">UnitDiff</a>
+  
+    <li><a href="./ZenTest.html">ZenTest</a>
+  
+    <li><a href="./ZenTestMapping.html">ZenTestMapping</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Module</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-blur" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">blur</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="blur-source">
+            <pre><span class="ruby-comment"># File lib/focus.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">blur</span>
+  <span class="ruby-identifier">parent</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">superclass</span>
+
+  <span class="ruby-constant">ObjectSpace</span>.<span class="ruby-identifier">each_object</span> <span class="ruby-constant">Class</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">klass</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">next</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">parent</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">klass</span>
+    <span class="ruby-keyword">next</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">klass</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">self</span>
+
+    <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">send</span> <span class="ruby-value">:focus</span>
+    <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">send</span> <span class="ruby-value">:undef_method</span>, <span class="ruby-value">:default_test</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- blur-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- blur-method -->
+
+    
+      <div id="method-i-focus" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">focus</span><span
+            class="method-args">(*wanteds)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="focus-source">
+            <pre><span class="ruby-comment"># File lib/focus.rb, line 2</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">focus</span> *<span class="ruby-identifier">wanteds</span>
+  <span class="ruby-identifier">wanteds</span>.<span class="ruby-identifier">map!</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">m</span><span class="ruby-operator">|</span> <span class="ruby-identifier">m</span>.<span class="ruby-identifier">to_s</span> }
+  <span class="ruby-identifier">unwanteds</span> = <span class="ruby-identifier">public_instance_methods</span>(<span class="ruby-keyword">false</span>).<span class="ruby-identifier">grep</span>(<span class="ruby-regexp">/test_/</span>).<span class="ruby-identifier">map</span>(&amp;<span class="ruby-value">:to_s</span>)
+  <span class="ruby-identifier">unwanteds</span> <span class="ruby-operator">-=</span> <span class="ruby-identifier">wanteds</span>
+  <span class="ruby-identifier">unwanteds</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">unwanted</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">remove_method</span> <span class="ruby-identifier">unwanted</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- focus-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- focus-method -->
+
+    
+      <div id="method-i-focus_re" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">focus_re</span><span
+            class="method-args">(regexp)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="focus_re-source">
+            <pre><span class="ruby-comment"># File lib/focus.rb, line 11</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">focus_re</span> <span class="ruby-identifier">regexp</span>
+  <span class="ruby-identifier">focus</span>(*<span class="ruby-identifier">public_instance_methods</span>.<span class="ruby-identifier">grep</span>(<span class="ruby-identifier">regexp</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- focus_re-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- focus_re-method -->
+
+    
+      <div id="method-i-zentest" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">zentest</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="zentest-source">
+            <pre><span class="ruby-comment"># File lib/zentest.rb, line 36</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">zentest</span>
+  <span class="ruby-identifier">at_exit</span> { <span class="ruby-constant">ZenTest</span>.<span class="ruby-identifier">autotest</span>(<span class="ruby-keyword">self</span>) }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- zentest-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- zentest-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

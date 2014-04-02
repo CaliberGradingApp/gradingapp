@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"to_a_classes:EFI""Hirb::Formatter::to_a_classes;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"HArray of classes whose objects respond to :to_a and allow the first;TI"Belement of the converted array to determine the output class.;T:
+@fileI"lib/hirb/formatter.rb;TT@

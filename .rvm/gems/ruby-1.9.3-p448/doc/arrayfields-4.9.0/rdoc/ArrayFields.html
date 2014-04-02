@@ -1,0 +1,1438 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module Object::Arrayfields - arrayfields-4.9.0 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/arrayfields.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-5B-5D">::[]</a>
+    
+    <li><a href="#method-c-index">::index</a>
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-c-version">::version</a>
+    
+    <li><a href="#method-i-5B-5D">#[]</a>
+    
+    <li><a href="#method-i-5B-5D-3D">#[]=</a>
+    
+    <li><a href="#method-i-at">#at</a>
+    
+    <li><a href="#method-i-clone">#clone</a>
+    
+    <li><a href="#method-i-deepcopy">#deepcopy</a>
+    
+    <li><a href="#method-i-delete_at">#delete_at</a>
+    
+    <li><a href="#method-i-dup">#dup</a>
+    
+    <li><a href="#method-i-each_key">#each_key</a>
+    
+    <li><a href="#method-i-each_pair">#each_pair</a>
+    
+    <li><a href="#method-i-each_value">#each_value</a>
+    
+    <li><a href="#method-i-each_with_field">#each_with_field</a>
+    
+    <li><a href="#method-i-fetch">#fetch</a>
+    
+    <li><a href="#method-i-fill">#fill</a>
+    
+    <li><a href="#method-i-has_key-3F">#has_key?</a>
+    
+    <li><a href="#method-i-has_value-3F">#has_value?</a>
+    
+    <li><a href="#method-i-indexes">#indexes</a>
+    
+    <li><a href="#method-i-indices">#indices</a>
+    
+    <li><a href="#method-i-invert">#invert</a>
+    
+    <li><a href="#method-i-key-3F">#key?</a>
+    
+    <li><a href="#method-i-keys">#keys</a>
+    
+    <li><a href="#method-i-member-3F">#member?</a>
+    
+    <li><a href="#method-i-replace">#replace</a>
+    
+    <li><a href="#method-i-slice">#slice</a>
+    
+    <li><a href="#method-i-slice-21">#slice!</a>
+    
+    <li><a href="#method-i-store">#store</a>
+    
+    <li><a href="#method-i-to_h">#to_h</a>
+    
+    <li><a href="#method-i-to_hash">#to_hash</a>
+    
+    <li><a href="#method-i-to_pairs">#to_pairs</a>
+    
+    <li><a href="#method-i-update">#update</a>
+    
+    <li><a href="#method-i-value-3F">#value?</a>
+    
+    <li><a href="#method-i-values">#values</a>
+    
+    <li><a href="#method-i-values_at">#values_at</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./ArrayFields.html">Object::Arrayfields</a>
+  
+    <li><a href="./FieldedArray.html">Object::Fieldedarray</a>
+  
+    <li><a href="./PseudoHash.html">Object::Pseudohash</a>
+  
+    <li><a href="./ArrayFields.html">ArrayFields</a>
+  
+    <li><a href="./ArrayFields.html">ArrayFields</a>
+  
+    <li><a href="./ArrayFields/FieldSet.html">ArrayFields::FieldSet</a>
+  
+    <li><a href="./FieldedArray.html">FieldedArray</a>
+  
+    <li><a href="./FieldedArray.html">FieldedArray</a>
+  
+    <li><a href="./PseudoHash.html">PseudoHash</a>
+  
+    <li><a href="./PseudoHash.html">PseudoHash</a>
+  
+    <li><a href="./Array.html">Array</a>
+  
+    <li><a href="./Fieldable.html">Fieldable</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module Object::Arrayfields</h1>
+
+  <div id="description" class="description">
+    
+<p>The <a href="ArrayFields.html">ArrayFields</a> module implements methods
+which allow an <a href="Array.html">Array</a> to be indexed by String or
+Symbol. It is not required to manually use this module to extend Arrays -
+they are auto-extended on a per-object basis when <a
+href="Fieldable.html#method-i-fields-3D">Fieldable#fields=</a> is called</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="VERSION">VERSION
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-5B-5D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">[]</span><span
+            class="method-args">(*pairs)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="5B-5D-source">
+            <pre><span class="ruby-comment"># File lib/arrayfields.rb, line 295</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-operator">[]</span> *<span class="ruby-identifier">pairs</span>
+  <span class="ruby-identifier">new</span>(*<span class="ruby-identifier">pairs</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- 5B-5D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- 5B-5D-method -->
+
+    
+      <div id="method-c-index" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">index</span><span
+            class="method-args">(list)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="index-source">
+            <pre><span class="ruby-comment"># File lib/arrayfields.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">index</span>(<span class="ruby-identifier">list</span>)
+  <span class="ruby-identifier">index</span> = <span class="ruby-identifier">list</span>.<span class="ruby-identifier">dup</span>
+<span class="ruby-keyword">ensure</span>
+  <span class="ruby-identifier">index</span>.<span class="ruby-identifier">fields</span> = <span class="ruby-identifier">list</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- index-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- index-method -->
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(*pairs)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/arrayfields.rb, line 285</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">new</span> *<span class="ruby-identifier">pairs</span>
+  <span class="ruby-identifier">pairs</span> = <span class="ruby-identifier">pairs</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">pair</span><span class="ruby-operator">|</span> <span class="ruby-constant">Enumerable</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">pair</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">pair</span>.<span class="ruby-identifier">to_a</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">pair</span>}.<span class="ruby-identifier">flatten</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;pairs must be evenly sized&quot;</span> <span class="ruby-keyword">unless</span>(<span class="ruby-identifier">pairs</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">%</span> <span class="ruby-value">2</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>)
+  (( <span class="ruby-identifier">array</span> = [] )).<span class="ruby-identifier">fields</span> = []
+  <span class="ruby-value">0</span>.<span class="ruby-identifier">step</span>(<span class="ruby-identifier">pairs</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">2</span>, <span class="ruby-value">2</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">a</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">b</span> = <span class="ruby-identifier">a</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>
+    <span class="ruby-identifier">array</span>[ <span class="ruby-identifier">pairs</span>[<span class="ruby-identifier">a</span>] ] = <span class="ruby-identifier">pairs</span>[<span class="ruby-identifier">b</span>]
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">array</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+      <div id="method-c-version" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">version</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="version-source">
+            <pre><span class="ruby-comment"># File lib/arrayfields.rb, line 9</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">version</span>() <span class="ruby-constant">Arrayfields</span><span class="ruby-operator">::</span><span class="ruby-constant">VERSION</span> <span class="ruby-keyword">end</span></pre>
+          </div><!-- version-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- version-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-5B-5D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">[]</span><span
+            class="method-args">(idx, *args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>methods redefined to work with fields as well as numeric indexes</p>
+          
+
+          
+          <div class="method-source-code" id="5B-5D-source">
+            <pre><span class="ruby-comment"># File lib/arrayfields.rb, line 63</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">[]</span> <span class="ruby-identifier">idx</span>, *<span class="ruby-identifier">args</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@fieldset</span> <span class="ruby-keyword">and</span> (<span class="ruby-constant">String</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">idx</span> <span class="ruby-keyword">or</span> <span class="ruby-constant">Symbol</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">idx</span>)
+    <span class="ruby-identifier">pos</span> = <span class="ruby-ivar">@fieldset</span>.<span class="ruby-identifier">pos</span> <span class="ruby-identifier">idx</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">pos</span>
+    <span class="ruby-keyword">super</span>(<span class="ruby-identifier">pos</span>, *<span class="ruby-identifier">args</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">super</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- 5B-5D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- 5B-5D-method -->
+
+    
+      <div id="method-i-5B-5D-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">[]=</span><span
+            class="method-args">(idx, *args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="5B-5D-3D-source">
+            <pre><span class="ruby-comment"># File lib/arrayfields.rb, line 82</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">[]=</span>(<span class="ruby-identifier">idx</span>, *<span class="ruby-identifier">args</span>) 
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@fieldset</span> <span class="ruby-keyword">and</span> (<span class="ruby-constant">String</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">idx</span> <span class="ruby-keyword">or</span> <span class="ruby-constant">Symbol</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">idx</span>) 
+    <span class="ruby-identifier">pos</span> = <span class="ruby-ivar">@fieldset</span>.<span class="ruby-identifier">pos</span> <span class="ruby-identifier">idx</span>
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">pos</span>
+      <span class="ruby-ivar">@fieldset</span>.<span class="ruby-identifier">fields</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">idx</span>
+      <span class="ruby-ivar">@fieldset</span>.<span class="ruby-identifier">fieldpos</span>[<span class="ruby-identifier">idx</span>] = <span class="ruby-identifier">pos</span> = <span class="ruby-identifier">size</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">super</span>(<span class="ruby-identifier">pos</span>, *<span class="ruby-identifier">args</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">super</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- 5B-5D-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- 5B-5D-3D-method -->
+
+    
+      <div id="method-i-at" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">at</span><span
+            class="method-args">(idx)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="at-source">
+            <pre><span class="ruby-comment"># File lib/arrayfields.rb, line 94</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">at</span> <span class="ruby-identifier">idx</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@fieldset</span> <span class="ruby-keyword">and</span> (<span class="ruby-constant">String</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">idx</span> <span class="ruby-keyword">or</span> <span class="ruby-constant">Symbol</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">idx</span>)
+    <span class="ruby-identifier">pos</span> = <span class="ruby-ivar">@fieldset</span>.<span class="ruby-identifier">pos</span> <span class="ruby-identifier">idx</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">pos</span>
+    <span class="ruby-keyword">super</span> <span class="ruby-identifier">pos</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">super</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- at-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- at-method -->
+
+    
+      <div id="method-i-clone" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">clone</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="clone-source">
+            <pre><span class="ruby-comment"># File lib/arrayfields.rb, line 264</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">clone</span>
+  <span class="ruby-identifier">clone</span> = <span class="ruby-keyword">super</span>
+<span class="ruby-keyword">ensure</span>
+  <span class="ruby-identifier">clone</span>.<span class="ruby-identifier">fields</span> = <span class="ruby-identifier">fields</span>.<span class="ruby-identifier">clone</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- clone-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- clone-method -->
+
+    
+      <div id="method-i-deepcopy" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">deepcopy</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="deepcopy-source">
+            <pre><span class="ruby-comment"># File lib/arrayfields.rb, line 276</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">deepcopy</span> 
+  <span class="ruby-identifier">cp</span> = <span class="ruby-constant">Marshal</span>.<span class="ruby-identifier">load</span>(<span class="ruby-constant">Marshal</span>.<span class="ruby-identifier">dump</span>(<span class="ruby-keyword">self</span>))
+  <span class="ruby-identifier">cp</span>.<span class="ruby-identifier">fields</span> = <span class="ruby-constant">Marshal</span>.<span class="ruby-identifier">load</span>(<span class="ruby-constant">Marshal</span>.<span class="ruby-identifier">dump</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">fields</span>))
+  <span class="ruby-identifier">cp</span> 
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- deepcopy-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- deepcopy-method -->
+
+    
+      <div id="method-i-delete_at" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">delete_at</span><span
+            class="method-args">(idx)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="delete_at-source">
+            <pre><span class="ruby-comment"># File lib/arrayfields.rb, line 103</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">delete_at</span> <span class="ruby-identifier">idx</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@fieldset</span> <span class="ruby-keyword">and</span> (<span class="ruby-constant">String</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">idx</span> <span class="ruby-keyword">or</span> <span class="ruby-constant">Symbol</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">idx</span>)
+    <span class="ruby-identifier">pos</span> = <span class="ruby-ivar">@fieldset</span>.<span class="ruby-identifier">pos</span> <span class="ruby-identifier">idx</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">pos</span>
+    <span class="ruby-identifier">new_fields</span> = <span class="ruby-identifier">fields</span>.<span class="ruby-identifier">dup</span>
+    <span class="ruby-identifier">new_fields</span>.<span class="ruby-identifier">delete_at</span>(<span class="ruby-identifier">pos</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">fields</span> = <span class="ruby-identifier">new_fields</span>
+    <span class="ruby-keyword">super</span> <span class="ruby-identifier">pos</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">super</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- delete_at-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- delete_at-method -->
+
+    
+      <div id="method-i-dup" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">dup</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="dup-source">
+            <pre><span class="ruby-comment"># File lib/arrayfields.rb, line 270</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">dup</span>
+  <span class="ruby-identifier">dup</span> = <span class="ruby-keyword">super</span>
+<span class="ruby-keyword">ensure</span>
+  <span class="ruby-identifier">dup</span>.<span class="ruby-identifier">fields</span> = <span class="ruby-identifier">fields</span>.<span class="ruby-identifier">dup</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- dup-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- dup-method -->
+
+    
+      <div id="method-i-each_key" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">each_key</span><span
+            class="method-args">() { |field| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="each_key-source">
+            <pre><span class="ruby-comment"># File lib/arrayfields.rb, line 166</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">each_key</span>
+  <span class="ruby-ivar">@fieldset</span>.<span class="ruby-identifier">each</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">field</span><span class="ruby-operator">|</span> <span class="ruby-keyword">yield</span> <span class="ruby-identifier">field</span>}
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- each_key-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- each_key-method -->
+
+    
+      <div id="method-i-each_pair" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">each_pair</span><span
+            class="method-args">() { |fields, elem| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>methods which give a hash-like interface</p>
+          
+
+          
+          <div class="method-source-code" id="each_pair-source">
+            <pre><span class="ruby-comment"># File lib/arrayfields.rb, line 161</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">each_pair</span>
+  <span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">elem</span>, <span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">yield</span> <span class="ruby-ivar">@fieldset</span>.<span class="ruby-identifier">fields</span>[<span class="ruby-identifier">i</span>], <span class="ruby-identifier">elem</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- each_pair-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- each_pair-method -->
+
+    
+      <div id="method-i-each_value" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">each_value</span><span
+            class="method-args">(*args, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="each_value-source">
+            <pre><span class="ruby-comment"># File lib/arrayfields.rb, line 169</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">each_value</span> *<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>
+  <span class="ruby-identifier">each</span>(*<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- each_value-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- each_value-method -->
+
+    
+      <div id="method-i-each_with_field" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">each_with_field</span><span
+            class="method-args">() { |elem, fields| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="each_with_field-source">
+            <pre><span class="ruby-comment"># File lib/arrayfields.rb, line 153</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">each_with_field</span>
+  <span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">elem</span>, <span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">yield</span> <span class="ruby-identifier">elem</span>, <span class="ruby-ivar">@fieldset</span>.<span class="ruby-identifier">fields</span>[<span class="ruby-identifier">i</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- each_with_field-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- each_with_field-method -->
+
+    
+      <div id="method-i-fetch" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">fetch</span><span
+            class="method-args">(key)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="fetch-source">
+            <pre><span class="ruby-comment"># File lib/arrayfields.rb, line 172</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">fetch</span> <span class="ruby-identifier">key</span>
+  <span class="ruby-keyword">self</span>[<span class="ruby-identifier">key</span>] <span class="ruby-keyword">or</span> <span class="ruby-identifier">raise</span> <span class="ruby-constant">IndexError</span>, <span class="ruby-string">'key not found'</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- fetch-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- fetch-method -->
+
+    
+      <div id="method-i-fill" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">fill</span><span
+            class="method-args">(obj, *args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="fill-source">
+            <pre><span class="ruby-comment"># File lib/arrayfields.rb, line 115</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">fill</span>(<span class="ruby-identifier">obj</span>, *<span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">idx</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">idx</span> <span class="ruby-keyword">and</span> <span class="ruby-ivar">@fieldset</span> <span class="ruby-keyword">and</span> (<span class="ruby-constant">String</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">idx</span> <span class="ruby-keyword">or</span> <span class="ruby-constant">Symbol</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">idx</span>)
+    <span class="ruby-identifier">idx</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">shift</span>
+    <span class="ruby-identifier">pos</span> = <span class="ruby-ivar">@fieldset</span>.<span class="ruby-identifier">pos</span> <span class="ruby-identifier">idx</span>
+    <span class="ruby-keyword">super</span>(<span class="ruby-identifier">obj</span>, <span class="ruby-identifier">pos</span>, *<span class="ruby-identifier">args</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">super</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- fill-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- fill-method -->
+
+    
+      <div id="method-i-has_key-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">has_key?</span><span
+            class="method-args">(key)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="has_key-3F-source">
+            <pre><span class="ruby-comment"># File lib/arrayfields.rb, line 176</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">has_key?</span> <span class="ruby-identifier">key</span>
+  <span class="ruby-ivar">@fieldset</span>.<span class="ruby-identifier">fields</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">key</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- has_key-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- has_key-3F-method -->
+
+    
+      <div id="method-i-has_value-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">has_value?</span><span
+            class="method-args">(value)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="has_value-3F-source">
+            <pre><span class="ruby-comment"># File lib/arrayfields.rb, line 186</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">has_value?</span> <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">respond_to?</span> <span class="ruby-string">'include?'</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">a</span> = []
+    <span class="ruby-identifier">each</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">val</span><span class="ruby-operator">|</span> <span class="ruby-identifier">a</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">val</span>}
+    <span class="ruby-identifier">a</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- has_value-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- has_value-3F-method -->
+
+    
+      <div id="method-i-indexes" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">indexes</span><span
+            class="method-args">(*idxs)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="indexes-source">
+            <pre><span class="ruby-comment"># File lib/arrayfields.rb, line 140</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">indexes</span>(*<span class="ruby-identifier">idxs</span>)
+  <span class="ruby-identifier">idxs</span>.<span class="ruby-identifier">flatten!</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@fieldset</span>
+    <span class="ruby-identifier">idxs</span>.<span class="ruby-identifier">map!</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> (<span class="ruby-constant">String</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">or</span> <span class="ruby-constant">Symbol</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">i</span>) <span class="ruby-operator">?</span> <span class="ruby-ivar">@fieldset</span>.<span class="ruby-identifier">pos</span>(<span class="ruby-identifier">i</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">i</span>}
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">super</span>(*<span class="ruby-identifier">idxs</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- indexes-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- indexes-method -->
+
+    
+      <div id="method-i-indices" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">indices</span><span
+            class="method-args">(*idxs)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="indices-source">
+            <pre><span class="ruby-comment"># File lib/arrayfields.rb, line 133</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">indices</span>(*<span class="ruby-identifier">idxs</span>)
+  <span class="ruby-identifier">idxs</span>.<span class="ruby-identifier">flatten!</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@fieldset</span>
+    <span class="ruby-identifier">idxs</span>.<span class="ruby-identifier">map!</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> (<span class="ruby-constant">String</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">or</span> <span class="ruby-constant">Symbol</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">i</span>) <span class="ruby-operator">?</span> <span class="ruby-ivar">@fieldset</span>.<span class="ruby-identifier">pos</span>(<span class="ruby-identifier">i</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">i</span>}
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">super</span>(*<span class="ruby-identifier">idxs</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- indices-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- indices-method -->
+
+    
+      <div id="method-i-invert" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">invert</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="invert-source">
+            <pre><span class="ruby-comment"># File lib/arrayfields.rb, line 255</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">invert</span>
+  <span class="ruby-identifier">to_hash</span>.<span class="ruby-identifier">invert</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- invert-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- invert-method -->
+
+    
+      <div id="method-i-key-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">key?</span><span
+            class="method-args">(key)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="key-3F-source">
+            <pre><span class="ruby-comment"># File lib/arrayfields.rb, line 182</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">key?</span> <span class="ruby-identifier">key</span>
+  <span class="ruby-ivar">@fieldset</span>.<span class="ruby-identifier">fields</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">key</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- key-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- key-3F-method -->
+
+    
+      <div id="method-i-keys" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">keys</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="keys-source">
+            <pre><span class="ruby-comment"># File lib/arrayfields.rb, line 205</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">keys</span>
+  <span class="ruby-identifier">fields</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- keys-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- keys-method -->
+
+    
+      <div id="method-i-member-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">member?</span><span
+            class="method-args">(key)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="member-3F-source">
+            <pre><span class="ruby-comment"># File lib/arrayfields.rb, line 179</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">member?</span> <span class="ruby-identifier">key</span>
+  <span class="ruby-ivar">@fieldset</span>.<span class="ruby-identifier">fields</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">key</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- member-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- member-3F-method -->
+
+    
+      <div id="method-i-replace" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">replace</span><span
+            class="method-args">(other)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="replace-source">
+            <pre><span class="ruby-comment"># File lib/arrayfields.rb, line 252</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">replace</span> <span class="ruby-identifier">other</span>
+  <span class="ruby-constant">Hash</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">other</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">update</span>(<span class="ruby-identifier">other</span>) <span class="ruby-operator">:</span> <span class="ruby-keyword">super</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- replace-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- replace-method -->
+
+    
+      <div id="method-i-slice" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">slice</span><span
+            class="method-args">(idx, *args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="slice-source">
+            <pre><span class="ruby-comment"># File lib/arrayfields.rb, line 72</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">slice</span> <span class="ruby-identifier">idx</span>, *<span class="ruby-identifier">args</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@fieldset</span> <span class="ruby-keyword">and</span> (<span class="ruby-constant">String</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">idx</span> <span class="ruby-keyword">or</span> <span class="ruby-constant">Symbol</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">idx</span>)
+    <span class="ruby-identifier">pos</span> = <span class="ruby-ivar">@fieldset</span>.<span class="ruby-identifier">pos</span> <span class="ruby-identifier">idx</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">pos</span>
+    <span class="ruby-keyword">super</span>(<span class="ruby-identifier">pos</span>, *<span class="ruby-identifier">args</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">super</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- slice-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- slice-method -->
+
+    
+      <div id="method-i-slice-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">slice!</span><span
+            class="method-args">(*args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="slice-21-source">
+            <pre><span class="ruby-comment"># File lib/arrayfields.rb, line 148</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">slice!</span>(*<span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">ret</span> = <span class="ruby-keyword">self</span>[*<span class="ruby-identifier">args</span>]
+  <span class="ruby-keyword">self</span>[*<span class="ruby-identifier">args</span>] = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">ret</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- slice-21-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- slice-21-method -->
+
+    
+      <div id="method-i-store" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">store</span><span
+            class="method-args">(key, value)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="store-source">
+            <pre><span class="ruby-comment"># File lib/arrayfields.rb, line 208</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">store</span> <span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">self</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-identifier">value</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- store-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- store-method -->
+
+    
+      <div id="method-i-to_h" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_h</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="to_h-source">
+            <pre><span class="ruby-comment"># File lib/arrayfields.rb, line 234</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_h</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">respond_to?</span> <span class="ruby-string">'to_ary'</span>
+    <span class="ruby-identifier">h</span> = {}
+    <span class="ruby-ivar">@fieldset</span>.<span class="ruby-identifier">fields</span>.<span class="ruby-identifier">zip</span>(<span class="ruby-identifier">to_ary</span>){<span class="ruby-operator">|</span><span class="ruby-identifier">f</span>,<span class="ruby-identifier">e</span><span class="ruby-operator">|</span> <span class="ruby-identifier">h</span>[<span class="ruby-identifier">f</span>] = <span class="ruby-identifier">e</span>}
+    <span class="ruby-identifier">h</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">a</span> = []
+    <span class="ruby-identifier">each</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">val</span><span class="ruby-operator">|</span> <span class="ruby-identifier">a</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">val</span>}
+    <span class="ruby-identifier">h</span> = {}
+    <span class="ruby-ivar">@fieldset</span>.<span class="ruby-identifier">fields</span>.<span class="ruby-identifier">zip</span>(<span class="ruby-identifier">a</span>){<span class="ruby-operator">|</span><span class="ruby-identifier">f</span>,<span class="ruby-identifier">e</span><span class="ruby-operator">|</span> <span class="ruby-identifier">h</span>[<span class="ruby-identifier">f</span>] = <span class="ruby-identifier">e</span>}
+    <span class="ruby-identifier">h</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- to_h-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- to_h-method -->
+
+    
+      <div id="method-i-to_hash" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_hash</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="to_hash-source">
+            <pre><span class="ruby-comment"># File lib/arrayfields.rb, line 221</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_hash</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">respond_to?</span> <span class="ruby-string">'to_ary'</span>
+    <span class="ruby-identifier">h</span> = {}
+    <span class="ruby-ivar">@fieldset</span>.<span class="ruby-identifier">fields</span>.<span class="ruby-identifier">zip</span>(<span class="ruby-identifier">to_ary</span>){<span class="ruby-operator">|</span><span class="ruby-identifier">f</span>,<span class="ruby-identifier">e</span><span class="ruby-operator">|</span> <span class="ruby-identifier">h</span>[<span class="ruby-identifier">f</span>] = <span class="ruby-identifier">e</span>}
+    <span class="ruby-identifier">h</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">a</span> = []
+    <span class="ruby-identifier">each</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">val</span><span class="ruby-operator">|</span> <span class="ruby-identifier">a</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">val</span>}
+    <span class="ruby-identifier">h</span> = {}
+    <span class="ruby-ivar">@fieldset</span>.<span class="ruby-identifier">fields</span>.<span class="ruby-identifier">zip</span>(<span class="ruby-identifier">a</span>){<span class="ruby-operator">|</span><span class="ruby-identifier">f</span>,<span class="ruby-identifier">e</span><span class="ruby-operator">|</span> <span class="ruby-identifier">h</span>[<span class="ruby-identifier">f</span>] = <span class="ruby-identifier">e</span>}
+    <span class="ruby-identifier">h</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- to_hash-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- to_hash-method -->
+
+    
+      <div id="method-i-to_pairs" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_pairs</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="to_pairs-source">
+            <pre><span class="ruby-comment"># File lib/arrayfields.rb, line 259</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_pairs</span>
+  <span class="ruby-identifier">fields</span>.<span class="ruby-identifier">zip</span> <span class="ruby-identifier">values</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- to_pairs-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- to_pairs-method -->
+
+    
+      <div id="method-i-update" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update</span><span
+            class="method-args">(other)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="update-source">
+            <pre><span class="ruby-comment"># File lib/arrayfields.rb, line 248</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update</span> <span class="ruby-identifier">other</span>
+  <span class="ruby-identifier">other</span>.<span class="ruby-identifier">each</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-keyword">self</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-identifier">v</span>}
+  <span class="ruby-identifier">to_hash</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- update-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- update-method -->
+
+    
+      <div id="method-i-value-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">value?</span><span
+            class="method-args">(value)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="value-3F-source">
+            <pre><span class="ruby-comment"># File lib/arrayfields.rb, line 195</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">value?</span> <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">respond_to?</span> <span class="ruby-string">'include?'</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">a</span> = []
+    <span class="ruby-identifier">each</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">val</span><span class="ruby-operator">|</span> <span class="ruby-identifier">a</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">val</span>}
+    <span class="ruby-identifier">a</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- value-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- value-3F-method -->
+
+    
+      <div id="method-i-values" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">values</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="values-source">
+            <pre><span class="ruby-comment"># File lib/arrayfields.rb, line 211</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">values</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">respond_to?</span> <span class="ruby-string">'to_ary'</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">to_ary</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">a</span> = []
+    <span class="ruby-identifier">each</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">val</span><span class="ruby-operator">|</span> <span class="ruby-identifier">a</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">val</span>}
+    <span class="ruby-identifier">a</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- values-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- values-method -->
+
+    
+      <div id="method-i-values_at" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">values_at</span><span
+            class="method-args">(*idxs)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="values_at-source">
+            <pre><span class="ruby-comment"># File lib/arrayfields.rb, line 126</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">values_at</span>(*<span class="ruby-identifier">idxs</span>)
+  <span class="ruby-identifier">idxs</span>.<span class="ruby-identifier">flatten!</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@fieldset</span>
+    <span class="ruby-identifier">idxs</span>.<span class="ruby-identifier">map!</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> (<span class="ruby-constant">String</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword">or</span> <span class="ruby-constant">Symbol</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">i</span>) <span class="ruby-operator">?</span> <span class="ruby-ivar">@fieldset</span>.<span class="ruby-identifier">pos</span>(<span class="ruby-identifier">i</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">i</span>}
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">super</span>(*<span class="ruby-identifier">idxs</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- values_at-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- values_at-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

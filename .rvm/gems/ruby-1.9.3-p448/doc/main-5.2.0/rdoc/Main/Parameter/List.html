@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Main::Parameter::List - main-5.2.0 Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/main/parameter.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Array
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-3C-3C">#&lt;&lt;</a>
+    
+    <li><a href="#method-i-5B-5D">#[]</a>
+    
+    <li><a href="#method-i-defaults-21">#defaults!</a>
+    
+    <li><a href="#method-i-delete">#delete</a>
+    
+    <li><a href="#method-i-parse">#parse</a>
+    
+    <li><a href="#method-i-parse_arguments">#parse_arguments</a>
+    
+    <li><a href="#method-i-parse_environment">#parse_environment</a>
+    
+    <li><a href="#method-i-parse_keywords">#parse_keywords</a>
+    
+    <li><a href="#method-i-parse_options">#parse_options</a>
+    
+    <li><a href="#method-i-validate-21">#validate!</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../Main.html">Main</a>
+  
+    <li><a href="../../Main/Cast.html">Main::Cast</a>
+  
+    <li><a href="../../Main/GetoptLong.html">Main::GetoptLong</a>
+  
+    <li><a href="../../Main/GetoptLong/AmbigousOption.html">Main::GetoptLong::AmbigousOption</a>
+  
+    <li><a href="../../Main/GetoptLong/InvalidOption.html">Main::GetoptLong::InvalidOption</a>
+  
+    <li><a href="../../Main/GetoptLong/MissingArgument.html">Main::GetoptLong::MissingArgument</a>
+  
+    <li><a href="../../Main/GetoptLong/NeedlessArgument.html">Main::GetoptLong::NeedlessArgument</a>
+  
+    <li><a href="../../Main/Logger.html">Main::Logger</a>
+  
+    <li><a href="../../Main/Logger/OnOff.html">Main::Logger::OnOff</a>
+  
+    <li><a href="../../Main/Mode.html">Main::Mode</a>
+  
+    <li><a href="../../Main/Mode/Ambiguous.html">Main::Mode::Ambiguous</a>
+  
+    <li><a href="../../Main/Mode/Duplicate.html">Main::Mode::Duplicate</a>
+  
+    <li><a href="../../Main/Mode/Error.html">Main::Mode::Error</a>
+  
+    <li><a href="../../Main/Mode/List.html">Main::Mode::List</a>
+  
+    <li><a href="../../Main/Parameter.html">Main::Parameter</a>
+  
+    <li><a href="../../Main/Parameter/AmbigousOption.html">Main::Parameter::AmbigousOption</a>
+  
+    <li><a href="../../Main/Parameter/Argument.html">Main::Parameter::Argument</a>
+  
+    <li><a href="../../Main/Parameter/Arity.html">Main::Parameter::Arity</a>
+  
+    <li><a href="../../Main/Parameter/DSL.html">Main::Parameter::DSL</a>
+  
+    <li><a href="../../Main/Parameter/Environment.html">Main::Parameter::Environment</a>
+  
+    <li><a href="../../Main/Parameter/Error.html">Main::Parameter::Error</a>
+  
+    <li><a href="../../Main/Parameter/InValid.html">Main::Parameter::InValid</a>
+  
+    <li><a href="../../Main/Parameter/InvalidOption.html">Main::Parameter::InvalidOption</a>
+  
+    <li><a href="../../Main/Parameter/Keyword.html">Main::Parameter::Keyword</a>
+  
+    <li><a href="../../Main/Parameter/List.html">Main::Parameter::List</a>
+  
+    <li><a href="../../Main/Parameter/MissingArgument.html">Main::Parameter::MissingArgument</a>
+  
+    <li><a href="../../Main/Parameter/NeedlessArgument.html">Main::Parameter::NeedlessArgument</a>
+  
+    <li><a href="../../Main/Parameter/NoneSuch.html">Main::Parameter::NoneSuch</a>
+  
+    <li><a href="../../Main/Parameter/NotGiven.html">Main::Parameter::NotGiven</a>
+  
+    <li><a href="../../Main/Parameter/Option.html">Main::Parameter::Option</a>
+  
+    <li><a href="../../Main/Parameter/Table.html">Main::Parameter::Table</a>
+  
+    <li><a href="../../Main/Parameter/Table/BoundsCheck.html">Main::Parameter::Table::BoundsCheck</a>
+  
+    <li><a href="../../Main/Program.html">Main::Program</a>
+  
+    <li><a href="../../Main/Program/ClassMethods.html">Main::Program::ClassMethods</a>
+  
+    <li><a href="../../Main/Program/ClassMethods/Factory.html">Main::Program::ClassMethods::Factory</a>
+  
+    <li><a href="../../Main/Program/InstanceMethods.html">Main::Program::InstanceMethods</a>
+  
+    <li><a href="../../Main/Softspoken.html">Main::Softspoken</a>
+  
+    <li><a href="../../Main/Usage.html">Main::Usage</a>
+  
+    <li><a href="../../Main/Util.html">Main::Util</a>
+  
+    <li><a href="../../Main/Util/ClassMethods.html">Main::Util::ClassMethods</a>
+  
+    <li><a href="../../Main/Util/InstanceMethods.html">Main::Util::InstanceMethods</a>
+  
+    <li><a href="../../Main/Util/Methods.html">Main::Util::Methods</a>
+  
+    <li><a href="../../Kernel.html">Kernel</a>
+  
+    <li><a href="../../Object.html">Object</a>
+  
+    <li><a href="../../Process.html">Process</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Main::Parameter::List</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-3C-3C" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">&lt;&lt;</span><span
+            class="method-args">(*a)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="3C-3C-source">
+            <pre><span class="ruby-comment"># File lib/main/parameter.rb, line 550</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">&lt;&lt;</span>(*<span class="ruby-identifier">a</span>)
+  <span class="ruby-identifier">delete</span>(*<span class="ruby-identifier">a</span>)
+  <span class="ruby-keyword">super</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- 3C-3C-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- 3C-3C-method -->
+
+    
+      <div id="method-i-5B-5D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">[]</span><span
+            class="method-args">(*index)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="5B-5D-source">
+            <pre><span class="ruby-comment"># File lib/main/parameter.rb, line 555</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">[]</span>(*<span class="ruby-identifier">index</span>)
+  <span class="ruby-identifier">first</span> = <span class="ruby-identifier">index</span>.<span class="ruby-identifier">first</span>
+  <span class="ruby-keyword">if</span>(<span class="ruby-identifier">index</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span> <span class="ruby-keyword">and</span> (<span class="ruby-identifier">first</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>) <span class="ruby-keyword">or</span> <span class="ruby-identifier">first</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Symbol</span>)))
+    <span class="ruby-identifier">first</span> = <span class="ruby-identifier">first</span>.<span class="ruby-identifier">to_s</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">detect</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">param</span><span class="ruby-operator">|</span> <span class="ruby-identifier">param</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">first</span>}
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">super</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- 5B-5D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- 5B-5D-method -->
+
+    
+      <div id="method-i-defaults-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">defaults!</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="defaults-21-source">
+            <pre><span class="ruby-comment"># File lib/main/parameter.rb, line 504</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">defaults!</span>
+  <span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span>(<span class="ruby-identifier">p</span>.<span class="ruby-identifier">defaults?</span> <span class="ruby-keyword">and</span> (<span class="ruby-keyword">not</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">given?</span>)) 
+      <span class="ruby-identifier">p</span>.<span class="ruby-identifier">defaults</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">default</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">p</span>.<span class="ruby-identifier">values</span> <span class="ruby-operator">&lt;&lt;</span> (<span class="ruby-identifier">default</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-string">'to_proc'</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">main</span>.<span class="ruby-identifier">instance_eval</span>(&amp;<span class="ruby-identifier">default</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">default</span>) <span class="ruby-comment"># so as NOT to set 'given?'</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- defaults-21-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- defaults-21-method -->
+
+    
+      <div id="method-i-delete" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">delete</span><span
+            class="method-args">(name, *names)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="delete-source">
+            <pre><span class="ruby-comment"># File lib/main/parameter.rb, line 539</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">delete</span> <span class="ruby-identifier">name</span>, *<span class="ruby-identifier">names</span>
+  <span class="ruby-identifier">name</span>, *<span class="ruby-identifier">names</span> = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">names</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">Parameter</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">name</span>
+  <span class="ruby-identifier">names</span> = <span class="ruby-constant">Cast</span>.<span class="ruby-identifier">list_of_string</span> <span class="ruby-identifier">name</span>, *<span class="ruby-identifier">names</span>
+  <span class="ruby-identifier">keep</span> = []
+  <span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">param</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">common</span> = <span class="ruby-constant">Cast</span>.<span class="ruby-identifier">list_of_string</span>(<span class="ruby-identifier">param</span>.<span class="ruby-identifier">names</span>) &amp; <span class="ruby-identifier">names</span> 
+    <span class="ruby-identifier">keep</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">param</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">common</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">replace</span> <span class="ruby-identifier">keep</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- delete-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- delete-method -->
+
+    
+      <div id="method-i-parse" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">parse</span><span
+            class="method-args">(main)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="parse-source">
+            <pre><span class="ruby-comment"># File lib/main/parameter.rb, line 337</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">parse</span> <span class="ruby-identifier">main</span>
+  <span class="ruby-ivar">@main</span>, <span class="ruby-ivar">@argv</span>, <span class="ruby-ivar">@env</span> = <span class="ruby-identifier">main</span>, <span class="ruby-identifier">main</span>.<span class="ruby-identifier">argv</span>, <span class="ruby-identifier">main</span>.<span class="ruby-identifier">env</span>
+
+  <span class="ruby-identifier">ignore</span>, <span class="ruby-identifier">stop</span> = [], <span class="ruby-identifier">argv</span>.<span class="ruby-identifier">index</span>(<span class="ruby-string">'--'</span>)
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">stop</span>
+    <span class="ruby-identifier">ignore</span> = <span class="ruby-identifier">argv</span>[<span class="ruby-identifier">stop</span> <span class="ruby-operator">..</span> <span class="ruby-value">-1</span>]
+    (<span class="ruby-identifier">argv</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">stop</span>).<span class="ruby-identifier">times</span>{ <span class="ruby-identifier">argv</span>.<span class="ruby-identifier">pop</span> }
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">argv</span>.<span class="ruby-identifier">push</span> <span class="ruby-node">&quot;--#{ argv.shift }&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">argv</span>.<span class="ruby-identifier">first</span> <span class="ruby-operator">==</span> <span class="ruby-string">'help'</span>
+
+  <span class="ruby-identifier">parse_options</span> <span class="ruby-identifier">argv</span>
+
+  <span class="ruby-keyword">return</span> <span class="ruby-string">'help'</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">detect</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">==</span> <span class="ruby-string">'help'</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">given?</span>}
+
+  <span class="ruby-identifier">parse_keywords</span> <span class="ruby-identifier">argv</span>
+  <span class="ruby-identifier">parse_arguments</span> <span class="ruby-identifier">argv</span>
+  <span class="ruby-identifier">parse_environment</span> <span class="ruby-identifier">env</span>
+
+  <span class="ruby-identifier">defaults!</span>
+  <span class="ruby-identifier">validate!</span>
+
+  <span class="ruby-identifier">argv</span>.<span class="ruby-identifier">push</span>(*<span class="ruby-identifier">ignore</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>]) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">ignore</span>.<span class="ruby-identifier">empty?</span> 
+
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">ensure</span>
+  <span class="ruby-ivar">@main</span>, <span class="ruby-ivar">@argv</span>, <span class="ruby-ivar">@env</span> = <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- parse-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- parse-method -->
+
+    
+      <div id="method-i-parse_arguments" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">parse_arguments</span><span
+            class="method-args">(argv, params=nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="parse_arguments-source">
+            <pre><span class="ruby-comment"># File lib/main/parameter.rb, line 417</span>
+      <span class="ruby-keyword">def</span> <span class="ruby-identifier">parse_arguments</span> <span class="ruby-identifier">argv</span>, <span class="ruby-identifier">params</span>=<span class="ruby-keyword">nil</span>
+        <span class="ruby-identifier">params</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">select</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-value">:argument</span>}
+
+        <span class="ruby-identifier">params</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span>
+          <span class="ruby-keyword">if</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">arity</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value">0</span>
+            <span class="ruby-identifier">p</span>.<span class="ruby-identifier">arity</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span>
+              <span class="ruby-keyword">break</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">argv</span>.<span class="ruby-identifier">empty?</span>
+              <span class="ruby-identifier">value</span> = <span class="ruby-identifier">argv</span>.<span class="ruby-identifier">shift</span>
+              <span class="ruby-identifier">p</span>.<span class="ruby-identifier">add_value</span> <span class="ruby-identifier">value</span>
+            <span class="ruby-keyword">end</span>
+          <span class="ruby-keyword">else</span>
+            <span class="ruby-identifier">arity</span> = <span class="ruby-identifier">p</span>.<span class="ruby-identifier">arity</span>.<span class="ruby-identifier">abs</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>
+            <span class="ruby-identifier">arity</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span>
+              <span class="ruby-keyword">break</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">argv</span>.<span class="ruby-identifier">empty?</span>
+              <span class="ruby-identifier">value</span> = <span class="ruby-identifier">argv</span>.<span class="ruby-identifier">shift</span>
+              <span class="ruby-identifier">p</span>.<span class="ruby-identifier">add_value</span> <span class="ruby-identifier">value</span>
+            <span class="ruby-keyword">end</span>
+            <span class="ruby-identifier">argv</span>.<span class="ruby-identifier">size</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span>
+              <span class="ruby-identifier">value</span> = <span class="ruby-identifier">argv</span>.<span class="ruby-identifier">shift</span>
+              <span class="ruby-identifier">p</span>.<span class="ruby-identifier">add_value</span> <span class="ruby-identifier">value</span>
+            <span class="ruby-keyword">end</span>
+          <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+
+<span class="ruby-comment">        params.each do |p|
+          p.setup!
+        end
+</span>      <span class="ruby-keyword">end</span></pre>
+          </div><!-- parse_arguments-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- parse_arguments-method -->
+
+    
+      <div id="method-i-parse_environment" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">parse_environment</span><span
+            class="method-args">(env, params=nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="parse_environment-source">
+            <pre><span class="ruby-comment"># File lib/main/parameter.rb, line 486</span>
+      <span class="ruby-keyword">def</span> <span class="ruby-identifier">parse_environment</span> <span class="ruby-identifier">env</span>, <span class="ruby-identifier">params</span>=<span class="ruby-keyword">nil</span>
+        <span class="ruby-identifier">params</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">select</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-value">:environment</span>}
+
+        <span class="ruby-identifier">params</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">names</span> = <span class="ruby-identifier">p</span>.<span class="ruby-identifier">names</span>
+          <span class="ruby-identifier">name</span> = <span class="ruby-identifier">names</span>.<span class="ruby-identifier">first</span>
+          <span class="ruby-identifier">value</span> = <span class="ruby-identifier">env</span>[<span class="ruby-identifier">name</span>]
+          <span class="ruby-keyword">next</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">value</span>
+          <span class="ruby-identifier">p</span>.<span class="ruby-identifier">add_value</span> <span class="ruby-identifier">value</span>
+        <span class="ruby-keyword">end</span>
+
+<span class="ruby-comment">        params.each do |p|
+          p.setup!
+        end
+</span>      <span class="ruby-keyword">end</span></pre>
+          </div><!-- parse_environment-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- parse_environment-method -->
+
+    
+      <div id="method-i-parse_keywords" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">parse_keywords</span><span
+            class="method-args">(argv, params=nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="parse_keywords-source">
+            <pre><span class="ruby-comment"># File lib/main/parameter.rb, line 448</span>
+      <span class="ruby-keyword">def</span> <span class="ruby-identifier">parse_keywords</span> <span class="ruby-identifier">argv</span>, <span class="ruby-identifier">params</span>=<span class="ruby-keyword">nil</span>
+        <span class="ruby-identifier">params</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">select</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-value">:keyword</span>}
+
+        <span class="ruby-identifier">replacements</span> = {}
+
+        <span class="ruby-identifier">params</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">names</span> = <span class="ruby-identifier">p</span>.<span class="ruby-identifier">names</span>
+          <span class="ruby-identifier">name</span> = <span class="ruby-identifier">names</span>.<span class="ruby-identifier">sort_by</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span> [<span class="ruby-identifier">n</span>.<span class="ruby-identifier">size</span>,<span class="ruby-identifier">n</span>]}.<span class="ruby-identifier">last</span>
+
+          <span class="ruby-identifier">kre</span> = <span class="ruby-node">/^\s*(#{ names.join '|' })\s*=/</span>
+          <span class="ruby-identifier">opt</span> = <span class="ruby-node">&quot;--#{ name }&quot;</span>
+          <span class="ruby-identifier">i</span> = <span class="ruby-value">-1</span> 
+
+          <span class="ruby-identifier">argv</span>.<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">a</span>, <span class="ruby-identifier">idx</span><span class="ruby-operator">|</span>
+            <span class="ruby-identifier">i</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+            <span class="ruby-identifier">b</span> = <span class="ruby-identifier">argv</span>[<span class="ruby-identifier">idx</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>]
+            <span class="ruby-identifier">s</span> = <span class="ruby-node">&quot;#{ a }#{ b }&quot;</span>
+            <span class="ruby-identifier">m</span>, <span class="ruby-identifier">key</span>, *<span class="ruby-identifier">ignored</span> = <span class="ruby-identifier">kre</span>.<span class="ruby-identifier">match</span>(<span class="ruby-identifier">s</span>).<span class="ruby-identifier">to_a</span>
+            <span class="ruby-keyword">if</span> <span class="ruby-identifier">m</span>
+              <span class="ruby-identifier">replacements</span>[<span class="ruby-identifier">i</span>] <span class="ruby-operator">||=</span> <span class="ruby-identifier">a</span>.<span class="ruby-identifier">gsub</span> <span class="ruby-node">/^\s*#{ key }/</span>, <span class="ruby-identifier">opt</span>
+              <span class="ruby-keyword">next</span>
+            <span class="ruby-keyword">end</span>
+<span class="ruby-comment">            abbrev = name.index(key) == 0
+            if abbrev
+              replacements[i] ||= a.gsub %r/^\s*#{ key }/, opt
+            end
+</span>          <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-identifier">replacements</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span>, <span class="ruby-identifier">r</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">argv</span>[<span class="ruby-identifier">i</span>] = <span class="ruby-identifier">r</span>
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-identifier">parse_options</span> <span class="ruby-identifier">argv</span>, <span class="ruby-identifier">params</span>
+      <span class="ruby-keyword">end</span></pre>
+          </div><!-- parse_keywords-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- parse_keywords-method -->
+
+    
+      <div id="method-i-parse_options" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">parse_options</span><span
+            class="method-args">(argv, params = nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="parse_options-source">
+            <pre><span class="ruby-comment"># File lib/main/parameter.rb, line 367</span>
+      <span class="ruby-keyword">def</span> <span class="ruby-identifier">parse_options</span> <span class="ruby-identifier">argv</span>, <span class="ruby-identifier">params</span> = <span class="ruby-keyword">nil</span>
+        <span class="ruby-identifier">params</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">options</span> 
+
+        <span class="ruby-identifier">spec</span>, <span class="ruby-identifier">h</span>, <span class="ruby-identifier">s</span> = [], {}, {}
+
+        <span class="ruby-identifier">params</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">head</span>, *<span class="ruby-identifier">tail</span> = <span class="ruby-identifier">p</span>.<span class="ruby-identifier">names</span>
+          <span class="ruby-identifier">long</span> = <span class="ruby-node">&quot;--#{ head }&quot;</span>
+          <span class="ruby-identifier">shorts</span> = <span class="ruby-identifier">tail</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot;-#{ t }&quot;</span>}
+          <span class="ruby-identifier">type</span> =
+            <span class="ruby-keyword">if</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">argument_required?</span> <span class="ruby-keyword">then</span> <span class="ruby-constant">GetoptLong</span><span class="ruby-operator">::</span><span class="ruby-constant">REQUIRED_ARGUMENT</span>
+            <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">argument_optional?</span> <span class="ruby-keyword">then</span> <span class="ruby-constant">GetoptLong</span><span class="ruby-operator">::</span><span class="ruby-constant">OPTIONAL_ARGUMENT</span>
+            <span class="ruby-keyword">else</span> <span class="ruby-constant">GetoptLong</span><span class="ruby-operator">::</span><span class="ruby-constant">NO_ARGUMENT</span>
+            <span class="ruby-keyword">end</span>
+          <span class="ruby-identifier">a</span> = [ <span class="ruby-identifier">long</span>, <span class="ruby-identifier">shorts</span>, <span class="ruby-identifier">type</span> ].<span class="ruby-identifier">flatten</span>
+          <span class="ruby-identifier">spec</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">a</span> 
+          <span class="ruby-identifier">h</span>[<span class="ruby-identifier">long</span>] = <span class="ruby-identifier">p</span> 
+          <span class="ruby-identifier">s</span>[<span class="ruby-identifier">long</span>] = <span class="ruby-identifier">a</span> 
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-keyword">begin</span>
+          <span class="ruby-constant">GetoptLong</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">argv</span>, *<span class="ruby-identifier">spec</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">long</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+            <span class="ruby-identifier">value</span> =
+              <span class="ruby-keyword">case</span> <span class="ruby-identifier">s</span>[<span class="ruby-identifier">long</span>].<span class="ruby-identifier">last</span>
+                <span class="ruby-keyword">when</span> <span class="ruby-constant">GetoptLong</span><span class="ruby-operator">::</span><span class="ruby-constant">NO_ARGUMENT</span>
+                  <span class="ruby-identifier">value</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">true</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">value</span>
+                <span class="ruby-keyword">when</span> <span class="ruby-constant">GetoptLong</span><span class="ruby-operator">::</span><span class="ruby-constant">OPTIONAL_ARGUMENT</span>
+                  <span class="ruby-identifier">value</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">true</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">value</span>
+                <span class="ruby-keyword">when</span> <span class="ruby-constant">GetoptLong</span><span class="ruby-operator">::</span><span class="ruby-constant">REQUIRED_ARGUMENT</span>
+                  <span class="ruby-identifier">value</span>
+              <span class="ruby-keyword">end</span>
+            <span class="ruby-identifier">p</span> = <span class="ruby-identifier">h</span>[<span class="ruby-identifier">long</span>]
+            <span class="ruby-identifier">p</span>.<span class="ruby-identifier">add_value</span> <span class="ruby-identifier">value</span>
+          <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">rescue</span> <span class="ruby-constant">GetoptLong</span><span class="ruby-operator">::</span><span class="ruby-constant">AmbigousOption</span>, <span class="ruby-constant">GetoptLong</span><span class="ruby-operator">::</span><span class="ruby-constant">NeedlessArgument</span>,
+               <span class="ruby-constant">GetoptLong</span><span class="ruby-operator">::</span><span class="ruby-constant">MissingArgument</span>, <span class="ruby-constant">GetoptLong</span><span class="ruby-operator">::</span><span class="ruby-constant">InvalidOption</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+          <span class="ruby-identifier">c</span> = <span class="ruby-constant">Parameter</span>.<span class="ruby-identifier">const_get</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">name</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">/::/</span>).<span class="ruby-identifier">last</span>
+          <span class="ruby-identifier">ex</span> = <span class="ruby-identifier">c</span>.<span class="ruby-identifier">new</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">message</span>
+          <span class="ruby-identifier">ex</span>.<span class="ruby-identifier">set_backtrace</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">backtrace</span>
+          <span class="ruby-identifier">ex</span>.<span class="ruby-identifier">extend</span> <span class="ruby-constant">Softspoken</span>
+          <span class="ruby-identifier">raise</span> <span class="ruby-identifier">ex</span>
+        <span class="ruby-keyword">end</span>
+
+<span class="ruby-comment">        params.each do |p|
+          p.setup!
+        end
+</span>      <span class="ruby-keyword">end</span></pre>
+          </div><!-- parse_options-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- parse_options-method -->
+
+    
+      <div id="method-i-validate-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">validate!</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="validate-21-source">
+            <pre><span class="ruby-comment"># File lib/main/parameter.rb, line 514</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">validate!</span>
+  <span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span>
+    <span class="ruby-comment">#p.adding_handlers do</span>
+      <span class="ruby-comment">#next if p.arity == -1</span>
+      <span class="ruby-comment">#raise NotGiven, &quot;#{ p.typename } not given&quot; if(p.required? and (not p.given?))</span>
+    <span class="ruby-comment">#end</span>
+    <span class="ruby-identifier">p</span>.<span class="ruby-identifier">setup!</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- validate-21-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- validate-21-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

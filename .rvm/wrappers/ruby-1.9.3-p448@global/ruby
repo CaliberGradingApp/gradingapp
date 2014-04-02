@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+if [[ -s "/home/saasbook/.rvm/environments/ruby-1.9.3-p448@global" ]]
+then
+  source "/home/saasbook/.rvm/environments/ruby-1.9.3-p448@global"
+  exec ruby "$@"
+else
+  echo "ERROR: Missing RVM environment file: '/home/saasbook/.rvm/environments/ruby-1.9.3-p448@global'" >&2
+  exit 1
+fi

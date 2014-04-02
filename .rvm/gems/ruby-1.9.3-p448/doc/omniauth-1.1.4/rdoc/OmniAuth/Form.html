@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class OmniAuth::Form - omniauth-1.1.4 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/omniauth/form.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-build">::build</a>
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-button">#button</a>
+    
+    <li><a href="#method-i-css">#css</a>
+    
+    <li><a href="#method-i-fieldset">#fieldset</a>
+    
+    <li><a href="#method-i-footer">#footer</a>
+    
+    <li><a href="#method-i-header">#header</a>
+    
+    <li><a href="#method-i-html">#html</a>
+    
+    <li><a href="#method-i-input_field">#input_field</a>
+    
+    <li><a href="#method-i-label_field">#label_field</a>
+    
+    <li><a href="#method-i-password_field">#password_field</a>
+    
+    <li><a href="#method-i-text_field">#text_field</a>
+    
+    <li><a href="#method-i-to_html">#to_html</a>
+    
+    <li><a href="#method-i-to_response">#to_response</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../OmniAuth.html">OmniAuth</a>
+  
+    <li><a href="../OmniAuth/AuthHash.html">OmniAuth::AuthHash</a>
+  
+    <li><a href="../OmniAuth/AuthHash/InfoHash.html">OmniAuth::AuthHash::InfoHash</a>
+  
+    <li><a href="../OmniAuth/Builder.html">OmniAuth::Builder</a>
+  
+    <li><a href="../OmniAuth/Configuration.html">OmniAuth::Configuration</a>
+  
+    <li><a href="../OmniAuth/Error.html">OmniAuth::Error</a>
+  
+    <li><a href="../OmniAuth/FailureEndpoint.html">OmniAuth::FailureEndpoint</a>
+  
+    <li><a href="../OmniAuth/Form.html">OmniAuth::Form</a>
+  
+    <li><a href="../OmniAuth/NoSessionError.html">OmniAuth::NoSessionError</a>
+  
+    <li><a href="../OmniAuth/Strategies.html">OmniAuth::Strategies</a>
+  
+    <li><a href="../OmniAuth/Strategies/Developer.html">OmniAuth::Strategies::Developer</a>
+  
+    <li><a href="../OmniAuth/Strategy.html">OmniAuth::Strategy</a>
+  
+    <li><a href="../OmniAuth/Strategy/ClassMethods.html">OmniAuth::Strategy::ClassMethods</a>
+  
+    <li><a href="../OmniAuth/Strategy/Options.html">OmniAuth::Strategy::Options</a>
+  
+    <li><a href="../OmniAuth/Test.html">OmniAuth::Test</a>
+  
+    <li><a href="../OmniAuth/Test/PhonySession.html">OmniAuth::Test::PhonySession</a>
+  
+    <li><a href="../OmniAuth/Test/StrategyMacros.html">OmniAuth::Test::StrategyMacros</a>
+  
+    <li><a href="../OmniAuth/Test/StrategyTestCase.html">OmniAuth::Test::StrategyTestCase</a>
+  
+    <li><a href="../OmniAuth/Utils.html">OmniAuth::Utils</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class OmniAuth::Form</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="DEFAULT_CSS">DEFAULT_CSS
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-options" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">options</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-build" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">build</span><span
+            class="method-args">(options = {}) { |form| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="build-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/form.rb, line 102</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">build</span>(<span class="ruby-identifier">options</span> = {},&amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">form</span> = <span class="ruby-constant">OmniAuth</span><span class="ruby-operator">::</span><span class="ruby-constant">Form</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">block</span>.<span class="ruby-identifier">arity</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+    <span class="ruby-keyword">yield</span> <span class="ruby-identifier">form</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">form</span>.<span class="ruby-identifier">instance_eval</span>(&amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">form</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- build-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- build-method -->
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(options = {})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/form.rb, line 91</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:title</span>] <span class="ruby-operator">||=</span> <span class="ruby-string">&quot;Authentication Info Required&quot;</span>
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:header_info</span>] <span class="ruby-operator">||=</span> <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">options</span> = <span class="ruby-identifier">options</span>
+
+  <span class="ruby-ivar">@html</span> = <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-ivar">@with_custom_button</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-ivar">@footer</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">header</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:title</span>],<span class="ruby-identifier">options</span>[<span class="ruby-value">:header_info</span>])
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-button" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">button</span><span
+            class="method-args">(text)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="button-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/form.rb, line 134</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">button</span>(<span class="ruby-identifier">text</span>)
+  <span class="ruby-ivar">@with_custom_button</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-ivar">@html</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;\n&lt;button type='submit'&gt;#{text}&lt;/button&gt;&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- button-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- button-method -->
+
+    
+      <div id="method-i-fieldset" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">fieldset</span><span
+            class="method-args">(legend, options = {}, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="fieldset-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/form.rb, line 143</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">fieldset</span>(<span class="ruby-identifier">legend</span>, <span class="ruby-identifier">options</span> = {}, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-ivar">@html</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;\n&lt;fieldset#{&quot; style='#{options[:style]}'&quot; if options[:style]}#{&quot; id='#{options[:id]}'&quot; if options[:id]}&gt;\n  &lt;legend&gt;#{legend}&lt;/legend&gt;\n&quot;</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">instance_eval</span>(&amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-ivar">@html</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;\n&lt;/fieldset&gt;&quot;</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- fieldset-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- fieldset-method -->
+
+    
+      <div id="method-i-footer" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">footer</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="footer-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/form.rb, line 167</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">footer</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@footer</span>
+  <span class="ruby-ivar">@html</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;\n&lt;button type='submit'&gt;Connect&lt;/button&gt;&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@with_custom_button</span>
+  <span class="ruby-ivar">@html</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value">&lt;&lt;-HTML
+  &lt;/form&gt;
+  &lt;/body&gt;
+  &lt;/html&gt;
+  HTML</span>
+  <span class="ruby-ivar">@footer</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- footer-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- footer-method -->
+
+    
+      <div id="method-i-header" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">header</span><span
+            class="method-args">(title,header_info)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="header-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/form.rb, line 150</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">header</span>(<span class="ruby-identifier">title</span>,<span class="ruby-identifier">header_info</span>)
+  <span class="ruby-ivar">@html</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value">&lt;&lt;-HTML
+  &lt;!DOCTYPE html&gt;
+  &lt;html&gt;
+  &lt;head&gt;
+    &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;
+    &lt;title&gt;#{title}&lt;/title&gt;
+    #{css}
+    #{header_info}
+  &lt;/head&gt;
+  &lt;body&gt;
+  &lt;h1&gt;#{title}&lt;/h1&gt;
+  &lt;form method='post' #{&quot;action='#{options[:url]}' &quot; if options[:url]}noValidate='noValidate'&gt;
+  HTML</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- header-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- header-method -->
+
+    
+      <div id="method-i-html" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">html</span><span
+            class="method-args">(html)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="html-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/form.rb, line 139</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">html</span>(<span class="ruby-identifier">html</span>)
+  <span class="ruby-ivar">@html</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">html</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- html-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- html-method -->
+
+    
+      <div id="method-i-input_field" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">input_field</span><span
+            class="method-args">(type, name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="input_field-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/form.rb, line 117</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">input_field</span>(<span class="ruby-identifier">type</span>, <span class="ruby-identifier">name</span>)
+  <span class="ruby-ivar">@html</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;\n&lt;input type='#{type}' id='#{name}' name='#{name}'/&gt;&quot;</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- input_field-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- input_field-method -->
+
+    
+      <div id="method-i-label_field" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">label_field</span><span
+            class="method-args">(text, target)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="label_field-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/form.rb, line 112</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">label_field</span>(<span class="ruby-identifier">text</span>, <span class="ruby-identifier">target</span>)
+  <span class="ruby-ivar">@html</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;\n&lt;label for='#{target}'&gt;#{text}:&lt;/label&gt;&quot;</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- label_field-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- label_field-method -->
+
+    
+      <div id="method-i-password_field" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">password_field</span><span
+            class="method-args">(label, name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="password_field-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/form.rb, line 128</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">password_field</span>(<span class="ruby-identifier">label</span>, <span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">label_field</span>(<span class="ruby-identifier">label</span>, <span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">input_field</span>(<span class="ruby-string">'password'</span>, <span class="ruby-identifier">name</span>)
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- password_field-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- password_field-method -->
+
+    
+      <div id="method-i-text_field" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">text_field</span><span
+            class="method-args">(label, name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="text_field-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/form.rb, line 122</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">text_field</span>(<span class="ruby-identifier">label</span>, <span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">label_field</span>(<span class="ruby-identifier">label</span>, <span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">input_field</span>(<span class="ruby-string">'text'</span>, <span class="ruby-identifier">name</span>)
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- text_field-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- text_field-method -->
+
+    
+      <div id="method-i-to_html" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_html</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="to_html-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/form.rb, line 179</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_html</span>
+  <span class="ruby-identifier">footer</span>
+  <span class="ruby-ivar">@html</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- to_html-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- to_html-method -->
+
+    
+      <div id="method-i-to_response" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_response</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="to_response-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/form.rb, line 184</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_response</span>
+  <span class="ruby-identifier">footer</span>
+  <span class="ruby-constant">Rack</span><span class="ruby-operator">::</span><span class="ruby-constant">Response</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@html</span>, <span class="ruby-value">200</span>, {<span class="ruby-string">&quot;content-type&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;text/html&quot;</span>}).<span class="ruby-identifier">finish</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- to_response-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- to_response-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+     <section id="protected-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Protected Instance Methods</h3>
+
+    
+      <div id="method-i-css" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">css</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="css-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/form.rb, line 191</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">css</span>
+  <span class="ruby-node">&quot;\n&lt;style type='text/css'&gt;#{OmniAuth.config.form_css}&lt;/style&gt;&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- css-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- css-method -->
+
+    
+    </section><!-- protected-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Array - arrayfields-4.9.0 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/arrayfields.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="Object.html">Object</a>
+  
+</nav>
+
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><a class="include" href="Fieldable.html">Fieldable</a>
+  
+  
+  
+    <li><a class="include" href="ArrayFields.html">ArrayFields</a>
+  
+  
+  </ul>
+</nav>
+
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-5B-5D">::[]</a>
+    
+    <li><a href="#method-c-fields">::fields</a>
+    
+    <li><a href="#method-c-initialize">::initialize</a>
+    
+    <li><a href="#method-c-struct">::struct</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./ArrayFields.html">Object::Arrayfields</a>
+  
+    <li><a href="./FieldedArray.html">Object::Fieldedarray</a>
+  
+    <li><a href="./PseudoHash.html">Object::Pseudohash</a>
+  
+    <li><a href="./ArrayFields.html">ArrayFields</a>
+  
+    <li><a href="./ArrayFields.html">ArrayFields</a>
+  
+    <li><a href="./ArrayFields/FieldSet.html">ArrayFields::FieldSet</a>
+  
+    <li><a href="./FieldedArray.html">FieldedArray</a>
+  
+    <li><a href="./FieldedArray.html">FieldedArray</a>
+  
+    <li><a href="./PseudoHash.html">PseudoHash</a>
+  
+    <li><a href="./PseudoHash.html">PseudoHash</a>
+  
+    <li><a href="./Array.html">Array</a>
+  
+    <li><a href="./Fieldable.html">Fieldable</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Array</h1>
+
+  <div id="description" class="description">
+    
+<p><a href="Array.html">Array</a> instances are extened with two methods only:
+<a href="Fieldable.html#method-i-fields-3D">Fieldable#fields=</a> and <a
+href="Fieldable.html#method-i-fields">Fieldable#fields</a>.  only when <a
+href="Fieldable.html#method-i-fields-3D">Fieldable#fields=</a> is called
+will the full set of <a href="ArrayFields.html">ArrayFields</a> methods
+auto-extend the <a href="Array.html">Array</a> instance.  the <a
+href="Array.html">Array</a> class also has added a class generator when the
+fields are known apriori.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-5B-5D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">[]</span><span
+            class="method-args">(*elements)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="5B-5D-source">
+            <pre><span class="ruby-comment"># File lib/arrayfields.rb, line 370</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-operator">[]</span> *<span class="ruby-identifier">elements</span>
+  <span class="ruby-identifier">array</span> = <span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">array</span>.<span class="ruby-identifier">replace</span> <span class="ruby-identifier">elements</span>
+  <span class="ruby-identifier">array</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- 5B-5D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- 5B-5D-method -->
+
+    
+      <div id="method-c-fields" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">fields</span><span
+            class="method-args">(*fields, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="fields-source">
+            <pre><span class="ruby-comment"># File lib/arrayfields.rb, line 377</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">fields</span> *<span class="ruby-identifier">fields</span>, &amp;<span class="ruby-identifier">block</span>
+  (( <span class="ruby-identifier">array</span> = <span class="ruby-identifier">new</span>(&amp;<span class="ruby-identifier">block</span>) )).<span class="ruby-identifier">fields</span> = <span class="ruby-identifier">fields</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-constant">Enumerable</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">x</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">to_a</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">x</span>}.<span class="ruby-identifier">flatten</span>
+  <span class="ruby-identifier">array</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- fields-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- fields-method -->
+
+    
+      <div id="method-c-initialize" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">initialize</span><span
+            class="method-args">(*a, &b)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="initialize-source">
+            <pre><span class="ruby-comment"># File lib/arrayfields.rb, line 365</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span> *<span class="ruby-identifier">a</span>, &amp;<span class="ruby-identifier">b</span>
+  <span class="ruby-keyword">super</span>
+<span class="ruby-keyword">ensure</span>
+  <span class="ruby-ivar">@fieldset</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">const_get</span> <span class="ruby-value">:FIELDS</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- initialize-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- initialize-method -->
+
+    
+      <div id="method-c-struct" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">struct</span><span
+            class="method-args">(*fields)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="struct-source">
+            <pre><span class="ruby-comment"># File lib/arrayfields.rb, line 343</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">struct</span> *<span class="ruby-identifier">fields</span>
+  <span class="ruby-identifier">fields</span> = <span class="ruby-identifier">fields</span>.<span class="ruby-identifier">flatten</span>
+  <span class="ruby-constant">Class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">include</span> <span class="ruby-constant">ArrayFields</span>
+    <span class="ruby-identifier">const_set</span> <span class="ruby-value">:FIELDS</span>, <span class="ruby-constant">ArrayFields</span><span class="ruby-operator">::</span><span class="ruby-constant">FieldSet</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">fields</span>)
+    <span class="ruby-identifier">fields</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">field</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">field</span> = <span class="ruby-identifier">field</span>.<span class="ruby-identifier">to_s</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">field</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/^[a-zA-Z_][a-zA-Z0-9_]*$/</span>
+        <span class="ruby-keyword">begin</span>
+          <span class="ruby-identifier">module_eval</span> <span class="ruby-value">&lt;&lt;-code
+            def #{ field } *a
+              a.size == 0 ? self['#{ field }'] : (self.#{ field } = a.shift) 
+            end
+            def #{ field }= value
+              self['#{ field }'] = value
+            end
+          code</span>
+        <span class="ruby-keyword">rescue</span> <span class="ruby-constant">SyntaxError</span>
+          <span class="ruby-value">:by_ignoring_it</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span> *<span class="ruby-identifier">a</span>, &amp;<span class="ruby-identifier">b</span>
+      <span class="ruby-keyword">super</span>
+    <span class="ruby-keyword">ensure</span>
+      <span class="ruby-ivar">@fieldset</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">const_get</span> <span class="ruby-value">:FIELDS</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-operator">[]</span> *<span class="ruby-identifier">elements</span>
+      <span class="ruby-identifier">array</span> = <span class="ruby-identifier">new</span>
+      <span class="ruby-identifier">array</span>.<span class="ruby-identifier">replace</span> <span class="ruby-identifier">elements</span>
+      <span class="ruby-identifier">array</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- struct-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- struct-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

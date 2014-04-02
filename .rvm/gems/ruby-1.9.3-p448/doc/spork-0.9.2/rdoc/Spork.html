@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module Spork - spork-0.9.2 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/spork/runner.rb
+    <li>lib/spork.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-after_each_run">::after_each_run</a>
+    
+    <li><a href="#method-c-detect_and_require">::detect_and_require</a>
+    
+    <li><a href="#method-c-each_run">::each_run</a>
+    
+    <li><a href="#method-c-exec_after_each_run">::exec_after_each_run</a>
+    
+    <li><a href="#method-c-exec_each_run">::exec_each_run</a>
+    
+    <li><a href="#method-c-exec_prefork">::exec_prefork</a>
+    
+    <li><a href="#method-c-other_spork_gem_load_paths">::other_spork_gem_load_paths</a>
+    
+    <li><a href="#method-c-prefork">::prefork</a>
+    
+    <li><a href="#method-c-state">::state</a>
+    
+    <li><a href="#method-c-trap_class_method">::trap_class_method</a>
+    
+    <li><a href="#method-c-trap_method">::trap_method</a>
+    
+    <li><a href="#method-c-using_spork-3F">::using_spork?</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./MIT-LICENSE.html">MIT-LICENSE</a>
+  
+    <li class="file"><a href="./README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Spork.html">Spork</a>
+  
+    <li><a href="./Spork/AppFramework.html">Spork::AppFramework</a>
+  
+    <li><a href="./Spork/AppFramework/Padrino.html">Spork::AppFramework::Padrino</a>
+  
+    <li><a href="./Spork/AppFramework/Rails.html">Spork::AppFramework::Rails</a>
+  
+    <li><a href="./Spork/AppFramework/Unknown.html">Spork::AppFramework::Unknown</a>
+  
+    <li><a href="./Spork/CustomIOStreams.html">Spork::CustomIOStreams</a>
+  
+    <li><a href="./Spork/CustomIOStreams/ClassMethods.html">Spork::CustomIOStreams::ClassMethods</a>
+  
+    <li><a href="./Spork/Diagnoser.html">Spork::Diagnoser</a>
+  
+    <li><a href="./Spork/Forker.html">Spork::Forker</a>
+  
+    <li><a href="./Spork/Forker/ForkDiedException.html">Spork::Forker::ForkDiedException</a>
+  
+    <li><a href="./Spork/GemHelpers.html">Spork::GemHelpers</a>
+  
+    <li><a href="./Spork/GemHelpers/GemPath.html">Spork::GemHelpers::GemPath</a>
+  
+    <li><a href="./Spork/RunStrategy.html">Spork::RunStrategy</a>
+  
+    <li><a href="./Spork/RunStrategy/Forking.html">Spork::RunStrategy::Forking</a>
+  
+    <li><a href="./Spork/RunStrategy/Magazine.html">Spork::RunStrategy::Magazine</a>
+  
+    <li><a href="./Spork/Runner.html">Spork::Runner</a>
+  
+    <li><a href="./Spork/Server.html">Spork::Server</a>
+  
+    <li><a href="./Spork/TestFramework.html">Spork::TestFramework</a>
+  
+    <li><a href="./Spork/TestFramework/Cucumber.html">Spork::TestFramework::Cucumber</a>
+  
+    <li><a href="./Spork/TestFramework/FactoryException.html">Spork::TestFramework::FactoryException</a>
+  
+    <li><a href="./Spork/TestFramework/FrameworkNotAvailable.html">Spork::TestFramework::FrameworkNotAvailable</a>
+  
+    <li><a href="./Spork/TestFramework/NoFrameworkMatched.html">Spork::TestFramework::NoFrameworkMatched</a>
+  
+    <li><a href="./Spork/TestFramework/NoFrameworksAvailable.html">Spork::TestFramework::NoFrameworksAvailable</a>
+  
+    <li><a href="./Spork/TestFramework/RSpec.html">Spork::TestFramework::RSpec</a>
+  
+    <li><a href="./SporkDebugger.html">SporkDebugger</a>
+  
+    <li><a href="./SporkDebugger/EachRunState.html">SporkDebugger::EachRunState</a>
+  
+    <li><a href="./SporkDebugger/NetworkHelpers.html">SporkDebugger::NetworkHelpers</a>
+  
+    <li><a href="./SporkDebugger/PreloadState.html">SporkDebugger::PreloadState</a>
+  
+    <li><a href="./MagazineSlave.html">MagazineSlave</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module Spork</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="BINARY">BINARY
+        
+        <dd class="description">
+        
+      
+        <dt id="LIBDIR">LIBDIR
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-after_each_run" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">after_each_run</span><span
+            class="method-args">(prevent_double_run = true, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Run a block after specs are run.</p>
+
+<h2 id="method-c-after_each_run-label-Parameters">Parameters</h2>
+<ul><li>
+<p><code>prevent_double_run</code> - Pass false to disable double run
+prevention</p>
+</li></ul>
+          
+
+          
+          <div class="method-source-code" id="after_each_run-source">
+            <pre><span class="ruby-comment"># File lib/spork.rb, line 46</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">after_each_run</span>(<span class="ruby-identifier">prevent_double_run</span> = <span class="ruby-keyword">true</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">prevent_double_run</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">already_ran?</span>(<span class="ruby-identifier">caller</span>.<span class="ruby-identifier">first</span>)
+  <span class="ruby-identifier">after_each_run_procs</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">block</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- after_each_run-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- after_each_run-method -->
+
+    
+      <div id="method-c-detect_and_require" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">detect_and_require</span><span
+            class="method-args">(subfolder)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="detect_and_require-source">
+            <pre><span class="ruby-comment"># File lib/spork.rb, line 100</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">detect_and_require</span>(<span class="ruby-identifier">subfolder</span>)
+  ([<span class="ruby-constant">LIBDIR</span>.<span class="ruby-identifier">to_s</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">other_spork_gem_load_paths</span>).<span class="ruby-identifier">uniq</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">gem_path</span><span class="ruby-operator">|</span>
+    <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">glob</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">gem_path</span>, <span class="ruby-identifier">subfolder</span>)).<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span> <span class="ruby-identifier">require</span> <span class="ruby-identifier">file</span> }
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- detect_and_require-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- detect_and_require-method -->
+
+    
+      <div id="method-c-each_run" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">each_run</span><span
+            class="method-args">(prevent_double_run = true) { || ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Run a block AFTER the fork occurs.  By default, if prefork is called twice
+in the same file and line number, the supplied block will only be ran once.</p>
+
+<h2 id="method-c-each_run-label-Parameters">Parameters</h2>
+<ul><li>
+<p><code>prevent_double_run</code> - Pass false to disable double run
+prevention</p>
+</li></ul>
+          
+
+          
+          <div class="method-source-code" id="each_run-source">
+            <pre><span class="ruby-comment"># File lib/spork.rb, line 32</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">each_run</span>(<span class="ruby-identifier">prevent_double_run</span> = <span class="ruby-keyword">true</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">prevent_double_run</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">already_ran?</span>(<span class="ruby-identifier">caller</span>.<span class="ruby-identifier">first</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">state</span> <span class="ruby-operator">==</span> <span class="ruby-value">:prefork</span>
+    <span class="ruby-identifier">each_run_procs</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">block</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">yield</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- each_run-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- each_run-method -->
+
+    
+      <div id="method-c-exec_after_each_run" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">exec_after_each_run</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Used by the server.  Called to run all of the <a
+href="Spork.html#method-c-after_each_run">::after_each_run</a> blocks.</p>
+          
+
+          
+          <div class="method-source-code" id="exec_after_each_run-source">
+            <pre><span class="ruby-comment"># File lib/spork.rb, line 75</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">exec_after_each_run</span>
+  <span class="ruby-comment"># processes in reverse order similar to at_exit</span>
+  <span class="ruby-keyword">while</span> <span class="ruby-identifier">p</span> = <span class="ruby-identifier">after_each_run_procs</span>.<span class="ruby-identifier">pop</span>; <span class="ruby-identifier">p</span>.<span class="ruby-identifier">call</span>; <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- exec_after_each_run-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- exec_after_each_run-method -->
+
+    
+      <div id="method-c-exec_each_run" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">exec_each_run</span><span
+            class="method-args">() { || ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Used by the server.  Called to run all of the prefork blocks.</p>
+          
+
+          
+          <div class="method-source-code" id="exec_each_run-source">
+            <pre><span class="ruby-comment"># File lib/spork.rb, line 66</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">exec_each_run</span>(&amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-ivar">@state</span> = <span class="ruby-value">:run</span>
+  <span class="ruby-identifier">activate_after_each_run_at_exit_hook</span>
+  <span class="ruby-identifier">each_run_procs</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">call</span> }
+  <span class="ruby-identifier">each_run_procs</span>.<span class="ruby-identifier">clear</span>
+  <span class="ruby-keyword">yield</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- exec_each_run-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- exec_each_run-method -->
+
+    
+      <div id="method-c-exec_prefork" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">exec_prefork</span><span
+            class="method-args">() { || ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Used by the server.  Called when loading the prefork blocks of the code.</p>
+          
+
+          
+          <div class="method-source-code" id="exec_prefork-source">
+            <pre><span class="ruby-comment"># File lib/spork.rb, line 60</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">exec_prefork</span>(&amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-ivar">@state</span> = <span class="ruby-value">:prefork</span>
+  <span class="ruby-keyword">yield</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- exec_prefork-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- exec_prefork-method -->
+
+    
+      <div id="method-c-other_spork_gem_load_paths" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">other_spork_gem_load_paths</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This method is used to auto-discover peer plugins such as spork-testunit.</p>
+          
+
+          
+          <div class="method-source-code" id="other_spork_gem_load_paths-source">
+            <pre><span class="ruby-comment"># File lib/spork.rb, line 107</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">other_spork_gem_load_paths</span>
+  <span class="ruby-ivar">@other_spork_gem_load_paths</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Spork</span><span class="ruby-operator">::</span><span class="ruby-constant">GemHelpers</span>.<span class="ruby-identifier">latest_load_paths</span>.<span class="ruby-identifier">grep</span>(<span class="ruby-regexp">/spork/</span>).<span class="ruby-identifier">select</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">g</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">not</span> <span class="ruby-identifier">g</span>.<span class="ruby-identifier">match</span>(<span class="ruby-regexp">%r{/spork-[0-9\-.]+/lib}</span>) <span class="ruby-comment"># don't include other versions of spork</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- other_spork_gem_load_paths-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- other_spork_gem_load_paths-method -->
+
+    
+      <div id="method-c-prefork" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">prefork</span><span
+            class="method-args">(prevent_double_run = true) { || ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Run a block, during prefork mode.  By default, if prefork is called twice
+in the same file and line number, the supplied block will only be ran once.</p>
+
+<h2 id="method-c-prefork-label-Parameters">Parameters</h2>
+<ul><li>
+<p><code>prevent_double_run</code> - Pass false to disable double run
+prevention</p>
+</li></ul>
+          
+
+          
+          <div class="method-source-code" id="prefork-source">
+            <pre><span class="ruby-comment"># File lib/spork.rb, line 22</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">prefork</span>(<span class="ruby-identifier">prevent_double_run</span> = <span class="ruby-keyword">true</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">prevent_double_run</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">already_ran?</span>(<span class="ruby-identifier">caller</span>.<span class="ruby-identifier">first</span>)
+  <span class="ruby-keyword">yield</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- prefork-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- prefork-method -->
+
+    
+      <div id="method-c-state" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">state</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="state-source">
+            <pre><span class="ruby-comment"># File lib/spork.rb, line 55</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">state</span>
+  <span class="ruby-ivar">@state</span> <span class="ruby-operator">||=</span> <span class="ruby-value">:not_using_spork</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- state-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- state-method -->
+
+    
+      <div id="method-c-trap_class_method" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">trap_class_method</span><span
+            class="method-args">(klass, method_name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Same as <a href="Spork.html#method-c-trap_method">::trap_method</a>, but
+for class methods instead</p>
+          
+
+          
+          <div class="method-source-code" id="trap_class_method-source">
+            <pre><span class="ruby-comment"># File lib/spork.rb, line 96</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">trap_class_method</span>(<span class="ruby-identifier">klass</span>, <span class="ruby-identifier">method_name</span>)
+  <span class="ruby-identifier">trap_method</span>((<span class="ruby-keyword">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">klass</span>; <span class="ruby-keyword">self</span>; <span class="ruby-keyword">end</span>), <span class="ruby-identifier">method_name</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- trap_class_method-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- trap_class_method-method -->
+
+    
+      <div id="method-c-trap_method" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">trap_method</span><span
+            class="method-args">(klass, method_name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Traps an instance method of a class (or module) so any calls to it don’t
+actually run until <a
+href="Spork.html#method-c-exec_each_run">::exec_each_run</a></p>
+          
+
+          
+          <div class="method-source-code" id="trap_method-source">
+            <pre><span class="ruby-comment"># File lib/spork.rb, line 82</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">trap_method</span>(<span class="ruby-identifier">klass</span>, <span class="ruby-identifier">method_name</span>)
+      <span class="ruby-identifier">method_name_without_spork</span>, <span class="ruby-identifier">method_name_with_spork</span> = <span class="ruby-identifier">alias_method_names</span>(<span class="ruby-identifier">method_name</span>, <span class="ruby-value">:spork</span>)
+      
+      <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">class_eval</span> <span class="ruby-string">&quot;        alias :#{method_name_without_spork} :#{method_name} unless method_defined?(:#{method_name_without_spork}) 
+        def #{method_name}(*args, &amp;block)
+          Spork.each_run(false) do
+            #{method_name_without_spork}(*args, &amp;block)
+          end
+        end
+&quot;</span>, <span class="ruby-keyword">__FILE__</span>, <span class="ruby-keyword">__LINE__</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>
+    <span class="ruby-keyword">end</span></pre>
+          </div><!-- trap_method-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- trap_method-method -->
+
+    
+      <div id="method-c-using_spork-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">using_spork?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="using_spork-3F-source">
+            <pre><span class="ruby-comment"># File lib/spork.rb, line 51</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">using_spork?</span>
+  <span class="ruby-identifier">state</span> <span class="ruby-operator">!=</span> <span class="ruby-value">:not_using_spork</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- using_spork-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- using_spork-3F-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

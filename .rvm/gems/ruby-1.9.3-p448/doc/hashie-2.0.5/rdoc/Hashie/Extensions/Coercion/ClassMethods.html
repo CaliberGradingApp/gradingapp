@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module Hashie::Extensions::Coercion::ClassMethods - hashie-2.0.5 Documentation</title>
+
+<link type="text/css" media="screen" href="../../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../../index.html">Home</a>
+    <a href="../../../table_of_contents.html#classes">Classes</a>
+    <a href="../../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/hashie/extensions/coercion.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-coerce_key">#coerce_key</a>
+    
+    <li><a href="#method-i-coerce_keys">#coerce_keys</a>
+    
+    <li><a href="#method-i-coerce_value">#coerce_value</a>
+    
+    <li><a href="#method-i-key_coercion">#key_coercion</a>
+    
+    <li><a href="#method-i-key_coercions">#key_coercions</a>
+    
+    <li><a href="#method-i-lenient_value_coercions">#lenient_value_coercions</a>
+    
+    <li><a href="#method-i-strict_value_coercions">#strict_value_coercions</a>
+    
+    <li><a href="#method-i-value_coercion">#value_coercion</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../../Hashie.html">Hashie</a>
+  
+    <li><a href="../../../Hashie/Clash.html">Hashie::Clash</a>
+  
+    <li><a href="../../../Hashie/Clash/ChainError.html">Hashie::Clash::ChainError</a>
+  
+    <li><a href="../../../Hashie/Dash.html">Hashie::Dash</a>
+  
+    <li><a href="../../../Hashie/Extensions.html">Hashie::Extensions</a>
+  
+    <li><a href="../../../Hashie/Extensions/Coercion.html">Hashie::Extensions::Coercion</a>
+  
+    <li><a href="../../../Hashie/Extensions/Coercion/ClassMethods.html">Hashie::Extensions::Coercion::ClassMethods</a>
+  
+    <li><a href="../../../Hashie/Extensions/Coercion/InstanceMethods.html">Hashie::Extensions::Coercion::InstanceMethods</a>
+  
+    <li><a href="../../../Hashie/Extensions/DeepMerge.html">Hashie::Extensions::DeepMerge</a>
+  
+    <li><a href="../../../Hashie/Extensions/IndifferentAccess.html">Hashie::Extensions::IndifferentAccess</a>
+  
+    <li><a href="../../../Hashie/Extensions/KeyConversion.html">Hashie::Extensions::KeyConversion</a>
+  
+    <li><a href="../../../Hashie/Extensions/MergeInitializer.html">Hashie::Extensions::MergeInitializer</a>
+  
+    <li><a href="../../../Hashie/Extensions/MethodAccess.html">Hashie::Extensions::MethodAccess</a>
+  
+    <li><a href="../../../Hashie/Extensions/MethodQuery.html">Hashie::Extensions::MethodQuery</a>
+  
+    <li><a href="../../../Hashie/Extensions/MethodReader.html">Hashie::Extensions::MethodReader</a>
+  
+    <li><a href="../../../Hashie/Extensions/MethodWriter.html">Hashie::Extensions::MethodWriter</a>
+  
+    <li><a href="../../../Hashie/Extensions/StringifyKeys.html">Hashie::Extensions::StringifyKeys</a>
+  
+    <li><a href="../../../Hashie/Extensions/Structure.html">Hashie::Extensions::Structure</a>
+  
+    <li><a href="../../../Hashie/Extensions/Structure/ClassMethods.html">Hashie::Extensions::Structure::ClassMethods</a>
+  
+    <li><a href="../../../Hashie/Extensions/SymbolizeKeys.html">Hashie::Extensions::SymbolizeKeys</a>
+  
+    <li><a href="../../../Hashie/Hash.html">Hashie::Hash</a>
+  
+    <li><a href="../../../Hashie/HashExtensions.html">Hashie::HashExtensions</a>
+  
+    <li><a href="../../../Hashie/Mash.html">Hashie::Mash</a>
+  
+    <li><a href="../../../Hashie/PrettyInspect.html">Hashie::PrettyInspect</a>
+  
+    <li><a href="../../../Hashie/Trash.html">Hashie::Trash</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module Hashie::Extensions::Coercion::ClassMethods</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-coerce_key" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">coerce_key</span><span
+            class="method-args">(*attrs)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Set up a coercion rule such that any time the specified key is set it will
+be coerced into the specified class. <a
+href="../Coercion.html">Coercion</a> will occur by first attempting to call
+Class.coerce and then by calling Class.new with the value as an argument in
+either case.</p>
+
+<p>@param [Object] key the key or array of keys you would like to be coerced.
+@param [Class] into the class into which you want the key(s) coerced.</p>
+
+<p>@example Coerce a “user” subhash into a User object</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">Tweet</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">Hash</span>
+  <span class="ruby-identifier">include</span> <span class="ruby-constant">Hashie</span><span class="ruby-operator">::</span><span class="ruby-constant">Extensions</span><span class="ruby-operator">::</span><span class="ruby-constant">Coercion</span>
+  <span class="ruby-identifier">coerce_key</span> :<span class="ruby-identifier">user</span>, <span class="ruby-constant">User</span>
+<span class="ruby-keyword">end</span>
+</pre>
+          
+
+          
+          <div class="method-source-code" id="coerce_key-source">
+            <pre><span class="ruby-comment"># File lib/hashie/extensions/coercion.rb, line 50</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">coerce_key</span>(*<span class="ruby-identifier">attrs</span>)
+  <span class="ruby-ivar">@key_coercions</span> <span class="ruby-operator">||=</span> {}
+  <span class="ruby-identifier">into</span> = <span class="ruby-identifier">attrs</span>.<span class="ruby-identifier">pop</span>
+  <span class="ruby-identifier">attrs</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span> <span class="ruby-ivar">@key_coercions</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-identifier">into</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- coerce_key-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="ClassMethods.html#method-i-coerce_keys">coerce_keys</a>
+        </div>
+        
+
+        
+      </div><!-- coerce_key-method -->
+
+    
+      <div id="method-i-coerce_keys" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">coerce_keys</span><span
+            class="method-args">(*attrs)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="ClassMethods.html#method-i-coerce_key">coerce_key</a>
+        </div>
+        
+      </div><!-- coerce_keys-method -->
+
+    
+      <div id="method-i-coerce_value" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">coerce_value</span><span
+            class="method-args">(from, into, options = {})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Set up a coercion rule such that any time a value of the specified type is
+set it will be coerced into the specified class.</p>
+
+<p>@param [Class] from the type you would like coerced. @param [Class] into
+the class into which you would like the value coerced. @option options
+[Boolean] :strict (true) whether use exact source class only or include
+ancestors</p>
+
+<p>@example Coerce all hashes into this special type of hash</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">SpecialHash</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">Hash</span>
+  <span class="ruby-identifier">include</span> <span class="ruby-constant">Hashie</span><span class="ruby-operator">::</span><span class="ruby-constant">Extensions</span><span class="ruby-operator">::</span><span class="ruby-constant">Coercion</span>
+  <span class="ruby-identifier">coerce_value</span> <span class="ruby-constant">Hash</span>, <span class="ruby-constant">SpecialHash</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">hash</span> = {})
+    <span class="ruby-keyword">super</span>
+    <span class="ruby-identifier">hash</span>.<span class="ruby-identifier">each_pair</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">self</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-identifier">v</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+          
+
+          
+          <div class="method-source-code" id="coerce_value-source">
+            <pre><span class="ruby-comment"># File lib/hashie/extensions/coercion.rb, line 89</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">coerce_value</span>(<span class="ruby-identifier">from</span>, <span class="ruby-identifier">into</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">options</span> = {<span class="ruby-value">:strict</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>}.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">options</span>)
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:strict</span>]
+    (<span class="ruby-ivar">@strict_value_coercions</span> <span class="ruby-operator">||=</span> {})[<span class="ruby-identifier">from</span>] = <span class="ruby-identifier">into</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">while</span> <span class="ruby-identifier">from</span>.<span class="ruby-identifier">superclass</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">from</span>.<span class="ruby-identifier">superclass</span> <span class="ruby-operator">!=</span> <span class="ruby-constant">Object</span>
+      (<span class="ruby-ivar">@lenient_value_coercions</span> <span class="ruby-operator">||=</span> {})[<span class="ruby-identifier">from</span>] = <span class="ruby-identifier">into</span>
+      <span class="ruby-identifier">from</span> = <span class="ruby-identifier">from</span>.<span class="ruby-identifier">superclass</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- coerce_value-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- coerce_value-method -->
+
+    
+      <div id="method-i-key_coercion" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">key_coercion</span><span
+            class="method-args">(key)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the specific key coercion for the specified key, if one exists.</p>
+          
+
+          
+          <div class="method-source-code" id="key_coercion-source">
+            <pre><span class="ruby-comment"># File lib/hashie/extensions/coercion.rb, line 65</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">key_coercion</span>(<span class="ruby-identifier">key</span>)
+  <span class="ruby-identifier">key_coercions</span>[<span class="ruby-identifier">key</span>.<span class="ruby-identifier">to_sym</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- key_coercion-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- key_coercion-method -->
+
+    
+      <div id="method-i-key_coercions" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">key_coercions</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns a hash of any existing key coercions.</p>
+          
+
+          
+          <div class="method-source-code" id="key_coercions-source">
+            <pre><span class="ruby-comment"># File lib/hashie/extensions/coercion.rb, line 59</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">key_coercions</span>
+  <span class="ruby-ivar">@key_coercions</span> <span class="ruby-operator">||</span> {}
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- key_coercions-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- key_coercions-method -->
+
+    
+      <div id="method-i-lenient_value_coercions" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">lenient_value_coercions</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Return all value coercions that have the :strict rule as false.</p>
+          
+
+          
+          <div class="method-source-code" id="lenient_value_coercions-source">
+            <pre><span class="ruby-comment"># File lib/hashie/extensions/coercion.rb, line 105</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">lenient_value_coercions</span>; <span class="ruby-ivar">@value_coercions</span> <span class="ruby-operator">||</span> {} <span class="ruby-keyword">end</span></pre>
+          </div><!-- lenient_value_coercions-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- lenient_value_coercions-method -->
+
+    
+      <div id="method-i-strict_value_coercions" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">strict_value_coercions</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Return all value coercions that have the :strict rule as true.</p>
+          
+
+          
+          <div class="method-source-code" id="strict_value_coercions-source">
+            <pre><span class="ruby-comment"># File lib/hashie/extensions/coercion.rb, line 103</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">strict_value_coercions</span>; <span class="ruby-ivar">@strict_value_coercions</span> <span class="ruby-operator">||</span> {} <span class="ruby-keyword">end</span></pre>
+          </div><!-- strict_value_coercions-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- strict_value_coercions-method -->
+
+    
+      <div id="method-i-value_coercion" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">value_coercion</span><span
+            class="method-args">(value)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Fetch the value coercion, if any, for the specified object.</p>
+          
+
+          
+          <div class="method-source-code" id="value_coercion-source">
+            <pre><span class="ruby-comment"># File lib/hashie/extensions/coercion.rb, line 108</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">value_coercion</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">from</span> = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">class</span>
+  <span class="ruby-identifier">strict_value_coercions</span>[<span class="ruby-identifier">from</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">lenient_value_coercions</span>[<span class="ruby-identifier">from</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- value_coercion-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- value_coercion-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

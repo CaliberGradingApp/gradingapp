@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Hirb::Menu - hirb-0.7.1 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/hirb/menu.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="../Object.html">Object</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-render">::render</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../LICENSE_txt.html">LICENSE</a>
+  
+    <li class="file"><a href="../README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Hirb.html">Hirb</a>
+  
+    <li><a href="../Hirb/Console.html">Hirb::Console</a>
+  
+    <li><a href="../Hirb/DynamicView.html">Hirb::DynamicView</a>
+  
+    <li><a href="../Hirb/Formatter.html">Hirb::Formatter</a>
+  
+    <li><a href="../Hirb/Helpers.html">Hirb::Helpers</a>
+  
+    <li><a href="../Hirb/Helpers/AutoTable.html">Hirb::Helpers::AutoTable</a>
+  
+    <li><a href="../Hirb/Helpers/MarkdownTable.html">Hirb::Helpers::MarkdownTable</a>
+  
+    <li><a href="../Hirb/Helpers/ObjectTable.html">Hirb::Helpers::ObjectTable</a>
+  
+    <li><a href="../Hirb/Helpers/ParentChildTree.html">Hirb::Helpers::ParentChildTree</a>
+  
+    <li><a href="../Hirb/Helpers/TabTable.html">Hirb::Helpers::TabTable</a>
+  
+    <li><a href="../Hirb/Helpers/Table.html">Hirb::Helpers::Table</a>
+  
+    <li><a href="../Hirb/Helpers/Table/Filters.html">Hirb::Helpers::Table::Filters</a>
+  
+    <li><a href="../Hirb/Helpers/Table/Resizer.html">Hirb::Helpers::Table::Resizer</a>
+  
+    <li><a href="../Hirb/Helpers/Table/TooManyFieldsForWidthError.html">Hirb::Helpers::Table::TooManyFieldsForWidthError</a>
+  
+    <li><a href="../Hirb/Helpers/Tree.html">Hirb::Helpers::Tree</a>
+  
+    <li><a href="../Hirb/Helpers/Tree/Node.html">Hirb::Helpers::Tree::Node</a>
+  
+    <li><a href="../Hirb/Helpers/Tree/Node/MissingLevelError.html">Hirb::Helpers::Tree::Node::MissingLevelError</a>
+  
+    <li><a href="../Hirb/Helpers/Tree/Node/MissingValueError.html">Hirb::Helpers::Tree::Node::MissingValueError</a>
+  
+    <li><a href="../Hirb/Helpers/Tree/ParentlessNodeError.html">Hirb::Helpers::Tree::ParentlessNodeError</a>
+  
+    <li><a href="../Hirb/Helpers/UnicodeTable.html">Hirb::Helpers::UnicodeTable</a>
+  
+    <li><a href="../Hirb/Helpers/VerticalTable.html">Hirb::Helpers::VerticalTable</a>
+  
+    <li><a href="../Hirb/Menu.html">Hirb::Menu</a>
+  
+    <li><a href="../Hirb/Menu/Error.html">Hirb::Menu::Error</a>
+  
+    <li><a href="../Hirb/ObjectMethods.html">Hirb::ObjectMethods</a>
+  
+    <li><a href="../Hirb/Pager.html">Hirb::Pager</a>
+  
+    <li><a href="../Hirb/String.html">Hirb::String</a>
+  
+    <li><a href="../Hirb/Util.html">Hirb::Util</a>
+  
+    <li><a href="../Hirb/View.html">Hirb::View</a>
+  
+    <li><a href="../Hirb/Views.html">Hirb::Views</a>
+  
+    <li><a href="../Ripl.html">Ripl</a>
+  
+    <li><a href="../Ripl/Hirb.html">Ripl::Hirb</a>
+  
+    <li><a href="../Object.html">Object</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Hirb::Menu</h1>
+
+  <div id="description" class="description">
+    
+<p>This class provides a menu using Hirb’s table helpers by default to display
+choices. <a href="Menu.html">Menu</a> choices (syntax at <a
+href="Util.html#method-i-choose_from_array">Hirb::Util#choose_from_array</a>)
+refer to rows. However, when in two_d mode, choices refer to specific cells
+by appending a ‘:field’ to a choice. A field name can be an abbreviated.
+Menus can also have an action mode, which turns the menu prompt into a
+commandline that executes the choices as arguments and uses methods as
+actions/commands.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="CHOSEN_ARG">CHOSEN_ARG
+        
+        <dd class="description">
+        
+      
+        <dt id="CHOSEN_REGEXP">CHOSEN_REGEXP
+        
+        <dd class="description"><p>Detects valid choices and optional field/column</p>
+        
+      
+        <dt id="DIRECTIONS">DIRECTIONS
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-render" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">render</span><span
+            class="method-args">(output, options={}, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This method will return an array unless it’s exited by simply pressing
+return, which returns nil. If given a block, the block will yield if and
+with any menu items are chosen. All options except for the ones below are
+passed to render the menu.</p>
+
+<h4 id="method-c-render-label-Options%3A">Options:</h4>
+<dl class="rdoc-list label-list"><dt><strong>:helper_class</strong>
+<dd>
+<p>Helper class to render menu. Helper class is expected to implement
+numbering given a :number option. To use a very basic menu, set this to
+false. Defaults to <a
+href="Helpers/AutoTable.html">Hirb::Helpers::AutoTable</a>.</p>
+</dd><dt><strong>:prompt</strong>
+<dd>
+<p><a href="String.html">String</a> for menu prompt. Defaults to "Choose: ".</p>
+</dd><dt><strong>:ask</strong>
+<dd>
+<p>Always ask for input, even if there is only one choice. Default is true.</p>
+</dd><dt><strong>:directions</strong>
+<dd>
+<p>Display directions before prompt. Default is true.</p>
+</dd><dt><strong>:readline</strong>
+<dd>
+<p>Use readline to get user input if available. Input strings are added to
+readline history. Default is false.</p>
+</dd><dt><strong>:two_d</strong>
+<dd>
+<p>Turn menu into a 2 dimensional (2D) menu by allowing user to pick values
+from table cells. Default is false.</p>
+</dd><dt><strong>:default_field</strong>
+<dd>
+<p>Default field for a 2D menu. Defaults to first field in a table.</p>
+</dd><dt><strong>:action</strong>
+<dd>
+<p>Turn menu into an action menu by letting user pass menu choices as an
+argument to a method/command. A menu choice’s place amongst other arguments
+is preserved. Default is false.</p>
+</dd><dt><strong>:multi_action</strong>
+<dd>
+<p>Execute action menu multiple times iterating over the menu choices. Default
+is false.</p>
+</dd><dt><strong>:action_object</strong>
+<dd>
+<p><a href="../Object.html">Object</a> that takes method/command calls.
+Default is main.</p>
+</dd><dt><strong>:command</strong>
+<dd>
+<p>Default method/command to call when no command given.</p>
+</dd><dt><strong>:reopen</strong>
+<dd>
+<p>Reopens $stdin with given file or with /dev/tty when set to true. Use when
+$stdin is already reading in piped data.</p>
+</dd></dl>
+
+<p>Examples:</p>
+
+<pre class="ruby"><span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">extend</span> <span class="ruby-constant">Hirb</span><span class="ruby-operator">::</span><span class="ruby-constant">Console</span>
+=<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">self</span>
+<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">menu</span> [<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>], :<span class="ruby-identifier">prompt=</span><span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;So many choices, so little time: &quot;</span>
+<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">menu</span> [{:<span class="ruby-identifier">a=</span><span class="ruby-operator">&gt;</span><span class="ruby-value">1</span>, :<span class="ruby-identifier">b=</span><span class="ruby-operator">&gt;</span><span class="ruby-value">2</span>}, {:<span class="ruby-identifier">a=</span><span class="ruby-operator">&gt;</span><span class="ruby-value">3</span>, :<span class="ruby-identifier">b=</span><span class="ruby-operator">&gt;</span><span class="ruby-value">4</span>}], :<span class="ruby-identifier">fields=</span><span class="ruby-operator">&gt;</span>[:<span class="ruby-identifier">a</span>,<span class="ruby-identifier">b</span>], :<span class="ruby-identifier">two_d=</span><span class="ruby-operator">&gt;</span><span class="ruby-keyword">true</span>)
+</pre>
+          
+
+          
+          <div class="method-source-code" id="render-source">
+            <pre><span class="ruby-comment"># File lib/hirb/menu.rb, line 42</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">render</span>(<span class="ruby-identifier">output</span>, <span class="ruby-identifier">options</span>={}, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">new</span>(<span class="ruby-identifier">options</span>).<span class="ruby-identifier">render</span>(<span class="ruby-identifier">output</span>, &amp;<span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">Error</span>=<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+  <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Error: #{e.message}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- render-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- render-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

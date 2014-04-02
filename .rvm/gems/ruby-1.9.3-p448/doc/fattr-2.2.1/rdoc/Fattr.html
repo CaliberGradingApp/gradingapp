@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module Fattr - fattr-2.2.1 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/fattr.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-version">::version</a>
+    
+    <li><a href="#method-i-fattrs">#fattrs</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Fattr.html">Fattr</a>
+  
+    <li><a href="./Fattr/List.html">Fattr::List</a>
+  
+    <li><a href="./Module.html">Module</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module Fattr</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="Version">Version
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-version" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">version</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="version-source">
+            <pre><span class="ruby-comment"># File lib/fattr.rb, line 3</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">version</span>() <span class="ruby-constant">Fattr</span><span class="ruby-operator">::</span><span class="ruby-constant">Version</span> <span class="ruby-keyword">end</span></pre>
+          </div><!-- version-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- version-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-fattrs" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">fattrs</span><span
+            class="method-args">(*args, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="fattrs-source">
+            <pre><span class="ruby-comment"># File lib/fattr.rb, line 29</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">fattrs</span>(*<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>)
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span>
+      <span class="ruby-identifier">returned</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+
+      <span class="ruby-identifier">args</span>.<span class="ruby-identifier">flatten!</span>
+      <span class="ruby-identifier">args</span>.<span class="ruby-identifier">compact!</span>
+
+      <span class="ruby-identifier">all_hashes</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">all?</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">arg</span><span class="ruby-operator">|</span> <span class="ruby-constant">Hash</span><span class="ruby-operator">===</span><span class="ruby-identifier">arg</span>}
+
+      <span class="ruby-identifier">names_and_configs</span> = {}
+
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">all_hashes</span>
+        <span class="ruby-identifier">args</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">hash</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">hash</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">val</span><span class="ruby-operator">|</span>
+            <span class="ruby-identifier">name</span> = <span class="ruby-identifier">key</span>.<span class="ruby-identifier">to_s</span>
+            <span class="ruby-identifier">config</span> = <span class="ruby-constant">Hash</span><span class="ruby-operator">===</span><span class="ruby-identifier">val</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">val</span> <span class="ruby-operator">:</span> {<span class="ruby-value">:default</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">val</span>}
+            <span class="ruby-identifier">names_and_configs</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-identifier">config</span>
+          <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">config</span> = <span class="ruby-constant">Hash</span><span class="ruby-operator">===</span><span class="ruby-identifier">args</span>.<span class="ruby-identifier">last</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">pop</span> <span class="ruby-operator">:</span> {}
+        <span class="ruby-identifier">names</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">select</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">arg</span><span class="ruby-operator">|</span> <span class="ruby-constant">Symbol</span><span class="ruby-operator">===</span><span class="ruby-identifier">arg</span> <span class="ruby-keyword">or</span> <span class="ruby-constant">String</span><span class="ruby-operator">===</span><span class="ruby-identifier">arg</span>}.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">arg</span><span class="ruby-operator">|</span> <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">to_s</span>}
+        <span class="ruby-identifier">names</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">names_and_configs</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-identifier">config</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">initializers</span> = <span class="ruby-identifier">__fattrs__</span>.<span class="ruby-identifier">initializers</span>
+
+      <span class="ruby-identifier">names_and_configs</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>, <span class="ruby-identifier">config</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">raise</span>(<span class="ruby-constant">NameError</span>, <span class="ruby-node">&quot;bad instance variable name '@#{ name }'&quot;</span>) <span class="ruby-keyword">if</span>(<span class="ruby-node">&quot;@#{ name }&quot;</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/[!?=]$/</span>)
+
+        <span class="ruby-identifier">name</span> = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>
+
+        <span class="ruby-identifier">default</span> = <span class="ruby-keyword">nil</span>
+        <span class="ruby-identifier">default</span> = <span class="ruby-identifier">config</span>[<span class="ruby-value">:default</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">config</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:default</span>)
+        <span class="ruby-identifier">default</span> = <span class="ruby-identifier">config</span>[<span class="ruby-string">'default'</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">config</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-string">'default'</span>)
+
+        <span class="ruby-identifier">inheritable</span> = <span class="ruby-keyword">false</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-constant">Module</span><span class="ruby-operator">===</span><span class="ruby-keyword">self</span>
+          <span class="ruby-identifier">inheritable</span> = <span class="ruby-identifier">config</span>[<span class="ruby-value">:inheritable</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">config</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:inheritable</span>)
+          <span class="ruby-identifier">inheritable</span> = <span class="ruby-identifier">config</span>[<span class="ruby-string">'inheritable'</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">config</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-string">'inheritable'</span>)
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-identifier">initialize</span> = (
+          <span class="ruby-keyword">if</span> <span class="ruby-identifier">inheritable</span>
+            <span class="ruby-identifier">lambda</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span>*<span class="ruby-identifier">ignored</span><span class="ruby-operator">|</span>
+              <span class="ruby-identifier">parents</span> = <span class="ruby-identifier">ancestors</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>]
+              <span class="ruby-identifier">catch</span>(<span class="ruby-value">:value</span>) <span class="ruby-keyword">do</span>
+                <span class="ruby-identifier">parents</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">parent</span><span class="ruby-operator">|</span>
+                  <span class="ruby-identifier">throw</span>(<span class="ruby-value">:value</span>, <span class="ruby-identifier">parent</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">name</span>)) <span class="ruby-keyword">if</span> <span class="ruby-identifier">parent</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">name</span>)
+                <span class="ruby-keyword">end</span>
+                <span class="ruby-identifier">block</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">block</span>.<span class="ruby-identifier">call</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">default</span>
+              <span class="ruby-keyword">end</span>
+            <span class="ruby-keyword">end</span>
+          <span class="ruby-keyword">else</span>
+            <span class="ruby-identifier">block</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">lambda</span>{<span class="ruby-operator">|</span>*<span class="ruby-identifier">ignored</span><span class="ruby-operator">|</span> <span class="ruby-identifier">default</span> }
+          <span class="ruby-keyword">end</span>
+        )
+
+        <span class="ruby-identifier">initializer</span> = <span class="ruby-identifier">lambda</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">this</span><span class="ruby-operator">|</span>
+          <span class="ruby-constant">Object</span>.<span class="ruby-identifier">instance_method</span>(<span class="ruby-string">'instance_eval'</span>).<span class="ruby-identifier">bind</span>(<span class="ruby-identifier">this</span>).<span class="ruby-identifier">call</span>(&amp;<span class="ruby-identifier">initialize</span>)
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-identifier">initializer_id</span> = <span class="ruby-identifier">initializer</span>.<span class="ruby-identifier">object_id</span>
+
+        <span class="ruby-identifier">__fattrs__</span>.<span class="ruby-identifier">initializers</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-identifier">initializer</span>
+
+        <span class="ruby-identifier">compile</span> = <span class="ruby-identifier">lambda</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">code</span><span class="ruby-operator">|</span>
+          <span class="ruby-keyword">begin</span>
+            <span class="ruby-identifier">module_eval</span>(<span class="ruby-identifier">code</span>)
+          <span class="ruby-keyword">rescue</span> <span class="ruby-constant">SyntaxError</span>
+            <span class="ruby-identifier">raise</span>(<span class="ruby-constant">SyntaxError</span>, <span class="ruby-node">&quot;\n#{ code }\n&quot;</span>)
+          <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+
+      <span class="ruby-comment"># setter, block invocation caches block</span>
+        <span class="ruby-identifier">code</span> = <span class="ruby-value">&lt;&lt;-code
+          def #{ name }=(*value, &amp;block)
+            value.unshift block if block
+            @#{ name } = value.first
+          end
+        code</span>
+        <span class="ruby-identifier">compile</span>[<span class="ruby-identifier">code</span>]
+
+      <span class="ruby-comment"># getter, providing a value or block causes it to acts as setter</span>
+        <span class="ruby-identifier">code</span> = <span class="ruby-value">&lt;&lt;-code
+          def #{ name }(*value, &amp;block)
+            value.unshift block if block
+            return self.send('#{ name }=', value.first) unless value.empty?
+            #{ name }! unless defined? @#{ name }
+            @#{ name }
+          end
+        code</span>
+        <span class="ruby-identifier">compile</span>[<span class="ruby-identifier">code</span>]
+
+      <span class="ruby-comment"># bang method re-calls any initializer given at declaration time</span>
+<span class="ruby-comment">        code = &lt;&lt;-code
+          def #{ name }!
+            initializer = ObjectSpace._id2ref #{ initializer_id }
+            self.#{ name } = initializer.call(self)
+            @#{ name }
+          end
+        code
+        compile[code]
+</span>
+        <span class="ruby-identifier">module_eval</span> <span class="ruby-keyword">do</span>
+          <span class="ruby-identifier">define_method</span> <span class="ruby-value">:&quot;#{ name }!&quot;</span> <span class="ruby-keyword">do</span>
+            <span class="ruby-keyword">self</span>.<span class="ruby-identifier">send</span> <span class="ruby-value">:&quot;#{ name }=&quot;</span>, <span class="ruby-identifier">initializer</span>.<span class="ruby-identifier">call</span>(<span class="ruby-keyword">self</span>)
+            <span class="ruby-keyword">self</span>.<span class="ruby-identifier">instance_variable_get</span> <span class="ruby-value">:&quot;@#{name}&quot;</span>
+          <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+
+      <span class="ruby-comment"># query simply defers to getter - cast to bool</span>
+        <span class="ruby-identifier">code</span> = <span class="ruby-value">&lt;&lt;-code
+          def #{ name }?
+            self.#{ name }
+          end
+        code</span>
+        <span class="ruby-identifier">compile</span>[<span class="ruby-identifier">code</span>]
+
+        <span class="ruby-identifier">fattrs</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">name</span>
+        <span class="ruby-identifier">returned</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-identifier">initializer</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">returned</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-keyword">begin</span>
+        <span class="ruby-identifier">__fattr_list__</span>
+      <span class="ruby-keyword">rescue</span> <span class="ruby-constant">NameError</span>, <span class="ruby-constant">TypeError</span>
+        <span class="ruby-identifier">singleton_class</span> =
+          <span class="ruby-keyword">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">self</span>
+            <span class="ruby-keyword">self</span>
+          <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">klass</span> = <span class="ruby-keyword">self</span>
+        <span class="ruby-identifier">singleton_class</span>.<span class="ruby-identifier">module_eval</span> <span class="ruby-keyword">do</span>
+          <span class="ruby-identifier">fattr_list</span> = <span class="ruby-constant">List</span>.<span class="ruby-identifier">new</span>
+          <span class="ruby-identifier">define_method</span>(<span class="ruby-string">'fattr_list'</span>){ <span class="ruby-identifier">klass</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">self</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">fattr_list</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">raise</span>(<span class="ruby-constant">NameError</span>) }
+          <span class="ruby-identifier">alias_method</span> <span class="ruby-string">'__fattr_list__'</span>, <span class="ruby-string">'fattr_list'</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">__fattr_list__</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span></pre>
+          </div><!-- fattrs-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- fattrs-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

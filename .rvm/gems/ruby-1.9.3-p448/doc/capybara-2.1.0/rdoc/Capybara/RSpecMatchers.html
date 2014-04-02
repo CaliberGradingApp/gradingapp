@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module Capybara::RSpecMatchers - capybara-2.1.0 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/capybara/rspec/matchers.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-have_button">#have_button</a>
+    
+    <li><a href="#method-i-have_checked_field">#have_checked_field</a>
+    
+    <li><a href="#method-i-have_content">#have_content</a>
+    
+    <li><a href="#method-i-have_css">#have_css</a>
+    
+    <li><a href="#method-i-have_field">#have_field</a>
+    
+    <li><a href="#method-i-have_link">#have_link</a>
+    
+    <li><a href="#method-i-have_select">#have_select</a>
+    
+    <li><a href="#method-i-have_selector">#have_selector</a>
+    
+    <li><a href="#method-i-have_table">#have_table</a>
+    
+    <li><a href="#method-i-have_text">#have_text</a>
+    
+    <li><a href="#method-i-have_title">#have_title</a>
+    
+    <li><a href="#method-i-have_unchecked_field">#have_unchecked_field</a>
+    
+    <li><a href="#method-i-have_xpath">#have_xpath</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../lib/capybara/spec/fixtures/another_test_file_txt.html">another_test_file</a>
+  
+    <li class="file"><a href="../lib/capybara/spec/fixtures/test_file_txt.html">test_file</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Capybara.html">Capybara</a>
+  
+    <li><a href="../Capybara/Ambiguous.html">Capybara::Ambiguous</a>
+  
+    <li><a href="../Capybara/CapybaraError.html">Capybara::CapybaraError</a>
+  
+    <li><a href="../Capybara/DSL.html">Capybara::DSL</a>
+  
+    <li><a href="../Capybara/Driver.html">Capybara::Driver</a>
+  
+    <li><a href="../Capybara/Driver/Base.html">Capybara::Driver::Base</a>
+  
+    <li><a href="../Capybara/Driver/Node.html">Capybara::Driver::Node</a>
+  
+    <li><a href="../Capybara/DriverNotFoundError.html">Capybara::DriverNotFoundError</a>
+  
+    <li><a href="../Capybara/ElementNotFound.html">Capybara::ElementNotFound</a>
+  
+    <li><a href="../Capybara/ExpectationNotMet.html">Capybara::ExpectationNotMet</a>
+  
+    <li><a href="../Capybara/Features.html">Capybara::Features</a>
+  
+    <li><a href="../Capybara/FileNotFound.html">Capybara::FileNotFound</a>
+  
+    <li><a href="../Capybara/FrozenInTime.html">Capybara::FrozenInTime</a>
+  
+    <li><a href="../Capybara/Helpers.html">Capybara::Helpers</a>
+  
+    <li><a href="../Capybara/InfiniteRedirectError.html">Capybara::InfiniteRedirectError</a>
+  
+    <li><a href="../Capybara/Node.html">Capybara::Node</a>
+  
+    <li><a href="../Capybara/Node/Actions.html">Capybara::Node::Actions</a>
+  
+    <li><a href="../Capybara/Node/Base.html">Capybara::Node::Base</a>
+  
+    <li><a href="../Capybara/Node/Document.html">Capybara::Node::Document</a>
+  
+    <li><a href="../Capybara/Node/Element.html">Capybara::Node::Element</a>
+  
+    <li><a href="../Capybara/Node/Finders.html">Capybara::Node::Finders</a>
+  
+    <li><a href="../Capybara/Node/Matchers.html">Capybara::Node::Matchers</a>
+  
+    <li><a href="../Capybara/Node/Simple.html">Capybara::Node::Simple</a>
+  
+    <li><a href="../Capybara/NotSupportedByDriverError.html">Capybara::NotSupportedByDriverError</a>
+  
+    <li><a href="../Capybara/Query.html">Capybara::Query</a>
+  
+    <li><a href="../Capybara/RSpecMatchers.html">Capybara::RSpecMatchers</a>
+  
+    <li><a href="../Capybara/RSpecMatchers/HaveSelector.html">Capybara::RSpecMatchers::HaveSelector</a>
+  
+    <li><a href="../Capybara/RSpecMatchers/HaveText.html">Capybara::RSpecMatchers::HaveText</a>
+  
+    <li><a href="../Capybara/RSpecMatchers/HaveTitle.html">Capybara::RSpecMatchers::HaveTitle</a>
+  
+    <li><a href="../Capybara/RSpecMatchers/Matcher.html">Capybara::RSpecMatchers::Matcher</a>
+  
+    <li><a href="../Capybara/RackTest.html">Capybara::RackTest</a>
+  
+    <li><a href="../Capybara/RackTest/Browser.html">Capybara::RackTest::Browser</a>
+  
+    <li><a href="../Capybara/RackTest/CSSHandlers.html">Capybara::RackTest::CSSHandlers</a>
+  
+    <li><a href="../Capybara/RackTest/Driver.html">Capybara::RackTest::Driver</a>
+  
+    <li><a href="../Capybara/RackTest/Form.html">Capybara::RackTest::Form</a>
+  
+    <li><a href="../Capybara/RackTest/Form/NilUploadedFile.html">Capybara::RackTest::Form::NilUploadedFile</a>
+  
+    <li><a href="../Capybara/RackTest/Node.html">Capybara::RackTest::Node</a>
+  
+    <li><a href="../Capybara/Result.html">Capybara::Result</a>
+  
+    <li><a href="../Capybara/Selector.html">Capybara::Selector</a>
+  
+    <li><a href="../Capybara/Selector/Filter.html">Capybara::Selector::Filter</a>
+  
+    <li><a href="../Capybara/Selenium.html">Capybara::Selenium</a>
+  
+    <li><a href="../Capybara/Selenium/Driver.html">Capybara::Selenium::Driver</a>
+  
+    <li><a href="../Capybara/Selenium/Node.html">Capybara::Selenium::Node</a>
+  
+    <li><a href="../Capybara/Server.html">Capybara::Server</a>
+  
+    <li><a href="../Capybara/Server/Middleware.html">Capybara::Server::Middleware</a>
+  
+    <li><a href="../Capybara/Session.html">Capybara::Session</a>
+  
+    <li><a href="../Capybara/SpecHelper.html">Capybara::SpecHelper</a>
+  
+    <li><a href="../Capybara/UnselectNotAllowed.html">Capybara::UnselectNotAllowed</a>
+  
+    <li><a href="../TestApp.html">TestApp</a>
+  
+    <li><a href="../TestApp/TestAppError.html">TestApp::TestAppError</a>
+  
+    <li><a href="../Object.html">Object</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module Capybara::RSpecMatchers</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-have_button" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">have_button</span><span
+            class="method-args">(locator)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="have_button-source">
+            <pre><span class="ruby-comment"># File lib/capybara/rspec/matchers.rb, line 129</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">have_button</span>(<span class="ruby-identifier">locator</span>)
+  <span class="ruby-constant">HaveSelector</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:button</span>, <span class="ruby-identifier">locator</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- have_button-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- have_button-method -->
+
+    
+      <div id="method-i-have_checked_field" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">have_checked_field</span><span
+            class="method-args">(locator)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="have_checked_field-source">
+            <pre><span class="ruby-comment"># File lib/capybara/rspec/matchers.rb, line 137</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">have_checked_field</span>(<span class="ruby-identifier">locator</span>)
+  <span class="ruby-constant">HaveSelector</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:field</span>, <span class="ruby-identifier">locator</span>, <span class="ruby-value">:checked</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- have_checked_field-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- have_checked_field-method -->
+
+    
+      <div id="method-i-have_content" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">have_content</span><span
+            class="method-args">(*args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="RSpecMatchers.html#method-i-have_text">have_text</a>
+        </div>
+        
+      </div><!-- have_content-method -->
+
+    
+      <div id="method-i-have_css" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">have_css</span><span
+            class="method-args">(css, options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="have_css-source">
+            <pre><span class="ruby-comment"># File lib/capybara/rspec/matchers.rb, line 112</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">have_css</span>(<span class="ruby-identifier">css</span>, <span class="ruby-identifier">options</span>={})
+  <span class="ruby-constant">HaveSelector</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:css</span>, <span class="ruby-identifier">css</span>, <span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- have_css-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- have_css-method -->
+
+    
+      <div id="method-i-have_field" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">have_field</span><span
+            class="method-args">(locator, options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="have_field-source">
+            <pre><span class="ruby-comment"># File lib/capybara/rspec/matchers.rb, line 133</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">have_field</span>(<span class="ruby-identifier">locator</span>, <span class="ruby-identifier">options</span>={})
+  <span class="ruby-constant">HaveSelector</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:field</span>, <span class="ruby-identifier">locator</span>, <span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- have_field-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- have_field-method -->
+
+    
+      <div id="method-i-have_link" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">have_link</span><span
+            class="method-args">(locator, options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="have_link-source">
+            <pre><span class="ruby-comment"># File lib/capybara/rspec/matchers.rb, line 125</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">have_link</span>(<span class="ruby-identifier">locator</span>, <span class="ruby-identifier">options</span>={})
+  <span class="ruby-constant">HaveSelector</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:link</span>, <span class="ruby-identifier">locator</span>, <span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- have_link-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- have_link-method -->
+
+    
+      <div id="method-i-have_select" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">have_select</span><span
+            class="method-args">(locator, options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="have_select-source">
+            <pre><span class="ruby-comment"># File lib/capybara/rspec/matchers.rb, line 145</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">have_select</span>(<span class="ruby-identifier">locator</span>, <span class="ruby-identifier">options</span>={})
+  <span class="ruby-constant">HaveSelector</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:select</span>, <span class="ruby-identifier">locator</span>, <span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- have_select-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- have_select-method -->
+
+    
+      <div id="method-i-have_selector" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">have_selector</span><span
+            class="method-args">(*args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="have_selector-source">
+            <pre><span class="ruby-comment"># File lib/capybara/rspec/matchers.rb, line 104</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">have_selector</span>(*<span class="ruby-identifier">args</span>)
+  <span class="ruby-constant">HaveSelector</span>.<span class="ruby-identifier">new</span>(*<span class="ruby-identifier">args</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- have_selector-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- have_selector-method -->
+
+    
+      <div id="method-i-have_table" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">have_table</span><span
+            class="method-args">(locator, options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="have_table-source">
+            <pre><span class="ruby-comment"># File lib/capybara/rspec/matchers.rb, line 149</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">have_table</span>(<span class="ruby-identifier">locator</span>, <span class="ruby-identifier">options</span>={})
+  <span class="ruby-constant">HaveSelector</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:table</span>, <span class="ruby-identifier">locator</span>, <span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- have_table-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- have_table-method -->
+
+    
+      <div id="method-i-have_text" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">have_text</span><span
+            class="method-args">(*args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="have_text-source">
+            <pre><span class="ruby-comment"># File lib/capybara/rspec/matchers.rb, line 116</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">have_text</span>(*<span class="ruby-identifier">args</span>)
+  <span class="ruby-constant">HaveText</span>.<span class="ruby-identifier">new</span>(*<span class="ruby-identifier">args</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- have_text-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="RSpecMatchers.html#method-i-have_content">have_content</a>
+        </div>
+        
+
+        
+      </div><!-- have_text-method -->
+
+    
+      <div id="method-i-have_title" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">have_title</span><span
+            class="method-args">(title)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="have_title-source">
+            <pre><span class="ruby-comment"># File lib/capybara/rspec/matchers.rb, line 121</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">have_title</span>(<span class="ruby-identifier">title</span>)
+  <span class="ruby-constant">HaveTitle</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">title</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- have_title-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- have_title-method -->
+
+    
+      <div id="method-i-have_unchecked_field" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">have_unchecked_field</span><span
+            class="method-args">(locator)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="have_unchecked_field-source">
+            <pre><span class="ruby-comment"># File lib/capybara/rspec/matchers.rb, line 141</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">have_unchecked_field</span>(<span class="ruby-identifier">locator</span>)
+  <span class="ruby-constant">HaveSelector</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:field</span>, <span class="ruby-identifier">locator</span>, <span class="ruby-value">:unchecked</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- have_unchecked_field-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- have_unchecked_field-method -->
+
+    
+      <div id="method-i-have_xpath" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">have_xpath</span><span
+            class="method-args">(xpath, options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="have_xpath-source">
+            <pre><span class="ruby-comment"># File lib/capybara/rspec/matchers.rb, line 108</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">have_xpath</span>(<span class="ruby-identifier">xpath</span>, <span class="ruby-identifier">options</span>={})
+  <span class="ruby-constant">HaveSelector</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:xpath</span>, <span class="ruby-identifier">xpath</span>, <span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- have_xpath-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- have_xpath-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

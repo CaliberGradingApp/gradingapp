@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"strict:EFI"SexpProcessor#strict;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"HRaise an exception if no process_<type> method is found for a Sexp.;T:
+@fileI"lib/sexp_processor.rb;TF@

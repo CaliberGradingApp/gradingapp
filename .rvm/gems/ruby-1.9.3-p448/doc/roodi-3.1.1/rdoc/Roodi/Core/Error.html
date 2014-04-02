@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Roodi::Core::Error - roodi-3.1.1 Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/roodi/core/error.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-to_s">#to_s</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../Roodi.html">Roodi</a>
+  
+    <li><a href="../../Roodi/Checks.html">Roodi::Checks</a>
+  
+    <li><a href="../../Roodi/Checks/AbcMetricMethodCheck.html">Roodi::Checks::AbcMetricMethodCheck</a>
+  
+    <li><a href="../../Roodi/Checks/AssignmentInConditionalCheck.html">Roodi::Checks::AssignmentInConditionalCheck</a>
+  
+    <li><a href="../../Roodi/Checks/CaseMissingElseCheck.html">Roodi::Checks::CaseMissingElseCheck</a>
+  
+    <li><a href="../../Roodi/Checks/Check.html">Roodi::Checks::Check</a>
+  
+    <li><a href="../../Roodi/Checks/ClassLineCountCheck.html">Roodi::Checks::ClassLineCountCheck</a>
+  
+    <li><a href="../../Roodi/Checks/ClassNameCheck.html">Roodi::Checks::ClassNameCheck</a>
+  
+    <li><a href="../../Roodi/Checks/ClassVariableCheck.html">Roodi::Checks::ClassVariableCheck</a>
+  
+    <li><a href="../../Roodi/Checks/ControlCouplingCheck.html">Roodi::Checks::ControlCouplingCheck</a>
+  
+    <li><a href="../../Roodi/Checks/CoreMethodOverrideCheck.html">Roodi::Checks::CoreMethodOverrideCheck</a>
+  
+    <li><a href="../../Roodi/Checks/CyclomaticComplexityBlockCheck.html">Roodi::Checks::CyclomaticComplexityBlockCheck</a>
+  
+    <li><a href="../../Roodi/Checks/CyclomaticComplexityCheck.html">Roodi::Checks::CyclomaticComplexityCheck</a>
+  
+    <li><a href="../../Roodi/Checks/CyclomaticComplexityMethodCheck.html">Roodi::Checks::CyclomaticComplexityMethodCheck</a>
+  
+    <li><a href="../../Roodi/Checks/EmptyRescueBodyCheck.html">Roodi::Checks::EmptyRescueBodyCheck</a>
+  
+    <li><a href="../../Roodi/Checks/ForLoopCheck.html">Roodi::Checks::ForLoopCheck</a>
+  
+    <li><a href="../../Roodi/Checks/LineCountCheck.html">Roodi::Checks::LineCountCheck</a>
+  
+    <li><a href="../../Roodi/Checks/MethodLineCountCheck.html">Roodi::Checks::MethodLineCountCheck</a>
+  
+    <li><a href="../../Roodi/Checks/MethodNameCheck.html">Roodi::Checks::MethodNameCheck</a>
+  
+    <li><a href="../../Roodi/Checks/ModuleLineCountCheck.html">Roodi::Checks::ModuleLineCountCheck</a>
+  
+    <li><a href="../../Roodi/Checks/ModuleNameCheck.html">Roodi::Checks::ModuleNameCheck</a>
+  
+    <li><a href="../../Roodi/Checks/NameCheck.html">Roodi::Checks::NameCheck</a>
+  
+    <li><a href="../../Roodi/Checks/NpathComplexityCheck.html">Roodi::Checks::NpathComplexityCheck</a>
+  
+    <li><a href="../../Roodi/Checks/NpathComplexityMethodCheck.html">Roodi::Checks::NpathComplexityMethodCheck</a>
+  
+    <li><a href="../../Roodi/Checks/ParameterNumberCheck.html">Roodi::Checks::ParameterNumberCheck</a>
+  
+    <li><a href="../../Roodi/Core.html">Roodi::Core</a>
+  
+    <li><a href="../../Roodi/Core/CheckingVisitor.html">Roodi::Core::CheckingVisitor</a>
+  
+    <li><a href="../../Roodi/Core/Error.html">Roodi::Core::Error</a>
+  
+    <li><a href="../../Roodi/Core/Parser.html">Roodi::Core::Parser</a>
+  
+    <li><a href="../../Roodi/Core/Runner.html">Roodi::Core::Runner</a>
+  
+    <li><a href="../../RoodiTask.html">RoodiTask</a>
+  
+    <li><a href="../../Sexp.html">Sexp</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Roodi::Core::Error</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-filename" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">filename</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-line_number" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">line_number</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-message" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">message</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(filename, line_number, message)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/roodi/core/error.rb, line 6</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-identifier">line_number</span>, <span class="ruby-identifier">message</span>)
+  <span class="ruby-ivar">@filename</span> = <span class="ruby-identifier">filename</span>
+  <span class="ruby-ivar">@line_number</span> = <span class="ruby-identifier">line_number</span>
+  <span class="ruby-ivar">@message</span> = <span class="ruby-identifier">message</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-to_s" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_s</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="to_s-source">
+            <pre><span class="ruby-comment"># File lib/roodi/core/error.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>
+  <span class="ruby-node">&quot;#{@filename}:#{@line_number} - #{@message}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- to_s-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- to_s-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

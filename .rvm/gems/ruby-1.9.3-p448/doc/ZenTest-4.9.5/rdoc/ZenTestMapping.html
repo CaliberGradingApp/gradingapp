@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module ZenTestMapping - ZenTest-4.9.5 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/zentest_mapping.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-munge">#munge</a>
+    
+    <li><a href="#method-i-normal_to_test">#normal_to_test</a>
+    
+    <li><a href="#method-i-test_to_normal">#test_to_normal</a>
+    
+    <li><a href="#method-i-unmunge">#unmunge</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./History_txt.html">History</a>
+  
+    <li class="file"><a href="./Manifest_txt.html">Manifest</a>
+  
+    <li class="file"><a href="./README_txt.html">README</a>
+  
+    <li class="file"><a href="./articles/how_to_use_zentest_txt.html">how_to_use_zentest</a>
+  
+    <li class="file"><a href="./example_txt.html">example</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Autotest.html">Autotest</a>
+  
+    <li><a href="./Autotest/AutoUpdate.html">Autotest::AutoUpdate</a>
+  
+    <li><a href="./Autotest/Bundler.html">Autotest::Bundler</a>
+  
+    <li><a href="./Autotest/Isolate.html">Autotest::Isolate</a>
+  
+    <li><a href="./Autotest/Once.html">Autotest::Once</a>
+  
+    <li><a href="./Autotest/Preload.html">Autotest::Preload</a>
+  
+    <li><a href="./Autotest/RCov.html">Autotest::RCov</a>
+  
+    <li><a href="./Autotest/Restart.html">Autotest::Restart</a>
+  
+    <li><a href="./Autotest/Timestamp.html">Autotest::Timestamp</a>
+  
+    <li><a href="./FunctionalTestMatrix.html">FunctionalTestMatrix</a>
+  
+    <li><a href="./Module.html">Module</a>
+  
+    <li><a href="./Multiruby.html">Multiruby</a>
+  
+    <li><a href="./UnitDiff.html">UnitDiff</a>
+  
+    <li><a href="./ZenTest.html">ZenTest</a>
+  
+    <li><a href="./ZenTestMapping.html">ZenTestMapping</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module ZenTestMapping</h1>
+
+  <div id="description" class="description">
+    
+<p><a href="ZenTestMapping.html">ZenTestMapping</a> - mapping method names
+from impl to test.</p>
+
+<p>Method names are mapped bidirectionally in the following way:</p>
+
+<pre>method      test_method
+method?     test_method_eh          (too much exposure to Canadians :)
+method!     test_method_bang
+method=     test_method_equals
+[]          test_index
+*           test_times
+==          test_equals2
+===         test_equals3</pre>
+
+<p>Further, any of the test methods should be able to have arbitrary
+extensions put on the name to distinguish edge cases:</p>
+
+<pre>method      test_method
+method      test_method_simple
+method      test_method_no_network</pre>
+
+<p>To allow for unmapped test methods (ie, non-unit tests), name them:</p>
+
+<pre>test_integration_.*</pre>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-munge" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">munge</span><span
+            class="method-args">(name) { |name| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="munge-source">
+            <pre><span class="ruby-comment"># File lib/zentest_mapping.rb, line 62</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">munge</span> <span class="ruby-identifier">name</span>
+  <span class="ruby-identifier">name</span> = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">dup</span>
+
+  <span class="ruby-identifier">is_cls_method</span> = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">sub!</span>(<span class="ruby-regexp">/^self\./</span>, <span class="ruby-string">''</span>)
+
+  <span class="ruby-identifier">name</span> = <span class="ruby-identifier">@@method_map</span>[<span class="ruby-identifier">name</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">@@method_map</span>.<span class="ruby-identifier">has_key?</span> <span class="ruby-identifier">name</span>
+  <span class="ruby-identifier">name</span> = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp">/=$/</span>, <span class="ruby-string">'_equals'</span>)
+  <span class="ruby-identifier">name</span> = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp">/\?$/</span>, <span class="ruby-string">'_eh'</span>)
+  <span class="ruby-identifier">name</span> = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp">/\!$/</span>, <span class="ruby-string">'_bang'</span>)
+
+  <span class="ruby-identifier">name</span> = <span class="ruby-keyword">yield</span> <span class="ruby-identifier">name</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+
+  <span class="ruby-identifier">name</span> = <span class="ruby-string">&quot;class_&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">name</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">is_cls_method</span>
+
+  <span class="ruby-identifier">name</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- munge-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- munge-method -->
+
+    
+      <div id="method-i-normal_to_test" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">normal_to_test</span><span
+            class="method-args">(name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Generates a test method name from a normal method, taking into account
+names composed of metacharacters (used for arithmetic, etc</p>
+          
+
+          
+          <div class="method-source-code" id="normal_to_test-source">
+            <pre><span class="ruby-comment"># File lib/zentest_mapping.rb, line 82</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">normal_to_test</span> <span class="ruby-identifier">name</span>
+  <span class="ruby-node">&quot;test_#{munge name}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- normal_to_test-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- normal_to_test-method -->
+
+    
+      <div id="method-i-test_to_normal" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_to_normal</span><span
+            class="method-args">(name, klassname=nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Converts a method name beginning with test to its corresponding normal
+method name, taking into account symbolic names which may have been
+anglicised by <a
+href="ZenTestMapping.html#method-i-normal_to_test">normal_to_test()</a>.</p>
+          
+
+          
+          <div class="method-source-code" id="test_to_normal-source">
+            <pre><span class="ruby-comment"># File lib/zentest_mapping.rb, line 106</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_to_normal</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">klassname</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">unmunge</span>(<span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp">/^test_/</span>, <span class="ruby-string">''</span>)) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-keyword">defined?</span> <span class="ruby-ivar">@inherited_methods</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-identifier">known_methods</span> = (<span class="ruby-ivar">@inherited_methods</span>[<span class="ruby-identifier">klassname</span>] <span class="ruby-operator">||</span> {}).<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">sort</span>.<span class="ruby-identifier">reverse</span>
+      <span class="ruby-identifier">known_methods_re</span> = <span class="ruby-identifier">known_methods</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-constant">Regexp</span>.<span class="ruby-identifier">escape</span>(<span class="ruby-identifier">s</span>) }.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;|&quot;</span>)
+      <span class="ruby-identifier">n</span> = <span class="ruby-identifier">n</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-node">/^(#{known_methods_re})(_.*)?$/</span>) { <span class="ruby-node">$1</span> } <span class="ruby-keyword">unless</span>
+        <span class="ruby-identifier">known_methods_re</span>.<span class="ruby-identifier">empty?</span>
+      <span class="ruby-identifier">n</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- test_to_normal-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- test_to_normal-method -->
+
+    
+      <div id="method-i-unmunge" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">unmunge</span><span
+            class="method-args">(name) { |name| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="unmunge-source">
+            <pre><span class="ruby-comment"># File lib/zentest_mapping.rb, line 86</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">unmunge</span> <span class="ruby-identifier">name</span>
+  <span class="ruby-identifier">name</span> = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">dup</span>
+
+  <span class="ruby-identifier">is_cls_method</span> = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">sub!</span>(<span class="ruby-regexp">/^class_/</span>, <span class="ruby-string">''</span>)
+
+  <span class="ruby-identifier">name</span> = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp">/_equals(_.*)?$/</span>, <span class="ruby-string">'='</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">name</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/index/</span>
+  <span class="ruby-identifier">name</span> = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp">/_bang(_.*)?$/</span>, <span class="ruby-string">'!'</span>)
+  <span class="ruby-identifier">name</span> = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp">/_eh(_.*)?$/</span>, <span class="ruby-string">'?'</span>)
+  <span class="ruby-identifier">name</span> = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-node">/^(#{@@mapped_re})(_.*)?$/</span>) {<span class="ruby-node">$1</span>}
+  <span class="ruby-identifier">name</span> = <span class="ruby-keyword">yield</span> <span class="ruby-identifier">name</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+  <span class="ruby-identifier">name</span> = <span class="ruby-identifier">@@method_map</span>[<span class="ruby-identifier">name</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">@@method_map</span>.<span class="ruby-identifier">has_key?</span> <span class="ruby-identifier">name</span>
+  <span class="ruby-identifier">name</span> = <span class="ruby-string">'self.'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">name</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">is_cls_method</span>
+
+  <span class="ruby-identifier">name</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- unmunge-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- unmunge-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

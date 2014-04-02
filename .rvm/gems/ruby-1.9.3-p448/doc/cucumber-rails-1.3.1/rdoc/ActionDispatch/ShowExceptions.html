@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class ActionDispatch::ShowExceptions - cucumber-rails-1.3.1 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/cucumber/rails/action_controller.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="../Object.html">Object</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-__cucumber_orig_call__">#__cucumber_orig_call__</a>
+    
+    <li><a href="#method-i-call">#call</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../lib/generators/cucumber/install/USAGE.html">USAGE</a>
+  
+    <li class="file"><a href="../lib/generators/cucumber/install/templates/support/edit_warning_txt.html">edit_warning</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Cucumber.html">Cucumber</a>
+  
+    <li><a href="../Cucumber/InstallGenerator.html">Cucumber::InstallGenerator</a>
+  
+    <li><a href="../Cucumber/Rails.html">Cucumber::Rails</a>
+  
+    <li><a href="../Cucumber/Rails/Capybara.html">Cucumber::Rails::Capybara</a>
+  
+    <li><a href="../Cucumber/Rails/Capybara/JavascriptEmulation.html">Cucumber::Rails::Capybara::JavascriptEmulation</a>
+  
+    <li><a href="../Cucumber/Rails/Capybara/SelectDatesAndTimes.html">Cucumber::Rails::Capybara::SelectDatesAndTimes</a>
+  
+    <li><a href="../Cucumber/Rails/Database.html">Cucumber::Rails::Database</a>
+  
+    <li><a href="../Cucumber/Rails/Database/DeletionStrategy.html">Cucumber::Rails::Database::DeletionStrategy</a>
+  
+    <li><a href="../Cucumber/Rails/Database/InvalidStrategy.html">Cucumber::Rails::Database::InvalidStrategy</a>
+  
+    <li><a href="../Cucumber/Rails/Database/SharedConnectionStrategy.html">Cucumber::Rails::Database::SharedConnectionStrategy</a>
+  
+    <li><a href="../Cucumber/Rails/Database/Strategy.html">Cucumber::Rails::Database::Strategy</a>
+  
+    <li><a href="../Cucumber/Rails/Database/TruncationStrategy.html">Cucumber::Rails::Database::TruncationStrategy</a>
+  
+    <li><a href="../Capybara.html">Capybara</a>
+  
+    <li><a href="../Capybara/RackTest.html">Capybara::RackTest</a>
+  
+    <li><a href="../Capybara/RackTest/Node.html">Capybara::RackTest::Node</a>
+  
+    <li><a href="../ActionDispatch.html">ActionDispatch</a>
+  
+    <li><a href="../ActionDispatch/ShowExceptions.html">ActionDispatch::ShowExceptions</a>
+  
+    <li><a href="../ActiveRecord.html">ActiveRecord</a>
+  
+    <li><a href="../ActiveRecord/Base.html">ActiveRecord::Base</a>
+  
+    <li><a href="../Rails.html">Rails</a>
+  
+    <li><a href="../Rails/Application.html">Rails::Application</a>
+  
+    <li><a href="../Object.html">Object</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class ActionDispatch::ShowExceptions</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-__cucumber_orig_call__" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">__cucumber_orig_call__</span><span
+            class="method-args">(env)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="ShowExceptions.html#method-i-call">call</a>
+        </div>
+        
+      </div><!-- __cucumber_orig_call__-method -->
+
+    
+      <div id="method-i-call" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">call</span><span
+            class="method-args">(env)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="call-source">
+            <pre><span class="ruby-comment"># File lib/cucumber/rails/action_controller.rb, line 8</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">call</span>(<span class="ruby-identifier">env</span>)
+  <span class="ruby-identifier">env</span>[<span class="ruby-string">'action_dispatch.show_exceptions'</span>] = <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">allow_rescue</span>
+  <span class="ruby-identifier">__cucumber_orig_call__</span>(<span class="ruby-identifier">env</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- call-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="ShowExceptions.html#method-i-__cucumber_orig_call__">__cucumber_orig_call__</a>
+        </div>
+        
+
+        
+      </div><!-- call-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Hirb::Formatter - hirb-0.7.1 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/hirb/formatter.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="../Object.html">Object</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-add_view">#add_view</a>
+    
+    <li><a href="#method-i-config">#config</a>
+    
+    <li><a href="#method-i-format_output">#format_output</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../LICENSE_txt.html">LICENSE</a>
+  
+    <li class="file"><a href="../README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Hirb.html">Hirb</a>
+  
+    <li><a href="../Hirb/Console.html">Hirb::Console</a>
+  
+    <li><a href="../Hirb/DynamicView.html">Hirb::DynamicView</a>
+  
+    <li><a href="../Hirb/Formatter.html">Hirb::Formatter</a>
+  
+    <li><a href="../Hirb/Helpers.html">Hirb::Helpers</a>
+  
+    <li><a href="../Hirb/Helpers/AutoTable.html">Hirb::Helpers::AutoTable</a>
+  
+    <li><a href="../Hirb/Helpers/MarkdownTable.html">Hirb::Helpers::MarkdownTable</a>
+  
+    <li><a href="../Hirb/Helpers/ObjectTable.html">Hirb::Helpers::ObjectTable</a>
+  
+    <li><a href="../Hirb/Helpers/ParentChildTree.html">Hirb::Helpers::ParentChildTree</a>
+  
+    <li><a href="../Hirb/Helpers/TabTable.html">Hirb::Helpers::TabTable</a>
+  
+    <li><a href="../Hirb/Helpers/Table.html">Hirb::Helpers::Table</a>
+  
+    <li><a href="../Hirb/Helpers/Table/Filters.html">Hirb::Helpers::Table::Filters</a>
+  
+    <li><a href="../Hirb/Helpers/Table/Resizer.html">Hirb::Helpers::Table::Resizer</a>
+  
+    <li><a href="../Hirb/Helpers/Table/TooManyFieldsForWidthError.html">Hirb::Helpers::Table::TooManyFieldsForWidthError</a>
+  
+    <li><a href="../Hirb/Helpers/Tree.html">Hirb::Helpers::Tree</a>
+  
+    <li><a href="../Hirb/Helpers/Tree/Node.html">Hirb::Helpers::Tree::Node</a>
+  
+    <li><a href="../Hirb/Helpers/Tree/Node/MissingLevelError.html">Hirb::Helpers::Tree::Node::MissingLevelError</a>
+  
+    <li><a href="../Hirb/Helpers/Tree/Node/MissingValueError.html">Hirb::Helpers::Tree::Node::MissingValueError</a>
+  
+    <li><a href="../Hirb/Helpers/Tree/ParentlessNodeError.html">Hirb::Helpers::Tree::ParentlessNodeError</a>
+  
+    <li><a href="../Hirb/Helpers/UnicodeTable.html">Hirb::Helpers::UnicodeTable</a>
+  
+    <li><a href="../Hirb/Helpers/VerticalTable.html">Hirb::Helpers::VerticalTable</a>
+  
+    <li><a href="../Hirb/Menu.html">Hirb::Menu</a>
+  
+    <li><a href="../Hirb/Menu/Error.html">Hirb::Menu::Error</a>
+  
+    <li><a href="../Hirb/ObjectMethods.html">Hirb::ObjectMethods</a>
+  
+    <li><a href="../Hirb/Pager.html">Hirb::Pager</a>
+  
+    <li><a href="../Hirb/String.html">Hirb::String</a>
+  
+    <li><a href="../Hirb/Util.html">Hirb::Util</a>
+  
+    <li><a href="../Hirb/View.html">Hirb::View</a>
+  
+    <li><a href="../Hirb/Views.html">Hirb::Views</a>
+  
+    <li><a href="../Ripl.html">Ripl</a>
+  
+    <li><a href="../Ripl/Hirb.html">Ripl::Hirb</a>
+  
+    <li><a href="../Object.html">Object</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Hirb::Formatter</h1>
+
+  <div id="description" class="description">
+    
+<p>A <a href="Formatter.html">Formatter</a> object formats an output object
+(using <a href="Formatter.html#method-i-format_output">#format_output</a>)
+into a string based on the views defined for its class and/or ancestry.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-c-dynamic_config" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">dynamic_config</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>This config is used by <a
+href="Formatter.html#method-i-format_output">#format_output</a> to lazily
+load dynamic views defined with <a
+href="DynamicView.html">Hirb::DynamicView</a>. This hash has the same
+format as <a href="Formatter.html#method-i-config">#config</a>.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-c-to_a_classes" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">to_a_classes</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Array of classes whose objects respond to :to_a and allow the first element
+of the converted array to determine the output class.</p>
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-add_view" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_view</span><span
+            class="method-args">(klass, view_config)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Adds the view for the given class and view hash config. See <a
+href="Formatter.html#method-i-config">#config</a> for valid keys for view
+hash.</p>
+          
+
+          
+          <div class="method-source-code" id="add_view-source">
+            <pre><span class="ruby-comment"># File lib/hirb/formatter.rb, line 42</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_view</span>(<span class="ruby-identifier">klass</span>, <span class="ruby-identifier">view_config</span>)
+  <span class="ruby-ivar">@klass_config</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">klass</span>)
+  <span class="ruby-ivar">@config</span>[<span class="ruby-identifier">klass</span>.<span class="ruby-identifier">to_s</span>] = <span class="ruby-identifier">view_config</span>
+  <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_view-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_view-method -->
+
+    
+      <div id="method-i-config" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">config</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>A hash of Ruby class strings mapped to view hashes. A view hash must have
+at least a :method, :output_method or :class option for a view to be
+applied to an output. A view hash has the following keys:</p>
+<dl class="rdoc-list label-list"><dt><strong>:method</strong>
+<dd>
+<p>Specifies a global (Kernel) method to do the formatting.</p>
+</dd><dt><strong>:class</strong>
+<dd>
+<p>Specifies a class to do the formatting, using its render() class method. If
+a symbol it’s converted to a corresponding Hirb::Helpers::* class if it
+exists.</p>
+</dd><dt><strong>:output_method</strong>
+<dd>
+<p>Specifies a method or proc to call on output before passing it to a helper.
+If the output is an array, it’s applied to every element in the array.</p>
+</dd><dt><strong>:options</strong>
+<dd>
+<p>Options to pass the helper method or class.</p>
+</dd><dt><strong>:ancestor</strong>
+<dd>
+<p>Boolean which when true causes subclasses of the output class to inherit
+its config. This doesn’t effect the current output class. Defaults to
+false. This is used by ActiveRecord classes.</p>
+</dd></dl>
+
+<pre class="ruby"><span class="ruby-constant">Examples</span><span class="ruby-operator">:</span>
+  {<span class="ruby-string">'WWW::Delicious::Element'</span>=<span class="ruby-operator">&gt;</span>{:<span class="ruby-keyword">class</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">'Hirb::Helpers::ObjectTable'</span>, :<span class="ruby-identifier">ancestor=</span><span class="ruby-operator">&gt;</span><span class="ruby-keyword">true</span>, :<span class="ruby-identifier">options=</span><span class="ruby-operator">&gt;</span>{:<span class="ruby-identifier">max_width=</span><span class="ruby-operator">&gt;</span><span class="ruby-value">180</span>}}}
+  {<span class="ruby-string">'Date'</span>=<span class="ruby-operator">&gt;</span>{:<span class="ruby-keyword">class</span>=<span class="ruby-operator">&gt;</span>:<span class="ruby-identifier">auto_table</span>, :<span class="ruby-identifier">ancestor=</span><span class="ruby-operator">&gt;</span><span class="ruby-keyword">true</span>}}
+  {<span class="ruby-string">'Hash'</span>=<span class="ruby-operator">&gt;</span>{:<span class="ruby-identifier">method=</span><span class="ruby-operator">&gt;</span>:<span class="ruby-identifier">puts</span>}}
+</pre>
+          
+
+          
+          <div class="method-source-code" id="config-source">
+            <pre><span class="ruby-comment"># File lib/hirb/formatter.rb, line 37</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">config</span>
+  <span class="ruby-ivar">@config</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- config-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- config-method -->
+
+    
+      <div id="method-i-format_output" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">format_output</span><span
+            class="method-args">(output, options={}, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This method looks for an output object’s view in <a
+href="Formatter.html#method-i-config">#config</a> and then <a
+href="Formatter.html#attribute-c-dynamic_config">::dynamic_config</a>. If a
+view is found, a stringified view is returned based on the object. If no
+view is found, nil is returned. The options this class takes are a view
+hash as described in <a href="Formatter.html#method-i-config">#config</a>.
+These options will be merged with any existing helper config hash an output
+class has in <a href="Formatter.html#method-i-config">#config</a>. Any
+block given is passed along to a helper class.</p>
+          
+
+          
+          <div class="method-source-code" id="format_output-source">
+            <pre><span class="ruby-comment"># File lib/hirb/formatter.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">format_output</span>(<span class="ruby-identifier">output</span>, <span class="ruby-identifier">options</span>={}, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">output_class</span> = <span class="ruby-identifier">determine_output_class</span>(<span class="ruby-identifier">output</span>)
+  <span class="ruby-identifier">options</span> = <span class="ruby-identifier">parse_console_options</span>(<span class="ruby-identifier">options</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-value">:console</span>)
+  <span class="ruby-identifier">options</span> = <span class="ruby-constant">Util</span>.<span class="ruby-identifier">recursive_hash_merge</span>(<span class="ruby-identifier">klass_config</span>(<span class="ruby-identifier">output_class</span>), <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">_format_output</span>(<span class="ruby-identifier">output</span>, <span class="ruby-identifier">options</span>, &amp;<span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- format_output-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- format_output-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

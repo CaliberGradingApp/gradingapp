@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module FunctionalTestMatrix - ZenTest-4.9.5 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/functional_test_matrix.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-action">::action</a>
+    
+    <li><a href="#method-c-matrix">::matrix</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./History_txt.html">History</a>
+  
+    <li class="file"><a href="./Manifest_txt.html">Manifest</a>
+  
+    <li class="file"><a href="./README_txt.html">README</a>
+  
+    <li class="file"><a href="./articles/how_to_use_zentest_txt.html">how_to_use_zentest</a>
+  
+    <li class="file"><a href="./example_txt.html">example</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Autotest.html">Autotest</a>
+  
+    <li><a href="./Autotest/AutoUpdate.html">Autotest::AutoUpdate</a>
+  
+    <li><a href="./Autotest/Bundler.html">Autotest::Bundler</a>
+  
+    <li><a href="./Autotest/Isolate.html">Autotest::Isolate</a>
+  
+    <li><a href="./Autotest/Once.html">Autotest::Once</a>
+  
+    <li><a href="./Autotest/Preload.html">Autotest::Preload</a>
+  
+    <li><a href="./Autotest/RCov.html">Autotest::RCov</a>
+  
+    <li><a href="./Autotest/Restart.html">Autotest::Restart</a>
+  
+    <li><a href="./Autotest/Timestamp.html">Autotest::Timestamp</a>
+  
+    <li><a href="./FunctionalTestMatrix.html">FunctionalTestMatrix</a>
+  
+    <li><a href="./Module.html">Module</a>
+  
+    <li><a href="./Multiruby.html">Multiruby</a>
+  
+    <li><a href="./UnitDiff.html">UnitDiff</a>
+  
+    <li><a href="./ZenTest.html">ZenTest</a>
+  
+    <li><a href="./ZenTestMapping.html">ZenTestMapping</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module FunctionalTestMatrix</h1>
+
+  <div id="description" class="description">
+    
+<p>The Idea:</p>
+
+<p>This is supposed to get us thinking about the various dimensions our
+testing should address. If there are states orthogonal to each other (eg.
+readable vs unreadable, logged in vs not logged in) each of those states
+should comprise a dimension in the matrix. By addressing it this way, we
+should be able to minimize the amount of setup/teardown code and get full
+coverage across our actions for all these edge cases and as a result have
+extremely clear tests.</p>
+
+<p>Example Test Matrix Specification:</p>
+
+<p>matrix :example, :edge1, :edge2, :edge3, … action :action1, :OK,    :e_NF, 
+:mod,   … action :action2, :OK,    :e_RO,  :na,    … action …</p>
+
+<p>Matrix:</p>
+
+<p>I envision the setups being a code that combines the different dimensions
+of edge case state.</p>
+
+<p>Something for a CMS might look like: `[<a
+href="http://rRwW">df]_[ugo]_</a>` where:</p>
+
+<p>+ `[df]` for dir/file. + and the rest is in the style of symbolic args to
+chmod:</p>
+
+<pre>+ u/g/o = user, group, or other
++ lowercase `X` == `X`able, uppercase `X` == un`X`able, where `X`
+  is read/write.</pre>
+
+<p>Action:</p>
+
+<p>:new/:err/:del are just examples, they should have semantic info attached
+to them.</p>
+
+<p>Use :na to specify an inapplicable edge case for that action.</p>
+
+<p>Use :OK to specify the standard positive state. It is equivalent to a
+result with the same name as the action. (eg matrix_test_index). This
+cleans up the matrix a lot and allows for narrower and more readable
+columns.</p>
+
+<p>Edge cases specific to an action that fall outside the matrix are regular
+tests.</p>
+
+<p>Matrix Methods (the legos):</p>
+
+<p>Everything else basically equates to lego pieces:</p>
+
+<p>+ There is one “init” method per matrix: matrix_init_#{descr}(setup_args) +
+There is one “setup” method per action: matrix_setup_#{action}(setup,
+expect) + There is one “test” method per result:
+matrix_test_#{result}(setup)</p>
+
+<p>Thus, for the matrix “example” above, the top left-most test will end up
+calling:</p>
+
+<pre>matrix_init_example(:edge1)
+matrix_setup_action1(:edge1, :new)
+matrix_test_new(:edge1)</pre>
+
+<p>Read the action method for exact details.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-action" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">action</span><span
+            class="method-args">(action, *results)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="action-source">
+            <pre><span class="ruby-comment"># File lib/functional_test_matrix.rb, line 75</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">action</span>(<span class="ruby-identifier">action</span>, *<span class="ruby-identifier">results</span>)
+  <span class="ruby-identifier">testcases</span> = <span class="ruby-identifier">@@setups</span>.<span class="ruby-identifier">zip</span>(<span class="ruby-identifier">results</span>).<span class="ruby-identifier">reject</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">a</span>,<span class="ruby-identifier">b</span><span class="ruby-operator">|</span> <span class="ruby-identifier">b</span> <span class="ruby-operator">==</span> <span class="ruby-value">:na</span> }
+  <span class="ruby-identifier">testcases</span> = <span class="ruby-constant">Hash</span>[*<span class="ruby-identifier">testcases</span>.<span class="ruby-identifier">flatten</span>]
+  <span class="ruby-identifier">matrix</span> = <span class="ruby-identifier">@@matrix</span> <span class="ruby-comment"># bind to local scope for define_method closure</span>
+
+  <span class="ruby-identifier">testcases</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">setup</span>, <span class="ruby-identifier">expected</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">expected_action</span> = <span class="ruby-identifier">expected</span> <span class="ruby-operator">==</span> <span class="ruby-value">:OK</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">action</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">expected</span>
+    <span class="ruby-identifier">define_method</span> <span class="ruby-node">&quot;test_#{matrix}_#{action}_#{setup}&quot;</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-ivar">@action</span> = <span class="ruby-identifier">action</span>
+      <span class="ruby-identifier">send</span> <span class="ruby-node">&quot;matrix_init_#{matrix}&quot;</span>, *<span class="ruby-identifier">setup</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">/_/</span>).<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">intern</span> }
+      <span class="ruby-identifier">send</span> <span class="ruby-node">&quot;matrix_setup_#{action}&quot;</span>, <span class="ruby-identifier">setup</span>, <span class="ruby-identifier">expected</span>
+      <span class="ruby-identifier">send</span> <span class="ruby-node">&quot;matrix_test_#{expected_action}&quot;</span>, <span class="ruby-identifier">setup</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- action-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- action-method -->
+
+    
+      <div id="method-c-matrix" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">matrix</span><span
+            class="method-args">(name, *setups)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="matrix-source">
+            <pre><span class="ruby-comment"># File lib/functional_test_matrix.rb, line 71</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">matrix</span>(<span class="ruby-identifier">name</span>, *<span class="ruby-identifier">setups</span>)
+  <span class="ruby-identifier">@@matrix</span>, <span class="ruby-identifier">@@setups</span> = <span class="ruby-identifier">name</span>, <span class="ruby-identifier">setups</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- matrix-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- matrix-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module HTMLStyleSheet - metric_fu-Saikuro-1.1.1.0 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/saikuro.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-style_sheet">::style_sheet</a>
+    
+    <li><a href="#method-i-style_sheet">#style_sheet</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./README.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./BaseFormater.html">BaseFormater</a>
+  
+    <li><a href="./EndableParseState.html">EndableParseState</a>
+  
+    <li><a href="./Filter.html">Filter</a>
+  
+    <li><a href="./HTMLStyleSheet.html">HTMLStyleSheet</a>
+  
+    <li><a href="./HTMLTokenCounterFormater.html">HTMLTokenCounterFormater</a>
+  
+    <li><a href="./ParseBlock.html">ParseBlock</a>
+  
+    <li><a href="./ParseClass.html">ParseClass</a>
+  
+    <li><a href="./ParseComment.html">ParseComment</a>
+  
+    <li><a href="./ParseCond.html">ParseCond</a>
+  
+    <li><a href="./ParseDef.html">ParseDef</a>
+  
+    <li><a href="./ParseDoCond.html">ParseDoCond</a>
+  
+    <li><a href="./ParseModule.html">ParseModule</a>
+  
+    <li><a href="./ParseState.html">ParseState</a>
+  
+    <li><a href="./ParseStateFormater.html">ParseStateFormater</a>
+  
+    <li><a href="./ParseSymbol.html">ParseSymbol</a>
+  
+    <li><a href="./RDoc.html">RDoc</a>
+  
+    <li><a href="./ResultIndexGenerator.html">ResultIndexGenerator</a>
+  
+    <li><a href="./Saikuro.html">Saikuro</a>
+  
+    <li><a href="./SaikuroCMDLineRunner.html">SaikuroCMDLineRunner</a>
+  
+    <li><a href="./StateHTMLComplexityFormater.html">StateHTMLComplexityFormater</a>
+  
+    <li><a href="./TokenCounter.html">TokenCounter</a>
+  
+    <li><a href="./TokenCounterFormater.html">TokenCounterFormater</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module HTMLStyleSheet</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-style_sheet" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">style_sheet</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="style_sheet-source">
+            <pre><span class="ruby-comment"># File lib/saikuro.rb, line 732</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">HTMLStyleSheet</span>.<span class="ruby-identifier">style_sheet</span>
+  <span class="ruby-identifier">out</span> = <span class="ruby-constant">StringIO</span>.<span class="ruby-identifier">new</span>
+
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;&lt;style&gt;&quot;</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'body {'</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'  margin: 20px;'</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'  padding: 0;'</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'  font-size: 12px;'</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'  font-family: bitstream vera sans, verdana, arial, sans serif;'</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'  background-color: #efefef;'</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'}'</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">''</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'table {   '</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'  border-collapse: collapse;'</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'  /*border-spacing: 0;*/'</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'  border: 1px solid #666;'</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'  background-color: #fff;'</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'  margin-bottom: 20px;'</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'}'</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">''</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'table, th, th+th, td, td+td  {'</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'  border: 1px solid #ccc;'</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'}'</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">''</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'table th {'</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'  font-size: 12px;'</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'  color: #fc0;'</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'  padding: 4px 0;'</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'  background-color: #336;'</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'}'</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">''</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'th, td {'</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'  padding: 4px 10px;'</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'}'</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">''</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'td {      '</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'  font-size: 13px;'</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'}'</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">''</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'.class_name {'</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'  font-size: 17px;'</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'  margin: 20px 0 0;'</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'}'</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">''</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'.class_complexity {'</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'margin: 0 auto;'</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'}'</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">''</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'.class_complexity&gt;.class_complexity {'</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'  margin: 0;'</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'}'</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">''</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'.class_total_complexity, .class_total_lines, .start_token_count, .file_count {'</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'  font-size: 13px;'</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'  font-weight: bold;'</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'}'</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">''</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'.class_total_complexity, .class_total_lines {'</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'  color: #c00;'</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'}'</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">''</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'.start_token_count, .file_count {'</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'  color: #333;'</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'}'</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">''</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'.warning {'</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'  background-color: yellow;'</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'}'</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">''</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'.error {'</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'  background-color: #f00;'</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'}'</span>
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;&lt;/style&gt;&quot;</span>
+
+  <span class="ruby-identifier">out</span>.<span class="ruby-identifier">string</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- style_sheet-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- style_sheet-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-style_sheet" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">style_sheet</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="style_sheet-source">
+            <pre><span class="ruby-comment"># File lib/saikuro.rb, line 809</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">style_sheet</span>
+  <span class="ruby-constant">HTMLStyleSheet</span>.<span class="ruby-identifier">style_sheet</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- style_sheet-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- style_sheet-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

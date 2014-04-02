@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"filter_classes:EFI")Hirb::Helpers::Table::filter_classes;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"tA hash which maps a cell value's class to a filter. This serves to set a default filter per field if all of its;TI"ivalues are a class in this hash. By default, Array values are comma joined and Hashes are inspected.;TI"?See the :filter_any option to apply this filter per value.;T:
+@fileI"lib/hirb/helpers/table.rb;TT@

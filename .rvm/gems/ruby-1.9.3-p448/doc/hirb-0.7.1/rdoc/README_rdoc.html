@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>README - hirb-0.7.1 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body class="file">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./LICENSE_txt.html">LICENSE</a>
+  
+    <li class="file"><a href="./README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Hirb.html">Hirb</a>
+  
+    <li><a href="./Hirb/Console.html">Hirb::Console</a>
+  
+    <li><a href="./Hirb/DynamicView.html">Hirb::DynamicView</a>
+  
+    <li><a href="./Hirb/Formatter.html">Hirb::Formatter</a>
+  
+    <li><a href="./Hirb/Helpers.html">Hirb::Helpers</a>
+  
+    <li><a href="./Hirb/Helpers/AutoTable.html">Hirb::Helpers::AutoTable</a>
+  
+    <li><a href="./Hirb/Helpers/MarkdownTable.html">Hirb::Helpers::MarkdownTable</a>
+  
+    <li><a href="./Hirb/Helpers/ObjectTable.html">Hirb::Helpers::ObjectTable</a>
+  
+    <li><a href="./Hirb/Helpers/ParentChildTree.html">Hirb::Helpers::ParentChildTree</a>
+  
+    <li><a href="./Hirb/Helpers/TabTable.html">Hirb::Helpers::TabTable</a>
+  
+    <li><a href="./Hirb/Helpers/Table.html">Hirb::Helpers::Table</a>
+  
+    <li><a href="./Hirb/Helpers/Table/Filters.html">Hirb::Helpers::Table::Filters</a>
+  
+    <li><a href="./Hirb/Helpers/Table/Resizer.html">Hirb::Helpers::Table::Resizer</a>
+  
+    <li><a href="./Hirb/Helpers/Table/TooManyFieldsForWidthError.html">Hirb::Helpers::Table::TooManyFieldsForWidthError</a>
+  
+    <li><a href="./Hirb/Helpers/Tree.html">Hirb::Helpers::Tree</a>
+  
+    <li><a href="./Hirb/Helpers/Tree/Node.html">Hirb::Helpers::Tree::Node</a>
+  
+    <li><a href="./Hirb/Helpers/Tree/Node/MissingLevelError.html">Hirb::Helpers::Tree::Node::MissingLevelError</a>
+  
+    <li><a href="./Hirb/Helpers/Tree/Node/MissingValueError.html">Hirb::Helpers::Tree::Node::MissingValueError</a>
+  
+    <li><a href="./Hirb/Helpers/Tree/ParentlessNodeError.html">Hirb::Helpers::Tree::ParentlessNodeError</a>
+  
+    <li><a href="./Hirb/Helpers/UnicodeTable.html">Hirb::Helpers::UnicodeTable</a>
+  
+    <li><a href="./Hirb/Helpers/VerticalTable.html">Hirb::Helpers::VerticalTable</a>
+  
+    <li><a href="./Hirb/Menu.html">Hirb::Menu</a>
+  
+    <li><a href="./Hirb/Menu/Error.html">Hirb::Menu::Error</a>
+  
+    <li><a href="./Hirb/ObjectMethods.html">Hirb::ObjectMethods</a>
+  
+    <li><a href="./Hirb/Pager.html">Hirb::Pager</a>
+  
+    <li><a href="./Hirb/String.html">Hirb::String</a>
+  
+    <li><a href="./Hirb/Util.html">Hirb::Util</a>
+  
+    <li><a href="./Hirb/View.html">Hirb::View</a>
+  
+    <li><a href="./Hirb/Views.html">Hirb::Views</a>
+  
+    <li><a href="./Ripl.html">Ripl</a>
+  
+    <li><a href="./Ripl/Hirb.html">Ripl::Hirb</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<p>To read a linked version of this <a href="README_rdoc.html">README</a>, <a
+href="http://tagaholic.me/hirb/doc/">click here</a>.</p>
+
+<h2 id="label-Description">Description</h2>
+
+<p><a href="Hirb.html">Hirb</a> provides a mini view framework for console
+applications and uses it to improve ripl(irb)'s default inspect output.
+Given an object or array of objects, hirb renders a view based on the
+object's class and/or ancestry. <a href="Hirb.html">Hirb</a> offers
+reusable views in the form of helper classes. The two main helpers, <a
+href="Hirb/Helpers/Table.html">Hirb::Helpers::Table</a> and <a
+href="Hirb/Helpers/Tree.html">Hirb::Helpers::Tree</a>, provide several
+options for generating ascii tables and trees. Using <a
+href="Hirb/Helpers/AutoTable.html">Hirb::Helpers::AutoTable</a>, hirb has
+useful default views for at least ten popular database gems i.e. Rails'
+ActiveRecord::Base. Other than views, hirb offers a smart pager and a
+console menu. The smart pager only pages when the output exceeds the
+current screen size. The menu is used in conjunction with tables to offer
+<a
+href="http://tagaholic.me/2010/02/16/two-dimensional-console-menus-with-hirb.html">two
+dimensional menus</a>.</p>
+
+<h2 id="label-Install">Install</h2>
+
+<p>Install the gem with:</p>
+
+<pre>gem install hirb</pre>
+
+<p>For people using full-width unicode characters, install <a
+href="https://github.com/miaout17/hirb-unicode">hirb-unicode</a>:</p>
+
+<pre>gem install hirb-unicode</pre>
+
+<h2 id="label-View+Tutorials">View Tutorials</h2>
+<ul><li>
+<p>To create and configure views, see <a href="Hirb/View.html">Hirb::View</a>
+or <a href="http://tagaholic.me/hirb/doc/classes/Hirb/View.html">here if on
+the web</a>.</p>
+</li><li>
+<p>To create dynamic views, see <a
+href="Hirb/DynamicView.html">Hirb::DynamicView</a> or <a
+href="http://tagaholic.me/hirb/doc/classes/Hirb/DynamicView.html">here if
+on the web</a>.</p>
+</li></ul>
+
+<h2 id="label-Printing+Ascii+Tables">Printing Ascii Tables</h2>
+
+<p>To print ascii tables from an array of arrays, hashes or any objects:</p>
+
+<pre>puts Hirb::Helpers::AutoTable.render(ARRAY_OF_OBJECTS)</pre>
+
+<p><a href="Hirb.html">Hirb</a> will intelligently pick up on field names from
+an array of hashes and create properly-aligned fields from an array of
+arrays. See <a
+href="http://tagaholic.me/2009/10/15/boson-and-hirb-interactions.html#hirbs_handy_tables">here</a>
+for examples.</p>
+
+<h2 id="label-Rails+Example">Rails Example</h2>
+
+<p>Let’s load and enable the view framework:</p>
+
+<pre class="ruby">$ <span class="ruby-identifier">rails</span> <span class="ruby-identifier">console</span>
+<span class="ruby-constant">Loading</span> <span class="ruby-identifier">local</span> <span class="ruby-identifier">environment</span> (<span class="ruby-constant">Rails</span> <span class="ruby-value">3.0</span><span class="ruby-value">.3</span>)
+<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">require</span> <span class="ruby-string">'hirb'</span>
+=<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>
+<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-constant">Hirb</span>.<span class="ruby-identifier">enable</span>
+=<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">nil</span>
+</pre>
+
+<p>The default configuration provides table views for ActiveRecord::Base
+descendants. If a class isn’t configured, <a href="Hirb.html">Hirb</a>
+reverts to irb’s default echo mode.</p>
+
+<pre class="ruby"><span class="ruby-operator">&gt;&gt;</span> <span class="ruby-constant">Hirb</span><span class="ruby-operator">::</span><span class="ruby-constant">Formatter</span>.<span class="ruby-identifier">dynamic_config</span>[<span class="ruby-string">'ActiveRecord::Base'</span>]
+=<span class="ruby-operator">&gt;</span> {:<span class="ruby-keyword">class</span>=<span class="ruby-operator">&gt;</span><span class="ruby-constant">Hirb</span><span class="ruby-operator">::</span><span class="ruby-constant">Helpers</span><span class="ruby-operator">::</span><span class="ruby-constant">AutoTable</span>, :<span class="ruby-identifier">ancestor=</span><span class="ruby-operator">&gt;</span><span class="ruby-keyword">true</span>}
+
+<span class="ruby-comment"># Tag is a model class and descendant of ActiveRecord::Base</span>
+<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-constant">Tag</span>.<span class="ruby-identifier">last</span>
+<span class="ruby-operator">+</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">+</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">+</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">+</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">+</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">+</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">+</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">+</span>
+<span class="ruby-operator">|</span> <span class="ruby-identifier">id</span>  <span class="ruby-operator">|</span> <span class="ruby-identifier">created_at</span>              <span class="ruby-operator">|</span> <span class="ruby-identifier">description</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">name</span>          <span class="ruby-operator">|</span> <span class="ruby-identifier">namespace</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">predicate</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">|</span>
+<span class="ruby-operator">+</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">+</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">+</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">+</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">+</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">+</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">+</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">+</span>
+<span class="ruby-operator">|</span> <span class="ruby-value">907</span> <span class="ruby-operator">|</span> <span class="ruby-value">2009</span><span class="ruby-operator">-</span><span class="ruby-value">03</span><span class="ruby-operator">-</span><span class="ruby-value">06</span> <span class="ruby-value">21</span><span class="ruby-operator">:</span><span class="ruby-value">10</span><span class="ruby-operator">:</span><span class="ruby-value">41</span> <span class="ruby-constant">UTC</span> <span class="ruby-operator">|</span>             <span class="ruby-operator">|</span> <span class="ruby-identifier">gem</span>:<span class="ruby-identifier">tags=</span><span class="ruby-identifier">yaml</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">gem</span>       <span class="ruby-operator">|</span> <span class="ruby-identifier">tags</span>      <span class="ruby-operator">|</span> <span class="ruby-identifier">yaml</span>  <span class="ruby-operator">|</span>
+<span class="ruby-operator">+</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">+</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">+</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">+</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">+</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">+</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">+</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">+</span>
+<span class="ruby-value">1</span> <span class="ruby-identifier">row</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">set</span>
+
+<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-constant">Hirb</span><span class="ruby-operator">::</span><span class="ruby-constant">Formatter</span>.<span class="ruby-identifier">dynamic_config</span>[<span class="ruby-string">'String'</span>]
+=<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">nil</span>
+<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-string">'plain ol irb'</span>
+=<span class="ruby-operator">&gt;</span> <span class="ruby-string">'plain ol irb'</span>
+<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-constant">Hirb</span><span class="ruby-operator">::</span><span class="ruby-constant">Formatter</span>.<span class="ruby-identifier">dynamic_config</span>[<span class="ruby-string">'Symbol'</span>]
+=<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">nil</span>
+<span class="ruby-operator">&gt;&gt;</span> :<span class="ruby-identifier">blah</span>
+=<span class="ruby-operator">&gt;</span> :<span class="ruby-identifier">blah</span>
+</pre>
+
+<p>From above you can see there are no views configured for a String or a
+Symbol so <a href="Hirb.html">Hirb</a> defaults to irb’s echo mode. On the
+other hand, Tag has a view thanks to being a descendant of
+ActiveRecord::Base and there being an :ancestor option.</p>
+
+<p>Having seen hirb display views based on an output object’s class, let’s see
+it handle an array of objects:</p>
+
+<pre>&gt;&gt; Tag.all :limit=&gt;3, :order=&gt;&quot;id DESC&quot;
++-----+-------------------------+-------------+-------------------+-----------+-----------+----------+
+| id  | created_at              | description | name              | namespace | predicate | value    |
++-----+-------------------------+-------------+-------------------+-----------+-----------+----------+
+| 907 | 2009-03-06 21:10:41 UTC |             | gem:tags=yaml     | gem       | tags      | yaml     |
+| 906 | 2009-03-06 08:47:04 UTC |             | gem:tags=nomonkey | gem       | tags      | nomonkey |
+| 905 | 2009-03-04 00:30:10 UTC |             | article:tags=ruby | article   | tags      | ruby     |
++-----+-------------------------+-------------+-------------------+-----------+-----------+----------+
+3 rows in set
+</pre>
+
+<p>At any time you can disable <a href="Hirb.html">Hirb</a> if you really like
+irb’s lovely echo mode:</p>
+
+<pre class="ruby"><span class="ruby-operator">&gt;&gt;</span> <span class="ruby-constant">Hirb</span>.<span class="ruby-identifier">disable</span>
+=<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">nil</span>
+<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-constant">Tag</span>.<span class="ruby-identifier">all</span> :<span class="ruby-identifier">limit=</span><span class="ruby-operator">&gt;</span><span class="ruby-value">3</span>, :<span class="ruby-identifier">order=</span><span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;id DESC&quot;</span>
+=<span class="ruby-operator">&gt;</span> [<span class="ruby-comment">#&lt;Tag id: 907, name: &quot;gem:tags=yaml&quot;, description: nil, created_at: &quot;2009-03-06 21:10:41&quot;,</span>
+<span class="ruby-identifier">namespace</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;gem&quot;</span>, <span class="ruby-identifier">predicate</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;tags&quot;</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;yaml&quot;</span><span class="ruby-operator">&gt;</span>, <span class="ruby-comment">#&lt;Tag id: 906, name: &quot;gem:tags=nomonkey&quot;,</span>
+<span class="ruby-identifier">description</span><span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">created_at</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;2009-03-06 08:47:04&quot;</span>, <span class="ruby-identifier">namespace</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;gem&quot;</span>, <span class="ruby-identifier">predicate</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;tags&quot;</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">:</span>
+<span class="ruby-string">&quot;nomonkey&quot;</span><span class="ruby-operator">&gt;</span>, <span class="ruby-comment">#&lt;Tag id: 905, name: &quot;article:tags=ruby&quot;, description: nil, created_at: &quot;2009-03-04</span>
+<span class="ruby-value">00</span><span class="ruby-operator">:</span><span class="ruby-value">30</span><span class="ruby-operator">:</span><span class="ruby-value">10</span><span class="ruby-string">&quot;, namespace: &quot;</span><span class="ruby-identifier">article</span><span class="ruby-string">&quot;, predicate: &quot;</span><span class="ruby-identifier">tags</span><span class="ruby-string">&quot;, value: &quot;</span><span class="ruby-identifier">ruby</span><span class="ruby-string">&quot;&gt;]
+</span></pre>
+
+<h2 id="label-Views%3A+Anytime%2C+Anywhere">Views: Anytime, Anywhere</h2>
+
+<p>While preconfigured tables are great for database records, sometimes you
+just want to create tables/views for any output object:</p>
+
+<pre class="ruby"><span class="ruby-comment">#These examples don't need to have Hirb::View enabled.</span>
+<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-constant">Hirb</span>.<span class="ruby-identifier">disable</span>
+=<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">nil</span>
+
+<span class="ruby-comment"># Imports table() and view()</span>
+<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">extend</span> <span class="ruby-constant">Hirb</span><span class="ruby-operator">::</span><span class="ruby-constant">Console</span>
+=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">main</span>
+
+<span class="ruby-comment"># Create a unicode table</span>
+<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">table</span> [[:<span class="ruby-identifier">a</span>, :<span class="ruby-identifier">b</span>, :<span class="ruby-identifier">c</span>]], :<span class="ruby-identifier">unicode</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>
+<span class="ruby-identifier">┌───┬───┬───┐</span>
+<span class="ruby-identifier">│</span> <span class="ruby-value">0</span> <span class="ruby-identifier">│</span> <span class="ruby-value">1</span> <span class="ruby-identifier">│</span> <span class="ruby-value">2</span> <span class="ruby-identifier">│</span>
+<span class="ruby-identifier">├───┼───┼───┤</span>
+<span class="ruby-identifier">│</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">╎</span> <span class="ruby-identifier">b</span> <span class="ruby-identifier">╎</span> <span class="ruby-identifier">c</span> <span class="ruby-identifier">│</span>
+<span class="ruby-identifier">└───┴───┴───┘</span>
+<span class="ruby-value">1</span> <span class="ruby-identifier">row</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">set</span>
+
+<span class="ruby-comment"># Creates github-markdown</span>
+<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">table</span> [[:<span class="ruby-identifier">a</span>, :<span class="ruby-identifier">b</span>, :<span class="ruby-identifier">c</span>]], :<span class="ruby-identifier">markdown</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>
+<span class="ruby-operator">|</span> <span class="ruby-value">0</span> <span class="ruby-operator">|</span> <span class="ruby-value">1</span> <span class="ruby-operator">|</span> <span class="ruby-value">2</span> <span class="ruby-operator">|</span>
+<span class="ruby-operator">|</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">|</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">|</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">|</span>
+<span class="ruby-operator">|</span> <span class="ruby-identifier">a</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">b</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">c</span> <span class="ruby-operator">|</span>
+
+<span class="ruby-comment"># Create a table of Dates comparing them with different formats.</span>
+<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">table</span> [<span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>, <span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>.<span class="ruby-identifier">next_month</span>], :<span class="ruby-identifier">fields=</span><span class="ruby-operator">&gt;</span>[:<span class="ruby-identifier">to_s</span>, :<span class="ruby-identifier">ld</span>, :<span class="ruby-identifier">ajd</span>, :<span class="ruby-identifier">amjd</span>, :<span class="ruby-identifier">asctime</span>]
+<span class="ruby-operator">+</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">+</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">+</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">+</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">+</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">+</span>
+<span class="ruby-operator">|</span> <span class="ruby-identifier">to_s</span>       <span class="ruby-operator">|</span> <span class="ruby-identifier">ld</span>     <span class="ruby-operator">|</span> <span class="ruby-identifier">ajd</span>       <span class="ruby-operator">|</span> <span class="ruby-identifier">amjd</span>  <span class="ruby-operator">|</span> <span class="ruby-identifier">asctime</span>                  <span class="ruby-operator">|</span>
+<span class="ruby-operator">+</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">+</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">+</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">+</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">+</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">+</span>
+<span class="ruby-operator">|</span> <span class="ruby-value">2009</span><span class="ruby-operator">-</span><span class="ruby-value">03</span><span class="ruby-operator">-</span><span class="ruby-value">11</span> <span class="ruby-operator">|</span> <span class="ruby-value">155742</span> <span class="ruby-operator">|</span> <span class="ruby-value">4909803</span><span class="ruby-operator">/</span><span class="ruby-value">2</span> <span class="ruby-operator">|</span> <span class="ruby-value">54901</span> <span class="ruby-operator">|</span> <span class="ruby-constant">Wed</span> <span class="ruby-constant">Mar</span> <span class="ruby-value">11</span> <span class="ruby-value">00</span><span class="ruby-operator">:</span><span class="ruby-value">00</span><span class="ruby-operator">:</span><span class="ruby-value">00</span> <span class="ruby-value">2009</span> <span class="ruby-operator">|</span>
+<span class="ruby-operator">|</span> <span class="ruby-value">2009</span><span class="ruby-operator">-</span><span class="ruby-value">04</span><span class="ruby-operator">-</span><span class="ruby-value">11</span> <span class="ruby-operator">|</span> <span class="ruby-value">155773</span> <span class="ruby-operator">|</span> <span class="ruby-value">4909865</span><span class="ruby-operator">/</span><span class="ruby-value">2</span> <span class="ruby-operator">|</span> <span class="ruby-value">54932</span> <span class="ruby-operator">|</span> <span class="ruby-constant">Sat</span> <span class="ruby-constant">Apr</span> <span class="ruby-value">11</span> <span class="ruby-value">00</span><span class="ruby-operator">:</span><span class="ruby-value">00</span><span class="ruby-operator">:</span><span class="ruby-value">00</span> <span class="ruby-value">2009</span> <span class="ruby-operator">|</span>
+<span class="ruby-operator">+</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">+</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">+</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">+</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">+</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">+</span>
+<span class="ruby-value">2</span> <span class="ruby-identifier">rows</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">set</span>
+
+<span class="ruby-comment"># Same table as the previous method. However view() will be able to call any helper.</span>
+<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">view</span> [<span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>, <span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>.<span class="ruby-identifier">next_month</span>], :<span class="ruby-keyword">class</span>=<span class="ruby-operator">&gt;</span>:<span class="ruby-identifier">object_table</span>,
+  :<span class="ruby-identifier">fields=</span><span class="ruby-operator">&gt;</span>[:<span class="ruby-identifier">to_s</span>, :<span class="ruby-identifier">ld</span>, :<span class="ruby-identifier">ajd</span>, :<span class="ruby-identifier">amjd</span>, :<span class="ruby-identifier">asctime</span>]
+</pre>
+
+<p>If these console methods weren’t convenient enough, try:</p>
+
+<pre class="ruby"><span class="ruby-comment"># Imports view() to all objects.</span>
+<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">require</span> <span class="ruby-string">'hirb/import_object'</span>
+=<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>
+<span class="ruby-comment"># Yields same table as above examples.</span>
+<span class="ruby-operator">&gt;&gt;</span> [<span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>, <span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>.<span class="ruby-identifier">next_month</span>].<span class="ruby-identifier">view</span> :<span class="ruby-keyword">class</span>=<span class="ruby-operator">&gt;</span>:<span class="ruby-identifier">object_table</span>,
+  :<span class="ruby-identifier">fields=</span><span class="ruby-operator">&gt;</span>[:<span class="ruby-identifier">to_s</span>, :<span class="ruby-identifier">ld</span>, :<span class="ruby-identifier">ajd</span>, :<span class="ruby-identifier">amjd</span>, :<span class="ruby-identifier">asctime</span>]
+</pre>
+
+<p>Although views by default are printed to STDOUT, they can be easily
+modified to write anywhere:</p>
+
+<pre class="ruby"><span class="ruby-comment"># Setup views to write to file 'console.log'.</span>
+<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-constant">Hirb</span><span class="ruby-operator">::</span><span class="ruby-constant">View</span>.<span class="ruby-identifier">render_method</span> = <span class="ruby-identifier">lambda</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">output</span><span class="ruby-operator">|</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-string">&quot;console.log&quot;</span>, <span class="ruby-string">'w'</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">write</span>(<span class="ruby-identifier">output</span>) } }
+
+<span class="ruby-comment"># Writes to file with same table output as above example.</span>
+<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">view</span> [<span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>, <span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>.<span class="ruby-identifier">next_month</span>], :<span class="ruby-keyword">class</span>=<span class="ruby-operator">&gt;</span>:<span class="ruby-identifier">object_table</span>,
+  :<span class="ruby-identifier">fields=</span><span class="ruby-operator">&gt;</span>[:<span class="ruby-identifier">to_s</span>, :<span class="ruby-identifier">ld</span>, :<span class="ruby-identifier">ajd</span>, :<span class="ruby-identifier">amjd</span>, :<span class="ruby-identifier">asctime</span>]
+
+<span class="ruby-comment"># Doesn't write to file because Symbol doesn't have a view and thus defaults to irb's echo mode.</span>
+<span class="ruby-operator">&gt;&gt;</span> :<span class="ruby-identifier">blah</span>
+=<span class="ruby-operator">&gt;</span> :<span class="ruby-identifier">blah</span>
+
+<span class="ruby-comment"># Go back to printing Hirb views to STDOUT.</span>
+<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-constant">Hirb</span><span class="ruby-operator">::</span><span class="ruby-constant">View</span>.<span class="ruby-identifier">reset_render_method</span>
+</pre>
+
+<h2 id="label-Pager">Pager</h2>
+
+<p><a href="Hirb.html">Hirb</a> has both pager and formatter functionality
+enabled by default. If you want to turn off the functionality of either you
+can pass that in at startup:</p>
+
+<pre class="ruby"><span class="ruby-constant">Hirb</span>.<span class="ruby-identifier">enable</span> :<span class="ruby-identifier">pager=</span><span class="ruby-operator">&gt;</span><span class="ruby-keyword">false</span>
+<span class="ruby-constant">Hirb</span>.<span class="ruby-identifier">enable</span> :<span class="ruby-identifier">formatter=</span><span class="ruby-operator">&gt;</span><span class="ruby-keyword">false</span>
+</pre>
+
+<p>or toggle their state at runtime:</p>
+
+<pre>Hirb::View.toggle_pager
+Hirb::View.toggle_formatter</pre>
+
+<h2 id="label-Sharing+Helpers+and+Views">Sharing Helpers and Views</h2>
+
+<p>If you have tested helpers you’d like to share, fork <a
+href="Hirb.html">Hirb</a> and put them under lib/hirb/helpers. To share
+views for certain classes, put them under lib/hirb/views. Please submit
+views for gems that have a nontrivial number of users.</p>
+
+<h2 id="label-Limitations">Limitations</h2>
+
+<p>If using Wirble and irb, you should call <a href="Hirb.html">Hirb</a> after
+it since they both override irb’s default output.</p>
+
+<h2 id="label-Motivation">Motivation</h2>
+
+<p>Table code from <a
+href="http://gist.github.com/72234">gist.github.com/72234</a> and <a
+href="http://github.com/cldwalker/tag-tree">my console app’s needs</a>.</p>
+
+<h2 id="label-Credits">Credits</h2>
+<ul><li>
+<p>Chrononaut for vertical table helper.</p>
+</li><li>
+<p>janlelis for unicode table helper.</p>
+</li><li>
+<p>technogeeky and FND for markdown table helper.</p>
+</li><li>
+<p>hsume2, crafterm, spastorino, xaviershay, bogdan, asanghi, vwall, maxmeyer,
+jimjh and joshua for patches.</p>
+</li></ul>
+
+<h2 id="label-Bugs%2FIssues">Bugs/Issues</h2>
+
+<p>Please report them <a href="http://github.com/cldwalker/hirb/issues">on
+github</a>.</p>
+
+<h2 id="label-Contributing">Contributing</h2>
+
+<p><a href="http://tagaholic.me/contributing.html">See here</a></p>
+
+<h2 id="label-Links">Links</h2>
+<ul><li>
+<p><a
+href="http://tagaholic.me/2009/03/13/hirb-irb-on-the-good-stuff.html">tagaholic.me/2009/03/13/hirb-irb-on-the-good-stuff.html</a></p>
+</li><li>
+<p><a
+href="http://tagaholic.me/2009/03/18/ruby-class-trees-rails-plugin-trees-with-hirb.html">tagaholic.me/2009/03/18/ruby-class-trees-rails-plugin-trees-with-hirb.html</a></p>
+</li><li>
+<p><a
+href="http://tagaholic.me/2009/06/19/page-irb-output-and-improve-ri-with-hirb.html">tagaholic.me/2009/06/19/page-irb-output-and-improve-ri-with-hirb.html</a></p>
+</li></ul>
+
+</div>
+
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

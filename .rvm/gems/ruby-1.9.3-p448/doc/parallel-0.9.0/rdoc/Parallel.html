@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module Parallel - parallel-0.9.0 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/parallel.rb
+    <li>lib/parallel/version.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-each">::each</a>
+    
+    <li><a href="#method-c-each_with_index">::each_with_index</a>
+    
+    <li><a href="#method-c-in_processes">::in_processes</a>
+    
+    <li><a href="#method-c-in_threads">::in_threads</a>
+    
+    <li><a href="#method-c-map">::map</a>
+    
+    <li><a href="#method-c-map_with_index">::map_with_index</a>
+    
+    <li><a href="#method-c-physical_processor_count">::physical_processor_count</a>
+    
+    <li><a href="#method-c-processor_count">::processor_count</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Parallel.html">Parallel</a>
+  
+    <li><a href="./Parallel/Break.html">Parallel::Break</a>
+  
+    <li><a href="./Parallel/DeadWorker.html">Parallel::DeadWorker</a>
+  
+    <li><a href="./Parallel/ExceptionWrapper.html">Parallel::ExceptionWrapper</a>
+  
+    <li><a href="./Parallel/Worker.html">Parallel::Worker</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module Parallel</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="VERSION">VERSION
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-each" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">each</span><span
+            class="method-args">(array, options={}, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="each-source">
+            <pre><span class="ruby-comment"># File lib/parallel.rb, line 80</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">each</span>(<span class="ruby-identifier">array</span>, <span class="ruby-identifier">options</span>={}, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">map</span>(<span class="ruby-identifier">array</span>, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:preserve_results</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">false</span>), &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">array</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- each-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- each-method -->
+
+    
+      <div id="method-c-each_with_index" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">each_with_index</span><span
+            class="method-args">(array, options={}, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="each_with_index-source">
+            <pre><span class="ruby-comment"># File lib/parallel.rb, line 85</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">each_with_index</span>(<span class="ruby-identifier">array</span>, <span class="ruby-identifier">options</span>={}, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">each</span>(<span class="ruby-identifier">array</span>, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:with_index</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>), &amp;<span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- each_with_index-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- each_with_index-method -->
+
+    
+      <div id="method-c-in_processes" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">in_processes</span><span
+            class="method-args">(options = {}, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="in_processes-source">
+            <pre><span class="ruby-comment"># File lib/parallel.rb, line 74</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">in_processes</span>(<span class="ruby-identifier">options</span> = {}, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">count</span>, <span class="ruby-identifier">options</span> = <span class="ruby-identifier">extract_count_from_options</span>(<span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">count</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">processor_count</span>
+  <span class="ruby-identifier">map</span>(<span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">count</span>, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:in_processes</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">count</span>), &amp;<span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- in_processes-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- in_processes-method -->
+
+    
+      <div id="method-c-in_threads" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">in_threads</span><span
+            class="method-args">(options={:count => 2}) { |i| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="in_threads-source">
+            <pre><span class="ruby-comment"># File lib/parallel.rb, line 57</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">in_threads</span>(<span class="ruby-identifier">options</span>={<span class="ruby-value">:count</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">2</span>})
+  <span class="ruby-identifier">count</span>, <span class="ruby-identifier">options</span> = <span class="ruby-identifier">extract_count_from_options</span>(<span class="ruby-identifier">options</span>)
+
+  <span class="ruby-identifier">out</span> = []
+  <span class="ruby-identifier">threads</span> = []
+
+  <span class="ruby-identifier">count</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">threads</span>[<span class="ruby-identifier">i</span>] = <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">out</span>[<span class="ruby-identifier">i</span>] = <span class="ruby-keyword">yield</span>(<span class="ruby-identifier">i</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">kill_on_ctrl_c</span>(<span class="ruby-identifier">threads</span>) { <span class="ruby-identifier">wait_for_threads</span>(<span class="ruby-identifier">threads</span>) }
+
+  <span class="ruby-identifier">out</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- in_threads-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- in_threads-method -->
+
+    
+      <div id="method-c-map" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">map</span><span
+            class="method-args">(array, options = {}, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="map-source">
+            <pre><span class="ruby-comment"># File lib/parallel.rb, line 89</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">map</span>(<span class="ruby-identifier">array</span>, <span class="ruby-identifier">options</span> = {}, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">array</span> = <span class="ruby-identifier">array</span>.<span class="ruby-identifier">to_a</span> <span class="ruby-comment"># turn Range and other Enumerable-s into an Array</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">RUBY_PLATFORM</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/java/</span> <span class="ruby-keyword">and</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:in_processes</span>]
+    <span class="ruby-identifier">method</span> = <span class="ruby-value">:in_threads</span>
+    <span class="ruby-identifier">size</span> = <span class="ruby-identifier">options</span>[<span class="ruby-identifier">method</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">processor_count</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:in_threads</span>]
+    <span class="ruby-identifier">method</span> = <span class="ruby-value">:in_threads</span>
+    <span class="ruby-identifier">size</span> = <span class="ruby-identifier">options</span>[<span class="ruby-identifier">method</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">method</span> = <span class="ruby-value">:in_processes</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-constant">Process</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:fork</span>)
+      <span class="ruby-identifier">size</span> = <span class="ruby-identifier">options</span>[<span class="ruby-identifier">method</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">processor_count</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Warning: Process.fork is not supported by this Ruby&quot;</span>
+      <span class="ruby-identifier">size</span> = <span class="ruby-value">0</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">size</span> = [<span class="ruby-identifier">array</span>.<span class="ruby-identifier">size</span>, <span class="ruby-identifier">size</span>].<span class="ruby-identifier">min</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+    <span class="ruby-identifier">work_direct</span>(<span class="ruby-identifier">array</span>, <span class="ruby-identifier">options</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">method</span> <span class="ruby-operator">==</span> <span class="ruby-value">:in_threads</span>
+    <span class="ruby-identifier">work_in_threads</span>(<span class="ruby-identifier">array</span>, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:count</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">size</span>), &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">work_in_processes</span>(<span class="ruby-identifier">array</span>, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:count</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">size</span>), &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- map-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- map-method -->
+
+    
+      <div id="method-c-map_with_index" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">map_with_index</span><span
+            class="method-args">(array, options={}, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="map_with_index-source">
+            <pre><span class="ruby-comment"># File lib/parallel.rb, line 118</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">map_with_index</span>(<span class="ruby-identifier">array</span>, <span class="ruby-identifier">options</span>={}, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">map</span>(<span class="ruby-identifier">array</span>, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:with_index</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>), &amp;<span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- map_with_index-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- map_with_index-method -->
+
+    
+      <div id="method-c-physical_processor_count" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">physical_processor_count</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Number of physical processor cores on the current system.</p>
+          
+
+          
+          <div class="method-source-code" id="physical_processor_count-source">
+            <pre><span class="ruby-comment"># File lib/parallel.rb, line 174</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">physical_processor_count</span>
+  <span class="ruby-ivar">@physical_processor_count</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">ppc</span> = <span class="ruby-keyword">case</span> <span class="ruby-constant">RbConfig</span><span class="ruby-operator">::</span><span class="ruby-constant">CONFIG</span>[<span class="ruby-string">&quot;target_os&quot;</span>]
+    <span class="ruby-keyword">when</span> <span class="ruby-regexp">/darwin1/</span>
+      <span class="ruby-constant">IO</span>.<span class="ruby-identifier">popen</span>(<span class="ruby-node">%w[/usr/sbin/sysctl -n hw.physicalcpu]</span>).<span class="ruby-identifier">read</span>.<span class="ruby-identifier">to_i</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-regexp">/linux/</span>
+      <span class="ruby-identifier">cores</span> = {}  <span class="ruby-comment"># unique physical ID / core ID combinations</span>
+      <span class="ruby-identifier">phy</span> = <span class="ruby-value">0</span>
+      <span class="ruby-constant">IO</span>.<span class="ruby-identifier">read</span>(<span class="ruby-string">&quot;/proc/cpuinfo&quot;</span>).<span class="ruby-identifier">scan</span>(<span class="ruby-regexp">/^physical id.*|^core id.*/</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">ln</span><span class="ruby-operator">|</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">ln</span>.<span class="ruby-identifier">start_with?</span>(<span class="ruby-string">&quot;physical&quot;</span>)
+          <span class="ruby-identifier">phy</span> = <span class="ruby-identifier">ln</span>[<span class="ruby-regexp">/\d+/</span>]
+        <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">ln</span>.<span class="ruby-identifier">start_with?</span>(<span class="ruby-string">&quot;core&quot;</span>)
+          <span class="ruby-identifier">cid</span> = <span class="ruby-identifier">phy</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;:&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">ln</span>[<span class="ruby-regexp">/\d+/</span>]
+          <span class="ruby-identifier">cores</span>[<span class="ruby-identifier">cid</span>] = <span class="ruby-keyword">true</span> <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">cores</span>[<span class="ruby-identifier">cid</span>]
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">cores</span>.<span class="ruby-identifier">count</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-regexp">/mswin|mingw/</span>
+      <span class="ruby-identifier">require</span> <span class="ruby-string">'win32ole'</span>
+      <span class="ruby-identifier">result_set</span> = <span class="ruby-constant">WIN32OLE</span>.<span class="ruby-identifier">connect</span>(<span class="ruby-string">&quot;winmgmts://&quot;</span>).<span class="ruby-constant">ExecQuery</span>(
+          <span class="ruby-string">&quot;select NumberOfCores from Win32_Processor&quot;</span>)
+      <span class="ruby-identifier">result_set</span>.<span class="ruby-identifier">to_enum</span>.<span class="ruby-identifier">collect</span>(&amp;<span class="ruby-value">:NumberOfCores</span>).<span class="ruby-identifier">reduce</span>(<span class="ruby-value">:+</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">processor_count</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-comment"># fall back to logical count if physical info is invalid</span>
+    <span class="ruby-identifier">ppc</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">ppc</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">processor_count</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- physical_processor_count-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- physical_processor_count-method -->
+
+    
+      <div id="method-c-processor_count" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">processor_count</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Number of processors seen by the OS and used for process scheduling.</p>
+<ul><li>
+<p>AIX: /usr/sbin/pmcycles (AIX 5+), /usr/sbin/lsdev</p>
+</li><li>
+<p>BSD: /sbin/sysctl</p>
+</li><li>
+<p>Cygwin: /proc/cpuinfo</p>
+</li><li>
+<p>Darwin: /usr/bin/hwprefs, /usr/sbin/sysctl</p>
+</li><li>
+<p>HP-UX: /usr/sbin/ioscan</p>
+</li><li>
+<p>IRIX: /usr/sbin/sysconf</p>
+</li><li>
+<p>Linux: /proc/cpuinfo</p>
+</li><li>
+<p>Minix 3+: /proc/cpuinfo</p>
+</li><li>
+<p>Solaris: /usr/sbin/psrinfo</p>
+</li><li>
+<p>Tru64 UNIX: /usr/sbin/psrinfo</p>
+</li><li>
+<p>UnixWare: /usr/sbin/psrinfo</p>
+</li></ul>
+          
+
+          
+          <div class="method-source-code" id="processor_count-source">
+            <pre><span class="ruby-comment"># File lib/parallel.rb, line 136</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">processor_count</span>
+  <span class="ruby-ivar">@processor_count</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">os_name</span> = <span class="ruby-constant">RbConfig</span><span class="ruby-operator">::</span><span class="ruby-constant">CONFIG</span>[<span class="ruby-string">&quot;target_os&quot;</span>]
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">os_name</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/mingw|mswin/</span>
+      <span class="ruby-identifier">require</span> <span class="ruby-string">'win32ole'</span>
+      <span class="ruby-identifier">result</span> = <span class="ruby-constant">WIN32OLE</span>.<span class="ruby-identifier">connect</span>(<span class="ruby-string">&quot;winmgmts://&quot;</span>).<span class="ruby-constant">ExecQuery</span>(
+          <span class="ruby-string">&quot;select NumberOfLogicalProcessors from Win32_Processor&quot;</span>)
+      <span class="ruby-identifier">result</span>.<span class="ruby-identifier">to_enum</span>.<span class="ruby-identifier">collect</span>(&amp;<span class="ruby-value">:NumberOfLogicalProcessors</span>).<span class="ruby-identifier">reduce</span>(<span class="ruby-value">:+</span>)
+    <span class="ruby-keyword">elsif</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">readable?</span>(<span class="ruby-string">&quot;/proc/cpuinfo&quot;</span>)
+      <span class="ruby-constant">IO</span>.<span class="ruby-identifier">read</span>(<span class="ruby-string">&quot;/proc/cpuinfo&quot;</span>).<span class="ruby-identifier">scan</span>(<span class="ruby-regexp">/^processor/</span>).<span class="ruby-identifier">size</span>
+    <span class="ruby-keyword">elsif</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">executable?</span>(<span class="ruby-string">&quot;/usr/bin/hwprefs&quot;</span>)
+      <span class="ruby-constant">IO</span>.<span class="ruby-identifier">popen</span>(<span class="ruby-node">%w[/usr/bin/hwprefs thread_count]</span>).<span class="ruby-identifier">read</span>.<span class="ruby-identifier">to_i</span>
+    <span class="ruby-keyword">elsif</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">executable?</span>(<span class="ruby-string">&quot;/usr/sbin/psrinfo&quot;</span>)
+      <span class="ruby-constant">IO</span>.<span class="ruby-identifier">popen</span>(<span class="ruby-string">&quot;/usr/sbin/psrinfo&quot;</span>).<span class="ruby-identifier">read</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-regexp">/^.*on-*line/</span>).<span class="ruby-identifier">size</span>
+    <span class="ruby-keyword">elsif</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">executable?</span>(<span class="ruby-string">&quot;/usr/sbin/ioscan&quot;</span>)
+      <span class="ruby-constant">IO</span>.<span class="ruby-identifier">popen</span>(<span class="ruby-node">%w[/usr/sbin/ioscan -kC processor]</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">out</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">out</span>.<span class="ruby-identifier">read</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-regexp">/^.*processor/</span>).<span class="ruby-identifier">size</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">elsif</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">executable?</span>(<span class="ruby-string">&quot;/usr/sbin/pmcycles&quot;</span>)
+      <span class="ruby-constant">IO</span>.<span class="ruby-identifier">popen</span>(<span class="ruby-node">%w[/usr/sbin/pmcycles -m]</span>).<span class="ruby-identifier">read</span>.<span class="ruby-identifier">count</span>(<span class="ruby-string">&quot;\n&quot;</span>)
+    <span class="ruby-keyword">elsif</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">executable?</span>(<span class="ruby-string">&quot;/usr/sbin/lsdev&quot;</span>)
+      <span class="ruby-constant">IO</span>.<span class="ruby-identifier">popen</span>(<span class="ruby-node">%w[/usr/sbin/lsdev -Cc processor -S 1]</span>).<span class="ruby-identifier">read</span>.<span class="ruby-identifier">count</span>(<span class="ruby-string">&quot;\n&quot;</span>)
+    <span class="ruby-keyword">elsif</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">executable?</span>(<span class="ruby-string">&quot;/usr/sbin/sysconf&quot;</span>) <span class="ruby-keyword">and</span> <span class="ruby-identifier">os_name</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/irix/</span>
+      <span class="ruby-constant">IO</span>.<span class="ruby-identifier">popen</span>(<span class="ruby-node">%w[/usr/sbin/sysconf NPROC_ONLN]</span>).<span class="ruby-identifier">read</span>.<span class="ruby-identifier">to_i</span>
+    <span class="ruby-keyword">elsif</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">executable?</span>(<span class="ruby-string">&quot;/usr/sbin/sysctl&quot;</span>)
+      <span class="ruby-constant">IO</span>.<span class="ruby-identifier">popen</span>(<span class="ruby-node">%w[/usr/sbin/sysctl -n hw.ncpu]</span>).<span class="ruby-identifier">read</span>.<span class="ruby-identifier">to_i</span>
+    <span class="ruby-keyword">elsif</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">executable?</span>(<span class="ruby-string">&quot;/sbin/sysctl&quot;</span>)
+      <span class="ruby-constant">IO</span>.<span class="ruby-identifier">popen</span>(<span class="ruby-node">%w[/sbin/sysctl -n hw.ncpu]</span>).<span class="ruby-identifier">read</span>.<span class="ruby-identifier">to_i</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Unknown platform: &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-constant">RbConfig</span><span class="ruby-operator">::</span><span class="ruby-constant">CONFIG</span>[<span class="ruby-string">&quot;target_os&quot;</span>]
+      <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Assuming 1 processor.&quot;</span>
+      <span class="ruby-value">1</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- processor_count-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- processor_count-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

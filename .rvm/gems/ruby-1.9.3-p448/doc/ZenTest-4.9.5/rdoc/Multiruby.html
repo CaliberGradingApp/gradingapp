@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module Multiruby - ZenTest-4.9.5 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/multiruby.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-build_and_install">::build_and_install</a>
+    
+    <li><a href="#method-c-clean">::clean</a>
+    
+    <li><a href="#method-c-each_scm_build_dir">::each_scm_build_dir</a>
+    
+    <li><a href="#method-c-env">::env</a>
+    
+    <li><a href="#method-c-fetch_tar">::fetch_tar</a>
+    
+    <li><a href="#method-c-gnu_utils_build">::gnu_utils_build</a>
+    
+    <li><a href="#method-c-help">::help</a>
+    
+    <li><a href="#method-c-in_build_dir">::in_build_dir</a>
+    
+    <li><a href="#method-c-in_install_dir">::in_install_dir</a>
+    
+    <li><a href="#method-c-in_root_dir">::in_root_dir</a>
+    
+    <li><a href="#method-c-in_tmp_dir">::in_tmp_dir</a>
+    
+    <li><a href="#method-c-in_versions_dir">::in_versions_dir</a>
+    
+    <li><a href="#method-c-list">::list</a>
+    
+    <li><a href="#method-c-matching_versions">::matching_versions</a>
+    
+    <li><a href="#method-c-merge_rubygems">::merge_rubygems</a>
+    
+    <li><a href="#method-c-mri_latest_tag">::mri_latest_tag</a>
+    
+    <li><a href="#method-c-rake_build">::rake_build</a>
+    
+    <li><a href="#method-c-rm">::rm</a>
+    
+    <li><a href="#method-c-root_dir">::root_dir</a>
+    
+    <li><a href="#method-c-run">::run</a>
+    
+    <li><a href="#method-c-setup_dirs">::setup_dirs</a>
+    
+    <li><a href="#method-c-svn_co">::svn_co</a>
+    
+    <li><a href="#method-c-tags">::tags</a>
+    
+    <li><a href="#method-c-update">::update</a>
+    
+    <li><a href="#method-c-update_rubygems">::update_rubygems</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./History_txt.html">History</a>
+  
+    <li class="file"><a href="./Manifest_txt.html">Manifest</a>
+  
+    <li class="file"><a href="./README_txt.html">README</a>
+  
+    <li class="file"><a href="./articles/how_to_use_zentest_txt.html">how_to_use_zentest</a>
+  
+    <li class="file"><a href="./example_txt.html">example</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Autotest.html">Autotest</a>
+  
+    <li><a href="./Autotest/AutoUpdate.html">Autotest::AutoUpdate</a>
+  
+    <li><a href="./Autotest/Bundler.html">Autotest::Bundler</a>
+  
+    <li><a href="./Autotest/Isolate.html">Autotest::Isolate</a>
+  
+    <li><a href="./Autotest/Once.html">Autotest::Once</a>
+  
+    <li><a href="./Autotest/Preload.html">Autotest::Preload</a>
+  
+    <li><a href="./Autotest/RCov.html">Autotest::RCov</a>
+  
+    <li><a href="./Autotest/Restart.html">Autotest::Restart</a>
+  
+    <li><a href="./Autotest/Timestamp.html">Autotest::Timestamp</a>
+  
+    <li><a href="./FunctionalTestMatrix.html">FunctionalTestMatrix</a>
+  
+    <li><a href="./Module.html">Module</a>
+  
+    <li><a href="./Multiruby.html">Multiruby</a>
+  
+    <li><a href="./UnitDiff.html">UnitDiff</a>
+  
+    <li><a href="./ZenTest.html">ZenTest</a>
+  
+    <li><a href="./ZenTestMapping.html">ZenTestMapping</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module Multiruby</h1>
+
+  <div id="description" class="description">
+    
+<p>multiruby_setup is a script to help you manage multiruby.</p>
+
+<p>usage: multiruby_setup [-h|cmd|spec…]</p>
+
+<pre>cmds:
+
+  -h, --help, help = show this help.
+  build            = build and install everything. used internally.
+  clean            = clean scm build dirs and remove non-scm build dirs.
+  list             = print installed versions.
+  rm:$version      = remove a particular version.
+  rubygems:merge   = symlink all rubygem dirs to one dir.
+  tags             = list all tags from svn.
+  update           = update svn builds.
+  update:rubygems  = update rubygems and nuke install dirs.
+
+specs:
+
+  the_usual              = alias for latest versions from tar + rubygems
+  mri:svn:current        = alias for mri:svn:releases and mri:svn:branches.
+  mri:svn:releases       = alias for supported releases of mri ruby.
+  mri:svn:branches       = alias for active branches of mri ruby.
+  mri:svn:branch:$branch = install a specific $branch of mri from svn.
+  mri:svn:tag:$tag       = install a specific $tag of mri from svn.
+  mri:tar:$version       = install a specific $version of mri from tarball.
+
+environment variables:
+
+  GEM_URL  = url for rubygems tarballs
+  MRI_SVN  = url for MRI SVN
+  RUBY_URL = url for MRI tarballs
+  VERSIONS = what versions to install
+
+  RUBYOPT is cleared on installs.</pre>
+
+<p>NOTES:</p>
+<ul><li>
+<p>you can add a symlink to your rubinius build into ~/.multiruby/install</p>
+</li><li>
+<p>I need patches/maintainers for other implementations.</p>
+</li></ul>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="BRANCHES">BRANCHES
+        
+        <dd class="description">
+        
+      
+        <dt id="GEM_URL">GEM_URL
+        
+        <dd class="description">
+        
+      
+        <dt id="HELP">HELP
+        
+        <dd class="description">
+        
+      
+        <dt id="MRI_SVN">MRI_SVN
+        
+        <dd class="description">
+        
+      
+        <dt id="RUBY_URL">RUBY_URL
+        
+        <dd class="description">
+        
+      
+        <dt id="TAGS">TAGS
+        
+        <dd class="description">
+        
+      
+        <dt id="VERSIONS">VERSIONS
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-build_and_install" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">build_and_install</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="build_and_install-source">
+            <pre><span class="ruby-comment"># File lib/multiruby.rb, line 63</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">build_and_install</span>
+  <span class="ruby-constant">ENV</span>.<span class="ruby-identifier">delete</span> <span class="ruby-string">'RUBYOPT'</span>
+
+  <span class="ruby-identifier">root_dir</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">root_dir</span>
+  <span class="ruby-identifier">versions</span> = []
+
+  <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span> <span class="ruby-identifier">root_dir</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">setup_dirs</span>
+
+    <span class="ruby-identifier">rubygems</span> = <span class="ruby-constant">Dir</span>[<span class="ruby-string">&quot;versions/rubygems*.tgz&quot;</span>]
+    <span class="ruby-identifier">abort</span> <span class="ruby-string">&quot;You should delete all but one rubygem tarball&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">rubygems</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>
+    <span class="ruby-identifier">rubygem_tarball</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span> <span class="ruby-identifier">rubygems</span>.<span class="ruby-identifier">last</span> <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">nil</span>
+
+    <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span> <span class="ruby-string">&quot;build&quot;</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-constant">Dir</span>[<span class="ruby-string">&quot;../versions/*&quot;</span>].<span class="ruby-identifier">sort</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">tarball</span><span class="ruby-operator">|</span>
+        <span class="ruby-keyword">next</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">tarball</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/rubygems/</span>
+
+        <span class="ruby-identifier">build_dir</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span> <span class="ruby-identifier">tarball</span>, <span class="ruby-string">&quot;.tar.gz&quot;</span>
+        <span class="ruby-identifier">version</span> = <span class="ruby-identifier">build_dir</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp">/^ruby-?/</span>, <span class="ruby-string">''</span>)
+        <span class="ruby-identifier">inst_dir</span> = <span class="ruby-node">&quot;#{root_dir}/install/#{version}&quot;</span>
+
+        <span class="ruby-keyword">unless</span> <span class="ruby-identifier">test</span> <span class="ruby-string">d</span>, <span class="ruby-identifier">inst_dir</span> <span class="ruby-keyword">then</span>
+          <span class="ruby-keyword">unless</span> <span class="ruby-identifier">test</span> <span class="ruby-string">d</span>, <span class="ruby-identifier">build_dir</span> <span class="ruby-keyword">then</span>
+            <span class="ruby-keyword">if</span> <span class="ruby-identifier">test</span> <span class="ruby-string">d</span>, <span class="ruby-identifier">tarball</span> <span class="ruby-keyword">then</span>
+              <span class="ruby-identifier">dir</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span> <span class="ruby-identifier">tarball</span>
+              <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">ln_sf</span> <span class="ruby-node">&quot;../versions/#{dir}&quot;</span>, <span class="ruby-node">&quot;../build/#{dir}&quot;</span>
+            <span class="ruby-keyword">else</span>
+              <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;creating #{inst_dir}&quot;</span>
+              <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">mkdir</span> <span class="ruby-identifier">inst_dir</span>
+              <span class="ruby-identifier">run</span> <span class="ruby-node">&quot;tar zxf #{tarball}&quot;</span>
+            <span class="ruby-keyword">end</span>
+          <span class="ruby-keyword">end</span>
+          <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span> <span class="ruby-identifier">build_dir</span> <span class="ruby-keyword">do</span>
+            <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;building and installing #{version}&quot;</span>
+            <span class="ruby-keyword">if</span> <span class="ruby-identifier">test</span> <span class="ruby-string">f</span>, <span class="ruby-string">&quot;configure.in&quot;</span> <span class="ruby-keyword">then</span>
+              <span class="ruby-identifier">gnu_utils_build</span> <span class="ruby-identifier">inst_dir</span>
+            <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">test</span> <span class="ruby-string">f</span>, <span class="ruby-string">&quot;Rakefile&quot;</span> <span class="ruby-keyword">then</span>
+              <span class="ruby-identifier">rake_build</span> <span class="ruby-identifier">inst_dir</span>
+            <span class="ruby-keyword">else</span>
+              <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;dunno how to build&quot;</span>
+            <span class="ruby-keyword">end</span>
+
+            <span class="ruby-keyword">if</span> <span class="ruby-identifier">rubygem_tarball</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">version</span> <span class="ruby-operator">!~</span> <span class="ruby-regexp">/1[._-]9|mri_trunk|rubinius/</span> <span class="ruby-keyword">then</span>
+              <span class="ruby-identifier">rubygems</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span> <span class="ruby-identifier">rubygem_tarball</span>, <span class="ruby-string">&quot;.tgz&quot;</span>
+              <span class="ruby-identifier">run</span> <span class="ruby-node">&quot;tar zxf #{rubygem_tarball}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">test</span> <span class="ruby-string">d</span>, <span class="ruby-identifier">rubygems</span>
+
+              <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span> <span class="ruby-identifier">rubygems</span> <span class="ruby-keyword">do</span>
+                <span class="ruby-identifier">run</span> <span class="ruby-string">&quot;../ruby ./setup.rb --no-rdoc --no-ri&quot;</span>, <span class="ruby-string">&quot;../log.rubygems&quot;</span>
+              <span class="ruby-keyword">end</span>
+            <span class="ruby-keyword">end</span>
+          <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">versions</span> = <span class="ruby-constant">Dir</span>[<span class="ruby-string">&quot;install/*&quot;</span>].<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">path</span><span class="ruby-operator">|</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span> <span class="ruby-identifier">path</span> }
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">versions</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- build_and_install-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- build_and_install-method -->
+
+    
+      <div id="method-c-clean" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">clean</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="clean-source">
+            <pre><span class="ruby-comment"># File lib/multiruby.rb, line 124</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">clean</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">each_scm_build_dir</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">style</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">style</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:svn</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span> <span class="ruby-string">&quot;Rakefile&quot;</span> <span class="ruby-keyword">then</span>
+        <span class="ruby-identifier">run</span> <span class="ruby-string">&quot;rake clean&quot;</span>
+      <span class="ruby-keyword">elsif</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span> <span class="ruby-string">&quot;Makefile&quot;</span> <span class="ruby-keyword">then</span>
+        <span class="ruby-identifier">run</span> <span class="ruby-string">&quot;make clean&quot;</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">rm_rf</span> <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">pwd</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- clean-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- clean-method -->
+
+    
+      <div id="method-c-each_scm_build_dir" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">each_scm_build_dir</span><span
+            class="method-args">() { |:svn| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="each_scm_build_dir-source">
+            <pre><span class="ruby-comment"># File lib/multiruby.rb, line 139</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">each_scm_build_dir</span>
+  <span class="ruby-constant">Multiruby</span>.<span class="ruby-identifier">in_build_dir</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-constant">Dir</span>[<span class="ruby-string">&quot;*&quot;</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">dir</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">next</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span> <span class="ruby-identifier">dir</span>
+      <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span> <span class="ruby-identifier">dir</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span>(<span class="ruby-string">&quot;.svn&quot;</span>) <span class="ruby-keyword">then</span>
+          <span class="ruby-keyword">yield</span> <span class="ruby-operator">:</span><span class="ruby-identifier">svn</span>
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-keyword">yield</span> <span class="ruby-operator">:</span><span class="ruby-identifier">none</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- each_scm_build_dir-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- each_scm_build_dir-method -->
+
+    
+      <div id="method-c-env" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">env</span><span
+            class="method-args">(name, fallback;)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="env-source">
+            <pre><span class="ruby-comment"># File lib/multiruby.rb, line 46</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">env</span> <span class="ruby-identifier">name</span>, <span class="ruby-identifier">fallback</span>; <span class="ruby-constant">ENV</span>[<span class="ruby-identifier">name</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">fallback</span>; <span class="ruby-keyword">end</span></pre>
+          </div><!-- env-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- env-method -->
+
+    
+      <div id="method-c-fetch_tar" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">fetch_tar</span><span
+            class="method-args">(v)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="fetch_tar-source">
+            <pre><span class="ruby-comment"># File lib/multiruby.rb, line 174</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">fetch_tar</span> <span class="ruby-identifier">v</span>
+  <span class="ruby-identifier">in_versions_dir</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;  Determining latest version for #{v}&quot;</span>
+    <span class="ruby-identifier">ver</span> = <span class="ruby-identifier">v</span>[<span class="ruby-regexp">/\d+\.\d+/</span>]
+    <span class="ruby-identifier">base</span> = <span class="ruby-identifier">matching_versions</span>(<span class="ruby-node">&quot;#{RUBY_URL}/#{ver}/&quot;</span>, <span class="ruby-identifier">v</span>).<span class="ruby-identifier">last</span>
+    <span class="ruby-identifier">abort</span> <span class="ruby-node">&quot;Could not determine release for #{v}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">base</span>
+    <span class="ruby-identifier">url</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span> <span class="ruby-constant">RUBY_URL</span>, <span class="ruby-identifier">ver</span>, <span class="ruby-identifier">base</span>
+    <span class="ruby-keyword">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">file?</span> <span class="ruby-identifier">base</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;    Fetching #{base} via HTTP... this might take a while.&quot;</span>
+      <span class="ruby-identifier">open</span>(<span class="ruby-identifier">url</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+        <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span> <span class="ruby-identifier">base</span>, <span class="ruby-string">'w'</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">out</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">out</span>.<span class="ruby-identifier">write</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">read</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- fetch_tar-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- fetch_tar-method -->
+
+    
+      <div id="method-c-gnu_utils_build" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">gnu_utils_build</span><span
+            class="method-args">(inst_dir)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="gnu_utils_build-source">
+            <pre><span class="ruby-comment"># File lib/multiruby.rb, line 192</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">gnu_utils_build</span> <span class="ruby-identifier">inst_dir</span>
+  <span class="ruby-identifier">run</span> <span class="ruby-string">&quot;autoconf&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">test</span> <span class="ruby-string">f</span>, <span class="ruby-string">&quot;configure&quot;</span>
+  <span class="ruby-identifier">run</span> <span class="ruby-node">&quot;./configure --enable-shared --prefix #{inst_dir}&quot;</span>, <span class="ruby-string">&quot;log.configure&quot;</span> <span class="ruby-keyword">unless</span>
+    <span class="ruby-identifier">test</span> <span class="ruby-string">f</span>, <span class="ruby-string">&quot;Makefile&quot;</span>
+  <span class="ruby-identifier">run</span> <span class="ruby-string">&quot;(nice make -j4 main; nice make main)&quot;</span>, <span class="ruby-string">&quot;log.build&quot;</span>
+  <span class="ruby-identifier">run</span> <span class="ruby-string">&quot;make install-nodoc&quot;</span>, <span class="ruby-string">&quot;log.install&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- gnu_utils_build-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- gnu_utils_build-method -->
+
+    
+      <div id="method-c-help" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">help</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="help-source">
+            <pre><span class="ruby-comment"># File lib/multiruby.rb, line 200</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">help</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-constant">HELP</span>.<span class="ruby-identifier">join</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- help-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- help-method -->
+
+    
+      <div id="method-c-in_build_dir" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">in_build_dir</span><span
+            class="method-args">() { || ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="in_build_dir-source">
+            <pre><span class="ruby-comment"># File lib/multiruby.rb, line 204</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">in_build_dir</span>
+  <span class="ruby-identifier">in_root_dir</span> <span class="ruby-string">&quot;build&quot;</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">yield</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- in_build_dir-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- in_build_dir-method -->
+
+    
+      <div id="method-c-in_install_dir" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">in_install_dir</span><span
+            class="method-args">() { || ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="in_install_dir-source">
+            <pre><span class="ruby-comment"># File lib/multiruby.rb, line 210</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">in_install_dir</span>
+  <span class="ruby-identifier">in_root_dir</span> <span class="ruby-string">&quot;install&quot;</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">yield</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- in_install_dir-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- in_install_dir-method -->
+
+    
+      <div id="method-c-in_root_dir" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">in_root_dir</span><span
+            class="method-args">(subdir = "") { || ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="in_root_dir-source">
+            <pre><span class="ruby-comment"># File lib/multiruby.rb, line 216</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">in_root_dir</span> <span class="ruby-identifier">subdir</span> = <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">root_dir</span>, <span class="ruby-identifier">subdir</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">yield</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- in_root_dir-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- in_root_dir-method -->
+
+    
+      <div id="method-c-in_tmp_dir" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">in_tmp_dir</span><span
+            class="method-args">() { || ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="in_tmp_dir-source">
+            <pre><span class="ruby-comment"># File lib/multiruby.rb, line 222</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">in_tmp_dir</span>
+  <span class="ruby-identifier">in_root_dir</span> <span class="ruby-string">&quot;tmp&quot;</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">yield</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- in_tmp_dir-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- in_tmp_dir-method -->
+
+    
+      <div id="method-c-in_versions_dir" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">in_versions_dir</span><span
+            class="method-args">() { || ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="in_versions_dir-source">
+            <pre><span class="ruby-comment"># File lib/multiruby.rb, line 228</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">in_versions_dir</span>
+  <span class="ruby-identifier">in_root_dir</span> <span class="ruby-string">&quot;versions&quot;</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">yield</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- in_versions_dir-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- in_versions_dir-method -->
+
+    
+      <div id="method-c-list" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">list</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="list-source">
+            <pre><span class="ruby-comment"># File lib/multiruby.rb, line 234</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">list</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Known versions:&quot;</span>
+  <span class="ruby-identifier">in_install_dir</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-constant">Dir</span>[<span class="ruby-string">&quot;*&quot;</span>].<span class="ruby-identifier">sort</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">d</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;  #{d}&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- list-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- list-method -->
+
+    
+      <div id="method-c-matching_versions" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">matching_versions</span><span
+            class="method-args">(url, matching=nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="matching_versions-source">
+            <pre><span class="ruby-comment"># File lib/multiruby.rb, line 154</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">matching_versions</span> <span class="ruby-identifier">url</span>, <span class="ruby-identifier">matching</span>=<span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">file</span> = <span class="ruby-constant">URI</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">url</span>).<span class="ruby-identifier">read</span>
+
+  <span class="ruby-identifier">map</span> = {
+    <span class="ruby-string">&quot;preview&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;beta&quot;</span>,
+    <span class="ruby-string">&quot;rc&quot;</span>      =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;beta2&quot;</span>,
+    <span class="ruby-string">&quot;p&quot;</span>       =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;release&quot;</span>,
+    <span class="ruby-string">&quot;tar&quot;</span>     =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;aargh&quot;</span>,
+    <span class="ruby-string">&quot;gz&quot;</span>      =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;aargh&quot;</span>,
+  }
+
+  <span class="ruby-identifier">versions</span> = <span class="ruby-identifier">file</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-regexp">/href=&quot;(ruby.*tar.gz)&quot;/</span>).<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">sort_by</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">s</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-regexp">/\d+|[a-z]+/</span>).<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">a</span><span class="ruby-operator">|</span> <span class="ruby-constant">Integer</span>(<span class="ruby-identifier">a</span>) <span class="ruby-keyword">rescue</span> <span class="ruby-identifier">map</span>[<span class="ruby-identifier">a</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">a</span> }
+  }
+
+  <span class="ruby-identifier">versions</span> = <span class="ruby-identifier">versions</span>.<span class="ruby-identifier">grep</span>(<span class="ruby-node">/#{Regexp.escape(matching)}/</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">matching</span>
+
+  <span class="ruby-identifier">versions</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- matching_versions-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- matching_versions-method -->
+
+    
+      <div id="method-c-merge_rubygems" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">merge_rubygems</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="merge_rubygems-source">
+            <pre><span class="ruby-comment"># File lib/multiruby.rb, line 243</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">merge_rubygems</span>
+  <span class="ruby-identifier">in_install_dir</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">gems</span> = <span class="ruby-constant">Dir</span>[<span class="ruby-string">&quot;*/lib/ruby/gems&quot;</span>]
+
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">test</span> <span class="ruby-string">d</span>, <span class="ruby-string">&quot;../gems&quot;</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">mv</span> <span class="ruby-identifier">gems</span>.<span class="ruby-identifier">first</span>, <span class="ruby-string">&quot;..&quot;</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">gems</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">d</span><span class="ruby-operator">|</span>
+      <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">rm_rf</span> <span class="ruby-identifier">d</span>
+      <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">ln_sf</span> <span class="ruby-string">&quot;../../../../gems&quot;</span>, <span class="ruby-identifier">d</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- merge_rubygems-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- merge_rubygems-method -->
+
+    
+      <div id="method-c-mri_latest_tag" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mri_latest_tag</span><span
+            class="method-args">(v)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="mri_latest_tag-source">
+            <pre><span class="ruby-comment"># File lib/multiruby.rb, line 258</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">mri_latest_tag</span> <span class="ruby-identifier">v</span>
+  <span class="ruby-constant">Multiruby</span>.<span class="ruby-identifier">tags</span>.<span class="ruby-identifier">grep</span>(<span class="ruby-node">/#{v}/</span>).<span class="ruby-identifier">last</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- mri_latest_tag-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- mri_latest_tag-method -->
+
+    
+      <div id="method-c-rake_build" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">rake_build</span><span
+            class="method-args">(inst_dir)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="rake_build-source">
+            <pre><span class="ruby-comment"># File lib/multiruby.rb, line 262</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">rake_build</span> <span class="ruby-identifier">inst_dir</span>
+  <span class="ruby-identifier">run</span> <span class="ruby-string">&quot;rake&quot;</span>, <span class="ruby-string">&quot;log.build&quot;</span>
+  <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">ln_sf</span> <span class="ruby-node">&quot;../build/#{File.basename Dir.pwd}&quot;</span>, <span class="ruby-identifier">inst_dir</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- rake_build-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- rake_build-method -->
+
+    
+      <div id="method-c-rm" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">rm</span><span
+            class="method-args">(name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="rm-source">
+            <pre><span class="ruby-comment"># File lib/multiruby.rb, line 267</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">rm</span> <span class="ruby-identifier">name</span>
+  <span class="ruby-constant">Multiruby</span>.<span class="ruby-identifier">in_root_dir</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">rm_rf</span> <span class="ruby-constant">Dir</span>[<span class="ruby-node">&quot;*/#{name}&quot;</span>]
+    <span class="ruby-identifier">f</span> = <span class="ruby-node">&quot;versions/ruby-#{name}.tar.gz&quot;</span>
+    <span class="ruby-constant">File</span>.<span class="ruby-identifier">unlink</span> <span class="ruby-identifier">f</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">test</span> <span class="ruby-string">f</span>, <span class="ruby-identifier">f</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- rm-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- rm-method -->
+
+    
+      <div id="method-c-root_dir" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">root_dir</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="root_dir-source">
+            <pre><span class="ruby-comment"># File lib/multiruby.rb, line 275</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">root_dir</span>
+  <span class="ruby-identifier">root_dir</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-constant">ENV</span>[<span class="ruby-string">'MULTIRUBY'</span>] <span class="ruby-operator">||</span>
+                              <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">ENV</span>[<span class="ruby-string">'HOME'</span>], <span class="ruby-string">&quot;.multiruby&quot;</span>))
+
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">test</span> <span class="ruby-string">d</span>, <span class="ruby-identifier">root_dir</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;creating #{root_dir}&quot;</span>
+    <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">mkdir</span> <span class="ruby-identifier">root_dir</span>, <span class="ruby-value">0700</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">root_dir</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- root_dir-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- root_dir-method -->
+
+    
+      <div id="method-c-run" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">run</span><span
+            class="method-args">(base_cmd, log = nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="run-source">
+            <pre><span class="ruby-comment"># File lib/multiruby.rb, line 287</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">run</span> <span class="ruby-identifier">base_cmd</span>, <span class="ruby-identifier">log</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">cmd</span> = <span class="ruby-identifier">base_cmd</span>
+  <span class="ruby-identifier">cmd</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot; &gt; #{log} 2&gt;&amp;1&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">log</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Running command: #{cmd}&quot;</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;ERROR: Command failed with exit code #{$?}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">system</span> <span class="ruby-identifier">cmd</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- run-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- run-method -->
+
+    
+      <div id="method-c-setup_dirs" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">setup_dirs</span><span
+            class="method-args">(download = true)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="setup_dirs-source">
+            <pre><span class="ruby-comment"># File lib/multiruby.rb, line 294</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">setup_dirs</span> <span class="ruby-identifier">download</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-node">%w(build install versions tmp)</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">dir</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">test</span> <span class="ruby-string">d</span>, <span class="ruby-identifier">dir</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;creating #{dir}&quot;</span>
+      <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">mkdir</span> <span class="ruby-identifier">dir</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">dir</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;versions&quot;</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">download</span> <span class="ruby-keyword">then</span>
+        <span class="ruby-identifier">warn</span> <span class="ruby-string">&quot;  Downloading initial ruby tarballs to ~/.multiruby/versions:&quot;</span>
+        <span class="ruby-constant">VERSIONS</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+          <span class="ruby-keyword">self</span>.<span class="ruby-identifier">fetch_tar</span> <span class="ruby-identifier">v</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">warn</span> <span class="ruby-string">&quot;  ...done&quot;</span>
+        <span class="ruby-identifier">warn</span> <span class="ruby-string">&quot;  Put other ruby tarballs in ~/.multiruby/versions to use them.&quot;</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- setup_dirs-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- setup_dirs-method -->
+
+    
+      <div id="method-c-svn_co" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">svn_co</span><span
+            class="method-args">(url, dir)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="svn_co-source">
+            <pre><span class="ruby-comment"># File lib/multiruby.rb, line 311</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">svn_co</span> <span class="ruby-identifier">url</span>, <span class="ruby-identifier">dir</span>
+  <span class="ruby-constant">Multiruby</span>.<span class="ruby-identifier">in_versions_dir</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-constant">Multiruby</span>.<span class="ruby-identifier">run</span> <span class="ruby-node">&quot;svn co #{url} #{dir}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span> <span class="ruby-identifier">dir</span>
+    <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">ln_sf</span> <span class="ruby-node">&quot;../versions/#{dir}&quot;</span>, <span class="ruby-node">&quot;../build/#{dir}&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- svn_co-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- svn_co-method -->
+
+    
+      <div id="method-c-tags" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">tags</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="tags-source">
+            <pre><span class="ruby-comment"># File lib/multiruby.rb, line 318</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tags</span>
+  <span class="ruby-identifier">tags</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-constant">Multiruby</span>.<span class="ruby-identifier">in_tmp_dir</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">cache</span> = <span class="ruby-string">&quot;svn.tag.cache&quot;</span>
+    <span class="ruby-constant">File</span>.<span class="ruby-identifier">unlink</span> <span class="ruby-identifier">cache</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span> <span class="ruby-operator">-</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">mtime</span>(<span class="ruby-identifier">cache</span>) <span class="ruby-operator">&gt;</span> <span class="ruby-value">3600</span> <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">nil</span>
+
+    <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span> <span class="ruby-identifier">cache</span>, <span class="ruby-string">&quot;w&quot;</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">f</span>.<span class="ruby-identifier">write</span> <span class="ruby-node">%xsvn ls #{MRI_SVN}/tags/`</span>
+    <span class="ruby-keyword">end</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span> <span class="ruby-identifier">cache</span>
+
+    <span class="ruby-identifier">tags</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">cache</span>).<span class="ruby-identifier">split</span>(<span class="ruby-regexp">/\n/</span>).<span class="ruby-identifier">grep</span>(<span class="ruby-regexp">/^v/</span>).<span class="ruby-identifier">reject</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">s</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/preview/</span>}
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">tags</span> = <span class="ruby-identifier">tags</span>.<span class="ruby-identifier">sort_by</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span> <span class="ruby-identifier">t</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-regexp">/\d+/</span>).<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">to_i</span> } }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- tags-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- tags-method -->
+
+    
+      <div id="method-c-update" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="update-source">
+            <pre><span class="ruby-comment"># File lib/multiruby.rb, line 334</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">update</span>
+  <span class="ruby-comment"># TODO:</span>
+  <span class="ruby-comment"># update will look at the dir name and act accordingly rel_.* will</span>
+  <span class="ruby-comment"># figure out latest tag on that name and svn sw to it trunk and</span>
+  <span class="ruby-comment"># others will just svn update</span>
+
+  <span class="ruby-identifier">clean</span> = []
+
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">each_scm_build_dir</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">style</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">dir</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-constant">Dir</span>.<span class="ruby-identifier">pwd</span>)
+    <span class="ruby-identifier">warn</span> <span class="ruby-identifier">dir</span>
+
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">style</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:svn</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-keyword">case</span> <span class="ruby-identifier">dir</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-regexp">/mri_\d/</span> <span class="ruby-keyword">then</span>
+        <span class="ruby-identifier">system</span> <span class="ruby-string">&quot;svn cleanup&quot;</span> <span class="ruby-comment"># just in case</span>
+        <span class="ruby-identifier">svn_up</span> = <span class="ruby-value">%xsvn up`</span>
+        <span class="ruby-identifier">in_build_dir</span> <span class="ruby-keyword">do</span>
+          <span class="ruby-keyword">if</span> <span class="ruby-identifier">svn_up</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/^[ADUCG] /</span> <span class="ruby-keyword">then</span>
+            <span class="ruby-identifier">clean</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">dir</span>
+          <span class="ruby-keyword">else</span>
+            <span class="ruby-identifier">warn</span> <span class="ruby-string">&quot;  no update&quot;</span>
+          <span class="ruby-keyword">end</span>
+          <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">ln_sf</span> <span class="ruby-node">&quot;../build/#{dir}&quot;</span>, <span class="ruby-node">&quot;../versions/#{dir}&quot;</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-regexp">/mri_rel_(.+)/</span> <span class="ruby-keyword">then</span>
+        <span class="ruby-identifier">ver</span> = <span class="ruby-node">$1</span>
+        <span class="ruby-identifier">url</span> = <span class="ruby-value">%xsvn info`</span>[<span class="ruby-regexp">/^URL: (.*)/</span>, <span class="ruby-value">1</span>]
+        <span class="ruby-identifier">latest</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">mri_latest_tag</span>(<span class="ruby-identifier">ver</span>).<span class="ruby-identifier">chomp</span>(<span class="ruby-string">'/'</span>)
+        <span class="ruby-identifier">new_url</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-identifier">url</span>), <span class="ruby-identifier">latest</span>)
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">new_url</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">url</span> <span class="ruby-keyword">then</span>
+          <span class="ruby-identifier">run</span> <span class="ruby-node">&quot;svn sw #{new_url}&quot;</span>
+          <span class="ruby-identifier">clean</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">dir</span>
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-identifier">warn</span> <span class="ruby-string">&quot;  no update&quot;</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;  update in this svn dir not supported yet: #{dir}&quot;</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;  update in non-svn dir not supported yet: #{dir}&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">in_install_dir</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">clean</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">dir</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;removing install/#{dir}&quot;</span>
+      <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">rm_rf</span> <span class="ruby-identifier">dir</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- update-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- update-method -->
+
+    
+      <div id="method-c-update_rubygems" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update_rubygems</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="update_rubygems-source">
+            <pre><span class="ruby-comment"># File lib/multiruby.rb, line 387</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">update_rubygems</span>
+  <span class="ruby-identifier">warn</span> <span class="ruby-string">&quot;  Determining latest version for rubygems&quot;</span>
+  <span class="ruby-identifier">html</span> = <span class="ruby-constant">URI</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-constant">GEM_URL</span>).<span class="ruby-identifier">read</span>
+
+  <span class="ruby-identifier">versions</span> = <span class="ruby-identifier">html</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-regexp">/href=&quot;rubygems-update-(\d+(?:\.\d+)+).gem/</span>).<span class="ruby-identifier">flatten</span>
+  <span class="ruby-identifier">latest</span> = <span class="ruby-identifier">versions</span>.<span class="ruby-identifier">sort_by</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-regexp">/\d+/</span>).<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">to_i</span> } }.<span class="ruby-identifier">last</span>
+
+  <span class="ruby-constant">Multiruby</span>.<span class="ruby-identifier">in_versions_dir</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">file</span> = <span class="ruby-node">&quot;rubygems-#{latest}.tgz&quot;</span>
+    <span class="ruby-keyword">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">file?</span> <span class="ruby-identifier">file</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;    Fetching rubygems-#{latest}.tgz via HTTP.&quot;</span>
+      <span class="ruby-constant">File</span>.<span class="ruby-identifier">unlink</span>(*<span class="ruby-constant">Dir</span>[<span class="ruby-string">&quot;rubygems*&quot;</span>])
+      <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span> <span class="ruby-identifier">file</span>, <span class="ruby-string">'w'</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">f</span>.<span class="ruby-identifier">write</span> <span class="ruby-constant">URI</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-constant">GEM_URL</span><span class="ruby-operator">+</span><span class="ruby-string">&quot;/&quot;</span><span class="ruby-operator">+</span><span class="ruby-identifier">file</span>).<span class="ruby-identifier">read</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-constant">Multiruby</span>.<span class="ruby-identifier">in_build_dir</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">rm_rf</span> <span class="ruby-constant">Dir</span>[<span class="ruby-string">&quot;rubygems*&quot;</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-constant">Multiruby</span>.<span class="ruby-identifier">in_install_dir</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">rm_rf</span> <span class="ruby-constant">Dir</span>[<span class="ruby-string">&quot;*&quot;</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- update_rubygems-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- update_rubygems-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

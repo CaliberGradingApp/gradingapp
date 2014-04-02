@@ -1,0 +1,16 @@
+{:ancestors{I"XPath::Union:EF[I"Enumerable;FI"Object;FI"XPath::Renderer;F[I"Object;FI"XPath::Literal;F[I"Object;FI"XPath::Expression;F[I"Object;FI" XPath::DSL::ExpressionLevel;FI"
+XPath;F[I"XPath::DSL::TopLevel;FI" XPath::DSL::ExpressionLevel;F[@I"XPath::HTML;F[@:attributes{@[I"attr_reader arguments;FI"attr_reader expressions;F@[I"attr_reader value;F@[I"attr_accessor arguments;FI"attr_accessor expression;F:class_methods{
+@[I"new;F@[I"new;FI"render;F@[I"new;F@[I"new;FI"
+XPath;F[I"generate;F:encodingIu:Encoding
+UTF-8;F:instance_methods{@[I"arguments;FI"	each;FI"expression;FI"expressions;FI"method_missing;FI"	to_s;FI"to_xpath;F@[!I"and;FI"anywhere;FI"attribute;FI"	axis;FI"
+child;FI"contains;FI"convert_argument;FI"css;FI"descendant;FI"equality;FI"inverse;FI"is;FI"literal;FI"next_sibling;FI"node_name;FI"normalized_space;FI"one_of;FI"or;FI"previous_sibling;FI"render;FI"starts_with;FI"string_function;FI"string_literal;FI"	text;FI"this_node;FI"
+union;FI"variable;FI"
+where;F@[I"
+value;F@[
+I"arguments;FI"current;FI"expression;FI"	to_s;FI"to_xpath;FI"XPath::DSL::TopLevel;F[I"anywhere;FI"	attr;FI"	axis;FI"
+child;FI"contains;FI"css;FI"current;FI"descendant;FI"	name;FI"next_sibling;FI"previous_sibling;FI"starts_with;FI"string;FI"	text;F@[I"&;FI"+;FI"==;FI"[];FI"and;FI"equals;FI"inverse;FI"is;FI"n;FI"normalize;FI"one_of;FI"or;FI"string_literal;FI"
+union;FI"
+where;FI"|;FI"~;FI"XPath::HTML;F[I"button;FI"checkbox;FI"definition_description;FI"
+field;FI"fieldset;FI"file_field;FI"fillable_field;FI"	link;FI"link_or_button;FI"locate_field;FI"optgroup;FI"option;FI"radio_button;FI"select;FI"
+table;F:modules[I"
+XPath;FI"XPath::DSL;F@@I"XPath::Expression;FI"XPath::HTML;FI"XPath::Literal;FI"XPath::Renderer;FI"XPath::Union;F

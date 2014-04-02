@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module RSpec::Core::MemoizedHelpers - rspec-core-2.14.7 Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/rspec/core/memoized_helpers.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><span class="include">Module</span>
+  
+  
+  </ul>
+</nav>
+
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-should">#should</a>
+    
+    <li><a href="#method-i-should_not">#should_not</a>
+    
+    <li><a href="#method-i-subject">#subject</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../RSpec.html">RSpec</a>
+  
+    <li><a href="../../RSpec/Core.html">RSpec::Core</a>
+  
+    <li><a href="../../RSpec/Core/BacktraceCleaner.html">RSpec::Core::BacktraceCleaner</a>
+  
+    <li><a href="../../RSpec/Core/BacktraceFormatter.html">RSpec::Core::BacktraceFormatter</a>
+  
+    <li><a href="../../RSpec/Core/CommandLine.html">RSpec::Core::CommandLine</a>
+  
+    <li><a href="../../RSpec/Core/Configuration.html">RSpec::Core::Configuration</a>
+  
+    <li><a href="../../RSpec/Core/Configuration/MustBeConfiguredBeforeExampleGroupsError.html">RSpec::Core::Configuration::MustBeConfiguredBeforeExampleGroupsError</a>
+  
+    <li><a href="../../RSpec/Core/ConfigurationOptions.html">RSpec::Core::ConfigurationOptions</a>
+  
+    <li><a href="../../RSpec/Core/ConstMissing.html">RSpec::Core::ConstMissing</a>
+  
+    <li><a href="../../RSpec/Core/DRbCommandLine.html">RSpec::Core::DRbCommandLine</a>
+  
+    <li><a href="../../RSpec/Core/DSL.html">RSpec::Core::DSL</a>
+  
+    <li><a href="../../RSpec/Core/Deprecation.html">RSpec::Core::Deprecation</a>
+  
+    <li><a href="../../RSpec/Core/DrbOptions.html">RSpec::Core::DrbOptions</a>
+  
+    <li><a href="../../RSpec/Core/Example.html">RSpec::Core::Example</a>
+  
+    <li><a href="../../RSpec/Core/Example/Procsy.html">RSpec::Core::Example::Procsy</a>
+  
+    <li><a href="../../RSpec/Core/ExampleGroup.html">RSpec::Core::ExampleGroup</a>
+  
+    <li><a href="../../RSpec/Core/Extensions.html">RSpec::Core::Extensions</a>
+  
+    <li><a href="../../RSpec/Core/Extensions/InstanceEvalWithArgs.html">RSpec::Core::Extensions::InstanceEvalWithArgs</a>
+  
+    <li><a href="../../RSpec/Core/Extensions/ModuleEvalWithArgs.html">RSpec::Core::Extensions::ModuleEvalWithArgs</a>
+  
+    <li><a href="../../RSpec/Core/Extensions/Ordered.html">RSpec::Core::Extensions::Ordered</a>
+  
+    <li><a href="../../RSpec/Core/Extensions/Ordered/ExampleGroups.html">RSpec::Core::Extensions::Ordered::ExampleGroups</a>
+  
+    <li><a href="../../RSpec/Core/Extensions/Ordered/Examples.html">RSpec::Core::Extensions::Ordered::Examples</a>
+  
+    <li><a href="../../RSpec/Core/FilterManager.html">RSpec::Core::FilterManager</a>
+  
+    <li><a href="../../RSpec/Core/FilterManager/BackwardCompatibility.html">RSpec::Core::FilterManager::BackwardCompatibility</a>
+  
+    <li><a href="../../RSpec/Core/FilterManager/Describable.html">RSpec::Core::FilterManager::Describable</a>
+  
+    <li><a href="../../RSpec/Core/Formatters.html">RSpec::Core::Formatters</a>
+  
+    <li><a href="../../RSpec/Core/Formatters/BaseFormatter.html">RSpec::Core::Formatters::BaseFormatter</a>
+  
+    <li><a href="../../RSpec/Core/Formatters/BaseTextFormatter.html">RSpec::Core::Formatters::BaseTextFormatter</a>
+  
+    <li><a href="../../RSpec/Core/Formatters/DeprecationFormatter.html">RSpec::Core::Formatters::DeprecationFormatter</a>
+  
+    <li><a href="../../RSpec/Core/Formatters/DocumentationFormatter.html">RSpec::Core::Formatters::DocumentationFormatter</a>
+  
+    <li><a href="../../RSpec/Core/Formatters/Helpers.html">RSpec::Core::Formatters::Helpers</a>
+  
+    <li><a href="../../RSpec/Core/Formatters/HtmlFormatter.html">RSpec::Core::Formatters::HtmlFormatter</a>
+  
+    <li><a href="../../RSpec/Core/Formatters/HtmlPrinter.html">RSpec::Core::Formatters::HtmlPrinter</a>
+  
+    <li><a href="../../RSpec/Core/Formatters/JsonFormatter.html">RSpec::Core::Formatters::JsonFormatter</a>
+  
+    <li><a href="../../RSpec/Core/Formatters/ProgressFormatter.html">RSpec::Core::Formatters::ProgressFormatter</a>
+  
+    <li><a href="../../RSpec/Core/Formatters/SnippetExtractor.html">RSpec::Core::Formatters::SnippetExtractor</a>
+  
+    <li><a href="../../RSpec/Core/Formatters/SnippetExtractor/NullConverter.html">RSpec::Core::Formatters::SnippetExtractor::NullConverter</a>
+  
+    <li><a href="../../RSpec/Core/Formatters/TextMateFormatter.html">RSpec::Core::Formatters::TextMateFormatter</a>
+  
+    <li><a href="../../RSpec/Core/Hooks.html">RSpec::Core::Hooks</a>
+  
+    <li><a href="../../RSpec/Core/Hooks/AfterAllHook.html">RSpec::Core::Hooks::AfterAllHook</a>
+  
+    <li><a href="../../RSpec/Core/Hooks/AfterHook.html">RSpec::Core::Hooks::AfterHook</a>
+  
+    <li><a href="../../RSpec/Core/Hooks/AroundHook.html">RSpec::Core::Hooks::AroundHook</a>
+  
+    <li><a href="../../RSpec/Core/Hooks/AroundHookCollection.html">RSpec::Core::Hooks::AroundHookCollection</a>
+  
+    <li><a href="../../RSpec/Core/Hooks/BeforeHook.html">RSpec::Core::Hooks::BeforeHook</a>
+  
+    <li><a href="../../RSpec/Core/Hooks/GroupHookCollection.html">RSpec::Core::Hooks::GroupHookCollection</a>
+  
+    <li><a href="../../RSpec/Core/Hooks/Hook.html">RSpec::Core::Hooks::Hook</a>
+  
+    <li><a href="../../RSpec/Core/Hooks/HookCollection.html">RSpec::Core::Hooks::HookCollection</a>
+  
+    <li><a href="../../RSpec/Core/Hooks/HookCollectionAliases.html">RSpec::Core::Hooks::HookCollectionAliases</a>
+  
+    <li><a href="../../RSpec/Core/Hooks/RegistersGlobals.html">RSpec::Core::Hooks::RegistersGlobals</a>
+  
+    <li><a href="../../RSpec/Core/MemoizedHelpers.html">RSpec::Core::MemoizedHelpers</a>
+  
+    <li><a href="../../RSpec/Core/MemoizedHelpers/BeforeAllMemoizedHash.html">RSpec::Core::MemoizedHelpers::BeforeAllMemoizedHash</a>
+  
+    <li><a href="../../RSpec/Core/MemoizedHelpers/ClassMethods.html">RSpec::Core::MemoizedHelpers::ClassMethods</a>
+  
+    <li><a href="../../RSpec/Core/Metadata.html">RSpec::Core::Metadata</a>
+  
+    <li><a href="../../RSpec/Core/Metadata/ExampleMetadataHash.html">RSpec::Core::Metadata::ExampleMetadataHash</a>
+  
+    <li><a href="../../RSpec/Core/Metadata/GroupMetadataHash.html">RSpec::Core::Metadata::GroupMetadataHash</a>
+  
+    <li><a href="../../RSpec/Core/Metadata/MetadataHash.html">RSpec::Core::Metadata::MetadataHash</a>
+  
+    <li><a href="../../RSpec/Core/MetadataHashBuilder.html">RSpec::Core::MetadataHashBuilder</a>
+  
+    <li><a href="../../RSpec/Core/MetadataHashBuilder/Common.html">RSpec::Core::MetadataHashBuilder::Common</a>
+  
+    <li><a href="../../RSpec/Core/MetadataHashBuilder/WithConfigWarning.html">RSpec::Core::MetadataHashBuilder::WithConfigWarning</a>
+  
+    <li><a href="../../RSpec/Core/MetadataHashBuilder/WithDeprecationWarning.html">RSpec::Core::MetadataHashBuilder::WithDeprecationWarning</a>
+  
+    <li><a href="../../RSpec/Core/MockFrameworkAdapter.html">RSpec::Core::MockFrameworkAdapter</a>
+  
+    <li><a href="../../RSpec/Core/Parser.html">RSpec::Core::Parser</a>
+  
+    <li><a href="../../RSpec/Core/Pending.html">RSpec::Core::Pending</a>
+  
+    <li><a href="../../RSpec/Core/Pending/PendingDeclaredInExample.html">RSpec::Core::Pending::PendingDeclaredInExample</a>
+  
+    <li><a href="../../RSpec/Core/Pending/PendingExampleFixedError.html">RSpec::Core::Pending::PendingExampleFixedError</a>
+  
+    <li><a href="../../RSpec/Core/ProjectInitializer.html">RSpec::Core::ProjectInitializer</a>
+  
+    <li><a href="../../RSpec/Core/RakeTask.html">RSpec::Core::RakeTask</a>
+  
+    <li><a href="../../RSpec/Core/Reporter.html">RSpec::Core::Reporter</a>
+  
+    <li><a href="../../RSpec/Core/RubyProject.html">RSpec::Core::RubyProject</a>
+  
+    <li><a href="../../RSpec/Core/Runner.html">RSpec::Core::Runner</a>
+  
+    <li><a href="../../RSpec/Core/SharedContext.html">RSpec::Core::SharedContext</a>
+  
+    <li><a href="../../RSpec/Core/SharedExampleGroup.html">RSpec::Core::SharedExampleGroup</a>
+  
+    <li><a href="../../RSpec/Core/SharedExampleGroup/Collection.html">RSpec::Core::SharedExampleGroup::Collection</a>
+  
+    <li><a href="../../RSpec/Core/SharedExampleGroup/Registry.html">RSpec::Core::SharedExampleGroup::Registry</a>
+  
+    <li><a href="../../RSpec/Core/SharedExampleGroup/TopLevelDSL.html">RSpec::Core::SharedExampleGroup::TopLevelDSL</a>
+  
+    <li><a href="../../RSpec/Core/Time.html">RSpec::Core::Time</a>
+  
+    <li><a href="../../RSpec/Core/Version.html">RSpec::Core::Version</a>
+  
+    <li><a href="../../RSpec/Core/World.html">RSpec::Core::World</a>
+  
+    <li><a href="../../RSpec/Rake.html">RSpec::Rake</a>
+  
+    <li><a href="../../RSpec/Runner.html">RSpec::Runner</a>
+  
+    <li><a href="../../Autotest.html">Autotest</a>
+  
+    <li><a href="../../Autotest/Rspec2.html">Autotest::Rspec2</a>
+  
+    <li><a href="../../Kernel.html">Kernel</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module RSpec::Core::MemoizedHelpers</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-should" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">should</span><span
+            class="method-args">(matcher=nil, message=nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>When `should` is called with no explicit receiver, the call is delegated to
+the object returned by `subject`. Combined with an implicit subject this
+supports very concise expressions.</p>
+
+<p>@example</p>
+
+<pre>describe Person do
+  it { should be_eligible_to_vote }
+end</pre>
+
+<p>@see <a href="MemoizedHelpers.html#method-i-subject">subject</a></p>
+          
+
+          
+          <div class="method-source-code" id="should-source">
+            <pre><span class="ruby-comment"># File lib/rspec/core/memoized_helpers.rb, line 67</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">should</span>(<span class="ruby-identifier">matcher</span>=<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">message</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-constant">RSpec</span><span class="ruby-operator">::</span><span class="ruby-constant">Expectations</span><span class="ruby-operator">::</span><span class="ruby-constant">PositiveExpectationHandler</span>.<span class="ruby-identifier">handle_matcher</span>(<span class="ruby-identifier">subject</span>, <span class="ruby-identifier">matcher</span>, <span class="ruby-identifier">message</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- should-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- should-method -->
+
+    
+      <div id="method-i-should_not" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">should_not</span><span
+            class="method-args">(matcher=nil, message=nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Just like `should`, `<a
+href="MemoizedHelpers.html#method-i-should_not">#should_not</a>` delegates
+to the subject (implicit or explicit) of the example group.</p>
+
+<p>@example</p>
+
+<pre>describe Person do
+  it { should_not be_eligible_to_vote }
+end</pre>
+
+<p>@see <a href="MemoizedHelpers.html#method-i-subject">subject</a></p>
+          
+
+          
+          <div class="method-source-code" id="should_not-source">
+            <pre><span class="ruby-comment"># File lib/rspec/core/memoized_helpers.rb, line 81</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">should_not</span>(<span class="ruby-identifier">matcher</span>=<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">message</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-constant">RSpec</span><span class="ruby-operator">::</span><span class="ruby-constant">Expectations</span><span class="ruby-operator">::</span><span class="ruby-constant">NegativeExpectationHandler</span>.<span class="ruby-identifier">handle_matcher</span>(<span class="ruby-identifier">subject</span>, <span class="ruby-identifier">matcher</span>, <span class="ruby-identifier">message</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- should_not-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- should_not-method -->
+
+    
+      <div id="method-i-subject" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">subject</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@note `subject` was contributed by Joe Ferris to support the one-liner</p>
+
+<pre>syntax embraced by shoulda matchers:
+
+    describe Widget do
+      it { should validate_presence_of(:name) }
+    end
+
+While the examples below demonstrate how to use `subject`
+explicitly in examples, we recommend that you define a method with
+an intention revealing name instead.</pre>
+
+<p>@example</p>
+
+<pre class="ruby"><span class="ruby-comment"># explicit declaration of subject</span>
+<span class="ruby-identifier">describe</span> <span class="ruby-constant">Person</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">subject</span> { <span class="ruby-constant">Person</span>.<span class="ruby-identifier">new</span>(:<span class="ruby-identifier">birthdate</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">19</span>.<span class="ruby-identifier">years</span>.<span class="ruby-identifier">ago</span>) }
+  <span class="ruby-identifier">it</span> <span class="ruby-string">&quot;should be eligible to vote&quot;</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">subject</span>.<span class="ruby-identifier">should</span> <span class="ruby-identifier">be_eligible_to_vote</span>
+    <span class="ruby-comment"># ^ ^ explicit reference to subject not recommended</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># implicit subject =&gt; { Person.new }</span>
+<span class="ruby-identifier">describe</span> <span class="ruby-constant">Person</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">it</span> <span class="ruby-string">&quot;should be eligible to vote&quot;</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">subject</span>.<span class="ruby-identifier">should</span> <span class="ruby-identifier">be_eligible_to_vote</span>
+    <span class="ruby-comment"># ^ ^ explicit reference to subject not recommended</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># one-liner syntax - should is invoked on subject</span>
+<span class="ruby-identifier">describe</span> <span class="ruby-constant">Person</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">it</span> { <span class="ruby-identifier">should</span> <span class="ruby-identifier">be_eligible_to_vote</span> }
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>@note Because `subject` is designed to create state that is reset between</p>
+
+<pre>each example, and `before(:all)` is designed to setup state that is
+shared across _all_ examples in an example group, `subject` is _not_
+intended to be used in a `before(:all)` hook. RSpec 2.13.1 prints
+a warning when you reference a `subject` from `before(:all)` and we plan
+to have it raise an error in RSpec 3.</pre>
+
+<p>@see <a href="MemoizedHelpers.html#method-i-should">should</a></p>
+          
+
+          
+          <div class="method-source-code" id="subject-source">
+            <pre><span class="ruby-comment"># File lib/rspec/core/memoized_helpers.rb, line 47</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">subject</span>
+  <span class="ruby-identifier">__memoized</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value">:subject</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">__memoized</span>[<span class="ruby-value">:subject</span>] = <span class="ruby-keyword">begin</span>
+      <span class="ruby-identifier">described</span> = <span class="ruby-identifier">described_class</span> <span class="ruby-operator">||</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">description</span>
+      <span class="ruby-constant">Class</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">described</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">described</span>.<span class="ruby-identifier">new</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">described</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- subject-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- subject-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

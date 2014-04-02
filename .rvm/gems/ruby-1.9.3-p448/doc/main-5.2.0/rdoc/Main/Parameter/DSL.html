@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Main::Parameter::DSL - main-5.2.0 Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/main/parameter.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="../../Object.html">Object</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-evaluate">::evaluate</a>
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-argument">#argument</a>
+    
+    <li><a href="#method-i-argument_optional">#argument_optional</a>
+    
+    <li><a href="#method-i-argument_optional-3F">#argument_optional?</a>
+    
+    <li><a href="#method-i-argument_required">#argument_required</a>
+    
+    <li><a href="#method-i-argument_required-3F">#argument_required?</a>
+    
+    <li><a href="#method-i-arity">#arity</a>
+    
+    <li><a href="#method-i-arity-3F">#arity?</a>
+    
+    <li><a href="#method-i-attr">#attr</a>
+    
+    <li><a href="#method-i-cast">#cast</a>
+    
+    <li><a href="#method-i-cast-3F">#cast?</a>
+    
+    <li><a href="#method-i-default">#default</a>
+    
+    <li><a href="#method-i-defaults-3F">#defaults?</a>
+    
+    <li><a href="#method-i-description">#description</a>
+    
+    <li><a href="#method-i-description-3F">#description?</a>
+    
+    <li><a href="#method-i-error">#error</a>
+    
+    <li><a href="#method-i-example">#example</a>
+    
+    <li><a href="#method-i-fattr">#fattr</a>
+    
+    <li><a href="#method-i-fattr_block_for">#fattr_block_for</a>
+    
+    <li><a href="#method-i-optional">#optional</a>
+    
+    <li><a href="#method-i-optional-3F">#optional?</a>
+    
+    <li><a href="#method-i-required">#required</a>
+    
+    <li><a href="#method-i-required-3F">#required?</a>
+    
+    <li><a href="#method-i-synopsis">#synopsis</a>
+    
+    <li><a href="#method-i-type">#type</a>
+    
+    <li><a href="#method-i-type-3F">#type?</a>
+    
+    <li><a href="#method-i-validate">#validate</a>
+    
+    <li><a href="#method-i-validate-3F">#validate?</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../Main.html">Main</a>
+  
+    <li><a href="../../Main/Cast.html">Main::Cast</a>
+  
+    <li><a href="../../Main/GetoptLong.html">Main::GetoptLong</a>
+  
+    <li><a href="../../Main/GetoptLong/AmbigousOption.html">Main::GetoptLong::AmbigousOption</a>
+  
+    <li><a href="../../Main/GetoptLong/InvalidOption.html">Main::GetoptLong::InvalidOption</a>
+  
+    <li><a href="../../Main/GetoptLong/MissingArgument.html">Main::GetoptLong::MissingArgument</a>
+  
+    <li><a href="../../Main/GetoptLong/NeedlessArgument.html">Main::GetoptLong::NeedlessArgument</a>
+  
+    <li><a href="../../Main/Logger.html">Main::Logger</a>
+  
+    <li><a href="../../Main/Logger/OnOff.html">Main::Logger::OnOff</a>
+  
+    <li><a href="../../Main/Mode.html">Main::Mode</a>
+  
+    <li><a href="../../Main/Mode/Ambiguous.html">Main::Mode::Ambiguous</a>
+  
+    <li><a href="../../Main/Mode/Duplicate.html">Main::Mode::Duplicate</a>
+  
+    <li><a href="../../Main/Mode/Error.html">Main::Mode::Error</a>
+  
+    <li><a href="../../Main/Mode/List.html">Main::Mode::List</a>
+  
+    <li><a href="../../Main/Parameter.html">Main::Parameter</a>
+  
+    <li><a href="../../Main/Parameter/AmbigousOption.html">Main::Parameter::AmbigousOption</a>
+  
+    <li><a href="../../Main/Parameter/Argument.html">Main::Parameter::Argument</a>
+  
+    <li><a href="../../Main/Parameter/Arity.html">Main::Parameter::Arity</a>
+  
+    <li><a href="../../Main/Parameter/DSL.html">Main::Parameter::DSL</a>
+  
+    <li><a href="../../Main/Parameter/Environment.html">Main::Parameter::Environment</a>
+  
+    <li><a href="../../Main/Parameter/Error.html">Main::Parameter::Error</a>
+  
+    <li><a href="../../Main/Parameter/InValid.html">Main::Parameter::InValid</a>
+  
+    <li><a href="../../Main/Parameter/InvalidOption.html">Main::Parameter::InvalidOption</a>
+  
+    <li><a href="../../Main/Parameter/Keyword.html">Main::Parameter::Keyword</a>
+  
+    <li><a href="../../Main/Parameter/List.html">Main::Parameter::List</a>
+  
+    <li><a href="../../Main/Parameter/MissingArgument.html">Main::Parameter::MissingArgument</a>
+  
+    <li><a href="../../Main/Parameter/NeedlessArgument.html">Main::Parameter::NeedlessArgument</a>
+  
+    <li><a href="../../Main/Parameter/NoneSuch.html">Main::Parameter::NoneSuch</a>
+  
+    <li><a href="../../Main/Parameter/NotGiven.html">Main::Parameter::NotGiven</a>
+  
+    <li><a href="../../Main/Parameter/Option.html">Main::Parameter::Option</a>
+  
+    <li><a href="../../Main/Parameter/Table.html">Main::Parameter::Table</a>
+  
+    <li><a href="../../Main/Parameter/Table/BoundsCheck.html">Main::Parameter::Table::BoundsCheck</a>
+  
+    <li><a href="../../Main/Program.html">Main::Program</a>
+  
+    <li><a href="../../Main/Program/ClassMethods.html">Main::Program::ClassMethods</a>
+  
+    <li><a href="../../Main/Program/ClassMethods/Factory.html">Main::Program::ClassMethods::Factory</a>
+  
+    <li><a href="../../Main/Program/InstanceMethods.html">Main::Program::InstanceMethods</a>
+  
+    <li><a href="../../Main/Softspoken.html">Main::Softspoken</a>
+  
+    <li><a href="../../Main/Usage.html">Main::Usage</a>
+  
+    <li><a href="../../Main/Util.html">Main::Util</a>
+  
+    <li><a href="../../Main/Util/ClassMethods.html">Main::Util::ClassMethods</a>
+  
+    <li><a href="../../Main/Util/InstanceMethods.html">Main::Util::InstanceMethods</a>
+  
+    <li><a href="../../Main/Util/Methods.html">Main::Util::Methods</a>
+  
+    <li><a href="../../Kernel.html">Kernel</a>
+  
+    <li><a href="../../Object.html">Object</a>
+  
+    <li><a href="../../Process.html">Process</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Main::Parameter::DSL</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-param" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">param</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-evaluate" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">evaluate</span><span
+            class="method-args">(param, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="evaluate-source">
+            <pre><span class="ruby-comment"># File lib/main/parameter.rb, line 566</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">evaluate</span> <span class="ruby-identifier">param</span>, &amp;<span class="ruby-identifier">block</span>
+  <span class="ruby-identifier">new</span>(<span class="ruby-identifier">param</span>).<span class="ruby-identifier">instance_eval</span>(&amp;<span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- evaluate-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- evaluate-method -->
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(param)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/main/parameter.rb, line 572</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span> <span class="ruby-identifier">param</span>
+  <span class="ruby-ivar">@param</span> = <span class="ruby-identifier">param</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-argument" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">argument</span><span
+            class="method-args">(arg)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="argument-source">
+            <pre><span class="ruby-comment"># File lib/main/parameter.rb, line 612</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">argument</span> <span class="ruby-identifier">arg</span> 
+  <span class="ruby-identifier">param</span>.<span class="ruby-identifier">argument</span> <span class="ruby-identifier">arg</span> 
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- argument-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- argument-method -->
+
+    
+      <div id="method-i-argument_optional" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">argument_optional</span><span
+            class="method-args">(bool = true)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="argument_optional-source">
+            <pre><span class="ruby-comment"># File lib/main/parameter.rb, line 626</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">argument_optional</span> <span class="ruby-identifier">bool</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">bool</span>
+    <span class="ruby-identifier">param</span>.<span class="ruby-identifier">argument</span> <span class="ruby-value">:optional</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">param</span>.<span class="ruby-identifier">argument</span> <span class="ruby-keyword">false</span> 
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- argument_optional-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- argument_optional-method -->
+
+    
+      <div id="method-i-argument_optional-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">argument_optional?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="argument_optional-3F-source">
+            <pre><span class="ruby-comment"># File lib/main/parameter.rb, line 633</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">argument_optional?</span>
+  <span class="ruby-identifier">param</span>.<span class="ruby-identifier">argument_optional?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- argument_optional-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- argument_optional-3F-method -->
+
+    
+      <div id="method-i-argument_required" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">argument_required</span><span
+            class="method-args">(bool = true)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="argument_required-source">
+            <pre><span class="ruby-comment"># File lib/main/parameter.rb, line 615</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">argument_required</span> <span class="ruby-identifier">bool</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">bool</span>
+    <span class="ruby-identifier">param</span>.<span class="ruby-identifier">argument</span> <span class="ruby-value">:required</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">param</span>.<span class="ruby-identifier">argument</span> <span class="ruby-keyword">false</span> 
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- argument_required-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- argument_required-method -->
+
+    
+      <div id="method-i-argument_required-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">argument_required?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="argument_required-3F-source">
+            <pre><span class="ruby-comment"># File lib/main/parameter.rb, line 622</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">argument_required?</span>
+  <span class="ruby-identifier">param</span>.<span class="ruby-identifier">argument_required?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- argument_required-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- argument_required-3F-method -->
+
+    
+      <div id="method-i-arity" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">arity</span><span
+            class="method-args">(value)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="arity-source">
+            <pre><span class="ruby-comment"># File lib/main/parameter.rb, line 694</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">arity</span> <span class="ruby-identifier">value</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">Arity</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">value</span> = <span class="ruby-value">-1</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">==</span> <span class="ruby-string">'*'</span>
+  <span class="ruby-identifier">value</span> = <span class="ruby-constant">Integer</span> <span class="ruby-identifier">value</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">Arity</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">zero?</span>
+  <span class="ruby-identifier">param</span>.<span class="ruby-identifier">arity</span> = <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">param</span>.<span class="ruby-identifier">arity</span> <span class="ruby-operator">==</span> <span class="ruby-value">-1</span>
+    <span class="ruby-identifier">optional</span> <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">value</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- arity-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- arity-method -->
+
+    
+      <div id="method-i-arity-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">arity?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="arity-3F-source">
+            <pre><span class="ruby-comment"># File lib/main/parameter.rb, line 705</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">arity?</span>
+  <span class="ruby-identifier">param</span>.<span class="ruby-identifier">arity?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- arity-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- arity-3F-method -->
+
+    
+      <div id="method-i-attr" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">attr</span><span
+            class="method-args">(*a, &b)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="attr-source">
+            <pre><span class="ruby-comment"># File lib/main/parameter.rb, line 589</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">attr</span>(*<span class="ruby-identifier">a</span>, &amp;<span class="ruby-identifier">b</span>)
+  <span class="ruby-identifier">fattr</span>(*<span class="ruby-identifier">a</span>, &amp;<span class="ruby-identifier">b</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- attr-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- attr-method -->
+
+    
+      <div id="method-i-cast" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cast</span><span
+            class="method-args">(sym=nil, &b)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="cast-source">
+            <pre><span class="ruby-comment"># File lib/main/parameter.rb, line 655</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cast</span> <span class="ruby-identifier">sym</span>=<span class="ruby-keyword">nil</span>, &amp;<span class="ruby-identifier">b</span> 
+  <span class="ruby-identifier">param</span>.<span class="ruby-identifier">cast</span> = <span class="ruby-identifier">sym</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">b</span> 
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- cast-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- cast-method -->
+
+    
+      <div id="method-i-cast-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cast?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="cast-3F-source">
+            <pre><span class="ruby-comment"># File lib/main/parameter.rb, line 658</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cast?</span>
+  <span class="ruby-identifier">param</span>.<span class="ruby-identifier">cast?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- cast-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- cast-3F-method -->
+
+    
+      <div id="method-i-default" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">default</span><span
+            class="method-args">(*values, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="default-source">
+            <pre><span class="ruby-comment"># File lib/main/parameter.rb, line 677</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">default</span> *<span class="ruby-identifier">values</span>, &amp;<span class="ruby-identifier">block</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">block</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">values</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">'no default'</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">values</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-identifier">param</span>.<span class="ruby-identifier">defaults</span>.<span class="ruby-identifier">push</span>(*<span class="ruby-identifier">values</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">block</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-identifier">param</span>.<span class="ruby-identifier">defaults</span>.<span class="ruby-identifier">push</span> <span class="ruby-identifier">block</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">param</span>.<span class="ruby-identifier">defaults</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- default-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- default-method -->
+
+    
+      <div id="method-i-defaults-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">defaults?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="defaults-3F-source">
+            <pre><span class="ruby-comment"># File lib/main/parameter.rb, line 690</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">defaults?</span>
+  <span class="ruby-identifier">param</span>.<span class="ruby-identifier">defaults?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- defaults-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- defaults-3F-method -->
+
+    
+      <div id="method-i-description" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">description</span><span
+            class="method-args">(s)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="description-source">
+            <pre><span class="ruby-comment"># File lib/main/parameter.rb, line 669</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">description</span> <span class="ruby-identifier">s</span> 
+  <span class="ruby-identifier">param</span>.<span class="ruby-identifier">description</span> = <span class="ruby-identifier">s</span>.<span class="ruby-identifier">to_s</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- description-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- description-method -->
+
+    
+      <div id="method-i-description-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">description?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="description-3F-source">
+            <pre><span class="ruby-comment"># File lib/main/parameter.rb, line 672</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">description?</span>
+  <span class="ruby-identifier">param</span>.<span class="ruby-identifier">description?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- description-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- description-3F-method -->
+
+    
+      <div id="method-i-error" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">error</span><span
+            class="method-args">(which = :instead, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="error-source">
+            <pre><span class="ruby-comment"># File lib/main/parameter.rb, line 709</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">error</span> <span class="ruby-identifier">which</span> = <span class="ruby-value">:instead</span>, &amp;<span class="ruby-identifier">block</span>
+  <span class="ruby-identifier">param</span>.<span class="ruby-identifier">send</span> <span class="ruby-node">&quot;error_handler_#{ which }=&quot;</span>, <span class="ruby-identifier">block</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- error-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- error-method -->
+
+    
+      <div id="method-i-example" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">example</span><span
+            class="method-args">(*list)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="example-source">
+            <pre><span class="ruby-comment"># File lib/main/parameter.rb, line 593</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">example</span> *<span class="ruby-identifier">list</span>
+  <span class="ruby-identifier">list</span>.<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">compact</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">elem</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">param</span>.<span class="ruby-identifier">examples</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">elem</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- example-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- example-method -->
+
+    
+      <div id="method-i-fattr" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">fattr</span><span
+            class="method-args">(a = nil, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="fattr-source">
+            <pre><span class="ruby-comment"># File lib/main/parameter.rb, line 576</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">fattr</span> <span class="ruby-identifier">a</span> = <span class="ruby-keyword">nil</span>, &amp;<span class="ruby-identifier">block</span>
+  <span class="ruby-identifier">name</span> = <span class="ruby-identifier">param</span>.<span class="ruby-identifier">name</span>
+  <span class="ruby-identifier">a</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">name</span>
+  <span class="ruby-identifier">b</span> = <span class="ruby-identifier">fattr_block_for</span>(<span class="ruby-identifier">name</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-ivar">@param</span>.<span class="ruby-identifier">main</span>.<span class="ruby-identifier">module_eval</span>{ <span class="ruby-identifier">fattr</span>(*<span class="ruby-identifier">a</span>, &amp;<span class="ruby-identifier">b</span>) }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- fattr-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- fattr-method -->
+
+    
+      <div id="method-i-fattr_block_for" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">fattr_block_for</span><span
+            class="method-args">(name, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="fattr_block_for-source">
+            <pre><span class="ruby-comment"># File lib/main/parameter.rb, line 584</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">fattr_block_for</span> <span class="ruby-identifier">name</span>, &amp;<span class="ruby-identifier">block</span>
+  <span class="ruby-identifier">block</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">lambda</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">param</span><span class="ruby-operator">|</span> [<span class="ruby-value">0</span>,<span class="ruby-value">1</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">param</span>.<span class="ruby-identifier">arity</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">param</span>.<span class="ruby-identifier">value</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">param</span>.<span class="ruby-identifier">values</span> }
+  <span class="ruby-identifier">lambda</span>{<span class="ruby-operator">|</span>*<span class="ruby-identifier">args</span><span class="ruby-operator">|</span> <span class="ruby-identifier">block</span>.<span class="ruby-identifier">call</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">param</span>[<span class="ruby-identifier">name</span>]) }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- fattr_block_for-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- fattr_block_for-method -->
+
+    
+      <div id="method-i-optional" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">optional</span><span
+            class="method-args">(bool = true)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="optional-source">
+            <pre><span class="ruby-comment"># File lib/main/parameter.rb, line 644</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">optional</span> <span class="ruby-identifier">bool</span> = <span class="ruby-keyword">true</span> 
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">bool</span> 
+    <span class="ruby-identifier">param</span>.<span class="ruby-identifier">required</span> <span class="ruby-operator">!</span><span class="ruby-identifier">bool</span>  
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">param</span>.<span class="ruby-identifier">required</span> <span class="ruby-identifier">bool</span>  
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- optional-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- optional-method -->
+
+    
+      <div id="method-i-optional-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">optional?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="optional-3F-source">
+            <pre><span class="ruby-comment"># File lib/main/parameter.rb, line 651</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">optional?</span>
+  <span class="ruby-identifier">param</span>.<span class="ruby-identifier">optional?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- optional-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- optional-3F-method -->
+
+    
+      <div id="method-i-required" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">required</span><span
+            class="method-args">(bool = true)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="required-source">
+            <pre><span class="ruby-comment"># File lib/main/parameter.rb, line 637</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">required</span> <span class="ruby-identifier">bool</span> = <span class="ruby-keyword">true</span> 
+  <span class="ruby-identifier">param</span>.<span class="ruby-identifier">required</span> = <span class="ruby-identifier">bool</span> 
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- required-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- required-method -->
+
+    
+      <div id="method-i-required-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">required?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="required-3F-source">
+            <pre><span class="ruby-comment"># File lib/main/parameter.rb, line 640</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">required?</span>
+  <span class="ruby-identifier">param</span>.<span class="ruby-identifier">required?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- required-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- required-3F-method -->
+
+    
+      <div id="method-i-synopsis" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">synopsis</span><span
+            class="method-args">(*arg)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="synopsis-source">
+            <pre><span class="ruby-comment"># File lib/main/parameter.rb, line 608</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">synopsis</span> *<span class="ruby-identifier">arg</span> 
+  <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">param</span>.<span class="ruby-identifier">synopsis</span> <span class="ruby-operator">:</span> (<span class="ruby-identifier">param</span>.<span class="ruby-identifier">synopsis</span> <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">first</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- synopsis-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- synopsis-method -->
+
+    
+      <div id="method-i-type" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">type</span><span
+            class="method-args">(*sym)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="type-source">
+            <pre><span class="ruby-comment"># File lib/main/parameter.rb, line 601</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">type</span> *<span class="ruby-identifier">sym</span>
+  <span class="ruby-identifier">sym</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">param</span>.<span class="ruby-identifier">type</span> <span class="ruby-operator">:</span> (<span class="ruby-identifier">param</span>.<span class="ruby-identifier">type</span> = <span class="ruby-identifier">sym</span>.<span class="ruby-identifier">first</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- type-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- type-method -->
+
+    
+      <div id="method-i-type-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">type?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="type-3F-source">
+            <pre><span class="ruby-comment"># File lib/main/parameter.rb, line 604</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">type?</span>
+  <span class="ruby-identifier">param</span>.<span class="ruby-identifier">type?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- type-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- type-3F-method -->
+
+    
+      <div id="method-i-validate" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">validate</span><span
+            class="method-args">(sym=nil, &b)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="validate-source">
+            <pre><span class="ruby-comment"># File lib/main/parameter.rb, line 662</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">validate</span> <span class="ruby-identifier">sym</span>=<span class="ruby-keyword">nil</span>, &amp;<span class="ruby-identifier">b</span> 
+  <span class="ruby-identifier">param</span>.<span class="ruby-identifier">validate</span> = <span class="ruby-identifier">sym</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">b</span> 
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- validate-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- validate-method -->
+
+    
+      <div id="method-i-validate-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">validate?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="validate-3F-source">
+            <pre><span class="ruby-comment"># File lib/main/parameter.rb, line 665</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">validate?</span>
+  <span class="ruby-identifier">param</span>.<span class="ruby-identifier">validate?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- validate-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- validate-3F-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

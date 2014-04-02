@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Hashie::Dash - hashie-2.0.5 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/hashie/dash.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Hash
+  
+</nav>
+
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><a class="include" href="PrettyInspect.html">Hashie::PrettyInspect</a>
+  
+  
+  </ul>
+</nav>
+
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-inherited">::inherited</a>
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-c-property">::property</a>
+    
+    <li><a href="#method-c-property-3F">::property?</a>
+    
+    <li><a href="#method-c-required-3F">::required?</a>
+    
+    <li><a href="#method-i-5B-5D">#[]</a>
+    
+    <li><a href="#method-i-5B-5D-3D">#[]=</a>
+    
+    <li><a href="#method-i-_regular_reader">#_regular_reader</a>
+    
+    <li><a href="#method-i-_regular_writer">#_regular_writer</a>
+    
+    <li><a href="#method-i-replace">#replace</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Hashie.html">Hashie</a>
+  
+    <li><a href="../Hashie/Clash.html">Hashie::Clash</a>
+  
+    <li><a href="../Hashie/Clash/ChainError.html">Hashie::Clash::ChainError</a>
+  
+    <li><a href="../Hashie/Dash.html">Hashie::Dash</a>
+  
+    <li><a href="../Hashie/Extensions.html">Hashie::Extensions</a>
+  
+    <li><a href="../Hashie/Extensions/Coercion.html">Hashie::Extensions::Coercion</a>
+  
+    <li><a href="../Hashie/Extensions/Coercion/ClassMethods.html">Hashie::Extensions::Coercion::ClassMethods</a>
+  
+    <li><a href="../Hashie/Extensions/Coercion/InstanceMethods.html">Hashie::Extensions::Coercion::InstanceMethods</a>
+  
+    <li><a href="../Hashie/Extensions/DeepMerge.html">Hashie::Extensions::DeepMerge</a>
+  
+    <li><a href="../Hashie/Extensions/IndifferentAccess.html">Hashie::Extensions::IndifferentAccess</a>
+  
+    <li><a href="../Hashie/Extensions/KeyConversion.html">Hashie::Extensions::KeyConversion</a>
+  
+    <li><a href="../Hashie/Extensions/MergeInitializer.html">Hashie::Extensions::MergeInitializer</a>
+  
+    <li><a href="../Hashie/Extensions/MethodAccess.html">Hashie::Extensions::MethodAccess</a>
+  
+    <li><a href="../Hashie/Extensions/MethodQuery.html">Hashie::Extensions::MethodQuery</a>
+  
+    <li><a href="../Hashie/Extensions/MethodReader.html">Hashie::Extensions::MethodReader</a>
+  
+    <li><a href="../Hashie/Extensions/MethodWriter.html">Hashie::Extensions::MethodWriter</a>
+  
+    <li><a href="../Hashie/Extensions/StringifyKeys.html">Hashie::Extensions::StringifyKeys</a>
+  
+    <li><a href="../Hashie/Extensions/Structure.html">Hashie::Extensions::Structure</a>
+  
+    <li><a href="../Hashie/Extensions/Structure/ClassMethods.html">Hashie::Extensions::Structure::ClassMethods</a>
+  
+    <li><a href="../Hashie/Extensions/SymbolizeKeys.html">Hashie::Extensions::SymbolizeKeys</a>
+  
+    <li><a href="../Hashie/Hash.html">Hashie::Hash</a>
+  
+    <li><a href="../Hashie/HashExtensions.html">Hashie::HashExtensions</a>
+  
+    <li><a href="../Hashie/Mash.html">Hashie::Mash</a>
+  
+    <li><a href="../Hashie/PrettyInspect.html">Hashie::PrettyInspect</a>
+  
+    <li><a href="../Hashie/Trash.html">Hashie::Trash</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Hashie::Dash</h1>
+
+  <div id="description" class="description">
+    
+<p>A <a href="Dash.html">Dash</a> is a ‘defined’ or ‘discrete’ <a
+href="Hash.html">Hash</a>, that is, a <a href="Hash.html">Hash</a> that has
+a set of defined keys that are accessible (with optional defaults) and only
+those keys may be set or read.</p>
+
+<p>Dashes are useful when you need to create a very simple lightweight data
+object that needs even fewer options and resources than something like a
+DataMapper resource.</p>
+
+<p>It is preferrable to a Struct because of the in-class API for defining
+properties as well as per-property defaults.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-c-defaults" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">defaults</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-c-properties" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">properties</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-c-required_properties" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">required_properties</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-inherited" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">inherited</span><span
+            class="method-args">(klass)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="inherited-source">
+            <pre><span class="ruby-comment"># File lib/hashie/dash.rb, line 67</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">inherited</span>(<span class="ruby-identifier">klass</span>)
+  <span class="ruby-keyword">super</span>
+  (<span class="ruby-ivar">@subclasses</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Set</span>.<span class="ruby-identifier">new</span>) <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">klass</span>
+  <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-string">'@properties'</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">properties</span>.<span class="ruby-identifier">dup</span>)
+  <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-string">'@defaults'</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">defaults</span>.<span class="ruby-identifier">dup</span>)
+  <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-string">'@required_properties'</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">required_properties</span>.<span class="ruby-identifier">dup</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- inherited-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- inherited-method -->
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(attributes = {}, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>You may initialize a <a href="Dash.html">Dash</a> with an attributes hash
+just like you would many other kinds of data objects.</p>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/hashie/dash.rb, line 89</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">attributes</span> = {}, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">super</span>(&amp;<span class="ruby-identifier">block</span>)
+
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">defaults</span>.<span class="ruby-identifier">each_pair</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">prop</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">self</span>[<span class="ruby-identifier">prop</span>] = <span class="ruby-keyword">begin</span>
+      <span class="ruby-identifier">value</span>.<span class="ruby-identifier">dup</span>
+    <span class="ruby-keyword">rescue</span> <span class="ruby-constant">TypeError</span>
+      <span class="ruby-identifier">value</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">initialize_attributes</span>(<span class="ruby-identifier">attributes</span>)
+  <span class="ruby-identifier">assert_required_properties_set!</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+      <div id="method-c-property" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">property</span><span
+            class="method-args">(property_name, options = {})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Defines a property on the <a href="Dash.html">Dash</a>. Options are as
+follows:</p>
+<ul><li>
+<p><code>:default</code> - Specify a default value for this property, to be
+returned before a value is set on the property in a new <a
+href="Dash.html">Dash</a>.</p>
+</li><li>
+<p><code>:required</code> - Specify the value as required for this property,
+to raise an error if a value is unset in a new or existing <a
+href="Dash.html">Dash</a>.</p>
+</li></ul>
+          
+
+          
+          <div class="method-source-code" id="property-source">
+            <pre><span class="ruby-comment"># File lib/hashie/dash.rb, line 30</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">property</span>(<span class="ruby-identifier">property_name</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">property_name</span> = <span class="ruby-identifier">property_name</span>.<span class="ruby-identifier">to_sym</span>
+
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">properties</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">property_name</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:default</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">defaults</span>[<span class="ruby-identifier">property_name</span>] = <span class="ruby-identifier">options</span>[<span class="ruby-value">:default</span>]
+  <span class="ruby-keyword">elsif</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">defaults</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">property_name</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">defaults</span>.<span class="ruby-identifier">delete</span> <span class="ruby-identifier">property_name</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">instance_methods</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">m</span><span class="ruby-operator">|</span> <span class="ruby-identifier">m</span>.<span class="ruby-identifier">to_s</span> }.<span class="ruby-identifier">include?</span>(<span class="ruby-node">&quot;#{property_name}=&quot;</span>)
+    <span class="ruby-identifier">class_eval</span> <span class="ruby-value">&lt;&lt;-ACCESSORS
+      def #{property_name}(&amp;block)
+        self.[](#{property_name.to_s.inspect}, &amp;block)
+      end
+
+      def #{property_name}=(value)
+        self.[]=(#{property_name.to_s.inspect}, value)
+      end
+    ACCESSORS</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">defined?</span> <span class="ruby-ivar">@subclasses</span>
+    <span class="ruby-ivar">@subclasses</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">klass</span><span class="ruby-operator">|</span> <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">property</span>(<span class="ruby-identifier">property_name</span>, <span class="ruby-identifier">options</span>) }
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">required_properties</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">property_name</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-value">:required</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- property-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- property-method -->
+
+    
+      <div id="method-c-property-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">property?</span><span
+            class="method-args">(name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Check to see if the specified property has already been defined.</p>
+          
+
+          
+          <div class="method-source-code" id="property-3F-source">
+            <pre><span class="ruby-comment"># File lib/hashie/dash.rb, line 77</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">property?</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">properties</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_sym</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- property-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- property-3F-method -->
+
+    
+      <div id="method-c-required-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">required?</span><span
+            class="method-args">(name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Check to see if the specified property is required.</p>
+          
+
+          
+          <div class="method-source-code" id="required-3F-source">
+            <pre><span class="ruby-comment"># File lib/hashie/dash.rb, line 83</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">required?</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">required_properties</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_sym</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- required-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- required-3F-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-5B-5D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">[]</span><span
+            class="method-args">(property) { |value| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Retrieve a value from the <a href="Dash.html">Dash</a> (will return the
+property’s default value if it hasn’t been set).</p>
+          
+
+          
+          <div class="method-source-code" id="5B-5D-source">
+            <pre><span class="ruby-comment"># File lib/hashie/dash.rb, line 110</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">[]</span>(<span class="ruby-identifier">property</span>)
+  <span class="ruby-identifier">assert_property_exists!</span> <span class="ruby-identifier">property</span>
+  <span class="ruby-identifier">value</span> = <span class="ruby-keyword">super</span>(<span class="ruby-identifier">property</span>.<span class="ruby-identifier">to_s</span>)
+  <span class="ruby-comment"># If the value is a lambda, proc, or whatever answers to call, eval the thing!</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Proc</span>
+    <span class="ruby-keyword">self</span>[<span class="ruby-identifier">property</span>] = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">call</span> <span class="ruby-comment"># Set the result of the call as a value</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">yield</span> <span class="ruby-identifier">value</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+    <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- 5B-5D-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Dash.html#method-i-_regular_reader">_regular_reader</a>
+        </div>
+        
+
+        
+      </div><!-- 5B-5D-method -->
+
+    
+      <div id="method-i-5B-5D-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">[]=</span><span
+            class="method-args">(property, value)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Set a value on the <a href="Dash.html">Dash</a> in a Hash-like way. Only
+works on pre-existing properties.</p>
+          
+
+          
+          <div class="method-source-code" id="5B-5D-3D-source">
+            <pre><span class="ruby-comment"># File lib/hashie/dash.rb, line 124</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">[]=</span>(<span class="ruby-identifier">property</span>, <span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">assert_property_required!</span> <span class="ruby-identifier">property</span>, <span class="ruby-identifier">value</span>
+  <span class="ruby-identifier">assert_property_exists!</span> <span class="ruby-identifier">property</span>
+  <span class="ruby-keyword">super</span>(<span class="ruby-identifier">property</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">value</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- 5B-5D-3D-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Dash.html#method-i-_regular_writer">_regular_writer</a>
+        </div>
+        
+
+        
+      </div><!-- 5B-5D-3D-method -->
+
+    
+      <div id="method-i-_regular_reader" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">_regular_reader</span><span
+            class="method-args">(property)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Dash.html#method-i-5B-5D">[]</a>
+        </div>
+        
+      </div><!-- _regular_reader-method -->
+
+    
+      <div id="method-i-_regular_writer" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">_regular_writer</span><span
+            class="method-args">(property, value)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Dash.html#method-i-5B-5D-3D">[]=</a>
+        </div>
+        
+      </div><!-- _regular_writer-method -->
+
+    
+      <div id="method-i-replace" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">replace</span><span
+            class="method-args">(other_hash)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="replace-source">
+            <pre><span class="ruby-comment"># File lib/hashie/dash.rb, line 130</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">replace</span>(<span class="ruby-identifier">other_hash</span>)
+  <span class="ruby-identifier">other_hash</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">defaults</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">other_hash</span>)
+  (<span class="ruby-identifier">keys</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">other_hash</span>.<span class="ruby-identifier">keys</span>).<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span> <span class="ruby-identifier">delete</span>(<span class="ruby-identifier">key</span>) }
+  <span class="ruby-identifier">other_hash</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span> <span class="ruby-keyword">self</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-identifier">value</span> }
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- replace-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- replace-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

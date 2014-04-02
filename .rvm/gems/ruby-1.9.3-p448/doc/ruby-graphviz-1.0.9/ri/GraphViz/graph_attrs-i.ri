@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"graph_attrs:EFI"GraphViz#graph_attrs;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I";This accessor allow you to set global graph attributes;T:
+@fileI"lib/graphviz.rb;TF@

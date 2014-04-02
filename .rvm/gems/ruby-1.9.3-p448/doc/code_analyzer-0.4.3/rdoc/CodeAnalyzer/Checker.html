@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class CodeAnalyzer::Checker - code_analyzer-0.4.3 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/code_analyzer/checker.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-add_callback">::add_callback</a>
+    
+    <li><a href="#method-c-callbacks">::callbacks</a>
+    
+    <li><a href="#method-c-get_callbacks">::get_callbacks</a>
+    
+    <li><a href="#method-c-interesting_files">::interesting_files</a>
+    
+    <li><a href="#method-c-interesting_nodes">::interesting_nodes</a>
+    
+    <li><a href="#method-i-add_warning">#add_warning</a>
+    
+    <li><a href="#method-i-interesting_files">#interesting_files</a>
+    
+    <li><a href="#method-i-interesting_nodes">#interesting_nodes</a>
+    
+    <li><a href="#method-i-node_end">#node_end</a>
+    
+    <li><a href="#method-i-node_start">#node_start</a>
+    
+    <li><a href="#method-i-parse_file-3F">#parse_file?</a>
+    
+    <li><a href="#method-i-warnings">#warnings</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../CodeAnalyzer.html">CodeAnalyzer</a>
+  
+    <li><a href="../CodeAnalyzer/AnalyzerException.html">CodeAnalyzer::AnalyzerException</a>
+  
+    <li><a href="../CodeAnalyzer/Checker.html">CodeAnalyzer::Checker</a>
+  
+    <li><a href="../CodeAnalyzer/CheckingVisitor.html">CodeAnalyzer::CheckingVisitor</a>
+  
+    <li><a href="../CodeAnalyzer/CheckingVisitor/Base.html">CodeAnalyzer::CheckingVisitor::Base</a>
+  
+    <li><a href="../CodeAnalyzer/CheckingVisitor/Default.html">CodeAnalyzer::CheckingVisitor::Default</a>
+  
+    <li><a href="../CodeAnalyzer/CheckingVisitor/Plain.html">CodeAnalyzer::CheckingVisitor::Plain</a>
+  
+    <li><a href="../CodeAnalyzer/Nil.html">CodeAnalyzer::Nil</a>
+  
+    <li><a href="../CodeAnalyzer/Warning.html">CodeAnalyzer::Warning</a>
+  
+    <li><a href="../Sexp.html">Sexp</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class CodeAnalyzer::Checker</h1>
+
+  <div id="description" class="description">
+    
+<p>A checker class that takes charge of checking the sexp.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-add_callback" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_callback</span><span
+            class="method-args">(*names, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="add_callback-source">
+            <pre><span class="ruby-comment"># File lib/code_analyzer/checker.rb, line 78</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_callback</span>(*<span class="ruby-identifier">names</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">names</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">callbacks</span>[<span class="ruby-identifier">name</span>] <span class="ruby-operator">||=</span> []
+    <span class="ruby-identifier">callbacks</span>[<span class="ruby-identifier">name</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">block</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_callback-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_callback-method -->
+
+    
+      <div id="method-c-callbacks" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">callbacks</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="callbacks-source">
+            <pre><span class="ruby-comment"># File lib/code_analyzer/checker.rb, line 85</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">callbacks</span>
+  <span class="ruby-ivar">@callbacks</span> <span class="ruby-operator">||=</span> {}
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- callbacks-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- callbacks-method -->
+
+    
+      <div id="method-c-get_callbacks" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_callbacks</span><span
+            class="method-args">(name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="get_callbacks-source">
+            <pre><span class="ruby-comment"># File lib/code_analyzer/checker.rb, line 73</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_callbacks</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">callbacks</span>[<span class="ruby-identifier">name</span>] <span class="ruby-operator">||=</span> []
+  <span class="ruby-identifier">callbacks</span>[<span class="ruby-identifier">name</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_callbacks-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_callbacks-method -->
+
+    
+      <div id="method-c-interesting_files" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">interesting_files</span><span
+            class="method-args">(*file_patterns)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="interesting_files-source">
+            <pre><span class="ruby-comment"># File lib/code_analyzer/checker.rb, line 68</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">interesting_files</span>(*<span class="ruby-identifier">file_patterns</span>)
+  <span class="ruby-ivar">@interesting_files</span> <span class="ruby-operator">||=</span> []
+  <span class="ruby-ivar">@interesting_files</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">file_patterns</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- interesting_files-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- interesting_files-method -->
+
+    
+      <div id="method-c-interesting_nodes" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">interesting_nodes</span><span
+            class="method-args">(*nodes)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="interesting_nodes-source">
+            <pre><span class="ruby-comment"># File lib/code_analyzer/checker.rb, line 63</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">interesting_nodes</span>(*<span class="ruby-identifier">nodes</span>)
+  <span class="ruby-ivar">@interesting_nodes</span> <span class="ruby-operator">||=</span> []
+  <span class="ruby-ivar">@interesting_nodes</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">nodes</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- interesting_nodes-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- interesting_nodes-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-add_warning" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_warning</span><span
+            class="method-args">(message, filename = @node.file, line_number = @node.line)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>add an warning.</p>
+
+<p>@param [String] message, is the warning message @param [String] filename,
+is the filename of source code @param [Integer] line_number, is the line
+number of the source code which is reviewing</p>
+          
+
+          
+          <div class="method-source-code" id="add_warning-source">
+            <pre><span class="ruby-comment"># File lib/code_analyzer/checker.rb, line 53</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_warning</span>(<span class="ruby-identifier">message</span>, <span class="ruby-identifier">filename</span> = <span class="ruby-ivar">@node</span>.<span class="ruby-identifier">file</span>, <span class="ruby-identifier">line_number</span> = <span class="ruby-ivar">@node</span>.<span class="ruby-identifier">line</span>)
+  <span class="ruby-identifier">warnings</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Warning</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">filename</span><span class="ruby-operator">:</span> <span class="ruby-identifier">filename</span>, <span class="ruby-identifier">line_number</span><span class="ruby-operator">:</span> <span class="ruby-identifier">line_number</span>, <span class="ruby-identifier">message</span><span class="ruby-operator">:</span> <span class="ruby-identifier">message</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_warning-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_warning-method -->
+
+    
+      <div id="method-i-interesting_files" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">interesting_files</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>interesting files that the check will parse.</p>
+          
+
+          
+          <div class="method-source-code" id="interesting_files-source">
+            <pre><span class="ruby-comment"># File lib/code_analyzer/checker.rb, line 10</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">interesting_files</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">interesting_files</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- interesting_files-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- interesting_files-method -->
+
+    
+      <div id="method-i-interesting_nodes" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">interesting_nodes</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>interesting nodes that the check will parse.</p>
+          
+
+          
+          <div class="method-source-code" id="interesting_nodes-source">
+            <pre><span class="ruby-comment"># File lib/code_analyzer/checker.rb, line 5</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">interesting_nodes</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">interesting_nodes</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- interesting_nodes-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- interesting_nodes-method -->
+
+    
+      <div id="method-i-node_end" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">node_end</span><span
+            class="method-args">(node)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>delegate to end_### according to the sexp_type, like</p>
+
+<pre>end_call
+end_def</pre>
+
+<p>@param [Sexp] node</p>
+          
+
+          
+          <div class="method-source-code" id="node_end-source">
+            <pre><span class="ruby-comment"># File lib/code_analyzer/checker.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">node_end</span>(<span class="ruby-identifier">node</span>)
+  <span class="ruby-ivar">@node</span> = <span class="ruby-identifier">node</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">get_callbacks</span>(<span class="ruby-node">&quot;end_#{node.sexp_type}&quot;</span>.<span class="ruby-identifier">to_sym</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">block</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">instance_exec</span>(<span class="ruby-identifier">node</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- node_end-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- node_end-method -->
+
+    
+      <div id="method-i-node_start" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">node_start</span><span
+            class="method-args">(node)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>delegate to start_### according to the sexp_type, like</p>
+
+<pre>start_call
+start_def</pre>
+
+<p>@param [Sexp] node</p>
+          
+
+          
+          <div class="method-source-code" id="node_start-source">
+            <pre><span class="ruby-comment"># File lib/code_analyzer/checker.rb, line 28</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">node_start</span>(<span class="ruby-identifier">node</span>)
+  <span class="ruby-ivar">@node</span> = <span class="ruby-identifier">node</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">get_callbacks</span>(<span class="ruby-node">&quot;start_#{node.sexp_type}&quot;</span>.<span class="ruby-identifier">to_sym</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">block</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">instance_exec</span>(<span class="ruby-identifier">node</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- node_start-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- node_start-method -->
+
+    
+      <div id="method-i-parse_file-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">parse_file?</span><span
+            class="method-args">(node_file)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>check if the checker will parse the node file.</p>
+
+<p>@param [String] the file name of node. @return [Boolean] true if the
+checker will parse the file.</p>
+          
+
+          
+          <div class="method-source-code" id="parse_file-3F-source">
+            <pre><span class="ruby-comment"># File lib/code_analyzer/checker.rb, line 18</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">parse_file?</span>(<span class="ruby-identifier">node_file</span>)
+  <span class="ruby-identifier">interesting_files</span>.<span class="ruby-identifier">any?</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">pattern</span><span class="ruby-operator">|</span> <span class="ruby-identifier">node_file</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">pattern</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- parse_file-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- parse_file-3F-method -->
+
+    
+      <div id="method-i-warnings" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">warnings</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>all warnings.</p>
+          
+
+          
+          <div class="method-source-code" id="warnings-source">
+            <pre><span class="ruby-comment"># File lib/code_analyzer/checker.rb, line 58</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">warnings</span>
+  <span class="ruby-ivar">@warnings</span> <span class="ruby-operator">||=</span> []
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- warnings-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- warnings-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Reek::Cli::Application - reek-1.3.4 Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/reek/cli/application.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="../../Object.html">Object</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-execute">#execute</a>
+    
+    <li><a href="#method-i-output">#output</a>
+    
+    <li><a href="#method-i-output_smells_total">#output_smells_total</a>
+    
+    <li><a href="#method-i-report_smells">#report_smells</a>
+    
+    <li><a href="#method-i-report_success">#report_success</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../CHANGELOG.html">CHANGELOG</a>
+  
+    <li class="file"><a href="../../License_txt.html">License</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../Reek.html">Reek</a>
+  
+    <li><a href="../../Reek/CandidateMethod.html">Reek::CandidateMethod</a>
+  
+    <li><a href="../../Reek/Cli.html">Reek::Cli</a>
+  
+    <li><a href="../../Reek/Cli/Application.html">Reek::Cli::Application</a>
+  
+    <li><a href="../../Reek/Cli/HelpCommand.html">Reek::Cli::HelpCommand</a>
+  
+    <li><a href="../../Reek/Cli/Options.html">Reek::Cli::Options</a>
+  
+    <li><a href="../../Reek/Cli/QuietReport.html">Reek::Cli::QuietReport</a>
+  
+    <li><a href="../../Reek/Cli/ReekCommand.html">Reek::Cli::ReekCommand</a>
+  
+    <li><a href="../../Reek/Cli/ReportFormatter.html">Reek::Cli::ReportFormatter</a>
+  
+    <li><a href="../../Reek/Cli/SimpleWarningFormatter.html">Reek::Cli::SimpleWarningFormatter</a>
+  
+    <li><a href="../../Reek/Cli/SingleLineWarningFormatter.html">Reek::Cli::SingleLineWarningFormatter</a>
+  
+    <li><a href="../../Reek/Cli/VerboseReport.html">Reek::Cli::VerboseReport</a>
+  
+    <li><a href="../../Reek/Cli/VersionCommand.html">Reek::Cli::VersionCommand</a>
+  
+    <li><a href="../../Reek/Cli/WarningFormatterWithLineNumbers.html">Reek::Cli::WarningFormatterWithLineNumbers</a>
+  
+    <li><a href="../../Reek/Cli/YamlCommand.html">Reek::Cli::YamlCommand</a>
+  
+    <li><a href="../../Reek/Core.html">Reek::Core</a>
+  
+    <li><a href="../../Reek/Core/CodeContext.html">Reek::Core::CodeContext</a>
+  
+    <li><a href="../../Reek/Core/CodeParser.html">Reek::Core::CodeParser</a>
+  
+    <li><a href="../../Reek/Core/MethodContext.html">Reek::Core::MethodContext</a>
+  
+    <li><a href="../../Reek/Core/MethodParameters.html">Reek::Core::MethodParameters</a>
+  
+    <li><a href="../../Reek/Core/ModuleContext.html">Reek::Core::ModuleContext</a>
+  
+    <li><a href="../../Reek/Core/Overrides.html">Reek::Core::Overrides</a>
+  
+    <li><a href="../../Reek/Core/SingletonMethodContext.html">Reek::Core::SingletonMethodContext</a>
+  
+    <li><a href="../../Reek/Core/SmellConfiguration.html">Reek::Core::SmellConfiguration</a>
+  
+    <li><a href="../../Reek/Core/SmellRepository.html">Reek::Core::SmellRepository</a>
+  
+    <li><a href="../../Reek/Core/Sniffer.html">Reek::Core::Sniffer</a>
+  
+    <li><a href="../../Reek/Core/StopContext.html">Reek::Core::StopContext</a>
+  
+    <li><a href="../../Reek/Core/WarningCollector.html">Reek::Core::WarningCollector</a>
+  
+    <li><a href="../../Reek/Examiner.html">Reek::Examiner</a>
+  
+    <li><a href="../../Reek/MethodGroup.html">Reek::MethodGroup</a>
+  
+    <li><a href="../../Reek/Rake.html">Reek::Rake</a>
+  
+    <li><a href="../../Reek/Rake/Task.html">Reek::Rake::Task</a>
+  
+    <li><a href="../../Reek/SmellWarning.html">Reek::SmellWarning</a>
+  
+    <li><a href="../../Reek/Smells.html">Reek::Smells</a>
+  
+    <li><a href="../../Reek/Smells/Attribute.html">Reek::Smells::Attribute</a>
+  
+    <li><a href="../../Reek/Smells/BooleanParameter.html">Reek::Smells::BooleanParameter</a>
+  
+    <li><a href="../../Reek/Smells/ClassVariable.html">Reek::Smells::ClassVariable</a>
+  
+    <li><a href="../../Reek/Smells/ControlParameter.html">Reek::Smells::ControlParameter</a>
+  
+    <li><a href="../../Reek/Smells/DataClump.html">Reek::Smells::DataClump</a>
+  
+    <li><a href="../../Reek/Smells/DuplicateMethodCall.html">Reek::Smells::DuplicateMethodCall</a>
+  
+    <li><a href="../../Reek/Smells/ExcludeInitialize.html">Reek::Smells::ExcludeInitialize</a>
+  
+    <li><a href="../../Reek/Smells/FeatureEnvy.html">Reek::Smells::FeatureEnvy</a>
+  
+    <li><a href="../../Reek/Smells/IrresponsibleModule.html">Reek::Smells::IrresponsibleModule</a>
+  
+    <li><a href="../../Reek/Smells/LongParameterList.html">Reek::Smells::LongParameterList</a>
+  
+    <li><a href="../../Reek/Smells/LongYieldList.html">Reek::Smells::LongYieldList</a>
+  
+    <li><a href="../../Reek/Smells/NestedIterators.html">Reek::Smells::NestedIterators</a>
+  
+    <li><a href="../../Reek/Smells/NilCheck.html">Reek::Smells::NilCheck</a>
+  
+    <li><a href="../../Reek/Smells/NilCheck/CallNodeFinder.html">Reek::Smells::NilCheck::CallNodeFinder</a>
+  
+    <li><a href="../../Reek/Smells/NilCheck/CaseNodeFinder.html">Reek::Smells::NilCheck::CaseNodeFinder</a>
+  
+    <li><a href="../../Reek/Smells/NilCheck/NodeFinder.html">Reek::Smells::NilCheck::NodeFinder</a>
+  
+    <li><a href="../../Reek/Smells/RepeatedConditional.html">Reek::Smells::RepeatedConditional</a>
+  
+    <li><a href="../../Reek/Smells/SmellDetector.html">Reek::Smells::SmellDetector</a>
+  
+    <li><a href="../../Reek/Smells/TooManyInstanceVariables.html">Reek::Smells::TooManyInstanceVariables</a>
+  
+    <li><a href="../../Reek/Smells/TooManyMethods.html">Reek::Smells::TooManyMethods</a>
+  
+    <li><a href="../../Reek/Smells/TooManyStatements.html">Reek::Smells::TooManyStatements</a>
+  
+    <li><a href="../../Reek/Smells/UncommunicativeMethodName.html">Reek::Smells::UncommunicativeMethodName</a>
+  
+    <li><a href="../../Reek/Smells/UncommunicativeModuleName.html">Reek::Smells::UncommunicativeModuleName</a>
+  
+    <li><a href="../../Reek/Smells/UncommunicativeParameterName.html">Reek::Smells::UncommunicativeParameterName</a>
+  
+    <li><a href="../../Reek/Smells/UncommunicativeVariableName.html">Reek::Smells::UncommunicativeVariableName</a>
+  
+    <li><a href="../../Reek/Smells/UnusedParameters.html">Reek::Smells::UnusedParameters</a>
+  
+    <li><a href="../../Reek/Smells/UtilityFunction.html">Reek::Smells::UtilityFunction</a>
+  
+    <li><a href="../../Reek/Source.html">Reek::Source</a>
+  
+    <li><a href="../../Reek/Source/CodeComment.html">Reek::Source::CodeComment</a>
+  
+    <li><a href="../../Reek/Source/ConfigFile.html">Reek::Source::ConfigFile</a>
+  
+    <li><a href="../../Reek/Source/ReferenceCollector.html">Reek::Source::ReferenceCollector</a>
+  
+    <li><a href="../../Reek/Source/SexpExtensions.html">Reek::Source::SexpExtensions</a>
+  
+    <li><a href="../../Reek/Source/SexpExtensions/AttrasgnNode.html">Reek::Source::SexpExtensions::AttrasgnNode</a>
+  
+    <li><a href="../../Reek/Source/SexpExtensions/CallNode.html">Reek::Source::SexpExtensions::CallNode</a>
+  
+    <li><a href="../../Reek/Source/SexpExtensions/CaseNode.html">Reek::Source::SexpExtensions::CaseNode</a>
+  
+    <li><a href="../../Reek/Source/SexpExtensions/ClassNode.html">Reek::Source::SexpExtensions::ClassNode</a>
+  
+    <li><a href="../../Reek/Source/SexpExtensions/CvarNode.html">Reek::Source::SexpExtensions::CvarNode</a>
+  
+    <li><a href="../../Reek/Source/SexpExtensions/CvarNode.html">Reek::Source::SexpExtensions::CvasgnNode</a>
+  
+    <li><a href="../../Reek/Source/SexpExtensions/CvarNode.html">Reek::Source::SexpExtensions::CvdeclNode</a>
+  
+    <li><a href="../../Reek/Source/SexpExtensions/DefnNode.html">Reek::Source::SexpExtensions::DefnNode</a>
+  
+    <li><a href="../../Reek/Source/SexpExtensions/DefsNode.html">Reek::Source::SexpExtensions::DefsNode</a>
+  
+    <li><a href="../../Reek/Source/SexpExtensions/IfNode.html">Reek::Source::SexpExtensions::IfNode</a>
+  
+    <li><a href="../../Reek/Source/SexpExtensions/IterNode.html">Reek::Source::SexpExtensions::IterNode</a>
+  
+    <li><a href="../../Reek/Source/SexpExtensions/LitNode.html">Reek::Source::SexpExtensions::LitNode</a>
+  
+    <li><a href="../../Reek/Source/SexpExtensions/MethodNode.html">Reek::Source::SexpExtensions::MethodNode</a>
+  
+    <li><a href="../../Reek/Source/SexpExtensions/ModuleNode.html">Reek::Source::SexpExtensions::ModuleNode</a>
+  
+    <li><a href="../../Reek/Source/SexpExtensions/YieldNode.html">Reek::Source::SexpExtensions::YieldNode</a>
+  
+    <li><a href="../../Reek/Source/SexpFormatter.html">Reek::Source::SexpFormatter</a>
+  
+    <li><a href="../../Reek/Source/SexpNode.html">Reek::Source::SexpNode</a>
+  
+    <li><a href="../../Reek/Source/SourceCode.html">Reek::Source::SourceCode</a>
+  
+    <li><a href="../../Reek/Source/SourceFile.html">Reek::Source::SourceFile</a>
+  
+    <li><a href="../../Reek/Source/SourceLocator.html">Reek::Source::SourceLocator</a>
+  
+    <li><a href="../../Reek/Source/SourceRepository.html">Reek::Source::SourceRepository</a>
+  
+    <li><a href="../../Reek/Source/TreeDresser.html">Reek::Source::TreeDresser</a>
+  
+    <li><a href="../../Reek/Spec.html">Reek::Spec</a>
+  
+    <li><a href="../../File.html">File</a>
+  
+    <li><a href="../../Hash.html">Hash</a>
+  
+    <li><a href="../../IO.html">IO</a>
+  
+    <li><a href="../../Object.html">Object</a>
+  
+    <li><a href="../../String.html">String</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Reek::Cli::Application</h1>
+
+  <div id="description" class="description">
+    
+<p>Represents an instance of a <a href="../../Reek.html">Reek</a> application.
+This is the entry point for all invocations of <a
+href="../../Reek.html">Reek</a> from the command line.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="STATUS_ERROR">STATUS_ERROR
+        
+        <dd class="description">
+        
+      
+        <dt id="STATUS_SMELLS">STATUS_SMELLS
+        
+        <dd class="description">
+        
+      
+        <dt id="STATUS_SUCCESS">STATUS_SUCCESS
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(argv)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/reek/cli/application.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">argv</span>)
+  <span class="ruby-ivar">@options</span> = <span class="ruby-constant">Options</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">argv</span>)
+  <span class="ruby-ivar">@status</span> = <span class="ruby-constant">STATUS_SUCCESS</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-execute" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">execute</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="execute-source">
+            <pre><span class="ruby-comment"># File lib/reek/cli/application.rb, line 22</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">execute</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">cmd</span> = <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">parse</span>
+    <span class="ruby-identifier">cmd</span>.<span class="ruby-identifier">execute</span>(<span class="ruby-keyword">self</span>)
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">error</span>
+    <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Error: #{error}&quot;</span>
+    <span class="ruby-ivar">@status</span> = <span class="ruby-constant">STATUS_ERROR</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-ivar">@status</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- execute-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- execute-method -->
+
+    
+      <div id="method-i-output" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">output</span><span
+            class="method-args">(text)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="output-source">
+            <pre><span class="ruby-comment"># File lib/reek/cli/application.rb, line 33</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">output</span>(<span class="ruby-identifier">text</span>)
+  <span class="ruby-identifier">print</span> <span class="ruby-identifier">text</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- output-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- output-method -->
+
+    
+      <div id="method-i-output_smells_total" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">output_smells_total</span><span
+            class="method-args">(total_smells_count)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="output_smells_total-source">
+            <pre><span class="ruby-comment"># File lib/reek/cli/application.rb, line 45</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">output_smells_total</span>(<span class="ruby-identifier">total_smells_count</span>)
+  <span class="ruby-identifier">total_smells_message</span> = <span class="ruby-node">&quot;#{total_smells_count} total warning&quot;</span>
+  <span class="ruby-identifier">total_smells_message</span> <span class="ruby-operator">+=</span> <span class="ruby-string">'s'</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">total_smells_count</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+  <span class="ruby-identifier">total_smells_message</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot;\n&quot;</span>
+  <span class="ruby-identifier">output</span> <span class="ruby-identifier">total_smells_message</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- output_smells_total-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- output_smells_total-method -->
+
+    
+      <div id="method-i-report_smells" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">report_smells</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="report_smells-source">
+            <pre><span class="ruby-comment"># File lib/reek/cli/application.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">report_smells</span>
+  <span class="ruby-ivar">@status</span> = <span class="ruby-constant">STATUS_SMELLS</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- report_smells-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- report_smells-method -->
+
+    
+      <div id="method-i-report_success" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">report_success</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="report_success-source">
+            <pre><span class="ruby-comment"># File lib/reek/cli/application.rb, line 37</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">report_success</span>
+  <span class="ruby-ivar">@status</span> = <span class="ruby-constant">STATUS_SUCCESS</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- report_success-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- report_success-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

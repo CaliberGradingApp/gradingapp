@@ -1,0 +1,2522 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class GraphViz - ruby-graphviz-1.0.9 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/graphviz.rb
+    <li>lib/graphviz/node.rb
+    <li>lib/graphviz/types/color.rb
+    <li>lib/graphviz/types/spline_type.rb
+    <li>lib/graphviz/types/gv_bool.rb
+    <li>lib/graphviz/types/arrow_type.rb
+    <li>lib/graphviz/types/rect.rb
+    <li>lib/graphviz/types/gv_double.rb
+    <li>lib/graphviz/types/color_list.rb
+    <li>lib/graphviz/types/lbl_string.rb
+    <li>lib/graphviz/types/html_string.rb
+    <li>lib/graphviz/types/esc_string.rb
+    <li>lib/graphviz/utils.rb
+    <li>lib/graphviz/math/matrix.rb
+    <li>lib/graphviz/nothugly.rb
+    <li>lib/graphviz/xml.rb
+    <li>lib/graphviz/graphml.rb
+    <li>lib/graphviz/dot_script.rb
+    <li>lib/graphviz/utils/colors.rb
+    <li>lib/graphviz/types.rb
+    <li>lib/graphviz/attrs.rb
+    <li>lib/graphviz/ext.rb
+    <li>lib/graphviz/constants.rb
+    <li>lib/graphviz/elements.rb
+    <li>lib/graphviz/family_tree/sibling.rb
+    <li>lib/graphviz/family_tree/generation.rb
+    <li>lib/graphviz/family_tree/person.rb
+    <li>lib/graphviz/family_tree/couple.rb
+    <li>lib/graphviz/family_tree.rb
+    <li>lib/graphviz/theory.rb
+    <li>lib/graphviz/edge.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="Object.html">Object</a>
+  
+</nav>
+
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><a class="include" href="GraphViz/Constants.html">GraphViz::Constants</a>
+  
+  
+  
+    <li><a class="include" href="GraphViz/Utils.html">GraphViz::Utils</a>
+  
+  
+  </ul>
+</nav>
+
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-default">::default</a>
+    
+    <li><a href="#method-c-libxslt_transform">::libxslt_transform</a>
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-c-nothugly">::nothugly</a>
+    
+    <li><a href="#method-c-options">::options</a>
+    
+    <li><a href="#method-c-parse">::parse</a>
+    
+    <li><a href="#method-c-parse_string">::parse_string</a>
+    
+    <li><a href="#method-c-xml_xslt_transform">::xml_xslt_transform</a>
+    
+    <li><a href="#method-i-2D">#-</a>
+    
+    <li><a href="#method-i-3C-3C">#&lt;&lt;</a>
+    
+    <li><a href="#method-i-3E">#&gt;</a>
+    
+    <li><a href="#method-i-3E-3E">#&gt;&gt;</a>
+    
+    <li><a href="#method-i-5B-5D">#[]</a>
+    
+    <li><a href="#method-i-5B-5D-3D">#[]=</a>
+    
+    <li><a href="#method-i-add">#add</a>
+    
+    <li><a href="#method-i-add_edge">#add_edge</a>
+    
+    <li><a href="#method-i-add_edges">#add_edges</a>
+    
+    <li><a href="#method-i-add_graph">#add_graph</a>
+    
+    <li><a href="#method-i-add_node">#add_node</a>
+    
+    <li><a href="#method-i-add_nodes">#add_nodes</a>
+    
+    <li><a href="#method-i-append_attributes_and_types">#append_attributes_and_types</a>
+    
+    <li><a href="#method-i-complete">#complete</a>
+    
+    <li><a href="#method-i-complete-21">#complete!</a>
+    
+    <li><a href="#method-i-directed-3F">#directed?</a>
+    
+    <li><a href="#method-i-each_attribut">#each_attribut</a>
+    
+    <li><a href="#method-i-each_attribute">#each_attribute</a>
+    
+    <li><a href="#method-i-each_edge">#each_edge</a>
+    
+    <li><a href="#method-i-each_graph">#each_graph</a>
+    
+    <li><a href="#method-i-each_node">#each_node</a>
+    
+    <li><a href="#method-i-edge_count">#edge_count</a>
+    
+    <li><a href="#method-i-find_node">#find_node</a>
+    
+    <li><a href="#method-i-get_edge_at_index">#get_edge_at_index</a>
+    
+    <li><a href="#method-i-get_graph">#get_graph</a>
+    
+    <li><a href="#method-i-get_node">#get_node</a>
+    
+    <li><a href="#method-i-get_node_at_index">#get_node_at_index</a>
+    
+    <li><a href="#method-i-graph_count">#graph_count</a>
+    
+    <li><a href="#method-i-has_parent_graph-3F">#has_parent_graph?</a>
+    
+    <li><a href="#method-i-id">#id</a>
+    
+    <li><a href="#method-i-name">#name</a>
+    
+    <li><a href="#method-i-node_count">#node_count</a>
+    
+    <li><a href="#method-i-output">#output</a>
+    
+    <li><a href="#method-i-root_graph">#root_graph</a>
+    
+    <li><a href="#method-i-save">#save</a>
+    
+    <li><a href="#method-i-search_node">#search_node</a>
+    
+    <li><a href="#method-i-subgraph">#subgraph</a>
+    
+    <li><a href="#method-i-to_s">#to_s</a>
+    
+    <li><a href="#method-i-type">#type</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./AUTHORS_rdoc.html">AUTHORS</a>
+  
+    <li class="file"><a href="./CHANGELOG_rdoc.html">CHANGELOG</a>
+  
+    <li class="file"><a href="./COPYING_rdoc.html">COPYING</a>
+  
+    <li class="file"><a href="./README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./GraphViz.html">GraphViz</a>
+  
+    <li><a href="./GraphViz/Attrs.html">GraphViz::Attrs</a>
+  
+    <li><a href="./GraphViz/Constants.html">GraphViz::Constants</a>
+  
+    <li><a href="./GraphViz/DOTScript.html">GraphViz::DOTScript</a>
+  
+    <li><a href="./GraphViz/DOTScriptData.html">GraphViz::DOTScriptData</a>
+  
+    <li><a href="./GraphViz/DSL.html">GraphViz::DSL</a>
+  
+    <li><a href="./GraphViz/Edge.html">GraphViz::Edge</a>
+  
+    <li><a href="./GraphViz/Elements.html">GraphViz::Elements</a>
+  
+    <li><a href="./GraphViz/Ext.html">GraphViz::Ext</a>
+  
+    <li><a href="./GraphViz/FamilyTree.html">GraphViz::FamilyTree</a>
+  
+    <li><a href="./GraphViz/FamilyTree/Couple.html">GraphViz::FamilyTree::Couple</a>
+  
+    <li><a href="./GraphViz/FamilyTree/Generation.html">GraphViz::FamilyTree::Generation</a>
+  
+    <li><a href="./GraphViz/FamilyTree/Person.html">GraphViz::FamilyTree::Person</a>
+  
+    <li><a href="./GraphViz/FamilyTree/Sibling.html">GraphViz::FamilyTree::Sibling</a>
+  
+    <li><a href="./GraphViz/GraphML.html">GraphViz::GraphML</a>
+  
+    <li><a href="./GraphViz/GraphMLError.html">GraphViz::GraphMLError</a>
+  
+    <li><a href="./GraphViz/Math.html">GraphViz::Math</a>
+  
+    <li><a href="./GraphViz/Math/CoordinateError.html">GraphViz::Math::CoordinateError</a>
+  
+    <li><a href="./GraphViz/Math/Matrix.html">GraphViz::Math::Matrix</a>
+  
+    <li><a href="./GraphViz/Math/ValueError.html">GraphViz::Math::ValueError</a>
+  
+    <li><a href="./GraphViz/Node.html">GraphViz::Node</a>
+  
+    <li><a href="./GraphViz/Theory.html">GraphViz::Theory</a>
+  
+    <li><a href="./GraphViz/Types.html">GraphViz::Types</a>
+  
+    <li><a href="./GraphViz/Types/ArrowType.html">GraphViz::Types::ArrowType</a>
+  
+    <li><a href="./GraphViz/Types/Color.html">GraphViz::Types::Color</a>
+  
+    <li><a href="./GraphViz/Types/ColorList.html">GraphViz::Types::ColorList</a>
+  
+    <li><a href="./GraphViz/Types/Common.html">GraphViz::Types::Common</a>
+  
+    <li><a href="./GraphViz/Types/EscString.html">GraphViz::Types::EscString</a>
+  
+    <li><a href="./GraphViz/Types/GvBool.html">GraphViz::Types::GvBool</a>
+  
+    <li><a href="./GraphViz/Types/GvDouble.html">GraphViz::Types::GvDouble</a>
+  
+    <li><a href="./GraphViz/Types/HtmlString.html">GraphViz::Types::HtmlString</a>
+  
+    <li><a href="./GraphViz/Types/LblString.html">GraphViz::Types::LblString</a>
+  
+    <li><a href="./GraphViz/Types/Rect.html">GraphViz::Types::Rect</a>
+  
+    <li><a href="./GraphViz/Types/SplineType.html">GraphViz::Types::SplineType</a>
+  
+    <li><a href="./GraphViz/Utils.html">GraphViz::Utils</a>
+  
+    <li><a href="./GraphViz/Utils/Colors.html">GraphViz::Utils::Colors</a>
+  
+    <li><a href="./GraphViz/XML.html">GraphViz::XML</a>
+  
+    <li><a href="./AttributeException.html">AttributeException</a>
+  
+    <li><a href="./BoolException.html">BoolException</a>
+  
+    <li><a href="./ColorException.html">ColorException</a>
+  
+    <li><a href="./DoubleException.html">DoubleException</a>
+  
+    <li><a href="./Hash.html">Hash</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./RectException.html">RectException</a>
+  
+    <li><a href="./SplineTypeException.html">SplineTypeException</a>
+  
+    <li><a href="./String.html">String</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class GraphViz</h1>
+
+  <div id="description" class="description">
+    
+<p>spliteType or point</p>
+
+<p>spline ( ‘;’ spline )* where spline =  (endp)? (startp)? point (triple)+
+and triple   =  point point point and endp  =  “e,%f,%f” and startp   = 
+“s,%f,%f”</p>
+
+<p>If a spline has points p1 p2 p3 … pn, (n = 1 (mod 3)), the points
+correspond to the control points of a B-spline from p1 to pn. If startp is
+given, it touches one node of the edge, and the arrowhead goes from p1 to
+startp. If startp is not given, p1 touches a node. Similarly for pn and
+endp.</p>
+
+<p>bool</p>
+
+<p>For the bool type,</p>
+<ul><li>
+<p>TRUE values are represented by “true” or “yes” (case-insensitive), true and
+any non-zero integer</p>
+</li><li>
+<p>FALSE values by “false”, “no” or empty string (case-insensitive), false and
+zero.</p>
+</li></ul>
+
+<p>Example</p>
+
+<pre>graph[:center] = &quot;true&quot;</pre>
+
+<p>or</p>
+
+<pre>graph[:center] = true</pre>
+
+<p>or</p>
+
+<pre>graph[:center] = 23</pre>
+
+<p>&gt;&gt; x = “hellont\l"world"”</p>
+
+<h1 id="label-%3E+%22hellon%5Ct%5C%5Cl%22world%22%22">&gt; “hellont\l"world"”</h1>
+
+<p>&gt;&gt; puts x.inspect.gsub( “\\”, “\” ) “hellontl"world"”</p>
+
+<p>OR</p>
+
+<p>&gt;&gt; x = ‘hellontl“world”’</p>
+
+<h1 id="label-%3E+%22hello%5Cn%5Ct%5Cl%22world%22%22">&gt; “hello\n\t\l"world"”</h1>
+
+<p>&gt;&gt; puts x.inspect.gsub( “\\”, “\” ) “hellontl"world"”</p>
+
+<p>TODO: Remove</p>
+
+<p><a href="GraphViz/Constants.html">Constants</a> for ruby-graphviz</p>
+
+<p>GraphViz::Constants::FORMATS: the possible output formats</p>
+
+<pre>&quot;bmp&quot;, &quot;canon&quot;, &quot;dot&quot;, &quot;xdot&quot;, &quot;cmap&quot;, &quot;dia&quot;, &quot;eps&quot;,
+&quot;fig&quot;, &quot;gd&quot;, &quot;gd2&quot;, &quot;gif&quot;, &quot;gtk&quot;, &quot;hpgl&quot;, &quot;ico&quot;, &quot;imap&quot;,
+&quot;cmapx&quot;, &quot;imap_np&quot;, &quot;cmapx_np&quot;, &quot;ismap&quot;, &quot;jpeg&quot;, &quot;jpg&quot;,
+&quot;jpe&quot;, &quot;mif&quot;, &quot;mp&quot;, &quot;pcl&quot;, &quot;pdf&quot;, &quot;pic&quot;, &quot;plain&quot;,
+&quot;plain-ext&quot;, &quot;png&quot;, &quot;ps&quot;, &quot;ps2&quot;, &quot;svg&quot;, &quot;svgz&quot;, &quot;tga&quot;,
+&quot;tiff&quot;, &quot;tif&quot;, &quot;vml&quot;, &quot;vmlz&quot;, &quot;vrml&quot;, &quot;vtx&quot;, &quot;wbmp&quot;,
+&quot;xlib&quot;, &quot;none&quot;</pre>
+
+<p>GraphViz::Constants::PROGRAMS: The possible programs</p>
+
+<pre>&quot;dot&quot;, &quot;neato&quot;, &quot;twopi&quot;, &quot;fdp&quot;, &quot;circo&quot;</pre>
+
+<p>GraphViz::Constants::GRAPHTYPE The possible types of graph</p>
+
+<pre>&quot;digraph&quot;, &quot;graph&quot;</pre>
+
+<p>The single letter codes used in constructors map as follows:</p>
+
+<pre class="ruby"><span class="ruby-constant">G</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">The</span> <span class="ruby-identifier">root</span> <span class="ruby-identifier">graph</span>, <span class="ruby-identifier">with</span> <span class="ruby-constant">GRAPHATTRS</span>
+<span class="ruby-constant">E</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Edge</span>, <span class="ruby-identifier">with</span> <span class="ruby-constant">EDGESATTRS</span>
+<span class="ruby-constant">N</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Node</span>, <span class="ruby-identifier">with</span> <span class="ruby-constant">NODESATTRS</span>
+<span class="ruby-constant">S</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">subgraph</span>
+<span class="ruby-constant">C</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">cluster</span>
+</pre>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-edge" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">edge</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>This accessor allow you to set global edges attributes</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-edge_attrs" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">edge_attrs</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>This accessor allow you to set global edges attributes</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-graph" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">graph</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>This accessor allow you to set global graph attributes</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-graph_attrs" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">graph_attrs</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>This accessor allow you to set global graph attributes</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-node" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">node</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>This accessor allow you to set global nodes attributes</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-node_attrs" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">node_attrs</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>This accessor allow you to set global nodes attributes</p>
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-default" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">default</span><span
+            class="method-args">( hOpts )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Change default options (:use, :path, :errors and :output)</p>
+          
+
+          
+          <div class="method-source-code" id="default-source">
+            <pre><span class="ruby-comment"># File lib/graphviz.rb, line 708</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">default</span>( <span class="ruby-identifier">hOpts</span> )
+  <span class="ruby-identifier">hOpts</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">k</span>.<span class="ruby-identifier">to_s</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;use&quot;</span>
+        <span class="ruby-identifier">@@prog</span> = <span class="ruby-identifier">v</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;path&quot;</span>
+        <span class="ruby-identifier">@@path</span> = <span class="ruby-identifier">v</span>.<span class="ruby-identifier">split</span>( <span class="ruby-string">&quot;,&quot;</span> ).<span class="ruby-identifier">map</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">strip</span> }
+      <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;errors&quot;</span>
+        <span class="ruby-identifier">@@errors</span> = <span class="ruby-identifier">v</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;extlibs&quot;</span>
+        <span class="ruby-identifier">@@extlibs</span> = <span class="ruby-identifier">v</span>.<span class="ruby-identifier">split</span>( <span class="ruby-string">&quot;,&quot;</span> ).<span class="ruby-identifier">map</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">strip</span> }
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;Invalid option #{k}!&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- default-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- default-method -->
+
+    
+      <div id="method-c-libxslt_transform" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">libxslt_transform</span><span
+            class="method-args">(xml, xsl)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="libxslt_transform-source">
+            <pre><span class="ruby-comment"># File lib/graphviz/nothugly.rb, line 54</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">libxslt_transform</span>(<span class="ruby-identifier">xml</span>, <span class="ruby-identifier">xsl</span>)
+   <span class="ruby-constant">LibXML</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span>.<span class="ruby-identifier">default_load_external_dtd</span> = <span class="ruby-keyword">false</span>
+   <span class="ruby-constant">LibXML</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span>.<span class="ruby-identifier">default_substitute_entities</span> = <span class="ruby-keyword">false</span>
+
+   <span class="ruby-identifier">stylesheet_doc</span> = <span class="ruby-constant">LibXML</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">file</span>(<span class="ruby-identifier">xsl</span>)
+   <span class="ruby-identifier">stylesheet</span> = <span class="ruby-constant">LibXSLT</span><span class="ruby-operator">::</span><span class="ruby-constant">XSLT</span><span class="ruby-operator">::</span><span class="ruby-constant">Stylesheet</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">stylesheet_doc</span>)
+   <span class="ruby-identifier">xml_doc</span> = <span class="ruby-constant">LibXML</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">file</span>(<span class="ruby-identifier">xml</span>)
+   <span class="ruby-identifier">stylesheet</span>.<span class="ruby-identifier">apply</span>(<span class="ruby-identifier">xml_doc</span>).<span class="ruby-identifier">to_s</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- libxslt_transform-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- libxslt_transform-method -->
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">( xGraphName, hOpts = {} ) { |self| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Create a new graph object</p>
+
+<p>Options :</p>
+<ul><li>
+<p>:output : Output format (GraphViz::Constants::FORMATS) (default : dot)</p>
+</li><li>
+<p>:file : Output file name (default : nil)</p>
+</li><li>
+<p>:use : Program to use (GraphViz::Constants::PROGRAMS) (default : dot)</p>
+</li><li>
+<p>:path : Program PATH</p>
+</li><li>
+<p>:parent : Parent graph (default : nil)</p>
+</li><li>
+<p>:type : Graph type (GraphViz::Constants::GRAPHTYPE) (default : digraph)</p>
+</li><li>
+<p>:errors : DOT error level (default 1)</p>
+<ul><li>
+<p>0 = Error + Warning</p>
+</li><li>
+<p>1 = Error</p>
+</li><li>
+<p>2 = none</p>
+</li></ul>
+</li></ul>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/graphviz.rb, line 808</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>( <span class="ruby-identifier">xGraphName</span>, <span class="ruby-identifier">hOpts</span> = {}, &amp;<span class="ruby-identifier">block</span> )
+  <span class="ruby-ivar">@filename</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@name</span>     = <span class="ruby-identifier">xGraphName</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-ivar">@format</span>   = <span class="ruby-identifier">@@format</span>
+  <span class="ruby-ivar">@prog</span>     = <span class="ruby-identifier">@@prog</span>
+  <span class="ruby-ivar">@path</span>     = <span class="ruby-identifier">@@path</span>
+  <span class="ruby-ivar">@errors</span>   = <span class="ruby-identifier">@@errors</span>
+  <span class="ruby-ivar">@extlibs</span>  = <span class="ruby-identifier">@@extlibs</span>
+  <span class="ruby-ivar">@output</span>   = {}
+  <span class="ruby-ivar">@nothugly</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-ivar">@strict</span>   = <span class="ruby-keyword">false</span>
+
+  <span class="ruby-ivar">@scale</span>        = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@inverty</span>      = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@no_layout</span>    = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@reduce_graph</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@Lg</span>           = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@LO</span>           = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@Ln</span>           = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@LU</span>           = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@LC</span>           = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@LT</span>           = <span class="ruby-keyword">nil</span>
+
+  <span class="ruby-ivar">@elements_order</span> = <span class="ruby-constant">GraphViz</span><span class="ruby-operator">::</span><span class="ruby-constant">Elements</span><span class="ruby-operator">::</span><span class="ruby-identifier">new</span>()
+
+  <span class="ruby-ivar">@oParentGraph</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@oGraphType</span>   = <span class="ruby-string">&quot;digraph&quot;</span>
+
+  <span class="ruby-ivar">@hoNodes</span>  = <span class="ruby-constant">Hash</span><span class="ruby-operator">::</span><span class="ruby-identifier">new</span>()
+  <span class="ruby-ivar">@loEdges</span>  = <span class="ruby-constant">Array</span><span class="ruby-operator">::</span><span class="ruby-identifier">new</span>()
+  <span class="ruby-ivar">@hoGraphs</span> = <span class="ruby-constant">Hash</span><span class="ruby-operator">::</span><span class="ruby-identifier">new</span>()
+
+  <span class="ruby-ivar">@node</span>  = <span class="ruby-constant">GraphViz</span><span class="ruby-operator">::</span><span class="ruby-constant">Attrs</span><span class="ruby-operator">::</span><span class="ruby-identifier">new</span>( <span class="ruby-keyword">self</span>, <span class="ruby-string">&quot;node&quot;</span>,  <span class="ruby-constant">NODESATTRS</span>  )
+  <span class="ruby-ivar">@edge</span>  = <span class="ruby-constant">GraphViz</span><span class="ruby-operator">::</span><span class="ruby-constant">Attrs</span><span class="ruby-operator">::</span><span class="ruby-identifier">new</span>( <span class="ruby-keyword">self</span>, <span class="ruby-string">&quot;edge&quot;</span>,  <span class="ruby-constant">EDGESATTRS</span>  )
+  <span class="ruby-ivar">@graph</span> = <span class="ruby-constant">GraphViz</span><span class="ruby-operator">::</span><span class="ruby-constant">Attrs</span><span class="ruby-operator">::</span><span class="ruby-identifier">new</span>( <span class="ruby-keyword">self</span>, <span class="ruby-string">&quot;graph&quot;</span>, <span class="ruby-constant">GRAPHSATTRS</span> )
+
+  <span class="ruby-identifier">hOpts</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">xKey</span>, <span class="ruby-identifier">xValue</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">xKey</span>.<span class="ruby-identifier">to_s</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;use&quot;</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-constant">PROGRAMS</span>.<span class="ruby-identifier">index</span>( <span class="ruby-identifier">xValue</span>.<span class="ruby-identifier">to_s</span> ).<span class="ruby-identifier">nil?</span>
+          <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;can't use '#{xValue}'&quot;</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-ivar">@prog</span> = <span class="ruby-identifier">xValue</span>.<span class="ruby-identifier">to_s</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;parent&quot;</span>
+        <span class="ruby-ivar">@oParentGraph</span> = <span class="ruby-identifier">xValue</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;type&quot;</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-constant">GRAPHTYPE</span>.<span class="ruby-identifier">index</span>( <span class="ruby-identifier">xValue</span>.<span class="ruby-identifier">to_s</span> ).<span class="ruby-identifier">nil?</span>
+          <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;graph type '#{xValue}' unknow&quot;</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-ivar">@oGraphType</span> = <span class="ruby-identifier">xValue</span>.<span class="ruby-identifier">to_s</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;path&quot;</span>
+        <span class="ruby-ivar">@path</span> = <span class="ruby-identifier">xValue</span>.<span class="ruby-identifier">split</span>( <span class="ruby-string">&quot;,&quot;</span> ).<span class="ruby-identifier">map</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">strip</span> }
+      <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;strict&quot;</span>
+        <span class="ruby-ivar">@strict</span> = (<span class="ruby-identifier">xValue</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">true</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">false</span>)
+      <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;errors&quot;</span>
+        <span class="ruby-ivar">@errors</span> = <span class="ruby-identifier">xValue</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;extlibs&quot;</span>
+        <span class="ruby-ivar">@extlibs</span> = <span class="ruby-identifier">xValue</span>.<span class="ruby-identifier">split</span>( <span class="ruby-string">&quot;,&quot;</span> ).<span class="ruby-identifier">map</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">strip</span> }
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-keyword">self</span>[<span class="ruby-identifier">xKey</span>.<span class="ruby-identifier">to_s</span>] = <span class="ruby-identifier">xValue</span>.<span class="ruby-identifier">to_s</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">yield</span>( <span class="ruby-keyword">self</span> ) <span class="ruby-keyword">if</span>( <span class="ruby-identifier">block</span> )
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+      <div id="method-c-nothugly" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">nothugly</span><span
+            class="method-args">( file, save = true )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Transform to pretty up the SVG output</p>
+
+<p>For more information, see <a
+href="http://www.hokstad.com/making-graphviz-output-pretty-with-xsl.html">www.hokstad.com/making-graphviz-output-pretty-with-xsl.html</a>
+and <a
+href="http://www.hokstad.com/making-graphviz-output-pretty-with-xsl-updated.html">www.hokstad.com/making-graphviz-output-pretty-with-xsl-updated.html</a></p>
+
+<p>You can use the :nothugly option to <a
+href="GraphViz.html#method-i-output">#output</a> :</p>
+
+<pre class="ruby"><span class="ruby-identifier">graph</span>.<span class="ruby-identifier">output</span>( :<span class="ruby-identifier">svg</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;myGraph.svg&quot;</span>, :<span class="ruby-identifier">nothugly</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span> )
+</pre>
+
+<p>Or directly on an SVG output graph :</p>
+
+<pre>GraphViz.nothugly( &quot;myGraph.svg&quot; )</pre>
+          
+
+          
+          <div class="method-source-code" id="nothugly-source">
+            <pre><span class="ruby-comment"># File lib/graphviz/nothugly.rb, line 33</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">nothugly</span>( <span class="ruby-identifier">file</span>, <span class="ruby-identifier">save</span> = <span class="ruby-keyword">true</span> )
+  <span class="ruby-identifier">xsl</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>( <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-keyword">__FILE__</span>)), <span class="ruby-string">&quot;nothugly&quot;</span>, <span class="ruby-string">&quot;nothugly.xsl&quot;</span> )
+  <span class="ruby-identifier">out</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">send</span>(<span class="ruby-constant">XSLT_METHOD</span>, <span class="ruby-identifier">file</span>, <span class="ruby-identifier">xsl</span>)
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">save</span>
+    <span class="ruby-identifier">fname</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>( <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">file</span>)), <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">file</span>))
+    <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>( <span class="ruby-identifier">fname</span>, <span class="ruby-string">&quot;w&quot;</span> ) { <span class="ruby-operator">|</span><span class="ruby-identifier">io</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">io</span>.<span class="ruby-identifier">print</span> <span class="ruby-identifier">out</span>
+    }
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">out</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- nothugly-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- nothugly-method -->
+
+    
+      <div id="method-c-options" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">options</span><span
+            class="method-args">( hOpts )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="options-source">
+            <pre><span class="ruby-comment"># File lib/graphviz.rb, line 725</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">options</span>( <span class="ruby-identifier">hOpts</span> )
+  <span class="ruby-constant">GraphViz</span><span class="ruby-operator">::</span><span class="ruby-identifier">default</span>( <span class="ruby-identifier">hOpts</span> )
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- options-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- options-method -->
+
+    
+      <div id="method-c-parse" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">parse</span><span
+            class="method-args">( xFile, hOpts = {} ) { |graph| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Create a new graph from a <a href="GraphViz.html">GraphViz</a> File</p>
+
+<p>Options :</p>
+<ul><li>
+<p>:output : Output format (GraphViz::Constants::FORMATS) (default : dot)</p>
+</li><li>
+<p>:file : Output file name (default : none)</p>
+</li><li>
+<p>:use : Program to use (GraphViz::Constants::PROGRAMS) (default : dot)</p>
+</li><li>
+<p>:path : Program PATH</p>
+</li></ul>
+          
+
+          
+          <div class="method-source-code" id="parse-source">
+            <pre><span class="ruby-comment"># File lib/graphviz.rb, line 739</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">parse</span>( <span class="ruby-identifier">xFile</span>, <span class="ruby-identifier">hOpts</span> = {}, &amp;<span class="ruby-identifier">block</span> )
+  <span class="ruby-identifier">graph</span> = <span class="ruby-constant">Dot2Ruby</span><span class="ruby-operator">::</span><span class="ruby-identifier">new</span>( <span class="ruby-identifier">hOpts</span>[<span class="ruby-value">:path</span>], <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span> ).<span class="ruby-identifier">eval</span>( <span class="ruby-identifier">xFile</span> )
+  <span class="ruby-keyword">yield</span>( <span class="ruby-identifier">graph</span> ) <span class="ruby-keyword">if</span>( <span class="ruby-identifier">block</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">graph</span> )
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">graph</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- parse-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- parse-method -->
+
+    
+      <div id="method-c-parse_string" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">parse_string</span><span
+            class="method-args">( str, hOpts = {} ) { |graph| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Create a new graph from a <a href="GraphViz.html">GraphViz</a> File</p>
+
+<p>Options :</p>
+<ul><li>
+<p>:output : Output format (GraphViz::Constants::FORMATS) (default : dot)</p>
+</li><li>
+<p>:file : Output file name (default : none)</p>
+</li><li>
+<p>:use : Program to use (GraphViz::Constants::PROGRAMS) (default : dot)</p>
+</li><li>
+<p>:path : Program PATH</p>
+</li></ul>
+          
+
+          
+          <div class="method-source-code" id="parse_string-source">
+            <pre><span class="ruby-comment"># File lib/graphviz.rb, line 753</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">parse_string</span>( <span class="ruby-identifier">str</span>, <span class="ruby-identifier">hOpts</span> = {}, &amp;<span class="ruby-identifier">block</span> )
+  <span class="ruby-identifier">graph</span> = <span class="ruby-constant">Dot2Ruby</span><span class="ruby-operator">::</span><span class="ruby-identifier">new</span>( <span class="ruby-identifier">hOpts</span>[<span class="ruby-value">:path</span>], <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span> ).<span class="ruby-identifier">eval_string</span>( <span class="ruby-identifier">str</span> )
+  <span class="ruby-keyword">yield</span>( <span class="ruby-identifier">graph</span> ) <span class="ruby-keyword">if</span>( <span class="ruby-identifier">block</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">graph</span> )
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">graph</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- parse_string-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- parse_string-method -->
+
+    
+      <div id="method-c-xml_xslt_transform" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">xml_xslt_transform</span><span
+            class="method-args">(xml, xsl)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="xml_xslt_transform-source">
+            <pre><span class="ruby-comment"># File lib/graphviz/nothugly.rb, line 47</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">xml_xslt_transform</span>(<span class="ruby-identifier">xml</span>, <span class="ruby-identifier">xsl</span>)
+  <span class="ruby-identifier">xslt</span> = <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">XSLT</span>.<span class="ruby-identifier">new</span>()
+  <span class="ruby-identifier">xslt</span>.<span class="ruby-identifier">xml</span> = <span class="ruby-identifier">xml</span>
+  <span class="ruby-identifier">xslt</span>.<span class="ruby-identifier">xsl</span> = <span class="ruby-identifier">xsl</span>
+  <span class="ruby-identifier">xslt</span>.<span class="ruby-identifier">serve</span>()
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- xml_xslt_transform-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- xml_xslt_transform-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-2D" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">-</span><span
+            class="method-args">( oNode )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="GraphViz.html#method-i-3C-3C">&lt;&lt;</a>
+        </div>
+        
+      </div><!-- 2D-method -->
+
+    
+      <div id="method-i-3C-3C" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">&lt;&lt;</span><span
+            class="method-args">( oNode )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Create an edge between the current cluster and the node or cluster
+<code>oNode</code></p>
+          
+
+          
+          <div class="method-source-code" id="3C-3C-source">
+            <pre><span class="ruby-comment"># File lib/graphviz.rb, line 654</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">&lt;&lt;</span>( <span class="ruby-identifier">oNode</span> )
+  <span class="ruby-identifier">raise</span>( <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;Edge between root graph and node or cluster not allowed!&quot;</span> ) <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">pg</span>.<span class="ruby-identifier">nil?</span>
+
+  <span class="ruby-keyword">if</span>( <span class="ruby-identifier">oNode</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Array</span> )
+    <span class="ruby-identifier">oNode</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">no</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">self</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">no</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">GraphViz</span><span class="ruby-operator">::</span><span class="ruby-identifier">commonGraph</span>( <span class="ruby-identifier">oNode</span>, <span class="ruby-keyword">self</span> ).<span class="ruby-identifier">add_edges</span>( <span class="ruby-keyword">self</span>, <span class="ruby-identifier">oNode</span> )
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- 3C-3C-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="GraphViz.html#method-i-3E">&gt;</a>, <a href="GraphViz.html#method-i-2D">-</a>, <a href="GraphViz.html#method-i-3E-3E">&gt;&gt;</a>
+        </div>
+        
+
+        
+      </div><!-- 3C-3C-method -->
+
+    
+      <div id="method-i-3E" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">&gt;</span><span
+            class="method-args">( oNode )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="GraphViz.html#method-i-3C-3C">&lt;&lt;</a>
+        </div>
+        
+      </div><!-- 3E-method -->
+
+    
+      <div id="method-i-3E-3E" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">&gt;&gt;</span><span
+            class="method-args">( oNode )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="GraphViz.html#method-i-3C-3C">&lt;&lt;</a>
+        </div>
+        
+      </div><!-- 3E-3E-method -->
+
+    
+      <div id="method-i-5B-5D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">[]</span><span
+            class="method-args">( xAttrName )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get the value of the graph attribute <code>xAttrName</code></p>
+          
+
+          
+          <div class="method-source-code" id="5B-5D-source">
+            <pre><span class="ruby-comment"># File lib/graphviz.rb, line 387</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">[]</span>( <span class="ruby-identifier">xAttrName</span> )
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">Hash</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">xAttrName</span>
+    <span class="ruby-identifier">xAttrName</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">self</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-identifier">value</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">return</span>( <span class="ruby-ivar">@graph</span>[<span class="ruby-identifier">xAttrName</span>].<span class="ruby-identifier">clone</span> )
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- 5B-5D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- 5B-5D-method -->
+
+    
+      <div id="method-i-5B-5D-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">[]=</span><span
+            class="method-args">( xAttrName, xValue )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Set value <code>xValue</code> to the graph attribute <code>xAttrName</code></p>
+          
+
+          
+          <div class="method-source-code" id="5B-5D-3D-source">
+            <pre><span class="ruby-comment"># File lib/graphviz.rb, line 379</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">[]=</span>( <span class="ruby-identifier">xAttrName</span>, <span class="ruby-identifier">xValue</span> )
+  <span class="ruby-identifier">xValue</span> = <span class="ruby-identifier">xValue</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">xValue</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Symbol</span>
+  <span class="ruby-ivar">@graph</span>[<span class="ruby-identifier">xAttrName</span>] = <span class="ruby-identifier">xValue</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- 5B-5D-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- 5B-5D-3D-method -->
+
+    
+      <div id="method-i-add" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add</span><span
+            class="method-args">(h)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Add nodes and edges defined by a <a href="Hash.html">Hash</a></p>
+          
+
+          
+          <div class="method-source-code" id="add-source">
+            <pre><span class="ruby-comment"># File lib/graphviz.rb, line 325</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add</span>(<span class="ruby-identifier">h</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">h</span>.<span class="ruby-identifier">kind_of?</span> <span class="ruby-constant">Hash</span>
+    <span class="ruby-identifier">h</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">node</span>, <span class="ruby-identifier">data</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">add_hash_edge</span>(<span class="ruby-identifier">node</span>, <span class="ruby-identifier">data</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add-method -->
+
+    
+      <div id="method-i-add_edge" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_edge</span><span
+            class="method-args">( oNodeOne, oNodeTwo, hOpts = {} )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="add_edge-source">
+            <pre><span class="ruby-comment"># File lib/graphviz.rb, line 184</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_edge</span>( <span class="ruby-identifier">oNodeOne</span>, <span class="ruby-identifier">oNodeTwo</span>, <span class="ruby-identifier">hOpts</span> = {} )
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">oNodeTwo</span>.<span class="ruby-identifier">kind_of?</span> <span class="ruby-constant">Array</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">oNodeOne</span>.<span class="ruby-identifier">kind_of?</span> <span class="ruby-constant">Array</span> 
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;use `add_edges' to add several edges at the same time&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">add_edges</span>(<span class="ruby-identifier">oNodeOne</span>, <span class="ruby-identifier">oNodeTwo</span>, <span class="ruby-identifier">hOpts</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_edge-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_edge-method -->
+
+    
+      <div id="method-i-add_edges" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_edges</span><span
+            class="method-args">( node_one, node_two, options = {} )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Create a new edge</p>
+
+<p>In:</p>
+<ul><li>
+<p>node_one : First node (or node list)</p>
+</li><li>
+<p>node_two : Second <a href="GraphViz/Node.html">Node</a> (or node list)</p>
+</li><li>
+<p>options : <a href="GraphViz/Edge.html">Edge</a> attributes</p>
+</li></ul>
+          
+
+          
+          <div class="method-source-code" id="add_edges-source">
+            <pre><span class="ruby-comment"># File lib/graphviz.rb, line 197</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_edges</span>( <span class="ruby-identifier">node_one</span>, <span class="ruby-identifier">node_two</span>, <span class="ruby-identifier">options</span> = {} )
+
+  <span class="ruby-keyword">if</span>( <span class="ruby-identifier">node_one</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Array</span> )
+    <span class="ruby-identifier">node_one</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">no</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">add_edges</span>( <span class="ruby-identifier">no</span>, <span class="ruby-identifier">node_two</span>, <span class="ruby-identifier">options</span> )
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">if</span>( <span class="ruby-identifier">node_two</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Array</span> )
+      <span class="ruby-identifier">node_two</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">nt</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">add_edges</span>( <span class="ruby-identifier">node_one</span>, <span class="ruby-identifier">nt</span>, <span class="ruby-identifier">options</span> )
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">edge</span> = <span class="ruby-constant">GraphViz</span><span class="ruby-operator">::</span><span class="ruby-constant">Edge</span><span class="ruby-operator">::</span><span class="ruby-identifier">new</span>( <span class="ruby-identifier">node_one</span>, <span class="ruby-identifier">node_two</span>, <span class="ruby-keyword">self</span> )
+      <span class="ruby-identifier">edge</span>.<span class="ruby-identifier">index</span> = <span class="ruby-ivar">@elements_order</span>.<span class="ruby-identifier">size_of</span>( <span class="ruby-string">&quot;edge&quot;</span> )
+
+      <span class="ruby-identifier">options</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">xKey</span>, <span class="ruby-identifier">xValue</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">edge</span>[<span class="ruby-identifier">xKey</span>.<span class="ruby-identifier">to_s</span>] = <span class="ruby-identifier">xValue</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-ivar">@elements_order</span>.<span class="ruby-identifier">push</span>( {
+        <span class="ruby-string">&quot;type&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;edge&quot;</span>,
+        <span class="ruby-string">&quot;value&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">edge</span>
+      } )
+      <span class="ruby-ivar">@loEdges</span>.<span class="ruby-identifier">push</span>( <span class="ruby-identifier">edge</span> )
+
+      <span class="ruby-keyword">return</span>( <span class="ruby-identifier">edge</span> )
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_edges-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_edges-method -->
+
+    
+      <div id="method-i-add_graph" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_graph</span><span
+            class="method-args">( xGraphName = nil, hOpts = {}, &block )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Create a new graph</p>
+
+<p>In:</p>
+<ul><li>
+<p>xGraphName : Graph name</p>
+</li><li>
+<p>hOpts : Graph attributes</p>
+</li></ul>
+          
+
+          
+          <div class="method-source-code" id="add_graph-source">
+            <pre><span class="ruby-comment"># File lib/graphviz.rb, line 262</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_graph</span>( <span class="ruby-identifier">xGraphName</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">hOpts</span> = {}, &amp;<span class="ruby-identifier">block</span> )
+   <span class="ruby-keyword">if</span> <span class="ruby-identifier">xGraphName</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">GraphViz</span>)
+      <span class="ruby-identifier">xGraphID</span> = <span class="ruby-identifier">xGraphName</span>.<span class="ruby-identifier">id</span>
+      <span class="ruby-ivar">@hoGraphs</span>[<span class="ruby-identifier">xGraphID</span>] = <span class="ruby-identifier">xGraphName</span>.<span class="ruby-identifier">clone</span>
+      <span class="ruby-ivar">@hoGraphs</span>[<span class="ruby-identifier">xGraphID</span>].<span class="ruby-identifier">type</span> = <span class="ruby-ivar">@oGraphType</span>
+      <span class="ruby-ivar">@hoGraphs</span>[<span class="ruby-identifier">xGraphID</span>].<span class="ruby-identifier">pg</span> = <span class="ruby-keyword">self</span>
+      <span class="ruby-identifier">xGraphName</span> = <span class="ruby-identifier">xGraphID</span>
+   <span class="ruby-keyword">else</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">xGraphName</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Hash</span>)
+         <span class="ruby-identifier">hOpts</span> = <span class="ruby-identifier">xGraphName</span>
+         <span class="ruby-identifier">xGraphName</span> = <span class="ruby-keyword">nil</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">xGraphName</span>.<span class="ruby-identifier">nil?</span>
+         <span class="ruby-identifier">xGraphID</span> = <span class="ruby-constant">String</span>.<span class="ruby-identifier">random</span>(<span class="ruby-value">11</span>)
+         <span class="ruby-identifier">xGraphName</span> = <span class="ruby-string">&quot;&quot;</span>
+      <span class="ruby-keyword">else</span>
+         <span class="ruby-identifier">xGraphID</span> = <span class="ruby-identifier">xGraphName</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-ivar">@hoGraphs</span>[<span class="ruby-identifier">xGraphID</span>] = <span class="ruby-constant">GraphViz</span><span class="ruby-operator">::</span><span class="ruby-identifier">new</span>( <span class="ruby-identifier">xGraphName</span>, {<span class="ruby-value">:parent</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">self</span>, <span class="ruby-value">:type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@oGraphType</span>}, &amp;<span class="ruby-identifier">block</span> )
+
+      <span class="ruby-identifier">hOpts</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">xKey</span>, <span class="ruby-identifier">xValue</span><span class="ruby-operator">|</span>
+         <span class="ruby-ivar">@hoGraphs</span>[<span class="ruby-identifier">xGraphID</span>][<span class="ruby-identifier">xKey</span>.<span class="ruby-identifier">to_s</span>] = <span class="ruby-identifier">xValue</span>
+      <span class="ruby-keyword">end</span>
+   <span class="ruby-keyword">end</span>
+
+   <span class="ruby-ivar">@elements_order</span>.<span class="ruby-identifier">push</span>( {
+      <span class="ruby-string">&quot;type&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;graph&quot;</span>,
+      <span class="ruby-string">&quot;name&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">xGraphName</span>,
+      <span class="ruby-string">&quot;value&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@hoGraphs</span>[<span class="ruby-identifier">xGraphID</span>]
+   } )
+
+   <span class="ruby-keyword">return</span>( <span class="ruby-ivar">@hoGraphs</span>[<span class="ruby-identifier">xGraphID</span>] )
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_graph-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="GraphViz.html#method-i-subgraph">subgraph</a>
+        </div>
+        
+
+        
+      </div><!-- add_graph-method -->
+
+    
+      <div id="method-i-add_node" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_node</span><span
+            class="method-args">( xNodeName, hOpts = {} )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="add_node-source">
+            <pre><span class="ruby-comment"># File lib/graphviz.rb, line 87</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_node</span>( <span class="ruby-identifier">xNodeName</span>, <span class="ruby-identifier">hOpts</span> = {} )
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">xNodeName</span>.<span class="ruby-identifier">kind_of?</span> <span class="ruby-constant">Array</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;use `add_nodes' to add several nodes at the same time&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">add_nodes</span>(<span class="ruby-identifier">xNodeName</span>, <span class="ruby-identifier">hOpts</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_node-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_node-method -->
+
+    
+      <div id="method-i-add_nodes" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_nodes</span><span
+            class="method-args">(node_name, options = {})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Create a new node</p>
+
+<p>In:</p>
+<ul><li>
+<p>xNodeName : Name of the new node</p>
+</li><li>
+<p>hOpts : <a href="GraphViz/Node.html">Node</a> attributes</p>
+</li></ul>
+
+<p>Return the <a href="GraphViz/Node.html">GraphViz::Node</a> object created</p>
+          
+
+          
+          <div class="method-source-code" id="add_nodes-source">
+            <pre><span class="ruby-comment"># File lib/graphviz.rb, line 101</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_nodes</span>(<span class="ruby-identifier">node_name</span>, <span class="ruby-identifier">options</span> = {})
+   <span class="ruby-keyword">if</span> <span class="ruby-identifier">node_name</span>.<span class="ruby-identifier">kind_of?</span> <span class="ruby-constant">Array</span>
+      <span class="ruby-identifier">node_name</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span> <span class="ruby-identifier">add_nodes</span>(<span class="ruby-identifier">n</span>, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">clone</span>) }
+   <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">node</span> = <span class="ruby-ivar">@hoNodes</span>[<span class="ruby-identifier">node_name</span>]
+
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">nil?</span>
+         <span class="ruby-ivar">@hoNodes</span>[<span class="ruby-identifier">node_name</span>] = <span class="ruby-constant">GraphViz</span><span class="ruby-operator">::</span><span class="ruby-constant">Node</span><span class="ruby-operator">::</span><span class="ruby-identifier">new</span>( <span class="ruby-identifier">node_name</span>, <span class="ruby-keyword">self</span> )
+         <span class="ruby-ivar">@hoNodes</span>[<span class="ruby-identifier">node_name</span>].<span class="ruby-identifier">index</span> = <span class="ruby-ivar">@elements_order</span>.<span class="ruby-identifier">size_of</span>( <span class="ruby-string">&quot;node&quot;</span> )
+
+         <span class="ruby-keyword">unless</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-value">:label</span>) <span class="ruby-keyword">or</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">&quot;label&quot;</span>)
+            <span class="ruby-identifier">options</span>[<span class="ruby-value">:label</span>] = <span class="ruby-identifier">node_name</span>
+         <span class="ruby-keyword">end</span>
+
+         <span class="ruby-ivar">@elements_order</span>.<span class="ruby-identifier">push</span>( {
+            <span class="ruby-string">&quot;type&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;node&quot;</span>,
+            <span class="ruby-string">&quot;name&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">node_name</span>,
+            <span class="ruby-string">&quot;value&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@hoNodes</span>[<span class="ruby-identifier">node_name</span>]
+         } )
+
+         <span class="ruby-identifier">node</span> = <span class="ruby-ivar">@hoNodes</span>[<span class="ruby-identifier">node_name</span>]
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">options</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">xKey</span>, <span class="ruby-identifier">xValue</span><span class="ruby-operator">|</span>
+         <span class="ruby-ivar">@hoNodes</span>[<span class="ruby-identifier">node_name</span>][<span class="ruby-identifier">xKey</span>.<span class="ruby-identifier">to_s</span>] = <span class="ruby-identifier">xValue</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-keyword">return</span> <span class="ruby-identifier">node</span>
+   <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_nodes-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_nodes-method -->
+
+    
+      <div id="method-i-append_attributes_and_types" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">append_attributes_and_types</span><span
+            class="method-args">(script)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="append_attributes_and_types-source">
+            <pre><span class="ruby-comment"># File lib/graphviz.rb, line 610</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">append_attributes_and_types</span>(<span class="ruby-identifier">script</span>)
+  <span class="ruby-identifier">script_data</span> = <span class="ruby-constant">DOTScriptData</span>.<span class="ruby-identifier">new</span>
+
+  <span class="ruby-ivar">@elements_order</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">kElement</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">is_new_type</span> = <span class="ruby-identifier">script_data</span>.<span class="ruby-identifier">type</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">kElement</span>[<span class="ruby-string">&quot;type&quot;</span>]
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">is_new_type</span> 
+      <span class="ruby-keyword">unless</span> <span class="ruby-identifier">script_data</span>.<span class="ruby-identifier">type</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">script_data</span>.<span class="ruby-identifier">empty?</span>
+        <span class="ruby-identifier">script</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">script_data</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">script_data</span> = <span class="ruby-constant">DOTScriptData</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">kElement</span>[<span class="ruby-string">&quot;type&quot;</span>])
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># Modified by Brandon Coleman verify value is NOT NULL</span>
+    <span class="ruby-identifier">kElement</span>[<span class="ruby-string">&quot;value&quot;</span>] <span class="ruby-keyword">or</span> <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;#{kElement[&quot;name&quot;]} is nil!&quot;</span>
+
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">kElement</span>[<span class="ruby-string">&quot;type&quot;</span>]
+      <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;graph_attr&quot;</span>, <span class="ruby-string">&quot;node_attr&quot;</span>, <span class="ruby-string">&quot;edge_attr&quot;</span>
+        <span class="ruby-identifier">script_data</span>.<span class="ruby-identifier">add_attribute</span>(<span class="ruby-identifier">kElement</span>[<span class="ruby-string">&quot;name&quot;</span>], <span class="ruby-identifier">kElement</span>[<span class="ruby-string">&quot;value&quot;</span>].<span class="ruby-identifier">to_gv</span>)
+      <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;node&quot;</span>, <span class="ruby-string">&quot;graph&quot;</span>
+        <span class="ruby-identifier">script</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">kElement</span>[<span class="ruby-string">&quot;value&quot;</span>].<span class="ruby-identifier">output</span>()
+      <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;edge&quot;</span>
+        <span class="ruby-identifier">script</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;  &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">kElement</span>[<span class="ruby-string">&quot;value&quot;</span>].<span class="ruby-identifier">output</span>( <span class="ruby-ivar">@oGraphType</span> )
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>,
+          <span class="ruby-node">&quot;Don't know what to do with element type '#{kElement['type']}'&quot;</span>
+    <span class="ruby-keyword">end</span>
+  }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- append_attributes_and_types-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- append_attributes_and_types-method -->
+
+    
+      <div id="method-i-complete" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">complete</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Return a new completed graph</p>
+          
+
+          
+          <div class="method-source-code" id="complete-source">
+            <pre><span class="ruby-comment"># File lib/graphviz.rb, line 760</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">complete</span>
+  <span class="ruby-constant">GraphViz</span>.<span class="ruby-identifier">parse_string</span>( <span class="ruby-identifier">root_graph</span>.<span class="ruby-identifier">output</span>( <span class="ruby-value">:dot</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">String</span> ) )
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- complete-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- complete-method -->
+
+    
+      <div id="method-i-complete-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">complete!</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Complete the current graph</p>
+          
+
+          
+          <div class="method-source-code" id="complete-21-source">
+            <pre><span class="ruby-comment"># File lib/graphviz.rb, line 765</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">complete!</span>
+  <span class="ruby-comment"># TODO: Keep options</span>
+  <span class="ruby-identifier">complete</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- complete-21-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- complete-21-method -->
+
+    
+      <div id="method-i-directed-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">directed?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Return true if the graph is directed.</p>
+          
+
+          
+          <div class="method-source-code" id="directed-3F-source">
+            <pre><span class="ruby-comment"># File lib/graphviz.rb, line 771</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">directed?</span>
+  <span class="ruby-keyword">not</span>((<span class="ruby-regexp">/digraph/</span> <span class="ruby-operator">=~</span> <span class="ruby-string">&quot;bla digraph bla&quot;</span>).<span class="ruby-identifier">nil?</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- directed-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- directed-3F-method -->
+
+    
+      <div id="method-i-each_attribut" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">each_attribut</span><span
+            class="method-args">(&b)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="each_attribut-source">
+            <pre><span class="ruby-comment"># File lib/graphviz.rb, line 406</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">each_attribut</span>(&amp;<span class="ruby-identifier">b</span>)
+   <span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;`GraphViz#each_attribut` is deprecated, please use `GraphViz#each_attribute`&quot;</span>
+   <span class="ruby-identifier">each_attribute</span>(&amp;<span class="ruby-identifier">b</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- each_attribut-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- each_attribut-method -->
+
+    
+      <div id="method-i-each_attribute" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">each_attribute</span><span
+            class="method-args">() { |k,v| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Calls block once for each attribute of the graph, passing the name and
+value to the block as a two-element array.</p>
+          
+
+          
+          <div class="method-source-code" id="each_attribute-source">
+            <pre><span class="ruby-comment"># File lib/graphviz.rb, line 401</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">each_attribute</span>(&amp;<span class="ruby-identifier">b</span>)
+  <span class="ruby-ivar">@graph</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">yield</span>(<span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- each_attribute-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- each_attribute-method -->
+
+    
+      <div id="method-i-each_edge" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">each_edge</span><span
+            class="method-args">( ) { |edge| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Allow you to traverse edges</p>
+          
+
+          
+          <div class="method-source-code" id="each_edge-source">
+            <pre><span class="ruby-comment"># File lib/graphviz.rb, line 230</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">each_edge</span>( &amp;<span class="ruby-identifier">block</span> )
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+    <span class="ruby-ivar">@loEdges</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">edge</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">yield</span>(<span class="ruby-identifier">edge</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-ivar">@loEdges</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- each_edge-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- each_edge-method -->
+
+    
+      <div id="method-i-each_graph" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">each_graph</span><span
+            class="method-args">( ) { |name, graph| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Allow you to traverse graphs</p>
+          
+
+          
+          <div class="method-source-code" id="each_graph-source">
+            <pre><span class="ruby-comment"># File lib/graphviz.rb, line 312</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">each_graph</span>( &amp;<span class="ruby-identifier">block</span> )
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+    <span class="ruby-ivar">@hoGraphs</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>, <span class="ruby-identifier">graph</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">yield</span>( <span class="ruby-identifier">name</span>, <span class="ruby-identifier">graph</span> )
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-ivar">@hoGraphs</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- each_graph-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- each_graph-method -->
+
+    
+      <div id="method-i-each_node" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">each_node</span><span
+            class="method-args">( ) { |name, node| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Allow you to traverse nodes</p>
+          
+
+          
+          <div class="method-source-code" id="each_node-source">
+            <pre><span class="ruby-comment"># File lib/graphviz.rb, line 169</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">each_node</span>( &amp;<span class="ruby-identifier">block</span> )
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+    <span class="ruby-ivar">@hoNodes</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>, <span class="ruby-identifier">node</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">yield</span>( <span class="ruby-identifier">name</span>, <span class="ruby-identifier">node</span> )
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">return</span>( <span class="ruby-ivar">@hoNodes</span> )
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- each_node-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- each_node-method -->
+
+    
+      <div id="method-i-edge_count" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">edge_count</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get the number of edges</p>
+          
+
+          
+          <div class="method-source-code" id="edge_count-source">
+            <pre><span class="ruby-comment"># File lib/graphviz.rb, line 243</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">edge_count</span>
+  <span class="ruby-ivar">@loEdges</span>.<span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- edge_count-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- edge_count-method -->
+
+    
+      <div id="method-i-find_node" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find_node</span><span
+            class="method-args">(name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the first node found in the entire graph, starting from the root
+graph</p>
+          
+
+          
+          <div class="method-source-code" id="find_node-source">
+            <pre><span class="ruby-comment"># File lib/graphviz.rb, line 142</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">find_node</span>(<span class="ruby-identifier">name</span>)
+   <span class="ruby-identifier">root</span> = <span class="ruby-identifier">root_graph</span>
+   <span class="ruby-keyword">return</span> <span class="ruby-identifier">root</span>.<span class="ruby-identifier">search_node</span>(<span class="ruby-identifier">name</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- find_node-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- find_node-method -->
+
+    
+      <div id="method-i-get_edge_at_index" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_edge_at_index</span><span
+            class="method-args">( index )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Return the edge object for the given index</p>
+          
+
+          
+          <div class="method-source-code" id="get_edge_at_index-source">
+            <pre><span class="ruby-comment"># File lib/graphviz.rb, line 250</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_edge_at_index</span>( <span class="ruby-identifier">index</span> )
+  <span class="ruby-identifier">element</span> = <span class="ruby-ivar">@elements_order</span>[<span class="ruby-identifier">index</span>, <span class="ruby-string">&quot;edge&quot;</span>]
+  (<span class="ruby-identifier">element</span>.<span class="ruby-identifier">nil?</span>) <span class="ruby-operator">?</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">element</span>[<span class="ruby-string">&quot;value&quot;</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_edge_at_index-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_edge_at_index-method -->
+
+    
+      <div id="method-i-get_graph" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_graph</span><span
+            class="method-args">( xGraphName ) { |graph| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Return the graph object for the given name (or nil)</p>
+          
+
+          
+          <div class="method-source-code" id="get_graph-source">
+            <pre><span class="ruby-comment"># File lib/graphviz.rb, line 301</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_graph</span>( <span class="ruby-identifier">xGraphName</span>, &amp;<span class="ruby-identifier">block</span> )
+  <span class="ruby-identifier">graph</span> = <span class="ruby-ivar">@hoGraphs</span>[<span class="ruby-identifier">xGraphName</span>] <span class="ruby-operator">||</span> <span class="ruby-keyword">nil</span>
+
+  <span class="ruby-keyword">yield</span>( <span class="ruby-identifier">graph</span> ) <span class="ruby-keyword">if</span>( <span class="ruby-identifier">block</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">graph</span> )
+
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">graph</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_graph-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_graph-method -->
+
+    
+      <div id="method-i-get_node" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_node</span><span
+            class="method-args">( xNodeName ) { |node| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Return the node object for the given name (or nil) in the current graph</p>
+          
+
+          
+          <div class="method-source-code" id="get_node-source">
+            <pre><span class="ruby-comment"># File lib/graphviz.rb, line 133</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_node</span>( <span class="ruby-identifier">xNodeName</span>, &amp;<span class="ruby-identifier">block</span> )
+  <span class="ruby-identifier">node</span> = <span class="ruby-ivar">@hoNodes</span>[<span class="ruby-identifier">xNodeName</span>] <span class="ruby-operator">||</span> <span class="ruby-keyword">nil</span>
+
+  <span class="ruby-keyword">yield</span>( <span class="ruby-identifier">node</span> ) <span class="ruby-keyword">if</span>( <span class="ruby-identifier">block</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">node</span> )
+
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">node</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_node-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_node-method -->
+
+    
+      <div id="method-i-get_node_at_index" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_node_at_index</span><span
+            class="method-args">( index )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Return the node object for the given index</p>
+          
+
+          
+          <div class="method-source-code" id="get_node_at_index-source">
+            <pre><span class="ruby-comment"># File lib/graphviz.rb, line 161</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_node_at_index</span>( <span class="ruby-identifier">index</span> )
+  <span class="ruby-identifier">element</span> = <span class="ruby-ivar">@elements_order</span>[<span class="ruby-identifier">index</span>, <span class="ruby-string">&quot;node&quot;</span>]
+  (<span class="ruby-identifier">element</span>.<span class="ruby-identifier">nil?</span>) <span class="ruby-operator">?</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">element</span>[<span class="ruby-string">&quot;value&quot;</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_node_at_index-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_node_at_index-method -->
+
+    
+      <div id="method-i-graph_count" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">graph_count</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get the number of graphs</p>
+          
+
+          
+          <div class="method-source-code" id="graph_count-source">
+            <pre><span class="ruby-comment"># File lib/graphviz.rb, line 346</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">graph_count</span>
+  <span class="ruby-ivar">@hoGraphs</span>.<span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- graph_count-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- graph_count-method -->
+
+    
+      <div id="method-i-has_parent_graph-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">has_parent_graph?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="has_parent_graph-3F-source">
+            <pre><span class="ruby-comment"># File lib/graphviz.rb, line 775</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">has_parent_graph?</span>
+   <span class="ruby-ivar">@oParentGraph</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- has_parent_graph-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- has_parent_graph-3F-method -->
+
+    
+      <div id="method-i-id" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">id</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="GraphViz.html#method-i-name">name</a>
+        </div>
+        
+      </div><!-- id-method -->
+
+    
+      <div id="method-i-name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">name</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get the graph name</p>
+          
+
+          
+          <div class="method-source-code" id="name-source">
+            <pre><span class="ruby-comment"># File lib/graphviz.rb, line 646</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">name</span>
+  <span class="ruby-ivar">@name</span>.<span class="ruby-identifier">clone</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- name-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="GraphViz.html#method-i-id">id</a>
+        </div>
+        
+
+        
+      </div><!-- name-method -->
+
+    
+      <div id="method-i-node_count" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">node_count</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get the number of nodes</p>
+          
+
+          
+          <div class="method-source-code" id="node_count-source">
+            <pre><span class="ruby-comment"># File lib/graphviz.rb, line 180</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">node_count</span>
+  <span class="ruby-ivar">@hoNodes</span>.<span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- node_count-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- node_count-method -->
+
+    
+      <div id="method-i-output" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">output</span><span
+            class="method-args">( hOpts = {} )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Generate the graph</p>
+
+<p>Options :</p>
+<ul><li>
+<p>:output : Output format (GraphViz::Constants::FORMATS)</p>
+</li><li>
+<p>:file : Output file name</p>
+</li><li>
+<p>:use : Program to use (GraphViz::Constants::PROGRAMS)</p>
+</li><li>
+<p>:path : Program PATH</p>
+</li><li>
+<p>:&lt;format&gt; =&gt; &lt;file&gt; : &lt;file&gt; can be</p>
+<ul><li>
+<p>a file name</p>
+</li><li>
+<p>nil, then the output will be printed to STDOUT</p>
+</li><li>
+<p><a href="String.html">String</a>, then the output will be returned as a <a
+href="String.html">String</a></p>
+</li></ul>
+</li><li>
+<p>:errors : DOT error level (default 1)</p>
+<ul><li>
+<p>0 = Error + Warning</p>
+</li><li>
+<p>1 = Error</p>
+</li><li>
+<p>2 = none</p>
+</li></ul>
+</li></ul>
+          
+
+          
+          <div class="method-source-code" id="output-source">
+            <pre><span class="ruby-comment"># File lib/graphviz.rb, line 428</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">output</span>( <span class="ruby-identifier">hOpts</span> = {} )
+  <span class="ruby-identifier">xDOTScript</span> = <span class="ruby-constant">DOTScript</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">lNotHugly</span> = []
+
+  <span class="ruby-identifier">append_attributes_and_types</span>(<span class="ruby-identifier">xDOTScript</span>)
+
+  <span class="ruby-identifier">xDOTScript</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;}&quot;</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">has_parent_graph?</span>
+    <span class="ruby-identifier">xDOTScript</span>.<span class="ruby-identifier">make_subgraph</span>(<span class="ruby-node">&quot;#{GraphViz.escape(@name, :unquote_empty =&gt; true)}&quot;</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">hOutput</span> = {}
+
+    <span class="ruby-identifier">hOpts</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">xKey</span>, <span class="ruby-identifier">xValue</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">xValue</span> = <span class="ruby-identifier">xValue</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">xValue</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword">or</span> [<span class="ruby-constant">Class</span>, <span class="ruby-constant">TrueClass</span>, <span class="ruby-constant">FalseClass</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">xValue</span>.<span class="ruby-identifier">class</span>)
+      <span class="ruby-keyword">case</span> <span class="ruby-identifier">xKey</span>.<span class="ruby-identifier">to_s</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;use&quot;</span>
+          <span class="ruby-keyword">if</span> <span class="ruby-constant">PROGRAMS</span>.<span class="ruby-identifier">index</span>( <span class="ruby-identifier">xValue</span> ).<span class="ruby-identifier">nil?</span>
+            <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;can't use '#{xValue}'&quot;</span>
+          <span class="ruby-keyword">end</span>
+          <span class="ruby-ivar">@prog</span> = <span class="ruby-identifier">xValue</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;path&quot;</span>
+          <span class="ruby-ivar">@path</span> = <span class="ruby-identifier">xValue</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">xValue</span>.<span class="ruby-identifier">split</span>( <span class="ruby-string">&quot;,&quot;</span> ).<span class="ruby-identifier">map</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">strip</span> }
+        <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;errors&quot;</span>
+          <span class="ruby-ivar">@errors</span> = <span class="ruby-identifier">xValue</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;extlib&quot;</span>
+          <span class="ruby-ivar">@extlibs</span> = <span class="ruby-identifier">xValue</span>.<span class="ruby-identifier">split</span>( <span class="ruby-string">&quot;,&quot;</span> ).<span class="ruby-identifier">map</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">strip</span> }
+        <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;scale&quot;</span>
+          <span class="ruby-comment"># Scale input by 'v' (=72)</span>
+          <span class="ruby-ivar">@scale</span> = <span class="ruby-identifier">xValue</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;inverty&quot;</span>
+          <span class="ruby-comment"># Invert y coordinate in output</span>
+          <span class="ruby-ivar">@inverty</span> = <span class="ruby-identifier">xValue</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;no_layout&quot;</span>
+          <span class="ruby-comment"># No layout mode 'v' (=1)</span>
+          <span class="ruby-ivar">@no_layout</span> = <span class="ruby-identifier">xValue</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;reduce&quot;</span>
+          <span class="ruby-comment"># Reduce graph</span>
+          <span class="ruby-ivar">@reduce_graph</span> = <span class="ruby-identifier">xValue</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;Lg&quot;</span>
+          <span class="ruby-comment"># Don't use grid</span>
+          <span class="ruby-ivar">@Lg</span> = <span class="ruby-identifier">xValue</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;LO&quot;</span>
+          <span class="ruby-comment"># Use old attractive force</span>
+          <span class="ruby-ivar">@LO</span> = <span class="ruby-identifier">xValue</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;Ln&quot;</span>
+          <span class="ruby-comment"># Set number of iterations to i</span>
+          <span class="ruby-ivar">@Ln</span> = <span class="ruby-identifier">xValue</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;LU&quot;</span>
+          <span class="ruby-comment"># Set unscaled factor to i</span>
+          <span class="ruby-ivar">@LU</span> = <span class="ruby-identifier">xValue</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;LC&quot;</span>
+          <span class="ruby-comment"># Set overlap expansion factor to v</span>
+          <span class="ruby-ivar">@LC</span> = <span class="ruby-identifier">xValue</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;LT&quot;</span>
+          <span class="ruby-comment"># Set temperature (temperature factor) to v</span>
+          <span class="ruby-ivar">@LT</span> = <span class="ruby-identifier">xValue</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;nothugly&quot;</span>
+          <span class="ruby-keyword">begin</span>
+            <span class="ruby-identifier">require</span> <span class="ruby-string">'graphviz/nothugly'</span>
+            <span class="ruby-ivar">@nothugly</span> = <span class="ruby-keyword">true</span>
+          <span class="ruby-keyword">rescue</span> <span class="ruby-constant">LoadError</span>
+            <span class="ruby-identifier">warn</span> <span class="ruby-string">&quot;You must install ruby-xslt or libxslt-ruby to use nothugly option!&quot;</span>
+            <span class="ruby-ivar">@nothugly</span> = <span class="ruby-keyword">false</span>
+          <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-keyword">if</span> <span class="ruby-constant">FORMATS</span>.<span class="ruby-identifier">index</span>( <span class="ruby-identifier">xKey</span>.<span class="ruby-identifier">to_s</span> ).<span class="ruby-identifier">nil?</span>
+            <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;output format '#{xValue}' invalid&quot;</span>
+          <span class="ruby-keyword">end</span>
+          <span class="ruby-identifier">hOutput</span>[<span class="ruby-identifier">xKey</span>.<span class="ruby-identifier">to_s</span>] = <span class="ruby-identifier">xValue</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-ivar">@output</span> = <span class="ruby-identifier">hOutput</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">hOutput</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+
+    <span class="ruby-identifier">xStict</span> = ((<span class="ruby-ivar">@strict</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@oGraphType</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;digraph&quot;</span>) <span class="ruby-operator">?</span> <span class="ruby-string">&quot;strict &quot;</span> <span class="ruby-operator">:</span> <span class="ruby-string">&quot;&quot;</span>)
+    <span class="ruby-identifier">xDOTScript</span>.<span class="ruby-identifier">prepend</span>(
+      <span class="ruby-node">&quot;#{xStict}#{@oGraphType} #{GraphViz.escape(@name, :unquote_empty =&gt; true)} {&quot;</span>
+    )
+
+    <span class="ruby-identifier">xOutputString</span> = (<span class="ruby-ivar">@filename</span> <span class="ruby-operator">==</span> <span class="ruby-constant">String</span> <span class="ruby-operator">||</span>
+      <span class="ruby-ivar">@output</span>.<span class="ruby-identifier">any?</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">format</span>, <span class="ruby-identifier">file</span><span class="ruby-operator">|</span> <span class="ruby-identifier">file</span> <span class="ruby-operator">==</span> <span class="ruby-constant">String</span> })
+
+    <span class="ruby-identifier">xOutput</span> = <span class="ruby-string">&quot;&quot;</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@format</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;none&quot;</span> <span class="ruby-keyword">or</span> <span class="ruby-ivar">@output</span>.<span class="ruby-identifier">any?</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">fmt</span>, <span class="ruby-identifier">fn</span><span class="ruby-operator">|</span> <span class="ruby-identifier">fmt</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;none&quot;</span>}
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">xOutputString</span>
+        <span class="ruby-identifier">xOutput</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">xDOTScript</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">xFileName</span> = <span class="ruby-ivar">@output</span>[<span class="ruby-string">&quot;none&quot;</span>] <span class="ruby-operator">||</span> <span class="ruby-ivar">@filename</span>
+        <span class="ruby-identifier">open</span>( <span class="ruby-identifier">xFileName</span>, <span class="ruby-string">&quot;w&quot;</span> ) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">h</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">h</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">xDOTScript</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">if</span> (<span class="ruby-ivar">@format</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">!=</span> <span class="ruby-string">&quot;none&quot;</span> <span class="ruby-keyword">and</span> <span class="ruby-keyword">not</span> <span class="ruby-ivar">@format</span>.<span class="ruby-identifier">nil?</span>) <span class="ruby-keyword">or</span> (<span class="ruby-ivar">@output</span>.<span class="ruby-identifier">any?</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">format</span>, <span class="ruby-identifier">file</span><span class="ruby-operator">|</span> <span class="ruby-identifier">format</span> <span class="ruby-operator">!=</span> <span class="ruby-string">&quot;none&quot;</span> } <span class="ruby-keyword">and</span> <span class="ruby-ivar">@output</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>)
+      <span class="ruby-comment">## Act: Save script and send it to dot</span>
+      <span class="ruby-identifier">t</span> = <span class="ruby-constant">Tempfile</span><span class="ruby-operator">::</span><span class="ruby-identifier">open</span>( <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-keyword">__FILE__</span>) )
+      <span class="ruby-identifier">t</span>.<span class="ruby-identifier">print</span>( <span class="ruby-identifier">xDOTScript</span> )
+      <span class="ruby-identifier">t</span>.<span class="ruby-identifier">close</span>
+
+      <span class="ruby-identifier">cmd</span> = <span class="ruby-identifier">find_executable</span>( <span class="ruby-ivar">@prog</span>, <span class="ruby-ivar">@path</span> )
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">cmd</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">StandardError</span>, <span class="ruby-node">&quot;GraphViz not installed or #{@prog} not in PATH. Install GraphViz or use the 'path' option&quot;</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">cmd</span> = <span class="ruby-identifier">escape_path_containing_blanks</span>(<span class="ruby-identifier">cmd</span>) <span class="ruby-keyword">if</span> <span class="ruby-constant">IS_JRUBY</span>
+
+      <span class="ruby-identifier">xOutputWithFile</span> = <span class="ruby-string">&quot;&quot;</span>
+      <span class="ruby-identifier">xOutputWithoutFile</span> = <span class="ruby-string">&quot;&quot;</span>
+      <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@format</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword">or</span> <span class="ruby-ivar">@format</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;none&quot;</span>
+        <span class="ruby-identifier">lNotHugly</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@filename</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@format</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;svg&quot;</span> <span class="ruby-keyword">and</span> <span class="ruby-ivar">@nothugly</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-ivar">@filename</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword">or</span> <span class="ruby-ivar">@filename</span> <span class="ruby-operator">==</span> <span class="ruby-constant">String</span>
+          <span class="ruby-identifier">xOutputWithoutFile</span> = <span class="ruby-node">&quot;-T#{@format} &quot;</span>
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-identifier">xOutputWithFile</span> = <span class="ruby-node">&quot;-T#{@format} -o#{@filename} &quot;</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-ivar">@output</span>.<span class="ruby-identifier">each_except</span>( <span class="ruby-value">:key</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-string">&quot;none&quot;</span>] ) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span>, <span class="ruby-identifier">file</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">lNotHugly</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">file</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">format</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;svg&quot;</span> <span class="ruby-keyword">and</span> <span class="ruby-ivar">@nothugly</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">file</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">file</span> <span class="ruby-operator">==</span> <span class="ruby-constant">String</span>
+          <span class="ruby-identifier">xOutputWithoutFile</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;-T#{format} &quot;</span>
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-identifier">xOutputWithFile</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;-T#{format} -o#{file} &quot;</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">xExternalLibraries</span> = <span class="ruby-string">&quot;&quot;</span>
+      <span class="ruby-ivar">@extlibs</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">lib</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">xExternalLibraries</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;-l#{lib} &quot;</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">xOtherOptions</span> = <span class="ruby-string">&quot;&quot;</span>
+      <span class="ruby-identifier">xOtherOptions</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot; -s#{@scale}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@scale</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-identifier">xOtherOptions</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot; -y&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@inverty</span>
+      <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@no_layout</span>.<span class="ruby-identifier">nil?</span>
+        <span class="ruby-identifier">xOtherOptions</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot; -n&quot;</span>
+        <span class="ruby-identifier">xOtherOptions</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot;2&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@no_layout</span>.<span class="ruby-identifier">to_i</span> <span class="ruby-operator">==</span> <span class="ruby-value">2</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">xOtherOptions</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot; -x&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@reduce_graph</span>
+      <span class="ruby-identifier">xOtherOptions</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot; -Lg&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@Lg</span>
+      <span class="ruby-identifier">xOtherOptions</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot; -LO&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@LO</span>
+      <span class="ruby-identifier">xOtherOptions</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot; -Ln#{@Ln}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@Ln</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-identifier">xOtherOptions</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot; -LU#{@LU}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@LU</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-identifier">xOtherOptions</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot; -LC#{@LC}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@LC</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-identifier">xOtherOptions</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot; -LT#{@LT}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@LT</span>.<span class="ruby-identifier">nil?</span>
+
+      <span class="ruby-keyword">if</span> <span class="ruby-constant">IS_JRUBY</span>
+        <span class="ruby-identifier">xCmd</span> = <span class="ruby-node">&quot;#{cmd} -q#{@errors} #{xExternalLibraries} #{xOtherOptions} #{xOutputWithFile} #{xOutputWithoutFile} #{t.path}&quot;</span>
+      <span class="ruby-keyword">elsif</span> <span class="ruby-constant">IS_CYGWIN</span>
+        <span class="ruby-identifier">tmpPath</span> = <span class="ruby-identifier">t</span>.<span class="ruby-identifier">path</span>
+        <span class="ruby-keyword">begin</span>
+          <span class="ruby-identifier">tmpPath</span> = <span class="ruby-string">&quot;'&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-node">%xcygpath -w #{t.path}`</span>.<span class="ruby-identifier">chomp</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;'&quot;</span>
+        <span class="ruby-keyword">rescue</span>
+          <span class="ruby-identifier">warn</span> <span class="ruby-string">&quot;cygpath is not installed!&quot;</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">xCmd</span> = <span class="ruby-node">&quot;\&quot;#{cmd}\&quot; -q#{@errors} #{xExternalLibraries} #{xOtherOptions} #{xOutputWithFile} #{xOutputWithoutFile} #{tmpPath}&quot;</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">xCmd</span> = <span class="ruby-node">&quot;\&quot;#{cmd}\&quot; -q#{@errors} #{xExternalLibraries} #{xOtherOptions} #{xOutputWithFile} #{xOutputWithoutFile} #{t.path}&quot;</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">xOutput</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">output_from_command</span>( <span class="ruby-identifier">xCmd</span> )
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># Not Hugly</span>
+    <span class="ruby-identifier">lNotHugly</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">f</span> <span class="ruby-operator">==</span> <span class="ruby-constant">String</span>
+        <span class="ruby-identifier">xOutput</span> = <span class="ruby-constant">GraphViz</span>.<span class="ruby-identifier">nothugly</span>( <span class="ruby-identifier">xOutput</span>, <span class="ruby-keyword">false</span> )
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-constant">GraphViz</span>.<span class="ruby-identifier">nothugly</span>( <span class="ruby-identifier">f</span>, <span class="ruby-keyword">true</span> )
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">xOutputString</span>
+      <span class="ruby-identifier">xOutput</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">print</span> <span class="ruby-identifier">xOutput</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- output-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="GraphViz.html#method-i-save">save</a>
+        </div>
+        
+
+        
+      </div><!-- output-method -->
+
+    
+      <div id="method-i-root_graph" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">root_graph</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Return the root graph</p>
+          
+
+          
+          <div class="method-source-code" id="root_graph-source">
+            <pre><span class="ruby-comment"># File lib/graphviz.rb, line 679</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">root_graph</span>
+  <span class="ruby-keyword">return</span>( (<span class="ruby-keyword">self</span>.<span class="ruby-identifier">pg</span>.<span class="ruby-identifier">nil?</span>) <span class="ruby-operator">?</span> <span class="ruby-keyword">self</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">pg</span>.<span class="ruby-identifier">root_graph</span> )
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- root_graph-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- root_graph-method -->
+
+    
+      <div id="method-i-save" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">save</span><span
+            class="method-args">( hOpts = {} )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="GraphViz.html#method-i-output">output</a>
+        </div>
+        
+      </div><!-- save-method -->
+
+    
+      <div id="method-i-search_node" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">search_node</span><span
+            class="method-args">(name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Return the first node found in the current graph, and it subgraphs</p>
+          
+
+          
+          <div class="method-source-code" id="search_node-source">
+            <pre><span class="ruby-comment"># File lib/graphviz.rb, line 148</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">search_node</span>(<span class="ruby-identifier">name</span>)
+   <span class="ruby-identifier">n</span> = <span class="ruby-identifier">get_node</span>(<span class="ruby-identifier">name</span>)
+   <span class="ruby-keyword">return</span> <span class="ruby-identifier">n</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">n</span>.<span class="ruby-identifier">nil?</span>
+   <span class="ruby-identifier">each_graph</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">_</span>, <span class="ruby-identifier">g</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">n</span> = <span class="ruby-identifier">g</span>.<span class="ruby-identifier">search_node</span>(<span class="ruby-identifier">name</span>)
+      <span class="ruby-keyword">return</span> <span class="ruby-identifier">n</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">n</span>.<span class="ruby-identifier">nil?</span>
+   }
+   <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- search_node-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- search_node-method -->
+
+    
+      <div id="method-i-subgraph" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">subgraph</span><span
+            class="method-args">( xGraphName = nil, hOpts = {}, &block )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="GraphViz.html#method-i-add_graph">add_graph</a>
+        </div>
+        
+      </div><!-- subgraph-method -->
+
+    
+      <div id="method-i-to_s" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_s</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="to_s-source">
+            <pre><span class="ruby-comment"># File lib/graphviz.rb, line 639</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">output</span>(<span class="ruby-value">:none</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">String</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- to_s-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- to_s-method -->
+
+    
+      <div id="method-i-type" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">type</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Return the graph type (graph digraph)</p>
+          
+
+          
+          <div class="method-source-code" id="type-source">
+            <pre><span class="ruby-comment"># File lib/graphviz.rb, line 336</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">type</span>
+  <span class="ruby-ivar">@oGraphType</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- type-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- type-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

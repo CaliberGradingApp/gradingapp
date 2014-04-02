@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class OmniAuth::Strategies::OAuth - omniauth-oauth-1.0.1 Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/omniauth/strategies/oauth.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><span class="include">OmniAuth::Strategy</span>
+  
+  
+  </ul>
+</nav>
+
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-callback_phase">#callback_phase</a>
+    
+    <li><a href="#method-i-consumer">#consumer</a>
+    
+    <li><a href="#method-i-request_phase">#request_phase</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../OmniAuth.html">OmniAuth</a>
+  
+    <li><a href="../../OmniAuth/OAuth.html">OmniAuth::OAuth</a>
+  
+    <li><a href="../../OmniAuth/Strategies.html">OmniAuth::Strategies</a>
+  
+    <li><a href="../../OmniAuth/Strategies/OAuth.html">OmniAuth::Strategies::OAuth</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class OmniAuth::Strategies::OAuth</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-access_token" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">access_token</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-callback_phase" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">callback_phase</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="callback_phase-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/strategies/oauth.rb, line 45</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">callback_phase</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">OmniAuth</span><span class="ruby-operator">::</span><span class="ruby-constant">NoSessionError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Session Expired&quot;</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">session</span>[<span class="ruby-string">'oauth'</span>].<span class="ruby-identifier">nil?</span>
+
+  <span class="ruby-identifier">request_token</span> = <span class="ruby-operator">::</span><span class="ruby-constant">OAuth</span><span class="ruby-operator">::</span><span class="ruby-constant">RequestToken</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">consumer</span>, <span class="ruby-identifier">session</span>[<span class="ruby-string">'oauth'</span>][<span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>].<span class="ruby-identifier">delete</span>(<span class="ruby-string">'request_token'</span>), <span class="ruby-identifier">session</span>[<span class="ruby-string">'oauth'</span>][<span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>].<span class="ruby-identifier">delete</span>(<span class="ruby-string">'request_secret'</span>))
+
+  <span class="ruby-identifier">opts</span> = {}
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">session</span>[<span class="ruby-string">'oauth'</span>][<span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>][<span class="ruby-string">'callback_confirmed'</span>]
+    <span class="ruby-identifier">opts</span>[<span class="ruby-value">:oauth_verifier</span>] = <span class="ruby-identifier">request</span>[<span class="ruby-string">'oauth_verifier'</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">opts</span>[<span class="ruby-value">:oauth_callback</span>] = <span class="ruby-identifier">callback_url</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-ivar">@access_token</span> = <span class="ruby-identifier">request_token</span>.<span class="ruby-identifier">get_access_token</span>(<span class="ruby-identifier">opts</span>)
+  <span class="ruby-keyword">super</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-operator">::</span><span class="ruby-constant">Timeout</span><span class="ruby-operator">::</span><span class="ruby-constant">Error</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-identifier">fail!</span>(<span class="ruby-value">:timeout</span>, <span class="ruby-identifier">e</span>)
+<span class="ruby-keyword">rescue</span> <span class="ruby-operator">::</span><span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTPFatalError</span>, <span class="ruby-operator">::</span><span class="ruby-constant">OpenSSL</span><span class="ruby-operator">::</span><span class="ruby-constant">SSL</span><span class="ruby-operator">::</span><span class="ruby-constant">SSLError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-identifier">fail!</span>(<span class="ruby-value">:service_unavailable</span>, <span class="ruby-identifier">e</span>)
+<span class="ruby-keyword">rescue</span> <span class="ruby-operator">::</span><span class="ruby-constant">OAuth</span><span class="ruby-operator">::</span><span class="ruby-constant">Unauthorized</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-identifier">fail!</span>(<span class="ruby-value">:invalid_credentials</span>, <span class="ruby-identifier">e</span>)
+<span class="ruby-keyword">rescue</span> <span class="ruby-operator">::</span><span class="ruby-constant">MultiJson</span><span class="ruby-operator">::</span><span class="ruby-constant">DecodeError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-identifier">fail!</span>(<span class="ruby-value">:invalid_response</span>, <span class="ruby-identifier">e</span>)
+<span class="ruby-keyword">rescue</span> <span class="ruby-operator">::</span><span class="ruby-constant">OmniAuth</span><span class="ruby-operator">::</span><span class="ruby-constant">NoSessionError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-identifier">fail!</span>(<span class="ruby-value">:session_expired</span>, <span class="ruby-identifier">e</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- callback_phase-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- callback_phase-method -->
+
+    
+      <div id="method-i-consumer" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">consumer</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="consumer-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/strategies/oauth.rb, line 21</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">consumer</span>
+  <span class="ruby-identifier">consumer</span> = <span class="ruby-operator">::</span><span class="ruby-constant">OAuth</span><span class="ruby-operator">::</span><span class="ruby-constant">Consumer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">options</span>.<span class="ruby-identifier">consumer_key</span>, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">consumer_secret</span>, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">client_options</span>)
+  <span class="ruby-identifier">consumer</span>.<span class="ruby-identifier">http</span>.<span class="ruby-identifier">open_timeout</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">open_timeout</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">open_timeout</span>
+  <span class="ruby-identifier">consumer</span>.<span class="ruby-identifier">http</span>.<span class="ruby-identifier">read_timeout</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">read_timeout</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">read_timeout</span>
+  <span class="ruby-identifier">consumer</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- consumer-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- consumer-method -->
+
+    
+      <div id="method-i-request_phase" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">request_phase</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="request_phase-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/strategies/oauth.rb, line 28</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">request_phase</span>
+  <span class="ruby-identifier">request_token</span> = <span class="ruby-identifier">consumer</span>.<span class="ruby-identifier">get_request_token</span>({<span class="ruby-value">:oauth_callback</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">callback_url</span>}, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">request_params</span>)
+  <span class="ruby-identifier">session</span>[<span class="ruby-string">'oauth'</span>] <span class="ruby-operator">||=</span> {}
+  <span class="ruby-identifier">session</span>[<span class="ruby-string">'oauth'</span>][<span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>] = {<span class="ruby-string">'callback_confirmed'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">request_token</span>.<span class="ruby-identifier">callback_confirmed?</span>, <span class="ruby-string">'request_token'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">request_token</span>.<span class="ruby-identifier">token</span>, <span class="ruby-string">'request_secret'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">request_token</span>.<span class="ruby-identifier">secret</span>}
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">request_token</span>.<span class="ruby-identifier">callback_confirmed?</span>
+    <span class="ruby-identifier">redirect</span> <span class="ruby-identifier">request_token</span>.<span class="ruby-identifier">authorize_url</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:authorize_params</span>])
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">redirect</span> <span class="ruby-identifier">request_token</span>.<span class="ruby-identifier">authorize_url</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:authorize_params</span>].<span class="ruby-identifier">merge</span>(<span class="ruby-value">:oauth_callback</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">callback_url</span>))
+  <span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">rescue</span> <span class="ruby-operator">::</span><span class="ruby-constant">Timeout</span><span class="ruby-operator">::</span><span class="ruby-constant">Error</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-identifier">fail!</span>(<span class="ruby-value">:timeout</span>, <span class="ruby-identifier">e</span>)
+<span class="ruby-keyword">rescue</span> <span class="ruby-operator">::</span><span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTPFatalError</span>, <span class="ruby-operator">::</span><span class="ruby-constant">OpenSSL</span><span class="ruby-operator">::</span><span class="ruby-constant">SSL</span><span class="ruby-operator">::</span><span class="ruby-constant">SSLError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-identifier">fail!</span>(<span class="ruby-value">:service_unavailable</span>, <span class="ruby-identifier">e</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- request_phase-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- request_phase-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

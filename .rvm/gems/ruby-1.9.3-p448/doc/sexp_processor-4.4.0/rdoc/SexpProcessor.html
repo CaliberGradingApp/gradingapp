@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class SexpProcessor - sexp_processor-4.4.0 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/sexp_processor.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="Object.html">Object</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-assert_empty">#assert_empty</a>
+    
+    <li><a href="#method-i-assert_type">#assert_type</a>
+    
+    <li><a href="#method-i-in_context">#in_context</a>
+    
+    <li><a href="#method-i-on_error_in">#on_error_in</a>
+    
+    <li><a href="#method-i-process">#process</a>
+    
+    <li><a href="#method-i-process_dummy">#process_dummy</a>
+    
+    <li><a href="#method-i-rewrite">#rewrite</a>
+    
+    <li><a href="#method-i-scope">#scope</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./History_txt.html">History</a>
+  
+    <li class="file"><a href="./Manifest_txt.html">Manifest</a>
+  
+    <li class="file"><a href="./README_txt.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./SexpProcessor.html">SexpProcessor</a>
+  
+    <li><a href="./SexpProcessor/Environment.html">SexpProcessor::Environment</a>
+  
+    <li><a href="./CompositeSexpProcessor.html">CompositeSexpProcessor</a>
+  
+    <li><a href="./Examples.html">Examples</a>
+  
+    <li><a href="./MethodBasedSexpProcessor.html">MethodBasedSexpProcessor</a>
+  
+    <li><a href="./NotEmptyError.html">NotEmptyError</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./ParseTreeTestCase.html">ParseTreeTestCase</a>
+  
+    <li><a href="./Sexp.html">Sexp</a>
+  
+    <li><a href="./SexpAny.html">SexpAny</a>
+  
+    <li><a href="./SexpInterpreter.html">SexpInterpreter</a>
+  
+    <li><a href="./SexpMatchSpecial.html">SexpMatchSpecial</a>
+  
+    <li><a href="./SexpMatchSpecials.html">SexpMatchSpecials</a>
+  
+    <li><a href="./SexpProcessorError.html">SexpProcessorError</a>
+  
+    <li><a href="./SexpTypeError.html">SexpTypeError</a>
+  
+    <li><a href="./Unique.html">Unique</a>
+  
+    <li><a href="./UnknownNodeError.html">UnknownNodeError</a>
+  
+    <li><a href="./UnsupportedNodeError.html">UnsupportedNodeError</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class SexpProcessor</h1>
+
+  <div id="description" class="description">
+    
+<p><a href="SexpProcessor.html">SexpProcessor</a> provides a uniform interface
+to process Sexps.</p>
+
+<p>In order to create your own <a href="SexpProcessor.html">SexpProcessor</a>
+subclass you’ll need to call super in the initialize method, then set any
+of the <a href="Sexp.html">Sexp</a> flags you want to be different from the
+defaults.</p>
+
+<p><a href="SexpProcessor.html">SexpProcessor</a> uses a Sexp's type to
+determine which process method to call in the subclass.  For <a
+href="Sexp.html">Sexp</a> <code>s(:lit, 1)</code> <a
+href="SexpProcessor.html">SexpProcessor</a> will call process_lit, if it is
+defined.</p>
+
+<p>You can also specify a default method to call for any <a
+href="Sexp.html">Sexp</a> types without a process_&lt;type&gt; method or
+use the default processor provided to skip over them.</p>
+
+<p>Here is a simple example:</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">MyProcessor</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">SexpProcessor</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>
+    <span class="ruby-keyword">super</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">strict</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">process_lit</span>(<span class="ruby-identifier">exp</span>)
+    <span class="ruby-identifier">val</span> = <span class="ruby-identifier">exp</span>.<span class="ruby-identifier">shift</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">val</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="VERSION">VERSION
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-auto_shift_type" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">auto_shift_type</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Automatically shifts off the <a href="Sexp.html">Sexp</a> type before
+handing the <a href="Sexp.html">Sexp</a> to process_&lt;type&gt;</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-context" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">context</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Return a stack of contexts. Most recent node is first.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-debug" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">debug</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>A Hash of <a href="Sexp.html">Sexp</a> types and Regexp.</p>
+
+<p>Print a debug message if the <a href="Sexp.html">Sexp</a> type matches the
+Hash key and the Sexp’s inspect output matches the Regexp.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-default_method" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">default_method</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>A default method to call if a process_&lt;type&gt; method is not found for
+the <a href="Sexp.html">Sexp</a> type.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-env" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">env</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>A scoped environment to make you happy.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-expected" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">expected</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Expected result class</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-require_empty" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">require_empty</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Raise an exception if the <a href="Sexp.html">Sexp</a> is not empty after
+processing</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-strict" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">strict</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Raise an exception if no process_&lt;type&gt; method is found for a <a
+href="Sexp.html">Sexp</a>.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-unsupported" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">unsupported</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>An array that specifies node types that are unsupported by this processor.
+<a href="SexpProcessor.html">SexpProcessor</a> will raise <a
+href="UnsupportedNodeError.html">UnsupportedNodeError</a> if you try to
+process one of those node types.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-warn_on_default" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">warn_on_default</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Emit a warning when the method in <a
+href="SexpProcessor.html#attribute-i-default_method">default_method</a> is
+called.</p>
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Creates a new <a href="SexpProcessor.html">SexpProcessor</a>.  Use super to
+invoke this initializer from <a href="SexpProcessor.html">SexpProcessor</a>
+subclasses, then use the attributes above to customize the functionality of
+the <a href="SexpProcessor.html">SexpProcessor</a></p>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/sexp_processor.rb, line 101</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>
+  <span class="ruby-ivar">@default_method</span>      = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@warn_on_default</span>     = <span class="ruby-keyword">true</span>
+  <span class="ruby-ivar">@auto_shift_type</span>     = <span class="ruby-keyword">false</span>
+  <span class="ruby-ivar">@strict</span>              = <span class="ruby-keyword">false</span>
+  <span class="ruby-ivar">@unsupported</span>         = [<span class="ruby-value">:alloca</span>, <span class="ruby-value">:cfunc</span>, <span class="ruby-value">:cref</span>, <span class="ruby-value">:ifunc</span>, <span class="ruby-value">:last</span>, <span class="ruby-value">:memo</span>,
+                          <span class="ruby-value">:newline</span>, <span class="ruby-value">:opt_n</span>, <span class="ruby-value">:method</span>]
+  <span class="ruby-ivar">@unsupported_checked</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-ivar">@debug</span>               = {}
+  <span class="ruby-ivar">@expected</span>            = <span class="ruby-constant">Sexp</span>
+  <span class="ruby-ivar">@require_empty</span>       = <span class="ruby-keyword">true</span>
+  <span class="ruby-ivar">@exceptions</span>          = {}
+
+  <span class="ruby-comment"># we do this on an instance basis so we can subclass it for</span>
+  <span class="ruby-comment"># different processors.</span>
+  <span class="ruby-ivar">@processors</span> = {}
+  <span class="ruby-ivar">@rewriters</span>  = {}
+  <span class="ruby-ivar">@context</span>    = []
+
+  <span class="ruby-identifier">public_methods</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">name</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-regexp">/^process_(.*)/</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-ivar">@processors</span>[<span class="ruby-node">$1</span>.<span class="ruby-identifier">to_sym</span>] = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_sym</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-regexp">/^rewrite_(.*)/</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-ivar">@rewriters</span>[<span class="ruby-node">$1</span>.<span class="ruby-identifier">to_sym</span>]  = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_sym</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-assert_empty" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">assert_empty</span><span
+            class="method-args">(meth, exp, exp_orig)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="assert_empty-source">
+            <pre><span class="ruby-comment"># File lib/sexp_processor.rb, line 130</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">assert_empty</span>(<span class="ruby-identifier">meth</span>, <span class="ruby-identifier">exp</span>, <span class="ruby-identifier">exp_orig</span>)
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">exp</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">msg</span> = <span class="ruby-node">&quot;exp not empty after #{self.class}.#{meth} on #{exp.inspect}&quot;</span>
+    <span class="ruby-identifier">msg</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot; from #{exp_orig.inspect}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">$DEBUG</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotEmptyError</span>, <span class="ruby-identifier">msg</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- assert_empty-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- assert_empty-method -->
+
+    
+      <div id="method-i-assert_type" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">assert_type</span><span
+            class="method-args">(list, typ)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Raises unless the <a href="Sexp.html">Sexp</a> type for <code>list</code>
+matches <code>typ</code></p>
+          
+
+          
+          <div class="method-source-code" id="assert_type-source">
+            <pre><span class="ruby-comment"># File lib/sexp_processor.rb, line 268</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">assert_type</span>(<span class="ruby-identifier">list</span>, <span class="ruby-identifier">typ</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">SexpTypeError</span>, <span class="ruby-node">&quot;Expected type #{typ.inspect} in #{list.inspect}&quot;</span> <span class="ruby-keyword">if</span>
+    <span class="ruby-keyword">not</span> <span class="ruby-constant">Array</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">list</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">list</span>.<span class="ruby-identifier">first</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">typ</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- assert_type-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- assert_type-method -->
+
+    
+      <div id="method-i-in_context" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">in_context</span><span
+            class="method-args">(type) { || ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="in_context-source">
+            <pre><span class="ruby-comment"># File lib/sexp_processor.rb, line 337</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">in_context</span> <span class="ruby-identifier">type</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">context</span>.<span class="ruby-identifier">unshift</span> <span class="ruby-identifier">type</span>
+
+  <span class="ruby-keyword">yield</span>
+
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">context</span>.<span class="ruby-identifier">shift</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- in_context-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- in_context-method -->
+
+    
+      <div id="method-i-on_error_in" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">on_error_in</span><span
+            class="method-args">(node_type, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Registers an error handler for <code>node</code></p>
+          
+
+          
+          <div class="method-source-code" id="on_error_in-source">
+            <pre><span class="ruby-comment"># File lib/sexp_processor.rb, line 289</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">on_error_in</span>(<span class="ruby-identifier">node_type</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-ivar">@exceptions</span>[<span class="ruby-identifier">node_type</span>] = <span class="ruby-identifier">block</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- on_error_in-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- on_error_in-method -->
+
+    
+      <div id="method-i-process" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">process</span><span
+            class="method-args">(exp)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Default <a href="Sexp.html">Sexp</a> processor.  Invokes
+process_&lt;type&gt; methods matching the <a href="Sexp.html">Sexp</a> type
+given.  Performs additional checks as specified by the initializer.</p>
+          
+
+          
+          <div class="method-source-code" id="process-source">
+            <pre><span class="ruby-comment"># File lib/sexp_processor.rb, line 171</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">process</span>(<span class="ruby-identifier">exp</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">exp</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">context</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">p</span> <span class="ruby-value">:rewriting</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">debug</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-identifier">exp</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">rewrite</span>(<span class="ruby-identifier">exp</span>)
+    <span class="ruby-identifier">p</span> <span class="ruby-value">:done_rewriting</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">debug</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@unsupported_checked</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">m</span> = <span class="ruby-identifier">public_methods</span>.<span class="ruby-identifier">grep</span>(<span class="ruby-regexp">/^process_/</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">o</span><span class="ruby-operator">|</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp">/^process_/</span>, <span class="ruby-string">''</span>).<span class="ruby-identifier">to_sym</span> }
+    <span class="ruby-identifier">supported</span> = <span class="ruby-identifier">m</span> <span class="ruby-operator">-</span> (<span class="ruby-identifier">m</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@unsupported</span>)
+
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">UnsupportedNodeError</span>, <span class="ruby-node">&quot;#{supported.inspect} shouldn't be in @unsupported&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">supported</span>.<span class="ruby-identifier">empty?</span>
+
+    <span class="ruby-ivar">@unsupported_checked</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">result</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">expected</span>.<span class="ruby-identifier">new</span>
+
+  <span class="ruby-identifier">type</span> = <span class="ruby-identifier">exp</span>.<span class="ruby-identifier">first</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;type should be a Symbol, not: #{exp.first.inspect}&quot;</span> <span class="ruby-keyword">unless</span>
+    <span class="ruby-constant">Symbol</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">type</span>
+
+  <span class="ruby-identifier">in_context</span> <span class="ruby-identifier">type</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@debug</span>.<span class="ruby-identifier">has_key?</span> <span class="ruby-identifier">type</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-identifier">str</span> = <span class="ruby-identifier">exp</span>.<span class="ruby-identifier">inspect</span>
+      <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;// DEBUG:(original ): #{str}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">str</span> <span class="ruby-operator">=~</span> <span class="ruby-ivar">@debug</span>[<span class="ruby-identifier">type</span>]
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">exp_orig</span> = <span class="ruby-keyword">nil</span>
+    <span class="ruby-identifier">exp_orig</span> = <span class="ruby-identifier">exp</span>.<span class="ruby-identifier">deep_clone</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">$DEBUG</span> <span class="ruby-keyword">or</span>
+      <span class="ruby-ivar">@debug</span>.<span class="ruby-identifier">has_key?</span> <span class="ruby-identifier">type</span> <span class="ruby-keyword">or</span> <span class="ruby-ivar">@exceptions</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">type</span>)
+
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">UnsupportedNodeError</span>, <span class="ruby-node">&quot;'#{type}' is not a supported node type&quot;</span> <span class="ruby-keyword">if</span>
+      <span class="ruby-ivar">@unsupported</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">type</span>
+
+    <span class="ruby-comment"># now do a pass with the real processor (or generic)</span>
+    <span class="ruby-identifier">meth</span> = <span class="ruby-ivar">@processors</span>[<span class="ruby-identifier">type</span>] <span class="ruby-operator">||</span> <span class="ruby-ivar">@default_method</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">meth</span> <span class="ruby-keyword">then</span>
+
+      <span class="ruby-keyword">if</span> <span class="ruby-ivar">@warn_on_default</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">meth</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@default_method</span> <span class="ruby-keyword">then</span>
+        <span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;WARNING: Using default method #{meth} for #{type}&quot;</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">exp</span>.<span class="ruby-identifier">shift</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@auto_shift_type</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">meth</span> <span class="ruby-operator">!=</span> <span class="ruby-ivar">@default_method</span>
+
+      <span class="ruby-identifier">result</span> = <span class="ruby-identifier">error_handler</span>(<span class="ruby-identifier">type</span>, <span class="ruby-identifier">exp_orig</span>) <span class="ruby-keyword">do</span>
+        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">meth</span>, <span class="ruby-identifier">exp</span>)
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-keyword">if</span> <span class="ruby-ivar">@debug</span>.<span class="ruby-identifier">has_key?</span> <span class="ruby-identifier">type</span> <span class="ruby-keyword">then</span>
+        <span class="ruby-identifier">str</span> = <span class="ruby-identifier">exp</span>.<span class="ruby-identifier">inspect</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;// DEBUG (processed): #{str}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">str</span> <span class="ruby-operator">=~</span> <span class="ruby-ivar">@debug</span>[<span class="ruby-identifier">type</span>]
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">SexpTypeError</span>, <span class="ruby-node">&quot;Result must be a #{@expected}, was #{result.class}:#{result.inspect}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@expected</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">result</span>
+
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">assert_empty</span>(<span class="ruby-identifier">meth</span>, <span class="ruby-identifier">exp</span>, <span class="ruby-identifier">exp_orig</span>) <span class="ruby-keyword">if</span> <span class="ruby-ivar">@require_empty</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@strict</span> <span class="ruby-keyword">then</span>
+        <span class="ruby-keyword">until</span> <span class="ruby-identifier">exp</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword">do</span>
+          <span class="ruby-identifier">sub_exp</span> = <span class="ruby-identifier">exp</span>.<span class="ruby-identifier">shift</span>
+          <span class="ruby-identifier">sub_result</span> = <span class="ruby-keyword">nil</span>
+          <span class="ruby-keyword">if</span> <span class="ruby-constant">Array</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">sub_exp</span> <span class="ruby-keyword">then</span>
+            <span class="ruby-identifier">sub_result</span> = <span class="ruby-identifier">error_handler</span>(<span class="ruby-identifier">type</span>, <span class="ruby-identifier">exp_orig</span>) <span class="ruby-keyword">do</span>
+              <span class="ruby-identifier">process</span>(<span class="ruby-identifier">sub_exp</span>)
+            <span class="ruby-keyword">end</span>
+            <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;Result is a bad type&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">Array</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">sub_exp</span>
+            <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;Result does not have a type in front: #{sub_exp.inspect}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">Symbol</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">sub_exp</span>.<span class="ruby-identifier">first</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">sub_exp</span>.<span class="ruby-identifier">empty?</span>
+          <span class="ruby-keyword">else</span>
+            <span class="ruby-identifier">sub_result</span> = <span class="ruby-identifier">sub_exp</span>
+          <span class="ruby-keyword">end</span>
+          <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">sub_result</span>
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-comment"># NOTE: this is costly, but we are in the generic processor</span>
+        <span class="ruby-comment"># so we shouldn't hit it too much with RubyToC stuff at least.</span>
+        <span class="ruby-comment">#if Sexp === exp and not exp.sexp_type.nil? then</span>
+        <span class="ruby-keyword">begin</span>
+          <span class="ruby-identifier">result</span>.<span class="ruby-identifier">sexp_type</span> = <span class="ruby-identifier">exp</span>.<span class="ruby-identifier">sexp_type</span>
+        <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span>
+          <span class="ruby-comment"># nothing to do, on purpose</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">msg</span> = <span class="ruby-node">&quot;Bug! Unknown node-type #{type.inspect} to #{self.class}&quot;</span>
+        <span class="ruby-identifier">msg</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot; in #{exp_orig.inspect} from #{caller.inspect}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">$DEBUG</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">UnknownNodeError</span>, <span class="ruby-identifier">msg</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- process-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- process-method -->
+
+    
+      <div id="method-i-process_dummy" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">process_dummy</span><span
+            class="method-args">(exp)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>A fairly generic processor for a dummy node. Dummy nodes are used when your
+processor is doing a complicated rewrite that replaces the current sexp
+with multiple sexps.</p>
+
+<p>Bogus Example:</p>
+
+<pre class="ruby"><span class="ruby-keyword">def</span> <span class="ruby-identifier">process_something</span>(<span class="ruby-identifier">exp</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">dummy</span>, <span class="ruby-identifier">process</span>(<span class="ruby-identifier">exp</span>), <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">extra</span>, <span class="ruby-value">42</span>))
+<span class="ruby-keyword">end</span>
+</pre>
+          
+
+          
+          <div class="method-source-code" id="process_dummy-source">
+            <pre><span class="ruby-comment"># File lib/sexp_processor.rb, line 304</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">process_dummy</span>(<span class="ruby-identifier">exp</span>)
+  <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@expected</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:dummy</span>) <span class="ruby-keyword">rescue</span> <span class="ruby-ivar">@expected</span>.<span class="ruby-identifier">new</span>
+
+  <span class="ruby-keyword">until</span> <span class="ruby-identifier">exp</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">process</span>(<span class="ruby-identifier">exp</span>.<span class="ruby-identifier">shift</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- process_dummy-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- process_dummy-method -->
+
+    
+      <div id="method-i-rewrite" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">rewrite</span><span
+            class="method-args">(exp)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="rewrite-source">
+            <pre><span class="ruby-comment"># File lib/sexp_processor.rb, line 138</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">rewrite</span>(<span class="ruby-identifier">exp</span>)
+  <span class="ruby-identifier">type</span> = <span class="ruby-identifier">exp</span>.<span class="ruby-identifier">first</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@debug</span>.<span class="ruby-identifier">has_key?</span> <span class="ruby-identifier">type</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">str</span> = <span class="ruby-identifier">exp</span>.<span class="ruby-identifier">inspect</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;// DEBUG (original ): #{str}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">str</span> <span class="ruby-operator">=~</span> <span class="ruby-ivar">@debug</span>[<span class="ruby-identifier">type</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">in_context</span> <span class="ruby-identifier">type</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">exp</span>.<span class="ruby-identifier">map!</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">sub</span><span class="ruby-operator">|</span> <span class="ruby-constant">Array</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">sub</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">rewrite</span>(<span class="ruby-identifier">sub</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">sub</span> }
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">meth</span> = <span class="ruby-ivar">@rewriters</span>[<span class="ruby-identifier">type</span>]
+    <span class="ruby-identifier">exp</span>  = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">meth</span>, <span class="ruby-identifier">exp</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">meth</span>
+    <span class="ruby-keyword">break</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">Sexp</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">exp</span>
+
+    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@debug</span>.<span class="ruby-identifier">has_key?</span> <span class="ruby-identifier">type</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-identifier">str</span> = <span class="ruby-identifier">exp</span>.<span class="ruby-identifier">inspect</span>
+      <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;// DEBUG (rewritten): #{str}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">str</span> <span class="ruby-operator">=~</span> <span class="ruby-ivar">@debug</span>[<span class="ruby-identifier">type</span>]
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">old_type</span>, <span class="ruby-identifier">type</span> = <span class="ruby-identifier">type</span>, <span class="ruby-identifier">exp</span>.<span class="ruby-identifier">first</span>
+  <span class="ruby-keyword">end</span> <span class="ruby-keyword">until</span> <span class="ruby-identifier">old_type</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">type</span>
+
+  <span class="ruby-identifier">exp</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- rewrite-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- rewrite-method -->
+
+    
+      <div id="method-i-scope" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">scope</span><span
+            class="method-args">(&block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Add a scope level to the current env. Eg:</p>
+
+<pre class="ruby"><span class="ruby-keyword">def</span> <span class="ruby-identifier">process_defn</span> <span class="ruby-identifier">exp</span>
+  <span class="ruby-identifier">name</span> = <span class="ruby-identifier">exp</span>.<span class="ruby-identifier">shift</span>
+  <span class="ruby-identifier">args</span> = <span class="ruby-identifier">process</span>(<span class="ruby-identifier">exp</span>.<span class="ruby-identifier">shift</span>)
+  <span class="ruby-identifier">scope</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">body</span> = <span class="ruby-identifier">process</span>(<span class="ruby-identifier">exp</span>.<span class="ruby-identifier">shift</span>)
+    <span class="ruby-comment"># ...</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">env</span>[:<span class="ruby-identifier">x</span>] = <span class="ruby-value">42</span>
+<span class="ruby-identifier">scope</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">env</span>[:<span class="ruby-identifier">x</span>]       <span class="ruby-comment"># =&gt; 42</span>
+  <span class="ruby-identifier">env</span>[:<span class="ruby-identifier">y</span>] = <span class="ruby-value">24</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-identifier">env</span>[:<span class="ruby-identifier">y</span>]         <span class="ruby-comment"># =&gt; nil</span>
+</pre>
+          
+
+          
+          <div class="method-source-code" id="scope-source">
+            <pre><span class="ruby-comment"># File lib/sexp_processor.rb, line 333</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">scope</span> &amp;<span class="ruby-identifier">block</span>
+  <span class="ruby-identifier">env</span>.<span class="ruby-identifier">scope</span>(&amp;<span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- scope-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- scope-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module Cane - cane-2.6.1 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/cane/encoding_aware_iterator.rb
+    <li>lib/cane/file.rb
+    <li>lib/cane/threshold_check.rb
+    <li>lib/cane/runner.rb
+    <li>lib/cane/rake_task.rb
+    <li>lib/cane/task_runner.rb
+    <li>lib/cane/cli.rb
+    <li>lib/cane/version.rb
+    <li>lib/cane/cli/parser.rb
+    <li>lib/cane/cli/options.rb
+    <li>lib/cane/default_checks.rb
+    <li>lib/cane/violation_formatter.rb
+    <li>lib/cane/json_formatter.rb
+    <li>lib/cane/style_check.rb
+    <li>lib/cane/abc_check.rb
+    <li>lib/cane/doc_check.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-default_checks">::default_checks</a>
+    
+    <li><a href="#method-c-run">::run</a>
+    
+    <li><a href="#method-c-task_runner">::task_runner</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Cane.html">Cane</a>
+  
+    <li><a href="./Cane/AbcCheck.html">Cane::AbcCheck</a>
+  
+    <li><a href="./Cane/AbcCheck/InvalidAst.html">Cane::AbcCheck::InvalidAst</a>
+  
+    <li><a href="./Cane/AbcCheck/RubyAst.html">Cane::AbcCheck::RubyAst</a>
+  
+    <li><a href="./Cane/CLI.html">Cane::CLI</a>
+  
+    <li><a href="./Cane/CLI/Parser.html">Cane::CLI::Parser</a>
+  
+    <li><a href="./Cane/CLI/Parser/OptionsHandled.html">Cane::CLI::Parser::OptionsHandled</a>
+  
+    <li><a href="./Cane/DocCheck.html">Cane::DocCheck</a>
+  
+    <li><a href="./Cane/EncodingAwareIterator.html">Cane::EncodingAwareIterator</a>
+  
+    <li><a href="./Cane/File.html">Cane::File</a>
+  
+    <li><a href="./Cane/JsonFormatter.html">Cane::JsonFormatter</a>
+  
+    <li><a href="./Cane/RakeTask.html">Cane::RakeTask</a>
+  
+    <li><a href="./Cane/Runner.html">Cane::Runner</a>
+  
+    <li><a href="./Cane/SimpleTaskRunner.html">Cane::SimpleTaskRunner</a>
+  
+    <li><a href="./Cane/StyleCheck.html">Cane::StyleCheck</a>
+  
+    <li><a href="./Cane/ThresholdCheck.html">Cane::ThresholdCheck</a>
+  
+    <li><a href="./Cane/ThresholdCheck/UnavailableValue.html">Cane::ThresholdCheck::UnavailableValue</a>
+  
+    <li><a href="./Cane/ViolationFormatter.html">Cane::ViolationFormatter</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module Cane</h1>
+
+  <div id="description" class="description">
+    
+<p>Accepts a parsed configuration and passes those options to a new <a
+href="Cane/Runner.html">Runner</a></p>
+
+<p>Provides a <a href="Cane/SimpleTaskRunner.html">SimpleTaskRunner</a> or
+Parallel task runner based on configuration</p>
+
+<p>Default checks performed when no checks are provided</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="VERSION">VERSION
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-default_checks" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">default_checks</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="default_checks-source">
+            <pre><span class="ruby-comment"># File lib/cane/default_checks.rb, line 8</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">default_checks</span>
+  [
+    <span class="ruby-constant">AbcCheck</span>,
+    <span class="ruby-constant">StyleCheck</span>,
+    <span class="ruby-constant">DocCheck</span>,
+    <span class="ruby-constant">ThresholdCheck</span>
+  ]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- default_checks-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- default_checks-method -->
+
+    
+      <div id="method-c-run" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">run</span><span
+            class="method-args">(*args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="run-source">
+            <pre><span class="ruby-comment"># File lib/cane/runner.rb, line 8</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">run</span>(*<span class="ruby-identifier">args</span>)
+  <span class="ruby-constant">Runner</span>.<span class="ruby-identifier">new</span>(*<span class="ruby-identifier">args</span>).<span class="ruby-identifier">run</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- run-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- run-method -->
+
+    
+      <div id="method-c-task_runner" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">task_runner</span><span
+            class="method-args">(opts)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="task_runner-source">
+            <pre><span class="ruby-comment"># File lib/cane/task_runner.rb, line 3</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">task_runner</span>(<span class="ruby-identifier">opts</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">opts</span>[<span class="ruby-value">:parallel</span>]
+    <span class="ruby-constant">Parallel</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-constant">SimpleTaskRunner</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- task_runner-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- task_runner-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

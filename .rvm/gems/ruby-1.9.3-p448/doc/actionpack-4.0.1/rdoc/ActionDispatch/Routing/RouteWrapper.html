@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class ActionDispatch::Routing::RouteWrapper - actionpack-4.0.1 Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/action_dispatch/routing/inspector.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">SimpleDelegator
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-action">#action</a>
+    
+    <li><a href="#method-i-constraints">#constraints</a>
+    
+    <li><a href="#method-i-controller">#controller</a>
+    
+    <li><a href="#method-i-endpoint">#endpoint</a>
+    
+    <li><a href="#method-i-engine-3F">#engine?</a>
+    
+    <li><a href="#method-i-internal-3F">#internal?</a>
+    
+    <li><a href="#method-i-json_regexp">#json_regexp</a>
+    
+    <li><a href="#method-i-name">#name</a>
+    
+    <li><a href="#method-i-path">#path</a>
+    
+    <li><a href="#method-i-rack_app">#rack_app</a>
+    
+    <li><a href="#method-i-regexp">#regexp</a>
+    
+    <li><a href="#method-i-reqs">#reqs</a>
+    
+    <li><a href="#method-i-verb">#verb</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../ActionDispatch.html">ActionDispatch</a>
+  
+    <li><a href="../../ActionDispatch/Assertions.html">ActionDispatch::Assertions</a>
+  
+    <li><a href="../../ActionDispatch/Assertions/DomAssertions.html">ActionDispatch::Assertions::DomAssertions</a>
+  
+    <li><a href="../../ActionDispatch/Assertions/ResponseAssertions.html">ActionDispatch::Assertions::ResponseAssertions</a>
+  
+    <li><a href="../../ActionDispatch/Assertions/RoutingAssertions.html">ActionDispatch::Assertions::RoutingAssertions</a>
+  
+    <li><a href="../../ActionDispatch/Assertions/SelectorAssertions.html">ActionDispatch::Assertions::SelectorAssertions</a>
+  
+    <li><a href="../../ActionDispatch/Assertions/TagAssertions.html">ActionDispatch::Assertions::TagAssertions</a>
+  
+    <li><a href="../../ActionDispatch/Callbacks.html">ActionDispatch::Callbacks</a>
+  
+    <li><a href="../../ActionDispatch/Cookies.html">ActionDispatch::Cookies</a>
+  
+    <li><a href="../../ActionDispatch/Cookies/ChainedCookieJars.html">ActionDispatch::Cookies::ChainedCookieJars</a>
+  
+    <li><a href="../../ActionDispatch/Cookies/VerifyAndUpgradeLegacySignedMessage.html">ActionDispatch::Cookies::VerifyAndUpgradeLegacySignedMessage</a>
+  
+    <li><a href="../../ActionDispatch/DebugExceptions.html">ActionDispatch::DebugExceptions</a>
+  
+    <li><a href="../../ActionDispatch/ExceptionWrapper.html">ActionDispatch::ExceptionWrapper</a>
+  
+    <li><a href="../../ActionDispatch/FileHandler.html">ActionDispatch::FileHandler</a>
+  
+    <li><a href="../../ActionDispatch/Flash.html">ActionDispatch::Flash</a>
+  
+    <li><a href="../../ActionDispatch/Flash/FlashHash.html">ActionDispatch::Flash::FlashHash</a>
+  
+    <li><a href="../../ActionDispatch/Http.html">ActionDispatch::Http</a>
+  
+    <li><a href="../../ActionDispatch/Http/Cache.html">ActionDispatch::Http::Cache</a>
+  
+    <li><a href="../../ActionDispatch/Http/Cache/Request.html">ActionDispatch::Http::Cache::Request</a>
+  
+    <li><a href="../../ActionDispatch/Http/Cache/Response.html">ActionDispatch::Http::Cache::Response</a>
+  
+    <li><a href="../../ActionDispatch/Http/FilterParameters.html">ActionDispatch::Http::FilterParameters</a>
+  
+    <li><a href="../../ActionDispatch/Http/FilterRedirect.html">ActionDispatch::Http::FilterRedirect</a>
+  
+    <li><a href="../../ActionDispatch/Http/Headers.html">ActionDispatch::Http::Headers</a>
+  
+    <li><a href="../../ActionDispatch/Http/MimeNegotiation.html">ActionDispatch::Http::MimeNegotiation</a>
+  
+    <li><a href="../../ActionDispatch/Http/ParameterFilter.html">ActionDispatch::Http::ParameterFilter</a>
+  
+    <li><a href="../../ActionDispatch/Http/Parameters.html">ActionDispatch::Http::Parameters</a>
+  
+    <li><a href="../../ActionDispatch/Http/URL.html">ActionDispatch::Http::URL</a>
+  
+    <li><a href="../../ActionDispatch/Http/UploadedFile.html">ActionDispatch::Http::UploadedFile</a>
+  
+    <li><a href="../../ActionDispatch/IllegalStateError.html">ActionDispatch::IllegalStateError</a>
+  
+    <li><a href="../../ActionDispatch/Integration.html">ActionDispatch::Integration</a>
+  
+    <li><a href="../../ActionDispatch/Integration.html">ActionDispatch::Integration</a>
+  
+    <li><a href="../../ActionDispatch/Integration/RequestHelpers.html">ActionDispatch::Integration::RequestHelpers</a>
+  
+    <li><a href="../../ActionDispatch/Integration/Runner.html">ActionDispatch::Integration::Runner</a>
+  
+    <li><a href="../../ActionDispatch/Integration/Session.html">ActionDispatch::Integration::Session</a>
+  
+    <li><a href="../../ActionDispatch/IntegrationTest.html">ActionDispatch::IntegrationTest</a>
+  
+    <li><a href="../../ActionDispatch/IntegrationTest.html">ActionDispatch::IntegrationTest</a>
+  
+    <li><a href="../../ActionDispatch/MiddlewareStack.html">ActionDispatch::MiddlewareStack</a>
+  
+    <li><a href="../../ActionDispatch/MiddlewareStack/Middleware.html">ActionDispatch::MiddlewareStack::Middleware</a>
+  
+    <li><a href="../../ActionDispatch/ParamsParser.html">ActionDispatch::ParamsParser</a>
+  
+    <li><a href="../../ActionDispatch/ParamsParser/ParseError.html">ActionDispatch::ParamsParser::ParseError</a>
+  
+    <li><a href="../../ActionDispatch/PublicExceptions.html">ActionDispatch::PublicExceptions</a>
+  
+    <li><a href="../../ActionDispatch/RailsEntityStore.html">ActionDispatch::RailsEntityStore</a>
+  
+    <li><a href="../../ActionDispatch/RailsMetaStore.html">ActionDispatch::RailsMetaStore</a>
+  
+    <li><a href="../../ActionDispatch/Reloader.html">ActionDispatch::Reloader</a>
+  
+    <li><a href="../../ActionDispatch/RemoteIp.html">ActionDispatch::RemoteIp</a>
+  
+    <li><a href="../../ActionDispatch/RemoteIp/GetIp.html">ActionDispatch::RemoteIp::GetIp</a>
+  
+    <li><a href="../../ActionDispatch/RemoteIp/IpSpoofAttackError.html">ActionDispatch::RemoteIp::IpSpoofAttackError</a>
+  
+    <li><a href="../../ActionDispatch/Request.html">ActionDispatch::Request</a>
+  
+    <li><a href="../../ActionDispatch/RequestId.html">ActionDispatch::RequestId</a>
+  
+    <li><a href="../../ActionDispatch/Response.html">ActionDispatch::Response</a>
+  
+    <li><a href="../../ActionDispatch/Routing.html">ActionDispatch::Routing</a>
+  
+    <li><a href="../../ActionDispatch/Routing.html">ActionDispatch::Routing</a>
+  
+    <li><a href="../../ActionDispatch/Routing/ConsoleFormatter.html">ActionDispatch::Routing::ConsoleFormatter</a>
+  
+    <li><a href="../../ActionDispatch/Routing/HtmlTableFormatter.html">ActionDispatch::Routing::HtmlTableFormatter</a>
+  
+    <li><a href="../../ActionDispatch/Routing/Mapper.html">ActionDispatch::Routing::Mapper</a>
+  
+    <li><a href="../../ActionDispatch/Routing/Mapper/Base.html">ActionDispatch::Routing::Mapper::Base</a>
+  
+    <li><a href="../../ActionDispatch/Routing/Mapper/Concerns.html">ActionDispatch::Routing::Mapper::Concerns</a>
+  
+    <li><a href="../../ActionDispatch/Routing/Mapper/HttpHelpers.html">ActionDispatch::Routing::Mapper::HttpHelpers</a>
+  
+    <li><a href="../../ActionDispatch/Routing/Mapper/Resources.html">ActionDispatch::Routing::Mapper::Resources</a>
+  
+    <li><a href="../../ActionDispatch/Routing/Mapper/Scoping.html">ActionDispatch::Routing::Mapper::Scoping</a>
+  
+    <li><a href="../../ActionDispatch/Routing/PathRedirect.html">ActionDispatch::Routing::PathRedirect</a>
+  
+    <li><a href="../../ActionDispatch/Routing/PolymorphicRoutes.html">ActionDispatch::Routing::PolymorphicRoutes</a>
+  
+    <li><a href="../../ActionDispatch/Routing/Redirection.html">ActionDispatch::Routing::Redirection</a>
+  
+    <li><a href="../../ActionDispatch/Routing/RouteWrapper.html">ActionDispatch::Routing::RouteWrapper</a>
+  
+    <li><a href="../../ActionDispatch/Routing/UrlFor.html">ActionDispatch::Routing::UrlFor</a>
+  
+    <li><a href="../../ActionDispatch/SSL.html">ActionDispatch::SSL</a>
+  
+    <li><a href="../../ActionDispatch/Session.html">ActionDispatch::Session</a>
+  
+    <li><a href="../../ActionDispatch/Session/AbstractStore.html">ActionDispatch::Session::AbstractStore</a>
+  
+    <li><a href="../../ActionDispatch/Session/CacheStore.html">ActionDispatch::Session::CacheStore</a>
+  
+    <li><a href="../../ActionDispatch/Session/Compatibility.html">ActionDispatch::Session::Compatibility</a>
+  
+    <li><a href="../../ActionDispatch/Session/CookieStore.html">ActionDispatch::Session::CookieStore</a>
+  
+    <li><a href="../../ActionDispatch/Session/MemCacheStore.html">ActionDispatch::Session::MemCacheStore</a>
+  
+    <li><a href="../../ActionDispatch/Session/StaleSessionCheck.html">ActionDispatch::Session::StaleSessionCheck</a>
+  
+    <li><a href="../../ActionDispatch/ShowExceptions.html">ActionDispatch::ShowExceptions</a>
+  
+    <li><a href="../../ActionDispatch/Static.html">ActionDispatch::Static</a>
+  
+    <li><a href="../../ActionDispatch/TestProcess.html">ActionDispatch::TestProcess</a>
+  
+    <li><a href="../../ActionDispatch/TestRequest.html">ActionDispatch::TestRequest</a>
+  
+    <li><a href="../../ActionDispatch/TestResponse.html">ActionDispatch::TestResponse</a>
+  
+    <li><a href="../../ActionController.html">ActionController</a>
+  
+    <li><a href="../../ActionController/ActionController.html">ActionController::ActionController</a>
+  
+    <li><a href="../../ActionController/ActionController/ActionController.html">ActionController::ActionController::ActionController</a>
+  
+    <li><a href="../../ActionController/Base.html">ActionController::Base</a>
+  
+    <li><a href="../../ActionController/Caching.html">ActionController::Caching</a>
+  
+    <li><a href="../../ActionController/Caching/ClassMethods.html">ActionController::Caching::ClassMethods</a>
+  
+    <li><a href="../../ActionController/Caching/ConfigMethods.html">ActionController::Caching::ConfigMethods</a>
+  
+    <li><a href="../../ActionController/Caching/Fragments.html">ActionController::Caching::Fragments</a>
+  
+    <li><a href="../../ActionController/ConditionalGet.html">ActionController::ConditionalGet</a>
+  
+    <li><a href="../../ActionController/ConditionalGet/ClassMethods.html">ActionController::ConditionalGet::ClassMethods</a>
+  
+    <li><a href="../../ActionController/Cookies.html">ActionController::Cookies</a>
+  
+    <li><a href="../../ActionController/DataStreaming.html">ActionController::DataStreaming</a>
+  
+    <li><a href="../../ActionController/Flash.html">ActionController::Flash</a>
+  
+    <li><a href="../../ActionController/Flash/ClassMethods.html">ActionController::Flash::ClassMethods</a>
+  
+    <li><a href="../../ActionController/ForceSSL.html">ActionController::ForceSSL</a>
+  
+    <li><a href="../../ActionController/ForceSSL/ClassMethods.html">ActionController::ForceSSL::ClassMethods</a>
+  
+    <li><a href="../../ActionController/Head.html">ActionController::Head</a>
+  
+    <li><a href="../../ActionController/Helpers.html">ActionController::Helpers</a>
+  
+    <li><a href="../../ActionController/Helpers/ClassMethods.html">ActionController::Helpers::ClassMethods</a>
+  
+    <li><a href="../../ActionController/HideActions.html">ActionController::HideActions</a>
+  
+    <li><a href="../../ActionController/HideActions/ClassMethods.html">ActionController::HideActions::ClassMethods</a>
+  
+    <li><a href="../../ActionController/HttpAuthentication.html">ActionController::HttpAuthentication</a>
+  
+    <li><a href="../../ActionController/HttpAuthentication/Basic.html">ActionController::HttpAuthentication::Basic</a>
+  
+    <li><a href="../../ActionController/HttpAuthentication/Basic/ControllerMethods.html">ActionController::HttpAuthentication::Basic::ControllerMethods</a>
+  
+    <li><a href="../../ActionController/HttpAuthentication/Basic/ControllerMethods/ClassMethods.html">ActionController::HttpAuthentication::Basic::ControllerMethods::ClassMethods</a>
+  
+    <li><a href="../../ActionController/HttpAuthentication/Digest.html">ActionController::HttpAuthentication::Digest</a>
+  
+    <li><a href="../../ActionController/HttpAuthentication/Digest/ControllerMethods.html">ActionController::HttpAuthentication::Digest::ControllerMethods</a>
+  
+    <li><a href="../../ActionController/HttpAuthentication/Token.html">ActionController::HttpAuthentication::Token</a>
+  
+    <li><a href="../../ActionController/HttpAuthentication/Token/ControllerMethods.html">ActionController::HttpAuthentication::Token::ControllerMethods</a>
+  
+    <li><a href="../../ActionController/ImplicitRender.html">ActionController::ImplicitRender</a>
+  
+    <li><a href="../../ActionController/Instrumentation.html">ActionController::Instrumentation</a>
+  
+    <li><a href="../../ActionController/Instrumentation/ClassMethods.html">ActionController::Instrumentation::ClassMethods</a>
+  
+    <li><a href="../../ActionController/Live.html">ActionController::Live</a>
+  
+    <li><a href="../../ActionController/Live/Response.html">ActionController::Live::Response</a>
+  
+    <li><a href="../../ActionController/LogSubscriber.html">ActionController::LogSubscriber</a>
+  
+    <li><a href="../../ActionController/Metal.html">ActionController::Metal</a>
+  
+    <li><a href="../../ActionController/Middleware.html">ActionController::Middleware</a>
+  
+    <li><a href="../../ActionController/Middleware/ActionMiddleware.html">ActionController::Middleware::ActionMiddleware</a>
+  
+    <li><a href="../../ActionController/MimeResponds.html">ActionController::MimeResponds</a>
+  
+    <li><a href="../../ActionController/MimeResponds/ClassMethods.html">ActionController::MimeResponds::ClassMethods</a>
+  
+    <li><a href="../../ActionController/MimeResponds/Collector.html">ActionController::MimeResponds::Collector</a>
+  
+    <li><a href="../../ActionController/ModelNaming.html">ActionController::ModelNaming</a>
+  
+    <li><a href="../../ActionController/ParameterMissing.html">ActionController::ParameterMissing</a>
+  
+    <li><a href="../../ActionController/Parameters.html">ActionController::Parameters</a>
+  
+    <li><a href="../../ActionController/ParamsWrapper.html">ActionController::ParamsWrapper</a>
+  
+    <li><a href="../../ActionController/ParamsWrapper/ClassMethods.html">ActionController::ParamsWrapper::ClassMethods</a>
+  
+    <li><a href="../../ActionController/RackDelegation.html">ActionController::RackDelegation</a>
+  
+    <li><a href="../../ActionController/Railties.html">ActionController::Railties</a>
+  
+    <li><a href="../../ActionController/Railties/Helpers.html">ActionController::Railties::Helpers</a>
+  
+    <li><a href="../../ActionController/RecordIdentifier.html">ActionController::RecordIdentifier</a>
+  
+    <li><a href="../../ActionController/Redirecting.html">ActionController::Redirecting</a>
+  
+    <li><a href="../../ActionController/Renderers.html">ActionController::Renderers</a>
+  
+    <li><a href="../../ActionController/Renderers/All.html">ActionController::Renderers::All</a>
+  
+    <li><a href="../../ActionController/Renderers/ClassMethods.html">ActionController::Renderers::ClassMethods</a>
+  
+    <li><a href="../../ActionController/Rendering.html">ActionController::Rendering</a>
+  
+    <li><a href="../../ActionController/RequestForgeryProtection.html">ActionController::RequestForgeryProtection</a>
+  
+    <li><a href="../../ActionController/RequestForgeryProtection/ClassMethods.html">ActionController::RequestForgeryProtection::ClassMethods</a>
+  
+    <li><a href="../../ActionController/RequestForgeryProtection/ProtectionMethods.html">ActionController::RequestForgeryProtection::ProtectionMethods</a>
+  
+    <li><a href="../../ActionController/RequestForgeryProtection/ProtectionMethods/Exception.html">ActionController::RequestForgeryProtection::ProtectionMethods::Exception</a>
+  
+    <li><a href="../../ActionController/RequestForgeryProtection/ProtectionMethods/NullSession.html">ActionController::RequestForgeryProtection::ProtectionMethods::NullSession</a>
+  
+    <li><a href="../../ActionController/RequestForgeryProtection/ProtectionMethods/ResetSession.html">ActionController::RequestForgeryProtection::ProtectionMethods::ResetSession</a>
+  
+    <li><a href="../../ActionController/Rescue.html">ActionController::Rescue</a>
+  
+    <li><a href="../../ActionController/Responder.html">ActionController::Responder</a>
+  
+    <li><a href="../../ActionController/Streaming.html">ActionController::Streaming</a>
+  
+    <li><a href="../../ActionController/StrongParameters.html">ActionController::StrongParameters</a>
+  
+    <li><a href="../../ActionController/TemplateAssertions.html">ActionController::TemplateAssertions</a>
+  
+    <li><a href="../../ActionController/TestCase.html">ActionController::TestCase</a>
+  
+    <li><a href="../../ActionController/TestCase/Behavior.html">ActionController::TestCase::Behavior</a>
+  
+    <li><a href="../../ActionController/TestCase/Behavior/ClassMethods.html">ActionController::TestCase::Behavior::ClassMethods</a>
+  
+    <li><a href="../../ActionController/TestCase/RaiseActionExceptions.html">ActionController::TestCase::RaiseActionExceptions</a>
+  
+    <li><a href="../../ActionController/TestResponse.html">ActionController::TestResponse</a>
+  
+    <li><a href="../../ActionController/Testing.html">ActionController::Testing</a>
+  
+    <li><a href="../../ActionController/Testing/ClassMethods.html">ActionController::Testing::ClassMethods</a>
+  
+    <li><a href="../../ActionController/UnpermittedParameters.html">ActionController::UnpermittedParameters</a>
+  
+    <li><a href="../../ActionController/UrlFor.html">ActionController::UrlFor</a>
+  
+    <li><a href="../../ActionView.html">ActionView</a>
+  
+    <li><a href="../../ActionView/Base.html">ActionView::Base</a>
+  
+    <li><a href="../../ActionView/Context.html">ActionView::Context</a>
+  
+    <li><a href="../../ActionView/DependencyTracker.html">ActionView::DependencyTracker</a>
+  
+    <li><a href="../../ActionView/DependencyTracker/ERBTracker.html">ActionView::DependencyTracker::ERBTracker</a>
+  
+    <li><a href="../../ActionView/Digestor.html">ActionView::Digestor</a>
+  
+    <li><a href="../../ActionView/FileSystemResolver.html">ActionView::FileSystemResolver</a>
+  
+    <li><a href="../../ActionView/FixtureResolver.html">ActionView::FixtureResolver</a>
+  
+    <li><a href="../../ActionView/Helpers.html">ActionView::Helpers</a>
+  
+    <li><a href="../../ActionView/Helpers/ActiveModelHelper.html">ActionView::Helpers::ActiveModelHelper</a>
+  
+    <li><a href="../../ActionView/Helpers/ActiveModelInstanceTag.html">ActionView::Helpers::ActiveModelInstanceTag</a>
+  
+    <li><a href="../../ActionView/Helpers/AssetTagHelper.html">ActionView::Helpers::AssetTagHelper</a>
+  
+    <li><a href="../../ActionView/Helpers/AssetUrlHelper.html">ActionView::Helpers::AssetUrlHelper</a>
+  
+    <li><a href="../../ActionView/Helpers/AtomFeedHelper.html">ActionView::Helpers::AtomFeedHelper</a>
+  
+    <li><a href="../../ActionView/Helpers/CacheHelper.html">ActionView::Helpers::CacheHelper</a>
+  
+    <li><a href="../../ActionView/Helpers/CaptureHelper.html">ActionView::Helpers::CaptureHelper</a>
+  
+    <li><a href="../../ActionView/Helpers/CsrfHelper.html">ActionView::Helpers::CsrfHelper</a>
+  
+    <li><a href="../../ActionView/Helpers/DateHelper.html">ActionView::Helpers::DateHelper</a>
+  
+    <li><a href="../../ActionView/Helpers/DebugHelper.html">ActionView::Helpers::DebugHelper</a>
+  
+    <li><a href="../../ActionView/Helpers/FormBuilder.html">ActionView::Helpers::FormBuilder</a>
+  
+    <li><a href="../../ActionView/Helpers/FormHelper.html">ActionView::Helpers::FormHelper</a>
+  
+    <li><a href="../../ActionView/Helpers/FormOptionsHelper.html">ActionView::Helpers::FormOptionsHelper</a>
+  
+    <li><a href="../../ActionView/Helpers/FormTagHelper.html">ActionView::Helpers::FormTagHelper</a>
+  
+    <li><a href="../../ActionView/Helpers/JavaScriptHelper.html">ActionView::Helpers::JavaScriptHelper</a>
+  
+    <li><a href="../../ActionView/Helpers/NumberHelper.html">ActionView::Helpers::NumberHelper</a>
+  
+    <li><a href="../../ActionView/Helpers/NumberHelper/InvalidNumberError.html">ActionView::Helpers::NumberHelper::InvalidNumberError</a>
+  
+    <li><a href="../../ActionView/Helpers/OutputSafetyHelper.html">ActionView::Helpers::OutputSafetyHelper</a>
+  
+    <li><a href="../../ActionView/Helpers/RecordTagHelper.html">ActionView::Helpers::RecordTagHelper</a>
+  
+    <li><a href="../../ActionView/Helpers/RenderingHelper.html">ActionView::Helpers::RenderingHelper</a>
+  
+    <li><a href="../../ActionView/Helpers/SanitizeHelper.html">ActionView::Helpers::SanitizeHelper</a>
+  
+    <li><a href="../../ActionView/Helpers/TagHelper.html">ActionView::Helpers::TagHelper</a>
+  
+    <li><a href="../../ActionView/Helpers/TextHelper.html">ActionView::Helpers::TextHelper</a>
+  
+    <li><a href="../../ActionView/Helpers/TranslationHelper.html">ActionView::Helpers::TranslationHelper</a>
+  
+    <li><a href="../../ActionView/Helpers/UrlHelper.html">ActionView::Helpers::UrlHelper</a>
+  
+    <li><a href="../../ActionView/Helpers/UrlHelper/ClassMethods.html">ActionView::Helpers::UrlHelper::ClassMethods</a>
+  
+    <li><a href="../../ActionView/LogSubscriber.html">ActionView::LogSubscriber</a>
+  
+    <li><a href="../../ActionView/LookupContext.html">ActionView::LookupContext</a>
+  
+    <li><a href="../../ActionView/LookupContext/DetailsCache.html">ActionView::LookupContext::DetailsCache</a>
+  
+    <li><a href="../../ActionView/LookupContext/ViewPaths.html">ActionView::LookupContext::ViewPaths</a>
+  
+    <li><a href="../../ActionView/ModelNaming.html">ActionView::ModelNaming</a>
+  
+    <li><a href="../../ActionView/NullResolver.html">ActionView::NullResolver</a>
+  
+    <li><a href="../../ActionView/PartialRenderer.html">ActionView::PartialRenderer</a>
+  
+    <li><a href="../../ActionView/RecordIdentifier.html">ActionView::RecordIdentifier</a>
+  
+    <li><a href="../../ActionView/Renderer.html">ActionView::Renderer</a>
+  
+    <li><a href="../../ActionView/Resolver.html">ActionView::Resolver</a>
+  
+    <li><a href="../../ActionView/Resolver/Cache.html">ActionView::Resolver::Cache</a>
+  
+    <li><a href="../../ActionView/Resolver/Cache/SmallCache.html">ActionView::Resolver::Cache::SmallCache</a>
+  
+    <li><a href="../../ActionView/Resolver/Path.html">ActionView::Resolver::Path</a>
+  
+    <li><a href="../../ActionView/RoutingUrlFor.html">ActionView::RoutingUrlFor</a>
+  
+    <li><a href="../../ActionView/Template.html">ActionView::Template</a>
+  
+    <li><a href="../../ActionView/Template/Handlers.html">ActionView::Template::Handlers</a>
+  
+    <li><a href="../../ActionView/Template/Handlers/Builder.html">ActionView::Template::Handlers::Builder</a>
+  
+    <li><a href="../../ActionView/Template/Handlers/ERB.html">ActionView::Template::Handlers::ERB</a>
+  
+    <li><a href="../../ActionView/Template/Handlers/Erubis.html">ActionView::Template::Handlers::Erubis</a>
+  
+    <li><a href="../../ActionView/Template/Handlers/Raw.html">ActionView::Template::Handlers::Raw</a>
+  
+    <li><a href="../../ActionView/Template/Types.html">ActionView::Template::Types</a>
+  
+    <li><a href="../../ActionView/Template/Types/Type.html">ActionView::Template::Types::Type</a>
+  
+    <li><a href="../../ActionView/TestCase.html">ActionView::TestCase</a>
+  
+    <li><a href="../../ActionView/TestCase/Behavior.html">ActionView::TestCase::Behavior</a>
+  
+    <li><a href="../../ActionView/TestCase/Behavior/ClassMethods.html">ActionView::TestCase::Behavior::ClassMethods</a>
+  
+    <li><a href="../../ActionView/TestCase/Behavior/Locals.html">ActionView::TestCase::Behavior::Locals</a>
+  
+    <li><a href="../../ActionView/TestCase/Behavior/RenderedViewsCollection.html">ActionView::TestCase::Behavior::RenderedViewsCollection</a>
+  
+    <li><a href="../../ActionView/TestCase/TestController.html">ActionView::TestCase::TestController</a>
+  
+    <li><a href="../../AbstractController.html">AbstractController</a>
+  
+    <li><a href="../../AbstractController/Base.html">AbstractController::Base</a>
+  
+    <li><a href="../../AbstractController/Callbacks.html">AbstractController::Callbacks</a>
+  
+    <li><a href="../../AbstractController/Callbacks/ClassMethods.html">AbstractController::Callbacks::ClassMethods</a>
+  
+    <li><a href="../../AbstractController/Collector.html">AbstractController::Collector</a>
+  
+    <li><a href="../../AbstractController/DoubleRenderError.html">AbstractController::DoubleRenderError</a>
+  
+    <li><a href="../../AbstractController/Helpers.html">AbstractController::Helpers</a>
+  
+    <li><a href="../../AbstractController/Helpers/ClassMethods.html">AbstractController::Helpers::ClassMethods</a>
+  
+    <li><a href="../../AbstractController/Helpers/ClassMethods/MissingHelperError.html">AbstractController::Helpers::ClassMethods::MissingHelperError</a>
+  
+    <li><a href="../../AbstractController/Layouts.html">AbstractController::Layouts</a>
+  
+    <li><a href="../../AbstractController/Layouts/ClassMethods.html">AbstractController::Layouts::ClassMethods</a>
+  
+    <li><a href="../../AbstractController/Railties.html">AbstractController::Railties</a>
+  
+    <li><a href="../../AbstractController/Railties/RoutesHelpers.html">AbstractController::Railties::RoutesHelpers</a>
+  
+    <li><a href="../../AbstractController/Rendering.html">AbstractController::Rendering</a>
+  
+    <li><a href="../../AbstractController/Rendering/ClassMethods.html">AbstractController::Rendering::ClassMethods</a>
+  
+    <li><a href="../../AbstractController/Translation.html">AbstractController::Translation</a>
+  
+    <li><a href="../../AbstractController/UrlFor.html">AbstractController::UrlFor</a>
+  
+    <li><a href="../../AbstractController/UrlFor/ClassMethods.html">AbstractController::UrlFor::ClassMethods</a>
+  
+    <li><a href="../../AbstractController/ViewPaths.html">AbstractController::ViewPaths</a>
+  
+    <li><a href="../../AbstractController/ViewPaths/ClassMethods.html">AbstractController::ViewPaths::ClassMethods</a>
+  
+    <li><a href="../../HTML.html">HTML</a>
+  
+    <li><a href="../../HTML/FullSanitizer.html">HTML::FullSanitizer</a>
+  
+    <li><a href="../../HTML/LinkSanitizer.html">HTML::LinkSanitizer</a>
+  
+    <li><a href="../../HTML/Sanitizer.html">HTML::Sanitizer</a>
+  
+    <li><a href="../../HTML/Selector.html">HTML::Selector</a>
+  
+    <li><a href="../../HTML/Tag.html">HTML::Tag</a>
+  
+    <li><a href="../../HTML/WhiteListSanitizer.html">HTML::WhiteListSanitizer</a>
+  
+    <li><a href="../../Mime.html">Mime</a>
+  
+    <li><a href="../../Mime/Mimes.html">Mime::Mimes</a>
+  
+    <li><a href="../../Mime/NullType.html">Mime::NullType</a>
+  
+    <li><a href="../../Mime/Type.html">Mime::Type</a>
+  
+    <li><a href="../../Object.html">Object</a>
+  
+    <li><a href="../../ActionDispatch/Integration.html">Object::Integration</a>
+  
+    <li><a href="../../ActionDispatch/IntegrationTest.html">Object::IntegrationTest</a>
+  
+    <li><a href="../../ActionDispatch/Routing.html">Object::Routing</a>
+  
+    <li><a href="../../I18n.html">I18n</a>
+  
+    <li><a href="../../I18n/ExceptionHandler.html">I18n::ExceptionHandler</a>
+  
+    <li><a href="../../ActionPack.html">ActionPack</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class ActionDispatch::Routing::RouteWrapper</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-action" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">action</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="action-source">
+            <pre><span class="ruby-comment"># File lib/action_dispatch/routing/inspector.rb, line 67</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">action</span>
+  <span class="ruby-identifier">requirements</span>[<span class="ruby-value">:action</span>] <span class="ruby-operator">||</span> <span class="ruby-string">':action'</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- action-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- action-method -->
+
+    
+      <div id="method-i-constraints" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">constraints</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="constraints-source">
+            <pre><span class="ruby-comment"># File lib/action_dispatch/routing/inspector.rb, line 11</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">constraints</span>
+  <span class="ruby-identifier">requirements</span>.<span class="ruby-identifier">except</span>(<span class="ruby-value">:controller</span>, <span class="ruby-value">:action</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- constraints-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- constraints-method -->
+
+    
+      <div id="method-i-controller" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">controller</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="controller-source">
+            <pre><span class="ruby-comment"># File lib/action_dispatch/routing/inspector.rb, line 63</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">controller</span>
+  <span class="ruby-identifier">requirements</span>[<span class="ruby-value">:controller</span>] <span class="ruby-operator">||</span> <span class="ruby-string">':controller'</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- controller-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- controller-method -->
+
+    
+      <div id="method-i-endpoint" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">endpoint</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="endpoint-source">
+            <pre><span class="ruby-comment"># File lib/action_dispatch/routing/inspector.rb, line 7</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">endpoint</span>
+  <span class="ruby-identifier">rack_app</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">rack_app</span>.<span class="ruby-identifier">inspect</span> <span class="ruby-operator">:</span> <span class="ruby-node">&quot;#{controller}##{action}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- endpoint-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- endpoint-method -->
+
+    
+      <div id="method-i-engine-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">engine?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="engine-3F-source">
+            <pre><span class="ruby-comment"># File lib/action_dispatch/routing/inspector.rb, line 75</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">engine?</span>
+  <span class="ruby-identifier">rack_app</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">rack_app</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:routes</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- engine-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- engine-3F-method -->
+
+    
+      <div id="method-i-internal-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">internal?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="internal-3F-source">
+            <pre><span class="ruby-comment"># File lib/action_dispatch/routing/inspector.rb, line 71</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">internal?</span>
+  <span class="ruby-identifier">controller</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r{\Arails/(info|welcome)}</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">path</span> <span class="ruby-operator">=~</span> <span class="ruby-node">%r{\A#{Rails.application.config.assets.prefix}}</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- internal-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- internal-3F-method -->
+
+    
+      <div id="method-i-json_regexp" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">json_regexp</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="json_regexp-source">
+            <pre><span class="ruby-comment"># File lib/action_dispatch/routing/inspector.rb, line 42</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">json_regexp</span>
+  <span class="ruby-identifier">str</span> = <span class="ruby-identifier">regexp</span>.<span class="ruby-identifier">inspect</span>.
+        <span class="ruby-identifier">sub</span>(<span class="ruby-string">'\A'</span> , <span class="ruby-string">'^'</span>).
+        <span class="ruby-identifier">sub</span>(<span class="ruby-string">'\Z'</span> , <span class="ruby-string">'$'</span>).
+        <span class="ruby-identifier">sub</span>(<span class="ruby-string">'\z'</span> , <span class="ruby-string">'$'</span>).
+        <span class="ruby-identifier">sub</span>(<span class="ruby-regexp">/^\//</span> , <span class="ruby-string">''</span>).
+        <span class="ruby-identifier">sub</span>(<span class="ruby-regexp">/\/[a-z]*$/</span> , <span class="ruby-string">''</span>).
+        <span class="ruby-identifier">gsub</span>(<span class="ruby-node">/\(\?#.+\)/</span> , <span class="ruby-string">''</span>).
+        <span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/\(\?-\w+:/</span> , <span class="ruby-string">'('</span>).
+        <span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/\s/</span> , <span class="ruby-string">''</span>)
+  <span class="ruby-constant">Regexp</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">str</span>).<span class="ruby-identifier">source</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- json_regexp-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- json_regexp-method -->
+
+    
+      <div id="method-i-name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">name</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="name-source">
+            <pre><span class="ruby-comment"># File lib/action_dispatch/routing/inspector.rb, line 34</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">name</span>
+  <span class="ruby-keyword">super</span>.<span class="ruby-identifier">to_s</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- name-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- name-method -->
+
+    
+      <div id="method-i-path" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">path</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="path-source">
+            <pre><span class="ruby-comment"># File lib/action_dispatch/routing/inspector.rb, line 30</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">path</span>
+  <span class="ruby-keyword">super</span>.<span class="ruby-identifier">spec</span>.<span class="ruby-identifier">to_s</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- path-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- path-method -->
+
+    
+      <div id="method-i-rack_app" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">rack_app</span><span
+            class="method-args">(app = self.app)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="rack_app-source">
+            <pre><span class="ruby-comment"># File lib/action_dispatch/routing/inspector.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">rack_app</span>(<span class="ruby-identifier">app</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">app</span>)
+  <span class="ruby-ivar">@rack_app</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">class_name</span> = <span class="ruby-identifier">app</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">class_name</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;ActionDispatch::Routing::Mapper::Constraints&quot;</span>
+      <span class="ruby-identifier">rack_app</span>(<span class="ruby-identifier">app</span>.<span class="ruby-identifier">app</span>)
+    <span class="ruby-keyword">elsif</span> <span class="ruby-constant">ActionDispatch</span><span class="ruby-operator">::</span><span class="ruby-constant">Routing</span><span class="ruby-operator">::</span><span class="ruby-constant">Redirect</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">app</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">class_name</span> <span class="ruby-operator">!~</span> <span class="ruby-regexp">/^ActionDispatch::Routing/</span>
+      <span class="ruby-identifier">app</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- rack_app-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- rack_app-method -->
+
+    
+      <div id="method-i-regexp" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">regexp</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="regexp-source">
+            <pre><span class="ruby-comment"># File lib/action_dispatch/routing/inspector.rb, line 38</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">regexp</span>
+  <span class="ruby-identifier">__getobj__</span>.<span class="ruby-identifier">path</span>.<span class="ruby-identifier">to_regexp</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- regexp-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- regexp-method -->
+
+    
+      <div id="method-i-reqs" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">reqs</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="reqs-source">
+            <pre><span class="ruby-comment"># File lib/action_dispatch/routing/inspector.rb, line 55</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">reqs</span>
+  <span class="ruby-ivar">@reqs</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">reqs</span> = <span class="ruby-identifier">endpoint</span>
+    <span class="ruby-identifier">reqs</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot; #{constraints.to_s}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">constraints</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-identifier">reqs</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- reqs-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- reqs-method -->
+
+    
+      <div id="method-i-verb" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">verb</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="verb-source">
+            <pre><span class="ruby-comment"># File lib/action_dispatch/routing/inspector.rb, line 26</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">verb</span>
+  <span class="ruby-keyword">super</span>.<span class="ruby-identifier">source</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/[$^]/</span>, <span class="ruby-string">''</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- verb-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- verb-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

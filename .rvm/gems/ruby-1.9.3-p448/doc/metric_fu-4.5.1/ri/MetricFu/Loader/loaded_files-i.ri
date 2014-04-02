@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"loaded_files:EFI""MetricFu::Loader#loaded_files;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"ITODO: This class mostly serves to clean up the base MetricFu module,;To:RDoc::Markup::Verbatim;	[I"but needs further work;F:@format0:
+@fileI"lib/metric_fu/loader.rb;TF@

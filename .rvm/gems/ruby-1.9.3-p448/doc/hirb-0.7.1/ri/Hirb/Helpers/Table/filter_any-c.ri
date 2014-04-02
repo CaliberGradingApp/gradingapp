@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"filter_any:EFI"%Hirb::Helpers::Table::filter_any;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I";Boolean which sets the default for :filter_any option.;T:
+@fileI"lib/hirb/helpers/table.rb;TT@

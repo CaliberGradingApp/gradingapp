@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"	libs:EFI"Reek::Rake::Task#libs;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"HArray of directories to be added to $LOAD_PATH before running reek.;TI"@Defaults to ['<the absolute path to reek's lib directory>'];T:
+@fileI"lib/reek/rake/task.rb;TF@

@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module MetricFu::Io - metric_fu-4.5.1 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/metric_fu/io.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-dir_for">#dir_for</a>
+    
+    <li><a href="#method-i-file_for">#file_for</a>
+    
+    <li><a href="#method-i-io_for">#io_for</a>
+    
+    <li><a href="#method-i-path_relative_to_base">#path_relative_to_base</a>
+    
+    <li><a href="#method-i-write_output">#write_output</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../MIT-LICENSE.html">MIT-LICENSE</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../MetricFu.html">MetricFu</a>
+  
+    <li><a href="../MetricFu/AnalysisError.html">MetricFu::AnalysisError</a>
+  
+    <li><a href="../MetricFu/AnalyzerTables.html">MetricFu::AnalyzerTables</a>
+  
+    <li><a href="../MetricFu/CaneGenerator.html">MetricFu::CaneGenerator</a>
+  
+    <li><a href="../MetricFu/CaneGrapher.html">MetricFu::CaneGrapher</a>
+  
+    <li><a href="../MetricFu/CaneViolations.html">MetricFu::CaneViolations</a>
+  
+    <li><a href="../MetricFu/CaneViolations/AbcComplexity.html">MetricFu::CaneViolations::AbcComplexity</a>
+  
+    <li><a href="../MetricFu/CaneViolations/Comment.html">MetricFu::CaneViolations::Comment</a>
+  
+    <li><a href="../MetricFu/CaneViolations/Documentation.html">MetricFu::CaneViolations::Documentation</a>
+  
+    <li><a href="../MetricFu/CaneViolations/LineStyle.html">MetricFu::CaneViolations::LineStyle</a>
+  
+    <li><a href="../MetricFu/CaneViolations/Others.html">MetricFu::CaneViolations::Others</a>
+  
+    <li><a href="../MetricFu/ChurnGenerator.html">MetricFu::ChurnGenerator</a>
+  
+    <li><a href="../MetricFu/ChurnHotspot.html">MetricFu::ChurnHotspot</a>
+  
+    <li><a href="../MetricFu/ClassMethodNode.html">MetricFu::ClassMethodNode</a>
+  
+    <li><a href="../MetricFu/Cli.html">MetricFu::Cli</a>
+  
+    <li><a href="../MetricFu/Cli/Client.html">MetricFu::Cli::Client</a>
+  
+    <li><a href="../MetricFu/Cli/Helper.html">MetricFu::Cli::Helper</a>
+  
+    <li><a href="../MetricFu/Cli/MicroOptParse.html">MetricFu::Cli::MicroOptParse</a>
+  
+    <li><a href="../MetricFu/Cli/MicroOptParse/Parser.html">MetricFu::Cli::MicroOptParse::Parser</a>
+  
+    <li><a href="../MetricFu/Configuration.html">MetricFu::Configuration</a>
+  
+    <li><a href="../MetricFu/Constantize.html">MetricFu::Constantize</a>
+  
+    <li><a href="../MetricFu/Environment.html">MetricFu::Environment</a>
+  
+    <li><a href="../MetricFu/FlayGenerator.html">MetricFu::FlayGenerator</a>
+  
+    <li><a href="../MetricFu/FlayGrapher.html">MetricFu::FlayGrapher</a>
+  
+    <li><a href="../MetricFu/FlayHotspot.html">MetricFu::FlayHotspot</a>
+  
+    <li><a href="../MetricFu/FlogGenerator.html">MetricFu::FlogGenerator</a>
+  
+    <li><a href="../MetricFu/FlogGrapher.html">MetricFu::FlogGrapher</a>
+  
+    <li><a href="../MetricFu/FlogHotspot.html">MetricFu::FlogHotspot</a>
+  
+    <li><a href="../MetricFu/Formatter.html">MetricFu::Formatter</a>
+  
+    <li><a href="../MetricFu/Formatter/HTML.html">MetricFu::Formatter::HTML</a>
+  
+    <li><a href="../MetricFu/Formatter/Templates.html">MetricFu::Formatter::Templates</a>
+  
+    <li><a href="../MetricFu/Formatter/YAML.html">MetricFu::Formatter::YAML</a>
+  
+    <li><a href="../MetricFu/GemRun.html">MetricFu::GemRun</a>
+  
+    <li><a href="../MetricFu/GemVersion.html">MetricFu::GemVersion</a>
+  
+    <li><a href="../MetricFu/Generator.html">MetricFu::Generator</a>
+  
+    <li><a href="../MetricFu/Graph.html">MetricFu::Graph</a>
+  
+    <li><a href="../MetricFu/Grapher.html">MetricFu::Grapher</a>
+  
+    <li><a href="../MetricFu/Grouping.html">MetricFu::Grouping</a>
+  
+    <li><a href="../MetricFu/Hotspot.html">MetricFu::Hotspot</a>
+  
+    <li><a href="../MetricFu/HotspotAnalyzedProblems.html">MetricFu::HotspotAnalyzedProblems</a>
+  
+    <li><a href="../MetricFu/HotspotAnalyzer.html">MetricFu::HotspotAnalyzer</a>
+  
+    <li><a href="../MetricFu/HotspotGroupings.html">MetricFu::HotspotGroupings</a>
+  
+    <li><a href="../MetricFu/HotspotProblems.html">MetricFu::HotspotProblems</a>
+  
+    <li><a href="../MetricFu/HotspotRankedProblemLocation.html">MetricFu::HotspotRankedProblemLocation</a>
+  
+    <li><a href="../MetricFu/HotspotRankings.html">MetricFu::HotspotRankings</a>
+  
+    <li><a href="../MetricFu/HotspotScoringStrategies.html">MetricFu::HotspotScoringStrategies</a>
+  
+    <li><a href="../MetricFu/HotspotsGenerator.html">MetricFu::HotspotsGenerator</a>
+  
+    <li><a href="../MetricFu/InstanceMethodNode.html">MetricFu::InstanceMethodNode</a>
+  
+    <li><a href="../MetricFu/Io.html">MetricFu::Io</a>
+  
+    <li><a href="../MetricFu/Io/FileSystem.html">MetricFu::Io::FileSystem</a>
+  
+    <li><a href="../MetricFu/LineNumbers.html">MetricFu::LineNumbers</a>
+  
+    <li><a href="../MetricFu/Loader.html">MetricFu::Loader</a>
+  
+    <li><a href="../MetricFu/Location.html">MetricFu::Location</a>
+  
+    <li><a href="../MetricFu/MethodContainer.html">MetricFu::MethodContainer</a>
+  
+    <li><a href="../MetricFu/Metric.html">MetricFu::Metric</a>
+  
+    <li><a href="../MetricFu/MetricCane.html">MetricFu::MetricCane</a>
+  
+    <li><a href="../MetricFu/MetricChurn.html">MetricFu::MetricChurn</a>
+  
+    <li><a href="../MetricFu/MetricFlay.html">MetricFu::MetricFlay</a>
+  
+    <li><a href="../MetricFu/MetricFlog.html">MetricFu::MetricFlog</a>
+  
+    <li><a href="../MetricFu/MetricHotspots.html">MetricFu::MetricHotspots</a>
+  
+    <li><a href="../MetricFu/MetricRailsBestPractices.html">MetricFu::MetricRailsBestPractices</a>
+  
+    <li><a href="../MetricFu/MetricRcov.html">MetricFu::MetricRcov</a>
+  
+    <li><a href="../MetricFu/MetricReek.html">MetricFu::MetricReek</a>
+  
+    <li><a href="../MetricFu/MetricRoodi.html">MetricFu::MetricRoodi</a>
+  
+    <li><a href="../MetricFu/MetricSaikuro.html">MetricFu::MetricSaikuro</a>
+  
+    <li><a href="../MetricFu/MetricStats.html">MetricFu::MetricStats</a>
+  
+    <li><a href="../MetricFu/RailsBestPracticesGenerator.html">MetricFu::RailsBestPracticesGenerator</a>
+  
+    <li><a href="../MetricFu/RailsBestPracticesGrapher.html">MetricFu::RailsBestPracticesGrapher</a>
+  
+    <li><a href="../MetricFu/Ranking.html">MetricFu::Ranking</a>
+  
+    <li><a href="../MetricFu/RcovGenerator.html">MetricFu::RcovGenerator</a>
+  
+    <li><a href="../MetricFu/RcovGenerator/Line.html">MetricFu::RcovGenerator::Line</a>
+  
+    <li><a href="../MetricFu/RcovGrapher.html">MetricFu::RcovGrapher</a>
+  
+    <li><a href="../MetricFu/RcovHotspot.html">MetricFu::RcovHotspot</a>
+  
+    <li><a href="../MetricFu/Record.html">MetricFu::Record</a>
+  
+    <li><a href="../MetricFu/ReekGenerator.html">MetricFu::ReekGenerator</a>
+  
+    <li><a href="../MetricFu/ReekGrapher.html">MetricFu::ReekGrapher</a>
+  
+    <li><a href="../MetricFu/Reporter.html">MetricFu::Reporter</a>
+  
+    <li><a href="../MetricFu/Result.html">MetricFu::Result</a>
+  
+    <li><a href="../MetricFu/RoodiGenerator.html">MetricFu::RoodiGenerator</a>
+  
+    <li><a href="../MetricFu/RoodiGrapher.html">MetricFu::RoodiGrapher</a>
+  
+    <li><a href="../MetricFu/RoodiHotspot.html">MetricFu::RoodiHotspot</a>
+  
+    <li><a href="../MetricFu/Run.html">MetricFu::Run</a>
+  
+    <li><a href="../MetricFu/SaikuroGenerator.html">MetricFu::SaikuroGenerator</a>
+  
+    <li><a href="../MetricFu/SaikuroHotspot.html">MetricFu::SaikuroHotspot</a>
+  
+    <li><a href="../MetricFu/SaikuroParsingElement.html">MetricFu::SaikuroParsingElement</a>
+  
+    <li><a href="../MetricFu/SaikuroScratchFile.html">MetricFu::SaikuroScratchFile</a>
+  
+    <li><a href="../MetricFu/SingletonMethodNode.html">MetricFu::SingletonMethodNode</a>
+  
+    <li><a href="../MetricFu/StatsGenerator.html">MetricFu::StatsGenerator</a>
+  
+    <li><a href="../MetricFu/StatsGrapher.html">MetricFu::StatsGrapher</a>
+  
+    <li><a href="../MetricFu/StatsHotspot.html">MetricFu::StatsHotspot</a>
+  
+    <li><a href="../MetricFu/Table.html">MetricFu::Table</a>
+  
+    <li><a href="../MetricFu/Template.html">MetricFu::Template</a>
+  
+    <li><a href="../MetricFu/Utility.html">MetricFu::Utility</a>
+  
+    <li><a href="../MfDebugger.html">MfDebugger</a>
+  
+    <li><a href="../MfDebugger/Logger.html">MfDebugger::Logger</a>
+  
+    <li><a href="../AwesomeTemplate.html">AwesomeTemplate</a>
+  
+    <li><a href="../Object.html">Object</a>
+  
+    <li><a href="../ReekHotspot.html">ReekHotspot</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module MetricFu::Io</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-dir_for" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">dir_for</span><span
+            class="method-args">(path)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="dir_for-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/io.rb, line 122</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">dir_for</span>(<span class="ruby-identifier">path</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">path</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">pathname</span> = <span class="ruby-identifier">path_relative_to_base</span>(<span class="ruby-identifier">path</span>)
+  <span class="ruby-constant">MetricFu</span><span class="ruby-operator">::</span><span class="ruby-constant">Utility</span>.<span class="ruby-identifier">mkdir_p</span>(<span class="ruby-identifier">pathname</span>) <span class="ruby-keyword">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-identifier">pathname</span>)
+  <span class="ruby-identifier">pathname</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- dir_for-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- dir_for-method -->
+
+    
+      <div id="method-i-file_for" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">file_for</span><span
+            class="method-args">(path) { |file| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="file_for-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/io.rb, line 116</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">file_for</span>(<span class="ruby-identifier">path</span>)
+  <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">path_relative_to_base</span>(<span class="ruby-identifier">path</span>), <span class="ruby-string">'w'</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">yield</span> <span class="ruby-identifier">file</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- file_for-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- file_for-method -->
+
+    
+      <div id="method-i-io_for" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">io_for</span><span
+            class="method-args">(path_or_io) { |path_or_io| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Yields an io object for writing output. @example</p>
+
+<pre class="ruby"><span class="ruby-identifier">io_for</span>(<span class="ruby-string">'path/to/file'</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">io</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">io</span>.<span class="ruby-identifier">write</span>(<span class="ruby-identifier">output</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">io_for</span>(<span class="ruby-constant">STDOUT</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">io</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">io</span>.<span class="ruby-identifier">write</span>(<span class="ruby-identifier">output</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">stream</span> = <span class="ruby-constant">StringIO</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-identifier">io_for</span>(<span class="ruby-identifier">stream</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">io</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">io</span>.<span class="ruby-identifier">write</span>(<span class="ruby-identifier">output</span>)
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>@param path_or_io [String, to_s, IO, write] a file path</p>
+
+<pre>or an io stream that responds to write.</pre>
+
+<p>@yield [IO] an open stream for writing.</p>
+
+<p>@note Given a path to a file, an open file will</p>
+
+<pre>be yielded and closed after the block completes.
+Given an existing io stream, the stream will not
+be automatically closed. Cleanup, if necessary, is
+the responsibility of the caller.</pre>
+          
+
+          
+          <div class="method-source-code" id="io_for-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/io.rb, line 104</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">io_for</span>(<span class="ruby-identifier">path_or_io</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;No path or io provided.&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">path_or_io</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;No block given. Cannot yield io stream.&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">block_given?</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">path_or_io</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:write</span>)
+    <span class="ruby-comment"># We have an existing open stream...</span>
+    <span class="ruby-keyword">yield</span> <span class="ruby-identifier">path_or_io</span>
+  <span class="ruby-keyword">else</span> <span class="ruby-comment"># Otherwise, we assume its a file path...</span>
+    <span class="ruby-identifier">file_for</span>(<span class="ruby-identifier">path_or_io</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">io</span><span class="ruby-operator">|</span> <span class="ruby-keyword">yield</span> <span class="ruby-identifier">io</span> }
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- io_for-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- io_for-method -->
+
+    
+      <div id="method-i-path_relative_to_base" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">path_relative_to_base</span><span
+            class="method-args">(path)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="path_relative_to_base-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/io.rb, line 129</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">path_relative_to_base</span>(<span class="ruby-identifier">path</span>)
+  <span class="ruby-identifier">pathname</span> = <span class="ruby-constant">MetricFu</span>.<span class="ruby-identifier">run_path</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">MetricFu</span><span class="ruby-operator">::</span><span class="ruby-constant">Io</span><span class="ruby-operator">::</span><span class="ruby-constant">FileSystem</span>.<span class="ruby-identifier">directory</span>(<span class="ruby-string">'base_directory'</span>)) <span class="ruby-comment"># make full path relative to base directory</span>
+  <span class="ruby-identifier">pathname</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">path</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- path_relative_to_base-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- path_relative_to_base-method -->
+
+    
+      <div id="method-i-write_output" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">write_output</span><span
+            class="method-args">(output, path_or_io)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Writes the output to a file or io stream. @param output [String, to_s] the
+content to write. @param path_or_io [String, to_s, IO, write] a file path</p>
+
+<pre>or an io stream that responds to write.</pre>
+
+<p>@return [nil]</p>
+          
+
+          
+          <div class="method-source-code" id="write_output-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/io.rb, line 73</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">write_output</span>(<span class="ruby-identifier">output</span>, <span class="ruby-identifier">path_or_io</span>)
+  <span class="ruby-identifier">io_for</span>(<span class="ruby-identifier">path_or_io</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">io</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">io</span>.<span class="ruby-identifier">write</span>(<span class="ruby-identifier">output</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- write_output-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- write_output-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

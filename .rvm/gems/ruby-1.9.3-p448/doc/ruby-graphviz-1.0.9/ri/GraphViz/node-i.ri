@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"	node:EFI"GraphViz#node;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I";This accessor allow you to set global nodes attributes;T:
+@fileI"lib/graphviz.rb;TF@

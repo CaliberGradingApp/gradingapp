@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>History - mini_portile-0.5.2 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body class="file">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./History_txt.html">History</a>
+  
+    <li class="file"><a href="./LICENSE_txt.html">LICENSE</a>
+  
+    <li class="file"><a href="./README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./MiniPortile.html">MiniPortile</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<h3 id="label-0.5.2+%2F+2013-10-23">0.5.2 / 2013-10-23</h3>
+<ul><li>
+<p>Bugfixes:</p>
+<ul><li>
+<p>Change tar detection order to support NetBSD ‘gtar’. Closes #24</p>
+</li><li>
+<p>Trick ‘git-apply’ when applying patches on nested Git checkouts.
+[larskanis]</p>
+</li><li>
+<p>Respect ENV’s MAKE before fallback to ‘make’. [larskanis]</p>
+</li><li>
+<p>Respect ENV’s CC variable before fallback to ‘gcc’.</p>
+</li><li>
+<p>Avoid non-ASCII output of GCC cause host detection issues. Closes #22</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-0.5.1+%2F+2013-07-07">0.5.1 / 2013-07-07</h3>
+<ul><li>
+<p>Bugfixes:</p>
+<ul><li>
+<p>Detect tar executable without shelling out. [jtimberman]</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-0.5.0+%2F+2012-11-17">0.5.0 / 2012-11-17</h3>
+<ul><li>
+<p>Enhancements:</p>
+<ul><li>
+<p>Allow patching extracted files using `git apply`. [metaskills]</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-0.4.1+%2F+2012-10-24">0.4.1 / 2012-10-24</h3>
+<ul><li>
+<p>Bugfixes:</p>
+<ul><li>
+<p>Syntax to process FTp binary chunks differs between Ruby 1.8.7 and 1.9.x</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-0.4.0+%2F+2012-10-24">0.4.0 / 2012-10-24</h3>
+<ul><li>
+<p>Enhancements:</p>
+<ul><li>
+<p>Allow fetching of FTP URLs along HTTP ones. [metaskills]</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-0.3.0+%2F+2012-03-23">0.3.0 / 2012-03-23</h3>
+<ul><li>
+<p>Enhancements:</p>
+<ul><li>
+<p>Use `gcc -v` to determine original host (platform) instead of Ruby one.</p>
+</li></ul>
+</li><li>
+<p>Deprecations:</p>
+<ul><li>
+<p>Dropped support for Rubies older than 1.8.7</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-0.2.2+%2F+2011-04-11">0.2.2 / 2011-04-11</h3>
+<ul><li>
+<p>Minor enhancements:</p>
+<ul><li>
+<p>Use LDFLAGS when activating recipes for cross-compilation. Closes #6</p>
+</li></ul>
+</li><li>
+<p>Bugfixes:</p>
+<ul><li>
+<p>Remove memoization of *_path helpers. Closes #7</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-0.2.1+%2F+2011-04-06">0.2.1 / 2011-04-06</h3>
+<ul><li>
+<p>Minor enhancements:</p>
+<ul><li>
+<p>Provide <a href="MiniPortile.html#method-i-path">MiniPortile#path</a> to
+obtain full path to installation directory. Closes GH-5</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-0.2.0+%2F+2011-04-05">0.2.0 / 2011-04-05</h3>
+<ul><li>
+<p>Enhancements:</p>
+<ul><li>
+<p>Improve tar detection</p>
+</li><li>
+<p>Improve and refactor configure_options</p>
+</li><li>
+<p>Detect configure_options changes. Closes GH-1</p>
+</li><li>
+<p>Add recipe examples</p>
+</li></ul>
+</li><li>
+<p>Bugfixes:</p>
+<ul><li>
+<p><a href="MiniPortile.html#attribute-i-target">MiniPortile#target</a> can be
+changed now. Closes GH-2</p>
+</li><li>
+<p>Always redirect tar output properly</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-0.1.0+%2F+2011-03-08">0.1.0 / 2011-03-08</h3>
+<ul><li>
+<p>Initial release. Welcome to this world!</p>
+</li></ul>
+
+</div>
+
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

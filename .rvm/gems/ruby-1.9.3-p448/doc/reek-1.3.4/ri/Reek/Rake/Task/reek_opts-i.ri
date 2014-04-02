@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"reek_opts:EFI"Reek::Rake::Task#reek_opts;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"@String containing commandline options to be passed to Reek.;TI"ESetting the REEK_OPTS environment variable overrides this value.;TI"Defaults to ''.;T:
+@fileI"lib/reek/rake/task.rb;TF@

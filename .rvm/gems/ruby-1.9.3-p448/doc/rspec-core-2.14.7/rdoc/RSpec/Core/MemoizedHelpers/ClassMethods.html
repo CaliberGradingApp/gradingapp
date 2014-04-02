@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module RSpec::Core::MemoizedHelpers::ClassMethods - rspec-core-2.14.7 Documentation</title>
+
+<link type="text/css" media="screen" href="../../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../../index.html">Home</a>
+    <a href="../../../table_of_contents.html#classes">Classes</a>
+    <a href="../../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/rspec/core/memoized_helpers.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-its">#its</a>
+    
+    <li><a href="#method-i-let">#let</a>
+    
+    <li><a href="#method-i-let-21">#let!</a>
+    
+    <li><a href="#method-i-should">#should</a>
+    
+    <li><a href="#method-i-should_not">#should_not</a>
+    
+    <li><a href="#method-i-subject">#subject</a>
+    
+    <li><a href="#method-i-subject-21">#subject!</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../../RSpec.html">RSpec</a>
+  
+    <li><a href="../../../RSpec/Core.html">RSpec::Core</a>
+  
+    <li><a href="../../../RSpec/Core/BacktraceCleaner.html">RSpec::Core::BacktraceCleaner</a>
+  
+    <li><a href="../../../RSpec/Core/BacktraceFormatter.html">RSpec::Core::BacktraceFormatter</a>
+  
+    <li><a href="../../../RSpec/Core/CommandLine.html">RSpec::Core::CommandLine</a>
+  
+    <li><a href="../../../RSpec/Core/Configuration.html">RSpec::Core::Configuration</a>
+  
+    <li><a href="../../../RSpec/Core/Configuration/MustBeConfiguredBeforeExampleGroupsError.html">RSpec::Core::Configuration::MustBeConfiguredBeforeExampleGroupsError</a>
+  
+    <li><a href="../../../RSpec/Core/ConfigurationOptions.html">RSpec::Core::ConfigurationOptions</a>
+  
+    <li><a href="../../../RSpec/Core/ConstMissing.html">RSpec::Core::ConstMissing</a>
+  
+    <li><a href="../../../RSpec/Core/DRbCommandLine.html">RSpec::Core::DRbCommandLine</a>
+  
+    <li><a href="../../../RSpec/Core/DSL.html">RSpec::Core::DSL</a>
+  
+    <li><a href="../../../RSpec/Core/Deprecation.html">RSpec::Core::Deprecation</a>
+  
+    <li><a href="../../../RSpec/Core/DrbOptions.html">RSpec::Core::DrbOptions</a>
+  
+    <li><a href="../../../RSpec/Core/Example.html">RSpec::Core::Example</a>
+  
+    <li><a href="../../../RSpec/Core/Example/Procsy.html">RSpec::Core::Example::Procsy</a>
+  
+    <li><a href="../../../RSpec/Core/ExampleGroup.html">RSpec::Core::ExampleGroup</a>
+  
+    <li><a href="../../../RSpec/Core/Extensions.html">RSpec::Core::Extensions</a>
+  
+    <li><a href="../../../RSpec/Core/Extensions/InstanceEvalWithArgs.html">RSpec::Core::Extensions::InstanceEvalWithArgs</a>
+  
+    <li><a href="../../../RSpec/Core/Extensions/ModuleEvalWithArgs.html">RSpec::Core::Extensions::ModuleEvalWithArgs</a>
+  
+    <li><a href="../../../RSpec/Core/Extensions/Ordered.html">RSpec::Core::Extensions::Ordered</a>
+  
+    <li><a href="../../../RSpec/Core/Extensions/Ordered/ExampleGroups.html">RSpec::Core::Extensions::Ordered::ExampleGroups</a>
+  
+    <li><a href="../../../RSpec/Core/Extensions/Ordered/Examples.html">RSpec::Core::Extensions::Ordered::Examples</a>
+  
+    <li><a href="../../../RSpec/Core/FilterManager.html">RSpec::Core::FilterManager</a>
+  
+    <li><a href="../../../RSpec/Core/FilterManager/BackwardCompatibility.html">RSpec::Core::FilterManager::BackwardCompatibility</a>
+  
+    <li><a href="../../../RSpec/Core/FilterManager/Describable.html">RSpec::Core::FilterManager::Describable</a>
+  
+    <li><a href="../../../RSpec/Core/Formatters.html">RSpec::Core::Formatters</a>
+  
+    <li><a href="../../../RSpec/Core/Formatters/BaseFormatter.html">RSpec::Core::Formatters::BaseFormatter</a>
+  
+    <li><a href="../../../RSpec/Core/Formatters/BaseTextFormatter.html">RSpec::Core::Formatters::BaseTextFormatter</a>
+  
+    <li><a href="../../../RSpec/Core/Formatters/DeprecationFormatter.html">RSpec::Core::Formatters::DeprecationFormatter</a>
+  
+    <li><a href="../../../RSpec/Core/Formatters/DocumentationFormatter.html">RSpec::Core::Formatters::DocumentationFormatter</a>
+  
+    <li><a href="../../../RSpec/Core/Formatters/Helpers.html">RSpec::Core::Formatters::Helpers</a>
+  
+    <li><a href="../../../RSpec/Core/Formatters/HtmlFormatter.html">RSpec::Core::Formatters::HtmlFormatter</a>
+  
+    <li><a href="../../../RSpec/Core/Formatters/HtmlPrinter.html">RSpec::Core::Formatters::HtmlPrinter</a>
+  
+    <li><a href="../../../RSpec/Core/Formatters/JsonFormatter.html">RSpec::Core::Formatters::JsonFormatter</a>
+  
+    <li><a href="../../../RSpec/Core/Formatters/ProgressFormatter.html">RSpec::Core::Formatters::ProgressFormatter</a>
+  
+    <li><a href="../../../RSpec/Core/Formatters/SnippetExtractor.html">RSpec::Core::Formatters::SnippetExtractor</a>
+  
+    <li><a href="../../../RSpec/Core/Formatters/SnippetExtractor/NullConverter.html">RSpec::Core::Formatters::SnippetExtractor::NullConverter</a>
+  
+    <li><a href="../../../RSpec/Core/Formatters/TextMateFormatter.html">RSpec::Core::Formatters::TextMateFormatter</a>
+  
+    <li><a href="../../../RSpec/Core/Hooks.html">RSpec::Core::Hooks</a>
+  
+    <li><a href="../../../RSpec/Core/Hooks/AfterAllHook.html">RSpec::Core::Hooks::AfterAllHook</a>
+  
+    <li><a href="../../../RSpec/Core/Hooks/AfterHook.html">RSpec::Core::Hooks::AfterHook</a>
+  
+    <li><a href="../../../RSpec/Core/Hooks/AroundHook.html">RSpec::Core::Hooks::AroundHook</a>
+  
+    <li><a href="../../../RSpec/Core/Hooks/AroundHookCollection.html">RSpec::Core::Hooks::AroundHookCollection</a>
+  
+    <li><a href="../../../RSpec/Core/Hooks/BeforeHook.html">RSpec::Core::Hooks::BeforeHook</a>
+  
+    <li><a href="../../../RSpec/Core/Hooks/GroupHookCollection.html">RSpec::Core::Hooks::GroupHookCollection</a>
+  
+    <li><a href="../../../RSpec/Core/Hooks/Hook.html">RSpec::Core::Hooks::Hook</a>
+  
+    <li><a href="../../../RSpec/Core/Hooks/HookCollection.html">RSpec::Core::Hooks::HookCollection</a>
+  
+    <li><a href="../../../RSpec/Core/Hooks/HookCollectionAliases.html">RSpec::Core::Hooks::HookCollectionAliases</a>
+  
+    <li><a href="../../../RSpec/Core/Hooks/RegistersGlobals.html">RSpec::Core::Hooks::RegistersGlobals</a>
+  
+    <li><a href="../../../RSpec/Core/MemoizedHelpers.html">RSpec::Core::MemoizedHelpers</a>
+  
+    <li><a href="../../../RSpec/Core/MemoizedHelpers/BeforeAllMemoizedHash.html">RSpec::Core::MemoizedHelpers::BeforeAllMemoizedHash</a>
+  
+    <li><a href="../../../RSpec/Core/MemoizedHelpers/ClassMethods.html">RSpec::Core::MemoizedHelpers::ClassMethods</a>
+  
+    <li><a href="../../../RSpec/Core/Metadata.html">RSpec::Core::Metadata</a>
+  
+    <li><a href="../../../RSpec/Core/Metadata/ExampleMetadataHash.html">RSpec::Core::Metadata::ExampleMetadataHash</a>
+  
+    <li><a href="../../../RSpec/Core/Metadata/GroupMetadataHash.html">RSpec::Core::Metadata::GroupMetadataHash</a>
+  
+    <li><a href="../../../RSpec/Core/Metadata/MetadataHash.html">RSpec::Core::Metadata::MetadataHash</a>
+  
+    <li><a href="../../../RSpec/Core/MetadataHashBuilder.html">RSpec::Core::MetadataHashBuilder</a>
+  
+    <li><a href="../../../RSpec/Core/MetadataHashBuilder/Common.html">RSpec::Core::MetadataHashBuilder::Common</a>
+  
+    <li><a href="../../../RSpec/Core/MetadataHashBuilder/WithConfigWarning.html">RSpec::Core::MetadataHashBuilder::WithConfigWarning</a>
+  
+    <li><a href="../../../RSpec/Core/MetadataHashBuilder/WithDeprecationWarning.html">RSpec::Core::MetadataHashBuilder::WithDeprecationWarning</a>
+  
+    <li><a href="../../../RSpec/Core/MockFrameworkAdapter.html">RSpec::Core::MockFrameworkAdapter</a>
+  
+    <li><a href="../../../RSpec/Core/Parser.html">RSpec::Core::Parser</a>
+  
+    <li><a href="../../../RSpec/Core/Pending.html">RSpec::Core::Pending</a>
+  
+    <li><a href="../../../RSpec/Core/Pending/PendingDeclaredInExample.html">RSpec::Core::Pending::PendingDeclaredInExample</a>
+  
+    <li><a href="../../../RSpec/Core/Pending/PendingExampleFixedError.html">RSpec::Core::Pending::PendingExampleFixedError</a>
+  
+    <li><a href="../../../RSpec/Core/ProjectInitializer.html">RSpec::Core::ProjectInitializer</a>
+  
+    <li><a href="../../../RSpec/Core/RakeTask.html">RSpec::Core::RakeTask</a>
+  
+    <li><a href="../../../RSpec/Core/Reporter.html">RSpec::Core::Reporter</a>
+  
+    <li><a href="../../../RSpec/Core/RubyProject.html">RSpec::Core::RubyProject</a>
+  
+    <li><a href="../../../RSpec/Core/Runner.html">RSpec::Core::Runner</a>
+  
+    <li><a href="../../../RSpec/Core/SharedContext.html">RSpec::Core::SharedContext</a>
+  
+    <li><a href="../../../RSpec/Core/SharedExampleGroup.html">RSpec::Core::SharedExampleGroup</a>
+  
+    <li><a href="../../../RSpec/Core/SharedExampleGroup/Collection.html">RSpec::Core::SharedExampleGroup::Collection</a>
+  
+    <li><a href="../../../RSpec/Core/SharedExampleGroup/Registry.html">RSpec::Core::SharedExampleGroup::Registry</a>
+  
+    <li><a href="../../../RSpec/Core/SharedExampleGroup/TopLevelDSL.html">RSpec::Core::SharedExampleGroup::TopLevelDSL</a>
+  
+    <li><a href="../../../RSpec/Core/Time.html">RSpec::Core::Time</a>
+  
+    <li><a href="../../../RSpec/Core/Version.html">RSpec::Core::Version</a>
+  
+    <li><a href="../../../RSpec/Core/World.html">RSpec::Core::World</a>
+  
+    <li><a href="../../../RSpec/Rake.html">RSpec::Rake</a>
+  
+    <li><a href="../../../RSpec/Runner.html">RSpec::Runner</a>
+  
+    <li><a href="../../../Autotest.html">Autotest</a>
+  
+    <li><a href="../../../Autotest/Rspec2.html">Autotest::Rspec2</a>
+  
+    <li><a href="../../../Kernel.html">Kernel</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module RSpec::Core::MemoizedHelpers::ClassMethods</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-its" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">its</span><span
+            class="method-args">(attribute, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Creates a nested example group named by the submitted `attribute`, and then
+generates an example using the submitted block.</p>
+
+<p>@example</p>
+
+<pre># This ...
+describe Array do
+  its(:size) { should eq(0) }
+end
+
+# ... generates the same runtime structure as this:
+describe Array do
+  describe &quot;size&quot; do
+    it &quot;should eq(0)&quot; do
+      subject.size.should eq(0)
+    end
+  end
+end</pre>
+
+<p>The attribute can be a `Symbol` or a `String`. Given a `String` with dots,
+the result is as though you concatenated that `String` onto the subject in
+an expression.</p>
+
+<p>@example</p>
+
+<pre class="ruby"><span class="ruby-identifier">describe</span> <span class="ruby-constant">Person</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">subject</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-constant">Person</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">tap</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">person</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">person</span>.<span class="ruby-identifier">phone_numbers</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;555-1212&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">its</span>(<span class="ruby-string">&quot;phone_numbers.first&quot;</span>) { <span class="ruby-identifier">should</span> <span class="ruby-identifier">eq</span>(<span class="ruby-string">&quot;555-1212&quot;</span>) }
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>When the subject is a `Hash`, you can refer to the Hash keys by specifying
+a `Symbol` or `String` in an array.</p>
+
+<p>@example</p>
+
+<pre class="ruby"><span class="ruby-identifier">describe</span> <span class="ruby-string">&quot;a configuration Hash&quot;</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">subject</span> <span class="ruby-keyword">do</span>
+    { :<span class="ruby-identifier">max_users</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">3</span>,
+      <span class="ruby-string">'admin'</span> =<span class="ruby-operator">&gt;</span> :<span class="ruby-identifier">all_permissions</span> }
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">its</span>([:<span class="ruby-identifier">max_users</span>]) { <span class="ruby-identifier">should</span> <span class="ruby-identifier">eq</span>(<span class="ruby-value">3</span>) }
+  <span class="ruby-identifier">its</span>([<span class="ruby-string">'admin'</span>]) { <span class="ruby-identifier">should</span> <span class="ruby-identifier">eq</span>(:<span class="ruby-identifier">all_permissions</span>) }
+
+  <span class="ruby-comment"># You can still access to its regular methods this way:</span>
+  <span class="ruby-identifier">its</span>(:<span class="ruby-identifier">keys</span>) { <span class="ruby-identifier">should</span> <span class="ruby-identifier">include</span>(:<span class="ruby-identifier">max_users</span>) }
+  <span class="ruby-identifier">its</span>(:<span class="ruby-identifier">count</span>) { <span class="ruby-identifier">should</span> <span class="ruby-identifier">eq</span>(<span class="ruby-value">2</span>) }
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>Note that this method does not modify `subject` in any way, so if you refer
+to `subject` in `let` or `before` blocks, you’re still referring to the
+outer subject.</p>
+
+<p>@example</p>
+
+<pre>describe Person do
+  subject { Person.new }
+  before { subject.age = 25 }
+  its(:age) { should eq(25) }
+end</pre>
+          
+
+          
+          <div class="method-source-code" id="its-source">
+            <pre><span class="ruby-comment"># File lib/rspec/core/memoized_helpers.rb, line 426</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">its</span>(<span class="ruby-identifier">attribute</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">describe</span>(<span class="ruby-identifier">attribute</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-constant">Array</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">attribute</span>
+      <span class="ruby-identifier">let</span>(<span class="ruby-value">:__its_subject</span>) { <span class="ruby-identifier">subject</span>[*<span class="ruby-identifier">attribute</span>] }
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">let</span>(<span class="ruby-value">:__its_subject</span>) <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">attribute_chain</span> = <span class="ruby-identifier">attribute</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">'.'</span>)
+        <span class="ruby-identifier">attribute_chain</span>.<span class="ruby-identifier">inject</span>(<span class="ruby-identifier">subject</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">inner_subject</span>, <span class="ruby-identifier">attr</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">inner_subject</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">attr</span>)
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">should</span>(<span class="ruby-identifier">matcher</span>=<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">message</span>=<span class="ruby-keyword">nil</span>)
+      <span class="ruby-constant">RSpec</span><span class="ruby-operator">::</span><span class="ruby-constant">Expectations</span><span class="ruby-operator">::</span><span class="ruby-constant">PositiveExpectationHandler</span>.<span class="ruby-identifier">handle_matcher</span>(<span class="ruby-identifier">__its_subject</span>, <span class="ruby-identifier">matcher</span>, <span class="ruby-identifier">message</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">should_not</span>(<span class="ruby-identifier">matcher</span>=<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">message</span>=<span class="ruby-keyword">nil</span>)
+      <span class="ruby-constant">RSpec</span><span class="ruby-operator">::</span><span class="ruby-constant">Expectations</span><span class="ruby-operator">::</span><span class="ruby-constant">NegativeExpectationHandler</span>.<span class="ruby-identifier">handle_matcher</span>(<span class="ruby-identifier">__its_subject</span>, <span class="ruby-identifier">matcher</span>, <span class="ruby-identifier">message</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">example</span>(&amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- its-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- its-method -->
+
+    
+      <div id="method-i-let" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">let</span><span
+            class="method-args">(name, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Generates a method whose return value is memoized after the first call.
+Useful for reducing duplication between examples that assign values to the
+same local variable.</p>
+
+<p>@note `let` <em>can</em> enhance readability when used sparingly (1,2, or</p>
+
+<pre>maybe 3 declarations) in any given example group, but that can
+quickly degrade with overuse. YMMV.</pre>
+
+<p>@note `let` uses an `||=` conditional that has the potential to</p>
+
+<pre>behave in surprising ways in examples that spawn separate threads,
+though we have yet to see this in practice. You've been warned.</pre>
+
+<p>@note Because `let` is designed to create state that is reset between</p>
+
+<pre>each example, and `before(:all)` is designed to setup state that is
+shared across _all_ examples in an example group, `let` is _not_
+intended to be used in a `before(:all)` hook. RSpec 2.13.1 prints
+a warning when you reference a `let` from `before(:all)` and we plan
+to have it raise an error in RSpec 3.</pre>
+
+<p>@example</p>
+
+<pre>describe Thing do
+  let(:thing) { Thing.new }
+
+  it &quot;does something&quot; do
+    # first invocation, executes block, memoizes and returns result
+    thing.do_something
+
+    # second invocation, returns the memoized value
+    thing.should be_something
+  end
+end</pre>
+          
+
+          
+          <div class="method-source-code" id="let-source">
+            <pre><span class="ruby-comment"># File lib/rspec/core/memoized_helpers.rb, line 190</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">let</span>(<span class="ruby-identifier">name</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-comment"># We have to pass the block directly to `define_method` to</span>
+  <span class="ruby-comment"># allow it to use method constructs like `super` and `return`.</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;#let or #subject called without a block&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">block</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-constant">MemoizedHelpers</span>.<span class="ruby-identifier">module_for</span>(<span class="ruby-keyword">self</span>).<span class="ruby-identifier">send</span>(<span class="ruby-value">:define_method</span>, <span class="ruby-identifier">name</span>, &amp;<span class="ruby-identifier">block</span>)
+
+  <span class="ruby-comment"># Apply the memoization. The method has been defined in an ancestor</span>
+  <span class="ruby-comment"># module so we can use `super` here to get the value.</span>
+  <span class="ruby-identifier">define_method</span>(<span class="ruby-identifier">name</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">__memoized</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">name</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span><span class="ruby-operator">|</span> <span class="ruby-identifier">__memoized</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-keyword">super</span>(&amp;<span class="ruby-keyword">nil</span>) }
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- let-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- let-method -->
+
+    
+      <div id="method-i-let-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">let!</span><span
+            class="method-args">(name, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Just like `let`, except the block is invoked by an implicit `before` hook.
+This serves a dual purpose of setting up state and providing a memoized
+reference to that state.</p>
+
+<p>@example</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">Thing</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">count</span>
+    <span class="ruby-ivar">@count</span> <span class="ruby-operator">||=</span> <span class="ruby-value">0</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">count</span>=(<span class="ruby-identifier">val</span>)
+    <span class="ruby-ivar">@count</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">val</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">reset_count</span>
+    <span class="ruby-ivar">@count</span> = <span class="ruby-value">0</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">count</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">describe</span> <span class="ruby-constant">Thing</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">after</span>(:<span class="ruby-identifier">each</span>) { <span class="ruby-constant">Thing</span>.<span class="ruby-identifier">reset_count</span> }
+
+  <span class="ruby-identifier">context</span> <span class="ruby-string">&quot;using let&quot;</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">let</span>(:<span class="ruby-identifier">thing</span>) { <span class="ruby-constant">Thing</span>.<span class="ruby-identifier">new</span> }
+
+    <span class="ruby-identifier">it</span> <span class="ruby-string">&quot;is not invoked implicitly&quot;</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-constant">Thing</span>.<span class="ruby-identifier">count</span>.<span class="ruby-identifier">should</span> <span class="ruby-identifier">eq</span>(<span class="ruby-value">0</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">it</span> <span class="ruby-string">&quot;can be invoked explicitly&quot;</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">thing</span>
+      <span class="ruby-constant">Thing</span>.<span class="ruby-identifier">count</span>.<span class="ruby-identifier">should</span> <span class="ruby-identifier">eq</span>(<span class="ruby-value">1</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">context</span> <span class="ruby-string">&quot;using let!&quot;</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">let!</span>(:<span class="ruby-identifier">thing</span>) { <span class="ruby-constant">Thing</span>.<span class="ruby-identifier">new</span> }
+
+    <span class="ruby-identifier">it</span> <span class="ruby-string">&quot;is invoked implicitly&quot;</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-constant">Thing</span>.<span class="ruby-identifier">count</span>.<span class="ruby-identifier">should</span> <span class="ruby-identifier">eq</span>(<span class="ruby-value">1</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">it</span> <span class="ruby-string">&quot;returns memoized version on first invocation&quot;</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">thing</span>
+      <span class="ruby-constant">Thing</span>.<span class="ruby-identifier">count</span>.<span class="ruby-identifier">should</span> <span class="ruby-identifier">eq</span>(<span class="ruby-value">1</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+          
+
+          
+          <div class="method-source-code" id="let-21-source">
+            <pre><span class="ruby-comment"># File lib/rspec/core/memoized_helpers.rb, line 256</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">let!</span>(<span class="ruby-identifier">name</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">let</span>(<span class="ruby-identifier">name</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">before</span> { <span class="ruby-identifier">__send__</span>(<span class="ruby-identifier">name</span>) }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- let-21-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- let-21-method -->
+
+    
+      <div id="method-i-should" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">should</span><span
+            class="method-args">(matcher=nil, message=nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="should-source">
+            <pre><span class="ruby-comment"># File lib/rspec/core/memoized_helpers.rb, line 439</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">should</span>(<span class="ruby-identifier">matcher</span>=<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">message</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-constant">RSpec</span><span class="ruby-operator">::</span><span class="ruby-constant">Expectations</span><span class="ruby-operator">::</span><span class="ruby-constant">PositiveExpectationHandler</span>.<span class="ruby-identifier">handle_matcher</span>(<span class="ruby-identifier">__its_subject</span>, <span class="ruby-identifier">matcher</span>, <span class="ruby-identifier">message</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- should-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- should-method -->
+
+    
+      <div id="method-i-should_not" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">should_not</span><span
+            class="method-args">(matcher=nil, message=nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="should_not-source">
+            <pre><span class="ruby-comment"># File lib/rspec/core/memoized_helpers.rb, line 443</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">should_not</span>(<span class="ruby-identifier">matcher</span>=<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">message</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-constant">RSpec</span><span class="ruby-operator">::</span><span class="ruby-constant">Expectations</span><span class="ruby-operator">::</span><span class="ruby-constant">NegativeExpectationHandler</span>.<span class="ruby-identifier">handle_matcher</span>(<span class="ruby-identifier">__its_subject</span>, <span class="ruby-identifier">matcher</span>, <span class="ruby-identifier">message</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- should_not-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- should_not-method -->
+
+    
+      <div id="method-i-subject" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">subject</span><span
+            class="method-args">(name=nil, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Declares a `subject` for an example group which can then be the implicit
+receiver (through delegation) of calls to `should`.</p>
+
+<p>Given a `name`, defines a method with that name which returns the
+`subject`. This lets you declare the subject once and access it implicitly
+in one-liners and explicitly using an intention revealing name.</p>
+
+<p>@param [String,Symbol] name used to define an accessor with an</p>
+
+<pre>intention revealing name</pre>
+
+<p>@param block defines the value to be returned by `subject` in examples</p>
+
+<p>@example</p>
+
+<pre>describe CheckingAccount, &quot;with $50&quot; do
+  subject { CheckingAccount.new(Money.new(50, :USD)) }
+  it { should have_a_balance_of(Money.new(50, :USD)) }
+  it { should_not be_overdrawn }
+end
+
+describe CheckingAccount, &quot;with a non-zero starting balance&quot; do
+  subject(:account) { CheckingAccount.new(Money.new(50, :USD)) }
+  it { should_not be_overdrawn }
+  it &quot;has a balance equal to the starting balance&quot; do
+    account.balance.should eq(Money.new(50, :USD))
+  end
+end</pre>
+
+<p>@see <a
+href="../MemoizedHelpers.html#method-i-should">RSpec::Core::MemoizedHelpers#should</a></p>
+          
+
+          
+          <div class="method-source-code" id="subject-source">
+            <pre><span class="ruby-comment"># File lib/rspec/core/memoized_helpers.rb, line 290</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">subject</span>(<span class="ruby-identifier">name</span>=<span class="ruby-keyword">nil</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">name</span>
+    <span class="ruby-identifier">let</span>(<span class="ruby-identifier">name</span>, &amp;<span class="ruby-identifier">block</span>)
+    <span class="ruby-identifier">alias_method</span> <span class="ruby-value">:subject</span>, <span class="ruby-identifier">name</span>
+
+    <span class="ruby-keyword">self</span><span class="ruby-operator">::</span><span class="ruby-constant">NamedSubjectPreventSuper</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:define_method</span>, <span class="ruby-identifier">name</span>) <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>, <span class="ruby-string">&quot;`super` in named subjects is not supported&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">let</span>(<span class="ruby-value">:subject</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- subject-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- subject-method -->
+
+    
+      <div id="method-i-subject-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">subject!</span><span
+            class="method-args">(name=nil, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Just like `subject`, except the block is invoked by an implicit `before`
+hook. This serves a dual purpose of setting up state and providing a
+memoized reference to that state.</p>
+
+<p>@example</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">Thing</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">count</span>
+    <span class="ruby-ivar">@count</span> <span class="ruby-operator">||=</span> <span class="ruby-value">0</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">count</span>=(<span class="ruby-identifier">val</span>)
+    <span class="ruby-ivar">@count</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">val</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">reset_count</span>
+    <span class="ruby-ivar">@count</span> = <span class="ruby-value">0</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">count</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">describe</span> <span class="ruby-constant">Thing</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">after</span>(:<span class="ruby-identifier">each</span>) { <span class="ruby-constant">Thing</span>.<span class="ruby-identifier">reset_count</span> }
+
+  <span class="ruby-identifier">context</span> <span class="ruby-string">&quot;using subject&quot;</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">subject</span> { <span class="ruby-constant">Thing</span>.<span class="ruby-identifier">new</span> }
+
+    <span class="ruby-identifier">it</span> <span class="ruby-string">&quot;is not invoked implicitly&quot;</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-constant">Thing</span>.<span class="ruby-identifier">count</span>.<span class="ruby-identifier">should</span> <span class="ruby-identifier">eq</span>(<span class="ruby-value">0</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">it</span> <span class="ruby-string">&quot;can be invoked explicitly&quot;</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">subject</span>
+      <span class="ruby-constant">Thing</span>.<span class="ruby-identifier">count</span>.<span class="ruby-identifier">should</span> <span class="ruby-identifier">eq</span>(<span class="ruby-value">1</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">context</span> <span class="ruby-string">&quot;using subject!&quot;</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">subject!</span>(:<span class="ruby-identifier">thing</span>) { <span class="ruby-constant">Thing</span>.<span class="ruby-identifier">new</span> }
+
+    <span class="ruby-identifier">it</span> <span class="ruby-string">&quot;is invoked implicitly&quot;</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-constant">Thing</span>.<span class="ruby-identifier">count</span>.<span class="ruby-identifier">should</span> <span class="ruby-identifier">eq</span>(<span class="ruby-value">1</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">it</span> <span class="ruby-string">&quot;returns memoized version on first invocation&quot;</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">subject</span>
+      <span class="ruby-constant">Thing</span>.<span class="ruby-identifier">count</span>.<span class="ruby-identifier">should</span> <span class="ruby-identifier">eq</span>(<span class="ruby-value">1</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+          
+
+          
+          <div class="method-source-code" id="subject-21-source">
+            <pre><span class="ruby-comment"># File lib/rspec/core/memoized_helpers.rb, line 356</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">subject!</span>(<span class="ruby-identifier">name</span>=<span class="ruby-keyword">nil</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">subject</span>(<span class="ruby-identifier">name</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">before</span> { <span class="ruby-identifier">subject</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- subject-21-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- subject-21-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

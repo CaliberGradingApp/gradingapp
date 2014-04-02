@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>README - fakeweb-1.3.0 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body class="file">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./LICENSE_txt.html">LICENSE</a>
+  
+    <li class="file"><a href="./README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./FakeWeb.html">FakeWeb</a>
+  
+    <li><a href="./FakeWeb/MultipleMatchingURIsError.html">FakeWeb::MultipleMatchingURIsError</a>
+  
+    <li><a href="./FakeWeb/NetConnectNotAllowedError.html">FakeWeb::NetConnectNotAllowedError</a>
+  
+    <li><a href="./Net.html">Net</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<h1 id="label-FakeWeb"><a href="FakeWeb.html">FakeWeb</a></h1>
+
+<p><a href="FakeWeb.html">FakeWeb</a> is a helper for faking web requests in
+Ruby. It works at a global level, without modifying code or writing
+extensive stubs.</p>
+
+<h2 id="label-Installation">Installation</h2>
+
+<pre>gem install fakeweb</pre>
+
+<p>Note: the gem was previously available as <code>FakeWeb</code> (capital
+letters), but now all versions are simply registered as
+<code>fakeweb</code>. If you have any old <code>FakeWeb</code> gems lying
+around, remove them: <code>gem uninstall FakeWeb</code></p>
+
+<h2 id="label-Help+and+discussion">Help and discussion</h2>
+
+<p>RDocs for the current release are available at <a
+href="http://fakeweb.rubyforge.org.">fakeweb.rubyforge.org.</a></p>
+
+<p>There’s a mailing list for questions and discussion at <a
+href="http://groups.google.com/group/fakeweb-users.">groups.google.com/group/fakeweb-users.</a></p>
+
+<p>The main source repository is <a
+href="http://github.com/chrisk/fakeweb.">github.com/chrisk/fakeweb.</a></p>
+
+<h2 id="label-Examples">Examples</h2>
+
+<p>Start by requiring FakeWeb:</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">'fakeweb'</span>
+</pre>
+
+<h3 id="label-Registering+basic+string+responses">Registering basic string responses</h3>
+
+<pre class="ruby"><span class="ruby-constant">FakeWeb</span>.<span class="ruby-identifier">register_uri</span>(:<span class="ruby-identifier">get</span>, <span class="ruby-string">&quot;http://example.com/test1&quot;</span>, :<span class="ruby-identifier">body</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Hello World!&quot;</span>)
+
+<span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTP</span>.<span class="ruby-identifier">get</span>(<span class="ruby-constant">URI</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-string">&quot;http://example.com/test1&quot;</span>))
+=<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Hello World!&quot;</span>
+
+<span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTP</span>.<span class="ruby-identifier">get</span>(<span class="ruby-constant">URI</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-string">&quot;http://example.com/test2&quot;</span>))
+=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">FakeWeb</span> <span class="ruby-identifier">is</span> <span class="ruby-identifier">bypassed</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">response</span> <span class="ruby-identifier">from</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">real</span> <span class="ruby-identifier">request</span> <span class="ruby-identifier">is</span> <span class="ruby-identifier">returned</span>
+</pre>
+
+<p>You can also call <code>register_uri</code> with a regular expression, to
+match more than one URI.</p>
+
+<pre class="ruby"><span class="ruby-constant">FakeWeb</span>.<span class="ruby-identifier">register_uri</span>(:<span class="ruby-identifier">get</span>, <span class="ruby-regexp">%rhttp://example\.com/|</span>, :<span class="ruby-identifier">body</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Hello World!&quot;</span>)
+
+<span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTP</span>.<span class="ruby-identifier">get</span>(<span class="ruby-constant">URI</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-string">&quot;http://example.com/test3&quot;</span>))
+=<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Hello World!&quot;</span>
+</pre>
+
+<h3 id="label-Replaying+a+recorded+response">Replaying a recorded response</h3>
+
+<pre class="ruby"><span class="ruby-identifier">page</span> = <span class="ruby-value">%xcurl -is http://www.google.com/`</span>
+<span class="ruby-constant">FakeWeb</span>.<span class="ruby-identifier">register_uri</span>(:<span class="ruby-identifier">get</span>, <span class="ruby-string">&quot;http://www.google.com/&quot;</span>, :<span class="ruby-identifier">response</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">page</span>)
+
+<span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTP</span>.<span class="ruby-identifier">get</span>(<span class="ruby-constant">URI</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-string">&quot;http://www.google.com/&quot;</span>))
+<span class="ruby-comment"># =&gt; Full response, including headers</span>
+</pre>
+
+<h3 id="label-Adding+a+custom+status+to+the+response">Adding a custom status to the response</h3>
+
+<pre class="ruby"><span class="ruby-constant">FakeWeb</span>.<span class="ruby-identifier">register_uri</span>(:<span class="ruby-identifier">get</span>, <span class="ruby-string">&quot;http://example.com/&quot;</span>, :<span class="ruby-identifier">body</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Nothing to be found 'round here&quot;</span>,
+                                                  :<span class="ruby-identifier">status</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-string">&quot;404&quot;</span>, <span class="ruby-string">&quot;Not Found&quot;</span>])
+
+<span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTP</span>.<span class="ruby-identifier">start</span>(<span class="ruby-string">&quot;example.com&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">req</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">response</span> = <span class="ruby-identifier">req</span>.<span class="ruby-identifier">get</span>(<span class="ruby-string">&quot;/&quot;</span>)
+  <span class="ruby-identifier">response</span>.<span class="ruby-identifier">code</span>     <span class="ruby-comment"># =&gt; &quot;404&quot;</span>
+  <span class="ruby-identifier">response</span>.<span class="ruby-identifier">message</span>  <span class="ruby-comment"># =&gt; &quot;Not Found&quot;</span>
+  <span class="ruby-identifier">response</span>.<span class="ruby-identifier">body</span>     <span class="ruby-comment"># =&gt; &quot;Nothing to be found 'round here&quot;</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<h3 id="label-Responding+to+any+HTTP+method">Responding to any HTTP method</h3>
+
+<pre class="ruby"><span class="ruby-constant">FakeWeb</span>.<span class="ruby-identifier">register_uri</span>(:<span class="ruby-identifier">any</span>, <span class="ruby-string">&quot;http://example.com&quot;</span>, :<span class="ruby-identifier">body</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;response for any HTTP method&quot;</span>)
+</pre>
+
+<p>If you use the <code>:any</code> symbol, the URI you specify will be
+completely stubbed out (regardless of the HTTP method of the request). This
+can be useful for RPC-style services, where the HTTP method isn’t
+significant. (Older versions of <a href="FakeWeb.html">FakeWeb</a> always
+behaved like this, and didn’t accept the first <code>method</code> argument
+above; this syntax is now deprecated.)</p>
+
+<h3 id="label-Rotating+responses">Rotating responses</h3>
+
+<p>You can optionally call <code>FakeWeb.register_uri</code> with an array of
+options hashes; these are used, in order, to respond to repeated requests.
+Once you run out of responses, further requests always receive the last
+response. (You can also send a response more than once before rotating, by
+specifying a <code>:times</code> option for that response.)</p>
+
+<pre class="ruby"><span class="ruby-constant">FakeWeb</span>.<span class="ruby-identifier">register_uri</span>(:<span class="ruby-identifier">delete</span>, <span class="ruby-string">&quot;http://example.com/posts/1&quot;</span>,
+                     [{:<span class="ruby-identifier">body</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Post 1 deleted.&quot;</span>, :<span class="ruby-identifier">status</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-string">&quot;200&quot;</span>, <span class="ruby-string">&quot;OK&quot;</span>]},
+                      {:<span class="ruby-identifier">body</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Post not found&quot;</span>,  :<span class="ruby-identifier">status</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-string">&quot;404&quot;</span>, <span class="ruby-string">&quot;Not Found&quot;</span>]}])
+
+<span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTP</span>.<span class="ruby-identifier">start</span>(<span class="ruby-string">&quot;example.com&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">req</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">req</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-string">&quot;/posts/1&quot;</span>).<span class="ruby-identifier">body</span>  <span class="ruby-comment"># =&gt; &quot;Post 1 deleted&quot;</span>
+  <span class="ruby-identifier">req</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-string">&quot;/posts/1&quot;</span>).<span class="ruby-identifier">body</span>  <span class="ruby-comment"># =&gt; &quot;Post not found&quot;</span>
+  <span class="ruby-identifier">req</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-string">&quot;/posts/1&quot;</span>).<span class="ruby-identifier">body</span>  <span class="ruby-comment"># =&gt; &quot;Post not found&quot;</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<h3 id="label-Using+HTTP+basic+authentication">Using HTTP basic authentication</h3>
+
+<p>You can fake requests that use basic authentication by adding
+<code>userinfo</code> strings to your URIs:</p>
+
+<pre class="ruby"><span class="ruby-constant">FakeWeb</span>.<span class="ruby-identifier">register_uri</span>(:<span class="ruby-identifier">get</span>, <span class="ruby-string">&quot;http://example.com/secret&quot;</span>, :<span class="ruby-identifier">body</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Unauthorized&quot;</span>, :<span class="ruby-identifier">status</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-string">&quot;401&quot;</span>, <span class="ruby-string">&quot;Unauthorized&quot;</span>])
+<span class="ruby-constant">FakeWeb</span>.<span class="ruby-identifier">register_uri</span>(:<span class="ruby-identifier">get</span>, <span class="ruby-string">&quot;http://user:pass@example.com/secret&quot;</span>, :<span class="ruby-identifier">body</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Authorized&quot;</span>)
+
+<span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTP</span>.<span class="ruby-identifier">start</span>(<span class="ruby-string">&quot;example.com&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">http</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">req</span> = <span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTP</span><span class="ruby-operator">::</span><span class="ruby-constant">Get</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;/secret&quot;</span>)
+  <span class="ruby-identifier">http</span>.<span class="ruby-identifier">request</span>(<span class="ruby-identifier">req</span>)  <span class="ruby-comment"># =&gt; &quot;Unauthorized&quot;</span>
+  <span class="ruby-identifier">req</span>.<span class="ruby-identifier">basic_auth</span>(<span class="ruby-string">&quot;user&quot;</span>, <span class="ruby-string">&quot;pass&quot;</span>)
+  <span class="ruby-identifier">http</span>.<span class="ruby-identifier">request</span>(<span class="ruby-identifier">req</span>)  <span class="ruby-comment"># =&gt; &quot;Authorized&quot;</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<h3 id="label-Clearing+registered+URIs">Clearing registered URIs</h3>
+
+<p>The <a href="FakeWeb.html">FakeWeb</a> registry is a singleton that lasts
+for the duration of your program, maintaining every fake response you
+register. If needed, you can clean out the registry and remove all
+registered URIs:</p>
+
+<pre>FakeWeb.clean_registry</pre>
+
+<h3 id="label-Blocking+all+real+requests">Blocking all real requests</h3>
+
+<p>When you’re using <a href="FakeWeb.html">FakeWeb</a> to replace
+<em>all</em> of your requests, it’s useful to catch when requests are made
+for unregistered URIs (unlike the default behavior, which is to pass those
+requests through to Net::HTTP as usual).</p>
+
+<pre class="ruby"><span class="ruby-constant">FakeWeb</span>.<span class="ruby-identifier">allow_net_connect</span> = <span class="ruby-keyword">false</span>
+<span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTP</span>.<span class="ruby-identifier">get</span>(<span class="ruby-constant">URI</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-string">&quot;http://example.com/&quot;</span>))
+=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">raises</span> <span class="ruby-constant">FakeWeb</span><span class="ruby-operator">::</span><span class="ruby-constant">NetConnectNotAllowedError</span>
+
+<span class="ruby-constant">FakeWeb</span>.<span class="ruby-identifier">allow_net_connect</span> = <span class="ruby-keyword">true</span>
+<span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTP</span>.<span class="ruby-identifier">get</span>(<span class="ruby-constant">URI</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-string">&quot;http://example.com/&quot;</span>))
+=<span class="ruby-operator">&gt;</span> <span class="ruby-constant">FakeWeb</span> <span class="ruby-identifier">is</span> <span class="ruby-identifier">bypassed</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">response</span> <span class="ruby-identifier">from</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">real</span> <span class="ruby-identifier">request</span> <span class="ruby-identifier">is</span> <span class="ruby-identifier">returned</span>
+</pre>
+
+<p>It’s recommended that you set <code>FakeWeb.allow_net_connect =
+false</code> in the setup for your tests.</p>
+
+<h4 id="label-Allowing+requests+to+a+specific+server">Allowing requests to a specific server</h4>
+
+<p>If you want to prevent your tests from hitting the internet while allowing
+access to a specific server for integration testing, you can assign a URI
+or <code>Regexp</code> to be used as a whitelist for outbound requests:</p>
+
+<pre class="ruby"><span class="ruby-constant">FakeWeb</span>.<span class="ruby-identifier">allow_net_connect</span> = <span class="ruby-regexp">%r[^https?://localhost]</span>
+<span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTP</span>.<span class="ruby-identifier">get</span>(<span class="ruby-constant">URI</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-string">&quot;http://localhost/path&quot;</span>))  <span class="ruby-comment"># =&gt; allowed</span>
+<span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTP</span>.<span class="ruby-identifier">get</span>(<span class="ruby-constant">URI</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-string">&quot;http://example.com/&quot;</span>))    <span class="ruby-comment"># =&gt; raises FakeWeb::NetConnectNotAllowedError</span>
+</pre>
+
+<h3 id="label-Specifying+HTTP+response+headers">Specifying HTTP response headers</h3>
+
+<p>When you register a response using the <code>:body</code> option, you’re
+only setting the body of the response. If you want to add headers to these
+responses, simply add the header as an option to <code>register_uri</code>:</p>
+
+<pre class="ruby"><span class="ruby-constant">FakeWeb</span>.<span class="ruby-identifier">register_uri</span>(:<span class="ruby-identifier">get</span>, <span class="ruby-string">&quot;http://example.com/hello.txt&quot;</span>, :<span class="ruby-identifier">body</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Hello&quot;</span>, :<span class="ruby-identifier">content_type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;text/plain&quot;</span>)
+</pre>
+
+<p>This sets the “Content-Type” header in the response.</p>
+
+<h3 id="label-Checking+the+last+request">Checking the last request</h3>
+
+<p>It’s often useful to retrieve the last request made by your code, so you
+can write tests for its content. <a href="FakeWeb.html">FakeWeb</a> keeps
+track of the last request, whether it was stubbed or not:</p>
+
+<pre class="ruby"><span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">HTTP</span>.<span class="ruby-identifier">get</span>(<span class="ruby-constant">URI</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-string">&quot;http://example.com&quot;</span>))
+<span class="ruby-constant">FakeWeb</span>.<span class="ruby-identifier">last_request</span>  <span class="ruby-comment"># =&gt; Net::HTTP::Get request object</span>
+</pre>
+
+<h2 id="label-More+info">More info</h2>
+
+<p><a href="FakeWeb.html">FakeWeb</a> lets you decouple your test environment
+from live services without modifying code or writing extensive stubs.</p>
+
+<p>In addition to the conceptual advantage of having idempotent request
+behaviour, <a href="FakeWeb.html">FakeWeb</a> makes tests run faster than
+if they were made to remote (or even local) web servers. It also makes it
+possible to run tests without a network connection or in situations where
+the server is behind a firewall or has host-based access controls.</p>
+
+<p><a href="FakeWeb.html">FakeWeb</a> works with anything based on
+Net::HTTP--both higher-level wrappers, like OpenURI, as well as a ton of
+libraries for popular web services.</p>
+
+<h2 id="label-Known+Issues">Known Issues</h2>
+<ul><li>
+<p>Request bodies are ignored, including PUT and POST parameters. If you need
+different responses for different request bodies, you need to request
+different URLs, and register different responses for each. (Query strings
+are fully supported, though.) We’re currently considering how the API
+should change to add support for request bodies in 1.3.0. Your input would
+be really helpful: see <a
+href="http://groups.google.com/group/fakeweb-users/browse_thread/thread/44d190a6b12e4273">groups.google.com/group/fakeweb-users/browse_thread/thread/44d190a6b12e4273</a>
+for a discussion of some different options. Thanks!</p>
+</li></ul>
+
+</div>
+
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

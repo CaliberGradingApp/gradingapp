@@ -1,0 +1,16 @@
+Thu, 07 Nov 2013 23:14:20 -0400
+lib/hashie/extensions/coercion.rb	Thu, 07 Nov 2013 23:14:19 -0400
+lib/hashie/extensions/method_access.rb	Thu, 07 Nov 2013 23:14:19 -0400
+lib/hashie/extensions/indifferent_access.rb	Thu, 07 Nov 2013 23:14:19 -0400
+lib/hashie/extensions/structure.rb	Thu, 07 Nov 2013 23:14:19 -0400
+lib/hashie/extensions/merge_initializer.rb	Thu, 07 Nov 2013 23:14:19 -0400
+lib/hashie/extensions/deep_merge.rb	Thu, 07 Nov 2013 23:14:19 -0400
+lib/hashie/extensions/key_conversion.rb	Thu, 07 Nov 2013 23:14:19 -0400
+lib/hashie/clash.rb	Thu, 07 Nov 2013 23:14:19 -0400
+lib/hashie/mash.rb	Thu, 07 Nov 2013 23:14:19 -0400
+lib/hashie/trash.rb	Thu, 07 Nov 2013 23:14:19 -0400
+lib/hashie/version.rb	Thu, 07 Nov 2013 23:14:19 -0400
+lib/hashie/dash.rb	Thu, 07 Nov 2013 23:14:19 -0400
+lib/hashie/hash.rb	Thu, 07 Nov 2013 23:14:19 -0400
+lib/hashie/hash_extensions.rb	Thu, 07 Nov 2013 23:14:19 -0400
+lib/hashie.rb	Thu, 07 Nov 2013 23:14:19 -0400

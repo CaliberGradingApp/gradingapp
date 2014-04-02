@@ -1,0 +1,5 @@
+{:ancestors{
+I""CodeMetrics::StatsDirectories:EF[I"Object;FI"CodeMetrics::Statistics;F[I"Object;FI"CodeMetrics::Profiler;F[I"!CodeMetrics::RequireProfiler;FI"Object;FI" CodeMetrics::LineStatistics;F[I"Object;FI"CodeMetrics::Railtie;F[I"Rails::Railtie;F:attributes{@[I" attr_reader app_directories;FI"!attr_reader test_directories;F@[I"attr_reader mode;FI"attr_reader path;F:class_methods{	@[I"new;F@
+[I"new;F@[I"new;F@[I"new;F:encodingIu:Encoding
+UTF-8;F:instance_methods{	@[I"add_directories;FI"add_directory;FI"add_test_directories;FI"add_test_directory;FI"app_directories;FI"build_directories;FI"collect_directories;FI"default_app_directories;FI"default_test_directories;FI"description;FI"directories;FI"path_prefix;FI"pluralize;FI"test_directories;FI"titlecase;F@
+[I"	to_s;F@[I"	mode;FI"	path;FI"profile_requires;F@[I"print_loc;F:modules[I"CodeMetrics;FI" CodeMetrics::LineStatistics;FI"CodeMetrics::Profiler;FI"CodeMetrics::Railtie;F@I"CodeMetrics::Statistics;FI""CodeMetrics::StatsDirectories;F

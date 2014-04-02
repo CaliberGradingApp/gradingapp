@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Capybara::Node::Element - capybara-2.1.0 Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/capybara/node/element.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="Base.html">Capybara::Node::Base</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-5B-5D">#[]</a>
+    
+    <li><a href="#method-i-allow_reload-21">#allow_reload!</a>
+    
+    <li><a href="#method-i-checked-3F">#checked?</a>
+    
+    <li><a href="#method-i-click">#click</a>
+    
+    <li><a href="#method-i-disabled-3F">#disabled?</a>
+    
+    <li><a href="#method-i-drag_to">#drag_to</a>
+    
+    <li><a href="#method-i-hover">#hover</a>
+    
+    <li><a href="#method-i-inspect">#inspect</a>
+    
+    <li><a href="#method-i-native">#native</a>
+    
+    <li><a href="#method-i-path">#path</a>
+    
+    <li><a href="#method-i-reload">#reload</a>
+    
+    <li><a href="#method-i-select_option">#select_option</a>
+    
+    <li><a href="#method-i-selected-3F">#selected?</a>
+    
+    <li><a href="#method-i-set">#set</a>
+    
+    <li><a href="#method-i-tag_name">#tag_name</a>
+    
+    <li><a href="#method-i-text">#text</a>
+    
+    <li><a href="#method-i-trigger">#trigger</a>
+    
+    <li><a href="#method-i-unselect_option">#unselect_option</a>
+    
+    <li><a href="#method-i-value">#value</a>
+    
+    <li><a href="#method-i-visible-3F">#visible?</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../lib/capybara/spec/fixtures/another_test_file_txt.html">another_test_file</a>
+  
+    <li class="file"><a href="../../lib/capybara/spec/fixtures/test_file_txt.html">test_file</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../Capybara.html">Capybara</a>
+  
+    <li><a href="../../Capybara/Ambiguous.html">Capybara::Ambiguous</a>
+  
+    <li><a href="../../Capybara/CapybaraError.html">Capybara::CapybaraError</a>
+  
+    <li><a href="../../Capybara/DSL.html">Capybara::DSL</a>
+  
+    <li><a href="../../Capybara/Driver.html">Capybara::Driver</a>
+  
+    <li><a href="../../Capybara/Driver/Base.html">Capybara::Driver::Base</a>
+  
+    <li><a href="../../Capybara/Driver/Node.html">Capybara::Driver::Node</a>
+  
+    <li><a href="../../Capybara/DriverNotFoundError.html">Capybara::DriverNotFoundError</a>
+  
+    <li><a href="../../Capybara/ElementNotFound.html">Capybara::ElementNotFound</a>
+  
+    <li><a href="../../Capybara/ExpectationNotMet.html">Capybara::ExpectationNotMet</a>
+  
+    <li><a href="../../Capybara/Features.html">Capybara::Features</a>
+  
+    <li><a href="../../Capybara/FileNotFound.html">Capybara::FileNotFound</a>
+  
+    <li><a href="../../Capybara/FrozenInTime.html">Capybara::FrozenInTime</a>
+  
+    <li><a href="../../Capybara/Helpers.html">Capybara::Helpers</a>
+  
+    <li><a href="../../Capybara/InfiniteRedirectError.html">Capybara::InfiniteRedirectError</a>
+  
+    <li><a href="../../Capybara/Node.html">Capybara::Node</a>
+  
+    <li><a href="../../Capybara/Node/Actions.html">Capybara::Node::Actions</a>
+  
+    <li><a href="../../Capybara/Node/Base.html">Capybara::Node::Base</a>
+  
+    <li><a href="../../Capybara/Node/Document.html">Capybara::Node::Document</a>
+  
+    <li><a href="../../Capybara/Node/Element.html">Capybara::Node::Element</a>
+  
+    <li><a href="../../Capybara/Node/Finders.html">Capybara::Node::Finders</a>
+  
+    <li><a href="../../Capybara/Node/Matchers.html">Capybara::Node::Matchers</a>
+  
+    <li><a href="../../Capybara/Node/Simple.html">Capybara::Node::Simple</a>
+  
+    <li><a href="../../Capybara/NotSupportedByDriverError.html">Capybara::NotSupportedByDriverError</a>
+  
+    <li><a href="../../Capybara/Query.html">Capybara::Query</a>
+  
+    <li><a href="../../Capybara/RSpecMatchers.html">Capybara::RSpecMatchers</a>
+  
+    <li><a href="../../Capybara/RSpecMatchers/HaveSelector.html">Capybara::RSpecMatchers::HaveSelector</a>
+  
+    <li><a href="../../Capybara/RSpecMatchers/HaveText.html">Capybara::RSpecMatchers::HaveText</a>
+  
+    <li><a href="../../Capybara/RSpecMatchers/HaveTitle.html">Capybara::RSpecMatchers::HaveTitle</a>
+  
+    <li><a href="../../Capybara/RSpecMatchers/Matcher.html">Capybara::RSpecMatchers::Matcher</a>
+  
+    <li><a href="../../Capybara/RackTest.html">Capybara::RackTest</a>
+  
+    <li><a href="../../Capybara/RackTest/Browser.html">Capybara::RackTest::Browser</a>
+  
+    <li><a href="../../Capybara/RackTest/CSSHandlers.html">Capybara::RackTest::CSSHandlers</a>
+  
+    <li><a href="../../Capybara/RackTest/Driver.html">Capybara::RackTest::Driver</a>
+  
+    <li><a href="../../Capybara/RackTest/Form.html">Capybara::RackTest::Form</a>
+  
+    <li><a href="../../Capybara/RackTest/Form/NilUploadedFile.html">Capybara::RackTest::Form::NilUploadedFile</a>
+  
+    <li><a href="../../Capybara/RackTest/Node.html">Capybara::RackTest::Node</a>
+  
+    <li><a href="../../Capybara/Result.html">Capybara::Result</a>
+  
+    <li><a href="../../Capybara/Selector.html">Capybara::Selector</a>
+  
+    <li><a href="../../Capybara/Selector/Filter.html">Capybara::Selector::Filter</a>
+  
+    <li><a href="../../Capybara/Selenium.html">Capybara::Selenium</a>
+  
+    <li><a href="../../Capybara/Selenium/Driver.html">Capybara::Selenium::Driver</a>
+  
+    <li><a href="../../Capybara/Selenium/Node.html">Capybara::Selenium::Node</a>
+  
+    <li><a href="../../Capybara/Server.html">Capybara::Server</a>
+  
+    <li><a href="../../Capybara/Server/Middleware.html">Capybara::Server::Middleware</a>
+  
+    <li><a href="../../Capybara/Session.html">Capybara::Session</a>
+  
+    <li><a href="../../Capybara/SpecHelper.html">Capybara::SpecHelper</a>
+  
+    <li><a href="../../Capybara/UnselectNotAllowed.html">Capybara::UnselectNotAllowed</a>
+  
+    <li><a href="../../TestApp.html">TestApp</a>
+  
+    <li><a href="../../TestApp/TestAppError.html">TestApp::TestAppError</a>
+  
+    <li><a href="../../Object.html">Object</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Capybara::Node::Element</h1>
+
+  <div id="description" class="description">
+    
+<p>A {Capybara::Element} represents a single element on the page. It is
+possible to interact with the contents of this element the same as with a
+document:</p>
+
+<pre class="ruby"><span class="ruby-identifier">session</span> = <span class="ruby-constant">Capybara</span><span class="ruby-operator">::</span><span class="ruby-constant">Session</span>.<span class="ruby-identifier">new</span>(:<span class="ruby-identifier">rack_test</span>, <span class="ruby-identifier">my_app</span>)
+
+<span class="ruby-identifier">bar</span> = <span class="ruby-identifier">session</span>.<span class="ruby-identifier">find</span>(<span class="ruby-string">'#bar'</span>)              <span class="ruby-comment"># from Capybara::Node::Finders</span>
+<span class="ruby-identifier">bar</span>.<span class="ruby-identifier">select</span>(<span class="ruby-string">'Baz'</span>, :<span class="ruby-identifier">from</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'Quox'</span>)      <span class="ruby-comment"># from Capybara::Node::Actions</span>
+</pre>
+
+<p>{Capybara::Element} also has access to HTML attributes and other properties
+of the element:</p>
+
+<pre>bar.value
+bar.text
+bar[:title]</pre>
+
+<p>@see <a href="../Node.html">Capybara::Node</a></p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(session, base, parent, query)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/capybara/node/element.rb, line 25</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">session</span>, <span class="ruby-identifier">base</span>, <span class="ruby-identifier">parent</span>, <span class="ruby-identifier">query</span>)
+  <span class="ruby-keyword">super</span>(<span class="ruby-identifier">session</span>, <span class="ruby-identifier">base</span>)
+  <span class="ruby-ivar">@parent</span> = <span class="ruby-identifier">parent</span>
+  <span class="ruby-ivar">@query</span> = <span class="ruby-identifier">query</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-5B-5D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">[]</span><span
+            class="method-args">(attribute)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Retrieve the given attribute</p>
+
+<pre class="ruby"><span class="ruby-identifier">element</span>[:<span class="ruby-identifier">title</span>] <span class="ruby-comment"># =&gt; HTML title attribute</span>
+</pre>
+
+<p>@param  [Symbol] attribute     The attribute to retrieve @return [String]  
+The value of the attribute</p>
+          
+
+          
+          <div class="method-source-code" id="5B-5D-source">
+            <pre><span class="ruby-comment"># File lib/capybara/node/element.rb, line 75</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">[]</span>(<span class="ruby-identifier">attribute</span>)
+  <span class="ruby-identifier">synchronize</span> { <span class="ruby-identifier">base</span>[<span class="ruby-identifier">attribute</span>] }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- 5B-5D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- 5B-5D-method -->
+
+    
+      <div id="method-i-allow_reload-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">allow_reload!</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="allow_reload-21-source">
+            <pre><span class="ruby-comment"># File lib/capybara/node/element.rb, line 31</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">allow_reload!</span>
+  <span class="ruby-ivar">@allow_reload</span> = <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- allow_reload-21-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- allow_reload-21-method -->
+
+    
+      <div id="method-i-checked-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">checked?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Whether or not the element is checked.</p>
+
+<p>@return [Boolean]     Whether the element is checked</p>
+          
+
+          
+          <div class="method-source-code" id="checked-3F-source">
+            <pre><span class="ruby-comment"># File lib/capybara/node/element.rb, line 154</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">checked?</span>
+  <span class="ruby-identifier">synchronize</span> { <span class="ruby-identifier">base</span>.<span class="ruby-identifier">checked?</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- checked-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- checked-3F-method -->
+
+    
+      <div id="method-i-click" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">click</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Click the <a href="Element.html">Element</a></p>
+          
+
+          
+          <div class="method-source-code" id="click-source">
+            <pre><span class="ruby-comment"># File lib/capybara/node/element.rb, line 117</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">click</span>
+  <span class="ruby-identifier">synchronize</span> { <span class="ruby-identifier">base</span>.<span class="ruby-identifier">click</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- click-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- click-method -->
+
+    
+      <div id="method-i-disabled-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">disabled?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Whether or not the element is disabled.</p>
+
+<p>@return [Boolean]     Whether the element is disabled</p>
+          
+
+          
+          <div class="method-source-code" id="disabled-3F-source">
+            <pre><span class="ruby-comment"># File lib/capybara/node/element.rb, line 174</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">disabled?</span>
+  <span class="ruby-identifier">synchronize</span> { <span class="ruby-identifier">base</span>.<span class="ruby-identifier">disabled?</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- disabled-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- disabled-3F-method -->
+
+    
+      <div id="method-i-drag_to" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">drag_to</span><span
+            class="method-args">(node)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Drag the element to the given other element.</p>
+
+<pre>source = page.find('#foo')
+target = page.find('#bar')
+source.drag_to(target)</pre>
+
+<p>@param [Capybara::Element] node     The element to drag to</p>
+          
+
+          
+          <div class="method-source-code" id="drag_to-source">
+            <pre><span class="ruby-comment"># File lib/capybara/node/element.rb, line 209</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">drag_to</span>(<span class="ruby-identifier">node</span>)
+  <span class="ruby-identifier">synchronize</span> { <span class="ruby-identifier">base</span>.<span class="ruby-identifier">drag_to</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">base</span>) }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- drag_to-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- drag_to-method -->
+
+    
+      <div id="method-i-hover" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">hover</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Hover on the <a href="Element.html">Element</a></p>
+          
+
+          
+          <div class="method-source-code" id="hover-source">
+            <pre><span class="ruby-comment"># File lib/capybara/node/element.rb, line 125</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">hover</span>
+  <span class="ruby-identifier">synchronize</span> { <span class="ruby-identifier">base</span>.<span class="ruby-identifier">hover</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- hover-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- hover-method -->
+
+    
+      <div id="method-i-inspect" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">inspect</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="inspect-source">
+            <pre><span class="ruby-comment"># File lib/capybara/node/element.rb, line 225</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">inspect</span>
+  <span class="ruby-node">%Q(#&lt;Capybara::Element tag=&quot;#{tag_name}&quot; path=&quot;#{path}&quot;&gt;)</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">NotSupportedByDriverError</span>, <span class="ruby-string">'Capybara::Node::Element#inspect'</span>
+  <span class="ruby-node">%Q(#&lt;Capybara::Element tag=&quot;#{tag_name}&quot;&gt;)</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- inspect-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- inspect-method -->
+
+    
+      <div id="method-i-native" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">native</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@return [Object]    The native element from the driver, this allows access
+to driver specific methods</p>
+          
+
+          
+          <div class="method-source-code" id="native-source">
+            <pre><span class="ruby-comment"># File lib/capybara/node/element.rb, line 39</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">native</span>
+  <span class="ruby-identifier">synchronize</span> { <span class="ruby-identifier">base</span>.<span class="ruby-identifier">native</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- native-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- native-method -->
+
+    
+      <div id="method-i-path" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">path</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>An XPath expression describing where on the page the element can be found</p>
+
+<p>@return [String]      An XPath expression</p>
+          
+
+          
+          <div class="method-source-code" id="path-source">
+            <pre><span class="ruby-comment"># File lib/capybara/node/element.rb, line 184</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">path</span>
+  <span class="ruby-identifier">synchronize</span> { <span class="ruby-identifier">base</span>.<span class="ruby-identifier">path</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- path-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- path-method -->
+
+    
+      <div id="method-i-reload" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">reload</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="reload-source">
+            <pre><span class="ruby-comment"># File lib/capybara/node/element.rb, line 213</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">reload</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@allow_reload</span>
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-identifier">reloaded</span> = <span class="ruby-identifier">parent</span>.<span class="ruby-identifier">reload</span>.<span class="ruby-identifier">first</span>(<span class="ruby-ivar">@query</span>.<span class="ruby-identifier">name</span>, <span class="ruby-ivar">@query</span>.<span class="ruby-identifier">locator</span>, <span class="ruby-ivar">@query</span>.<span class="ruby-identifier">options</span>)
+      <span class="ruby-ivar">@base</span> = <span class="ruby-identifier">reloaded</span>.<span class="ruby-identifier">base</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">reloaded</span>
+    <span class="ruby-keyword">rescue</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">catch_error?</span>(<span class="ruby-identifier">e</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- reload-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- reload-method -->
+
+    
+      <div id="method-i-select_option" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">select_option</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Select this node if is an option element inside a select tag</p>
+          
+
+          
+          <div class="method-source-code" id="select_option-source">
+            <pre><span class="ruby-comment"># File lib/capybara/node/element.rb, line 101</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">select_option</span>
+  <span class="ruby-identifier">synchronize</span> { <span class="ruby-identifier">base</span>.<span class="ruby-identifier">select_option</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- select_option-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- select_option-method -->
+
+    
+      <div id="method-i-selected-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">selected?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Whether or not the element is selected.</p>
+
+<p>@return [Boolean]     Whether the element is selected</p>
+          
+
+          
+          <div class="method-source-code" id="selected-3F-source">
+            <pre><span class="ruby-comment"># File lib/capybara/node/element.rb, line 164</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">selected?</span>
+  <span class="ruby-identifier">synchronize</span> { <span class="ruby-identifier">base</span>.<span class="ruby-identifier">selected?</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- selected-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- selected-3F-method -->
+
+    
+      <div id="method-i-set" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">set</span><span
+            class="method-args">(value)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Set the value of the form element to the given value.</p>
+
+<p>@param [String] value    The new value</p>
+          
+
+          
+          <div class="method-source-code" id="set-source">
+            <pre><span class="ruby-comment"># File lib/capybara/node/element.rb, line 93</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">set</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">synchronize</span> { <span class="ruby-identifier">base</span>.<span class="ruby-identifier">set</span>(<span class="ruby-identifier">value</span>) }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- set-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- set-method -->
+
+    
+      <div id="method-i-tag_name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">tag_name</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@return [String]      The tag name of the element</p>
+          
+
+          
+          <div class="method-source-code" id="tag_name-source">
+            <pre><span class="ruby-comment"># File lib/capybara/node/element.rb, line 133</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">tag_name</span>
+  <span class="ruby-identifier">synchronize</span> { <span class="ruby-identifier">base</span>.<span class="ruby-identifier">tag_name</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- tag_name-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- tag_name-method -->
+
+    
+      <div id="method-i-text" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">text</span><span
+            class="method-args">(type=nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Retrieve the text of the element. If `<a
+href="../../Capybara.html#attribute-c-ignore_hidden_elements">Capybara.ignore_hidden_elements</a>`
+is `true`, which it is by default, then this will return only text which is
+visible. The exact semantics of this may differ between drivers, but
+generally any text within elements with `display:none` is ignored. This
+behaviour can be overridden by passing `:all` to this method.</p>
+
+<p>@param [:all, :visible] type  Whether to return only visible or all text
+@return [String]              The text of the element</p>
+          
+
+          
+          <div class="method-source-code" id="text-source">
+            <pre><span class="ruby-comment"># File lib/capybara/node/element.rb, line 55</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">text</span>(<span class="ruby-identifier">type</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">type</span> <span class="ruby-operator">||=</span> <span class="ruby-value">:all</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">Capybara</span>.<span class="ruby-identifier">ignore_hidden_elements</span> <span class="ruby-keyword">or</span> <span class="ruby-constant">Capybara</span>.<span class="ruby-identifier">visible_text_only</span>
+  <span class="ruby-identifier">synchronize</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-value">:all</span>
+      <span class="ruby-identifier">base</span>.<span class="ruby-identifier">all_text</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">base</span>.<span class="ruby-identifier">visible_text</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- text-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- text-method -->
+
+    
+      <div id="method-i-trigger" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">trigger</span><span
+            class="method-args">(event)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Trigger any event on the current element, for example mouseover or focus
+events. Does not work in <a href="../Selenium.html">Selenium</a>.</p>
+
+<p>@param [String] event       The name of the event to trigger</p>
+          
+
+          
+          <div class="method-source-code" id="trigger-source">
+            <pre><span class="ruby-comment"># File lib/capybara/node/element.rb, line 195</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">trigger</span>(<span class="ruby-identifier">event</span>)
+  <span class="ruby-identifier">synchronize</span> { <span class="ruby-identifier">base</span>.<span class="ruby-identifier">trigger</span>(<span class="ruby-identifier">event</span>) }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- trigger-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- trigger-method -->
+
+    
+      <div id="method-i-unselect_option" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">unselect_option</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Unselect this node if is an option element inside a multiple select tag</p>
+          
+
+          
+          <div class="method-source-code" id="unselect_option-source">
+            <pre><span class="ruby-comment"># File lib/capybara/node/element.rb, line 109</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">unselect_option</span>
+  <span class="ruby-identifier">synchronize</span> { <span class="ruby-identifier">base</span>.<span class="ruby-identifier">unselect_option</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- unselect_option-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- unselect_option-method -->
+
+    
+      <div id="method-i-value" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">value</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@return [String]    The value of the form element</p>
+          
+
+          
+          <div class="method-source-code" id="value-source">
+            <pre><span class="ruby-comment"># File lib/capybara/node/element.rb, line 83</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">value</span>
+  <span class="ruby-identifier">synchronize</span> { <span class="ruby-identifier">base</span>.<span class="ruby-identifier">value</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- value-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- value-method -->
+
+    
+      <div id="method-i-visible-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">visible?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Whether or not the element is visible. Not all drivers support CSS, so the
+result may be inaccurate.</p>
+
+<p>@return [Boolean]     Whether the element is visible</p>
+          
+
+          
+          <div class="method-source-code" id="visible-3F-source">
+            <pre><span class="ruby-comment"># File lib/capybara/node/element.rb, line 144</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">visible?</span>
+  <span class="ruby-identifier">synchronize</span> { <span class="ruby-identifier">base</span>.<span class="ruby-identifier">visible?</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- visible-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- visible-3F-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

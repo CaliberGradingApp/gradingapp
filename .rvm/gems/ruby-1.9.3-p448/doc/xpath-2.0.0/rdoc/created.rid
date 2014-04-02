@@ -1,0 +1,10 @@
+Thu, 07 Nov 2013 23:07:03 -0400
+lib/xpath/union.rb	Thu, 07 Nov 2013 23:06:43 -0400
+lib/xpath/dsl.rb	Thu, 07 Nov 2013 23:06:43 -0400
+lib/xpath/version.rb	Thu, 07 Nov 2013 23:06:43 -0400
+lib/xpath/renderer.rb	Thu, 07 Nov 2013 23:06:43 -0400
+lib/xpath/literal.rb	Thu, 07 Nov 2013 23:06:43 -0400
+lib/xpath/html.rb	Thu, 07 Nov 2013 23:06:43 -0400
+lib/xpath/expression.rb	Thu, 07 Nov 2013 23:06:43 -0400
+lib/xpath.rb	Thu, 07 Nov 2013 23:06:43 -0400
+README.md	Thu, 07 Nov 2013 23:06:43 -0400

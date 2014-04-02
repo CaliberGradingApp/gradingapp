@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>nokogiri-1.6.0 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body>
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./CHANGELOG_ja_rdoc.html">CHANGELOG.ja</a>
+  
+    <li class="file"><a href="./CHANGELOG_rdoc.html">CHANGELOG</a>
+  
+    <li class="file"><a href="./C_CODING_STYLE_rdoc.html">C_CODING_STYLE</a>
+  
+    <li class="file"><a href="./Manifest_txt.html">Manifest</a>
+  
+    <li class="file"><a href="./README_ja_rdoc.html">README.ja</a>
+  
+    <li class="file"><a href="./README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Nokogiri.html">Nokogiri</a>
+  
+    <li><a href="./Nokogiri/CSS.html">Nokogiri::CSS</a>
+  
+    <li><a href="./Nokogiri/CSS/Node.html">Nokogiri::CSS::Node</a>
+  
+    <li><a href="./Nokogiri/CSS/Parser.html">Nokogiri::CSS::Parser</a>
+  
+    <li><a href="./Nokogiri/CSS/SyntaxError.html">Nokogiri::CSS::SyntaxError</a>
+  
+    <li><a href="./Nokogiri/CSS/Tokenizer.html">Nokogiri::CSS::Tokenizer</a>
+  
+    <li><a href="./Nokogiri/CSS/Tokenizer/ScanError.html">Nokogiri::CSS::Tokenizer::ScanError</a>
+  
+    <li><a href="./Nokogiri/Decorators.html">Nokogiri::Decorators</a>
+  
+    <li><a href="./Nokogiri/Decorators/Slop.html">Nokogiri::Decorators::Slop</a>
+  
+    <li><a href="./Nokogiri/EncodingHandler.html">Nokogiri::EncodingHandler</a>
+  
+    <li><a href="./Nokogiri/HTML.html">Nokogiri::HTML</a>
+  
+    <li><a href="./Nokogiri/HTML/Builder.html">Nokogiri::HTML::Builder</a>
+  
+    <li><a href="./Nokogiri/HTML/Document.html">Nokogiri::HTML::Document</a>
+  
+    <li><a href="./Nokogiri/HTML/Document/EncodingReader.html">Nokogiri::HTML::Document::EncodingReader</a>
+  
+    <li><a href="./Nokogiri/HTML/Document/EncodingReader/JumpSAXHandler.html">Nokogiri::HTML::Document::EncodingReader::JumpSAXHandler</a>
+  
+    <li><a href="./Nokogiri/HTML/DocumentFragment.html">Nokogiri::HTML::DocumentFragment</a>
+  
+    <li><a href="./Nokogiri/HTML/ElementDescription.html">Nokogiri::HTML::ElementDescription</a>
+  
+    <li><a href="./Nokogiri/HTML/EntityDescription.html">Nokogiri::HTML::EntityDescription</a>
+  
+    <li><a href="./Nokogiri/HTML/EntityLookup.html">Nokogiri::HTML::EntityLookup</a>
+  
+    <li><a href="./Nokogiri/HTML/SAX.html">Nokogiri::HTML::SAX</a>
+  
+    <li><a href="./Nokogiri/HTML/SAX/Parser.html">Nokogiri::HTML::SAX::Parser</a>
+  
+    <li><a href="./Nokogiri/HTML/SAX/ParserContext.html">Nokogiri::HTML::SAX::ParserContext</a>
+  
+    <li><a href="./Nokogiri/HTML/SAX/PushParser.html">Nokogiri::HTML::SAX::PushParser</a>
+  
+    <li><a href="./Nokogiri/SyntaxError.html">Nokogiri::SyntaxError</a>
+  
+    <li><a href="./Nokogiri/XML.html">Nokogiri::XML</a>
+  
+    <li><a href="./Nokogiri/XML/Attr.html">Nokogiri::XML::Attr</a>
+  
+    <li><a href="./Nokogiri/XML/AttributeDecl.html">Nokogiri::XML::AttributeDecl</a>
+  
+    <li><a href="./Nokogiri/XML/Builder.html">Nokogiri::XML::Builder</a>
+  
+    <li><a href="./Nokogiri/XML/CDATA.html">Nokogiri::XML::CDATA</a>
+  
+    <li><a href="./Nokogiri/XML/CharacterData.html">Nokogiri::XML::CharacterData</a>
+  
+    <li><a href="./Nokogiri/XML/Comment.html">Nokogiri::XML::Comment</a>
+  
+    <li><a href="./Nokogiri/XML/DTD.html">Nokogiri::XML::DTD</a>
+  
+    <li><a href="./Nokogiri/XML/Document.html">Nokogiri::XML::Document</a>
+  
+    <li><a href="./Nokogiri/XML/DocumentFragment.html">Nokogiri::XML::DocumentFragment</a>
+  
+    <li><a href="./Nokogiri/XML/Element.html">Nokogiri::XML::Element</a>
+  
+    <li><a href="./Nokogiri/XML/ElementContent.html">Nokogiri::XML::ElementContent</a>
+  
+    <li><a href="./Nokogiri/XML/ElementDecl.html">Nokogiri::XML::ElementDecl</a>
+  
+    <li><a href="./Nokogiri/XML/EntityDecl.html">Nokogiri::XML::EntityDecl</a>
+  
+    <li><a href="./Nokogiri/XML/EntityReference.html">Nokogiri::XML::EntityReference</a>
+  
+    <li><a href="./Nokogiri/XML/Namespace.html">Nokogiri::XML::Namespace</a>
+  
+    <li><a href="./Nokogiri/XML/Node.html">Nokogiri::XML::Node</a>
+  
+    <li><a href="./Nokogiri/XML/Node/SaveOptions.html">Nokogiri::XML::Node::SaveOptions</a>
+  
+    <li><a href="./Nokogiri/XML/NodeSet.html">Nokogiri::XML::NodeSet</a>
+  
+    <li><a href="./Nokogiri/XML/Notation.html">Nokogiri::XML::Notation</a>
+  
+    <li><a href="./Nokogiri/XML/PP.html">Nokogiri::XML::PP</a>
+  
+    <li><a href="./Nokogiri/XML/PP/CharacterData.html">Nokogiri::XML::PP::CharacterData</a>
+  
+    <li><a href="./Nokogiri/XML/PP/Node.html">Nokogiri::XML::PP::Node</a>
+  
+    <li><a href="./Nokogiri/XML/ParseOptions.html">Nokogiri::XML::ParseOptions</a>
+  
+    <li><a href="./Nokogiri/XML/ProcessingInstruction.html">Nokogiri::XML::ProcessingInstruction</a>
+  
+    <li><a href="./Nokogiri/XML/Reader.html">Nokogiri::XML::Reader</a>
+  
+    <li><a href="./Nokogiri/XML/RelaxNG.html">Nokogiri::XML::RelaxNG</a>
+  
+    <li><a href="./Nokogiri/XML/SAX.html">Nokogiri::XML::SAX</a>
+  
+    <li><a href="./Nokogiri/XML/SAX/Document.html">Nokogiri::XML::SAX::Document</a>
+  
+    <li><a href="./Nokogiri/XML/SAX/Parser.html">Nokogiri::XML::SAX::Parser</a>
+  
+    <li><a href="./Nokogiri/XML/SAX/Parser/Attribute.html">Nokogiri::XML::SAX::Parser::Attribute</a>
+  
+    <li><a href="./Nokogiri/XML/SAX/ParserContext.html">Nokogiri::XML::SAX::ParserContext</a>
+  
+    <li><a href="./Nokogiri/XML/SAX/PushParser.html">Nokogiri::XML::SAX::PushParser</a>
+  
+    <li><a href="./Nokogiri/XML/Schema.html">Nokogiri::XML::Schema</a>
+  
+    <li><a href="./Nokogiri/XML/SyntaxError.html">Nokogiri::XML::SyntaxError</a>
+  
+    <li><a href="./Nokogiri/XML/Text.html">Nokogiri::XML::Text</a>
+  
+    <li><a href="./Nokogiri/XML/XPath.html">Nokogiri::XML::XPath</a>
+  
+    <li><a href="./Nokogiri/XML/XPath/SyntaxError.html">Nokogiri::XML::XPath::SyntaxError</a>
+  
+    <li><a href="./Nokogiri/XML/XPathContext.html">Nokogiri::XML::XPathContext</a>
+  
+    <li><a href="./Nokogiri/XSLT.html">Nokogiri::XSLT</a>
+  
+    <li><a href="./Nokogiri/XSLT/Stylesheet.html">Nokogiri::XSLT::Stylesheet</a>
+  
+    <li><a href="./XSD.html">XSD</a>
+  
+    <li><a href="./XSD/XMLParser.html">XSD::XMLParser</a>
+  
+    <li><a href="./XSD/XMLParser/Nokogiri.html">XSD::XMLParser::Nokogiri</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<h1 id="label-Nokogiri+%3Cimg+src%3D%22https%3A%2F%2Fsecure.travis-ci.org%2Fsparklemotion%2Fnokogiri.png%3Frvm%3D1.9.3%22+%2F%3E+%3Cimg+src%3D%22https%3A%2F%2Fcodeclimate.com%2Fbadge.png%22+%2F%3E"><a href="Nokogiri.html">Nokogiri</a> <a href="http://travis-ci.org/sparklemotion/nokogiri"><img src="https://secure.travis-ci.org/sparklemotion/nokogiri.png?rvm=1.9.3" /></a> <a href="https://codeclimate.com/github/sparklemotion/nokogiri"><img src="https://codeclimate.com/badge.png" /></a></h1>
+<ul><li>
+<p><a href="http://nokogiri.org">nokogiri.org</a></p>
+</li><li>
+<p><a
+href="http://github.com/sparklemotion/nokogiri/wikis">github.com/sparklemotion/nokogiri/wikis</a></p>
+</li><li>
+<p><a
+href="http://github.com/sparklemotion/nokogiri/tree/master">github.com/sparklemotion/nokogiri/tree/master</a></p>
+</li><li>
+<p><a
+href="http://groups.google.com/group/nokogiri-talk">groups.google.com/group/nokogiri-talk</a></p>
+</li><li>
+<p><a
+href="http://github.com/sparklemotion/nokogiri/issues">github.com/sparklemotion/nokogiri/issues</a></p>
+</li></ul>
+
+<h2 id="label-DESCRIPTION%3A">DESCRIPTION:</h2>
+
+<p><a href="Nokogiri.html">Nokogiri</a> (鋸) is an HTML, XML, SAX, and Reader
+parser.  Among Nokogiri’s many features is the ability to search documents
+via XPath or CSS3 selectors.</p>
+
+<p>XML is like violence - if it doesn’t solve your problems, you are not using
+enough of it.</p>
+
+<h2 id="label-FEATURES%3A">FEATURES:</h2>
+<ul><li>
+<p>XPath support for document searching</p>
+</li><li>
+<p>CSS3 selector support for document searching</p>
+</li><li>
+<p>XML/HTML builder</p>
+</li></ul>
+
+<p><a href="Nokogiri.html">Nokogiri</a> parses and searches XML/HTML very
+quickly, and also has correctly implemented CSS3 selector support as well
+as XPath support.</p>
+
+<h2 id="label-SUPPORT%3A">SUPPORT:</h2>
+
+<p>Before filing a bug report, please read our <a
+href="http://nokogiri.org/tutorials/getting_help.html">submission
+guidelines</a> at:</p>
+
+<pre>* http://nokogiri.org/tutorials/getting_help.html</pre>
+
+<p>The <a href="Nokogiri.html">Nokogiri</a> <a
+href="http://groups.google.com/group/nokogiri-talk">mailing list</a> is
+available here:</p>
+
+<pre>* http://groups.google.com/group/nokogiri-talk</pre>
+
+<p>The <a href="http://github.com/sparklemotion/nokogiri/issues">bug
+tracker</a> is available here:</p>
+
+<pre>* http://github.com/sparklemotion/nokogiri/issues</pre>
+
+<p>The IRC channel is nokogiri on freenode.</p>
+
+<h2 id="label-SYNOPSIS%3A">SYNOPSIS:</h2>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">'nokogiri'</span>
+<span class="ruby-identifier">require</span> <span class="ruby-string">'open-uri'</span>
+
+<span class="ruby-comment"># Get a Nokogiri::HTML::Document for the page we’re interested in...</span>
+
+<span class="ruby-identifier">doc</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">HTML</span>(<span class="ruby-identifier">open</span>(<span class="ruby-string">'http://www.google.com/search?q=sparklemotion'</span>))
+
+<span class="ruby-comment"># Do funky things with it using Nokogiri::XML::Node methods...</span>
+
+<span class="ruby-comment">####</span>
+<span class="ruby-comment"># Search for nodes by css</span>
+<span class="ruby-identifier">doc</span>.<span class="ruby-identifier">css</span>(<span class="ruby-string">'h3.r a'</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">link</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-identifier">link</span>.<span class="ruby-identifier">content</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment">####</span>
+<span class="ruby-comment"># Search for nodes by xpath</span>
+<span class="ruby-identifier">doc</span>.<span class="ruby-identifier">xpath</span>(<span class="ruby-string">'//h3/a'</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">link</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-identifier">link</span>.<span class="ruby-identifier">content</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment">####</span>
+<span class="ruby-comment"># Or mix and match.</span>
+<span class="ruby-identifier">doc</span>.<span class="ruby-identifier">search</span>(<span class="ruby-string">'h3.r a.l'</span>, <span class="ruby-string">'//h3/a'</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">link</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-identifier">link</span>.<span class="ruby-identifier">content</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<h2 id="label-REQUIREMENTS%3A">REQUIREMENTS:</h2>
+<ul><li>
+<p>ruby 1.8 or 1.9</p>
+</li><li>
+<p>libxml2</p>
+</li><li>
+<p>libxml2-dev</p>
+</li><li>
+<p>libxslt</p>
+</li><li>
+<p>libxslt-dev</p>
+</li></ul>
+
+<h2 id="label-ENCODING%3A">ENCODING:</h2>
+
+<p>Strings are always stored as UTF-8 internally.  Methods that return text
+values will always return UTF-8 encoded strings.  Methods that return XML
+(like to_xml, to_html and inner_html) will return a string encoded like the
+source document.</p>
+
+<p><strong>WARNING</strong></p>
+
+<p>Some documents declare one particular encoding, but use a different one.
+So, which encoding should the parser choose?</p>
+
+<p>Remember that data is just a stream of bytes. Only we humans add meaning to
+that stream. Any particular set of bytes could be valid characters in
+multiple encodings, so detecting encoding with 100% accuracy is not
+possible. libxml2 does its best, but it can’t be right 100% of the time.</p>
+
+<p>If you want <a href="Nokogiri.html">Nokogiri</a> to handle the document
+encoding properly, your best bet is to explicitly set the encoding.  Here
+is an example of explicitly setting the encoding to EUC-JP on the parser:</p>
+
+<pre>doc = Nokogiri.XML('&lt;foo&gt;&lt;bar /&gt;&lt;foo&gt;', nil, 'EUC-JP')</pre>
+
+<h2 id="label-INSTALL%3A">INSTALL:</h2>
+<ul><li>
+<p>sudo gem install nokogiri</p>
+</li></ul>
+
+<h3 id="label-Binary+packages">Binary packages</h3>
+
+<p>Binary packages are available for:</p>
+<ul><li>
+<p><a
+href="http://download.opensuse.org/repositories/devel:/languages:/ruby:/extensions/">SuSE</a></p>
+</li><li>
+<p><a
+href="http://s390.koji.fedoraproject.org/koji/packageinfo?packageID=6756">Fedora</a></p>
+</li></ul>
+
+<h2 id="label-DEVELOPMENT%3A">DEVELOPMENT:</h2>
+
+<h3 id="label-Developing+on+C+Ruby+%28MRI%29">Developing on C Ruby (MRI)</h3>
+
+<p>Developing <a href="Nokogiri.html">Nokogiri</a> requires racc and rexical
+to generate the parser and tokenizer.  To start development, make sure you
+have `libxml2` and `libxslt` installed.</p>
+
+<p>Then install core gems and bootstrap:</p>
+
+<pre>$ gem install hoe rake-compiler mini_portile
+$ rake newb</pre>
+
+<h3 id="label-Developing+on+JRuby">Developing on JRuby</h3>
+
+<p>Currently, development with JRuby depends on CRuby being installed.  With
+CRuby, install racc and rexical:</p>
+
+<pre>$ gem install racc rexical</pre>
+
+<p>Make sure hoe and rake compiler are installed with JRuby:</p>
+
+<pre>$ jgem install hoe rake-compiler</pre>
+
+<p>Then run rake:</p>
+
+<pre>$ jruby -S rake</pre>
+
+<h2 id="label-LICENSE%3A">LICENSE:</h2>
+
+<p>(The MIT License)</p>
+
+<p>Copyright © 2008 - 2012:</p>
+<ul><li>
+<p><a href="http://tenderlovemaking.com">Aaron Patterson</a></p>
+</li><li>
+<p><a href="http://mike.daless.io">Mike Dalessio</a></p>
+</li><li>
+<p><a href="http://blog.headius.com">Charles Nutter</a></p>
+</li><li>
+<p><a href="http://www.serabe.com">Sergio Arbeo</a></p>
+</li><li>
+<p><a href="http://polycrystal.org">Patrick Mahoney</a></p>
+</li><li>
+<p><a href="http://yokolet.blogspot.com">Yoko Harada</a></p>
+</li></ul>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the ‘Software’),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED ‘AS IS’, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.</p>
+
+</div>
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

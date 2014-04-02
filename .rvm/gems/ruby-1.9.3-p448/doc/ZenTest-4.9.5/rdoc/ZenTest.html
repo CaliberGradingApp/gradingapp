@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class ZenTest - ZenTest-4.9.5 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/zentest.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><a class="include" href="ZenTestMapping.html">ZenTestMapping</a>
+  
+  
+  </ul>
+</nav>
+
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-autotest">::autotest</a>
+    
+    <li><a href="#method-c-fix">::fix</a>
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-c-usage">::usage</a>
+    
+    <li><a href="#method-c-usage_with_exit">::usage_with_exit</a>
+    
+    <li><a href="#method-i-add_missing_method">#add_missing_method</a>
+    
+    <li><a href="#method-i-analyze">#analyze</a>
+    
+    <li><a href="#method-i-analyze_impl">#analyze_impl</a>
+    
+    <li><a href="#method-i-analyze_test">#analyze_test</a>
+    
+    <li><a href="#method-i-convert_class_name">#convert_class_name</a>
+    
+    <li><a href="#method-i-create_method">#create_method</a>
+    
+    <li><a href="#method-i-generate_code">#generate_code</a>
+    
+    <li><a href="#method-i-get_class">#get_class</a>
+    
+    <li><a href="#method-i-get_inherited_methods_for">#get_inherited_methods_for</a>
+    
+    <li><a href="#method-i-get_methods_for">#get_methods_for</a>
+    
+    <li><a href="#method-i-is_test_class">#is_test_class</a>
+    
+    <li><a href="#method-i-load_file">#load_file</a>
+    
+    <li><a href="#method-i-methods_and_tests">#methods_and_tests</a>
+    
+    <li><a href="#method-i-missing_methods">#missing_methods</a>
+    
+    <li><a href="#method-i-process_class">#process_class</a>
+    
+    <li><a href="#method-i-result">#result</a>
+    
+    <li><a href="#method-i-scan_files">#scan_files</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./History_txt.html">History</a>
+  
+    <li class="file"><a href="./Manifest_txt.html">Manifest</a>
+  
+    <li class="file"><a href="./README_txt.html">README</a>
+  
+    <li class="file"><a href="./articles/how_to_use_zentest_txt.html">how_to_use_zentest</a>
+  
+    <li class="file"><a href="./example_txt.html">example</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Autotest.html">Autotest</a>
+  
+    <li><a href="./Autotest/AutoUpdate.html">Autotest::AutoUpdate</a>
+  
+    <li><a href="./Autotest/Bundler.html">Autotest::Bundler</a>
+  
+    <li><a href="./Autotest/Isolate.html">Autotest::Isolate</a>
+  
+    <li><a href="./Autotest/Once.html">Autotest::Once</a>
+  
+    <li><a href="./Autotest/Preload.html">Autotest::Preload</a>
+  
+    <li><a href="./Autotest/RCov.html">Autotest::RCov</a>
+  
+    <li><a href="./Autotest/Restart.html">Autotest::Restart</a>
+  
+    <li><a href="./Autotest/Timestamp.html">Autotest::Timestamp</a>
+  
+    <li><a href="./FunctionalTestMatrix.html">FunctionalTestMatrix</a>
+  
+    <li><a href="./Module.html">Module</a>
+  
+    <li><a href="./Multiruby.html">Multiruby</a>
+  
+    <li><a href="./UnitDiff.html">UnitDiff</a>
+  
+    <li><a href="./ZenTest.html">ZenTest</a>
+  
+    <li><a href="./ZenTestMapping.html">ZenTestMapping</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class ZenTest</h1>
+
+  <div id="description" class="description">
+    
+<p><a href="ZenTest.html">ZenTest</a> scans your target and unit-test code and
+writes your missing code based on simple naming rules, enabling XP at a
+much quicker pace. <a href="ZenTest.html">ZenTest</a> only works with Ruby
+and Minitest or Test::Unit.</p>
+
+<h2 id="label-RULES">RULES</h2>
+
+<p><a href="ZenTest.html">ZenTest</a> uses the following rules to figure out
+what code should be generated:</p>
+<ul><li>
+<p>Definition:</p>
+<ul><li>
+<p>CUT = Class Under Test</p>
+</li><li>
+<p>TC = Test Class (for CUT)</p>
+</li></ul>
+</li><li>
+<p>TC’s name is the same as CUT w/ “Test” prepended at every scope level.</p>
+<ul><li>
+<p>Example: TestA::TestB vs A::B.</p>
+</li></ul>
+</li><li>
+<p>CUT method names are used in CT, with “test_” prependend and optional
+“_ext” extensions for differentiating test case edge boundaries.</p>
+<ul><li>
+<p>Example:</p>
+<ul><li>
+<p>A::B#blah</p>
+</li><li>
+<p>TestA::TestB#test_blah_normal</p>
+</li><li>
+<p>TestA::TestB#test_blah_missing_file</p>
+</li></ul>
+</li></ul>
+</li><li>
+<p>All naming conventions are bidirectional with the exception of test
+extensions.</p>
+</li></ul>
+
+<p>See <a href="ZenTestMapping.html">ZenTestMapping</a> for documentation on
+method naming.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="VERSION">VERSION
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-autotest" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">autotest</span><span
+            class="method-args">(*klasses)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Process all the supplied classes for methods etc, and analyse the results.
+Generate the skeletal code and eval it to put the methods into the runtime
+environment.</p>
+          
+
+          
+          <div class="method-source-code" id="autotest-source">
+            <pre><span class="ruby-comment"># File lib/zentest.rb, line 577</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">autotest</span>(*<span class="ruby-identifier">klasses</span>)
+  <span class="ruby-identifier">zentest</span> = <span class="ruby-constant">ZenTest</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">klasses</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">klass</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">zentest</span>.<span class="ruby-identifier">process_class</span>(<span class="ruby-identifier">klass</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">zentest</span>.<span class="ruby-identifier">analyze</span>
+
+  <span class="ruby-identifier">zentest</span>.<span class="ruby-identifier">missing_methods</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">klass</span>,<span class="ruby-identifier">methods</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">methods</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">method</span>,<span class="ruby-identifier">x</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;autotest generating #{klass}##{method}&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">zentest</span>.<span class="ruby-identifier">generate_code</span>
+  <span class="ruby-identifier">code</span> = <span class="ruby-identifier">zentest</span>.<span class="ruby-identifier">result</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-identifier">code</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">$DEBUG</span>
+
+  <span class="ruby-constant">Object</span>.<span class="ruby-identifier">class_eval</span> <span class="ruby-identifier">code</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- autotest-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- autotest-method -->
+
+    
+      <div id="method-c-fix" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">fix</span><span
+            class="method-args">(*files)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Runs <a href="ZenTest.html">ZenTest</a> over all the supplied files so that
+they are analysed and the missing methods have skeleton code written. If no
+files are supplied, splutter out some help.</p>
+          
+
+          
+          <div class="method-source-code" id="fix-source">
+            <pre><span class="ruby-comment"># File lib/zentest.rb, line 564</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">fix</span>(*<span class="ruby-identifier">files</span>)
+  <span class="ruby-constant">ZenTest</span>.<span class="ruby-identifier">usage_with_exit</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">files</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-identifier">zentest</span> = <span class="ruby-constant">ZenTest</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">zentest</span>.<span class="ruby-identifier">scan_files</span>(*<span class="ruby-identifier">files</span>)
+  <span class="ruby-identifier">zentest</span>.<span class="ruby-identifier">analyze</span>
+  <span class="ruby-identifier">zentest</span>.<span class="ruby-identifier">generate_code</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">zentest</span>.<span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- fix-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- fix-method -->
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/zentest.rb, line 80</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>
+  <span class="ruby-ivar">@result</span> = []
+  <span class="ruby-ivar">@test_klasses</span> = {}
+  <span class="ruby-ivar">@klasses</span> = {}
+  <span class="ruby-ivar">@error_count</span> = <span class="ruby-value">0</span>
+  <span class="ruby-ivar">@inherited_methods</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">h</span>,<span class="ruby-identifier">k</span><span class="ruby-operator">|</span> <span class="ruby-identifier">h</span>[<span class="ruby-identifier">k</span>] = {} }
+  <span class="ruby-comment"># key = klassname, val = hash of methods =&gt; true</span>
+  <span class="ruby-ivar">@missing_methods</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">h</span>,<span class="ruby-identifier">k</span><span class="ruby-operator">|</span> <span class="ruby-identifier">h</span>[<span class="ruby-identifier">k</span>] = {} }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+      <div id="method-c-usage" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">usage</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Provide a certain amount of help.</p>
+          
+
+          
+          <div class="method-source-code" id="usage-source">
+            <pre><span class="ruby-comment"># File lib/zentest.rb, line 521</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">usage</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-value">&lt;&lt;-EO_USAGE
+usage: #{File.basename $0} [options] test-and-implementation-files...
+
+ZenTest scans your target and unit-test code and writes your missing
+code based on simple naming rules, enabling XP at a much quicker
+pace. ZenTest only works with Ruby and Minitest or Test::Unit.
+
+ZenTest uses the following rules to figure out what code should be
+generated:
+
+* Definition:
+  * CUT = Class Under Test
+  * TC = Test Class (for CUT)
+* TC's name is the same as CUT w/ &quot;Test&quot; prepended at every scope level.
+  * Example: TestA::TestB vs A::B.
+* CUT method names are used in CT, with &quot;test_&quot; prependend and optional &quot;_ext&quot; extensions for differentiating test case edge boundaries.
+  * Example:
+    * A::B#blah
+    * TestA::TestB#test_blah_normal
+    * TestA::TestB#test_blah_missing_file
+* All naming conventions are bidirectional with the exception of test extensions.
+
+options:
+  -h display this information
+  -v display version information
+  -r Reverse mapping (ClassTest instead of TestClass)
+  -e (Rapid XP) eval the code generated instead of printing it
+  -t test/unit generation (default is minitest).
+
+    EO_USAGE</span>
+  <span class="ruby-keyword">end</span></pre>
+          </div><!-- usage-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- usage-method -->
+
+    
+      <div id="method-c-usage_with_exit" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">usage_with_exit</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Give help, then quit.</p>
+          
+
+          
+          <div class="method-source-code" id="usage_with_exit-source">
+            <pre><span class="ruby-comment"># File lib/zentest.rb, line 555</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">usage_with_exit</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">usage</span>
+  <span class="ruby-identifier">exit</span> <span class="ruby-value">0</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- usage_with_exit-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- usage_with_exit-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-add_missing_method" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_missing_method</span><span
+            class="method-args">(klassname, methodname)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Adds a missing method to the collected results.</p>
+          
+
+          
+          <div class="method-source-code" id="add_missing_method-source">
+            <pre><span class="ruby-comment"># File lib/zentest.rb, line 326</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_missing_method</span>(<span class="ruby-identifier">klassname</span>, <span class="ruby-identifier">methodname</span>)
+  <span class="ruby-ivar">@result</span>.<span class="ruby-identifier">push</span> <span class="ruby-node">&quot;# ERROR method #{klassname}\##{methodname} does not exist (1)&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">$DEBUG</span> <span class="ruby-keyword">and</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">$TESTING</span>
+  <span class="ruby-ivar">@error_count</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+  <span class="ruby-ivar">@missing_methods</span>[<span class="ruby-identifier">klassname</span>][<span class="ruby-identifier">methodname</span>] = <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_missing_method-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_missing_method-method -->
+
+    
+      <div id="method-i-analyze" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">analyze</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Walk each known class and test that each method has a test method Then do
+it in the other direction…</p>
+          
+
+          
+          <div class="method-source-code" id="analyze-source">
+            <pre><span class="ruby-comment"># File lib/zentest.rb, line 442</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">analyze</span>
+  <span class="ruby-comment"># walk each known class and test that each method has a test method</span>
+  <span class="ruby-ivar">@klasses</span>.<span class="ruby-identifier">each_key</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">klassname</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">analyze_impl</span>(<span class="ruby-identifier">klassname</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># now do it in the other direction...</span>
+  <span class="ruby-ivar">@test_klasses</span>.<span class="ruby-identifier">each_key</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">testklassname</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">analyze_test</span>(<span class="ruby-identifier">testklassname</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- analyze-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- analyze-method -->
+
+    
+      <div id="method-i-analyze_impl" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">analyze_impl</span><span
+            class="method-args">(klassname)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Checks, for the given class klassname, that each method has a corrsponding
+test method. If it doesn’t this is added to the information for that class</p>
+          
+
+          
+          <div class="method-source-code" id="analyze_impl-source">
+            <pre><span class="ruby-comment"># File lib/zentest.rb, line 342</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">analyze_impl</span>(<span class="ruby-identifier">klassname</span>)
+  <span class="ruby-identifier">testklassname</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">convert_class_name</span>(<span class="ruby-identifier">klassname</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@test_klasses</span>[<span class="ruby-identifier">testklassname</span>] <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">_</span>, <span class="ruby-identifier">testmethods</span> = <span class="ruby-identifier">methods_and_tests</span>(<span class="ruby-identifier">klassname</span>, <span class="ruby-identifier">testklassname</span>)
+
+    <span class="ruby-comment"># check that each method has a test method</span>
+    <span class="ruby-ivar">@klasses</span>[<span class="ruby-identifier">klassname</span>].<span class="ruby-identifier">each_key</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">methodname</span> <span class="ruby-operator">|</span>
+      <span class="ruby-identifier">testmethodname</span> = <span class="ruby-identifier">normal_to_test</span>(<span class="ruby-identifier">methodname</span>)
+      <span class="ruby-keyword">unless</span> <span class="ruby-identifier">testmethods</span>[<span class="ruby-identifier">testmethodname</span>] <span class="ruby-keyword">then</span>
+        <span class="ruby-keyword">begin</span>
+          <span class="ruby-keyword">unless</span> <span class="ruby-identifier">testmethods</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">find</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">m</span><span class="ruby-operator">|</span> <span class="ruby-identifier">m</span> <span class="ruby-operator">=~</span> <span class="ruby-node">/#{testmethodname}(_\w+)+$/</span> } <span class="ruby-keyword">then</span>
+            <span class="ruby-keyword">self</span>.<span class="ruby-identifier">add_missing_method</span>(<span class="ruby-identifier">testklassname</span>, <span class="ruby-identifier">testmethodname</span>)
+          <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">rescue</span> <span class="ruby-constant">RegexpError</span>
+          <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;# ERROR trying to use '#{testmethodname}' as a regex. Look at #{klassname}.#{methodname}&quot;</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span> <span class="ruby-comment"># testmethods[testmethodname]</span>
+    <span class="ruby-keyword">end</span> <span class="ruby-comment"># @klasses[klassname].each_key</span>
+  <span class="ruby-keyword">else</span> <span class="ruby-comment"># ! @test_klasses[testklassname]</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;# ERROR test class #{testklassname} does not exist&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">$DEBUG</span>
+    <span class="ruby-ivar">@error_count</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+
+    <span class="ruby-ivar">@klasses</span>[<span class="ruby-identifier">klassname</span>].<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">methodname</span> <span class="ruby-operator">|</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">add_missing_method</span>(<span class="ruby-identifier">testklassname</span>, <span class="ruby-identifier">normal_to_test</span>(<span class="ruby-identifier">methodname</span>))
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span> <span class="ruby-comment"># @test_klasses[testklassname]</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- analyze_impl-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- analyze_impl-method -->
+
+    
+      <div id="method-i-analyze_test" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">analyze_test</span><span
+            class="method-args">(testklassname)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>For the given test class testklassname, ensure that all the test methods
+have corresponding (normal) methods. If not, add them to the information
+about that class.</p>
+          
+
+          
+          <div class="method-source-code" id="analyze_test-source">
+            <pre><span class="ruby-comment"># File lib/zentest.rb, line 373</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">analyze_test</span>(<span class="ruby-identifier">testklassname</span>)
+  <span class="ruby-identifier">klassname</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">convert_class_name</span>(<span class="ruby-identifier">testklassname</span>)
+
+  <span class="ruby-comment"># CUT might be against a core class, if so, slurp it and analyze it</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">$stdlib</span>[<span class="ruby-identifier">klassname</span>] <span class="ruby-keyword">then</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">process_class</span>(<span class="ruby-identifier">klassname</span>, <span class="ruby-keyword">true</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">analyze_impl</span>(<span class="ruby-identifier">klassname</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@klasses</span>[<span class="ruby-identifier">klassname</span>] <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">methods</span>, <span class="ruby-identifier">testmethods</span> = <span class="ruby-identifier">methods_and_tests</span>(<span class="ruby-identifier">klassname</span>,<span class="ruby-identifier">testklassname</span>)
+
+    <span class="ruby-comment"># check that each test method has a method</span>
+    <span class="ruby-identifier">testmethods</span>.<span class="ruby-identifier">each_key</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">testmethodname</span> <span class="ruby-operator">|</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">testmethodname</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/^test_(?!integration_)/</span> <span class="ruby-keyword">then</span>
+
+        <span class="ruby-comment"># try the current name</span>
+        <span class="ruby-identifier">methodname</span> = <span class="ruby-identifier">test_to_normal</span>(<span class="ruby-identifier">testmethodname</span>, <span class="ruby-identifier">klassname</span>)
+        <span class="ruby-identifier">orig_name</span> = <span class="ruby-identifier">methodname</span>.<span class="ruby-identifier">dup</span>
+
+        <span class="ruby-identifier">found</span> = <span class="ruby-keyword">false</span>
+        <span class="ruby-keyword">until</span> <span class="ruby-identifier">methodname</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;&quot;</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">methods</span>[<span class="ruby-identifier">methodname</span>] <span class="ruby-keyword">or</span> <span class="ruby-ivar">@inherited_methods</span>[<span class="ruby-identifier">klassname</span>][<span class="ruby-identifier">methodname</span>] <span class="ruby-keyword">do</span>
+            <span class="ruby-comment"># try the name minus an option (ie mut_opt1 -&gt; mut)</span>
+          <span class="ruby-keyword">if</span> <span class="ruby-identifier">methodname</span>.<span class="ruby-identifier">sub!</span>(<span class="ruby-regexp">/_[^_]+$/</span>, <span class="ruby-string">''</span>) <span class="ruby-keyword">then</span>
+            <span class="ruby-keyword">if</span> <span class="ruby-identifier">methods</span>[<span class="ruby-identifier">methodname</span>] <span class="ruby-keyword">or</span> <span class="ruby-ivar">@inherited_methods</span>[<span class="ruby-identifier">klassname</span>][<span class="ruby-identifier">methodname</span>] <span class="ruby-keyword">then</span>
+              <span class="ruby-identifier">found</span> = <span class="ruby-keyword">true</span>
+            <span class="ruby-keyword">end</span>
+          <span class="ruby-keyword">else</span>
+            <span class="ruby-keyword">break</span> <span class="ruby-comment"># no more substitutions will take place</span>
+          <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span> <span class="ruby-comment"># methodname == &quot;&quot; or ...</span>
+
+        <span class="ruby-keyword">unless</span> <span class="ruby-identifier">found</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">methods</span>[<span class="ruby-identifier">methodname</span>] <span class="ruby-keyword">or</span> <span class="ruby-identifier">methodname</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;initialize&quot;</span> <span class="ruby-keyword">then</span>
+          <span class="ruby-keyword">self</span>.<span class="ruby-identifier">add_missing_method</span>(<span class="ruby-identifier">klassname</span>, <span class="ruby-identifier">orig_name</span>)
+        <span class="ruby-keyword">end</span>
+
+      <span class="ruby-keyword">else</span> <span class="ruby-comment"># not a test_.* method</span>
+        <span class="ruby-keyword">unless</span> <span class="ruby-identifier">testmethodname</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/^util_/</span> <span class="ruby-keyword">then</span>
+          <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;# WARNING Skipping #{testklassname}\##{testmethodname}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">$DEBUG</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span> <span class="ruby-comment"># testmethodname =~ ...</span>
+    <span class="ruby-keyword">end</span> <span class="ruby-comment"># testmethods.each_key</span>
+  <span class="ruby-keyword">else</span> <span class="ruby-comment"># ! @klasses[klassname]</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;# ERROR class #{klassname} does not exist&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">$DEBUG</span>
+    <span class="ruby-ivar">@error_count</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+
+    <span class="ruby-ivar">@test_klasses</span>[<span class="ruby-identifier">testklassname</span>].<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">testmethodname</span><span class="ruby-operator">|</span>
+      <span class="ruby-ivar">@missing_methods</span>[<span class="ruby-identifier">klassname</span>][<span class="ruby-identifier">test_to_normal</span>(<span class="ruby-identifier">testmethodname</span>)] = <span class="ruby-keyword">true</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span> <span class="ruby-comment"># @klasses[klassname]</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- analyze_test-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- analyze_test-method -->
+
+    
+      <div id="method-i-convert_class_name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">convert_class_name</span><span
+            class="method-args">(name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Generate the name of a testclass from non-test class so that  Foo::Blah
+=&gt; TestFoo::TestBlah, etc. It the name is already a test class, convert
+it the other way.</p>
+          
+
+          
+          <div class="method-source-code" id="convert_class_name-source">
+            <pre><span class="ruby-comment"># File lib/zentest.rb, line 190</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">convert_class_name</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">name</span> = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">is_test_class</span>(<span class="ruby-identifier">name</span>) <span class="ruby-keyword">then</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">$r</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-identifier">name</span> = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/Test($|::)/</span>, <span class="ruby-string">'\1'</span>) <span class="ruby-comment"># FooTest::BlahTest =&gt; Foo::Blah</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">name</span> = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/(^|::)Test/</span>, <span class="ruby-string">'\1'</span>) <span class="ruby-comment"># TestFoo::TestBlah =&gt; Foo::Blah</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">$r</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-identifier">name</span> = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/($|::)/</span>, <span class="ruby-string">'Test\1'</span>) <span class="ruby-comment"># Foo::Blah =&gt; FooTest::BlahTest</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">name</span> = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/(^|::)/</span>, <span class="ruby-string">'\1Test'</span>) <span class="ruby-comment"># Foo::Blah =&gt; TestFoo::TestBlah</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">name</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- convert_class_name-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- convert_class_name-method -->
+
+    
+      <div id="method-i-create_method" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create_method</span><span
+            class="method-args">(indentunit, indent, name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>create a given method at a given indentation. Returns an array containing
+the lines of the method.</p>
+          
+
+          
+          <div class="method-source-code" id="create_method-source">
+            <pre><span class="ruby-comment"># File lib/zentest.rb, line 428</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">create_method</span>(<span class="ruby-identifier">indentunit</span>, <span class="ruby-identifier">indent</span>, <span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">meth</span> = []
+  <span class="ruby-identifier">meth</span>.<span class="ruby-identifier">push</span> <span class="ruby-identifier">indentunit</span>*<span class="ruby-identifier">indent</span> <span class="ruby-operator">+</span> <span class="ruby-node">&quot;def #{name}&quot;</span>
+  <span class="ruby-identifier">meth</span>.<span class="ruby-identifier">last</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;(*args)&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">name</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/^test/</span>
+  <span class="ruby-identifier">indent</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+  <span class="ruby-identifier">meth</span>.<span class="ruby-identifier">push</span> <span class="ruby-identifier">indentunit</span>*<span class="ruby-identifier">indent</span> <span class="ruby-operator">+</span> <span class="ruby-node">&quot;raise NotImplementedError, 'Need to write #{name}'&quot;</span>
+  <span class="ruby-identifier">indent</span> <span class="ruby-operator">-=</span> <span class="ruby-value">1</span>
+  <span class="ruby-identifier">meth</span>.<span class="ruby-identifier">push</span> <span class="ruby-identifier">indentunit</span>*<span class="ruby-identifier">indent</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;end&quot;</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">meth</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- create_method-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- create_method-method -->
+
+    
+      <div id="method-i-generate_code" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">generate_code</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Using the results gathered during analysis generate skeletal code with
+methods raising NotImplementedError, so that they can be filled in later,
+and so the tests will fail to start with.</p>
+          
+
+          
+          <div class="method-source-code" id="generate_code-source">
+            <pre><span class="ruby-comment"># File lib/zentest.rb, line 458</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">generate_code</span>
+  <span class="ruby-ivar">@result</span>.<span class="ruby-identifier">unshift</span> <span class="ruby-node">&quot;# Code Generated by ZenTest v. #{VERSION}&quot;</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">$DEBUG</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-ivar">@result</span>.<span class="ruby-identifier">push</span> <span class="ruby-node">&quot;# found classes: #{@klasses.keys.join(', ')}&quot;</span>
+    <span class="ruby-ivar">@result</span>.<span class="ruby-identifier">push</span> <span class="ruby-node">&quot;# found test classes: #{@test_klasses.keys.join(', ')}&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@missing_methods</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-ivar">@result</span>.<span class="ruby-identifier">push</span> <span class="ruby-string">&quot;&quot;</span>
+    <span class="ruby-ivar">@result</span>.<span class="ruby-identifier">push</span> <span class="ruby-string">&quot;require 'test/unit/testcase'&quot;</span>
+    <span class="ruby-ivar">@result</span>.<span class="ruby-identifier">push</span> <span class="ruby-string">&quot;require 'test/unit' if $0 == __FILE__&quot;</span>
+    <span class="ruby-ivar">@result</span>.<span class="ruby-identifier">push</span> <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">indentunit</span> = <span class="ruby-string">&quot;  &quot;</span>
+
+  <span class="ruby-ivar">@missing_methods</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">sort</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">fullklasspath</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">methods</span> = <span class="ruby-ivar">@missing_methods</span>[<span class="ruby-identifier">fullklasspath</span>]
+    <span class="ruby-identifier">cls_methods</span> = <span class="ruby-identifier">methods</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">grep</span>(<span class="ruby-regexp">/^(self\.|test_class_)/</span>)
+    <span class="ruby-identifier">methods</span>.<span class="ruby-identifier">delete_if</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">cls_methods</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">k</span> }
+
+    <span class="ruby-keyword">next</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">methods</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">cls_methods</span>.<span class="ruby-identifier">empty?</span>
+
+    <span class="ruby-identifier">indent</span> = <span class="ruby-value">0</span>
+    <span class="ruby-identifier">is_test_class</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">is_test_class</span>(<span class="ruby-identifier">fullklasspath</span>)
+
+    <span class="ruby-identifier">clsname</span> = <span class="ruby-identifier">$t</span> <span class="ruby-operator">?</span> <span class="ruby-string">&quot;Test::Unit::TestCase&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-string">&quot;Minitest::Test&quot;</span>
+    <span class="ruby-identifier">superclass</span> = <span class="ruby-identifier">is_test_class</span> <span class="ruby-operator">?</span> <span class="ruby-node">&quot; &lt; #{clsname}&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-string">''</span>
+
+    <span class="ruby-ivar">@result</span>.<span class="ruby-identifier">push</span> <span class="ruby-identifier">indentunit</span>*<span class="ruby-identifier">indent</span> <span class="ruby-operator">+</span> <span class="ruby-node">&quot;class #{fullklasspath}#{superclass}&quot;</span>
+    <span class="ruby-identifier">indent</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+
+    <span class="ruby-identifier">meths</span> = []
+
+    <span class="ruby-identifier">cls_methods</span>.<span class="ruby-identifier">sort</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">method</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">meth</span> = <span class="ruby-identifier">create_method</span>(<span class="ruby-identifier">indentunit</span>, <span class="ruby-identifier">indent</span>, <span class="ruby-identifier">method</span>)
+      <span class="ruby-identifier">meths</span>.<span class="ruby-identifier">push</span> <span class="ruby-identifier">meth</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;\n&quot;</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">methods</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">sort</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">method</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">next</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">method</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/pretty_print/</span>
+      <span class="ruby-identifier">meth</span> = <span class="ruby-identifier">create_method</span>(<span class="ruby-identifier">indentunit</span>, <span class="ruby-identifier">indent</span>, <span class="ruby-identifier">method</span>)
+      <span class="ruby-identifier">meths</span>.<span class="ruby-identifier">push</span> <span class="ruby-identifier">meth</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;\n&quot;</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-ivar">@result</span>.<span class="ruby-identifier">push</span> <span class="ruby-identifier">meths</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;\n\n&quot;</span>)
+
+    <span class="ruby-identifier">indent</span> <span class="ruby-operator">-=</span> <span class="ruby-value">1</span>
+    <span class="ruby-ivar">@result</span>.<span class="ruby-identifier">push</span> <span class="ruby-identifier">indentunit</span>*<span class="ruby-identifier">indent</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;end&quot;</span>
+    <span class="ruby-ivar">@result</span>.<span class="ruby-identifier">push</span> <span class="ruby-string">''</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-ivar">@result</span>.<span class="ruby-identifier">push</span> <span class="ruby-node">&quot;# Number of errors detected: #{@error_count}&quot;</span>
+  <span class="ruby-ivar">@result</span>.<span class="ruby-identifier">push</span> <span class="ruby-string">''</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- generate_code-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- generate_code-method -->
+
+    
+      <div id="method-i-get_class" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_class</span><span
+            class="method-args">(klassname)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>obtain the class klassname</p>
+          
+
+          
+          <div class="method-source-code" id="get_class-source">
+            <pre><span class="ruby-comment"># File lib/zentest.rb, line 106</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_class</span>(<span class="ruby-identifier">klassname</span>)
+  <span class="ruby-identifier">klass</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">klass</span> = <span class="ruby-identifier">klassname</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">/::/</span>).<span class="ruby-identifier">inject</span>(<span class="ruby-constant">Object</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">n</span><span class="ruby-operator">|</span> <span class="ruby-identifier">k</span>.<span class="ruby-identifier">const_get</span> <span class="ruby-identifier">n</span> }
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;# found class #{klass.name}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">$DEBUG</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">NameError</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword">and</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">$TESTING</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Could not figure out how to get #{klassname}...&quot;</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Report to support-zentest@zenspider.com w/ relevant source&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">klass</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_class-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_class-method -->
+
+    
+      <div id="method-i-get_inherited_methods_for" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_inherited_methods_for</span><span
+            class="method-args">(klass, full)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Return the methods for class klass, as a hash with the method nemas as
+keys, and true as the value for all keys. Unless full is true, leave out
+the methods for Object which all classes get.</p>
+          
+
+          
+          <div class="method-source-code" id="get_inherited_methods_for-source">
+            <pre><span class="ruby-comment"># File lib/zentest.rb, line 155</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_inherited_methods_for</span>(<span class="ruby-identifier">klass</span>, <span class="ruby-identifier">full</span>)
+  <span class="ruby-identifier">klass</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">get_class</span>(<span class="ruby-identifier">klass</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">kind_of?</span> <span class="ruby-constant">String</span>
+
+  <span class="ruby-identifier">klassmethods</span> = {}
+  <span class="ruby-keyword">if</span> (<span class="ruby-identifier">klass</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">method_defined?</span>(<span class="ruby-value">:superclass</span>)) <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">superklass</span> = <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">superclass</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">superklass</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-identifier">the_methods</span> = <span class="ruby-identifier">superklass</span>.<span class="ruby-identifier">instance_methods</span>(<span class="ruby-keyword">true</span>)
+
+      <span class="ruby-comment"># generally we don't test Object's methods...</span>
+      <span class="ruby-keyword">unless</span> <span class="ruby-identifier">full</span> <span class="ruby-keyword">then</span>
+        <span class="ruby-identifier">the_methods</span> <span class="ruby-operator">-=</span> <span class="ruby-constant">Object</span>.<span class="ruby-identifier">instance_methods</span>(<span class="ruby-keyword">true</span>)
+        <span class="ruby-identifier">the_methods</span> <span class="ruby-operator">-=</span> <span class="ruby-constant">Kernel</span>.<span class="ruby-identifier">methods</span> <span class="ruby-comment"># FIX (true) - check 1.6 vs 1.8</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">the_methods</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">meth</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">klassmethods</span>[<span class="ruby-identifier">meth</span>.<span class="ruby-identifier">to_s</span>] = <span class="ruby-keyword">true</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">klassmethods</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_inherited_methods_for-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_inherited_methods_for-method -->
+
+    
+      <div id="method-i-get_methods_for" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_methods_for</span><span
+            class="method-args">(klass, full=false)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get the public instance, class and singleton methods for class klass. If
+full is true, include the methods from Kernel and other modules that get
+included.  The methods suite, new, pretty_print, pretty_print_cycle will
+not be included in the resuting array.</p>
+          
+
+          
+          <div class="method-source-code" id="get_methods_for-source">
+            <pre><span class="ruby-comment"># File lib/zentest.rb, line 127</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_methods_for</span>(<span class="ruby-identifier">klass</span>, <span class="ruby-identifier">full</span>=<span class="ruby-keyword">false</span>)
+  <span class="ruby-identifier">klass</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">get_class</span>(<span class="ruby-identifier">klass</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">kind_of?</span> <span class="ruby-constant">String</span>
+
+  <span class="ruby-comment"># WTF? public_instance_methods: default vs true vs false = 3 answers</span>
+  <span class="ruby-comment"># to_s on all results if ruby &gt;= 1.9</span>
+  <span class="ruby-identifier">public_methods</span> = <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">public_instance_methods</span>(<span class="ruby-keyword">false</span>)
+  <span class="ruby-identifier">public_methods</span> <span class="ruby-operator">-=</span> <span class="ruby-constant">Kernel</span>.<span class="ruby-identifier">methods</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">full</span>
+  <span class="ruby-identifier">public_methods</span>.<span class="ruby-identifier">map!</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">m</span><span class="ruby-operator">|</span> <span class="ruby-identifier">m</span>.<span class="ruby-identifier">to_s</span> }
+  <span class="ruby-identifier">public_methods</span> <span class="ruby-operator">-=</span> <span class="ruby-node">%w(pretty_print pretty_print_cycle)</span>
+
+  <span class="ruby-identifier">klass_methods</span> = <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">singleton_methods</span>(<span class="ruby-identifier">full</span>)
+  <span class="ruby-identifier">klass_methods</span> <span class="ruby-operator">-=</span> <span class="ruby-constant">Class</span>.<span class="ruby-identifier">public_methods</span>(<span class="ruby-keyword">true</span>)
+  <span class="ruby-identifier">klass_methods</span> = <span class="ruby-identifier">klass_methods</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">m</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot;self.#{m}&quot;</span> }
+  <span class="ruby-identifier">klass_methods</span>  <span class="ruby-operator">-=</span> <span class="ruby-node">%w(self.suite new)</span>
+
+  <span class="ruby-identifier">result</span> = {}
+  (<span class="ruby-identifier">public_methods</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">klass_methods</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">meth</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;# found method #{meth}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">$DEBUG</span>
+    <span class="ruby-identifier">result</span>[<span class="ruby-identifier">meth</span>] = <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_methods_for-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_methods_for-method -->
+
+    
+      <div id="method-i-is_test_class" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">is_test_class</span><span
+            class="method-args">(klass)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Check the class klass is a testing class (by inspecting its name).</p>
+          
+
+          
+          <div class="method-source-code" id="is_test_class-source">
+            <pre><span class="ruby-comment"># File lib/zentest.rb, line 180</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">is_test_class</span>(<span class="ruby-identifier">klass</span>)
+  <span class="ruby-identifier">klass</span> = <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-identifier">klasspath</span> = <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">/::/</span>)
+  <span class="ruby-identifier">a_bad_classpath</span> = <span class="ruby-identifier">klasspath</span>.<span class="ruby-identifier">find</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">s</span> <span class="ruby-operator">!~</span> (<span class="ruby-identifier">$r</span> <span class="ruby-operator">?</span> <span class="ruby-regexp">/Test$/</span> <span class="ruby-operator">:</span> <span class="ruby-regexp">/^Test/</span>) <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">a_bad_classpath</span>.<span class="ruby-identifier">nil?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- is_test_class-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- is_test_class-method -->
+
+    
+      <div id="method-i-load_file" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">load_file</span><span
+            class="method-args">(file)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><a href="ZenTest.html#method-i-load_file">#load_file</a> wraps require,
+skipping the loading of $0.</p>
+          
+
+          
+          <div class="method-source-code" id="load_file-source">
+            <pre><span class="ruby-comment"># File lib/zentest.rb, line 91</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">load_file</span>(<span class="ruby-identifier">file</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;# loading #{file} // #{$0}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">$DEBUG</span>
+
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">file</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">$0</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-identifier">require</span> <span class="ruby-identifier">file</span>
+    <span class="ruby-keyword">rescue</span> <span class="ruby-constant">LoadError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">err</span>
+      <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Could not load #{file}: #{err}&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;# Skipping loading myself (#{file})&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">$DEBUG</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- load_file-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- load_file-method -->
+
+    
+      <div id="method-i-methods_and_tests" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">methods_and_tests</span><span
+            class="method-args">(klassname, testklassname)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>looks up the methods and the corresponding test methods in the collection
+already built.  To reduce duplication and hide implementation details.</p>
+          
+
+          
+          <div class="method-source-code" id="methods_and_tests-source">
+            <pre><span class="ruby-comment"># File lib/zentest.rb, line 335</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">methods_and_tests</span>(<span class="ruby-identifier">klassname</span>, <span class="ruby-identifier">testklassname</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-ivar">@klasses</span>[<span class="ruby-identifier">klassname</span>], <span class="ruby-ivar">@test_klasses</span>[<span class="ruby-identifier">testklassname</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- methods_and_tests-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- methods_and_tests-method -->
+
+    
+      <div id="method-i-missing_methods" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">missing_methods</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="missing_methods-source">
+            <pre><span class="ruby-comment"># File lib/zentest.rb, line 77</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">missing_methods</span>; <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;Something is wack&quot;</span>; <span class="ruby-keyword">end</span></pre>
+          </div><!-- missing_methods-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- missing_methods-method -->
+
+    
+      <div id="method-i-process_class" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">process_class</span><span
+            class="method-args">(klassname, full=false)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Does all the work of finding a class by name, obtaining its methods and
+those of its superclass. The full parameter determines if all the methods
+including those of Object and mixed in modules are obtained (true if they
+are, false by default).</p>
+          
+
+          
+          <div class="method-source-code" id="process_class-source">
+            <pre><span class="ruby-comment"># File lib/zentest.rb, line 215</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">process_class</span>(<span class="ruby-identifier">klassname</span>, <span class="ruby-identifier">full</span>=<span class="ruby-keyword">false</span>)
+  <span class="ruby-identifier">klass</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">get_class</span>(<span class="ruby-identifier">klassname</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;Couldn't get class for #{klassname}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">klassname</span> = <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">name</span> <span class="ruby-comment"># refetch to get full name</span>
+
+  <span class="ruby-identifier">is_test_class</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">is_test_class</span>(<span class="ruby-identifier">klassname</span>)
+  <span class="ruby-identifier">target</span> = <span class="ruby-identifier">is_test_class</span> <span class="ruby-operator">?</span> <span class="ruby-ivar">@test_klasses</span> <span class="ruby-operator">:</span> <span class="ruby-ivar">@klasses</span>
+
+  <span class="ruby-comment"># record public instance methods JUST in this class</span>
+  <span class="ruby-identifier">target</span>[<span class="ruby-identifier">klassname</span>] = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">get_methods_for</span>(<span class="ruby-identifier">klass</span>, <span class="ruby-identifier">full</span>)
+
+  <span class="ruby-comment"># record ALL instance methods including superclasses (minus Object)</span>
+  <span class="ruby-comment"># Only minus Object if full is true.</span>
+  <span class="ruby-ivar">@inherited_methods</span>[<span class="ruby-identifier">klassname</span>] = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">get_inherited_methods_for</span>(<span class="ruby-identifier">klass</span>, <span class="ruby-identifier">full</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">klassname</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- process_class-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- process_class-method -->
+
+    
+      <div id="method-i-result" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">result</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>presents results in a readable manner.</p>
+          
+
+          
+          <div class="method-source-code" id="result-source">
+            <pre><span class="ruby-comment"># File lib/zentest.rb, line 516</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">result</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-ivar">@result</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;\n&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- result-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- result-method -->
+
+    
+      <div id="method-i-scan_files" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">scan_files</span><span
+            class="method-args">(*files)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Work through files, collecting class names, method names and assertions.
+Detects <a href="ZenTest.html">ZenTest</a> (SKIP|FULL) comments in the
+bodies of classes. For each class a count of methods and test methods is
+kept, and the ratio noted.</p>
+          
+
+          
+          <div class="method-source-code" id="scan_files-source">
+            <pre><span class="ruby-comment"># File lib/zentest.rb, line 237</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">scan_files</span>(*<span class="ruby-identifier">files</span>)
+  <span class="ruby-identifier">assert_count</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">0</span>)
+  <span class="ruby-identifier">method_count</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">0</span>)
+  <span class="ruby-identifier">klassname</span> = <span class="ruby-keyword">nil</span>
+
+  <span class="ruby-identifier">files</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">path</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">is_loaded</span> = <span class="ruby-keyword">false</span>
+
+    <span class="ruby-comment"># if reading stdin, slurp the whole thing at once</span>
+    <span class="ruby-identifier">file</span> = (<span class="ruby-identifier">path</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;-&quot;</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">$stdin</span>.<span class="ruby-identifier">read</span> <span class="ruby-operator">:</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">path</span>))
+
+    <span class="ruby-identifier">file</span>.<span class="ruby-identifier">each_line</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">klassname</span> <span class="ruby-keyword">then</span>
+        <span class="ruby-keyword">case</span> <span class="ruby-identifier">line</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-regexp">/^\s*def/</span> <span class="ruby-keyword">then</span>
+          <span class="ruby-identifier">method_count</span>[<span class="ruby-identifier">klassname</span>] <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-regexp">/assert|flunk/</span> <span class="ruby-keyword">then</span>
+          <span class="ruby-identifier">assert_count</span>[<span class="ruby-identifier">klassname</span>] <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/^\s*(?:class|module)\s+([\w:]+)/</span> <span class="ruby-keyword">then</span>
+        <span class="ruby-identifier">klassname</span> = <span class="ruby-node">$1</span>
+
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-node">/\#\s*ZenTest SKIP/</span> <span class="ruby-keyword">then</span>
+          <span class="ruby-identifier">klassname</span> = <span class="ruby-keyword">nil</span>
+          <span class="ruby-keyword">next</span>
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-identifier">full</span> = <span class="ruby-keyword">false</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-node">/\#\s*ZenTest FULL/</span> <span class="ruby-keyword">then</span>
+          <span class="ruby-identifier">full</span> = <span class="ruby-keyword">true</span>
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-keyword">unless</span> <span class="ruby-identifier">is_loaded</span> <span class="ruby-keyword">then</span>
+          <span class="ruby-keyword">unless</span> <span class="ruby-identifier">path</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;-&quot;</span> <span class="ruby-keyword">then</span>
+            <span class="ruby-keyword">self</span>.<span class="ruby-identifier">load_file</span>(<span class="ruby-identifier">path</span>)
+          <span class="ruby-keyword">else</span>
+            <span class="ruby-identifier">eval</span> <span class="ruby-identifier">file</span>, <span class="ruby-constant">TOPLEVEL_BINDING</span>
+          <span class="ruby-keyword">end</span>
+          <span class="ruby-identifier">is_loaded</span> = <span class="ruby-keyword">true</span>
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-keyword">begin</span>
+          <span class="ruby-identifier">klassname</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">process_class</span>(<span class="ruby-identifier">klassname</span>, <span class="ruby-identifier">full</span>)
+        <span class="ruby-keyword">rescue</span>
+          <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;# Couldn't find class for name #{klassname}&quot;</span>
+          <span class="ruby-keyword">next</span>
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-comment"># Special Case: ZenTest is already loaded since we are running it</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">klassname</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;TestZenTest&quot;</span> <span class="ruby-keyword">then</span>
+          <span class="ruby-identifier">klassname</span> = <span class="ruby-string">&quot;ZenTest&quot;</span>
+          <span class="ruby-keyword">self</span>.<span class="ruby-identifier">process_class</span>(<span class="ruby-identifier">klassname</span>, <span class="ruby-keyword">false</span>)
+        <span class="ruby-keyword">end</span>
+
+      <span class="ruby-keyword">end</span> <span class="ruby-comment"># if /class/</span>
+    <span class="ruby-keyword">end</span> <span class="ruby-comment"># IO.foreach</span>
+  <span class="ruby-keyword">end</span> <span class="ruby-comment"># files</span>
+
+  <span class="ruby-identifier">result</span> = []
+  <span class="ruby-identifier">method_count</span>.<span class="ruby-identifier">each_key</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">classname</span><span class="ruby-operator">|</span>
+
+    <span class="ruby-identifier">entry</span> = {}
+
+    <span class="ruby-keyword">next</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">is_test_class</span>(<span class="ruby-identifier">classname</span>)
+    <span class="ruby-identifier">testclassname</span> = <span class="ruby-identifier">convert_class_name</span>(<span class="ruby-identifier">classname</span>)
+    <span class="ruby-identifier">a_count</span> = <span class="ruby-identifier">assert_count</span>[<span class="ruby-identifier">testclassname</span>]
+    <span class="ruby-identifier">m_count</span> = <span class="ruby-identifier">method_count</span>[<span class="ruby-identifier">classname</span>]
+    <span class="ruby-identifier">ratio</span> = <span class="ruby-identifier">a_count</span>.<span class="ruby-identifier">to_f</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">m_count</span>.<span class="ruby-identifier">to_f</span> * <span class="ruby-value">100.0</span>
+
+    <span class="ruby-identifier">entry</span>[<span class="ruby-string">'n'</span>] = <span class="ruby-identifier">classname</span>
+    <span class="ruby-identifier">entry</span>[<span class="ruby-string">'r'</span>] = <span class="ruby-identifier">ratio</span>
+    <span class="ruby-identifier">entry</span>[<span class="ruby-string">'a'</span>] = <span class="ruby-identifier">a_count</span>
+    <span class="ruby-identifier">entry</span>[<span class="ruby-string">'m'</span>] = <span class="ruby-identifier">m_count</span>
+
+    <span class="ruby-identifier">result</span>.<span class="ruby-identifier">push</span> <span class="ruby-identifier">entry</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">sorted_results</span> = <span class="ruby-identifier">result</span>.<span class="ruby-identifier">sort</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">a</span>,<span class="ruby-identifier">b</span><span class="ruby-operator">|</span> <span class="ruby-identifier">b</span>[<span class="ruby-string">'r'</span>] <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">a</span>[<span class="ruby-string">'r'</span>] }
+
+  <span class="ruby-ivar">@result</span>.<span class="ruby-identifier">push</span> <span class="ruby-identifier">sprintf</span>(<span class="ruby-node">&quot;# %25s: %4s / %4s = %6s%%&quot;</span>, <span class="ruby-string">&quot;classname&quot;</span>, <span class="ruby-string">&quot;asrt&quot;</span>, <span class="ruby-string">&quot;meth&quot;</span>, <span class="ruby-string">&quot;ratio&quot;</span>)
+  <span class="ruby-identifier">sorted_results</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span>
+    <span class="ruby-ivar">@result</span>.<span class="ruby-identifier">push</span> <span class="ruby-identifier">sprintf</span>(<span class="ruby-node">&quot;# %25s: %4d / %4d = %6.2f%%&quot;</span>, <span class="ruby-identifier">e</span>[<span class="ruby-string">'n'</span>], <span class="ruby-identifier">e</span>[<span class="ruby-string">'a'</span>], <span class="ruby-identifier">e</span>[<span class="ruby-string">'m'</span>], <span class="ruby-identifier">e</span>[<span class="ruby-string">'r'</span>])
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- scan_files-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- scan_files-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

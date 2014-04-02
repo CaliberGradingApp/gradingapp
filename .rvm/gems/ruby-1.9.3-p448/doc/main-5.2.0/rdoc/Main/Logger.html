@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Main::Logger - main-5.2.0 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/main/logger.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Logger
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-c-off">::off</a>
+    
+    <li><a href="#method-c-on">::on</a>
+    
+    <li><a href="#method-i-device">#device</a>
+    
+    <li><a href="#method-i-format_message">#format_message</a>
+    
+    <li><a href="#method-i-off">#off</a>
+    
+    <li><a href="#method-i-on">#on</a>
+    
+    <li><a href="#method-i-tty-3F">#tty?</a>
+    
+    <li><a href="#method-i-turn">#turn</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Main.html">Main</a>
+  
+    <li><a href="../Main/Cast.html">Main::Cast</a>
+  
+    <li><a href="../Main/GetoptLong.html">Main::GetoptLong</a>
+  
+    <li><a href="../Main/GetoptLong/AmbigousOption.html">Main::GetoptLong::AmbigousOption</a>
+  
+    <li><a href="../Main/GetoptLong/InvalidOption.html">Main::GetoptLong::InvalidOption</a>
+  
+    <li><a href="../Main/GetoptLong/MissingArgument.html">Main::GetoptLong::MissingArgument</a>
+  
+    <li><a href="../Main/GetoptLong/NeedlessArgument.html">Main::GetoptLong::NeedlessArgument</a>
+  
+    <li><a href="../Main/Logger.html">Main::Logger</a>
+  
+    <li><a href="../Main/Logger/OnOff.html">Main::Logger::OnOff</a>
+  
+    <li><a href="../Main/Mode.html">Main::Mode</a>
+  
+    <li><a href="../Main/Mode/Ambiguous.html">Main::Mode::Ambiguous</a>
+  
+    <li><a href="../Main/Mode/Duplicate.html">Main::Mode::Duplicate</a>
+  
+    <li><a href="../Main/Mode/Error.html">Main::Mode::Error</a>
+  
+    <li><a href="../Main/Mode/List.html">Main::Mode::List</a>
+  
+    <li><a href="../Main/Parameter.html">Main::Parameter</a>
+  
+    <li><a href="../Main/Parameter/AmbigousOption.html">Main::Parameter::AmbigousOption</a>
+  
+    <li><a href="../Main/Parameter/Argument.html">Main::Parameter::Argument</a>
+  
+    <li><a href="../Main/Parameter/Arity.html">Main::Parameter::Arity</a>
+  
+    <li><a href="../Main/Parameter/DSL.html">Main::Parameter::DSL</a>
+  
+    <li><a href="../Main/Parameter/Environment.html">Main::Parameter::Environment</a>
+  
+    <li><a href="../Main/Parameter/Error.html">Main::Parameter::Error</a>
+  
+    <li><a href="../Main/Parameter/InValid.html">Main::Parameter::InValid</a>
+  
+    <li><a href="../Main/Parameter/InvalidOption.html">Main::Parameter::InvalidOption</a>
+  
+    <li><a href="../Main/Parameter/Keyword.html">Main::Parameter::Keyword</a>
+  
+    <li><a href="../Main/Parameter/List.html">Main::Parameter::List</a>
+  
+    <li><a href="../Main/Parameter/MissingArgument.html">Main::Parameter::MissingArgument</a>
+  
+    <li><a href="../Main/Parameter/NeedlessArgument.html">Main::Parameter::NeedlessArgument</a>
+  
+    <li><a href="../Main/Parameter/NoneSuch.html">Main::Parameter::NoneSuch</a>
+  
+    <li><a href="../Main/Parameter/NotGiven.html">Main::Parameter::NotGiven</a>
+  
+    <li><a href="../Main/Parameter/Option.html">Main::Parameter::Option</a>
+  
+    <li><a href="../Main/Parameter/Table.html">Main::Parameter::Table</a>
+  
+    <li><a href="../Main/Parameter/Table/BoundsCheck.html">Main::Parameter::Table::BoundsCheck</a>
+  
+    <li><a href="../Main/Program.html">Main::Program</a>
+  
+    <li><a href="../Main/Program/ClassMethods.html">Main::Program::ClassMethods</a>
+  
+    <li><a href="../Main/Program/ClassMethods/Factory.html">Main::Program::ClassMethods::Factory</a>
+  
+    <li><a href="../Main/Program/InstanceMethods.html">Main::Program::InstanceMethods</a>
+  
+    <li><a href="../Main/Softspoken.html">Main::Softspoken</a>
+  
+    <li><a href="../Main/Usage.html">Main::Usage</a>
+  
+    <li><a href="../Main/Util.html">Main::Util</a>
+  
+    <li><a href="../Main/Util/ClassMethods.html">Main::Util::ClassMethods</a>
+  
+    <li><a href="../Main/Util/InstanceMethods.html">Main::Util::InstanceMethods</a>
+  
+    <li><a href="../Main/Util/Methods.html">Main::Util::Methods</a>
+  
+    <li><a href="../Kernel.html">Kernel</a>
+  
+    <li><a href="../Object.html">Object</a>
+  
+    <li><a href="../Process.html">Process</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Main::Logger</h1>
+
+  <div id="description" class="description">
+    
+<p>because active_record fubars the hell out of <a
+href="Logger.html">Logger</a> ;-(</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(*a, &b)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/main/logger.rb, line 4</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">new</span> *<span class="ruby-identifier">a</span>, &amp;<span class="ruby-identifier">b</span>
+  <span class="ruby-keyword">super</span>(*<span class="ruby-identifier">a</span>, &amp;<span class="ruby-identifier">b</span>).<span class="ruby-identifier">instance_eval</span>{ <span class="ruby-ivar">@default_formatter</span> = <span class="ruby-ivar">@formatter</span> = <span class="ruby-constant">Formatter</span>.<span class="ruby-identifier">new</span>; <span class="ruby-keyword">self</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+      <div id="method-c-off" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">off</span><span
+            class="method-args">(*a, &b)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="off-source">
+            <pre><span class="ruby-comment"># File lib/main/logger.rb, line 36</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">off</span> *<span class="ruby-identifier">a</span>, &amp;<span class="ruby-identifier">b</span>
+  <span class="ruby-identifier">new</span>(*<span class="ruby-identifier">a</span>, &amp;<span class="ruby-identifier">b</span>).<span class="ruby-identifier">instance_eval</span>{ <span class="ruby-identifier">turn</span> <span class="ruby-value">:off</span>; <span class="ruby-keyword">self</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- off-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- off-method -->
+
+    
+      <div id="method-c-on" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">on</span><span
+            class="method-args">(*a, &b)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="on-source">
+            <pre><span class="ruby-comment"># File lib/main/logger.rb, line 28</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">on</span> *<span class="ruby-identifier">a</span>, &amp;<span class="ruby-identifier">b</span>
+  <span class="ruby-identifier">new</span>(*<span class="ruby-identifier">a</span>, &amp;<span class="ruby-identifier">b</span>).<span class="ruby-identifier">instance_eval</span>{ <span class="ruby-identifier">turn</span> <span class="ruby-value">:on</span>; <span class="ruby-keyword">self</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- on-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- on-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-device" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">device</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="device-source">
+            <pre><span class="ruby-comment"># File lib/main/logger.rb, line 11</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">device</span>
+  <span class="ruby-ivar">@logdev</span>.<span class="ruby-identifier">instance_eval</span>{ <span class="ruby-ivar">@dev</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- device-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- device-method -->
+
+    
+      <div id="method-i-format_message" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">format_message</span><span
+            class="method-args">(severity, datetime, progname, msg)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="format_message-source">
+            <pre><span class="ruby-comment"># File lib/main/logger.rb, line 7</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">format_message</span>(<span class="ruby-identifier">severity</span>, <span class="ruby-identifier">datetime</span>, <span class="ruby-identifier">progname</span>, <span class="ruby-identifier">msg</span>)
+  (<span class="ruby-ivar">@formatter</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@default_formatter</span>).<span class="ruby-identifier">call</span>(<span class="ruby-identifier">severity</span>, <span class="ruby-identifier">datetime</span>, <span class="ruby-identifier">progname</span>, <span class="ruby-identifier">msg</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- format_message-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- format_message-method -->
+
+    
+      <div id="method-i-off" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">off</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="off-source">
+            <pre><span class="ruby-comment"># File lib/main/logger.rb, line 32</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">off</span>
+  <span class="ruby-identifier">turn</span> <span class="ruby-value">:off</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- off-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- off-method -->
+
+    
+      <div id="method-i-on" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">on</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="on-source">
+            <pre><span class="ruby-comment"># File lib/main/logger.rb, line 24</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">on</span>
+  <span class="ruby-identifier">turn</span> <span class="ruby-value">:on</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- on-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- on-method -->
+
+    
+      <div id="method-i-tty-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">tty?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="tty-3F-source">
+            <pre><span class="ruby-comment"># File lib/main/logger.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">tty?</span>
+  <span class="ruby-identifier">device</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-string">'tty?'</span>) <span class="ruby-keyword">and</span> <span class="ruby-identifier">device</span>.<span class="ruby-identifier">tty?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- tty-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- tty-3F-method -->
+
+    
+      <div id="method-i-turn" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">turn</span><span
+            class="method-args">(which)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="turn-source">
+            <pre><span class="ruby-comment"># File lib/main/logger.rb, line 19</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">turn</span> <span class="ruby-identifier">which</span>
+  <span class="ruby-ivar">@logdev</span>.<span class="ruby-identifier">extend</span> <span class="ruby-constant">OnOff</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">OnOff</span> <span class="ruby-operator">===</span> <span class="ruby-ivar">@logdev</span>
+  <span class="ruby-ivar">@logdev</span>.<span class="ruby-identifier">turn</span> <span class="ruby-identifier">which</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- turn-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- turn-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

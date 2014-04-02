@@ -1,0 +1,1 @@
+var search_data = {"index":{"searchIndex":["multitest","disable_autorun()","run()"],"longSearchIndex":["multitest","multitest::disable_autorun()","multitest#run()"],"info":[["MultiTest","","MultiTest.html","",""],["disable_autorun","MultiTest","MultiTest.html#method-c-disable_autorun","()",""],["run","MultiTest","MultiTest.html#method-i-run","(*)",""]]}}

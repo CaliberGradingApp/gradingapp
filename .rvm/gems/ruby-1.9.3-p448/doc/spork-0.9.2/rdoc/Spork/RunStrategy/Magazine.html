@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Spork::RunStrategy::Magazine - spork-0.9.2 Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/spork/run_strategy/magazine.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="../RunStrategy.html">Spork::RunStrategy</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-available-3F">::available?</a>
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-abort">#abort</a>
+    
+    <li><a href="#method-i-assert_ready-21">#assert_ready!</a>
+    
+    <li><a href="#method-i-fill_slave_pool">#fill_slave_pool</a>
+    
+    <li><a href="#method-i-kill_all_processes">#kill_all_processes</a>
+    
+    <li><a href="#method-i-kill_slave">#kill_slave</a>
+    
+    <li><a href="#method-i-preload">#preload</a>
+    
+    <li><a href="#method-i-restart_slave">#restart_slave</a>
+    
+    <li><a href="#method-i-run">#run</a>
+    
+    <li><a href="#method-i-running-3F">#running?</a>
+    
+    <li><a href="#method-i-slave_count">#slave_count</a>
+    
+    <li><a href="#method-i-slave_max">#slave_max</a>
+    
+    <li><a href="#method-i-spawn_process">#spawn_process</a>
+    
+    <li><a href="#method-i-start_Rinda_ringserver">#start_Rinda_ringserver</a>
+    
+    <li><a href="#method-i-start_slave">#start_slave</a>
+    
+    <li><a href="#method-i-windows-3F">#windows?</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../MIT-LICENSE.html">MIT-LICENSE</a>
+  
+    <li class="file"><a href="../../README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../Spork.html">Spork</a>
+  
+    <li><a href="../../Spork/AppFramework.html">Spork::AppFramework</a>
+  
+    <li><a href="../../Spork/AppFramework/Padrino.html">Spork::AppFramework::Padrino</a>
+  
+    <li><a href="../../Spork/AppFramework/Rails.html">Spork::AppFramework::Rails</a>
+  
+    <li><a href="../../Spork/AppFramework/Unknown.html">Spork::AppFramework::Unknown</a>
+  
+    <li><a href="../../Spork/CustomIOStreams.html">Spork::CustomIOStreams</a>
+  
+    <li><a href="../../Spork/CustomIOStreams/ClassMethods.html">Spork::CustomIOStreams::ClassMethods</a>
+  
+    <li><a href="../../Spork/Diagnoser.html">Spork::Diagnoser</a>
+  
+    <li><a href="../../Spork/Forker.html">Spork::Forker</a>
+  
+    <li><a href="../../Spork/Forker/ForkDiedException.html">Spork::Forker::ForkDiedException</a>
+  
+    <li><a href="../../Spork/GemHelpers.html">Spork::GemHelpers</a>
+  
+    <li><a href="../../Spork/GemHelpers/GemPath.html">Spork::GemHelpers::GemPath</a>
+  
+    <li><a href="../../Spork/RunStrategy.html">Spork::RunStrategy</a>
+  
+    <li><a href="../../Spork/RunStrategy/Forking.html">Spork::RunStrategy::Forking</a>
+  
+    <li><a href="../../Spork/RunStrategy/Magazine.html">Spork::RunStrategy::Magazine</a>
+  
+    <li><a href="../../Spork/Runner.html">Spork::Runner</a>
+  
+    <li><a href="../../Spork/Server.html">Spork::Server</a>
+  
+    <li><a href="../../Spork/TestFramework.html">Spork::TestFramework</a>
+  
+    <li><a href="../../Spork/TestFramework/Cucumber.html">Spork::TestFramework::Cucumber</a>
+  
+    <li><a href="../../Spork/TestFramework/FactoryException.html">Spork::TestFramework::FactoryException</a>
+  
+    <li><a href="../../Spork/TestFramework/FrameworkNotAvailable.html">Spork::TestFramework::FrameworkNotAvailable</a>
+  
+    <li><a href="../../Spork/TestFramework/NoFrameworkMatched.html">Spork::TestFramework::NoFrameworkMatched</a>
+  
+    <li><a href="../../Spork/TestFramework/NoFrameworksAvailable.html">Spork::TestFramework::NoFrameworksAvailable</a>
+  
+    <li><a href="../../Spork/TestFramework/RSpec.html">Spork::TestFramework::RSpec</a>
+  
+    <li><a href="../../SporkDebugger.html">SporkDebugger</a>
+  
+    <li><a href="../../SporkDebugger/EachRunState.html">SporkDebugger::EachRunState</a>
+  
+    <li><a href="../../SporkDebugger/NetworkHelpers.html">SporkDebugger::NetworkHelpers</a>
+  
+    <li><a href="../../SporkDebugger/PreloadState.html">SporkDebugger::PreloadState</a>
+  
+    <li><a href="../../MagazineSlave.html">MagazineSlave</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Spork::RunStrategy::Magazine</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="Slave_Id_Range">Slave_Id_Range
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-available-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">available?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="available-3F-source">
+            <pre><span class="ruby-comment"># File lib/spork/run_strategy/magazine.rb, line 82</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">available?</span>
+  <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- available-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- available-3F-method -->
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(test_framework)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/spork/run_strategy/magazine.rb, line 28</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">test_framework</span>)
+  <span class="ruby-ivar">@test_framework</span> = <span class="ruby-identifier">test_framework</span>
+  <span class="ruby-identifier">this_path</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-keyword">__FILE__</span>))
+  <span class="ruby-ivar">@path</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">this_path</span>, <span class="ruby-string">'magazine'</span>)
+  <span class="ruby-ivar">@pids</span> = []
+
+  <span class="ruby-ivar">@pids</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">start_Rinda_ringserver</span>
+  <span class="ruby-identifier">sleep</span> <span class="ruby-value">1</span>
+
+  <span class="ruby-identifier">fill_slave_pool</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">RuntimeError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-identifier">kill_all_processes</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-abort" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">abort</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="abort-source">
+            <pre><span class="ruby-comment"># File lib/spork/run_strategy/magazine.rb, line 140</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">abort</span>
+  <span class="ruby-identifier">kill_all_processes</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- abort-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- abort-method -->
+
+    
+      <div id="method-i-assert_ready-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">assert_ready!</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="assert_ready-21-source">
+            <pre><span class="ruby-comment"># File lib/spork/run_strategy/magazine.rb, line 153</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">assert_ready!</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- assert_ready-21-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- assert_ready-21-method -->
+
+    
+      <div id="method-i-fill_slave_pool" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">fill_slave_pool</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="fill_slave_pool-source">
+            <pre><span class="ruby-comment"># File lib/spork/run_strategy/magazine.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">fill_slave_pool</span>
+  <span class="ruby-constant">Slave_Id_Range</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">id</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">start_slave</span>(<span class="ruby-identifier">id</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;  -- Starting to fill pool...&quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;     Wait until at least one slave is provided before running tests...&quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;  ** CTRL+BREAK to stop Spork and kill all ruby slave processes **&quot;</span>
+  <span class="ruby-identifier">$stdout</span>.<span class="ruby-identifier">flush</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- fill_slave_pool-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- fill_slave_pool-method -->
+
+    
+      <div id="method-i-kill_all_processes" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">kill_all_processes</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="kill_all_processes-source">
+            <pre><span class="ruby-comment"># File lib/spork/run_strategy/magazine.rb, line 125</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">kill_all_processes</span>
+
+  <span class="ruby-ivar">@pids</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">pid</span><span class="ruby-operator">|</span> 
+    <span class="ruby-identifier">kill_slave</span>(<span class="ruby-identifier">pid</span>)
+  }
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;\nKilling processes.&quot;</span>; <span class="ruby-identifier">$stdout</span>.<span class="ruby-identifier">flush</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- kill_all_processes-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- kill_all_processes-method -->
+
+    
+      <div id="method-i-kill_slave" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">kill_slave</span><span
+            class="method-args">(pid)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="kill_slave-source">
+            <pre><span class="ruby-comment"># File lib/spork/run_strategy/magazine.rb, line 117</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">kill_slave</span>(<span class="ruby-identifier">pid</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">windows?</span>
+    <span class="ruby-identifier">system</span>(<span class="ruby-node">&quot;taskkill /f /t /pid #{pid} &gt; nul&quot;</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-constant">Process</span>.<span class="ruby-identifier">kill</span>(<span class="ruby-value">9</span>, <span class="ruby-identifier">pid</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- kill_slave-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- kill_slave-method -->
+
+    
+      <div id="method-i-preload" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">preload</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="preload-source">
+            <pre><span class="ruby-comment"># File lib/spork/run_strategy/magazine.rb, line 144</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">preload</span>
+  <span class="ruby-keyword">true</span>
+  <span class="ruby-comment">#    @test_framework.preload</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- preload-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- preload-method -->
+
+    
+      <div id="method-i-restart_slave" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">restart_slave</span><span
+            class="method-args">(id)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="restart_slave-source">
+            <pre><span class="ruby-comment"># File lib/spork/run_strategy/magazine.rb, line 107</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">restart_slave</span>(<span class="ruby-identifier">id</span>)
+  <span class="ruby-identifier">pid</span>   = <span class="ruby-ivar">@pids</span>[<span class="ruby-identifier">id</span>]
+  <span class="ruby-identifier">kill_slave</span>(<span class="ruby-identifier">pid</span>)
+  <span class="ruby-identifier">start_slave</span>(<span class="ruby-identifier">id</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- restart_slave-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- restart_slave-method -->
+
+    
+      <div id="method-i-run" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">run</span><span
+            class="method-args">(argv, stderr, stdout)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="run-source">
+            <pre><span class="ruby-comment"># File lib/spork/run_strategy/magazine.rb, line 86</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">run</span>(<span class="ruby-identifier">argv</span>, <span class="ruby-identifier">stderr</span>, <span class="ruby-identifier">stdout</span>)
+      <span class="ruby-constant">DRb</span>.<span class="ruby-identifier">start_service</span>
+      <span class="ruby-identifier">ts</span> = <span class="ruby-constant">Rinda</span><span class="ruby-operator">::</span><span class="ruby-constant">RingFinger</span>.<span class="ruby-identifier">primary</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">ts</span>.<span class="ruby-identifier">read_all</span>([<span class="ruby-value">:name</span>, <span class="ruby-value">:MagazineSlave</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>]).<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+        <span class="ruby-identifier">print</span> <span class="ruby-string">'  &lt;-- take tuple'</span>; <span class="ruby-identifier">stdout</span>.<span class="ruby-identifier">flush</span>
+        <span class="ruby-identifier">tuple</span> = <span class="ruby-identifier">ts</span>.<span class="ruby-identifier">take</span>([<span class="ruby-value">:name</span>, <span class="ruby-value">:MagazineSlave</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>])
+        <span class="ruby-identifier">slave</span> = <span class="ruby-identifier">tuple</span>[<span class="ruby-value">2</span>]
+        <span class="ruby-identifier">id</span> = <span class="ruby-identifier">tuple</span>[<span class="ruby-value">3</span>]
+
+        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;(#{slave.id_num}); slave.run...&quot;</span>; <span class="ruby-identifier">$stdout</span>.<span class="ruby-identifier">flush</span>
+        <span class="ruby-keyword">begin</span>
+          <span class="ruby-identifier">slave</span>.<span class="ruby-identifier">run</span>(<span class="ruby-identifier">argv</span>,<span class="ruby-identifier">stderr</span>,<span class="ruby-identifier">stdout</span>)
+          <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;   -- (#{slave.id_num});run done&quot;</span>; <span class="ruby-identifier">$stdout</span>.<span class="ruby-identifier">flush</span>
+        <span class="ruby-keyword">ensure</span>
+          <span class="ruby-identifier">restart_slave</span>(<span class="ruby-identifier">id</span>)
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-string">'- NO tuple'</span>; <span class="ruby-identifier">$stdout</span>.<span class="ruby-identifier">flush</span>
+      <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- run-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- run-method -->
+
+    
+      <div id="method-i-running-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">running?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="running-3F-source">
+            <pre><span class="ruby-comment"># File lib/spork/run_strategy/magazine.rb, line 149</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">running?</span>
+  <span class="ruby-ivar">@running</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- running-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- running-3F-method -->
+
+    
+      <div id="method-i-slave_count" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">slave_count</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="slave_count-source">
+            <pre><span class="ruby-comment"># File lib/spork/run_strategy/magazine.rb, line 133</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">slave_count</span>
+  <span class="ruby-constant">DRb</span>.<span class="ruby-identifier">start_service</span>
+  <span class="ruby-identifier">ts</span> = <span class="ruby-constant">Rinda</span><span class="ruby-operator">::</span><span class="ruby-constant">RingFinger</span>.<span class="ruby-identifier">primary</span>
+  <span class="ruby-identifier">ts</span>.<span class="ruby-identifier">read_all</span>([<span class="ruby-value">:name</span>, <span class="ruby-value">:MagazineSlave</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>]).<span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- slave_count-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- slave_count-method -->
+
+    
+      <div id="method-i-slave_max" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">slave_max</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="slave_max-source">
+            <pre><span class="ruby-comment"># File lib/spork/run_strategy/magazine.rb, line 24</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">slave_max</span>
+  <span class="ruby-constant">Slave_Id_Range</span>.<span class="ruby-identifier">to_a</span>.<span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- slave_max-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- slave_max-method -->
+
+    
+      <div id="method-i-spawn_process" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">spawn_process</span><span
+            class="method-args">(app)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="spawn_process-source">
+            <pre><span class="ruby-comment"># File lib/spork/run_strategy/magazine.rb, line 64</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">spawn_process</span>(<span class="ruby-identifier">app</span>)
+
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">RUBY_PLATFORM</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/java/</span>
+    <span class="ruby-comment"># jruby 1.8 has no easy way to just spawn, so use a thread</span>
+    <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-ivar">@path</span>) <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">io</span> = <span class="ruby-constant">IO</span>.<span class="ruby-identifier">popen</span> <span class="ruby-identifier">app</span>
+      <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">new</span> { <span class="ruby-identifier">puts</span> <span class="ruby-identifier">io</span>.<span class="ruby-identifier">read</span> }        
+      <span class="ruby-keyword">return</span> <span class="ruby-identifier">io</span>.<span class="ruby-identifier">pid</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">RUBY_VERSION</span> <span class="ruby-operator">&lt;</span> <span class="ruby-string">'1.9.1'</span>
+    <span class="ruby-constant">Process</span>.<span class="ruby-identifier">create</span>( <span class="ruby-value">:app_name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">app</span>, <span class="ruby-value">:cwd</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@path</span> ).<span class="ruby-identifier">process_id</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-constant">Process</span>.<span class="ruby-identifier">spawn</span>( <span class="ruby-identifier">app</span>, <span class="ruby-value">:chdir</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@path</span> )
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- spawn_process-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- spawn_process-method -->
+
+    
+      <div id="method-i-start_Rinda_ringserver" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">start_Rinda_ringserver</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="start_Rinda_ringserver-source">
+            <pre><span class="ruby-comment"># File lib/spork/run_strategy/magazine.rb, line 43</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">start_Rinda_ringserver</span>
+  <span class="ruby-identifier">app_name</span> = <span class="ruby-node">&quot;#{Gem.ruby} ring_server.rb&quot;</span>
+  <span class="ruby-identifier">spawn_process</span>(<span class="ruby-identifier">app_name</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- start_Rinda_ringserver-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- start_Rinda_ringserver-method -->
+
+    
+      <div id="method-i-start_slave" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">start_slave</span><span
+            class="method-args">(id)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="start_slave-source">
+            <pre><span class="ruby-comment"># File lib/spork/run_strategy/magazine.rb, line 58</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">start_slave</span>(<span class="ruby-identifier">id</span>)
+  <span class="ruby-identifier">app_pwd</span> = <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">pwd</span>  <span class="ruby-comment"># path running app in</span>
+  <span class="ruby-identifier">app</span> = <span class="ruby-node">&quot;#{Gem.ruby} magazine_slave_provider.rb #{id} '#{app_pwd}' #{@test_framework.short_name}&quot;</span>
+  <span class="ruby-ivar">@pids</span>[<span class="ruby-identifier">id</span>] = <span class="ruby-identifier">spawn_process</span>(<span class="ruby-identifier">app</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- start_slave-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- start_slave-method -->
+
+    
+      <div id="method-i-windows-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">windows?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="windows-3F-source">
+            <pre><span class="ruby-comment"># File lib/spork/run_strategy/magazine.rb, line 113</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">windows?</span>
+  <span class="ruby-constant">ENV</span>[<span class="ruby-string">'OS'</span>] <span class="ruby-operator">==</span> <span class="ruby-string">'Windows_NT'</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- windows-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- windows-3F-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

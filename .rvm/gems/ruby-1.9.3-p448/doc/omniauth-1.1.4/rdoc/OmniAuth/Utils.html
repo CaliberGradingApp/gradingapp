@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module OmniAuth::Utils - omniauth-1.1.4 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/omniauth.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-camelize">#camelize</a>
+    
+    <li><a href="#method-i-deep_merge">#deep_merge</a>
+    
+    <li><a href="#method-i-form_css">#form_css</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../OmniAuth.html">OmniAuth</a>
+  
+    <li><a href="../OmniAuth/AuthHash.html">OmniAuth::AuthHash</a>
+  
+    <li><a href="../OmniAuth/AuthHash/InfoHash.html">OmniAuth::AuthHash::InfoHash</a>
+  
+    <li><a href="../OmniAuth/Builder.html">OmniAuth::Builder</a>
+  
+    <li><a href="../OmniAuth/Configuration.html">OmniAuth::Configuration</a>
+  
+    <li><a href="../OmniAuth/Error.html">OmniAuth::Error</a>
+  
+    <li><a href="../OmniAuth/FailureEndpoint.html">OmniAuth::FailureEndpoint</a>
+  
+    <li><a href="../OmniAuth/Form.html">OmniAuth::Form</a>
+  
+    <li><a href="../OmniAuth/NoSessionError.html">OmniAuth::NoSessionError</a>
+  
+    <li><a href="../OmniAuth/Strategies.html">OmniAuth::Strategies</a>
+  
+    <li><a href="../OmniAuth/Strategies/Developer.html">OmniAuth::Strategies::Developer</a>
+  
+    <li><a href="../OmniAuth/Strategy.html">OmniAuth::Strategy</a>
+  
+    <li><a href="../OmniAuth/Strategy/ClassMethods.html">OmniAuth::Strategy::ClassMethods</a>
+  
+    <li><a href="../OmniAuth/Strategy/Options.html">OmniAuth::Strategy::Options</a>
+  
+    <li><a href="../OmniAuth/Test.html">OmniAuth::Test</a>
+  
+    <li><a href="../OmniAuth/Test/PhonySession.html">OmniAuth::Test::PhonySession</a>
+  
+    <li><a href="../OmniAuth/Test/StrategyMacros.html">OmniAuth::Test::StrategyMacros</a>
+  
+    <li><a href="../OmniAuth/Test/StrategyTestCase.html">OmniAuth::Test::StrategyTestCase</a>
+  
+    <li><a href="../OmniAuth/Utils.html">OmniAuth::Utils</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module OmniAuth::Utils</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-camelize" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">camelize</span><span
+            class="method-args">(word, first_letter_in_uppercase = true)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="camelize-source">
+            <pre><span class="ruby-comment"># File lib/omniauth.rb, line 140</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">camelize</span>(<span class="ruby-identifier">word</span>, <span class="ruby-identifier">first_letter_in_uppercase</span> = <span class="ruby-keyword">true</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-constant">OmniAuth</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">camelizations</span>[<span class="ruby-identifier">word</span>.<span class="ruby-identifier">to_s</span>] <span class="ruby-keyword">if</span> <span class="ruby-constant">OmniAuth</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">camelizations</span>[<span class="ruby-identifier">word</span>.<span class="ruby-identifier">to_s</span>]
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">first_letter_in_uppercase</span>
+    <span class="ruby-identifier">word</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/\/(.?)/</span>) { <span class="ruby-string">&quot;::&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-node">$1</span>.<span class="ruby-identifier">upcase</span> }.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/(^|_)(.)/</span>) { <span class="ruby-node">$2</span>.<span class="ruby-identifier">upcase</span> }
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">word</span>.<span class="ruby-identifier">first</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">camelize</span>(<span class="ruby-identifier">word</span>)[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- camelize-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- camelize-method -->
+
+    
+      <div id="method-i-deep_merge" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">deep_merge</span><span
+            class="method-args">(hash, other_hash)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="deep_merge-source">
+            <pre><span class="ruby-comment"># File lib/omniauth.rb, line 125</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">deep_merge</span>(<span class="ruby-identifier">hash</span>, <span class="ruby-identifier">other_hash</span>)
+  <span class="ruby-identifier">target</span> = <span class="ruby-identifier">hash</span>.<span class="ruby-identifier">dup</span>
+
+  <span class="ruby-identifier">other_hash</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">other_hash</span>[<span class="ruby-identifier">key</span>].<span class="ruby-identifier">is_a?</span> <span class="ruby-operator">::</span><span class="ruby-constant">Hash</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">key</span>].<span class="ruby-identifier">is_a?</span> <span class="ruby-operator">::</span><span class="ruby-constant">Hash</span>
+      <span class="ruby-identifier">target</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-identifier">deep_merge</span>(<span class="ruby-identifier">target</span>[<span class="ruby-identifier">key</span>],<span class="ruby-identifier">other_hash</span>[<span class="ruby-identifier">key</span>])
+      <span class="ruby-keyword">next</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">target</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-identifier">other_hash</span>[<span class="ruby-identifier">key</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">target</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- deep_merge-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- deep_merge-method -->
+
+    
+      <div id="method-i-form_css" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">form_css</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="form_css-source">
+            <pre><span class="ruby-comment"># File lib/omniauth.rb, line 121</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">form_css</span>
+  <span class="ruby-node">&quot;&lt;style type='text/css'&gt;#{OmniAuth.config.form_css}&lt;/style&gt;&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- form_css-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- form_css-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

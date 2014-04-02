@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class GraphViz::Theory - ruby-graphviz-1.0.9 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/graphviz/theory.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="../Object.html">Object</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-adjancy_matrix">#adjancy_matrix</a>
+    
+    <li><a href="#method-i-bfs">#bfs</a>
+    
+    <li><a href="#method-i-critical_path">#critical_path</a>
+    
+    <li><a href="#method-i-degree">#degree</a>
+    
+    <li><a href="#method-i-dfs">#dfs</a>
+    
+    <li><a href="#method-i-incidence_matrix">#incidence_matrix</a>
+    
+    <li><a href="#method-i-incidents">#incidents</a>
+    
+    <li><a href="#method-i-laplacian_matrix">#laplacian_matrix</a>
+    
+    <li><a href="#method-i-moore_dijkstra">#moore_dijkstra</a>
+    
+    <li><a href="#method-i-neighbors">#neighbors</a>
+    
+    <li><a href="#method-i-pagerank">#pagerank</a>
+    
+    <li><a href="#method-i-range">#range</a>
+    
+    <li><a href="#method-i-symmetric-3F">#symmetric?</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../AUTHORS_rdoc.html">AUTHORS</a>
+  
+    <li class="file"><a href="../CHANGELOG_rdoc.html">CHANGELOG</a>
+  
+    <li class="file"><a href="../COPYING_rdoc.html">COPYING</a>
+  
+    <li class="file"><a href="../README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../GraphViz.html">GraphViz</a>
+  
+    <li><a href="../GraphViz/Attrs.html">GraphViz::Attrs</a>
+  
+    <li><a href="../GraphViz/Constants.html">GraphViz::Constants</a>
+  
+    <li><a href="../GraphViz/DOTScript.html">GraphViz::DOTScript</a>
+  
+    <li><a href="../GraphViz/DOTScriptData.html">GraphViz::DOTScriptData</a>
+  
+    <li><a href="../GraphViz/DSL.html">GraphViz::DSL</a>
+  
+    <li><a href="../GraphViz/Edge.html">GraphViz::Edge</a>
+  
+    <li><a href="../GraphViz/Elements.html">GraphViz::Elements</a>
+  
+    <li><a href="../GraphViz/Ext.html">GraphViz::Ext</a>
+  
+    <li><a href="../GraphViz/FamilyTree.html">GraphViz::FamilyTree</a>
+  
+    <li><a href="../GraphViz/FamilyTree/Couple.html">GraphViz::FamilyTree::Couple</a>
+  
+    <li><a href="../GraphViz/FamilyTree/Generation.html">GraphViz::FamilyTree::Generation</a>
+  
+    <li><a href="../GraphViz/FamilyTree/Person.html">GraphViz::FamilyTree::Person</a>
+  
+    <li><a href="../GraphViz/FamilyTree/Sibling.html">GraphViz::FamilyTree::Sibling</a>
+  
+    <li><a href="../GraphViz/GraphML.html">GraphViz::GraphML</a>
+  
+    <li><a href="../GraphViz/GraphMLError.html">GraphViz::GraphMLError</a>
+  
+    <li><a href="../GraphViz/Math.html">GraphViz::Math</a>
+  
+    <li><a href="../GraphViz/Math/CoordinateError.html">GraphViz::Math::CoordinateError</a>
+  
+    <li><a href="../GraphViz/Math/Matrix.html">GraphViz::Math::Matrix</a>
+  
+    <li><a href="../GraphViz/Math/ValueError.html">GraphViz::Math::ValueError</a>
+  
+    <li><a href="../GraphViz/Node.html">GraphViz::Node</a>
+  
+    <li><a href="../GraphViz/Theory.html">GraphViz::Theory</a>
+  
+    <li><a href="../GraphViz/Types.html">GraphViz::Types</a>
+  
+    <li><a href="../GraphViz/Types/ArrowType.html">GraphViz::Types::ArrowType</a>
+  
+    <li><a href="../GraphViz/Types/Color.html">GraphViz::Types::Color</a>
+  
+    <li><a href="../GraphViz/Types/ColorList.html">GraphViz::Types::ColorList</a>
+  
+    <li><a href="../GraphViz/Types/Common.html">GraphViz::Types::Common</a>
+  
+    <li><a href="../GraphViz/Types/EscString.html">GraphViz::Types::EscString</a>
+  
+    <li><a href="../GraphViz/Types/GvBool.html">GraphViz::Types::GvBool</a>
+  
+    <li><a href="../GraphViz/Types/GvDouble.html">GraphViz::Types::GvDouble</a>
+  
+    <li><a href="../GraphViz/Types/HtmlString.html">GraphViz::Types::HtmlString</a>
+  
+    <li><a href="../GraphViz/Types/LblString.html">GraphViz::Types::LblString</a>
+  
+    <li><a href="../GraphViz/Types/Rect.html">GraphViz::Types::Rect</a>
+  
+    <li><a href="../GraphViz/Types/SplineType.html">GraphViz::Types::SplineType</a>
+  
+    <li><a href="../GraphViz/Utils.html">GraphViz::Utils</a>
+  
+    <li><a href="../GraphViz/Utils/Colors.html">GraphViz::Utils::Colors</a>
+  
+    <li><a href="../GraphViz/XML.html">GraphViz::XML</a>
+  
+    <li><a href="../AttributeException.html">AttributeException</a>
+  
+    <li><a href="../BoolException.html">BoolException</a>
+  
+    <li><a href="../ColorException.html">ColorException</a>
+  
+    <li><a href="../DoubleException.html">DoubleException</a>
+  
+    <li><a href="../Hash.html">Hash</a>
+  
+    <li><a href="../Object.html">Object</a>
+  
+    <li><a href="../RectException.html">RectException</a>
+  
+    <li><a href="../SplineTypeException.html">SplineTypeException</a>
+  
+    <li><a href="../String.html">String</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class GraphViz::Theory</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">( graph )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/graphviz/theory.rb, line 5</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>( <span class="ruby-identifier">graph</span> )
+   <span class="ruby-ivar">@graph</span> = <span class="ruby-identifier">graph</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-adjancy_matrix" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">adjancy_matrix</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Return the adjancy matrix of the graph</p>
+          
+
+          
+          <div class="method-source-code" id="adjancy_matrix-source">
+            <pre><span class="ruby-comment"># File lib/graphviz/theory.rb, line 10</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">adjancy_matrix</span>
+   <span class="ruby-identifier">matrix</span> = <span class="ruby-constant">GraphViz</span><span class="ruby-operator">::</span><span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">new</span>( <span class="ruby-ivar">@graph</span>.<span class="ruby-identifier">node_count</span>, <span class="ruby-ivar">@graph</span>.<span class="ruby-identifier">node_count</span> )
+
+   <span class="ruby-ivar">@graph</span>.<span class="ruby-identifier">each_edge</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">x</span> = <span class="ruby-ivar">@graph</span>.<span class="ruby-identifier">get_node</span>(<span class="ruby-identifier">e</span>.<span class="ruby-identifier">node_one</span>( <span class="ruby-keyword">false</span> )).<span class="ruby-identifier">index</span>
+      <span class="ruby-identifier">y</span> = <span class="ruby-ivar">@graph</span>.<span class="ruby-identifier">get_node</span>(<span class="ruby-identifier">e</span>.<span class="ruby-identifier">node_two</span>( <span class="ruby-keyword">false</span> )).<span class="ruby-identifier">index</span>
+      <span class="ruby-identifier">matrix</span>[<span class="ruby-identifier">x</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>, <span class="ruby-identifier">y</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>] = <span class="ruby-value">1</span>
+      <span class="ruby-identifier">matrix</span>[<span class="ruby-identifier">y</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>, <span class="ruby-identifier">x</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>] = <span class="ruby-value">1</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@graph</span>.<span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;graph&quot;</span>
+   }
+
+   <span class="ruby-keyword">return</span> <span class="ruby-identifier">matrix</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- adjancy_matrix-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- adjancy_matrix-method -->
+
+    
+      <div id="method-i-bfs" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">bfs</span><span
+            class="method-args">(node, &b)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Breadth First Search</p>
+          
+
+          
+          <div class="method-source-code" id="bfs-source">
+            <pre><span class="ruby-comment"># File lib/graphviz/theory.rb, line 209</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">bfs</span>(<span class="ruby-identifier">node</span>, &amp;<span class="ruby-identifier">b</span>)
+   <span class="ruby-identifier">queue</span> = []
+   <span class="ruby-identifier">visited_nodes</span> = []
+   <span class="ruby-identifier">node</span> = <span class="ruby-ivar">@graph</span>.<span class="ruby-identifier">get_node</span>(<span class="ruby-identifier">node</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">kind_of?</span> <span class="ruby-constant">String</span>
+   <span class="ruby-identifier">queue</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">node</span>
+   <span class="ruby-identifier">visited_nodes</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">node</span>
+
+   <span class="ruby-keyword">while</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">queue</span>.<span class="ruby-identifier">empty?</span>
+      <span class="ruby-identifier">node</span> = <span class="ruby-identifier">queue</span>.<span class="ruby-identifier">shift</span>
+      <span class="ruby-identifier">b</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">node</span>)
+      <span class="ruby-identifier">neighbors</span>(<span class="ruby-identifier">node</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span>
+         <span class="ruby-keyword">unless</span> <span class="ruby-identifier">visited_nodes</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">n</span>)
+            <span class="ruby-identifier">visited_nodes</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">n</span>
+            <span class="ruby-identifier">queue</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">n</span>
+         <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+   <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- bfs-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- bfs-method -->
+
+    
+      <div id="method-i-critical_path" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">critical_path</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Return the critical path for a PERT network</p>
+
+<p>If the given graph is not a PERT network, return nul</p>
+          
+
+          
+          <div class="method-source-code" id="critical_path-source">
+            <pre><span class="ruby-comment"># File lib/graphviz/theory.rb, line 149</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">critical_path</span>
+   <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">range</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-keyword">nil</span>) <span class="ruby-keyword">or</span> <span class="ruby-ivar">@graph</span>.<span class="ruby-identifier">type</span> <span class="ruby-operator">!=</span> <span class="ruby-string">&quot;digraph&quot;</span>
+   <span class="ruby-identifier">r</span> = [ [<span class="ruby-value">0</span>, [<span class="ruby-value">1</span>]] ]
+
+   <span class="ruby-identifier">critical_path_recursion</span>( <span class="ruby-identifier">distance_matrix</span>, <span class="ruby-identifier">adjancy_matrix</span>, <span class="ruby-identifier">r</span>, [], <span class="ruby-value">0</span> ).<span class="ruby-identifier">inject</span>( {<span class="ruby-value">:distance</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>, <span class="ruby-value">:path</span> =<span class="ruby-operator">&gt;</span> []} ) { <span class="ruby-operator">|</span><span class="ruby-identifier">_r</span>, <span class="ruby-identifier">item</span><span class="ruby-operator">|</span>
+      (<span class="ruby-identifier">_r</span>[<span class="ruby-value">:distance</span>] <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">item</span>[<span class="ruby-value">0</span>]) <span class="ruby-operator">?</span> { <span class="ruby-value">:distance</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">item</span>[<span class="ruby-value">0</span>], <span class="ruby-value">:path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">item</span>[<span class="ruby-value">1</span>] } <span class="ruby-operator">:</span> <span class="ruby-identifier">_r</span>
+   }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- critical_path-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- critical_path-method -->
+
+    
+      <div id="method-i-degree" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">degree</span><span
+            class="method-args">( node )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Return the degree of the given node</p>
+          
+
+          
+          <div class="method-source-code" id="degree-source">
+            <pre><span class="ruby-comment"># File lib/graphviz/theory.rb, line 43</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">degree</span>( <span class="ruby-identifier">node</span> )
+   <span class="ruby-identifier">degree</span> = <span class="ruby-value">0</span>
+   <span class="ruby-identifier">name</span> = <span class="ruby-identifier">node</span>
+   <span class="ruby-keyword">if</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">GraphViz</span><span class="ruby-operator">::</span><span class="ruby-constant">Node</span>)
+      <span class="ruby-identifier">name</span> = <span class="ruby-identifier">node</span>.<span class="ruby-identifier">id</span>
+   <span class="ruby-keyword">end</span>
+
+   <span class="ruby-ivar">@graph</span>.<span class="ruby-identifier">each_edge</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">degree</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">node_one</span>(<span class="ruby-keyword">false</span>) <span class="ruby-operator">==</span> <span class="ruby-identifier">name</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">node_two</span>(<span class="ruby-keyword">false</span>) <span class="ruby-operator">==</span> <span class="ruby-identifier">name</span>
+   <span class="ruby-keyword">end</span>
+
+   <span class="ruby-keyword">return</span> <span class="ruby-identifier">degree</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- degree-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- degree-method -->
+
+    
+      <div id="method-i-dfs" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">dfs</span><span
+            class="method-args">(node, &b)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Depth First Search</p>
+          
+
+          
+          <div class="method-source-code" id="dfs-source">
+            <pre><span class="ruby-comment"># File lib/graphviz/theory.rb, line 229</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">dfs</span>(<span class="ruby-identifier">node</span>, &amp;<span class="ruby-identifier">b</span>)
+   <span class="ruby-identifier">visited_nodes</span> = []
+   <span class="ruby-identifier">recursive_dfs</span>(<span class="ruby-identifier">node</span>, <span class="ruby-identifier">visited_nodes</span>, &amp;<span class="ruby-identifier">b</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- dfs-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- dfs-method -->
+
+    
+      <div id="method-i-incidence_matrix" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">incidence_matrix</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Return the incidence matrix of the graph</p>
+          
+
+          
+          <div class="method-source-code" id="incidence_matrix-source">
+            <pre><span class="ruby-comment"># File lib/graphviz/theory.rb, line 24</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">incidence_matrix</span>
+   <span class="ruby-identifier">tail</span> = (<span class="ruby-ivar">@graph</span>.<span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;digraph&quot;</span>) <span class="ruby-operator">?</span> <span class="ruby-value">-1</span> <span class="ruby-operator">:</span> <span class="ruby-value">1</span>
+   <span class="ruby-identifier">matrix</span> = <span class="ruby-constant">GraphViz</span><span class="ruby-operator">::</span><span class="ruby-constant">Math</span><span class="ruby-operator">::</span><span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">new</span>( <span class="ruby-ivar">@graph</span>.<span class="ruby-identifier">node_count</span>, <span class="ruby-ivar">@graph</span>.<span class="ruby-identifier">edge_count</span> )
+
+   <span class="ruby-ivar">@graph</span>.<span class="ruby-identifier">each_edge</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">x</span> = <span class="ruby-identifier">e</span>.<span class="ruby-identifier">index</span>
+
+      <span class="ruby-identifier">nstart</span> = <span class="ruby-ivar">@graph</span>.<span class="ruby-identifier">get_node</span>(<span class="ruby-identifier">e</span>.<span class="ruby-identifier">node_one</span>( <span class="ruby-keyword">false</span> )).<span class="ruby-identifier">index</span>
+      <span class="ruby-identifier">nend</span> = <span class="ruby-ivar">@graph</span>.<span class="ruby-identifier">get_node</span>(<span class="ruby-identifier">e</span>.<span class="ruby-identifier">node_two</span>( <span class="ruby-keyword">false</span> )).<span class="ruby-identifier">index</span>
+
+      <span class="ruby-identifier">matrix</span>[<span class="ruby-identifier">nstart</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>, <span class="ruby-identifier">x</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>] = <span class="ruby-value">1</span>
+      <span class="ruby-identifier">matrix</span>[<span class="ruby-identifier">nend</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>, <span class="ruby-identifier">x</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>] = <span class="ruby-identifier">tail</span>
+      <span class="ruby-identifier">matrix</span>[<span class="ruby-identifier">nend</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>, <span class="ruby-identifier">x</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>] = <span class="ruby-value">2</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">nstart</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">nend</span>
+   }
+
+   <span class="ruby-keyword">return</span> <span class="ruby-identifier">matrix</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- incidence_matrix-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- incidence_matrix-method -->
+
+    
+      <div id="method-i-incidents" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">incidents</span><span
+            class="method-args">(node)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Return the list of nodes that are incident to the given node (in a directed
+graph neighbors == incidents)</p>
+          
+
+          
+          <div class="method-source-code" id="incidents-source">
+            <pre><span class="ruby-comment"># File lib/graphviz/theory.rb, line 200</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">incidents</span>(<span class="ruby-identifier">node</span>)
+   <span class="ruby-keyword">if</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">String</span>
+      <span class="ruby-ivar">@graph</span>.<span class="ruby-identifier">get_node</span>(<span class="ruby-identifier">node</span>).<span class="ruby-identifier">incidents</span>
+   <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">node</span>.<span class="ruby-identifier">incidents</span>
+   <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- incidents-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- incidents-method -->
+
+    
+      <div id="method-i-laplacian_matrix" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">laplacian_matrix</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Return the laplacian matrix of the graph</p>
+          
+
+          
+          <div class="method-source-code" id="laplacian_matrix-source">
+            <pre><span class="ruby-comment"># File lib/graphviz/theory.rb, line 58</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">laplacian_matrix</span>
+   <span class="ruby-keyword">return</span> <span class="ruby-identifier">degree_matrix</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">adjancy_matrix</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- laplacian_matrix-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- laplacian_matrix-method -->
+
+    
+      <div id="method-i-moore_dijkstra" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">moore_dijkstra</span><span
+            class="method-args">( dep, arv )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><a href="Theory.html#method-i-moore_dijkstra">#moore_dijkstra</a>(source,
+destination)</p>
+          
+
+          
+          <div class="method-source-code" id="moore_dijkstra-source">
+            <pre><span class="ruby-comment"># File lib/graphviz/theory.rb, line 68</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">moore_dijkstra</span>( <span class="ruby-identifier">dep</span>, <span class="ruby-identifier">arv</span> )
+   <span class="ruby-identifier">dep</span> = <span class="ruby-ivar">@graph</span>.<span class="ruby-identifier">get_node</span>(<span class="ruby-identifier">dep</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">dep</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">GraphViz</span><span class="ruby-operator">::</span><span class="ruby-constant">Node</span>)
+   <span class="ruby-identifier">arv</span> = <span class="ruby-ivar">@graph</span>.<span class="ruby-identifier">get_node</span>(<span class="ruby-identifier">arv</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">arv</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">GraphViz</span><span class="ruby-operator">::</span><span class="ruby-constant">Node</span>)
+
+   <span class="ruby-identifier">m</span> = <span class="ruby-identifier">distance_matrix</span>
+   <span class="ruby-identifier">n</span> = <span class="ruby-ivar">@graph</span>.<span class="ruby-identifier">node_count</span>
+   <span class="ruby-comment"># Table des sommets à choisir</span>
+   <span class="ruby-identifier">c</span> = [<span class="ruby-identifier">dep</span>.<span class="ruby-identifier">index</span>]
+   <span class="ruby-comment"># Table des distances</span>
+   <span class="ruby-identifier">d</span> = []
+   <span class="ruby-identifier">d</span>[<span class="ruby-identifier">dep</span>.<span class="ruby-identifier">index</span>] = <span class="ruby-value">0</span>
+
+   <span class="ruby-comment"># Table des predecesseurs</span>
+   <span class="ruby-identifier">pred</span> = []
+
+   <span class="ruby-ivar">@graph</span>.<span class="ruby-identifier">each_node</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>, <span class="ruby-identifier">k</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">k</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">dep</span>
+         <span class="ruby-identifier">d</span>[<span class="ruby-identifier">k</span>.<span class="ruby-identifier">index</span>] = <span class="ruby-identifier">m</span>[<span class="ruby-identifier">dep</span>.<span class="ruby-identifier">index</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>,<span class="ruby-identifier">k</span>.<span class="ruby-identifier">index</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>]
+         <span class="ruby-identifier">pred</span>[<span class="ruby-identifier">k</span>.<span class="ruby-identifier">index</span>] = <span class="ruby-identifier">dep</span>
+      <span class="ruby-keyword">end</span>
+   <span class="ruby-keyword">end</span>
+
+   <span class="ruby-keyword">while</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">n</span>
+      <span class="ruby-comment"># trouver y tel que d[y] = min{d[k];  k sommet tel que k n'appartient pas à c}</span>
+      <span class="ruby-identifier">mini</span> = <span class="ruby-value">1.0</span><span class="ruby-operator">/</span><span class="ruby-value">0.0</span>
+      <span class="ruby-identifier">y</span> = <span class="ruby-keyword">nil</span>
+      <span class="ruby-ivar">@graph</span>.<span class="ruby-identifier">each_node</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>, <span class="ruby-identifier">k</span><span class="ruby-operator">|</span>
+         <span class="ruby-keyword">next</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">k</span>.<span class="ruby-identifier">index</span>)
+         <span class="ruby-keyword">if</span> <span class="ruby-identifier">d</span>[<span class="ruby-identifier">k</span>.<span class="ruby-identifier">index</span>] <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">mini</span>
+            <span class="ruby-identifier">mini</span> = <span class="ruby-identifier">d</span>[<span class="ruby-identifier">k</span>.<span class="ruby-identifier">index</span>]
+            <span class="ruby-identifier">y</span> = <span class="ruby-identifier">k</span>
+         <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-comment"># si ce minimum est ∞ alors sortir de la boucle fin si</span>
+      <span class="ruby-keyword">break</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">mini</span>.<span class="ruby-identifier">to_f</span>.<span class="ruby-identifier">infinite?</span>.<span class="ruby-identifier">nil?</span>
+
+      <span class="ruby-identifier">c</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">y</span>.<span class="ruby-identifier">index</span>
+      <span class="ruby-ivar">@graph</span>.<span class="ruby-identifier">each_node</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>, <span class="ruby-identifier">k</span><span class="ruby-operator">|</span>
+         <span class="ruby-keyword">next</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">k</span>.<span class="ruby-identifier">index</span>)
+         <span class="ruby-keyword">if</span> <span class="ruby-identifier">d</span>[<span class="ruby-identifier">k</span>.<span class="ruby-identifier">index</span>] <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">d</span>[<span class="ruby-identifier">y</span>.<span class="ruby-identifier">index</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">m</span>[<span class="ruby-identifier">y</span>.<span class="ruby-identifier">index</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>,<span class="ruby-identifier">k</span>.<span class="ruby-identifier">index</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>]
+            <span class="ruby-identifier">d</span>[<span class="ruby-identifier">k</span>.<span class="ruby-identifier">index</span>] = <span class="ruby-identifier">d</span>[<span class="ruby-identifier">y</span>.<span class="ruby-identifier">index</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">m</span>[<span class="ruby-identifier">y</span>.<span class="ruby-identifier">index</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>,<span class="ruby-identifier">k</span>.<span class="ruby-identifier">index</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>]
+            <span class="ruby-identifier">pred</span>[<span class="ruby-identifier">k</span>.<span class="ruby-identifier">index</span>] = <span class="ruby-identifier">y</span>
+         <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+   <span class="ruby-keyword">end</span>
+
+   <span class="ruby-comment"># Construction du chemin le plus court</span>
+   <span class="ruby-identifier">ch</span> = []
+   <span class="ruby-identifier">k</span> = <span class="ruby-identifier">arv</span>
+   <span class="ruby-keyword">while</span> <span class="ruby-identifier">k</span>.<span class="ruby-identifier">index</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">dep</span>.<span class="ruby-identifier">index</span>
+      <span class="ruby-identifier">ch</span>.<span class="ruby-identifier">unshift</span>(<span class="ruby-identifier">k</span>)
+      <span class="ruby-identifier">k</span> = <span class="ruby-identifier">pred</span>[<span class="ruby-identifier">k</span>.<span class="ruby-identifier">index</span>]
+   <span class="ruby-keyword">end</span>
+   <span class="ruby-identifier">ch</span>.<span class="ruby-identifier">unshift</span>(<span class="ruby-identifier">dep</span>)
+
+   <span class="ruby-keyword">if</span> <span class="ruby-identifier">d</span>[<span class="ruby-identifier">arv</span>.<span class="ruby-identifier">index</span>].<span class="ruby-identifier">to_f</span>.<span class="ruby-identifier">infinite?</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>
+   <span class="ruby-keyword">else</span>
+      <span class="ruby-keyword">return</span>( {
+         <span class="ruby-value">:path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">ch</span>,
+         <span class="ruby-value">:distance</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">d</span>[<span class="ruby-identifier">arv</span>.<span class="ruby-identifier">index</span>]
+      } )
+   <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- moore_dijkstra-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- moore_dijkstra-method -->
+
+    
+      <div id="method-i-neighbors" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">neighbors</span><span
+            class="method-args">(node)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Return the list of nodes that are directly accessible from given node</p>
+          
+
+          
+          <div class="method-source-code" id="neighbors-source">
+            <pre><span class="ruby-comment"># File lib/graphviz/theory.rb, line 191</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">neighbors</span>(<span class="ruby-identifier">node</span>)
+   <span class="ruby-keyword">if</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">String</span>
+      <span class="ruby-ivar">@graph</span>.<span class="ruby-identifier">get_node</span>(<span class="ruby-identifier">node</span>).<span class="ruby-identifier">neighbors</span>
+   <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">node</span>.<span class="ruby-identifier">neighbors</span>
+   <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- neighbors-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- neighbors-method -->
+
+    
+      <div id="method-i-pagerank" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pagerank</span><span
+            class="method-args">(damping_factor = 0.85, max_iterations = 100, min_delta = 0.00001)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Return the PageRank in an directed graph.</p>
+<ul><li>
+<p>damping_factor: PageRank dumping factor.</p>
+</li><li>
+<p>max_iterations: Maximum number of iterations.</p>
+</li><li>
+<p>min_delta: Smallest variation required to have a new iteration.</p>
+</li></ul>
+          
+
+          
+          <div class="method-source-code" id="pagerank-source">
+            <pre><span class="ruby-comment"># File lib/graphviz/theory.rb, line 163</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">pagerank</span>(<span class="ruby-identifier">damping_factor</span> = <span class="ruby-value">0.85</span>, <span class="ruby-identifier">max_iterations</span> = <span class="ruby-value">100</span>, <span class="ruby-identifier">min_delta</span> = <span class="ruby-value">0.00001</span>)
+   <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@graph</span>.<span class="ruby-identifier">directed?</span>
+
+   <span class="ruby-identifier">min_value</span> = (<span class="ruby-value">1.0</span><span class="ruby-operator">-</span><span class="ruby-identifier">damping_factor</span>)<span class="ruby-operator">/</span><span class="ruby-ivar">@graph</span>.<span class="ruby-identifier">node_count</span>
+
+   <span class="ruby-identifier">pagerank</span> = {}
+   <span class="ruby-ivar">@graph</span>.<span class="ruby-identifier">each_node</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">_</span>, <span class="ruby-identifier">node</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">pagerank</span>[<span class="ruby-identifier">node</span>] = <span class="ruby-value">1.0</span><span class="ruby-operator">/</span><span class="ruby-ivar">@graph</span>.<span class="ruby-identifier">node_count</span>
+   }
+
+   <span class="ruby-identifier">max_iterations</span>.<span class="ruby-identifier">times</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">_</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">diff</span> = <span class="ruby-value">0</span>
+      <span class="ruby-ivar">@graph</span>.<span class="ruby-identifier">each_node</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">_</span>, <span class="ruby-identifier">node</span><span class="ruby-operator">|</span>
+         <span class="ruby-identifier">rank</span> = <span class="ruby-identifier">min_value</span>
+         <span class="ruby-identifier">incidents</span>(<span class="ruby-identifier">node</span>).<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">referent</span><span class="ruby-operator">|</span>
+            <span class="ruby-identifier">rank</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">damping_factor</span> * <span class="ruby-identifier">pagerank</span>[<span class="ruby-identifier">referent</span>] <span class="ruby-operator">/</span> <span class="ruby-identifier">neighbors</span>(<span class="ruby-identifier">referent</span>).<span class="ruby-identifier">size</span>
+         }
+
+         <span class="ruby-identifier">diff</span> <span class="ruby-operator">+=</span> (<span class="ruby-identifier">pagerank</span>[<span class="ruby-identifier">node</span>] <span class="ruby-operator">-</span> <span class="ruby-identifier">rank</span>).<span class="ruby-identifier">abs</span>
+         <span class="ruby-identifier">pagerank</span>[<span class="ruby-identifier">node</span>] = <span class="ruby-identifier">rank</span>
+      }
+      <span class="ruby-keyword">break</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">diff</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">min_delta</span>
+   }
+
+   <span class="ruby-keyword">return</span> <span class="ruby-identifier">pagerank</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- pagerank-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- pagerank-method -->
+
+    
+      <div id="method-i-range" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">range</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Return a liste of range</p>
+
+<p>If the returned array include nil values, there is one or more circuits in
+the graph</p>
+          
+
+          
+          <div class="method-source-code" id="range-source">
+            <pre><span class="ruby-comment"># File lib/graphviz/theory.rb, line 137</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">range</span>
+   <span class="ruby-identifier">matrix</span> = <span class="ruby-identifier">adjancy_matrix</span>
+   <span class="ruby-identifier">unseen</span> = (<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-identifier">matrix</span>.<span class="ruby-identifier">columns</span>).<span class="ruby-identifier">to_a</span>
+   <span class="ruby-identifier">result</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">matrix</span>.<span class="ruby-identifier">columns</span>)
+   <span class="ruby-identifier">r</span> = <span class="ruby-value">0</span>
+
+   <span class="ruby-identifier">range_recursion</span>( <span class="ruby-identifier">matrix</span>, <span class="ruby-identifier">unseen</span>, <span class="ruby-identifier">result</span>, <span class="ruby-identifier">r</span> )
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- range-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- range-method -->
+
+    
+      <div id="method-i-symmetric-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">symmetric?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Return <code>true</code> if the graph if symmetric, <code>false</code>
+otherwise</p>
+          
+
+          
+          <div class="method-source-code" id="symmetric-3F-source">
+            <pre><span class="ruby-comment"># File lib/graphviz/theory.rb, line 63</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">symmetric?</span>
+   <span class="ruby-identifier">adjancy_matrix</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">adjancy_matrix</span>.<span class="ruby-identifier">transpose</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- symmetric-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- symmetric-3F-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

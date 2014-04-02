@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module Cane::CLI - cane-2.6.1 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/cane/cli.rb
+    <li>lib/cane/cli/parser.rb
+    <li>lib/cane/cli/options.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-default_options">::default_options</a>
+    
+    <li><a href="#method-c-defaults">::defaults</a>
+    
+    <li><a href="#method-c-run">::run</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Cane.html">Cane</a>
+  
+    <li><a href="../Cane/AbcCheck.html">Cane::AbcCheck</a>
+  
+    <li><a href="../Cane/AbcCheck/InvalidAst.html">Cane::AbcCheck::InvalidAst</a>
+  
+    <li><a href="../Cane/AbcCheck/RubyAst.html">Cane::AbcCheck::RubyAst</a>
+  
+    <li><a href="../Cane/CLI.html">Cane::CLI</a>
+  
+    <li><a href="../Cane/CLI/Parser.html">Cane::CLI::Parser</a>
+  
+    <li><a href="../Cane/CLI/Parser/OptionsHandled.html">Cane::CLI::Parser::OptionsHandled</a>
+  
+    <li><a href="../Cane/DocCheck.html">Cane::DocCheck</a>
+  
+    <li><a href="../Cane/EncodingAwareIterator.html">Cane::EncodingAwareIterator</a>
+  
+    <li><a href="../Cane/File.html">Cane::File</a>
+  
+    <li><a href="../Cane/JsonFormatter.html">Cane::JsonFormatter</a>
+  
+    <li><a href="../Cane/RakeTask.html">Cane::RakeTask</a>
+  
+    <li><a href="../Cane/Runner.html">Cane::Runner</a>
+  
+    <li><a href="../Cane/SimpleTaskRunner.html">Cane::SimpleTaskRunner</a>
+  
+    <li><a href="../Cane/StyleCheck.html">Cane::StyleCheck</a>
+  
+    <li><a href="../Cane/ThresholdCheck.html">Cane::ThresholdCheck</a>
+  
+    <li><a href="../Cane/ThresholdCheck/UnavailableValue.html">Cane::ThresholdCheck::UnavailableValue</a>
+  
+    <li><a href="../Cane/ViolationFormatter.html">Cane::ViolationFormatter</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module Cane::CLI</h1>
+
+  <div id="description" class="description">
+    
+<p>Command line interface. This passes off arguments to the parser and starts
+the <a href="../Cane.html">Cane</a> runner</p>
+
+<p>Default options for command line interface</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-default_options" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">default_options</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="default_options-source">
+            <pre><span class="ruby-comment"># File lib/cane/cli/options.rb, line 18</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">default_options</span>
+  {
+    <span class="ruby-identifier">max_violations</span><span class="ruby-operator">:</span>  <span class="ruby-value">0</span>,
+    <span class="ruby-identifier">parallel</span><span class="ruby-operator">:</span>        <span class="ruby-keyword">false</span>,
+    <span class="ruby-identifier">exclusions_file</span><span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>,
+    <span class="ruby-identifier">checks</span><span class="ruby-operator">:</span>          <span class="ruby-constant">Cane</span>.<span class="ruby-identifier">default_checks</span>
+  }.<span class="ruby-identifier">merge</span>(<span class="ruby-constant">Cane</span>.<span class="ruby-identifier">default_checks</span>.<span class="ruby-identifier">inject</span>({}) {<span class="ruby-operator">|</span><span class="ruby-identifier">a</span>, <span class="ruby-identifier">check</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">a</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">defaults</span>(<span class="ruby-identifier">check</span>))
+  })
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- default_options-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- default_options-method -->
+
+    
+      <div id="method-c-defaults" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">defaults</span><span
+            class="method-args">(check)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="defaults-source">
+            <pre><span class="ruby-comment"># File lib/cane/cli/options.rb, line 6</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">defaults</span>(<span class="ruby-identifier">check</span>)
+  <span class="ruby-identifier">check</span>.<span class="ruby-identifier">options</span>.<span class="ruby-identifier">each_with_object</span>({}) {<span class="ruby-operator">|</span>(<span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span>), <span class="ruby-identifier">h</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">option_opts</span> = <span class="ruby-identifier">v</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">||</span> {}
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">option_opts</span>[<span class="ruby-value">:type</span>] <span class="ruby-operator">==</span> <span class="ruby-constant">Array</span>
+      <span class="ruby-identifier">h</span>[<span class="ruby-identifier">k</span>] = []
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">h</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-identifier">option_opts</span>[<span class="ruby-value">:default</span>]
+    <span class="ruby-keyword">end</span>
+  }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- defaults-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- defaults-method -->
+
+    
+      <div id="method-c-run" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">run</span><span
+            class="method-args">(args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="run-source">
+            <pre><span class="ruby-comment"># File lib/cane/cli.rb, line 10</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">run</span>(<span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">spec</span> = <span class="ruby-constant">Parser</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">args</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">spec</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
+    <span class="ruby-constant">Cane</span>.<span class="ruby-identifier">run</span>(<span class="ruby-identifier">spec</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">spec</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- run-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- run-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

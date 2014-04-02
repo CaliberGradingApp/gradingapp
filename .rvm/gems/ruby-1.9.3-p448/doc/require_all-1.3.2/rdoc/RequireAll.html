@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module RequireAll - require_all-1.3.2 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/require_all.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-autoload_all">#autoload_all</a>
+    
+    <li><a href="#method-i-autoload_rel">#autoload_rel</a>
+    
+    <li><a href="#method-i-load_all">#load_all</a>
+    
+    <li><a href="#method-i-load_rel">#load_rel</a>
+    
+    <li><a href="#method-i-require_all">#require_all</a>
+    
+    <li><a href="#method-i-require_rel">#require_rel</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./CHANGES.html">CHANGES</a>
+  
+    <li class="file"><a href="./LICENSE.html">LICENSE</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./RequireAll.html">RequireAll</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module RequireAll</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-autoload_all" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">autoload_all</span><span
+            class="method-args">(*paths)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Performs Kernel#autoload on all of the files rather than requiring
+immediately.</p>
+
+<p>Note that all Ruby files inside of the specified directories should have
+same module name as the directory itself and file names should reflect the
+class/module names. For example if there is a my_file.rb in directories
+dir1/dir2/ then there should be a declaration like this in my_file.rb:</p>
+
+<pre class="ruby"> <span class="ruby-keyword">module</span> <span class="ruby-constant">Dir1</span>
+   <span class="ruby-keyword">module</span> <span class="ruby-constant">Dir2</span>
+     <span class="ruby-keyword">class</span> <span class="ruby-constant">MyFile</span>
+       <span class="ruby-operator">...</span>
+     <span class="ruby-keyword">end</span>
+   <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>If the filename and namespaces won’t match then my_file.rb will be loaded
+into wrong module! Better to fix these files.</p>
+
+<p>Set $DEBUG=true to see how files will be autoloaded if experiencing any
+problems.</p>
+
+<p>If trying to perform autoload on some individual file or some inner module,
+then you’d have to always specify <strong>:base_dir</strong> option to
+specify where top-level namespace resides. Otherwise it’s impossible to
+know the namespace of the loaded files.</p>
+
+<p>For example loading only my_file.rb from dir1/dir2 with <a
+href="RequireAll.html#method-i-autoload_all">#autoload_all</a>:</p>
+
+<pre class="ruby"><span class="ruby-identifier">autoload_all</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-keyword">__FILE__</span>) <span class="ruby-operator">+</span> <span class="ruby-string">'/dir1/dir2/my_file'</span>,
+             :<span class="ruby-identifier">base_dir</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-keyword">__FILE__</span>) <span class="ruby-operator">+</span> <span class="ruby-string">'/dir1'</span>
+</pre>
+
+<p>WARNING: All modules will be created even if files themselves aren’t loaded
+yet, meaning that all the code which depends of the modules being loaded or
+not will not work, like usages of define? and it’s friends.</p>
+
+<p>Also, normal caveats of using Kernel#autoload apply - you have to remember
+that before applying any monkey-patches to code using autoload, you’ll have
+to reference the full constant to load the code before applying your patch!</p>
+          
+
+          
+          <div class="method-source-code" id="autoload_all-source">
+            <pre><span class="ruby-comment"># File lib/require_all.rb, line 211</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">autoload_all</span>(*<span class="ruby-identifier">paths</span>)
+  <span class="ruby-identifier">paths</span>.<span class="ruby-identifier">flatten!</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">paths</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-identifier">require</span> <span class="ruby-string">&quot;pathname&quot;</span>
+
+  <span class="ruby-identifier">options</span> = {<span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:autoload</span>}
+  <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge!</span>(<span class="ruby-identifier">paths</span>.<span class="ruby-identifier">pop</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">paths</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
+
+  <span class="ruby-identifier">paths</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">path</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">require_all</span> <span class="ruby-identifier">path</span>, {<span class="ruby-value">:base_dir</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">path</span>}.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- autoload_all-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- autoload_all-method -->
+
+    
+      <div id="method-i-autoload_rel" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">autoload_rel</span><span
+            class="method-args">(*paths)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Performs autoloading relatively from the caller instead of using current
+working directory</p>
+          
+
+          
+          <div class="method-source-code" id="autoload_rel-source">
+            <pre><span class="ruby-comment"># File lib/require_all.rb, line 225</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">autoload_rel</span>(*<span class="ruby-identifier">paths</span>)
+  <span class="ruby-identifier">paths</span>.<span class="ruby-identifier">flatten!</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">paths</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-identifier">require</span> <span class="ruby-string">&quot;pathname&quot;</span>
+
+  <span class="ruby-identifier">options</span> = {<span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:autoload</span>}
+  <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge!</span>(<span class="ruby-identifier">paths</span>.<span class="ruby-identifier">pop</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">paths</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
+
+  <span class="ruby-identifier">source_directory</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span> <span class="ruby-identifier">caller</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp">/:\d+$/</span>, <span class="ruby-string">''</span>)
+  <span class="ruby-identifier">paths</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">path</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">file_path</span> = <span class="ruby-constant">Pathname</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">source_directory</span>).<span class="ruby-identifier">join</span>(<span class="ruby-identifier">path</span>).<span class="ruby-identifier">to_s</span>
+    <span class="ruby-identifier">require_all</span> <span class="ruby-identifier">file_path</span>, {<span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:autoload</span>,
+                            <span class="ruby-value">:base_dir</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">source_directory</span>}.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- autoload_rel-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- autoload_rel-method -->
+
+    
+      <div id="method-i-load_all" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">load_all</span><span
+            class="method-args">(*paths)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Loads all files like <a
+href="RequireAll.html#method-i-require_all">#require_all</a> instead of
+requiring</p>
+          
+
+          
+          <div class="method-source-code" id="load_all-source">
+            <pre><span class="ruby-comment"># File lib/require_all.rb, line 159</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">load_all</span>(*<span class="ruby-identifier">paths</span>)
+  <span class="ruby-identifier">require_all</span> <span class="ruby-identifier">paths</span>, <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:load</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- load_all-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- load_all-method -->
+
+    
+      <div id="method-i-load_rel" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">load_rel</span><span
+            class="method-args">(*paths)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Loads all files by using relative paths of the caller rather than the
+current working directory</p>
+          
+
+          
+          <div class="method-source-code" id="load_rel-source">
+            <pre><span class="ruby-comment"># File lib/require_all.rb, line 165</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">load_rel</span>(*<span class="ruby-identifier">paths</span>)
+  <span class="ruby-identifier">paths</span>.<span class="ruby-identifier">flatten!</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">paths</span>.<span class="ruby-identifier">empty?</span>
+
+  <span class="ruby-identifier">source_directory</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span> <span class="ruby-identifier">caller</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp">/:\d+$/</span>, <span class="ruby-string">''</span>)
+  <span class="ruby-identifier">paths</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">path</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">require_all</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">source_directory</span>, <span class="ruby-identifier">path</span>), <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:load</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- load_rel-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- load_rel-method -->
+
+    
+      <div id="method-i-require_all" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">require_all</span><span
+            class="method-args">(*args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>A wonderfully simple way to load your code.</p>
+
+<p>The easiest way to use <a
+href="RequireAll.html#method-i-require_all">#require_all</a> is to just
+point it at a directory containing a bunch of .rb files.  These files can
+be nested under  subdirectories as well:</p>
+
+<pre>require_all 'lib'</pre>
+
+<p>This will find all the .rb files under the lib directory and load them. The
+proper order to load them in will be determined automatically.</p>
+
+<p>If the dependencies between the matched files are unresolvable, it will 
+throw the first unresolvable NameError.</p>
+
+<p>You can also give it a glob, which will enumerate all the matching files:</p>
+
+<pre>require_all 'lib   /*.rb'</pre>
+
+<p>It will also accept an array of files:</p>
+
+<pre class="ruby"><span class="ruby-identifier">require_all</span> <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">glob</span>(<span class="ruby-string">&quot;blah/   *.rb&quot;</span>).<span class="ruby-identifier">reject</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">stupid_file</span>(<span class="ruby-identifier">f</span>) }
+</pre>
+
+<p>Or if you want, just list the files directly as arguments:</p>
+
+<pre>require_all 'lib/a.rb', 'lib/b.rb', 'lib/c.rb', 'lib/d.rb'</pre>
+          
+
+          
+          <div class="method-source-code" id="require_all-source">
+            <pre><span class="ruby-comment"># File lib/require_all.rb, line 34</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">require_all</span>(*<span class="ruby-identifier">args</span>)
+  <span class="ruby-comment"># Handle passing an array as an argument</span>
+  <span class="ruby-identifier">args</span>.<span class="ruby-identifier">flatten!</span>
+
+  <span class="ruby-identifier">options</span> = {<span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:require</span>}
+  <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge!</span>(<span class="ruby-identifier">args</span>.<span class="ruby-identifier">pop</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;no files were loaded due to an empty Array&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">$DEBUG</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>
+    <span class="ruby-comment"># Expand files below directories</span>
+    <span class="ruby-identifier">files</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">path</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span> <span class="ruby-identifier">path</span>
+        <span class="ruby-constant">Dir</span>[<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">path</span>, <span class="ruby-string">'**'</span>, <span class="ruby-string">'*.rb'</span>)]
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">path</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>.<span class="ruby-identifier">flatten</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">arg</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-comment"># Try assuming we're doing plain ol' require compat</span>
+      <span class="ruby-identifier">stat</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">stat</span>(<span class="ruby-identifier">arg</span>)
+
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">stat</span>.<span class="ruby-identifier">file?</span>
+        <span class="ruby-identifier">files</span> = [<span class="ruby-identifier">arg</span>]
+      <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">stat</span>.<span class="ruby-identifier">directory?</span>
+        <span class="ruby-identifier">files</span> = <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">glob</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">arg</span>, <span class="ruby-string">'**'</span>, <span class="ruby-string">'*.rb'</span>)
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;#{arg} isn't a file or directory&quot;</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">rescue</span> <span class="ruby-constant">SystemCallError</span>
+      <span class="ruby-comment"># If the stat failed, maybe we have a glob!</span>
+      <span class="ruby-identifier">files</span> = <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">glob</span> <span class="ruby-identifier">arg</span>
+
+      <span class="ruby-comment"># Maybe it's an .rb file and the .rb was omitted</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">file?</span>(<span class="ruby-identifier">arg</span> <span class="ruby-operator">+</span> <span class="ruby-string">'.rb'</span>)
+        <span class="ruby-identifier">file</span> = <span class="ruby-identifier">arg</span> <span class="ruby-operator">+</span> <span class="ruby-string">'.rb'</span>
+        <span class="ruby-identifier">options</span>[<span class="ruby-value">:method</span>] <span class="ruby-operator">!=</span> <span class="ruby-value">:autoload</span> <span class="ruby-operator">?</span> <span class="ruby-constant">Kernel</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:method</span>], <span class="ruby-identifier">file</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">__autoload</span>(<span class="ruby-identifier">file</span>, <span class="ruby-identifier">file</span>, <span class="ruby-identifier">options</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-comment"># If we ain't got no files, the glob failed</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">LoadError</span>, <span class="ruby-node">&quot;no such file to load -- #{arg}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">files</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># If there's nothing to load, you're doing it wrong!</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">LoadError</span>, <span class="ruby-string">&quot;no files to load&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">files</span>.<span class="ruby-identifier">empty?</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:method</span>] <span class="ruby-operator">==</span> <span class="ruby-value">:autoload</span>
+    <span class="ruby-identifier">files</span>.<span class="ruby-identifier">map!</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span> [<span class="ruby-identifier">file</span>, <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">file</span>)] }
+    <span class="ruby-identifier">files</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file</span>, <span class="ruby-identifier">full_path</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">__autoload</span>(<span class="ruby-identifier">file</span>, <span class="ruby-identifier">full_path</span>, <span class="ruby-identifier">options</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">files</span>.<span class="ruby-identifier">map!</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span> <span class="ruby-identifier">file</span> }
+  <span class="ruby-identifier">files</span>.<span class="ruby-identifier">sort!</span>
+
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">failed</span> = []
+    <span class="ruby-identifier">first_name_error</span> = <span class="ruby-keyword">nil</span>
+
+    <span class="ruby-comment"># Attempt to load each file, rescuing which ones raise NameError for</span>
+    <span class="ruby-comment"># undefined constants.  Keep trying to successively reload files that </span>
+    <span class="ruby-comment"># previously caused NameErrors until they've all been loaded or no new</span>
+    <span class="ruby-comment"># files can be loaded, indicating unresolvable dependencies.</span>
+    <span class="ruby-identifier">files</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">begin</span>
+        <span class="ruby-constant">Kernel</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:method</span>], <span class="ruby-identifier">file</span>)
+      <span class="ruby-keyword">rescue</span> <span class="ruby-constant">NameError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">ex</span>
+        <span class="ruby-identifier">failed</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">file</span>
+        <span class="ruby-identifier">first_name_error</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">ex</span>
+      <span class="ruby-keyword">rescue</span> <span class="ruby-constant">ArgumentError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">ex</span>
+        <span class="ruby-comment"># Work around ActiveSuport freaking out... *sigh*</span>
+        <span class="ruby-comment">#</span>
+        <span class="ruby-comment"># ActiveSupport sometimes throws these exceptions and I really</span>
+        <span class="ruby-comment"># have no idea why.  Code loading will work successfully if these</span>
+        <span class="ruby-comment"># exceptions are swallowed, although I've run into strange </span>
+        <span class="ruby-comment"># nondeterministic behaviors with constants mysteriously vanishing.</span>
+        <span class="ruby-comment"># I've gone spelunking through dependencies.rb looking for what </span>
+        <span class="ruby-comment"># exactly is going on, but all I ended up doing was making my eyes </span>
+        <span class="ruby-comment"># bleed.</span>
+        <span class="ruby-comment">#</span>
+        <span class="ruby-comment"># FIXME: If you can understand ActiveSupport's dependencies.rb </span>
+        <span class="ruby-comment"># better than I do I would *love* to find a better solution</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">ex</span>.<span class="ruby-identifier">message</span>[<span class="ruby-string">&quot;is not missing constant&quot;</span>]
+
+        <span class="ruby-constant">STDERR</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Warning: require_all swallowed ActiveSupport 'is not missing constant' error&quot;</span>
+        <span class="ruby-constant">STDERR</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">ex</span>.<span class="ruby-identifier">backtrace</span>[<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">9</span>]
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># If this pass didn't resolve any NameErrors, we've hit an unresolvable</span>
+    <span class="ruby-comment"># dependency, so raise one of the exceptions we encountered.</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">failed</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">files</span>.<span class="ruby-identifier">size</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-identifier">first_name_error</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">files</span> = <span class="ruby-identifier">failed</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span> <span class="ruby-keyword">until</span> <span class="ruby-identifier">failed</span>.<span class="ruby-identifier">empty?</span>
+
+  <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- require_all-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- require_all-method -->
+
+    
+      <div id="method-i-require_rel" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">require_rel</span><span
+            class="method-args">(*paths)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Works like <a href="RequireAll.html#method-i-require_all">#require_all</a>,
+but paths are relative to the caller rather than  the current working
+directory</p>
+          
+
+          
+          <div class="method-source-code" id="require_rel-source">
+            <pre><span class="ruby-comment"># File lib/require_all.rb, line 147</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">require_rel</span>(*<span class="ruby-identifier">paths</span>)
+  <span class="ruby-comment"># Handle passing an array as an argument</span>
+  <span class="ruby-identifier">paths</span>.<span class="ruby-identifier">flatten!</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">paths</span>.<span class="ruby-identifier">empty?</span>
+
+  <span class="ruby-identifier">source_directory</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span> <span class="ruby-identifier">caller</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp">/:\d+$/</span>, <span class="ruby-string">''</span>)
+  <span class="ruby-identifier">paths</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">path</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">require_all</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">source_directory</span>, <span class="ruby-identifier">path</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- require_rel-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- require_rel-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

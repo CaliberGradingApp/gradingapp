@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module Hirb::View - hirb-0.7.1 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/hirb/view.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-add">::add</a>
+    
+    <li><a href="#method-c-capture_and_render">::capture_and_render</a>
+    
+    <li><a href="#method-c-disable">::disable</a>
+    
+    <li><a href="#method-c-enable">::enable</a>
+    
+    <li><a href="#method-c-enabled-3F">::enabled?</a>
+    
+    <li><a href="#method-c-formatter_config">::formatter_config</a>
+    
+    <li><a href="#method-c-height">::height</a>
+    
+    <li><a href="#method-c-reset_render_method">::reset_render_method</a>
+    
+    <li><a href="#method-c-resize">::resize</a>
+    
+    <li><a href="#method-c-toggle_formatter">::toggle_formatter</a>
+    
+    <li><a href="#method-c-toggle_pager">::toggle_pager</a>
+    
+    <li><a href="#method-c-view_output">::view_output</a>
+    
+    <li><a href="#method-c-width">::width</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../LICENSE_txt.html">LICENSE</a>
+  
+    <li class="file"><a href="../README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Hirb.html">Hirb</a>
+  
+    <li><a href="../Hirb/Console.html">Hirb::Console</a>
+  
+    <li><a href="../Hirb/DynamicView.html">Hirb::DynamicView</a>
+  
+    <li><a href="../Hirb/Formatter.html">Hirb::Formatter</a>
+  
+    <li><a href="../Hirb/Helpers.html">Hirb::Helpers</a>
+  
+    <li><a href="../Hirb/Helpers/AutoTable.html">Hirb::Helpers::AutoTable</a>
+  
+    <li><a href="../Hirb/Helpers/MarkdownTable.html">Hirb::Helpers::MarkdownTable</a>
+  
+    <li><a href="../Hirb/Helpers/ObjectTable.html">Hirb::Helpers::ObjectTable</a>
+  
+    <li><a href="../Hirb/Helpers/ParentChildTree.html">Hirb::Helpers::ParentChildTree</a>
+  
+    <li><a href="../Hirb/Helpers/TabTable.html">Hirb::Helpers::TabTable</a>
+  
+    <li><a href="../Hirb/Helpers/Table.html">Hirb::Helpers::Table</a>
+  
+    <li><a href="../Hirb/Helpers/Table/Filters.html">Hirb::Helpers::Table::Filters</a>
+  
+    <li><a href="../Hirb/Helpers/Table/Resizer.html">Hirb::Helpers::Table::Resizer</a>
+  
+    <li><a href="../Hirb/Helpers/Table/TooManyFieldsForWidthError.html">Hirb::Helpers::Table::TooManyFieldsForWidthError</a>
+  
+    <li><a href="../Hirb/Helpers/Tree.html">Hirb::Helpers::Tree</a>
+  
+    <li><a href="../Hirb/Helpers/Tree/Node.html">Hirb::Helpers::Tree::Node</a>
+  
+    <li><a href="../Hirb/Helpers/Tree/Node/MissingLevelError.html">Hirb::Helpers::Tree::Node::MissingLevelError</a>
+  
+    <li><a href="../Hirb/Helpers/Tree/Node/MissingValueError.html">Hirb::Helpers::Tree::Node::MissingValueError</a>
+  
+    <li><a href="../Hirb/Helpers/Tree/ParentlessNodeError.html">Hirb::Helpers::Tree::ParentlessNodeError</a>
+  
+    <li><a href="../Hirb/Helpers/UnicodeTable.html">Hirb::Helpers::UnicodeTable</a>
+  
+    <li><a href="../Hirb/Helpers/VerticalTable.html">Hirb::Helpers::VerticalTable</a>
+  
+    <li><a href="../Hirb/Menu.html">Hirb::Menu</a>
+  
+    <li><a href="../Hirb/Menu/Error.html">Hirb::Menu::Error</a>
+  
+    <li><a href="../Hirb/ObjectMethods.html">Hirb::ObjectMethods</a>
+  
+    <li><a href="../Hirb/Pager.html">Hirb::Pager</a>
+  
+    <li><a href="../Hirb/String.html">Hirb::String</a>
+  
+    <li><a href="../Hirb/Util.html">Hirb::Util</a>
+  
+    <li><a href="../Hirb/View.html">Hirb::View</a>
+  
+    <li><a href="../Hirb/Views.html">Hirb::Views</a>
+  
+    <li><a href="../Ripl.html">Ripl</a>
+  
+    <li><a href="../Ripl/Hirb.html">Ripl::Hirb</a>
+  
+    <li><a href="../Object.html">Object</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module Hirb::View</h1>
+
+  <div id="description" class="description">
+    
+<p>This class is responsible for managing all view-related functionality.</p>
+
+<h2 id="label-Create+a+View">Create a <a href="View.html">View</a></h2>
+
+<p>Let’s create a simple view for Hash objects:</p>
+
+<pre class="ruby">$ <span class="ruby-identifier">irb</span> <span class="ruby-operator">-</span><span class="ruby-identifier">rubygems</span>
+<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">require</span> <span class="ruby-string">'hirb'</span>
+=<span class="ruby-operator">&gt;</span><span class="ruby-keyword">true</span>
+<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-constant">Hirb</span>.<span class="ruby-identifier">enable</span>
+=<span class="ruby-operator">&gt;</span><span class="ruby-keyword">nil</span>
+<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-identifier">require</span> <span class="ruby-string">'yaml'</span>
+=<span class="ruby-operator">&gt;</span><span class="ruby-keyword">true</span>
+
+<span class="ruby-comment"># A view method is the smallest view</span>
+<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-keyword">def</span> <span class="ruby-identifier">yaml</span>(<span class="ruby-identifier">output</span>); <span class="ruby-identifier">output</span>.<span class="ruby-identifier">to_yaml</span>; <span class="ruby-keyword">end</span>
+=<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">nil</span>
+<span class="ruby-comment"># Add the view</span>
+<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-constant">Hirb</span>.<span class="ruby-identifier">add_view</span> <span class="ruby-constant">Hash</span>, :<span class="ruby-identifier">method=</span><span class="ruby-operator">&gt;</span>:<span class="ruby-identifier">yaml</span>
+=<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>
+
+<span class="ruby-comment"># Hashes now appear as yaml</span>
+<span class="ruby-operator">&gt;&gt;</span> {:<span class="ruby-identifier">a=</span><span class="ruby-operator">&gt;</span><span class="ruby-value">1</span>, :<span class="ruby-identifier">b=</span><span class="ruby-operator">&gt;</span>{:<span class="ruby-identifier">c=</span><span class="ruby-operator">&gt;</span><span class="ruby-value">3</span>}}
+<span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-operator">-</span>
+:<span class="ruby-identifier">a</span> <span class="ruby-operator">:</span> <span class="ruby-value">1</span>
+:<span class="ruby-identifier">b</span> <span class="ruby-operator">:</span> 
+  :<span class="ruby-identifier">c</span> <span class="ruby-operator">:</span> <span class="ruby-value">3</span>
+=<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>
+</pre>
+
+<p>Another way of creating a view is a Helper class:</p>
+
+<pre class="ruby"><span class="ruby-comment"># Create yaml view class</span>
+<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-keyword">class</span> <span class="ruby-constant">Hirb</span><span class="ruby-operator">::</span><span class="ruby-constant">Helpers</span><span class="ruby-operator">::</span><span class="ruby-constant">Yaml</span>; <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">render</span>(<span class="ruby-identifier">output</span>, <span class="ruby-identifier">options</span>={}); <span class="ruby-identifier">output</span>.<span class="ruby-identifier">to_yaml</span>; <span class="ruby-keyword">end</span> ;<span class="ruby-keyword">end</span>
+=<span class="ruby-operator">&gt;</span><span class="ruby-keyword">nil</span>
+<span class="ruby-comment"># Add the view</span>
+<span class="ruby-operator">&gt;&gt;</span> <span class="ruby-constant">Hirb</span>.<span class="ruby-identifier">add_view</span> <span class="ruby-constant">Hash</span>, :<span class="ruby-keyword">class</span>=<span class="ruby-operator">&gt;</span><span class="ruby-constant">Hirb</span><span class="ruby-operator">::</span><span class="ruby-constant">Helpers</span><span class="ruby-operator">::</span><span class="ruby-constant">Yaml</span>
+=<span class="ruby-operator">&gt;</span><span class="ruby-keyword">true</span>
+
+<span class="ruby-comment"># Hashes appear as yaml like above ...</span>
+</pre>
+
+<h2 id="label-Configure+a+View">Configure a <a href="View.html">View</a></h2>
+
+<p>To configure the above Helper class as a view, either pass <a
+href="../Hirb.html#method-c-enable">Hirb.enable</a> a hash:</p>
+
+<pre class="ruby"><span class="ruby-comment"># In .irbrc</span>
+<span class="ruby-identifier">require</span> <span class="ruby-string">'hirb'</span>
+<span class="ruby-comment"># View class needs to come before enable()</span>
+<span class="ruby-keyword">class</span> <span class="ruby-constant">Hirb</span><span class="ruby-operator">::</span><span class="ruby-constant">Helpers</span><span class="ruby-operator">::</span><span class="ruby-constant">Yaml</span>; <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">render</span>(<span class="ruby-identifier">output</span>, <span class="ruby-identifier">options</span>={}); <span class="ruby-identifier">output</span>.<span class="ruby-identifier">to_yaml</span>; <span class="ruby-keyword">end</span> ;<span class="ruby-keyword">end</span>
+<span class="ruby-constant">Hirb</span>.<span class="ruby-identifier">enable</span> :<span class="ruby-identifier">output=</span><span class="ruby-operator">&gt;</span>{<span class="ruby-string">&quot;Hash&quot;</span>=<span class="ruby-operator">&gt;</span>{:<span class="ruby-keyword">class</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;Hirb::Helpers::Yaml&quot;</span>}}
+</pre>
+
+<p>Or create a config file at config/hirb.yml or ~/.hirb.yml:</p>
+
+<pre class="ruby"><span class="ruby-comment"># The config file for the yaml example would look like:</span>
+<span class="ruby-comment"># ---</span>
+<span class="ruby-comment"># :output :</span>
+<span class="ruby-comment">#   Hash :</span>
+<span class="ruby-comment">#    :class : Hirb::Helpers::Yaml</span>
+
+<span class="ruby-comment"># In .irbrc</span>
+<span class="ruby-identifier">require</span> <span class="ruby-string">'hirb'</span>
+<span class="ruby-comment"># View class needs to come before enable()</span>
+<span class="ruby-keyword">class</span> <span class="ruby-constant">Hirb</span><span class="ruby-operator">::</span><span class="ruby-constant">Helpers</span><span class="ruby-operator">::</span><span class="ruby-constant">Yaml</span>; <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">render</span>(<span class="ruby-identifier">output</span>, <span class="ruby-identifier">options</span>={}); <span class="ruby-identifier">output</span>.<span class="ruby-identifier">to_yaml</span>; <span class="ruby-keyword">end</span> ;<span class="ruby-keyword">end</span>
+<span class="ruby-constant">Hirb</span>.<span class="ruby-identifier">enable</span>
+</pre>
+
+<p>For more about configuring <a href="../Hirb.html">Hirb</a>, see the Config
+Files section in <a href="../Hirb.html">Hirb</a>.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="DEFAULT_HEIGHT">DEFAULT_HEIGHT
+        
+        <dd class="description">
+        
+      
+        <dt id="DEFAULT_WIDTH">DEFAULT_WIDTH
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-c-config" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">config</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-c-render_method" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">render_method</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-add" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add</span><span
+            class="method-args">(klass, view_config)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Adds a view when <a href="View.html">View</a> is enabled. See <a
+href="Formatter.html#method-i-add_view">Hirb::Formatter#add_view</a> for
+more details.</p>
+          
+
+          
+          <div class="method-source-code" id="add-source">
+            <pre><span class="ruby-comment"># File lib/hirb/view.rb, line 168</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add</span>(<span class="ruby-identifier">klass</span>, <span class="ruby-identifier">view_config</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">enabled?</span>
+    <span class="ruby-identifier">formatter</span>.<span class="ruby-identifier">add_view</span>(<span class="ruby-identifier">klass</span>, <span class="ruby-identifier">view_config</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;View must be enabled to add a view&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add-method -->
+
+    
+      <div id="method-c-capture_and_render" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">capture_and_render</span><span
+            class="method-args">(&block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Captures STDOUT and renders it using <a
+href="View.html#attribute-c-render_method">::render_method</a>(). The main
+use case is to conditionally page captured stdout.</p>
+          
+
+          
+          <div class="method-source-code" id="capture_and_render-source">
+            <pre><span class="ruby-comment"># File lib/hirb/view.rb, line 136</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">capture_and_render</span>(&amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">render_method</span>.<span class="ruby-identifier">call</span> <span class="ruby-constant">Util</span>.<span class="ruby-identifier">capture_stdout</span>(&amp;<span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- capture_and_render-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- capture_and_render-method -->
+
+    
+      <div id="method-c-disable" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">disable</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Disable’s Hirb’s output and revert’s irb’s output method if irb exists.</p>
+          
+
+          
+          <div class="method-source-code" id="disable-source">
+            <pre><span class="ruby-comment"># File lib/hirb/view.rb, line 95</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">disable</span>
+  <span class="ruby-ivar">@enabled</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-identifier">disable_output_method</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@output_method</span>
+  <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- disable-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- disable-method -->
+
+    
+      <div id="method-c-enable" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">enable</span><span
+            class="method-args">(options={}, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This activates view functionality i.e. the formatter, pager and size
+detection. If irb exists, it overrides irb’s output method with <a
+href="View.html#method-c-view_output">::view_output</a>. When called
+multiple times, new configs are merged into the existing config. If using
+Wirble, you should call this after it. The view configuration can be
+specified in a hash via a config file, or as options to this method. In
+addition to the config keys mentioned in <a href="../Hirb.html">Hirb</a>,
+options also take the following keys:</p>
+
+<h4 id="method-c-enable-label-Options%3A">Options:</h4>
+<ul><li>
+<p>config_file: Name of config file(s) that are merged into existing config</p>
+</li></ul>
+
+<p>Examples:</p>
+
+<pre class="ruby"><span class="ruby-constant">Hirb</span>.<span class="ruby-identifier">enable</span>
+<span class="ruby-constant">Hirb</span>.<span class="ruby-identifier">enable</span> :<span class="ruby-identifier">formatter=</span><span class="ruby-operator">&gt;</span><span class="ruby-keyword">false</span>
+</pre>
+          
+
+          
+          <div class="method-source-code" id="enable-source">
+            <pre><span class="ruby-comment"># File lib/hirb/view.rb, line 78</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">enable</span>(<span class="ruby-identifier">options</span>={}, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-constant">Array</span>(<span class="ruby-identifier">options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-value">:config_file</span>)).<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span>
+    <span class="ruby-ivar">@new_config_file</span> = <span class="ruby-keyword">true</span>
+    <span class="ruby-constant">Hirb</span>.<span class="ruby-identifier">config_files</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">e</span>
+  }
+  <span class="ruby-identifier">enable_output_method</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@output_method</span>
+  <span class="ruby-identifier">merge_or_load_config</span> <span class="ruby-identifier">options</span>
+  <span class="ruby-identifier">resize</span>(<span class="ruby-identifier">config</span>[<span class="ruby-value">:width</span>], <span class="ruby-identifier">config</span>[<span class="ruby-value">:height</span>])
+  <span class="ruby-ivar">@enabled</span> = <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- enable-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- enable-method -->
+
+    
+      <div id="method-c-enabled-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">enabled?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Indicates if <a href="View.html">Hirb::View</a> is enabled.</p>
+          
+
+          
+          <div class="method-source-code" id="enabled-3F-source">
+            <pre><span class="ruby-comment"># File lib/hirb/view.rb, line 90</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">enabled?</span>
+  <span class="ruby-ivar">@enabled</span> <span class="ruby-operator">||</span> <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- enabled-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- enabled-3F-method -->
+
+    
+      <div id="method-c-formatter_config" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">formatter_config</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Current formatter config, storing a hash of all static views</p>
+          
+
+          
+          <div class="method-source-code" id="formatter_config-source">
+            <pre><span class="ruby-comment"># File lib/hirb/view.rb, line 163</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">formatter_config</span>
+  <span class="ruby-identifier">formatter</span>.<span class="ruby-identifier">config</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- formatter_config-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- formatter_config-method -->
+
+    
+      <div id="method-c-height" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">height</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Current console height</p>
+          
+
+          
+          <div class="method-source-code" id="height-source">
+            <pre><span class="ruby-comment"># File lib/hirb/view.rb, line 158</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">height</span>
+  <span class="ruby-identifier">config</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">config</span>[<span class="ruby-value">:height</span>] <span class="ruby-operator">?</span> <span class="ruby-identifier">config</span>[<span class="ruby-value">:height</span>] <span class="ruby-operator">:</span> <span class="ruby-constant">DEFAULT_HEIGHT</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- height-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- height-method -->
+
+    
+      <div id="method-c-reset_render_method" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">reset_render_method</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Resets <a href="View.html#attribute-c-render_method">::render_method</a>
+back to its default.</p>
+          
+
+          
+          <div class="method-source-code" id="reset_render_method-source">
+            <pre><span class="ruby-comment"># File lib/hirb/view.rb, line 148</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">reset_render_method</span>
+  <span class="ruby-ivar">@render_method</span> = <span class="ruby-identifier">default_render_method</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- reset_render_method-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- reset_render_method-method -->
+
+    
+      <div id="method-c-resize" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">resize</span><span
+            class="method-args">(width=nil, height=nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Resizes the console width and height for use with the table and pager i.e.
+after having resized the console window. *nix users should only have to
+call this method. Non-*nix users should call this method with explicit
+width and height. If you don’t know your width and height, in irb play with
+“a”* width to find width and puts “an” * height to find height.</p>
+          
+
+          
+          <div class="method-source-code" id="resize-source">
+            <pre><span class="ruby-comment"># File lib/hirb/view.rb, line 114</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">resize</span>(<span class="ruby-identifier">width</span>=<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">height</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">config</span>[<span class="ruby-value">:width</span>], <span class="ruby-identifier">config</span>[<span class="ruby-value">:height</span>] = <span class="ruby-identifier">determine_terminal_size</span>(<span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span>)
+  <span class="ruby-identifier">pager</span>.<span class="ruby-identifier">resize</span>(<span class="ruby-identifier">config</span>[<span class="ruby-value">:width</span>], <span class="ruby-identifier">config</span>[<span class="ruby-value">:height</span>])
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- resize-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- resize-method -->
+
+    
+      <div id="method-c-toggle_formatter" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">toggle_formatter</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Toggles formatter on or off.</p>
+          
+
+          
+          <div class="method-source-code" id="toggle_formatter-source">
+            <pre><span class="ruby-comment"># File lib/hirb/view.rb, line 107</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">toggle_formatter</span>
+  <span class="ruby-identifier">config</span>[<span class="ruby-value">:formatter</span>] = <span class="ruby-operator">!</span><span class="ruby-identifier">config</span>[<span class="ruby-value">:formatter</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- toggle_formatter-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- toggle_formatter-method -->
+
+    
+      <div id="method-c-toggle_pager" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">toggle_pager</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Toggles pager on or off. The pager only works while <a
+href="View.html">Hirb::View</a> is enabled.</p>
+          
+
+          
+          <div class="method-source-code" id="toggle_pager-source">
+            <pre><span class="ruby-comment"># File lib/hirb/view.rb, line 102</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">toggle_pager</span>
+  <span class="ruby-identifier">config</span>[<span class="ruby-value">:pager</span>] = <span class="ruby-operator">!</span><span class="ruby-identifier">config</span>[<span class="ruby-value">:pager</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- toggle_pager-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- toggle_pager-method -->
+
+    
+      <div id="method-c-view_output" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">view_output</span><span
+            class="method-args">(output, options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This is the main method of this class. When view is enabled, this method
+searches for a formatter it can use for the output and if successful
+renders it using <a
+href="View.html#attribute-c-render_method">::render_method</a>(). The
+options this method takes are helper config hashes as described in  <a
+href="Formatter.html#method-i-format_output">Hirb::Formatter#format_output</a>.
+Returns true if successful and false if no formatting is done or if not
+enabled.</p>
+          
+
+          
+          <div class="method-source-code" id="view_output-source">
+            <pre><span class="ruby-comment"># File lib/hirb/view.rb, line 122</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">view_output</span>(<span class="ruby-identifier">output</span>, <span class="ruby-identifier">options</span>={})
+  <span class="ruby-identifier">enabled?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">config</span>[<span class="ruby-value">:formatter</span>] <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">render_output</span>(<span class="ruby-identifier">output</span>, <span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span>=<span class="ruby-operator">&gt;</span><span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">config</span>[<span class="ruby-value">:ignore_errors</span>]
+    <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Hirb Error: #{e.message}&quot;</span>
+    <span class="ruby-keyword">false</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">index</span> = (<span class="ruby-identifier">obj</span> = <span class="ruby-identifier">e</span>.<span class="ruby-identifier">backtrace</span>.<span class="ruby-identifier">find</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">f</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/^\(eval\)/</span>}) <span class="ruby-operator">?</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">backtrace</span>.<span class="ruby-identifier">index</span>(<span class="ruby-identifier">obj</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">backtrace</span>.<span class="ruby-identifier">length</span>
+    <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Hirb Error: #{e.message}&quot;</span>, <span class="ruby-identifier">e</span>.<span class="ruby-identifier">backtrace</span>.<span class="ruby-identifier">slice</span>(<span class="ruby-value">0</span>,<span class="ruby-identifier">index</span>).<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span> <span class="ruby-string">&quot;    &quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">e</span> }
+    <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- view_output-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- view_output-method -->
+
+    
+      <div id="method-c-width" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">width</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Current console width</p>
+          
+
+          
+          <div class="method-source-code" id="width-source">
+            <pre><span class="ruby-comment"># File lib/hirb/view.rb, line 153</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">width</span>
+  <span class="ruby-identifier">config</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">config</span>[<span class="ruby-value">:width</span>] <span class="ruby-operator">?</span> <span class="ruby-identifier">config</span>[<span class="ruby-value">:width</span>] <span class="ruby-operator">:</span> <span class="ruby-constant">DEFAULT_WIDTH</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- width-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- width-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

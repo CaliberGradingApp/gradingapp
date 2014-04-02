@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module OmniAuth - omniauth-1.1.4 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/omniauth/strategies/developer.rb
+    <li>lib/omniauth/test/strategy_test_case.rb
+    <li>lib/omniauth/test/strategy_macros.rb
+    <li>lib/omniauth/auth_hash.rb
+    <li>lib/omniauth/builder.rb
+    <li>lib/omniauth/test.rb
+    <li>lib/omniauth/form.rb
+    <li>lib/omniauth/version.rb
+    <li>lib/omniauth/failure_endpoint.rb
+    <li>lib/omniauth/strategy.rb
+    <li>lib/omniauth.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-config">::config</a>
+    
+    <li><a href="#method-c-configure">::configure</a>
+    
+    <li><a href="#method-c-logger">::logger</a>
+    
+    <li><a href="#method-c-mock_auth_for">::mock_auth_for</a>
+    
+    <li><a href="#method-c-strategies">::strategies</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./OmniAuth.html">OmniAuth</a>
+  
+    <li><a href="./OmniAuth/AuthHash.html">OmniAuth::AuthHash</a>
+  
+    <li><a href="./OmniAuth/AuthHash/InfoHash.html">OmniAuth::AuthHash::InfoHash</a>
+  
+    <li><a href="./OmniAuth/Builder.html">OmniAuth::Builder</a>
+  
+    <li><a href="./OmniAuth/Configuration.html">OmniAuth::Configuration</a>
+  
+    <li><a href="./OmniAuth/Error.html">OmniAuth::Error</a>
+  
+    <li><a href="./OmniAuth/FailureEndpoint.html">OmniAuth::FailureEndpoint</a>
+  
+    <li><a href="./OmniAuth/Form.html">OmniAuth::Form</a>
+  
+    <li><a href="./OmniAuth/NoSessionError.html">OmniAuth::NoSessionError</a>
+  
+    <li><a href="./OmniAuth/Strategies.html">OmniAuth::Strategies</a>
+  
+    <li><a href="./OmniAuth/Strategies/Developer.html">OmniAuth::Strategies::Developer</a>
+  
+    <li><a href="./OmniAuth/Strategy.html">OmniAuth::Strategy</a>
+  
+    <li><a href="./OmniAuth/Strategy/ClassMethods.html">OmniAuth::Strategy::ClassMethods</a>
+  
+    <li><a href="./OmniAuth/Strategy/Options.html">OmniAuth::Strategy::Options</a>
+  
+    <li><a href="./OmniAuth/Test.html">OmniAuth::Test</a>
+  
+    <li><a href="./OmniAuth/Test/PhonySession.html">OmniAuth::Test::PhonySession</a>
+  
+    <li><a href="./OmniAuth/Test/StrategyMacros.html">OmniAuth::Test::StrategyMacros</a>
+  
+    <li><a href="./OmniAuth/Test/StrategyTestCase.html">OmniAuth::Test::StrategyTestCase</a>
+  
+    <li><a href="./OmniAuth/Utils.html">OmniAuth::Utils</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module OmniAuth</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="VERSION">VERSION
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-config" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">config</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="config-source">
+            <pre><span class="ruby-comment"># File lib/omniauth.rb, line 102</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">config</span>
+  <span class="ruby-constant">Configuration</span>.<span class="ruby-identifier">instance</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- config-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- config-method -->
+
+    
+      <div id="method-c-configure" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">configure</span><span
+            class="method-args">() { |config| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="configure-source">
+            <pre><span class="ruby-comment"># File lib/omniauth.rb, line 106</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">configure</span>
+  <span class="ruby-keyword">yield</span> <span class="ruby-identifier">config</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- configure-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- configure-method -->
+
+    
+      <div id="method-c-logger" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">logger</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="logger-source">
+            <pre><span class="ruby-comment"># File lib/omniauth.rb, line 110</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">logger</span>
+  <span class="ruby-identifier">config</span>.<span class="ruby-identifier">logger</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- logger-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- logger-method -->
+
+    
+      <div id="method-c-mock_auth_for" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mock_auth_for</span><span
+            class="method-args">(provider)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="mock_auth_for-source">
+            <pre><span class="ruby-comment"># File lib/omniauth.rb, line 114</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">mock_auth_for</span>(<span class="ruby-identifier">provider</span>)
+  <span class="ruby-identifier">config</span>.<span class="ruby-identifier">mock_auth</span>[<span class="ruby-identifier">provider</span>.<span class="ruby-identifier">to_sym</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">config</span>.<span class="ruby-identifier">mock_auth</span>[<span class="ruby-value">:default</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- mock_auth_for-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- mock_auth_for-method -->
+
+    
+      <div id="method-c-strategies" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">strategies</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="strategies-source">
+            <pre><span class="ruby-comment"># File lib/omniauth.rb, line 19</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">strategies</span>
+  <span class="ruby-identifier">@@strategies</span> <span class="ruby-operator">||=</span> []
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- strategies-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- strategies-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

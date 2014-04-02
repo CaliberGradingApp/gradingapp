@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module Saikuro - metric_fu-Saikuro-1.1.1.0 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/saikuro.rb
+    <li>lib/saikuro/version.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-analyze">::analyze</a>
+    
+    <li><a href="#method-c-seperate_file_from_path">::seperate_file_from_path</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./README.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./BaseFormater.html">BaseFormater</a>
+  
+    <li><a href="./EndableParseState.html">EndableParseState</a>
+  
+    <li><a href="./Filter.html">Filter</a>
+  
+    <li><a href="./HTMLStyleSheet.html">HTMLStyleSheet</a>
+  
+    <li><a href="./HTMLTokenCounterFormater.html">HTMLTokenCounterFormater</a>
+  
+    <li><a href="./ParseBlock.html">ParseBlock</a>
+  
+    <li><a href="./ParseClass.html">ParseClass</a>
+  
+    <li><a href="./ParseComment.html">ParseComment</a>
+  
+    <li><a href="./ParseCond.html">ParseCond</a>
+  
+    <li><a href="./ParseDef.html">ParseDef</a>
+  
+    <li><a href="./ParseDoCond.html">ParseDoCond</a>
+  
+    <li><a href="./ParseModule.html">ParseModule</a>
+  
+    <li><a href="./ParseState.html">ParseState</a>
+  
+    <li><a href="./ParseStateFormater.html">ParseStateFormater</a>
+  
+    <li><a href="./ParseSymbol.html">ParseSymbol</a>
+  
+    <li><a href="./RDoc.html">RDoc</a>
+  
+    <li><a href="./ResultIndexGenerator.html">ResultIndexGenerator</a>
+  
+    <li><a href="./Saikuro.html">Saikuro</a>
+  
+    <li><a href="./SaikuroCMDLineRunner.html">SaikuroCMDLineRunner</a>
+  
+    <li><a href="./StateHTMLComplexityFormater.html">StateHTMLComplexityFormater</a>
+  
+    <li><a href="./TokenCounter.html">TokenCounter</a>
+  
+    <li><a href="./TokenCounterFormater.html">TokenCounterFormater</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module Saikuro</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="VERSION">VERSION
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-analyze" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">analyze</span><span
+            class="method-args">(files, state_formater, token_count_formater, output_dir)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="analyze-source">
+            <pre><span class="ruby-comment"># File lib/saikuro.rb, line 1031</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Saikuro</span>.<span class="ruby-identifier">analyze</span>(<span class="ruby-identifier">files</span>, <span class="ruby-identifier">state_formater</span>, <span class="ruby-identifier">token_count_formater</span>, <span class="ruby-identifier">output_dir</span>)
+
+  <span class="ruby-identifier">idx_states</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">idx_tokens</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+
+  <span class="ruby-comment"># parse each file</span>
+  <span class="ruby-identifier">files</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-constant">STDOUT</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Parsing #{file}&quot;</span>
+      <span class="ruby-comment"># create top state</span>
+      <span class="ruby-identifier">top</span> = <span class="ruby-constant">ParseState</span>.<span class="ruby-identifier">make_top_state</span>
+      <span class="ruby-constant">STDOUT</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;TOP State made&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">$VERBOSE</span>
+      <span class="ruby-identifier">token_counter</span> = <span class="ruby-constant">TokenCounter</span>.<span class="ruby-identifier">new</span>
+      <span class="ruby-constant">ParseState</span>.<span class="ruby-identifier">set_token_counter</span>(<span class="ruby-identifier">token_counter</span>)
+      <span class="ruby-identifier">token_counter</span>.<span class="ruby-identifier">set_current_file</span>(<span class="ruby-identifier">file</span>)
+
+      <span class="ruby-constant">STDOUT</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Setting up Lexer&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">$VERBOSE</span>
+      <span class="ruby-identifier">lexer</span> = <span class="ruby-constant">RubyLex</span>.<span class="ruby-identifier">new</span>
+      <span class="ruby-comment"># Turn of this, because it aborts when a syntax error is found...</span>
+      <span class="ruby-identifier">lexer</span>.<span class="ruby-identifier">exception_on_syntax_error</span> = <span class="ruby-keyword">false</span>
+      <span class="ruby-identifier">lexer</span>.<span class="ruby-identifier">set_input</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">file</span>,<span class="ruby-string">&quot;r&quot;</span>))
+      <span class="ruby-identifier">top</span>.<span class="ruby-identifier">lexer</span> = <span class="ruby-identifier">lexer</span>
+      <span class="ruby-constant">STDOUT</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Parsing&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">$VERBOSE</span>
+      <span class="ruby-identifier">top</span>.<span class="ruby-identifier">parse</span>
+
+
+      <span class="ruby-identifier">fdir_path</span> = <span class="ruby-identifier">seperate_file_from_path</span>(<span class="ruby-identifier">file</span>)
+      <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">makedirs</span>(<span class="ruby-node">&quot;#{output_dir}/#{fdir_path}&quot;</span>)
+
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">state_formater</span>
+        <span class="ruby-comment"># output results</span>
+        <span class="ruby-identifier">state_io</span> = <span class="ruby-constant">StringIO</span>.<span class="ruby-identifier">new</span>
+        <span class="ruby-identifier">state_formater</span>.<span class="ruby-identifier">start</span>(<span class="ruby-identifier">state_io</span>)
+        <span class="ruby-identifier">top</span>.<span class="ruby-identifier">compute_state</span>(<span class="ruby-identifier">state_formater</span>)
+        <span class="ruby-identifier">state_formater</span>.<span class="ruby-identifier">end</span>
+
+        <span class="ruby-identifier">fname</span> = <span class="ruby-node">&quot;#{file}_cyclo.html&quot;</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;writing cyclomatic #{file}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">$VERBOSE</span>
+        <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-node">&quot;#{output_dir}/#{fname}&quot;</span>,<span class="ruby-string">&quot;w&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">f</span>.<span class="ruby-identifier">write</span> <span class="ruby-identifier">state_io</span>.<span class="ruby-identifier">string</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">idx_states</span><span class="ruby-operator">&lt;&lt;</span> [
+          <span class="ruby-identifier">fname</span>,
+          <span class="ruby-identifier">state_formater</span>.<span class="ruby-identifier">warnings</span>.<span class="ruby-identifier">dup</span>,
+          <span class="ruby-identifier">state_formater</span>.<span class="ruby-identifier">errors</span>.<span class="ruby-identifier">dup</span>,
+        ]
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">token_count_formater</span>
+        <span class="ruby-identifier">token_io</span> = <span class="ruby-constant">StringIO</span>.<span class="ruby-identifier">new</span>
+        <span class="ruby-identifier">token_count_formater</span>.<span class="ruby-identifier">start</span>(<span class="ruby-identifier">token_io</span>)
+        <span class="ruby-identifier">token_counter</span>.<span class="ruby-identifier">list_tokens_per_line</span>(<span class="ruby-identifier">token_count_formater</span>)
+        <span class="ruby-identifier">token_count_formater</span>.<span class="ruby-identifier">end</span>
+
+        <span class="ruby-identifier">fname</span> = <span class="ruby-node">&quot;#{file}_token.html&quot;</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;writing token #{file}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">$VERBOSE</span>
+        <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-node">&quot;#{output_dir}/#{fname}&quot;</span>,<span class="ruby-string">&quot;w&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">f</span>.<span class="ruby-identifier">write</span> <span class="ruby-identifier">token_io</span>.<span class="ruby-identifier">string</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">idx_tokens</span><span class="ruby-operator">&lt;&lt;</span> [
+          <span class="ruby-identifier">fname</span>,
+          <span class="ruby-identifier">token_count_formater</span>.<span class="ruby-identifier">warnings</span>.<span class="ruby-identifier">dup</span>,
+          <span class="ruby-identifier">token_count_formater</span>.<span class="ruby-identifier">errors</span>.<span class="ruby-identifier">dup</span>,
+        ]
+      <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">rescue</span> <span class="ruby-constant">RubyLex</span><span class="ruby-operator">::</span><span class="ruby-constant">SyntaxError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">synerr</span>
+      <span class="ruby-constant">STDOUT</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Lexer error for file #{file} on line #{lexer.line_no}&quot;</span>
+      <span class="ruby-constant">STDOUT</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{synerr.class.name} : #{synerr.message}&quot;</span>
+    <span class="ruby-keyword">rescue</span> <span class="ruby-constant">StandardError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">err</span>
+      <span class="ruby-constant">STDOUT</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Error while parsing file : #{file}&quot;</span>
+      <span class="ruby-constant">STDOUT</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">err</span>.<span class="ruby-identifier">class</span>,<span class="ruby-identifier">err</span>.<span class="ruby-identifier">message</span>,<span class="ruby-identifier">err</span>.<span class="ruby-identifier">backtrace</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;\n&quot;</span>)
+    <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">ex</span>
+      <span class="ruby-constant">STDOUT</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Error while parsing file : #{file}&quot;</span>
+      <span class="ruby-constant">STDOUT</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">ex</span>.<span class="ruby-identifier">class</span>,<span class="ruby-identifier">ex</span>.<span class="ruby-identifier">message</span>,<span class="ruby-identifier">ex</span>.<span class="ruby-identifier">backtrace</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;\n&quot;</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  [<span class="ruby-identifier">idx_states</span>, <span class="ruby-identifier">idx_tokens</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- analyze-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- analyze-method -->
+
+    
+      <div id="method-c-seperate_file_from_path" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">seperate_file_from_path</span><span
+            class="method-args">(path)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the path without the file</p>
+          
+
+          
+          <div class="method-source-code" id="seperate_file_from_path-source">
+            <pre><span class="ruby-comment"># File lib/saikuro.rb, line 1022</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Saikuro</span>.<span class="ruby-identifier">seperate_file_from_path</span>(<span class="ruby-identifier">path</span>)
+  <span class="ruby-identifier">res</span> = <span class="ruby-identifier">path</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;/&quot;</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">res</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+    <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">res</span>[<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-identifier">res</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">2</span>].<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;/&quot;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- seperate_file_from_path-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- seperate_file_from_path-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"modified:EFI"Sexp#modified;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"9Whether or not this sexp is a mutated/modified sexp.;T:
+@fileI"lib/flay.rb;TF@

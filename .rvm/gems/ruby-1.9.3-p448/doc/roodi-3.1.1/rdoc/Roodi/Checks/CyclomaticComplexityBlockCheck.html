@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Roodi::Checks::CyclomaticComplexityBlockCheck - roodi-3.1.1 Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/roodi/checks/cyclomatic_complexity_block_check.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="CyclomaticComplexityCheck.html">Roodi::Checks::CyclomaticComplexityCheck</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-evaluate_end_iter">#evaluate_end_iter</a>
+    
+    <li><a href="#method-i-evaluate_matching_end">#evaluate_matching_end</a>
+    
+    <li><a href="#method-i-evaluate_start_iter">#evaluate_start_iter</a>
+    
+    <li><a href="#method-i-interesting_nodes">#interesting_nodes</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../Roodi.html">Roodi</a>
+  
+    <li><a href="../../Roodi/Checks.html">Roodi::Checks</a>
+  
+    <li><a href="../../Roodi/Checks/AbcMetricMethodCheck.html">Roodi::Checks::AbcMetricMethodCheck</a>
+  
+    <li><a href="../../Roodi/Checks/AssignmentInConditionalCheck.html">Roodi::Checks::AssignmentInConditionalCheck</a>
+  
+    <li><a href="../../Roodi/Checks/CaseMissingElseCheck.html">Roodi::Checks::CaseMissingElseCheck</a>
+  
+    <li><a href="../../Roodi/Checks/Check.html">Roodi::Checks::Check</a>
+  
+    <li><a href="../../Roodi/Checks/ClassLineCountCheck.html">Roodi::Checks::ClassLineCountCheck</a>
+  
+    <li><a href="../../Roodi/Checks/ClassNameCheck.html">Roodi::Checks::ClassNameCheck</a>
+  
+    <li><a href="../../Roodi/Checks/ClassVariableCheck.html">Roodi::Checks::ClassVariableCheck</a>
+  
+    <li><a href="../../Roodi/Checks/ControlCouplingCheck.html">Roodi::Checks::ControlCouplingCheck</a>
+  
+    <li><a href="../../Roodi/Checks/CoreMethodOverrideCheck.html">Roodi::Checks::CoreMethodOverrideCheck</a>
+  
+    <li><a href="../../Roodi/Checks/CyclomaticComplexityBlockCheck.html">Roodi::Checks::CyclomaticComplexityBlockCheck</a>
+  
+    <li><a href="../../Roodi/Checks/CyclomaticComplexityCheck.html">Roodi::Checks::CyclomaticComplexityCheck</a>
+  
+    <li><a href="../../Roodi/Checks/CyclomaticComplexityMethodCheck.html">Roodi::Checks::CyclomaticComplexityMethodCheck</a>
+  
+    <li><a href="../../Roodi/Checks/EmptyRescueBodyCheck.html">Roodi::Checks::EmptyRescueBodyCheck</a>
+  
+    <li><a href="../../Roodi/Checks/ForLoopCheck.html">Roodi::Checks::ForLoopCheck</a>
+  
+    <li><a href="../../Roodi/Checks/LineCountCheck.html">Roodi::Checks::LineCountCheck</a>
+  
+    <li><a href="../../Roodi/Checks/MethodLineCountCheck.html">Roodi::Checks::MethodLineCountCheck</a>
+  
+    <li><a href="../../Roodi/Checks/MethodNameCheck.html">Roodi::Checks::MethodNameCheck</a>
+  
+    <li><a href="../../Roodi/Checks/ModuleLineCountCheck.html">Roodi::Checks::ModuleLineCountCheck</a>
+  
+    <li><a href="../../Roodi/Checks/ModuleNameCheck.html">Roodi::Checks::ModuleNameCheck</a>
+  
+    <li><a href="../../Roodi/Checks/NameCheck.html">Roodi::Checks::NameCheck</a>
+  
+    <li><a href="../../Roodi/Checks/NpathComplexityCheck.html">Roodi::Checks::NpathComplexityCheck</a>
+  
+    <li><a href="../../Roodi/Checks/NpathComplexityMethodCheck.html">Roodi::Checks::NpathComplexityMethodCheck</a>
+  
+    <li><a href="../../Roodi/Checks/ParameterNumberCheck.html">Roodi::Checks::ParameterNumberCheck</a>
+  
+    <li><a href="../../Roodi/Core.html">Roodi::Core</a>
+  
+    <li><a href="../../Roodi/Core/CheckingVisitor.html">Roodi::Core::CheckingVisitor</a>
+  
+    <li><a href="../../Roodi/Core/Error.html">Roodi::Core::Error</a>
+  
+    <li><a href="../../Roodi/Core/Parser.html">Roodi::Core::Parser</a>
+  
+    <li><a href="../../Roodi/Core/Runner.html">Roodi::Core::Runner</a>
+  
+    <li><a href="../../RoodiTask.html">RoodiTask</a>
+  
+    <li><a href="../../Sexp.html">Sexp</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Roodi::Checks::CyclomaticComplexityBlockCheck</h1>
+
+  <div id="description" class="description">
+    
+<p><a href="../Checks.html">Checks</a> cyclomatic complexity of a block
+against a specified limit.</p>
+
+<p>The cyclomatic complexity is measured by the number of “if”, “unless”,
+“elsif”, “?:”,  “while”, “until”, “for”, “rescue”, “case”, “when”,
+“&amp;amp;&amp;amp;”, “and”, “||” and “or”  statements (plus one) in the
+body of the member. It is a measure of the minimum  number of possible
+paths through the source and therefore the number of required tests.</p>
+
+<p>Generally, for a block, 1-2 is considered good, 3-4 ok, 5-8 consider
+re-factoring, and 8+  re-factor now!</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="DEFAULT_COMPLEXITY">DEFAULT_COMPLEXITY
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/roodi/checks/cyclomatic_complexity_block_check.rb, line 18</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>
+  <span class="ruby-keyword">super</span>()
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">complexity</span> = <span class="ruby-constant">DEFAULT_COMPLEXITY</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-evaluate_end_iter" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">evaluate_end_iter</span><span
+            class="method-args">(node)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="evaluate_end_iter-source">
+            <pre><span class="ruby-comment"># File lib/roodi/checks/cyclomatic_complexity_block_check.rb, line 31</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">evaluate_end_iter</span>(<span class="ruby-identifier">node</span>)
+  <span class="ruby-identifier">decrease_depth</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- evaluate_end_iter-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- evaluate_end_iter-method -->
+
+    
+      <div id="method-i-evaluate_matching_end" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">evaluate_matching_end</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="evaluate_matching_end-source">
+            <pre><span class="ruby-comment"># File lib/roodi/checks/cyclomatic_complexity_block_check.rb, line 35</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">evaluate_matching_end</span>
+  <span class="ruby-identifier">add_error</span> <span class="ruby-node">&quot;Block cyclomatic complexity is #{@count}.  It should be #{@complexity} or less.&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@count</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-ivar">@complexity</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- evaluate_matching_end-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- evaluate_matching_end-method -->
+
+    
+      <div id="method-i-evaluate_start_iter" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">evaluate_start_iter</span><span
+            class="method-args">(node)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="evaluate_start_iter-source">
+            <pre><span class="ruby-comment"># File lib/roodi/checks/cyclomatic_complexity_block_check.rb, line 27</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">evaluate_start_iter</span>(<span class="ruby-identifier">node</span>)
+  <span class="ruby-identifier">increase_depth</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- evaluate_start_iter-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- evaluate_start_iter-method -->
+
+    
+      <div id="method-i-interesting_nodes" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">interesting_nodes</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="interesting_nodes-source">
+            <pre><span class="ruby-comment"># File lib/roodi/checks/cyclomatic_complexity_block_check.rb, line 23</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">interesting_nodes</span>
+  [<span class="ruby-value">:iter</span>] <span class="ruby-operator">+</span> <span class="ruby-constant">COMPLEXITY_NODE_TYPES</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- interesting_nodes-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- interesting_nodes-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

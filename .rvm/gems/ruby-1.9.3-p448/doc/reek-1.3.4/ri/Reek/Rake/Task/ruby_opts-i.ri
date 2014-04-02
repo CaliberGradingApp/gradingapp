@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"ruby_opts:EFI"Reek::Rake::Task#ruby_opts;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"BArray of commandline options to pass to ruby. Defaults to [].;T:
+@fileI"lib/reek/rake/task.rb;TF@

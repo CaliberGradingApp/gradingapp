@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>README - ruby-graphviz-1.0.9 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body class="file">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./AUTHORS_rdoc.html">AUTHORS</a>
+  
+    <li class="file"><a href="./CHANGELOG_rdoc.html">CHANGELOG</a>
+  
+    <li class="file"><a href="./COPYING_rdoc.html">COPYING</a>
+  
+    <li class="file"><a href="./README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./GraphViz.html">GraphViz</a>
+  
+    <li><a href="./GraphViz/Attrs.html">GraphViz::Attrs</a>
+  
+    <li><a href="./GraphViz/Constants.html">GraphViz::Constants</a>
+  
+    <li><a href="./GraphViz/DOTScript.html">GraphViz::DOTScript</a>
+  
+    <li><a href="./GraphViz/DOTScriptData.html">GraphViz::DOTScriptData</a>
+  
+    <li><a href="./GraphViz/DSL.html">GraphViz::DSL</a>
+  
+    <li><a href="./GraphViz/Edge.html">GraphViz::Edge</a>
+  
+    <li><a href="./GraphViz/Elements.html">GraphViz::Elements</a>
+  
+    <li><a href="./GraphViz/Ext.html">GraphViz::Ext</a>
+  
+    <li><a href="./GraphViz/FamilyTree.html">GraphViz::FamilyTree</a>
+  
+    <li><a href="./GraphViz/FamilyTree/Couple.html">GraphViz::FamilyTree::Couple</a>
+  
+    <li><a href="./GraphViz/FamilyTree/Generation.html">GraphViz::FamilyTree::Generation</a>
+  
+    <li><a href="./GraphViz/FamilyTree/Person.html">GraphViz::FamilyTree::Person</a>
+  
+    <li><a href="./GraphViz/FamilyTree/Sibling.html">GraphViz::FamilyTree::Sibling</a>
+  
+    <li><a href="./GraphViz/GraphML.html">GraphViz::GraphML</a>
+  
+    <li><a href="./GraphViz/GraphMLError.html">GraphViz::GraphMLError</a>
+  
+    <li><a href="./GraphViz/Math.html">GraphViz::Math</a>
+  
+    <li><a href="./GraphViz/Math/CoordinateError.html">GraphViz::Math::CoordinateError</a>
+  
+    <li><a href="./GraphViz/Math/Matrix.html">GraphViz::Math::Matrix</a>
+  
+    <li><a href="./GraphViz/Math/ValueError.html">GraphViz::Math::ValueError</a>
+  
+    <li><a href="./GraphViz/Node.html">GraphViz::Node</a>
+  
+    <li><a href="./GraphViz/Theory.html">GraphViz::Theory</a>
+  
+    <li><a href="./GraphViz/Types.html">GraphViz::Types</a>
+  
+    <li><a href="./GraphViz/Types/ArrowType.html">GraphViz::Types::ArrowType</a>
+  
+    <li><a href="./GraphViz/Types/Color.html">GraphViz::Types::Color</a>
+  
+    <li><a href="./GraphViz/Types/ColorList.html">GraphViz::Types::ColorList</a>
+  
+    <li><a href="./GraphViz/Types/Common.html">GraphViz::Types::Common</a>
+  
+    <li><a href="./GraphViz/Types/EscString.html">GraphViz::Types::EscString</a>
+  
+    <li><a href="./GraphViz/Types/GvBool.html">GraphViz::Types::GvBool</a>
+  
+    <li><a href="./GraphViz/Types/GvDouble.html">GraphViz::Types::GvDouble</a>
+  
+    <li><a href="./GraphViz/Types/HtmlString.html">GraphViz::Types::HtmlString</a>
+  
+    <li><a href="./GraphViz/Types/LblString.html">GraphViz::Types::LblString</a>
+  
+    <li><a href="./GraphViz/Types/Rect.html">GraphViz::Types::Rect</a>
+  
+    <li><a href="./GraphViz/Types/SplineType.html">GraphViz::Types::SplineType</a>
+  
+    <li><a href="./GraphViz/Utils.html">GraphViz::Utils</a>
+  
+    <li><a href="./GraphViz/Utils/Colors.html">GraphViz::Utils::Colors</a>
+  
+    <li><a href="./GraphViz/XML.html">GraphViz::XML</a>
+  
+    <li><a href="./AttributeException.html">AttributeException</a>
+  
+    <li><a href="./BoolException.html">BoolException</a>
+  
+    <li><a href="./ColorException.html">ColorException</a>
+  
+    <li><a href="./DoubleException.html">DoubleException</a>
+  
+    <li><a href="./Hash.html">Hash</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./RectException.html">RectException</a>
+  
+    <li><a href="./SplineTypeException.html">SplineTypeException</a>
+  
+    <li><a href="./String.html">String</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<h1 id="label-Ruby%2FGraphViz">Ruby/GraphViz</h1>
+
+<p><a href="http://travis-ci.org/glejeune/Ruby-Graphviz"><img
+src="https://secure.travis-ci.org/glejeune/Ruby-Graphviz.png" /></a></p>
+
+<p>Copyright (C) 2004-2012 Gregoire Lejeune</p>
+<ul><li>
+<p>Doc : <a
+href="http://rdoc.info/projects/glejeune/Ruby-Graphviz">rdoc.info/projects/glejeune/Ruby-Graphviz</a></p>
+</li><li>
+<p>Sources : <a
+href="http://github.com/glejeune/Ruby-Graphviz">github.com/glejeune/Ruby-Graphviz</a></p>
+</li><li>
+<p><strong>NEW</strong> - Mailing List : <a
+href="http://groups.google.com/group/ruby-graphviz">groups.google.com/group/ruby-graphviz</a></p>
+</li></ul>
+
+<h2 id="label-DESCRIPTION">DESCRIPTION</h2>
+
+<p>Interface to the <a href="GraphViz.html">GraphViz</a> graphing tool</p>
+
+<h2 id="label-TODO">TODO</h2>
+<ul><li>
+<p>New FamilyTree</p>
+</li></ul>
+
+<h2 id="label-SYNOPSIS">SYNOPSIS</h2>
+
+<p>A basic example</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">'graphviz'</span>
+
+<span class="ruby-comment"># Create a new graph</span>
+<span class="ruby-identifier">g</span> = <span class="ruby-constant">GraphViz</span>.<span class="ruby-identifier">new</span>( :<span class="ruby-constant">G</span>, :<span class="ruby-identifier">type</span> =<span class="ruby-operator">&gt;</span> :<span class="ruby-identifier">digraph</span> )
+
+<span class="ruby-comment"># Create two nodes</span>
+<span class="ruby-identifier">hello</span> = <span class="ruby-identifier">g</span>.<span class="ruby-identifier">add_nodes</span>( <span class="ruby-string">&quot;Hello&quot;</span> )
+<span class="ruby-identifier">world</span> = <span class="ruby-identifier">g</span>.<span class="ruby-identifier">add_nodes</span>( <span class="ruby-string">&quot;World&quot;</span> )
+
+<span class="ruby-comment"># Create an edge between the two nodes</span>
+<span class="ruby-identifier">g</span>.<span class="ruby-identifier">add_edges</span>( <span class="ruby-identifier">hello</span>, <span class="ruby-identifier">world</span> )
+
+<span class="ruby-comment"># Generate output image</span>
+<span class="ruby-identifier">g</span>.<span class="ruby-identifier">output</span>( :<span class="ruby-identifier">png</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;hello_world.png&quot;</span> )
+</pre>
+
+<p>The same but with a block</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">'graphviz'</span>
+
+<span class="ruby-constant">GraphViz</span><span class="ruby-operator">::</span><span class="ruby-identifier">new</span>( :<span class="ruby-constant">G</span>, :<span class="ruby-identifier">type</span> =<span class="ruby-operator">&gt;</span> :<span class="ruby-identifier">digraph</span> ) { <span class="ruby-operator">|</span><span class="ruby-identifier">g</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">g</span>.<span class="ruby-identifier">world</span>( :<span class="ruby-identifier">label</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;World&quot;</span> ) <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">g</span>.<span class="ruby-identifier">hello</span>( :<span class="ruby-identifier">label</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Hello&quot;</span> )
+}.<span class="ruby-identifier">output</span>( :<span class="ruby-identifier">png</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;hello_world.png&quot;</span> )
+</pre>
+
+<p>Or with the DSL</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">'graphviz/dsl'</span>
+<span class="ruby-identifier">digraph</span> :<span class="ruby-constant">G</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">world</span>[:<span class="ruby-identifier">label</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;World&quot;</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">hello</span>[:<span class="ruby-identifier">label</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Hello&quot;</span>]
+
+  <span class="ruby-identifier">output</span> :<span class="ruby-identifier">png</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;hello_world.png&quot;</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>Create a graph from a file</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">'graphviz'</span>
+
+<span class="ruby-comment"># In this example, hello.dot is :</span>
+<span class="ruby-comment">#   digraph G {Hello-&gt;World;}</span>
+
+<span class="ruby-constant">GraphViz</span>.<span class="ruby-identifier">parse</span>( <span class="ruby-string">&quot;hello.dot&quot;</span>, :<span class="ruby-identifier">path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;/usr/local/bin&quot;</span> ) { <span class="ruby-operator">|</span><span class="ruby-identifier">g</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">g</span>.<span class="ruby-identifier">get_node</span>(<span class="ruby-string">&quot;Hello&quot;</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">n</span>[:<span class="ruby-identifier">label</span>] = <span class="ruby-string">&quot;Bonjour&quot;</span>
+  }
+  <span class="ruby-identifier">g</span>.<span class="ruby-identifier">get_node</span>(<span class="ruby-string">&quot;World&quot;</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">n</span>[:<span class="ruby-identifier">label</span>] = <span class="ruby-string">&quot;Le Monde&quot;</span>
+  }
+}.<span class="ruby-identifier">output</span>(:<span class="ruby-identifier">png</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;sample.png&quot;</span>)
+</pre>
+
+<p><a href="http://graphml.graphdrawing.org/">GraphML</a> support</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">'graphviz/graphml'</span>
+
+<span class="ruby-identifier">g</span> = <span class="ruby-constant">GraphViz</span><span class="ruby-operator">::</span><span class="ruby-constant">GraphML</span>.<span class="ruby-identifier">new</span>( <span class="ruby-string">&quot;graphml/cluster.graphml&quot;</span> )
+<span class="ruby-identifier">g</span>.<span class="ruby-identifier">graph</span>.<span class="ruby-identifier">output</span>( :<span class="ruby-identifier">path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;/usr/local/bin&quot;</span>, :<span class="ruby-identifier">png</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{$0}.png&quot;</span> )
+</pre>
+
+<h2 id="label-TOOLS">TOOLS</h2>
+
+<p>Ruby/GraphViz also includes :</p>
+<ul><li>
+<p><code>ruby2gv</code>, a simple tool that allows you to create a dependency
+graph from a ruby script. Example : <a
+href="http://drp.ly/dShaZ">drp.ly/dShaZ</a></p>
+
+<pre>ruby2gv -Tpng -oruby2gv.png ruby2gv</pre>
+</li><li>
+<p><code>gem2gv</code>, a tool that allows you to create a dependency graph
+between gems. Example : <a href="http://drp.ly/dSj9Y">drp.ly/dSj9Y</a></p>
+
+<pre>gem2gv -Tpng -oruby-graphviz.png ruby-graphviz</pre>
+</li><li>
+<p><code>dot2ruby</code>, a tool that allows you to create a ruby script from
+a graphviz script</p>
+
+<pre class="ruby">$ <span class="ruby-identifier">cat</span> <span class="ruby-identifier">hello</span>.<span class="ruby-identifier">dot</span>
+<span class="ruby-identifier">digraph</span> <span class="ruby-constant">G</span> {<span class="ruby-constant">Hello</span><span class="ruby-operator">-</span><span class="ruby-operator">&gt;</span><span class="ruby-constant">World</span>;}
+
+$ <span class="ruby-identifier">dot2ruby</span> <span class="ruby-identifier">hello</span>.<span class="ruby-identifier">dot</span>
+<span class="ruby-comment"># This code was generated by dot2ruby.g</span>
+
+<span class="ruby-identifier">require</span> <span class="ruby-string">'rubygems'</span>
+<span class="ruby-identifier">require</span> <span class="ruby-string">'graphviz'</span>
+<span class="ruby-identifier">graph_g</span> = <span class="ruby-constant">GraphViz</span>.<span class="ruby-identifier">digraph</span>( <span class="ruby-string">&quot;G&quot;</span> ) { <span class="ruby-operator">|</span><span class="ruby-identifier">graph_g</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">graph_g</span>[:<span class="ruby-identifier">bb</span>] = <span class="ruby-string">'0,0,70,108'</span>
+  <span class="ruby-identifier">node_hello</span> = <span class="ruby-identifier">graph_g</span>.<span class="ruby-identifier">add_nodes</span>( <span class="ruby-string">&quot;Hello&quot;</span>, :<span class="ruby-identifier">height</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'0.5'</span>, :<span class="ruby-identifier">label</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'\N'</span>, :<span class="ruby-identifier">pos</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'35,90'</span>, :<span class="ruby-identifier">width</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'0.88889'</span> )
+  <span class="ruby-identifier">graph_g</span>.<span class="ruby-identifier">add_edges</span>( <span class="ruby-string">&quot;Hello&quot;</span>, <span class="ruby-string">&quot;World&quot;</span>, :<span class="ruby-identifier">pos</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'e,35,36.413 35,71.831 35,64.131 35,54.974 35,46.417'</span> )
+  <span class="ruby-identifier">node_world</span> = <span class="ruby-identifier">graph_g</span>.<span class="ruby-identifier">add_nodes</span>( <span class="ruby-string">&quot;World&quot;</span>, :<span class="ruby-identifier">height</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'0.5'</span>, :<span class="ruby-identifier">label</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'\N'</span>, :<span class="ruby-identifier">pos</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'35,18'</span>, :<span class="ruby-identifier">width</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'0.97222'</span> )
+}
+<span class="ruby-identifier">puts</span> <span class="ruby-identifier">graph_g</span>.<span class="ruby-identifier">output</span>( :<span class="ruby-identifier">canon</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">String</span> )
+</pre>
+</li><li>
+<p><code>git2gv</code>, a tool that allows you to show your git commits : <a
+href="http://dl.dropbox.com/u/72629/ruby-graphviz-git.svg">dl.dropbox.com/u/72629/ruby-graphviz-git.svg</a></p>
+</li><li>
+<p><code>xml2gv</code>, a tool that allows you to show a xml file as graph.</p>
+</li></ul>
+
+<h2 id="label-GRAPH+THEORY">GRAPH THEORY</h2>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">'graphviz'</span>
+<span class="ruby-identifier">require</span> <span class="ruby-string">'graphviz/theory'</span>
+
+<span class="ruby-identifier">g</span> = <span class="ruby-constant">GraphViz</span>.<span class="ruby-identifier">new</span>( :<span class="ruby-constant">G</span> ) { <span class="ruby-operator">...</span> }
+
+<span class="ruby-identifier">t</span> = <span class="ruby-constant">GraphViz</span><span class="ruby-operator">::</span><span class="ruby-constant">Theory</span>.<span class="ruby-identifier">new</span>( <span class="ruby-identifier">g</span> )
+
+<span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Adjancy matrix : &quot;</span>
+<span class="ruby-identifier">puts</span> <span class="ruby-identifier">t</span>.<span class="ruby-identifier">adjancy_matrix</span>
+
+<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Symmetric ? #{t.symmetric?}&quot;</span>
+
+<span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Incidence matrix :&quot;</span>
+<span class="ruby-identifier">puts</span> <span class="ruby-identifier">t</span>.<span class="ruby-identifier">incidence_matrix</span>
+
+<span class="ruby-identifier">g</span>.<span class="ruby-identifier">each_node</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>, <span class="ruby-identifier">node</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Degree of node `#{name}' = #{t.degree(node)}&quot;</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Laplacian matrix :&quot;</span>
+<span class="ruby-identifier">puts</span> <span class="ruby-identifier">t</span>.<span class="ruby-identifier">laplacian_matrix</span>
+
+<span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Dijkstra between a and f&quot;</span>
+<span class="ruby-identifier">r</span> = <span class="ruby-identifier">t</span>.<span class="ruby-identifier">moore_dijkstra</span>(<span class="ruby-identifier">g</span>.<span class="ruby-identifier">a</span>, <span class="ruby-identifier">g</span>.<span class="ruby-identifier">f</span>)
+<span class="ruby-keyword">if</span> <span class="ruby-identifier">r</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;No way !&quot;</span>
+<span class="ruby-keyword">else</span>
+  <span class="ruby-identifier">print</span> <span class="ruby-string">&quot;\tPath : &quot;</span>; <span class="ruby-identifier">p</span> <span class="ruby-identifier">r</span>[:<span class="ruby-identifier">path</span>]
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;\tDistance : #{r[:distance]}&quot;</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">print</span> <span class="ruby-string">&quot;Ranges : &quot;</span>
+<span class="ruby-identifier">rr</span> = <span class="ruby-identifier">t</span>.<span class="ruby-identifier">range</span>
+<span class="ruby-identifier">p</span> <span class="ruby-identifier">rr</span>
+<span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Your graph contains circuits&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">rr</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-keyword">nil</span>)
+
+<span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Critical path : &quot;</span>
+<span class="ruby-identifier">rrr</span> = <span class="ruby-identifier">t</span>.<span class="ruby-identifier">critical_path</span>
+<span class="ruby-identifier">print</span> <span class="ruby-string">&quot;\tPath &quot;</span>; <span class="ruby-identifier">p</span> <span class="ruby-identifier">rrr</span>[:<span class="ruby-identifier">path</span>]
+<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;\tDistance : #{rrr[:distance]}&quot;</span>
+</pre>
+
+<h2 id="label-INSTALLATION">INSTALLATION</h2>
+
+<pre>sudo gem install ruby-graphviz</pre>
+
+<p>You also need to install <a href="http://www.graphviz.org">GraphViz</a></p>
+
+<p>On <strong>Windows</strong> you also need to install win32-open3. This is
+not an absolute requirement.</p>
+
+<h2 id="label-LICENCES">LICENCES</h2>
+
+<h3 id="label-Ruby%2FGraphViz+">Ruby/GraphViz </h3>
+
+<p>Ruby/GraphViz is freely distributable according to the terms of the GNU
+General Public License (see the file ‘COPYING’).</p>
+
+<p>This program is distributed without any warranty. See the file ‘COPYING’
+for details.</p>
+
+<p>GNU General Public Licence: <a
+href="http://en.wikipedia.org/wiki/Gpl">en.wikipedia.org/wiki/Gpl</a></p>
+
+<h3 id="label-nothugly.xsl">nothugly.xsl</h3>
+
+<p>By Vidar Hokstad and Ryan Shea; Contributions by Jonas Tingborn, Earl
+Cummings, Michael Kennedy (Graphviz 2.20.2 compatibility, bug fixes,
+testing, lots of gradients)</p>
+
+<p>Copyright © 2009 Vidar Hokstad</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the “Software”),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+<a href="AUTHORS_rdoc.html">AUTHORS</a> OR COPYRIGHT HOLDERS BE LIABLE FOR
+ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
+OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+
+<p>MIT license: <a
+href="http://en.wikipedia.org/wiki/MIT_License">en.wikipedia.org/wiki/MIT_License</a></p>
+
+</div>
+
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

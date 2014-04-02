@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Chronic::Token - chronic-0.10.2 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/chronic/token.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-get_tag">#get_tag</a>
+    
+    <li><a href="#method-i-inspect">#inspect</a>
+    
+    <li><a href="#method-i-tag">#tag</a>
+    
+    <li><a href="#method-i-tagged-3F">#tagged?</a>
+    
+    <li><a href="#method-i-to_s">#to_s</a>
+    
+    <li><a href="#method-i-untag">#untag</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../LICENSE.html">LICENSE</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Chronic.html">Chronic</a>
+  
+    <li><a href="../Chronic/Date.html">Chronic::Date</a>
+  
+    <li><a href="../Chronic/Grabber.html">Chronic::Grabber</a>
+  
+    <li><a href="../Chronic/Handler.html">Chronic::Handler</a>
+  
+    <li><a href="../Chronic/Handlers.html">Chronic::Handlers</a>
+  
+    <li><a href="../Chronic/MiniDate.html">Chronic::MiniDate</a>
+  
+    <li><a href="../Chronic/Numerizer.html">Chronic::Numerizer</a>
+  
+    <li><a href="../Chronic/Ordinal.html">Chronic::Ordinal</a>
+  
+    <li><a href="../Chronic/Parser.html">Chronic::Parser</a>
+  
+    <li><a href="../Chronic/Pointer.html">Chronic::Pointer</a>
+  
+    <li><a href="../Chronic/Repeater.html">Chronic::Repeater</a>
+  
+    <li><a href="../Chronic/Scalar.html">Chronic::Scalar</a>
+  
+    <li><a href="../Chronic/Season.html">Chronic::Season</a>
+  
+    <li><a href="../Chronic/Separator.html">Chronic::Separator</a>
+  
+    <li><a href="../Chronic/Sign.html">Chronic::Sign</a>
+  
+    <li><a href="../Chronic/Span.html">Chronic::Span</a>
+  
+    <li><a href="../Chronic/Tag.html">Chronic::Tag</a>
+  
+    <li><a href="../Chronic/Time.html">Chronic::Time</a>
+  
+    <li><a href="../Chronic/TimeZone.html">Chronic::TimeZone</a>
+  
+    <li><a href="../Chronic/Token.html">Chronic::Token</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Chronic::Token</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-tags" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">tags</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-word" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">word</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(word)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/chronic/token.rb, line 7</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">word</span>)
+  <span class="ruby-ivar">@word</span> = <span class="ruby-identifier">word</span>
+  <span class="ruby-ivar">@tags</span> = []
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-get_tag" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_tag</span><span
+            class="method-args">(tag_class)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>tag_class - The tag Class to search for.</p>
+
+<p>Returns The first <a href="Tag.html">Tag</a> that matches the given class.</p>
+          
+
+          
+          <div class="method-source-code" id="get_tag-source">
+            <pre><span class="ruby-comment"># File lib/chronic/token.rb, line 38</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_tag</span>(<span class="ruby-identifier">tag_class</span>)
+  <span class="ruby-ivar">@tags</span>.<span class="ruby-identifier">find</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">m</span><span class="ruby-operator">|</span> <span class="ruby-identifier">m</span>.<span class="ruby-identifier">kind_of?</span> <span class="ruby-identifier">tag_class</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_tag-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_tag-method -->
+
+    
+      <div id="method-i-inspect" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">inspect</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="inspect-source">
+            <pre><span class="ruby-comment"># File lib/chronic/token.rb, line 47</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">inspect</span>
+  <span class="ruby-identifier">to_s</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- inspect-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- inspect-method -->
+
+    
+      <div id="method-i-tag" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">tag</span><span
+            class="method-args">(new_tag)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><a href="Tag.html">Tag</a> this token with the specified tag.</p>
+
+<p>new_tag - The new <a href="Tag.html">Tag</a> object.</p>
+
+<p>Returns nothing.</p>
+          
+
+          
+          <div class="method-source-code" id="tag-source">
+            <pre><span class="ruby-comment"># File lib/chronic/token.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">tag</span>(<span class="ruby-identifier">new_tag</span>)
+  <span class="ruby-ivar">@tags</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">new_tag</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- tag-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- tag-method -->
+
+    
+      <div id="method-i-tagged-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">tagged?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns true if this token has any tags.</p>
+          
+
+          
+          <div class="method-source-code" id="tagged-3F-source">
+            <pre><span class="ruby-comment"># File lib/chronic/token.rb, line 31</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">tagged?</span>
+  <span class="ruby-ivar">@tags</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- tagged-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- tagged-3F-method -->
+
+    
+      <div id="method-i-to_s" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_s</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Print this <a href="Token.html">Token</a> in a pretty way</p>
+          
+
+          
+          <div class="method-source-code" id="to_s-source">
+            <pre><span class="ruby-comment"># File lib/chronic/token.rb, line 43</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>
+  <span class="ruby-ivar">@word</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">'('</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@tags</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">', '</span>) <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">') '</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- to_s-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- to_s-method -->
+
+    
+      <div id="method-i-untag" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">untag</span><span
+            class="method-args">(tag_class)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Remove all tags of the given class.</p>
+
+<p>tag_class - The tag Class to remove.</p>
+
+<p>Returns nothing.</p>
+          
+
+          
+          <div class="method-source-code" id="untag-source">
+            <pre><span class="ruby-comment"># File lib/chronic/token.rb, line 26</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">untag</span>(<span class="ruby-identifier">tag_class</span>)
+  <span class="ruby-ivar">@tags</span>.<span class="ruby-identifier">delete_if</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">m</span><span class="ruby-operator">|</span> <span class="ruby-identifier">m</span>.<span class="ruby-identifier">kind_of?</span> <span class="ruby-identifier">tag_class</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- untag-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- untag-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

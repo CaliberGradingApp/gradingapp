@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>example - ZenTest-4.9.5 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body class="file">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./History_txt.html">History</a>
+  
+    <li class="file"><a href="./Manifest_txt.html">Manifest</a>
+  
+    <li class="file"><a href="./README_txt.html">README</a>
+  
+    <li class="file"><a href="./articles/how_to_use_zentest_txt.html">how_to_use_zentest</a>
+  
+    <li class="file"><a href="./example_txt.html">example</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Autotest.html">Autotest</a>
+  
+    <li><a href="./Autotest/AutoUpdate.html">Autotest::AutoUpdate</a>
+  
+    <li><a href="./Autotest/Bundler.html">Autotest::Bundler</a>
+  
+    <li><a href="./Autotest/Isolate.html">Autotest::Isolate</a>
+  
+    <li><a href="./Autotest/Once.html">Autotest::Once</a>
+  
+    <li><a href="./Autotest/Preload.html">Autotest::Preload</a>
+  
+    <li><a href="./Autotest/RCov.html">Autotest::RCov</a>
+  
+    <li><a href="./Autotest/Restart.html">Autotest::Restart</a>
+  
+    <li><a href="./Autotest/Timestamp.html">Autotest::Timestamp</a>
+  
+    <li><a href="./FunctionalTestMatrix.html">FunctionalTestMatrix</a>
+  
+    <li><a href="./Module.html">Module</a>
+  
+    <li><a href="./Multiruby.html">Multiruby</a>
+  
+    <li><a href="./UnitDiff.html">UnitDiff</a>
+  
+    <li><a href="./ZenTest.html">ZenTest</a>
+  
+    <li><a href="./ZenTestMapping.html">ZenTestMapping</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<p>What do we do to get people writing tests? What do we do to get people
+writing tests first?</p>
+
+<p>I didn’t know it’s name, but apparently it’s the Lettuce Principal, (see <a
+href="http://blog.toolshed.com/2003/03/the_lettuce_pri.html">blog.toolshed.com/2003/03/the_lettuce_pri.html</a>).</p>
+
+<pre>We NEED to make testing as easy as possible to get them testing.</pre>
+
+<p>Class Under Test                        Test Class
+######################################################################</p>
+
+<p>module Something                        module TestSomething</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">Thingy</span>                            <span class="ruby-keyword">class</span> <span class="ruby-constant">TestThingy</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">do_something</span>                        <span class="ruby-keyword">def</span> <span class="ruby-identifier">test_do_something_normal</span>
+    <span class="ruby-comment"># ...                                   thingy = Thingy.new</span>
+  <span class="ruby-keyword">end</span>                                       <span class="ruby-identifier">result</span> = <span class="ruby-identifier">thingy</span>.<span class="ruby-identifier">do_something</span>
+<span class="ruby-keyword">end</span>                                         <span class="ruby-identifier">assert</span>(<span class="ruby-identifier">result</span>.<span class="ruby-identifier">blahblah</span>)
+</pre>
+
+<p>end                                         end</p>
+
+<pre class="ruby">    <span class="ruby-keyword">def</span> <span class="ruby-identifier">test_do_something_edgecase</span>
+      <span class="ruby-identifier">thingy</span> = <span class="ruby-constant">Thingy</span>.<span class="ruby-identifier">new</span>
+      <span class="ruby-identifier">result</span> = <span class="ruby-identifier">thingy</span>.<span class="ruby-identifier">do_something</span>
+      <span class="ruby-identifier">assert</span>(<span class="ruby-identifier">result</span>.<span class="ruby-identifier">blahblah</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+</div>
+
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

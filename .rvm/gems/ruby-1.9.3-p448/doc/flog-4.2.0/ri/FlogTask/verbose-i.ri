@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"verbose:EFI"FlogTask#verbose;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"?Verbosity of output. Defaults to rake's trace (-t) option.;T:
+@fileI"lib/flog_task.rb;TF@

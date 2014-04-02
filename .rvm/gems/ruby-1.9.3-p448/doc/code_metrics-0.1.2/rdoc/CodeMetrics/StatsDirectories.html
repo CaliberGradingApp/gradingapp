@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class CodeMetrics::StatsDirectories - code_metrics-0.1.2 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/code_metrics/stats_directories.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-add_directories">#add_directories</a>
+    
+    <li><a href="#method-i-add_directory">#add_directory</a>
+    
+    <li><a href="#method-i-add_test_directories">#add_test_directories</a>
+    
+    <li><a href="#method-i-add_test_directory">#add_test_directory</a>
+    
+    <li><a href="#method-i-build_directories">#build_directories</a>
+    
+    <li><a href="#method-i-collect_directories">#collect_directories</a>
+    
+    <li><a href="#method-i-default_app_directories">#default_app_directories</a>
+    
+    <li><a href="#method-i-default_test_directories">#default_test_directories</a>
+    
+    <li><a href="#method-i-description">#description</a>
+    
+    <li><a href="#method-i-directories">#directories</a>
+    
+    <li><a href="#method-i-path_prefix">#path_prefix</a>
+    
+    <li><a href="#method-i-pluralize">#pluralize</a>
+    
+    <li><a href="#method-i-titlecase">#titlecase</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../CodeMetrics.html">CodeMetrics</a>
+  
+    <li><a href="../CodeMetrics/LineStatistics.html">CodeMetrics::LineStatistics</a>
+  
+    <li><a href="../CodeMetrics/Profiler.html">CodeMetrics::Profiler</a>
+  
+    <li><a href="../CodeMetrics/Railtie.html">CodeMetrics::Railtie</a>
+  
+    <li><a href="../CodeMetrics/RequireProfiler.html">CodeMetrics::RequireProfiler</a>
+  
+    <li><a href="../CodeMetrics/Statistics.html">CodeMetrics::Statistics</a>
+  
+    <li><a href="../CodeMetrics/StatsDirectories.html">CodeMetrics::StatsDirectories</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class CodeMetrics::StatsDirectories</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="StatDirectory">StatDirectory
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-app_directories" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">app_directories</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-test_directories" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">test_directories</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/code_metrics/stats_directories.rb, line 27</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>
+  <span class="ruby-ivar">@root</span> = <span class="ruby-identifier">path_prefix</span>
+  <span class="ruby-ivar">@app_directories</span> = <span class="ruby-identifier">default_app_directories</span>
+  <span class="ruby-ivar">@test_directories</span> = <span class="ruby-identifier">default_test_directories</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-add_directories" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_directories</span><span
+            class="method-args">(dir_pattern, file_pattern)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@example <a
+href="StatsDirectories.html#method-i-add_directories">#add_directories</a>(‘./spec
+/*_spec.rb’, ‘spec’)</p>
+
+<pre>will build dirs with the format of description, path:
+[ 'Acceptance specs', 'spec/acceptance' ]</pre>
+          
+
+          
+          <div class="method-source-code" id="add_directories-source">
+            <pre><span class="ruby-comment"># File lib/code_metrics/stats_directories.rb, line 65</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_directories</span>(<span class="ruby-identifier">dir_pattern</span>, <span class="ruby-identifier">file_pattern</span>)
+  <span class="ruby-identifier">build_directories</span>(<span class="ruby-identifier">dir_pattern</span>, <span class="ruby-identifier">file_pattern</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">description</span>, <span class="ruby-identifier">path</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">add_directory</span>(<span class="ruby-identifier">description</span>, <span class="ruby-identifier">path</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_directories-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_directories-method -->
+
+    
+      <div id="method-i-add_directory" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_directory</span><span
+            class="method-args">(description,folder_path)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="add_directory-source">
+            <pre><span class="ruby-comment"># File lib/code_metrics/stats_directories.rb, line 79</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_directory</span>(<span class="ruby-identifier">description</span>,<span class="ruby-identifier">folder_path</span>)
+  <span class="ruby-identifier">folder_path</span> = <span class="ruby-identifier">folder_path</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">app_directories</span>.<span class="ruby-identifier">any?</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">stat_dir</span><span class="ruby-operator">|</span> <span class="ruby-identifier">stat_dir</span>.<span class="ruby-identifier">path</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">folder_path</span>}
+    <span class="ruby-identifier">app_directories</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">StatDirectory</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">description</span>, <span class="ruby-identifier">folder_path</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_directory-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_directory-method -->
+
+    
+      <div id="method-i-add_test_directories" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_test_directories</span><span
+            class="method-args">(dir_pattern, file_pattern)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="add_test_directories-source">
+            <pre><span class="ruby-comment"># File lib/code_metrics/stats_directories.rb, line 72</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_test_directories</span>(<span class="ruby-identifier">dir_pattern</span>, <span class="ruby-identifier">file_pattern</span>)
+  <span class="ruby-identifier">build_directories</span>(<span class="ruby-identifier">dir_pattern</span>, <span class="ruby-identifier">file_pattern</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">description</span>, <span class="ruby-identifier">path</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">add_test_directory</span>(<span class="ruby-identifier">description</span>, <span class="ruby-identifier">path</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_test_directories-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_test_directories-method -->
+
+    
+      <div id="method-i-add_test_directory" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_test_directory</span><span
+            class="method-args">(description,folder_path)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="add_test_directory-source">
+            <pre><span class="ruby-comment"># File lib/code_metrics/stats_directories.rb, line 87</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_test_directory</span>(<span class="ruby-identifier">description</span>,<span class="ruby-identifier">folder_path</span>)
+  <span class="ruby-identifier">folder_path</span> = <span class="ruby-identifier">folder_path</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">test_directories</span>.<span class="ruby-identifier">any?</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">stat_dir</span><span class="ruby-operator">|</span> <span class="ruby-identifier">stat_dir</span>.<span class="ruby-identifier">path</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">folder_path</span>}
+    <span class="ruby-identifier">test_directories</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">StatDirectory</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">description</span>, <span class="ruby-identifier">folder_path</span>)
+    <span class="ruby-constant">CodeMetrics</span><span class="ruby-operator">::</span><span class="ruby-constant">Statistics</span><span class="ruby-operator">::</span><span class="ruby-constant">TEST_TYPES</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">description</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_test_directory-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_test_directory-method -->
+
+    
+      <div id="method-i-build_directories" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">build_directories</span><span
+            class="method-args">(glob_pattern, file_pattern)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@example <a
+href="StatsDirectories.html#method-i-build_directories">#build_directories</a>(‘./spec
+/*_spec.rb’, ‘spec’)</p>
+          
+
+          
+          <div class="method-source-code" id="build_directories-source">
+            <pre><span class="ruby-comment"># File lib/code_metrics/stats_directories.rb, line 97</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">build_directories</span>(<span class="ruby-identifier">glob_pattern</span>, <span class="ruby-identifier">file_pattern</span>)
+  <span class="ruby-identifier">dirs</span> = <span class="ruby-identifier">collect_directories</span>(<span class="ruby-identifier">glob_pattern</span>, <span class="ruby-identifier">file_pattern</span>)
+
+  <span class="ruby-constant">Hash</span>[<span class="ruby-identifier">dirs</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">path</span><span class="ruby-operator">|</span>
+        [<span class="ruby-identifier">description</span>(<span class="ruby-identifier">path</span>.<span class="ruby-identifier">basename</span>,<span class="ruby-identifier">file_pattern</span>), <span class="ruby-identifier">path</span>]
+        }
+      ]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- build_directories-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- build_directories-method -->
+
+    
+      <div id="method-i-collect_directories" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">collect_directories</span><span
+            class="method-args">(glob_pattern, file_pattern='')</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>collects non empty directories and names the metric by the folder name
+parent? or dirname? or basename?</p>
+          
+
+          
+          <div class="method-source-code" id="collect_directories-source">
+            <pre><span class="ruby-comment"># File lib/code_metrics/stats_directories.rb, line 107</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">collect_directories</span>(<span class="ruby-identifier">glob_pattern</span>, <span class="ruby-identifier">file_pattern</span>=<span class="ruby-string">''</span>)
+  <span class="ruby-constant">Pathname</span>.<span class="ruby-identifier">glob</span>(<span class="ruby-identifier">glob_pattern</span>).<span class="ruby-identifier">select</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">basename</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">file_pattern</span>) }.<span class="ruby-identifier">map</span>(&amp;<span class="ruby-value">:dirname</span>).<span class="ruby-identifier">uniq</span>.<span class="ruby-identifier">map</span>(&amp;<span class="ruby-value">:realpath</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- collect_directories-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- collect_directories-method -->
+
+    
+      <div id="method-i-default_app_directories" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">default_app_directories</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>What Rails expects</p>
+          
+
+          
+          <div class="method-source-code" id="default_app_directories-source">
+            <pre><span class="ruby-comment"># File lib/code_metrics/stats_directories.rb, line 38</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">default_app_directories</span>
+  <span class="ruby-constant">StatDirectory</span>.<span class="ruby-identifier">from_list</span>([
+    <span class="ruby-node">%w(Controllers        app/controllers)</span>,
+    <span class="ruby-node">%w(Helpers            app/helpers)</span>,
+    <span class="ruby-node">%w(Models             app/models)</span>,
+    <span class="ruby-node">%w(Mailers            app/mailers)</span>,
+    <span class="ruby-node">%w(Javascripts        app/assets/javascripts)</span>,
+    <span class="ruby-node">%w(Libraries          lib)</span>,
+    <span class="ruby-node">%w(APIs               app/apis)</span>
+  ], <span class="ruby-ivar">@root</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- default_app_directories-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- default_app_directories-method -->
+
+    
+      <div id="method-i-default_test_directories" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">default_test_directories</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="default_test_directories-source">
+            <pre><span class="ruby-comment"># File lib/code_metrics/stats_directories.rb, line 50</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">default_test_directories</span>
+  <span class="ruby-constant">StatDirectory</span>.<span class="ruby-identifier">from_list</span>([
+    <span class="ruby-node">%w(Controller\ tests  test/controllers)</span>,
+    <span class="ruby-node">%w(Helper\ tests      test/helpers)</span>,
+    <span class="ruby-node">%w(Model\ tests       test/models)</span>,
+    <span class="ruby-node">%w(Mailer\ tests      test/mailers)</span>,
+    <span class="ruby-node">%w(Integration\ tests test/integration)</span>,
+    <span class="ruby-node">%w(Functional\ tests\ (old)  test/functional)</span>,
+    <span class="ruby-node">%w(Unit\ tests \ (old)       test/unit)</span>
+  ], <span class="ruby-ivar">@root</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- default_test_directories-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- default_test_directories-method -->
+
+    
+      <div id="method-i-description" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">description</span><span
+            class="method-args">(path_basename,file_pattern)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="description-source">
+            <pre><span class="ruby-comment"># File lib/code_metrics/stats_directories.rb, line 111</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">description</span>(<span class="ruby-identifier">path_basename</span>,<span class="ruby-identifier">file_pattern</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">path_basename</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">file_pattern</span>
+    <span class="ruby-node">&quot;Uncategorized #{pluralize(file_pattern)}&quot;</span>
+  <span class="ruby-keyword">else</span>
+   <span class="ruby-node">&quot;#{titlecase(path_basename)} #{pluralize(file_pattern)}&quot;</span>
+  <span class="ruby-keyword">end</span>.<span class="ruby-identifier">strip</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- description-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- description-method -->
+
+    
+      <div id="method-i-directories" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">directories</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="directories-source">
+            <pre><span class="ruby-comment"># File lib/code_metrics/stats_directories.rb, line 33</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">directories</span>
+  <span class="ruby-identifier">app_directories</span>.<span class="ruby-identifier">map</span>(&amp;<span class="ruby-value">:to_a</span>) <span class="ruby-operator">|</span> <span class="ruby-identifier">test_directories</span>.<span class="ruby-identifier">map</span>(&amp;<span class="ruby-value">:to_a</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- directories-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- directories-method -->
+
+    
+      <div id="method-i-path_prefix" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">path_prefix</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="path_prefix-source">
+            <pre><span class="ruby-comment"># File lib/code_metrics/stats_directories.rb, line 128</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">path_prefix</span>
+   (<span class="ruby-keyword">defined?</span>(<span class="ruby-constant">Rails</span>) <span class="ruby-operator">&amp;&amp;</span>  <span class="ruby-constant">Rails</span>.<span class="ruby-identifier">root</span>) <span class="ruby-operator">||</span> <span class="ruby-constant">Pathname</span>.<span class="ruby-identifier">pwd</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- path_prefix-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- path_prefix-method -->
+
+    
+      <div id="method-i-pluralize" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pluralize</span><span
+            class="method-args">(string)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="pluralize-source">
+            <pre><span class="ruby-comment"># File lib/code_metrics/stats_directories.rb, line 124</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">pluralize</span>(<span class="ruby-identifier">string</span>)
+  <span class="ruby-node">&quot;#{string}s&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">string</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">empty?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- pluralize-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- pluralize-method -->
+
+    
+      <div id="method-i-titlecase" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">titlecase</span><span
+            class="method-args">(string)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="titlecase-source">
+            <pre><span class="ruby-comment"># File lib/code_metrics/stats_directories.rb, line 119</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">titlecase</span>(<span class="ruby-identifier">string</span>)
+  <span class="ruby-identifier">string</span> = <span class="ruby-identifier">string</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-node">&quot;#{string[0..0].upcase}#{string[1..-1]}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- titlecase-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- titlecase-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

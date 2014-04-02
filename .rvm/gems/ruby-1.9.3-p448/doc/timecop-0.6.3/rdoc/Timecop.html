@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Timecop - timecop-0.6.3 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/timecop/time_stack_item.rb
+    <li>lib/timecop/timecop.rb
+    <li>lib/timecop/version.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><span class="include">Singleton</span>
+  
+  
+  </ul>
+</nav>
+
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-baseline">::baseline</a>
+    
+    <li><a href="#method-c-baseline-3D">::baseline=</a>
+    
+    <li><a href="#method-c-freeze">::freeze</a>
+    
+    <li><a href="#method-c-return">::return</a>
+    
+    <li><a href="#method-c-return_to_baseline">::return_to_baseline</a>
+    
+    <li><a href="#method-c-safe_mode-3D">::safe_mode=</a>
+    
+    <li><a href="#method-c-safe_mode-3F">::safe_mode?</a>
+    
+    <li><a href="#method-c-scale">::scale</a>
+    
+    <li><a href="#method-c-travel">::travel</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./LICENSE.html">LICENSE</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Timecop.html">Timecop</a>
+  
+    <li><a href="./Timecop/SafeModeException.html">Timecop::SafeModeException</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Timecop</h1>
+
+  <div id="description" class="description">
+    
+<p><a href="Timecop.html">Timecop</a></p>
+<ul><li>
+<p>Wrapper class for manipulating the extensions to the Time, Date, and
+DateTime objects</p>
+</li><li>
+<p>Allows us to “freeze” time in our Ruby applications.</p>
+</li><li>
+<p>Optionally allows time travel to simulate a running clock, such time is not
+technically frozen.</p>
+</li></ul>
+
+<p>This is very useful when your app’s functionality is dependent on time
+(e.g. anything that might expire).  This will allow us to alter the return
+value of Date.today, Time.now, and DateTime.now, such that our application
+code <em>never</em> has to change.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="VERSION">VERSION
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-baseline" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">baseline</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="baseline-source">
+            <pre><span class="ruby-comment"># File lib/timecop/timecop.rb, line 76</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">baseline</span>
+  <span class="ruby-identifier">instance</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:baseline</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- baseline-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- baseline-method -->
+
+    
+      <div id="method-c-baseline-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">baseline=</span><span
+            class="method-args">(baseline)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="baseline-3D-source">
+            <pre><span class="ruby-comment"># File lib/timecop/timecop.rb, line 80</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">baseline=</span>(<span class="ruby-identifier">baseline</span>)
+  <span class="ruby-identifier">instance</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:baseline=</span>, <span class="ruby-identifier">baseline</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- baseline-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- baseline-3D-method -->
+
+    
+      <div id="method-c-freeze" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">freeze</span><span
+            class="method-args">(*args, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Allows you to run a block of code and “fake” a time throughout the
+execution of that block. This is particularly useful for writing test
+methods where the passage of time is critical to the business logic being
+tested.  For example:</p>
+
+<pre>joe = User.find(1)
+joe.purchase_home()
+assert !joe.mortgage_due?
+Timecop.freeze(2008, 10, 5) do
+  assert joe.mortgage_due?
+end</pre>
+
+<p>freeze and travel will respond to several different arguments:</p>
+<ol><li>
+<p><a href="Timecop.html#method-c-freeze">::freeze</a></p>
+</li><li>
+<p><a href="Timecop.html#method-c-freeze">::freeze</a></p>
+</li><li>
+<p><a href="Timecop.html#method-c-freeze">::freeze</a></p>
+</li><li>
+<p><a href="Timecop.html#method-c-freeze">::freeze</a></p>
+</li><li>
+<p><a href="Timecop.html#method-c-freeze">::freeze</a>(year, month, day,
+hour=0, minute=0, second=0)</p>
+</li></ol>
+
+<p>When a block is also passed, Time.now, DateTime.now and Date.today are all
+reset to their previous values after the block has finished executing. 
+This allows us to nest multiple calls to <a
+href="Timecop.html#method-c-travel">::travel</a> and have each block
+maintain it’s concept of “now.”</p>
+<ul><li>
+<p>Note: <a href="Timecop.html#method-c-freeze">::freeze</a> will actually
+freeze time.  This can cause unanticipated problems if benchmark or other
+timing calls are executed, which implicitly expect Time to actually move
+forward.</p>
+</li><li>
+<p>Rails Users: Be especially careful when setting this in your development
+environment in a rails project.  Generators will load your environment,
+including the migration generator, which will lead to files being generated
+with the timestamp set by the <a
+href="Timecop.html#method-c-freeze">::freeze</a> call in your dev
+environment</p>
+</li></ul>
+
+<p>Returns the value of the block if one is given, or the mocked time.</p>
+          
+
+          
+          <div class="method-source-code" id="freeze-source">
+            <pre><span class="ruby-comment"># File lib/timecop/timecop.rb, line 49</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">freeze</span>(*<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">send_travel</span>(<span class="ruby-value">:freeze</span>, *<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- freeze-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- freeze-method -->
+
+    
+      <div id="method-c-return" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">return</span><span
+            class="method-args">(&block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Reverts back to system’s Time.now, Date.today and DateTime.now (if it
+exists) permamently when no block argument is given, or temporarily reverts
+back to the system’s time temporarily for the given block.</p>
+          
+
+          
+          <div class="method-source-code" id="return-source">
+            <pre><span class="ruby-comment"># File lib/timecop/timecop.rb, line 87</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">return</span>(&amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+    <span class="ruby-identifier">instance</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:return</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">instance</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:unmock!</span>)
+    <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- return-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- return-method -->
+
+    
+      <div id="method-c-return_to_baseline" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">return_to_baseline</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="return_to_baseline-source">
+            <pre><span class="ruby-comment"># File lib/timecop/timecop.rb, line 96</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">return_to_baseline</span>
+  <span class="ruby-identifier">instance</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:return_to_baseline</span>)
+  <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- return_to_baseline-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- return_to_baseline-method -->
+
+    
+      <div id="method-c-safe_mode-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">safe_mode=</span><span
+            class="method-args">(safe)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="safe_mode-3D-source">
+            <pre><span class="ruby-comment"># File lib/timecop/timecop.rb, line 105</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">safe_mode=</span>(<span class="ruby-identifier">safe</span>)
+  <span class="ruby-ivar">@safe_mode</span> = <span class="ruby-identifier">safe</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- safe_mode-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- safe_mode-3D-method -->
+
+    
+      <div id="method-c-safe_mode-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">safe_mode?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="safe_mode-3F-source">
+            <pre><span class="ruby-comment"># File lib/timecop/timecop.rb, line 109</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">safe_mode?</span>
+  <span class="ruby-keyword">false</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@safe_mode</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- safe_mode-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- safe_mode-3F-method -->
+
+    
+      <div id="method-c-scale" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">scale</span><span
+            class="method-args">(*args, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Allows you to run a block of code and “scale” a time throughout the
+execution of that block. The first argument is a scaling factor, for
+example:</p>
+
+<pre>Timecop.scale(2) do
+  ... time will 'go' twice as fast here
+end</pre>
+
+<p>See Timecop#freeze for exact usage of the other arguments</p>
+
+<p>Returns the value of the block if one is given, or the mocked time.</p>
+          
+
+          
+          <div class="method-source-code" id="scale-source">
+            <pre><span class="ruby-comment"># File lib/timecop/timecop.rb, line 72</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">scale</span>(*<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">send_travel</span>(<span class="ruby-value">:scale</span>, *<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- scale-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- scale-method -->
+
+    
+      <div id="method-c-travel" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">travel</span><span
+            class="method-args">(*args, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Allows you to run a block of code and “fake” a time throughout the
+execution of that block. See Timecop#freeze for a sample of how to use
+(same exact usage syntax)</p>
+<ul><li>
+<p>Note: <a href="Timecop.html#method-c-travel">::travel</a> will not freeze
+time (as opposed to <a href="Timecop.html#method-c-freeze">::freeze</a>). 
+This is a particularly good candidate for use in environment files in rails
+projects.</p>
+</li></ul>
+
+<p>Returns the value of the block if one is given, or the mocked time.</p>
+          
+
+          
+          <div class="method-source-code" id="travel-source">
+            <pre><span class="ruby-comment"># File lib/timecop/timecop.rb, line 60</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">travel</span>(*<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">send_travel</span>(<span class="ruby-value">:travel</span>, *<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- travel-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- travel-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

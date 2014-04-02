@@ -1,0 +1,4 @@
+{:ancestors{I"MiniPortile:EF[I"Object;F:attributes{I"MiniPortile;F[I"attr_accessor files;FI"attr_accessor host;FI"attr_accessor logger;FI"attr_accessor patch_files;FI"attr_accessor target;FI"attr_reader name;FI"attr_reader original_host;FI"attr_reader version;FI""attr_writer configure_options;F:class_methods{I"MiniPortile;F[I"new;F:encodingIu:Encoding
+UTF-8;F:instance_methods{I"MiniPortile;F[I"activate;FI"compile;FI"configure;FI"configure_options;FI"configured?;FI"	cook;FI"download;FI"downloaded?;FI"extract;FI"
+files;FI"	host;FI"install;FI"installed?;FI"logger;FI"	name;FI"original_host;FI"
+patch;FI"patch_files;FI"	path;FI"target;FI"version;F:modules[I"MiniPortile;F

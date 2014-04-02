@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class RubyParserGauntlet - ruby_parser-3.2.2 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/gauntlet_rubyparser.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Gauntlet
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-broke">#broke</a>
+    
+    <li><a href="#method-i-diff_pp">#diff_pp</a>
+    
+    <li><a href="#method-i-process">#process</a>
+    
+    <li><a href="#method-i-run">#run</a>
+    
+    <li><a href="#method-i-should_skip-3F">#should_skip?</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./History_txt.html">History</a>
+  
+    <li class="file"><a href="./Manifest_txt.html">Manifest</a>
+  
+    <li class="file"><a href="./README_txt.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./RubyParserStuff.html">RubyParserStuff</a>
+  
+    <li><a href="./RubyParserStuff/Environment.html">RubyParserStuff::Environment</a>
+  
+    <li><a href="./RubyParserStuff/Keyword.html">RubyParserStuff::Keyword</a>
+  
+    <li><a href="./RubyParserStuff/Keyword/KWtable.html">RubyParserStuff::Keyword::KWtable</a>
+  
+    <li><a href="./RubyParserStuff/Ruby18Parser.html">RubyParserStuff::Ruby18Parser</a>
+  
+    <li><a href="./RubyParserStuff/Ruby19Parser.html">RubyParserStuff::Ruby19Parser</a>
+  
+    <li><a href="./RubyParserStuff/Ruby20Parser.html">RubyParserStuff::Ruby20Parser</a>
+  
+    <li><a href="./RubyParserStuff/RubyParser.html">RubyParserStuff::RubyParser</a>
+  
+    <li><a href="./RubyParserStuff/RubyParser/SyntaxError.html">RubyParserStuff::RubyParser::SyntaxError</a>
+  
+    <li><a href="./RubyParserStuff/Sexp.html">RubyParserStuff::Sexp</a>
+  
+    <li><a href="./RubyParserStuff/StackState.html">RubyParserStuff::StackState</a>
+  
+    <li><a href="./RubyParserStuff/String.html">RubyParserStuff::String</a>
+  
+    <li><a href="./RPStringScanner.html">RPStringScanner</a>
+  
+    <li><a href="./Ruby18Parser.html">Ruby18Parser</a>
+  
+    <li><a href="./Ruby19Parser.html">Ruby19Parser</a>
+  
+    <li><a href="./Ruby20Parser.html">Ruby20Parser</a>
+  
+    <li><a href="./RubyLexer.html">RubyLexer</a>
+  
+    <li><a href="./RubyParserGauntlet.html">RubyParserGauntlet</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class RubyParserGauntlet</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/gauntlet_rubyparser.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>
+  <span class="ruby-keyword">super</span>
+
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">data</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">h</span>,<span class="ruby-identifier">k</span><span class="ruby-operator">|</span> <span class="ruby-identifier">h</span>[<span class="ruby-identifier">k</span>] = {} }
+  <span class="ruby-identifier">old_data</span> = <span class="ruby-identifier">load_yaml</span> <span class="ruby-identifier">data_file</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">data</span>.<span class="ruby-identifier">merge!</span> <span class="ruby-identifier">old_data</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-broke" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">broke</span><span
+            class="method-args">(name, file, msg)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="broke-source">
+            <pre><span class="ruby-comment"># File lib/gauntlet_rubyparser.rb, line 49</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">broke</span> <span class="ruby-identifier">name</span>, <span class="ruby-identifier">file</span>, <span class="ruby-identifier">msg</span>
+  <span class="ruby-identifier">warn</span> <span class="ruby-string">&quot;bad&quot;</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">data</span>[<span class="ruby-identifier">name</span>][<span class="ruby-identifier">file</span>] = <span class="ruby-identifier">msg</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">dirty</span> = <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- broke-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- broke-method -->
+
+    
+      <div id="method-i-diff_pp" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">diff_pp</span><span
+            class="method-args">(o1, o2)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="diff_pp-source">
+            <pre><span class="ruby-comment"># File lib/gauntlet_rubyparser.rb, line 35</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">diff_pp</span> <span class="ruby-identifier">o1</span>, <span class="ruby-identifier">o2</span>
+  <span class="ruby-identifier">require</span> <span class="ruby-string">'pp'</span>
+
+  <span class="ruby-constant">Tempfile</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'ruby_parser_a'</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file_a</span><span class="ruby-operator">|</span>
+    <span class="ruby-constant">PP</span>.<span class="ruby-identifier">pp</span> <span class="ruby-identifier">o1</span>, <span class="ruby-identifier">file_a</span>
+
+    <span class="ruby-constant">Tempfile</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'ruby_parser_b'</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file_b</span><span class="ruby-operator">|</span>
+      <span class="ruby-constant">PP</span>.<span class="ruby-identifier">pp</span> <span class="ruby-identifier">o2</span>, <span class="ruby-identifier">file_b</span>
+
+      <span class="ruby-node">%xdiff -u #{file_a.path} #{file_b.path}`</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- diff_pp-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- diff_pp-method -->
+
+    
+      <div id="method-i-process" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">process</span><span
+            class="method-args">(path, name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="process-source">
+            <pre><span class="ruby-comment"># File lib/gauntlet_rubyparser.rb, line 55</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">process</span> <span class="ruby-identifier">path</span>, <span class="ruby-identifier">name</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">print</span> <span class="ruby-node">&quot;  #{path}: &quot;</span>
+    <span class="ruby-identifier">rp</span> = <span class="ruby-constant">RubyParser</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">r2r</span> = <span class="ruby-constant">Ruby2Ruby</span>.<span class="ruby-identifier">new</span>
+
+    <span class="ruby-identifier">old_ruby</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">path</span>)
+
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-identifier">old_sexp</span> = <span class="ruby-identifier">rp</span>.<span class="ruby-identifier">process</span> <span class="ruby-identifier">old_ruby</span>
+    <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Racc</span><span class="ruby-operator">::</span><span class="ruby-constant">ParseError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">data</span>[<span class="ruby-identifier">name</span>][<span class="ruby-identifier">path</span>] = <span class="ruby-value">:unparsable</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">dirty</span> = <span class="ruby-keyword">true</span>
+      <span class="ruby-keyword">return</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">new_ruby</span> = <span class="ruby-identifier">r2r</span>.<span class="ruby-identifier">process</span> <span class="ruby-identifier">old_sexp</span>.<span class="ruby-identifier">deep_clone</span>
+
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-identifier">new_sexp</span> = <span class="ruby-identifier">rp</span>.<span class="ruby-identifier">process</span> <span class="ruby-identifier">new_ruby</span>
+    <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Racc</span><span class="ruby-operator">::</span><span class="ruby-constant">ParseError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+      <span class="ruby-identifier">broke</span> <span class="ruby-identifier">name</span>, <span class="ruby-identifier">path</span>, <span class="ruby-node">&quot;couldn't parse new_ruby: #{e.message.strip}&quot;</span>
+      <span class="ruby-keyword">return</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">old_sexp</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">new_sexp</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-identifier">broke</span> <span class="ruby-identifier">name</span>, <span class="ruby-identifier">path</span>, <span class="ruby-identifier">diff_pp</span>(<span class="ruby-identifier">old_sexp</span>, <span class="ruby-identifier">new_sexp</span>)
+      <span class="ruby-keyword">return</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">data</span>[<span class="ruby-identifier">name</span>][<span class="ruby-identifier">path</span>] = <span class="ruby-keyword">true</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">dirty</span> = <span class="ruby-keyword">true</span>
+
+    <span class="ruby-identifier">warn</span> <span class="ruby-string">&quot;good&quot;</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Interrupt</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;User cancelled&quot;</span>
+    <span class="ruby-identifier">exit</span> <span class="ruby-value">1</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">broke</span> <span class="ruby-identifier">name</span>, <span class="ruby-identifier">path</span>, <span class="ruby-node">&quot;    UNKNOWN ERROR: #{e}: #{e.message.strip}&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- process-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- process-method -->
+
+    
+      <div id="method-i-run" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">run</span><span
+            class="method-args">(name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="run-source">
+            <pre><span class="ruby-comment"># File lib/gauntlet_rubyparser.rb, line 97</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">run</span> <span class="ruby-identifier">name</span>
+  <span class="ruby-identifier">warn</span> <span class="ruby-identifier">name</span>
+  <span class="ruby-constant">Dir</span>[<span class="ruby-string">&quot;**/*.rb&quot;</span>].<span class="ruby-identifier">sort</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">path</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">next</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">path</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/gemspec.rb/</span> <span class="ruby-comment"># HACK</span>
+    <span class="ruby-keyword">next</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">data</span>[<span class="ruby-identifier">name</span>][<span class="ruby-identifier">path</span>] <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>
+    <span class="ruby-identifier">process</span> <span class="ruby-identifier">path</span>, <span class="ruby-identifier">name</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">data</span>[<span class="ruby-identifier">name</span>].<span class="ruby-identifier">values</span>.<span class="ruby-identifier">all?</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">v</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span> } <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">warn</span> <span class="ruby-string">&quot;  ALL GOOD!&quot;</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">data</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-keyword">true</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">dirty</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- run-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- run-method -->
+
+    
+      <div id="method-i-should_skip-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">should_skip?</span><span
+            class="method-args">(name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="should_skip-3F-source">
+            <pre><span class="ruby-comment"># File lib/gauntlet_rubyparser.rb, line 23</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">should_skip?</span> <span class="ruby-identifier">name</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">$f</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-constant">Hash</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">data</span>[<span class="ruby-identifier">name</span>] <span class="ruby-keyword">then</span>
+      <span class="ruby-operator">!</span> <span class="ruby-identifier">data</span>[<span class="ruby-identifier">name</span>].<span class="ruby-identifier">empty?</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">data</span>[<span class="ruby-identifier">name</span>]
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">data</span>[<span class="ruby-identifier">name</span>] <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span> <span class="ruby-comment"># yes, == true on purpose</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- should_skip-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- should_skip-3F-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

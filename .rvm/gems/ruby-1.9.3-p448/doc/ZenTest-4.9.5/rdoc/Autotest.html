@@ -1,0 +1,2468 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Autotest - ZenTest-4.9.5 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/autotest.rb
+    <li>lib/autotest/preload.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-add_discovery">::add_discovery</a>
+    
+    <li><a href="#method-c-add_hook">::add_hook</a>
+    
+    <li><a href="#method-c-autodiscover">::autodiscover</a>
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-c-options">::options</a>
+    
+    <li><a href="#method-c-parse_options">::parse_options</a>
+    
+    <li><a href="#method-c-run">::run</a>
+    
+    <li><a href="#method-c-runner">::runner</a>
+    
+    <li><a href="#method-i-add_exception">#add_exception</a>
+    
+    <li><a href="#method-i-add_mapping">#add_mapping</a>
+    
+    <li><a href="#method-i-add_sigint_handler">#add_sigint_handler</a>
+    
+    <li><a href="#method-i-add_sigquit_handler">#add_sigquit_handler</a>
+    
+    <li><a href="#method-i-all_good">#all_good</a>
+    
+    <li><a href="#method-i-class_map">#class_map</a>
+    
+    <li><a href="#method-i-clear_exceptions">#clear_exceptions</a>
+    
+    <li><a href="#method-i-clear_mappings">#clear_mappings</a>
+    
+    <li><a href="#method-i-consolidate_failures">#consolidate_failures</a>
+    
+    <li><a href="#method-i-debug">#debug</a>
+    
+    <li><a href="#method-i-exceptions">#exceptions</a>
+    
+    <li><a href="#method-i-files_matching">#files_matching</a>
+    
+    <li><a href="#method-i-find_files">#find_files</a>
+    
+    <li><a href="#method-i-find_files_to_test">#find_files_to_test</a>
+    
+    <li><a href="#method-i-get_to_green">#get_to_green</a>
+    
+    <li><a href="#method-i-handle_results">#handle_results</a>
+    
+    <li><a href="#method-i-hook">#hook</a>
+    
+    <li><a href="#method-i-known_files">#known_files</a>
+    
+    <li><a href="#method-i-make_test_cmd">#make_test_cmd</a>
+    
+    <li><a href="#method-i-new_hash_of_arrays">#new_hash_of_arrays</a>
+    
+    <li><a href="#method-i-old_run_tests">#old_run_tests</a>
+    
+    <li><a href="#method-i-options">#options</a>
+    
+    <li><a href="#method-i-path_to_classname">#path_to_classname</a>
+    
+    <li><a href="#method-i-remove_exception">#remove_exception</a>
+    
+    <li><a href="#method-i-remove_mapping">#remove_mapping</a>
+    
+    <li><a href="#method-i-reorder">#reorder</a>
+    
+    <li><a href="#method-i-rerun_all_tests">#rerun_all_tests</a>
+    
+    <li><a href="#method-i-reset">#reset</a>
+    
+    <li><a href="#method-i-restart">#restart</a>
+    
+    <li><a href="#method-i-ruby">#ruby</a>
+    
+    <li><a href="#method-i-ruby_cmd">#ruby_cmd</a>
+    
+    <li><a href="#method-i-run">#run</a>
+    
+    <li><a href="#method-i-run_tests">#run_tests</a>
+    
+    <li><a href="#method-i-test_files_for">#test_files_for</a>
+    
+    <li><a href="#method-i-wait_for_changes">#wait_for_changes</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./History_txt.html">History</a>
+  
+    <li class="file"><a href="./Manifest_txt.html">Manifest</a>
+  
+    <li class="file"><a href="./README_txt.html">README</a>
+  
+    <li class="file"><a href="./articles/how_to_use_zentest_txt.html">how_to_use_zentest</a>
+  
+    <li class="file"><a href="./example_txt.html">example</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Autotest.html">Autotest</a>
+  
+    <li><a href="./Autotest/AutoUpdate.html">Autotest::AutoUpdate</a>
+  
+    <li><a href="./Autotest/Bundler.html">Autotest::Bundler</a>
+  
+    <li><a href="./Autotest/Isolate.html">Autotest::Isolate</a>
+  
+    <li><a href="./Autotest/Once.html">Autotest::Once</a>
+  
+    <li><a href="./Autotest/Preload.html">Autotest::Preload</a>
+  
+    <li><a href="./Autotest/RCov.html">Autotest::RCov</a>
+  
+    <li><a href="./Autotest/Restart.html">Autotest::Restart</a>
+  
+    <li><a href="./Autotest/Timestamp.html">Autotest::Timestamp</a>
+  
+    <li><a href="./FunctionalTestMatrix.html">FunctionalTestMatrix</a>
+  
+    <li><a href="./Module.html">Module</a>
+  
+    <li><a href="./Multiruby.html">Multiruby</a>
+  
+    <li><a href="./UnitDiff.html">UnitDiff</a>
+  
+    <li><a href="./ZenTest.html">ZenTest</a>
+  
+    <li><a href="./ZenTestMapping.html">ZenTestMapping</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Autotest</h1>
+
+  <div id="description" class="description">
+    
+<p><a href="Autotest.html">Autotest</a> continuously scans the files in your
+project for changes and runs the appropriate tests.  Test failures are run
+until they have all passed. Then the full test suite is run to ensure that
+nothing else was inadvertantly broken.</p>
+
+<p>If you want <a href="Autotest.html">Autotest</a> to start over from the
+top, hit ^C once.  If you want <a href="Autotest.html">Autotest</a> to
+quit, hit ^C twice.</p>
+
+<p>Rails:</p>
+
+<p>The autotest command will automatically discover a Rails directory by
+looking for config/environment.rb. When Rails is discovered, autotest uses
+RailsAutotest to perform file mappings and other work. See RailsAutotest
+for details.</p>
+
+<p>Plugins:</p>
+
+<p>Plugins are available by creating a .autotest file either in your project
+root or in your home directory. You can then write event handlers in the
+form of:</p>
+
+<pre class="ruby"><span class="ruby-constant">Autotest</span>.<span class="ruby-identifier">add_hook</span> <span class="ruby-identifier">hook_name</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">autotest</span><span class="ruby-operator">|</span> <span class="ruby-operator">...</span> }
+</pre>
+
+<p>The available hooks are listed in <code>ALL_HOOKS</code>.</p>
+
+<p>See example_dot_autotest.rb for more details.</p>
+
+<p>If a hook returns a true value, it signals to autotest that the hook was
+handled and should not continue executing hooks.</p>
+
+<p>Naming:</p>
+
+<p><a href="Autotest.html">Autotest</a> uses a simple naming scheme to figure
+out how to map implementation files to test files following the Test::Unit
+naming scheme.</p>
+<ul><li>
+<p>Test files must be stored in test/</p>
+</li><li>
+<p>Test files names must start with test_</p>
+</li><li>
+<p>Test class names must start with Test</p>
+</li><li>
+<p>Implementation files must be stored in lib/</p>
+</li><li>
+<p>Implementation files must match up with a test file named
+test_.*&lt;impl-name&gt;.rb</p>
+</li></ul>
+
+<p>Strategy:</p>
+<ol><li>
+<p>Find all files and associate them from impl &lt;-&gt; test.</p>
+</li><li>
+<p>Run all tests.</p>
+</li><li>
+<p>Scan for failures.</p>
+</li><li>
+<p>Detect changes in ANY (ruby?. file, rerun all failures + changed files.</p>
+</li><li>
+<p>Until 0 defects, goto 3.</p>
+</li><li>
+<p>When 0 defects, goto 2.</p>
+</li></ol>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="ALL_HOOKS">ALL_HOOKS
+        
+        <dd class="description">
+        
+      
+        <dt id="HOOKS">HOOKS
+        
+        <dd class="description">
+        
+      
+        <dt id="RUBY19">RUBY19
+        
+        <dd class="description">
+        
+      
+        <dt id="SEP">SEP
+        
+        <dd class="description">
+        
+      
+        <dt id="T0">T0
+        
+        <dd class="description">
+        
+      
+        <dt id="WINDOZE">WINDOZE
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-completed_re" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">completed_re</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-extra_class_map" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">extra_class_map</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-extra_files" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">extra_files</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-failed_results_re" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">failed_results_re</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-files_to_test" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">files_to_test</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-find_directories" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">find_directories</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-find_order" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">find_order</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-interrupted" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">interrupted</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-known_files" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">known_files</span><span
+            class="attribute-access-type">[W]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-last_mtime" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">last_mtime</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-latest_results" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">latest_results</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-libs" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">libs</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-order" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">order</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-output" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">output</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-prefix" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">prefix</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-results" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">results</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-sleep" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">sleep</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-tainted" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">tainted</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-tainted-3F" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">tainted?</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-testlib" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">testlib</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-unit_diff" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">unit_diff</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-wants_to_quit" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">wants_to_quit</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-add_discovery" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_discovery</span><span
+            class="method-args">(&proc)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Add a proc to the collection of discovery procs. See
+<code>autodiscover</code>.</p>
+          
+
+          
+          <div class="method-source-code" id="add_discovery-source">
+            <pre><span class="ruby-comment"># File lib/autotest.rb, line 178</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">add_discovery</span> &amp;<span class="ruby-identifier">proc</span>
+  <span class="ruby-identifier">@@discoveries</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">proc</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_discovery-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_discovery-method -->
+
+    
+      <div id="method-c-add_hook" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_hook</span><span
+            class="method-args">(name, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Add the supplied block to the available hooks, with the given name.</p>
+          
+
+          
+          <div class="method-source-code" id="add_hook-source">
+            <pre><span class="ruby-comment"># File lib/autotest.rb, line 889</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">add_hook</span> <span class="ruby-identifier">name</span>, &amp;<span class="ruby-identifier">block</span>
+  <span class="ruby-constant">HOOKS</span>[<span class="ruby-identifier">name</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">block</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_hook-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_hook-method -->
+
+    
+      <div id="method-c-autodiscover" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">autodiscover</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Automatically find all potential autotest runner styles by searching your
+loadpath, vendor/plugins, and rubygems for “autotest/discover.rb”. If
+found, that file is loaded and it should register discovery procs with
+autotest using <code>add_discovery</code>. That proc should return one or
+more strings describing the user’s current environment. Those styles are
+then combined to dynamically invoke an autotest plugin to suite your
+environment. That plugin should define a subclass of <a
+href="Autotest.html">Autotest</a> with a corresponding name.</p>
+
+<h3 id="method-c-autodiscover-label-Process%3A">Process:</h3>
+<ol><li>
+<p>All autotest/discover.rb files loaded.</p>
+</li><li>
+<p>Those procs determine your styles (eg [“rails”, “rspec”]).</p>
+</li><li>
+<p>Require file by sorting styles and joining (eg ‘autotest/rails_rspec’).</p>
+</li><li>
+<p>Invoke run method on appropriate class (eg Autotest::RailsRspec.run).</p>
+</li></ol>
+
+<h3 id="method-c-autodiscover-label-Example+autotest%2Fdiscover.rb%3A">Example autotest/discover.rb:</h3>
+
+<pre>Autotest.add_discovery do
+  &quot;rails&quot; if File.exist? 'config/environment.rb'
+end</pre>
+          
+
+          
+          <div class="method-source-code" id="autodiscover-source">
+            <pre><span class="ruby-comment"># File lib/autotest.rb, line 207</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">autodiscover</span>
+  <span class="ruby-identifier">require</span> <span class="ruby-string">'rubygems'</span>
+
+  <span class="ruby-comment"># *sigh*</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment"># This is needed for rspec's hacky discovery mechanism. For some</span>
+  <span class="ruby-comment"># reason rspec2 added generators that create</span>
+  <span class="ruby-comment"># &quot;autotest/discover.rb&quot; right in the project directory instead of</span>
+  <span class="ruby-comment"># keeping it in the rspec gem and properly deciding that the</span>
+  <span class="ruby-comment"># project is an rspec based project or not. See the url for more</span>
+  <span class="ruby-comment"># details:</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment"># http://rubyforge.org/tracker/?func=detail&amp;atid=1678&amp;aid=28775&amp;group_id=419</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment"># For the record, the sane way to do it is the bacon way:</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment"># &quot;Since version 1.0, there is autotest support. You need to tag</span>
+  <span class="ruby-comment"># your test directories (test/ or spec/) by creating an .bacon</span>
+  <span class="ruby-comment"># file there. Autotest then will find it.&quot;</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment"># I'm submitting a counter-patch to rspec to fix stuff properly,</span>
+  <span class="ruby-comment"># but for now I'm stuck with this because their brokenness is</span>
+  <span class="ruby-comment"># documented in multiple books.</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment"># I'm removing this code once a sane rspec goes out.</span>
+
+  <span class="ruby-identifier">hacky_discovery</span> = <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Specification</span>.<span class="ruby-identifier">any?</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/^rspec/</span> }
+  <span class="ruby-identifier">$:</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">'.'</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">hacky_discovery</span>
+
+  <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">find_files</span>(<span class="ruby-string">&quot;autotest/discover&quot;</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">load</span> <span class="ruby-identifier">f</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># call all discovery procs and determine the style to use</span>
+  <span class="ruby-identifier">@@discoveries</span>.<span class="ruby-identifier">map</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">proc</span><span class="ruby-operator">|</span> <span class="ruby-identifier">proc</span>.<span class="ruby-identifier">call</span> }.<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">compact</span>.<span class="ruby-identifier">sort</span>.<span class="ruby-identifier">uniq</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- autodiscover-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- autodiscover-method -->
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Initialize the instance and then load the user’s .autotest file, if any.</p>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/autotest.rb, line 278</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>
+  <span class="ruby-comment"># these two are set directly because they're wrapped with</span>
+  <span class="ruby-comment"># add/remove/clear accessor methods</span>
+  <span class="ruby-ivar">@exception_list</span> = []
+  <span class="ruby-ivar">@test_mappings</span> = []
+  <span class="ruby-ivar">@child</span> = <span class="ruby-keyword">nil</span>
+
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">completed_re</span> =
+    <span class="ruby-regexp">/\d+ (tests|runs), \d+ assertions, \d+ failures, \d+ errors(, \d+ skips)?/</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">extra_class_map</span>   = {}
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">extra_files</span>       = []
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">failed_results_re</span> = <span class="ruby-regexp">/^\s*\d+\) (?:Failure|Error):\n(.*?)(?: [\(\[](.*?)[\)\]])?:$/</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">files_to_test</span>     = <span class="ruby-identifier">new_hash_of_arrays</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">find_order</span>        = []
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">known_files</span>       = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">libs</span>              = <span class="ruby-node">%w[. lib test]</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-constant">PATH_SEPARATOR</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">order</span>             = <span class="ruby-value">:random</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">output</span>            = <span class="ruby-identifier">$stderr</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">prefix</span>            = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">sleep</span>             = <span class="ruby-value">1</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">testlib</span>           = <span class="ruby-string">&quot;minitest/autorun&quot;</span>
+  <span class="ruby-identifier">specified_directories</span>  = <span class="ruby-constant">ARGV</span>.<span class="ruby-identifier">reject</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">arg</span><span class="ruby-operator">|</span> <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">start_with?</span>(<span class="ruby-string">&quot;-&quot;</span>) } <span class="ruby-comment"># options are not directories</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">find_directories</span>  = <span class="ruby-identifier">specified_directories</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">?</span> [<span class="ruby-string">'.'</span>] <span class="ruby-operator">:</span> <span class="ruby-identifier">specified_directories</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">unit_diff</span>         = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">latest_results</span>    = <span class="ruby-keyword">nil</span>
+
+  <span class="ruby-comment"># file in /lib -&gt; run test in /test</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">add_mapping</span>(<span class="ruby-regexp">/^lib\/.*\.rb$/</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">filename</span>, <span class="ruby-identifier">_</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">possible</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">filename</span>).<span class="ruby-identifier">gsub</span> <span class="ruby-string">'_'</span>, <span class="ruby-string">'_?'</span> <span class="ruby-comment"># ' stupid emacs</span>
+    <span class="ruby-identifier">files_matching</span> <span class="ruby-node">%r^test/.*#{possible}$%</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># file in /test -&gt; run it</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">add_mapping</span>(<span class="ruby-regexp">/^test.*\/test_.*rb$/</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">filename</span>, <span class="ruby-identifier">_</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">filename</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">default_configs</span> = [<span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-string">'~/.autotest'</span>), <span class="ruby-string">'./.autotest'</span>]
+  <span class="ruby-identifier">configs</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:rc</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">default_configs</span>
+
+  <span class="ruby-identifier">configs</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">load</span> <span class="ruby-identifier">f</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span> <span class="ruby-identifier">f</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+      <div id="method-c-options" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">options</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="options-source">
+            <pre><span class="ruby-comment"># File lib/autotest.rb, line 69</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">options</span>
+  <span class="ruby-identifier">@@options</span> <span class="ruby-operator">||=</span> {}
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- options-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- options-method -->
+
+    
+      <div id="method-c-parse_options" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">parse_options</span><span
+            class="method-args">(args = ARGV)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="parse_options-source">
+            <pre><span class="ruby-comment"># File lib/autotest.rb, line 85</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">parse_options</span> <span class="ruby-identifier">args</span> = <span class="ruby-constant">ARGV</span>
+    <span class="ruby-identifier">require</span> <span class="ruby-string">'optparse'</span>
+    <span class="ruby-identifier">options</span> = {
+      <span class="ruby-value">:args</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">dup</span>
+    }
+
+    <span class="ruby-constant">OptionParser</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">opts</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">banner</span> = <span class="ruby-string">&quot;        Continuous testing for your ruby app.
+
+          Autotest automatically tests code that has changed. It assumes
+          the code is in lib, and tests are in test/test_*.rb. Autotest
+          uses plugins to control what happens. You configure plugins
+          with require statements in the .autotest file in your
+          project base directory, and a default configuration for all
+          your projects in the .autotest file in your home directory.
+
+        Usage:
+            autotest [options]
+&quot;</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/^        /</span>, <span class="ruby-string">''</span>)
+
+      <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span> <span class="ruby-string">&quot;-f&quot;</span>, <span class="ruby-string">&quot;--fast-start&quot;</span>, <span class="ruby-string">&quot;Do not run full tests at start&quot;</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">options</span>[<span class="ruby-value">:no_full_after_start</span>] = <span class="ruby-keyword">true</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;-c&quot;</span>, <span class="ruby-string">&quot;--no-full-after-failed&quot;</span>,
+              <span class="ruby-string">&quot;Do not run all tests on red-&gt;green&quot;</span>) <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">options</span>[<span class="ruby-value">:no_full_after_failed</span>] = <span class="ruby-keyword">true</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span> <span class="ruby-string">&quot;-d&quot;</span>, <span class="ruby-string">&quot;--debug&quot;</span>, <span class="ruby-string">&quot;Debug mode, for reporting bugs.&quot;</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">options</span>[<span class="ruby-value">:debug</span>] = <span class="ruby-keyword">true</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span> <span class="ruby-string">&quot;-v&quot;</span>, <span class="ruby-string">&quot;--verbose&quot;</span>, <span class="ruby-string">&quot;Be annoyingly verbose (debugs .autotest).&quot;</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">options</span>[<span class="ruby-value">:verbose</span>] = <span class="ruby-keyword">true</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span> <span class="ruby-string">&quot;-q&quot;</span>, <span class="ruby-string">&quot;--quiet&quot;</span>, <span class="ruby-string">&quot;Be quiet.&quot;</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">options</span>[<span class="ruby-value">:quiet</span>] = <span class="ruby-keyword">true</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;-r&quot;</span>, <span class="ruby-string">&quot;--rc CONF&quot;</span>, <span class="ruby-constant">String</span>, <span class="ruby-string">&quot;Override path to config file&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">o</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">options</span>[<span class="ruby-value">:rc</span>] = <span class="ruby-constant">Array</span>(<span class="ruby-identifier">o</span>)
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;-s&quot;</span>, <span class="ruby-string">&quot;--style STYLE&quot;</span>, <span class="ruby-constant">String</span>,
+              <span class="ruby-string">&quot;Manually specify test style. (default: autodiscover)&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">style</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">options</span>[<span class="ruby-value">:style</span>] = <span class="ruby-constant">Array</span>(<span class="ruby-identifier">style</span>)
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;-w&quot;</span>, <span class="ruby-string">&quot;--warnings&quot;</span>, <span class="ruby-string">&quot;Turn on ruby warnings&quot;</span>) <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">$-w</span> = <span class="ruby-keyword">true</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">on</span> <span class="ruby-string">&quot;-h&quot;</span>, <span class="ruby-string">&quot;--help&quot;</span>, <span class="ruby-string">&quot;Show this.&quot;</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-identifier">opts</span>
+        <span class="ruby-identifier">exit</span> <span class="ruby-value">1</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>.<span class="ruby-identifier">parse!</span> <span class="ruby-identifier">args</span>
+
+    <span class="ruby-constant">Autotest</span>.<span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge!</span> <span class="ruby-identifier">options</span>
+
+    <span class="ruby-identifier">options</span>
+  <span class="ruby-keyword">end</span></pre>
+          </div><!-- parse_options-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- parse_options-method -->
+
+    
+      <div id="method-c-run" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">run</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Initialize and run the system.</p>
+          
+
+          
+          <div class="method-source-code" id="run-source">
+            <pre><span class="ruby-comment"># File lib/autotest.rb, line 247</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">run</span>
+  <span class="ruby-identifier">new</span>.<span class="ruby-identifier">run</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- run-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- run-method -->
+
+    
+      <div id="method-c-runner" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">runner</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Calculates the autotest runner to use to run the tests.</p>
+
+<p>Can be overridden with –style, otherwise uses <a
+href="Autotest.html#method-c-autodiscover">::autodiscover</a>.</p>
+          
+
+          
+          <div class="method-source-code" id="runner-source">
+            <pre><span class="ruby-comment"># File lib/autotest.rb, line 156</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">runner</span>
+  <span class="ruby-identifier">style</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:style</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">Autotest</span>.<span class="ruby-identifier">autodiscover</span>
+  <span class="ruby-identifier">target</span> = <span class="ruby-constant">Autotest</span>
+
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">style</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">mod</span> = <span class="ruby-node">&quot;autotest/#{style.join &quot;_&quot;}&quot;</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;loading #{mod}&quot;</span>
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-identifier">require</span> <span class="ruby-identifier">mod</span>
+    <span class="ruby-keyword">rescue</span> <span class="ruby-constant">LoadError</span>
+      <span class="ruby-identifier">abort</span> <span class="ruby-node">&quot;Autotest style #{mod} doesn't seem to exist. Aborting.&quot;</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">target</span> = <span class="ruby-constant">Autotest</span>.<span class="ruby-identifier">const_get</span>(<span class="ruby-identifier">style</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">capitalize</span>}.<span class="ruby-identifier">join</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">target</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- runner-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- runner-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-add_exception" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_exception</span><span
+            class="method-args">(regexp)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Adds <code>regexp</code> to the list of exceptions for find_file. This must
+be called <em>before</em> the exceptions are compiled.</p>
+          
+
+          
+          <div class="method-source-code" id="add_exception-source">
+            <pre><span class="ruby-comment"># File lib/autotest.rb, line 815</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_exception</span> <span class="ruby-identifier">regexp</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;exceptions already compiled&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-keyword">defined?</span> <span class="ruby-ivar">@exceptions</span>
+
+  <span class="ruby-ivar">@exception_list</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">regexp</span>
+  <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_exception-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_exception-method -->
+
+    
+      <div id="method-i-add_mapping" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_mapping</span><span
+            class="method-args">(regexp, prepend = false, &proc)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Adds a file mapping, optionally prepending the mapping to the front of the
+list if <code>prepend</code> is true. <code>regexp</code> should match a
+file path in the codebase. <code>proc</code> is passed a matched filename
+and Regexp.last_match. <code>proc</code> should return an array of tests to
+run.</p>
+
+<p>For example, if test_helper.rb is modified, rerun all tests:</p>
+
+<pre class="ruby"><span class="ruby-identifier">at</span>.<span class="ruby-identifier">add_mapping</span>(<span class="ruby-regexp">/test_helper.rb/</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span>, <span class="ruby-identifier">_</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">at</span>.<span class="ruby-identifier">files_matching</span>(<span class="ruby-regexp">/^test.*rb$/</span>)
+<span class="ruby-keyword">end</span>
+</pre>
+          
+
+          
+          <div class="method-source-code" id="add_mapping-source">
+            <pre><span class="ruby-comment"># File lib/autotest.rb, line 779</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_mapping</span> <span class="ruby-identifier">regexp</span>, <span class="ruby-identifier">prepend</span> = <span class="ruby-keyword">false</span>, &amp;<span class="ruby-identifier">proc</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">prepend</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-ivar">@test_mappings</span>.<span class="ruby-identifier">unshift</span> [<span class="ruby-identifier">regexp</span>, <span class="ruby-identifier">proc</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@test_mappings</span>.<span class="ruby-identifier">push</span> [<span class="ruby-identifier">regexp</span>, <span class="ruby-identifier">proc</span>]
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_mapping-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_mapping-method -->
+
+    
+      <div id="method-i-add_sigint_handler" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_sigint_handler</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Installs a sigint handler.</p>
+          
+
+          
+          <div class="method-source-code" id="add_sigint_handler-source">
+            <pre><span class="ruby-comment"># File lib/autotest.rb, line 446</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_sigint_handler</span>
+  <span class="ruby-identifier">trap</span> <span class="ruby-string">'INT'</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-constant">Process</span>.<span class="ruby-identifier">kill</span> <span class="ruby-string">&quot;KILL&quot;</span>, <span class="ruby-ivar">@child</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@child</span>
+
+    <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">interrupted</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">wants_to_quit</span> = <span class="ruby-keyword">true</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-keyword">unless</span> <span class="ruby-identifier">hook</span> <span class="ruby-value">:interrupt</span> <span class="ruby-keyword">then</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Interrupt a second time to quit&quot;</span>
+        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">interrupted</span> = <span class="ruby-keyword">true</span>
+        <span class="ruby-constant">Kernel</span>.<span class="ruby-identifier">sleep</span> <span class="ruby-value">1.5</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">Interrupt</span>, <span class="ruby-keyword">nil</span> <span class="ruby-comment"># let the run loop catch it</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_sigint_handler-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_sigint_handler-method -->
+
+    
+      <div id="method-i-add_sigquit_handler" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_sigquit_handler</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Installs a sigquit handler</p>
+          
+
+          
+          <div class="method-source-code" id="add_sigquit_handler-source">
+            <pre><span class="ruby-comment"># File lib/autotest.rb, line 466</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_sigquit_handler</span>
+  <span class="ruby-identifier">trap</span> <span class="ruby-string">'QUIT'</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">restart</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_sigquit_handler-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_sigquit_handler-method -->
+
+    
+      <div id="method-i-all_good" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">all_good</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>If there are no files left to test (because they’ve all passed), then all
+is good.</p>
+          
+
+          
+          <div class="method-source-code" id="all_good-source">
+            <pre><span class="ruby-comment"># File lib/autotest.rb, line 493</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">all_good</span>
+  <span class="ruby-identifier">files_to_test</span>.<span class="ruby-identifier">empty?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- all_good-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- all_good-method -->
+
+    
+      <div id="method-i-class_map" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">class_map</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="class_map-source">
+            <pre><span class="ruby-comment"># File lib/autotest.rb, line 339</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">class_map</span>
+  <span class="ruby-identifier">class_map</span> = <span class="ruby-constant">Hash</span>[*<span class="ruby-keyword">self</span>.<span class="ruby-identifier">find_order</span>.<span class="ruby-identifier">grep</span>(<span class="ruby-regexp">/^test/</span>).<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-comment"># TODO: ugly</span>
+                     [<span class="ruby-identifier">path_to_classname</span>(<span class="ruby-identifier">f</span>), <span class="ruby-identifier">f</span>]
+                   }.<span class="ruby-identifier">flatten</span>]
+  <span class="ruby-identifier">class_map</span>.<span class="ruby-identifier">merge!</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">extra_class_map</span>
+  <span class="ruby-identifier">class_map</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- class_map-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- class_map-method -->
+
+    
+      <div id="method-i-clear_exceptions" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">clear_exceptions</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Clears the list of exceptions for find_file. This must be called
+<em>before</em> the exceptions are compiled.</p>
+          
+
+          
+          <div class="method-source-code" id="clear_exceptions-source">
+            <pre><span class="ruby-comment"># File lib/autotest.rb, line 836</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">clear_exceptions</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;exceptions already compiled&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-keyword">defined?</span> <span class="ruby-ivar">@exceptions</span>
+  <span class="ruby-ivar">@exception_list</span>.<span class="ruby-identifier">clear</span>
+  <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- clear_exceptions-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- clear_exceptions-method -->
+
+    
+      <div id="method-i-clear_mappings" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">clear_mappings</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Clears all file mappings. This is DANGEROUS as it entirely disables
+autotest. You must add at least one file mapping that does a good job of
+rerunning appropriate tests.</p>
+          
+
+          
+          <div class="method-source-code" id="clear_mappings-source">
+            <pre><span class="ruby-comment"># File lib/autotest.rb, line 803</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">clear_mappings</span>
+  <span class="ruby-ivar">@test_mappings</span>.<span class="ruby-identifier">clear</span>
+  <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- clear_mappings-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- clear_mappings-method -->
+
+    
+      <div id="method-i-consolidate_failures" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">consolidate_failures</span><span
+            class="method-args">(failed)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns a hash mapping a file name to the known failures for that file.</p>
+          
+
+          
+          <div class="method-source-code" id="consolidate_failures-source">
+            <pre><span class="ruby-comment"># File lib/autotest.rb, line 514</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">consolidate_failures</span> <span class="ruby-identifier">failed</span>
+  <span class="ruby-identifier">filters</span> = <span class="ruby-identifier">new_hash_of_arrays</span>
+
+  <span class="ruby-identifier">class_map</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class_map</span>
+
+  <span class="ruby-identifier">failed</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">method</span>, <span class="ruby-identifier">klass</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">class_map</span>.<span class="ruby-identifier">has_key?</span> <span class="ruby-identifier">klass</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-identifier">filters</span>[<span class="ruby-identifier">class_map</span>[<span class="ruby-identifier">klass</span>]] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">method</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">output</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Unable to map class #{klass} to a file&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">filters</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- consolidate_failures-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- consolidate_failures-method -->
+
+    
+      <div id="method-i-debug" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">debug</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="debug-source">
+            <pre><span class="ruby-comment"># File lib/autotest.rb, line 323</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">debug</span>
+  <span class="ruby-identifier">require</span> <span class="ruby-string">&quot;pp&quot;</span>
+  <span class="ruby-identifier">find_files_to_test</span>
+
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Known test files:&quot;</span>
+  <span class="ruby-identifier">puts</span>
+  <span class="ruby-identifier">pp</span> <span class="ruby-identifier">files_to_test</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">sort</span>
+
+  <span class="ruby-identifier">class_map</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class_map</span>
+
+  <span class="ruby-identifier">puts</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Known class map:&quot;</span>
+  <span class="ruby-identifier">puts</span>
+  <span class="ruby-identifier">pp</span> <span class="ruby-identifier">class_map</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- debug-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- debug-method -->
+
+    
+      <div id="method-i-exceptions" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">exceptions</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Return a compiled regexp of exceptions for <a
+href="Autotest.html#method-i-find_files">#find_files</a> or nil if no
+filtering should take place. This regexp is generated from
+<code>exception_list</code>.</p>
+          
+
+          
+          <div class="method-source-code" id="exceptions-source">
+            <pre><span class="ruby-comment"># File lib/autotest.rb, line 847</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">exceptions</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-keyword">defined?</span> <span class="ruby-ivar">@exceptions</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-ivar">@exceptions</span> = <span class="ruby-keyword">if</span> <span class="ruby-ivar">@exception_list</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword">then</span>
+                    <span class="ruby-keyword">nil</span>
+                  <span class="ruby-keyword">else</span>
+                    <span class="ruby-constant">Regexp</span>.<span class="ruby-identifier">union</span>(*<span class="ruby-ivar">@exception_list</span>)
+                  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-ivar">@exceptions</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- exceptions-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- exceptions-method -->
+
+    
+      <div id="method-i-files_matching" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">files_matching</span><span
+            class="method-args">(regexp)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns all known files in the codebase matching <code>regexp</code>.</p>
+          
+
+          
+          <div class="method-source-code" id="files_matching-source">
+            <pre><span class="ruby-comment"># File lib/autotest.rb, line 763</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">files_matching</span> <span class="ruby-identifier">regexp</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">find_order</span>.<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span><span class="ruby-operator">|</span> <span class="ruby-identifier">k</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">regexp</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- files_matching-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- files_matching-method -->
+
+    
+      <div id="method-i-find_files" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find_files</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Find the files to process, ignoring temporary files, source configuration
+management files, etc., and return a Hash mapping filename to modification
+time.</p>
+          
+
+          
+          <div class="method-source-code" id="find_files-source">
+            <pre><span class="ruby-comment"># File lib/autotest.rb, line 535</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">find_files</span>
+  <span class="ruby-identifier">result</span> = {}
+  <span class="ruby-identifier">targets</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">find_directories</span> <span class="ruby-operator">+</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">extra_files</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">find_order</span>.<span class="ruby-identifier">clear</span>
+
+  <span class="ruby-identifier">targets</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">target</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">order</span> = []
+    <span class="ruby-constant">Find</span>.<span class="ruby-identifier">find</span> <span class="ruby-identifier">target</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+      <span class="ruby-constant">Find</span>.<span class="ruby-identifier">prune</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">f</span> <span class="ruby-operator">=~</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">exceptions</span>
+      <span class="ruby-constant">Find</span>.<span class="ruby-identifier">prune</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">f</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/^\.\/tmp/</span>    <span class="ruby-comment"># temp dir, used by isolate</span>
+
+      <span class="ruby-keyword">next</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">file?</span> <span class="ruby-identifier">f</span>
+      <span class="ruby-keyword">next</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">f</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/(swp|~|rej|orig)$/</span> <span class="ruby-comment"># temporary/patch files</span>
+      <span class="ruby-keyword">next</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">f</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/(,v)$/</span>             <span class="ruby-comment"># RCS files</span>
+      <span class="ruby-keyword">next</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">f</span> <span class="ruby-operator">=~</span> <span class="ruby-node">/\/\.?#/</span>            <span class="ruby-comment"># Emacs autosave/cvs merge files</span>
+
+      <span class="ruby-identifier">filename</span> = <span class="ruby-identifier">f</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp">/^\.\//</span>, <span class="ruby-string">''</span>)
+
+      <span class="ruby-identifier">result</span>[<span class="ruby-identifier">filename</span>] = <span class="ruby-constant">File</span>.<span class="ruby-identifier">stat</span>(<span class="ruby-identifier">filename</span>).<span class="ruby-identifier">mtime</span> <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">next</span>
+      <span class="ruby-identifier">order</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">filename</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">find_order</span>.<span class="ruby-identifier">push</span>(*<span class="ruby-identifier">order</span>.<span class="ruby-identifier">sort</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- find_files-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- find_files-method -->
+
+    
+      <div id="method-i-find_files_to_test" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find_files_to_test</span><span
+            class="method-args">(files = find_files)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Find the files which have been modified, update the recorded timestamps,
+and use this to update the files to test. Returns the latest mtime of the
+files modified or nil when nothing was modified.</p>
+          
+
+          
+          <div class="method-source-code" id="find_files_to_test-source">
+            <pre><span class="ruby-comment"># File lib/autotest.rb, line 568</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">find_files_to_test</span> <span class="ruby-identifier">files</span> = <span class="ruby-identifier">find_files</span>
+  <span class="ruby-identifier">updated</span> = <span class="ruby-identifier">files</span>.<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">filename</span>, <span class="ruby-identifier">mtime</span><span class="ruby-operator">|</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">last_mtime</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">mtime</span> }
+
+  <span class="ruby-comment"># nothing to update or initially run</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">updated</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">||</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">last_mtime</span>.<span class="ruby-identifier">to_i</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">p</span> <span class="ruby-identifier">updated</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:verbose</span>]
+
+    <span class="ruby-identifier">hook</span> <span class="ruby-value">:updated</span>, <span class="ruby-identifier">updated</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">updated</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span>,<span class="ruby-identifier">m</span><span class="ruby-operator">|</span> <span class="ruby-identifier">test_files_for</span> <span class="ruby-identifier">f</span> }.<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">uniq</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">filename</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">files_to_test</span>[<span class="ruby-identifier">filename</span>] <span class="ruby-comment"># creates key with default value</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">updated</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">files</span>.<span class="ruby-identifier">values</span>.<span class="ruby-identifier">max</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- find_files_to_test-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- find_files_to_test-method -->
+
+    
+      <div id="method-i-get_to_green" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_to_green</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Keep running the tests after a change, until all pass.</p>
+          
+
+          
+          <div class="method-source-code" id="get_to_green-source">
+            <pre><span class="ruby-comment"># File lib/autotest.rb, line 385</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_to_green</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">run_tests</span>
+    <span class="ruby-identifier">wait_for_changes</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">all_good</span>
+  <span class="ruby-keyword">end</span> <span class="ruby-keyword">until</span> <span class="ruby-identifier">all_good</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_to_green-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_to_green-method -->
+
+    
+      <div id="method-i-handle_results" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">handle_results</span><span
+            class="method-args">(results)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Check results for failures, set the “bar” to red or green, and if there are
+failures record this.</p>
+          
+
+          
+          <div class="method-source-code" id="handle_results-source">
+            <pre><span class="ruby-comment"># File lib/autotest.rb, line 593</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">handle_results</span> <span class="ruby-identifier">results</span>
+  <span class="ruby-identifier">results</span> = <span class="ruby-identifier">results</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/\e\[\d+m/</span>, <span class="ruby-string">''</span>) <span class="ruby-comment"># strip ascii color</span>
+  <span class="ruby-identifier">failed</span> = <span class="ruby-identifier">results</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">failed_results_re</span>).<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">m</span>, <span class="ruby-identifier">k</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">k</span>, <span class="ruby-identifier">m</span> = <span class="ruby-node">$1</span>, <span class="ruby-node">$2</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">m</span> <span class="ruby-operator">=~</span> <span class="ruby-node">/(\w+)\#(\w+)/</span> <span class="ruby-comment"># minitest 5 output</span>
+    [<span class="ruby-identifier">m</span>, <span class="ruby-identifier">k</span>]
+  }
+
+  <span class="ruby-identifier">completed</span> = <span class="ruby-identifier">results</span>[<span class="ruby-keyword">self</span>.<span class="ruby-identifier">completed_re</span>]
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">completed</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">completed</span> = <span class="ruby-identifier">completed</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-regexp">/(\d+) (\w+)/</span>).<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">v</span>, <span class="ruby-identifier">k</span><span class="ruby-operator">|</span> [<span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span>.<span class="ruby-identifier">to_i</span>] }
+
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">latest_results</span> = <span class="ruby-constant">Hash</span>[*<span class="ruby-identifier">completed</span>.<span class="ruby-identifier">flatten</span>]
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">files_to_test</span>  = <span class="ruby-identifier">consolidate_failures</span> <span class="ruby-identifier">failed</span>
+
+    <span class="ruby-identifier">color</span> = <span class="ruby-identifier">failed</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">?</span> <span class="ruby-value">:green</span> <span class="ruby-operator">:</span> <span class="ruby-value">:red</span>
+    <span class="ruby-identifier">hook</span> <span class="ruby-identifier">color</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">$TESTING</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">latest_results</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tainted</span> = <span class="ruby-keyword">true</span> <span class="ruby-keyword">unless</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">files_to_test</span>.<span class="ruby-identifier">empty?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- handle_results-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- handle_results-method -->
+
+    
+      <div id="method-i-hook" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">hook</span><span
+            class="method-args">(name, *args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Call the event hook named <code>name</code>, passing in optional args
+depending on the hook itself.</p>
+
+<p>Returns false if no hook handled the event.</p>
+
+<h3 id="method-i-hook-label-Hook+Writers%21">Hook Writers!</h3>
+
+<p>This executes all registered hooks <em>until one returns truthy</em>. Pay
+attention to the return value of your block!</p>
+          
+
+          
+          <div class="method-source-code" id="hook-source">
+            <pre><span class="ruby-comment"># File lib/autotest.rb, line 873</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">hook</span> <span class="ruby-identifier">name</span>, *<span class="ruby-identifier">args</span>
+  <span class="ruby-identifier">deprecated</span> = {
+    <span class="ruby-comment"># none currently</span>
+  }
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">deprecated</span>[<span class="ruby-identifier">name</span>] <span class="ruby-keyword">and</span> <span class="ruby-keyword">not</span> <span class="ruby-constant">HOOKS</span>[<span class="ruby-identifier">name</span>].<span class="ruby-identifier">empty?</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;hook #{name} has been deprecated, use #{deprecated[name]}&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-constant">HOOKS</span>[<span class="ruby-identifier">name</span>].<span class="ruby-identifier">any?</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">plugin</span><span class="ruby-operator">|</span> <span class="ruby-identifier">plugin</span>[<span class="ruby-keyword">self</span>, *<span class="ruby-identifier">args</span>] }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- hook-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- hook-method -->
+
+    
+      <div id="method-i-known_files" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">known_files</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Lazy accessor for the <a
+href="Autotest.html#method-i-known_files">#known_files</a> hash.</p>
+          
+
+          
+          <div class="method-source-code" id="known_files-source">
+            <pre><span class="ruby-comment"># File lib/autotest.rb, line 620</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">known_files</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@known_files</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-ivar">@known_files</span> = <span class="ruby-constant">Hash</span>[*<span class="ruby-identifier">find_order</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> [<span class="ruby-identifier">f</span>, <span class="ruby-keyword">true</span>] }.<span class="ruby-identifier">flatten</span>]
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@known_files</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- known_files-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- known_files-method -->
+
+    
+      <div id="method-i-make_test_cmd" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">make_test_cmd</span><span
+            class="method-args">(files_to_test)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Generate the commands to test the supplied files</p>
+          
+
+          
+          <div class="method-source-code" id="make_test_cmd-source">
+            <pre><span class="ruby-comment"># File lib/autotest.rb, line 637</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">make_test_cmd</span> <span class="ruby-identifier">files_to_test</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:debug</span>] <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Files to test:&quot;</span>
+    <span class="ruby-identifier">puts</span>
+    <span class="ruby-identifier">pp</span> <span class="ruby-identifier">files_to_test</span>
+    <span class="ruby-identifier">puts</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">cmds</span> = []
+  <span class="ruby-identifier">full</span>, <span class="ruby-identifier">partial</span> = <span class="ruby-identifier">reorder</span>(<span class="ruby-identifier">files_to_test</span>).<span class="ruby-identifier">partition</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">empty?</span> }
+  <span class="ruby-identifier">diff</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">unit_diff</span>
+  <span class="ruby-identifier">diff</span> = <span class="ruby-node">&quot; | #{diff}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">diff</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">diff</span> <span class="ruby-operator">!~</span> <span class="ruby-regexp">/^\|/</span>
+
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">full</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">classes</span> = <span class="ruby-identifier">full</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">k</span>}.<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">uniq</span>
+    <span class="ruby-identifier">classes</span>.<span class="ruby-identifier">unshift</span> <span class="ruby-identifier">testlib</span>
+    <span class="ruby-identifier">classes</span> = <span class="ruby-identifier">classes</span>.<span class="ruby-identifier">join</span> <span class="ruby-string">&quot; &quot;</span>
+    <span class="ruby-identifier">cmds</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;#{ruby_cmd} -e \&quot;%w[#{classes}].each { |f| require f }\&quot;#{diff}&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">partial</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">klass</span>, <span class="ruby-identifier">methods</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">regexp</span> = <span class="ruby-constant">Regexp</span>.<span class="ruby-identifier">union</span>(*<span class="ruby-identifier">methods</span>).<span class="ruby-identifier">source</span>
+    <span class="ruby-identifier">cmds</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;#{ruby_cmd} #{klass} -n \&quot;/^(#{regexp})$/\&quot;#{diff}&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">cmds</span>.<span class="ruby-identifier">join</span> <span class="ruby-node">&quot;#{SEP} &quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- make_test_cmd-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- make_test_cmd-method -->
+
+    
+      <div id="method-i-new_hash_of_arrays" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new_hash_of_arrays</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new_hash_of_arrays-source">
+            <pre><span class="ruby-comment"># File lib/autotest.rb, line 665</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">new_hash_of_arrays</span>
+  <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">h</span>,<span class="ruby-identifier">k</span><span class="ruby-operator">|</span> <span class="ruby-identifier">h</span>[<span class="ruby-identifier">k</span>] = [] }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new_hash_of_arrays-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new_hash_of_arrays-method -->
+
+    
+      <div id="method-i-old_run_tests" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">old_run_tests</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Autotest.html#method-i-run_tests">run_tests</a>
+        </div>
+        
+      </div><!-- old_run_tests-method -->
+
+    
+      <div id="method-i-options" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">options</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="options-source">
+            <pre><span class="ruby-comment"># File lib/autotest.rb, line 73</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">options</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- options-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- options-method -->
+
+    
+      <div id="method-i-path_to_classname" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">path_to_classname</span><span
+            class="method-args">(s)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Convert a path in a string, s, into a class name, changing underscores to
+CamelCase, etc.</p>
+          
+
+          
+          <div class="method-source-code" id="path_to_classname-source">
+            <pre><span class="ruby-comment"># File lib/autotest.rb, line 501</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">path_to_classname</span> <span class="ruby-identifier">s</span>
+  <span class="ruby-identifier">sep</span> = <span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-constant">SEPARATOR</span>
+  <span class="ruby-identifier">f</span> = <span class="ruby-identifier">s</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-node">/^test#{sep}/</span>, <span class="ruby-string">''</span>).<span class="ruby-identifier">sub</span>(<span class="ruby-regexp">/\.rb$/</span>, <span class="ruby-string">''</span>).<span class="ruby-identifier">split</span> <span class="ruby-identifier">sep</span>
+  <span class="ruby-identifier">f</span> = <span class="ruby-identifier">f</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">path</span><span class="ruby-operator">|</span> <span class="ruby-identifier">path</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">/_|(\d+)/</span>).<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">seg</span><span class="ruby-operator">|</span> <span class="ruby-identifier">seg</span>.<span class="ruby-identifier">capitalize</span> }.<span class="ruby-identifier">join</span> }
+  <span class="ruby-identifier">f</span> = <span class="ruby-identifier">f</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">path</span><span class="ruby-operator">|</span> <span class="ruby-identifier">path</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/^Test/</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">path</span> <span class="ruby-operator">:</span> <span class="ruby-node">&quot;Test#{path}&quot;</span>  }
+
+  <span class="ruby-identifier">f</span>.<span class="ruby-identifier">join</span> <span class="ruby-string">'::'</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- path_to_classname-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- path_to_classname-method -->
+
+    
+      <div id="method-i-remove_exception" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">remove_exception</span><span
+            class="method-args">(regexp)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Removes <code>regexp</code> to the list of exceptions for find_file. This
+must be called <em>before</em> the exceptions are compiled.</p>
+          
+
+          
+          <div class="method-source-code" id="remove_exception-source">
+            <pre><span class="ruby-comment"># File lib/autotest.rb, line 826</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">remove_exception</span> <span class="ruby-identifier">regexp</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;exceptions already compiled&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-keyword">defined?</span> <span class="ruby-ivar">@exceptions</span>
+  <span class="ruby-ivar">@exception_list</span>.<span class="ruby-identifier">delete</span> <span class="ruby-identifier">regexp</span>
+  <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- remove_exception-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- remove_exception-method -->
+
+    
+      <div id="method-i-remove_mapping" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">remove_mapping</span><span
+            class="method-args">(regexp)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Removed a file mapping matching <code>regexp</code>.</p>
+          
+
+          
+          <div class="method-source-code" id="remove_mapping-source">
+            <pre><span class="ruby-comment"># File lib/autotest.rb, line 791</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">remove_mapping</span> <span class="ruby-identifier">regexp</span>
+  <span class="ruby-ivar">@test_mappings</span>.<span class="ruby-identifier">delete_if</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">k</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">regexp</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- remove_mapping-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- remove_mapping-method -->
+
+    
+      <div id="method-i-reorder" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">reorder</span><span
+            class="method-args">(files_to_test)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="reorder-source">
+            <pre><span class="ruby-comment"># File lib/autotest.rb, line 669</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">reorder</span> <span class="ruby-identifier">files_to_test</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">order</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:alpha</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">files_to_test</span>.<span class="ruby-identifier">sort_by</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">k</span> }
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:reverse</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">files_to_test</span>.<span class="ruby-identifier">sort_by</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">k</span> }.<span class="ruby-identifier">reverse</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:random</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">max</span> = <span class="ruby-identifier">files_to_test</span>.<span class="ruby-identifier">size</span>
+    <span class="ruby-identifier">files_to_test</span>.<span class="ruby-identifier">sort_by</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">rand</span> <span class="ruby-identifier">max</span> }
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:natural</span> <span class="ruby-keyword">then</span>
+    (<span class="ruby-keyword">self</span>.<span class="ruby-identifier">find_order</span> &amp; <span class="ruby-identifier">files_to_test</span>.<span class="ruby-identifier">keys</span>).<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> [<span class="ruby-identifier">f</span>, <span class="ruby-identifier">files_to_test</span>[<span class="ruby-identifier">f</span>]] }
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;unknown order type: #{self.order.inspect}&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- reorder-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- reorder-method -->
+
+    
+      <div id="method-i-rerun_all_tests" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">rerun_all_tests</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Rerun the tests from cold (reset state)</p>
+          
+
+          
+          <div class="method-source-code" id="rerun_all_tests-source">
+            <pre><span class="ruby-comment"># File lib/autotest.rb, line 688</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">rerun_all_tests</span>
+  <span class="ruby-identifier">reset</span>
+  <span class="ruby-identifier">run_tests</span>
+
+  <span class="ruby-identifier">hook</span> <span class="ruby-value">:all_good</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">all_good</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- rerun_all_tests-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- rerun_all_tests-method -->
+
+    
+      <div id="method-i-reset" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">reset</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Clear all state information about test failures and whether interrupts will
+kill autotest.</p>
+          
+
+          
+          <div class="method-source-code" id="reset-source">
+            <pre><span class="ruby-comment"># File lib/autotest.rb, line 699</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">reset</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">files_to_test</span>.<span class="ruby-identifier">clear</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">find_order</span>.<span class="ruby-identifier">clear</span>
+
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">interrupted</span>   = <span class="ruby-keyword">false</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">known_files</span>   = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">last_mtime</span>    = <span class="ruby-constant">T0</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tainted</span>       = <span class="ruby-keyword">false</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">wants_to_quit</span> = <span class="ruby-keyword">false</span>
+
+  <span class="ruby-identifier">hook</span> <span class="ruby-value">:reset</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- reset-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- reset-method -->
+
+    
+      <div id="method-i-restart" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">restart</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="restart-source">
+            <pre><span class="ruby-comment"># File lib/autotest.rb, line 472</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">restart</span>
+  <span class="ruby-constant">Process</span>.<span class="ruby-identifier">kill</span> <span class="ruby-string">&quot;KILL&quot;</span>, <span class="ruby-ivar">@child</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@child</span>
+
+  <span class="ruby-identifier">cmd</span> = [<span class="ruby-identifier">$0</span>, *<span class="ruby-identifier">options</span>[<span class="ruby-value">:args</span>]]
+
+  <span class="ruby-identifier">index</span> = <span class="ruby-identifier">$LOAD_PATH</span>.<span class="ruby-identifier">index</span> <span class="ruby-constant">RbConfig</span><span class="ruby-operator">::</span><span class="ruby-constant">CONFIG</span>[<span class="ruby-string">&quot;sitelibdir&quot;</span>]
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">index</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">extra</span> = <span class="ruby-identifier">$LOAD_PATH</span>[<span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">index</span>]
+    <span class="ruby-identifier">cmd</span> = [<span class="ruby-constant">Gem</span>.<span class="ruby-identifier">ruby</span>, <span class="ruby-string">&quot;-I&quot;</span>, <span class="ruby-identifier">extra</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;:&quot;</span>)] <span class="ruby-operator">+</span> <span class="ruby-identifier">cmd</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">puts</span> <span class="ruby-identifier">cmd</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot; &quot;</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:verbose</span>]
+
+  <span class="ruby-identifier">exec</span>(*<span class="ruby-identifier">cmd</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- restart-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- restart-method -->
+
+    
+      <div id="method-i-ruby" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ruby</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Determine and return the path of the ruby executable.</p>
+          
+
+          
+          <div class="method-source-code" id="ruby-source">
+            <pre><span class="ruby-comment"># File lib/autotest.rb, line 715</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ruby</span>
+  <span class="ruby-identifier">ruby</span> = <span class="ruby-constant">ENV</span>[<span class="ruby-string">'RUBY'</span>]
+  <span class="ruby-identifier">ruby</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">RbConfig</span><span class="ruby-operator">::</span><span class="ruby-constant">CONFIG</span>[<span class="ruby-string">'bindir'</span>],
+                     <span class="ruby-constant">RbConfig</span><span class="ruby-operator">::</span><span class="ruby-constant">CONFIG</span>[<span class="ruby-string">'ruby_install_name'</span>])
+
+  <span class="ruby-identifier">ruby</span>.<span class="ruby-identifier">gsub!</span> <span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-constant">SEPARATOR</span>, <span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-constant">ALT_SEPARATOR</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-constant">ALT_SEPARATOR</span>
+
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">ruby</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- ruby-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- ruby-method -->
+
+    
+      <div id="method-i-ruby_cmd" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ruby_cmd</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the base of the ruby command.</p>
+          
+
+          
+          <div class="method-source-code" id="ruby_cmd-source">
+            <pre><span class="ruby-comment"># File lib/autotest.rb, line 630</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ruby_cmd</span>
+  <span class="ruby-node">&quot;#{prefix}#{ruby} -I#{libs} -rubygems&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- ruby_cmd-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- ruby_cmd-method -->
+
+    
+      <div id="method-i-run" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">run</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Repeatedly run failed tests, then all tests, then wait for changes and
+carry on until killed.</p>
+          
+
+          
+          <div class="method-source-code" id="run-source">
+            <pre><span class="ruby-comment"># File lib/autotest.rb, line 351</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">run</span>
+  <span class="ruby-identifier">hook</span> <span class="ruby-value">:initialize</span>
+  <span class="ruby-identifier">hook</span> <span class="ruby-value">:post_initialize</span>
+
+  <span class="ruby-identifier">reset</span>
+  <span class="ruby-identifier">add_sigint_handler</span>
+
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">last_mtime</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:no_full_after_start</span>]
+
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">debug</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:debug</span>]
+
+  <span class="ruby-identifier">loop</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">begin</span> <span class="ruby-comment"># ^c handler</span>
+      <span class="ruby-identifier">get_to_green</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">tainted?</span> <span class="ruby-keyword">and</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:no_full_after_failed</span>] <span class="ruby-keyword">then</span>
+        <span class="ruby-identifier">rerun_all_tests</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">hook</span> <span class="ruby-value">:all_good</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">wait_for_changes</span>
+    <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Interrupt</span>
+      <span class="ruby-keyword">break</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">wants_to_quit</span>
+      <span class="ruby-identifier">reset</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">hook</span> <span class="ruby-value">:quit</span>
+  <span class="ruby-identifier">puts</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">err</span>
+  <span class="ruby-identifier">hook</span>(<span class="ruby-value">:died</span>, <span class="ruby-identifier">err</span>) <span class="ruby-keyword">or</span> <span class="ruby-identifier">raise</span> <span class="ruby-identifier">err</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- run-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- run-method -->
+
+    
+      <div id="method-i-run_tests" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">run_tests</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Look for files to test then run the tests and handle the results.</p>
+          
+
+          
+          <div class="method-source-code" id="run_tests-source">
+            <pre><span class="ruby-comment"># File lib/autotest.rb, line 395</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">run_tests</span>
+  <span class="ruby-identifier">new_mtime</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">find_files_to_test</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">new_mtime</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">last_mtime</span> = <span class="ruby-identifier">new_mtime</span>
+
+  <span class="ruby-identifier">cmd</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">make_test_cmd</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">files_to_test</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">cmd</span>.<span class="ruby-identifier">empty?</span>
+
+  <span class="ruby-identifier">hook</span> <span class="ruby-value">:run_command</span>, <span class="ruby-identifier">cmd</span>
+
+  <span class="ruby-identifier">puts</span> <span class="ruby-identifier">cmd</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:quiet</span>]
+
+  <span class="ruby-identifier">old_sync</span> = <span class="ruby-identifier">$stdout</span>.<span class="ruby-identifier">sync</span>
+  <span class="ruby-identifier">$stdout</span>.<span class="ruby-identifier">sync</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">results</span> = []
+  <span class="ruby-identifier">line</span> = []
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">open</span> <span class="ruby-node">&quot;| #{cmd}&quot;</span>, <span class="ruby-string">&quot;r&quot;</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">until</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">eof?</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">c</span> = <span class="ruby-identifier">f</span>.<span class="ruby-identifier">getc</span> <span class="ruby-keyword">or</span> <span class="ruby-keyword">break</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-constant">RUBY19</span> <span class="ruby-keyword">then</span>
+          <span class="ruby-identifier">print</span> <span class="ruby-identifier">c</span>
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-identifier">putc</span> <span class="ruby-identifier">c</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">line</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">c</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">c</span> <span class="ruby-operator">==</span> <span class="ruby-string">\</span><span class="ruby-identifier">n</span> <span class="ruby-keyword">then</span>
+          <span class="ruby-keyword">self</span>.<span class="ruby-identifier">results</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">RUBY19</span> <span class="ruby-keyword">then</span>
+                            <span class="ruby-identifier">line</span>.<span class="ruby-identifier">join</span>
+                          <span class="ruby-keyword">else</span>
+                            <span class="ruby-identifier">line</span>.<span class="ruby-identifier">pack</span> <span class="ruby-string">&quot;c*&quot;</span>
+                          <span class="ruby-keyword">end</span>
+          <span class="ruby-identifier">line</span>.<span class="ruby-identifier">clear</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">ensure</span>
+    <span class="ruby-identifier">$stdout</span>.<span class="ruby-identifier">sync</span> = <span class="ruby-identifier">old_sync</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">hook</span> <span class="ruby-value">:ran_command</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">results</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">results</span>.<span class="ruby-identifier">join</span>
+
+  <span class="ruby-identifier">handle_results</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">results</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- run_tests-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Autotest.html#method-i-old_run_tests">old_run_tests</a>
+        </div>
+        
+
+        
+      </div><!-- run_tests-method -->
+
+    
+      <div id="method-i-test_files_for" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_files_for</span><span
+            class="method-args">(filename)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Return the name of the file with the tests for filename by finding a
+<code>test_mapping</code> that matches the file and executing the mapping’s
+proc.</p>
+          
+
+          
+          <div class="method-source-code" id="test_files_for-source">
+            <pre><span class="ruby-comment"># File lib/autotest.rb, line 730</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">test_files_for</span> <span class="ruby-identifier">filename</span>
+  <span class="ruby-identifier">result</span> = []
+
+  <span class="ruby-ivar">@test_mappings</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file_re</span>, <span class="ruby-identifier">proc</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">filename</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">file_re</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-identifier">result</span> = [<span class="ruby-identifier">proc</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">filename</span>, <span class="ruby-identifier">$~</span>)].
+        <span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">sort</span>.<span class="ruby-identifier">uniq</span>.<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">known_files</span>[<span class="ruby-identifier">f</span>] }
+      <span class="ruby-keyword">break</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">p</span> <span class="ruby-value">:test_file_for</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-identifier">filename</span>, <span class="ruby-identifier">result</span>.<span class="ruby-identifier">first</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">result</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:debug</span>]
+
+  <span class="ruby-identifier">output</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;No tests matched #{filename}&quot;</span> <span class="ruby-keyword">if</span>
+    (<span class="ruby-identifier">options</span>[<span class="ruby-value">:verbose</span>] <span class="ruby-keyword">or</span> <span class="ruby-identifier">$TESTING</span>) <span class="ruby-keyword">and</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">empty?</span>
+
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- test_files_for-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- test_files_for-method -->
+
+    
+      <div id="method-i-wait_for_changes" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">wait_for_changes</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Sleep then look for files to test, until there are some.</p>
+          
+
+          
+          <div class="method-source-code" id="wait_for_changes-source">
+            <pre><span class="ruby-comment"># File lib/autotest.rb, line 752</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">wait_for_changes</span>
+  <span class="ruby-identifier">hook</span> <span class="ruby-value">:waiting</span>
+  <span class="ruby-constant">Kernel</span>.<span class="ruby-identifier">sleep</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">sleep</span> <span class="ruby-keyword">until</span> <span class="ruby-identifier">find_files_to_test</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- wait_for_changes-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- wait_for_changes-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

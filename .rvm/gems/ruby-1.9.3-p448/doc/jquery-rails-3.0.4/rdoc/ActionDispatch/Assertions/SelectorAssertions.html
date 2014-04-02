@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module ActionDispatch::Assertions::SelectorAssertions - jquery-rails-3.0.4 Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/jquery/assert_select.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-assert_select_jquery">#assert_select_jquery</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../Jquery.html">Jquery</a>
+  
+    <li><a href="../../Jquery/Generators.html">Jquery::Generators</a>
+  
+    <li><a href="../../Jquery/Generators/InstallGenerator.html">Jquery::Generators::InstallGenerator</a>
+  
+    <li><a href="../../Jquery/Rails.html">Jquery::Rails</a>
+  
+    <li><a href="../../Jquery/Rails/Engine.html">Jquery::Rails::Engine</a>
+  
+    <li><a href="../../Jquery/Rails/Railtie.html">Jquery::Rails::Railtie</a>
+  
+    <li><a href="../../ActionDispatch.html">ActionDispatch</a>
+  
+    <li><a href="../../ActionDispatch/Assertions.html">ActionDispatch::Assertions</a>
+  
+    <li><a href="../../ActionDispatch/Assertions/SelectorAssertions.html">ActionDispatch::Assertions::SelectorAssertions</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module ActionDispatch::Assertions::SelectorAssertions</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="PATTERN_HTML">PATTERN_HTML
+        
+        <dd class="description"><p>Selects content from a JQuery response.  Patterned loosely on
+assert_select_rjs.</p>
+
+<h3 id="label-Narrowing+down">Narrowing down</h3>
+
+<p>With no arguments, asserts that one or more method calls are made.</p>
+
+<p>Use the <code>method</code> argument to narrow down the assertion to only
+statements that call that specific method.</p>
+
+<p>Use the <code>opt</code> argument to narrow down the assertion to only
+statements that pass <code>opt</code> as the first argument.</p>
+
+<p>Use the <code>id</code> argument to narrow down the assertion to only
+statements that invoke methods on the result of using that identifier as a
+selector.</p>
+
+<h3 id="label-Using+blocks">Using blocks</h3>
+
+<p>Without a block, +assert_select_jquery_ merely asserts that the response
+contains one or more statements that match the conditions specified above</p>
+
+<p>With a block +assert_select_jquery_ also asserts that the method call
+passes a javascript escaped string containing HTML.  All such HTML
+fragments are selected and passed to the block.  Nested assertions are
+supported.</p>
+
+<h3 id="label-Examples">Examples</h3>
+
+<p># asserts that the notice element is hidden assert_select :hide, ‘notice’</p>
+
+<p># asserts that the cart element is shown with a blind parameter
+assert_select :show, :blind, ‘cart’</p>
+
+<p># asserts that cart content contains a current_item assert_select :html,
+‘cart’ do</p>
+
+<pre>assert_select '#current_item'</pre>
+
+<p>end</p>
+        
+      
+        <dt id="PATTERN_UNICODE_ESCAPED_CHAR">PATTERN_UNICODE_ESCAPED_CHAR
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-assert_select_jquery" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">assert_select_jquery</span><span
+            class="method-args">(*args) { || ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="assert_select_jquery-source">
+            <pre><span class="ruby-comment"># File lib/jquery/assert_select.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">assert_select_jquery</span>(*<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">jquery_method</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Symbol</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">shift</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">jquery_opt</span>    = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Symbol</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">shift</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">id</span>            = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">shift</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>
+
+  <span class="ruby-identifier">pattern</span> = <span class="ruby-node">&quot;\\.#{jquery_method || '\\w+'}\\(&quot;</span>
+  <span class="ruby-identifier">pattern</span> = <span class="ruby-node">&quot;#{pattern}['\&quot;]#{jquery_opt}['\&quot;],?\\s*&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">jquery_opt</span>
+  <span class="ruby-identifier">pattern</span> = <span class="ruby-node">&quot;#{pattern}#{PATTERN_HTML}&quot;</span>
+  <span class="ruby-identifier">pattern</span> = <span class="ruby-node">&quot;(?:jQuery|\\$)\\(['\&quot;]#{id}['\&quot;]\\)#{pattern}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">id</span>
+
+  <span class="ruby-identifier">fragments</span> = []
+  <span class="ruby-identifier">response</span>.<span class="ruby-identifier">body</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-constant">Regexp</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">pattern</span>)).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">match</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">doc</span> = <span class="ruby-constant">HTML</span><span class="ruby-operator">::</span><span class="ruby-constant">Document</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">unescape_js</span>(<span class="ruby-identifier">match</span>.<span class="ruby-identifier">first</span>))
+    <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">root</span>.<span class="ruby-identifier">children</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">child</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">fragments</span>.<span class="ruby-identifier">push</span> <span class="ruby-identifier">child</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">child</span>.<span class="ruby-identifier">tag?</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">fragments</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-identifier">opts</span> = [<span class="ruby-identifier">jquery_method</span>, <span class="ruby-identifier">jquery_opt</span>, <span class="ruby-identifier">id</span>].<span class="ruby-identifier">compact</span>
+    <span class="ruby-identifier">flunk</span> <span class="ruby-node">&quot;No JQuery call matches #{opts.inspect}&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">block</span>
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-identifier">in_scope</span>, <span class="ruby-ivar">@selected</span> = <span class="ruby-ivar">@selected</span>, <span class="ruby-identifier">fragments</span>
+      <span class="ruby-keyword">yield</span>
+    <span class="ruby-keyword">ensure</span>
+      <span class="ruby-ivar">@selected</span> = <span class="ruby-identifier">in_scope</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- assert_select_jquery-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- assert_select_jquery-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

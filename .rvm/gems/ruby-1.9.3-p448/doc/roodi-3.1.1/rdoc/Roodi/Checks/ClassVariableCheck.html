@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Roodi::Checks::ClassVariableCheck - roodi-3.1.1 Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/roodi/checks/class_variable_check.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="Check.html">Roodi::Checks::Check</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-evaluate_start">#evaluate_start</a>
+    
+    <li><a href="#method-i-interesting_nodes">#interesting_nodes</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../Roodi.html">Roodi</a>
+  
+    <li><a href="../../Roodi/Checks.html">Roodi::Checks</a>
+  
+    <li><a href="../../Roodi/Checks/AbcMetricMethodCheck.html">Roodi::Checks::AbcMetricMethodCheck</a>
+  
+    <li><a href="../../Roodi/Checks/AssignmentInConditionalCheck.html">Roodi::Checks::AssignmentInConditionalCheck</a>
+  
+    <li><a href="../../Roodi/Checks/CaseMissingElseCheck.html">Roodi::Checks::CaseMissingElseCheck</a>
+  
+    <li><a href="../../Roodi/Checks/Check.html">Roodi::Checks::Check</a>
+  
+    <li><a href="../../Roodi/Checks/ClassLineCountCheck.html">Roodi::Checks::ClassLineCountCheck</a>
+  
+    <li><a href="../../Roodi/Checks/ClassNameCheck.html">Roodi::Checks::ClassNameCheck</a>
+  
+    <li><a href="../../Roodi/Checks/ClassVariableCheck.html">Roodi::Checks::ClassVariableCheck</a>
+  
+    <li><a href="../../Roodi/Checks/ControlCouplingCheck.html">Roodi::Checks::ControlCouplingCheck</a>
+  
+    <li><a href="../../Roodi/Checks/CoreMethodOverrideCheck.html">Roodi::Checks::CoreMethodOverrideCheck</a>
+  
+    <li><a href="../../Roodi/Checks/CyclomaticComplexityBlockCheck.html">Roodi::Checks::CyclomaticComplexityBlockCheck</a>
+  
+    <li><a href="../../Roodi/Checks/CyclomaticComplexityCheck.html">Roodi::Checks::CyclomaticComplexityCheck</a>
+  
+    <li><a href="../../Roodi/Checks/CyclomaticComplexityMethodCheck.html">Roodi::Checks::CyclomaticComplexityMethodCheck</a>
+  
+    <li><a href="../../Roodi/Checks/EmptyRescueBodyCheck.html">Roodi::Checks::EmptyRescueBodyCheck</a>
+  
+    <li><a href="../../Roodi/Checks/ForLoopCheck.html">Roodi::Checks::ForLoopCheck</a>
+  
+    <li><a href="../../Roodi/Checks/LineCountCheck.html">Roodi::Checks::LineCountCheck</a>
+  
+    <li><a href="../../Roodi/Checks/MethodLineCountCheck.html">Roodi::Checks::MethodLineCountCheck</a>
+  
+    <li><a href="../../Roodi/Checks/MethodNameCheck.html">Roodi::Checks::MethodNameCheck</a>
+  
+    <li><a href="../../Roodi/Checks/ModuleLineCountCheck.html">Roodi::Checks::ModuleLineCountCheck</a>
+  
+    <li><a href="../../Roodi/Checks/ModuleNameCheck.html">Roodi::Checks::ModuleNameCheck</a>
+  
+    <li><a href="../../Roodi/Checks/NameCheck.html">Roodi::Checks::NameCheck</a>
+  
+    <li><a href="../../Roodi/Checks/NpathComplexityCheck.html">Roodi::Checks::NpathComplexityCheck</a>
+  
+    <li><a href="../../Roodi/Checks/NpathComplexityMethodCheck.html">Roodi::Checks::NpathComplexityMethodCheck</a>
+  
+    <li><a href="../../Roodi/Checks/ParameterNumberCheck.html">Roodi::Checks::ParameterNumberCheck</a>
+  
+    <li><a href="../../Roodi/Core.html">Roodi::Core</a>
+  
+    <li><a href="../../Roodi/Core/CheckingVisitor.html">Roodi::Core::CheckingVisitor</a>
+  
+    <li><a href="../../Roodi/Core/Error.html">Roodi::Core::Error</a>
+  
+    <li><a href="../../Roodi/Core/Parser.html">Roodi::Core::Parser</a>
+  
+    <li><a href="../../Roodi/Core/Runner.html">Roodi::Core::Runner</a>
+  
+    <li><a href="../../RoodiTask.html">RoodiTask</a>
+  
+    <li><a href="../../Sexp.html">Sexp</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Roodi::Checks::ClassVariableCheck</h1>
+
+  <div id="description" class="description">
+    
+<p><a href="../Checks.html">Checks</a> to make sure class variables are not
+being used..</p>
+
+<p>Class variables in Ruby have a complicated inheritance policy, and their
+use  can lead to mistakes.  Often an alternate design can be used to solve
+the  problem instead.</p>
+
+<p>This check is looking for a code smell rather than a definite error.  If
+you’re  sure that you’re doing the right thing, try turning this check off
+in your  config file.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-evaluate_start" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">evaluate_start</span><span
+            class="method-args">(node)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="evaluate_start-source">
+            <pre><span class="ruby-comment"># File lib/roodi/checks/class_variable_check.rb, line 19</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">evaluate_start</span>(<span class="ruby-identifier">node</span>)
+  <span class="ruby-identifier">add_error</span> <span class="ruby-string">&quot;Don't use class variables. You might want to try a different design.&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- evaluate_start-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- evaluate_start-method -->
+
+    
+      <div id="method-i-interesting_nodes" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">interesting_nodes</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="interesting_nodes-source">
+            <pre><span class="ruby-comment"># File lib/roodi/checks/class_variable_check.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">interesting_nodes</span>
+  [<span class="ruby-value">:cvar</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- interesting_nodes-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- interesting_nodes-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

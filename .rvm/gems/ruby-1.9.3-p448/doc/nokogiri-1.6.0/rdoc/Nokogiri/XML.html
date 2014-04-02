@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module Nokogiri::XML - nokogiri-1.6.0 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/nokogiri/xml.rb
+    <li>lib/nokogiri/xml/text.rb
+    <li>lib/nokogiri/xml/node.rb
+    <li>lib/nokogiri/xml/reader.rb
+    <li>lib/nokogiri/xml/cdata.rb
+    <li>lib/nokogiri/xml/node/save_options.rb
+    <li>lib/nokogiri/xml/notation.rb
+    <li>lib/nokogiri/xml/document.rb
+    <li>lib/nokogiri/xml/builder.rb
+    <li>lib/nokogiri/xml/character_data.rb
+    <li>lib/nokogiri/xml/attr.rb
+    <li>lib/nokogiri/xml/pp/node.rb
+    <li>lib/nokogiri/xml/pp/character_data.rb
+    <li>lib/nokogiri/xml/node_set.rb
+    <li>lib/nokogiri/xml/relax_ng.rb
+    <li>lib/nokogiri/xml/xpath/syntax_error.rb
+    <li>lib/nokogiri/xml/xpath.rb
+    <li>lib/nokogiri/xml/xpath_context.rb
+    <li>lib/nokogiri/xml/schema.rb
+    <li>lib/nokogiri/xml/attribute_decl.rb
+    <li>lib/nokogiri/xml/sax/push_parser.rb
+    <li>lib/nokogiri/xml/sax/document.rb
+    <li>lib/nokogiri/xml/sax/parser.rb
+    <li>lib/nokogiri/xml/sax/parser_context.rb
+    <li>lib/nokogiri/xml/element_decl.rb
+    <li>lib/nokogiri/xml/document_fragment.rb
+    <li>lib/nokogiri/xml/parse_options.rb
+    <li>lib/nokogiri/xml/processing_instruction.rb
+    <li>lib/nokogiri/xml/entity_decl.rb
+    <li>lib/nokogiri/xml/element_content.rb
+    <li>lib/nokogiri/xml/namespace.rb
+    <li>lib/nokogiri/xml/dtd.rb
+    <li>lib/nokogiri/xml/syntax_error.rb
+    <li>ext/nokogiri/html_document.c
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-Reader">::Reader</a>
+    
+    <li><a href="#method-c-RelaxNG">::RelaxNG</a>
+    
+    <li><a href="#method-c-Schema">::Schema</a>
+    
+    <li><a href="#method-c-fragment">::fragment</a>
+    
+    <li><a href="#method-c-parse">::parse</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../CHANGELOG_ja_rdoc.html">CHANGELOG.ja</a>
+  
+    <li class="file"><a href="../CHANGELOG_rdoc.html">CHANGELOG</a>
+  
+    <li class="file"><a href="../C_CODING_STYLE_rdoc.html">C_CODING_STYLE</a>
+  
+    <li class="file"><a href="../Manifest_txt.html">Manifest</a>
+  
+    <li class="file"><a href="../README_ja_rdoc.html">README.ja</a>
+  
+    <li class="file"><a href="../README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Nokogiri.html">Nokogiri</a>
+  
+    <li><a href="../Nokogiri/CSS.html">Nokogiri::CSS</a>
+  
+    <li><a href="../Nokogiri/CSS/Node.html">Nokogiri::CSS::Node</a>
+  
+    <li><a href="../Nokogiri/CSS/Parser.html">Nokogiri::CSS::Parser</a>
+  
+    <li><a href="../Nokogiri/CSS/SyntaxError.html">Nokogiri::CSS::SyntaxError</a>
+  
+    <li><a href="../Nokogiri/CSS/Tokenizer.html">Nokogiri::CSS::Tokenizer</a>
+  
+    <li><a href="../Nokogiri/CSS/Tokenizer/ScanError.html">Nokogiri::CSS::Tokenizer::ScanError</a>
+  
+    <li><a href="../Nokogiri/Decorators.html">Nokogiri::Decorators</a>
+  
+    <li><a href="../Nokogiri/Decorators/Slop.html">Nokogiri::Decorators::Slop</a>
+  
+    <li><a href="../Nokogiri/EncodingHandler.html">Nokogiri::EncodingHandler</a>
+  
+    <li><a href="../Nokogiri/HTML.html">Nokogiri::HTML</a>
+  
+    <li><a href="../Nokogiri/HTML/Builder.html">Nokogiri::HTML::Builder</a>
+  
+    <li><a href="../Nokogiri/HTML/Document.html">Nokogiri::HTML::Document</a>
+  
+    <li><a href="../Nokogiri/HTML/Document/EncodingReader.html">Nokogiri::HTML::Document::EncodingReader</a>
+  
+    <li><a href="../Nokogiri/HTML/Document/EncodingReader/JumpSAXHandler.html">Nokogiri::HTML::Document::EncodingReader::JumpSAXHandler</a>
+  
+    <li><a href="../Nokogiri/HTML/DocumentFragment.html">Nokogiri::HTML::DocumentFragment</a>
+  
+    <li><a href="../Nokogiri/HTML/ElementDescription.html">Nokogiri::HTML::ElementDescription</a>
+  
+    <li><a href="../Nokogiri/HTML/EntityDescription.html">Nokogiri::HTML::EntityDescription</a>
+  
+    <li><a href="../Nokogiri/HTML/EntityLookup.html">Nokogiri::HTML::EntityLookup</a>
+  
+    <li><a href="../Nokogiri/HTML/SAX.html">Nokogiri::HTML::SAX</a>
+  
+    <li><a href="../Nokogiri/HTML/SAX/Parser.html">Nokogiri::HTML::SAX::Parser</a>
+  
+    <li><a href="../Nokogiri/HTML/SAX/ParserContext.html">Nokogiri::HTML::SAX::ParserContext</a>
+  
+    <li><a href="../Nokogiri/HTML/SAX/PushParser.html">Nokogiri::HTML::SAX::PushParser</a>
+  
+    <li><a href="../Nokogiri/SyntaxError.html">Nokogiri::SyntaxError</a>
+  
+    <li><a href="../Nokogiri/XML.html">Nokogiri::XML</a>
+  
+    <li><a href="../Nokogiri/XML/Attr.html">Nokogiri::XML::Attr</a>
+  
+    <li><a href="../Nokogiri/XML/AttributeDecl.html">Nokogiri::XML::AttributeDecl</a>
+  
+    <li><a href="../Nokogiri/XML/Builder.html">Nokogiri::XML::Builder</a>
+  
+    <li><a href="../Nokogiri/XML/CDATA.html">Nokogiri::XML::CDATA</a>
+  
+    <li><a href="../Nokogiri/XML/CharacterData.html">Nokogiri::XML::CharacterData</a>
+  
+    <li><a href="../Nokogiri/XML/Comment.html">Nokogiri::XML::Comment</a>
+  
+    <li><a href="../Nokogiri/XML/DTD.html">Nokogiri::XML::DTD</a>
+  
+    <li><a href="../Nokogiri/XML/Document.html">Nokogiri::XML::Document</a>
+  
+    <li><a href="../Nokogiri/XML/DocumentFragment.html">Nokogiri::XML::DocumentFragment</a>
+  
+    <li><a href="../Nokogiri/XML/Element.html">Nokogiri::XML::Element</a>
+  
+    <li><a href="../Nokogiri/XML/ElementContent.html">Nokogiri::XML::ElementContent</a>
+  
+    <li><a href="../Nokogiri/XML/ElementDecl.html">Nokogiri::XML::ElementDecl</a>
+  
+    <li><a href="../Nokogiri/XML/EntityDecl.html">Nokogiri::XML::EntityDecl</a>
+  
+    <li><a href="../Nokogiri/XML/EntityReference.html">Nokogiri::XML::EntityReference</a>
+  
+    <li><a href="../Nokogiri/XML/Namespace.html">Nokogiri::XML::Namespace</a>
+  
+    <li><a href="../Nokogiri/XML/Node.html">Nokogiri::XML::Node</a>
+  
+    <li><a href="../Nokogiri/XML/Node/SaveOptions.html">Nokogiri::XML::Node::SaveOptions</a>
+  
+    <li><a href="../Nokogiri/XML/NodeSet.html">Nokogiri::XML::NodeSet</a>
+  
+    <li><a href="../Nokogiri/XML/Notation.html">Nokogiri::XML::Notation</a>
+  
+    <li><a href="../Nokogiri/XML/PP.html">Nokogiri::XML::PP</a>
+  
+    <li><a href="../Nokogiri/XML/PP/CharacterData.html">Nokogiri::XML::PP::CharacterData</a>
+  
+    <li><a href="../Nokogiri/XML/PP/Node.html">Nokogiri::XML::PP::Node</a>
+  
+    <li><a href="../Nokogiri/XML/ParseOptions.html">Nokogiri::XML::ParseOptions</a>
+  
+    <li><a href="../Nokogiri/XML/ProcessingInstruction.html">Nokogiri::XML::ProcessingInstruction</a>
+  
+    <li><a href="../Nokogiri/XML/Reader.html">Nokogiri::XML::Reader</a>
+  
+    <li><a href="../Nokogiri/XML/RelaxNG.html">Nokogiri::XML::RelaxNG</a>
+  
+    <li><a href="../Nokogiri/XML/SAX.html">Nokogiri::XML::SAX</a>
+  
+    <li><a href="../Nokogiri/XML/SAX/Document.html">Nokogiri::XML::SAX::Document</a>
+  
+    <li><a href="../Nokogiri/XML/SAX/Parser.html">Nokogiri::XML::SAX::Parser</a>
+  
+    <li><a href="../Nokogiri/XML/SAX/Parser/Attribute.html">Nokogiri::XML::SAX::Parser::Attribute</a>
+  
+    <li><a href="../Nokogiri/XML/SAX/ParserContext.html">Nokogiri::XML::SAX::ParserContext</a>
+  
+    <li><a href="../Nokogiri/XML/SAX/PushParser.html">Nokogiri::XML::SAX::PushParser</a>
+  
+    <li><a href="../Nokogiri/XML/Schema.html">Nokogiri::XML::Schema</a>
+  
+    <li><a href="../Nokogiri/XML/SyntaxError.html">Nokogiri::XML::SyntaxError</a>
+  
+    <li><a href="../Nokogiri/XML/Text.html">Nokogiri::XML::Text</a>
+  
+    <li><a href="../Nokogiri/XML/XPath.html">Nokogiri::XML::XPath</a>
+  
+    <li><a href="../Nokogiri/XML/XPath/SyntaxError.html">Nokogiri::XML::XPath::SyntaxError</a>
+  
+    <li><a href="../Nokogiri/XML/XPathContext.html">Nokogiri::XML::XPathContext</a>
+  
+    <li><a href="../Nokogiri/XSLT.html">Nokogiri::XSLT</a>
+  
+    <li><a href="../Nokogiri/XSLT/Stylesheet.html">Nokogiri::XSLT::Stylesheet</a>
+  
+    <li><a href="../XSD.html">XSD</a>
+  
+    <li><a href="../XSD/XMLParser.html">XSD::XMLParser</a>
+  
+    <li><a href="../XSD/XMLParser/Nokogiri.html">XSD::XMLParser::Nokogiri</a>
+  
+    <li><a href="../Object.html">Object</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module Nokogiri::XML</h1>
+
+  <div id="description" class="description">
+    
+<p><a href="XML.html">Nokogiri::XML</a></p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="XML_C14N_1_0">XML_C14N_1_0
+        
+        <dd class="description"><p>Original C14N 1.0 spec canonicalization</p>
+        
+      
+        <dt id="XML_C14N_1_1">XML_C14N_1_1
+        
+        <dd class="description"><p>C14N 1.1 spec canonicalization</p>
+        
+      
+        <dt id="XML_C14N_EXCLUSIVE_1_0">XML_C14N_EXCLUSIVE_1_0
+        
+        <dd class="description"><p>Exclusive C14N 1.0 spec canonicalization</p>
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-Reader" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">Reader</span><span
+            class="method-args">(string_or_io, url = nil, encoding = nil, options = ParseOptions::STRICT) { |options| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Parse an <a href="XML.html">XML</a> document using the <a
+href="XML/Reader.html">Nokogiri::XML::Reader</a> API.  See <a
+href="XML/Reader.html">Nokogiri::XML::Reader</a> for mor information</p>
+          
+
+          
+          <div class="method-source-code" id="Reader-source">
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Reader</span> <span class="ruby-identifier">string_or_io</span>, <span class="ruby-identifier">url</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">encoding</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">options</span> = <span class="ruby-constant">ParseOptions</span><span class="ruby-operator">::</span><span class="ruby-constant">STRICT</span>
+
+  <span class="ruby-identifier">options</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">ParseOptions</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">options</span>) <span class="ruby-keyword">if</span> <span class="ruby-constant">Fixnum</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">options</span>
+  <span class="ruby-comment"># Give the options to the user</span>
+  <span class="ruby-keyword">yield</span> <span class="ruby-identifier">options</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">string_or_io</span>.<span class="ruby-identifier">respond_to?</span> <span class="ruby-value">:read</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-constant">Reader</span>.<span class="ruby-identifier">from_io</span>(<span class="ruby-identifier">string_or_io</span>, <span class="ruby-identifier">url</span>, <span class="ruby-identifier">encoding</span>, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">to_i</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-constant">Reader</span>.<span class="ruby-identifier">from_memory</span>(<span class="ruby-identifier">string_or_io</span>, <span class="ruby-identifier">url</span>, <span class="ruby-identifier">encoding</span>, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">to_i</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- Reader-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- Reader-method -->
+
+    
+      <div id="method-c-RelaxNG" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">RelaxNG</span><span
+            class="method-args">(string_or_io)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Create a new <a href="XML/RelaxNG.html">Nokogiri::XML::RelaxNG</a> document
+from <code>string_or_io</code>. See <a
+href="XML/RelaxNG.html">Nokogiri::XML::RelaxNG</a> for an example.</p>
+          
+
+          
+          <div class="method-source-code" id="RelaxNG-source">
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/relax_ng.rb, line 7</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">RelaxNG</span> <span class="ruby-identifier">string_or_io</span>
+  <span class="ruby-constant">RelaxNG</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">string_or_io</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- RelaxNG-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- RelaxNG-method -->
+
+    
+      <div id="method-c-Schema" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">Schema</span><span
+            class="method-args">(string_or_io)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Create a new <a href="XML/Schema.html">Nokogiri::XML::Schema</a> object
+using a <code>string_or_io</code> object.</p>
+          
+
+          
+          <div class="method-source-code" id="Schema-source">
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/schema.rb, line 7</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Schema</span> <span class="ruby-identifier">string_or_io</span>
+  <span class="ruby-constant">Schema</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">string_or_io</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- Schema-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- Schema-method -->
+
+    
+      <div id="method-c-fragment" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">fragment</span><span
+            class="method-args">(string)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Parse a fragment from <code>string</code> in to a <a
+href="XML/NodeSet.html">NodeSet</a>.</p>
+          
+
+          
+          <div class="method-source-code" id="fragment-source">
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml.rb, line 68</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">fragment</span> <span class="ruby-identifier">string</span>
+  <span class="ruby-constant">XML</span><span class="ruby-operator">::</span><span class="ruby-constant">DocumentFragment</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">string</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- fragment-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- fragment-method -->
+
+    
+      <div id="method-c-parse" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">parse</span><span
+            class="method-args">(thing, url = nil, encoding = nil, options = ParseOptions::DEFAULT_XML, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Parse <a href="XML.html">XML</a>.  Convenience method for <a
+href="XML/Document.html#method-c-parse">Nokogiri::XML::Document.parse</a></p>
+          
+
+          
+          <div class="method-source-code" id="parse-source">
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml.rb, line 62</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">parse</span> <span class="ruby-identifier">thing</span>, <span class="ruby-identifier">url</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">encoding</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">options</span> = <span class="ruby-constant">ParseOptions</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT_XML</span>, &amp;<span class="ruby-identifier">block</span>
+  <span class="ruby-constant">Document</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">thing</span>, <span class="ruby-identifier">url</span>, <span class="ruby-identifier">encoding</span>, <span class="ruby-identifier">options</span>, &amp;<span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- parse-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- parse-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

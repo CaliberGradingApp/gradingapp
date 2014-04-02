@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Ruby2Ruby - ruby2ruby-2.0.6 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/ruby2ruby.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">SexpProcessor
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-cond_loop">#cond_loop</a>
+    
+    <li><a href="#method-i-dthing_escape">#dthing_escape</a>
+    
+    <li><a href="#method-i-finish">#finish</a>
+    
+    <li><a href="#method-i-indent">#indent</a>
+    
+    <li><a href="#method-i-parenthesize">#parenthesize</a>
+    
+    <li><a href="#method-i-re_opt">#re_opt</a>
+    
+    <li><a href="#method-i-splat">#splat</a>
+    
+    <li><a href="#method-i-util_dthing">#util_dthing</a>
+    
+    <li><a href="#method-i-util_module_or_class">#util_module_or_class</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./History_txt.html">History</a>
+  
+    <li class="file"><a href="./Manifest_txt.html">Manifest</a>
+  
+    <li class="file"><a href="./README_txt.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Ruby2Ruby.html">Ruby2Ruby</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Ruby2Ruby</h1>
+
+  <div id="description" class="description">
+    
+<p>Generate ruby code from a sexp.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="ASSIGN_NODES">ASSIGN_NODES
+        
+        <dd class="description"><p>Nodes that represent assignment and probably need () around them.</p>
+
+<p>TODO: this should be replaced with full precedence support :/</p>
+        
+      
+        <dt id="BINARY">BINARY
+        
+        <dd class="description"><p>binary operation messages</p>
+        
+      
+        <dt id="LINE_LENGTH">LINE_LENGTH
+        
+        <dd class="description"><p>cutoff for one-liners</p>
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-cond_loop" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cond_loop</span><span
+            class="method-args">(exp, name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Generate a post-or-pre conditional loop.</p>
+          
+
+          
+          <div class="method-source-code" id="cond_loop-source">
+            <pre><span class="ruby-comment"># File lib/ruby2ruby.rb, line 939</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">cond_loop</span>(<span class="ruby-identifier">exp</span>, <span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">cond</span> = <span class="ruby-identifier">process</span>(<span class="ruby-identifier">exp</span>.<span class="ruby-identifier">shift</span>)
+  <span class="ruby-identifier">body</span> = <span class="ruby-identifier">process</span>(<span class="ruby-identifier">exp</span>.<span class="ruby-identifier">shift</span>)
+  <span class="ruby-identifier">head_controlled</span> = <span class="ruby-identifier">exp</span>.<span class="ruby-identifier">shift</span>
+
+  <span class="ruby-identifier">body</span> = <span class="ruby-identifier">indent</span>(<span class="ruby-identifier">body</span>).<span class="ruby-identifier">chomp</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">body</span>
+
+  <span class="ruby-identifier">code</span> = []
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">head_controlled</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">code</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;#{name} #{cond} do&quot;</span>
+    <span class="ruby-identifier">code</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">body</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">body</span>
+    <span class="ruby-identifier">code</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;end&quot;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">code</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;begin&quot;</span>
+    <span class="ruby-identifier">code</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">body</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">body</span>
+    <span class="ruby-identifier">code</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;end #{name} #{cond}&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">code</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;\n&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- cond_loop-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- cond_loop-method -->
+
+    
+      <div id="method-i-dthing_escape" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">dthing_escape</span><span
+            class="method-args">(type, lit)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Utility method to escape something interpolated.</p>
+          
+
+          
+          <div class="method-source-code" id="dthing_escape-source">
+            <pre><span class="ruby-comment"># File lib/ruby2ruby.rb, line 962</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">dthing_escape</span> <span class="ruby-identifier">type</span>, <span class="ruby-identifier">lit</span>
+  <span class="ruby-identifier">lit</span> = <span class="ruby-identifier">lit</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/\n/</span>, <span class="ruby-string">'\n'</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">type</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:dregx</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">lit</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/(\A|[^\])\//</span>, <span class="ruby-string">'\1\/'</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:dstr</span>, <span class="ruby-value">:dsym</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">lit</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/&quot;/</span>, <span class="ruby-string">'\&quot;'</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:dxstr</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">lit</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/`/</span>, <span class="ruby-string">'\`'</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;unsupported type #{type.inspect}&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- dthing_escape-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- dthing_escape-method -->
+
+    
+      <div id="method-i-finish" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">finish</span><span
+            class="method-args">(exp)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Process all the remaining stuff in <code>exp</code> and return the results
+sans-nils.</p>
+          
+
+          
+          <div class="method-source-code" id="finish-source">
+            <pre><span class="ruby-comment"># File lib/ruby2ruby.rb, line 980</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">finish</span> <span class="ruby-identifier">exp</span> <span class="ruby-comment"># REFACTOR: work this out of the rest of the processors</span>
+  <span class="ruby-identifier">body</span> = []
+  <span class="ruby-keyword">until</span> <span class="ruby-identifier">exp</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">body</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">process</span>(<span class="ruby-identifier">exp</span>.<span class="ruby-identifier">shift</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">body</span>.<span class="ruby-identifier">compact</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- finish-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- finish-method -->
+
+    
+      <div id="method-i-indent" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">indent</span><span
+            class="method-args">(s)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Indent all lines of <code>s</code> to the current indent level.</p>
+          
+
+          
+          <div class="method-source-code" id="indent-source">
+            <pre><span class="ruby-comment"># File lib/ruby2ruby.rb, line 991</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">indent</span>(<span class="ruby-identifier">s</span>)
+  <span class="ruby-identifier">s</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">/\n/</span>).<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span> <span class="ruby-ivar">@indent</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">line</span>}.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;\n&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- indent-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- indent-method -->
+
+    
+      <div id="method-i-parenthesize" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">parenthesize</span><span
+            class="method-args">(exp)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Wrap appropriate expressions in matching parens.</p>
+          
+
+          
+          <div class="method-source-code" id="parenthesize-source">
+            <pre><span class="ruby-comment"># File lib/ruby2ruby.rb, line 998</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">parenthesize</span> <span class="ruby-identifier">exp</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">context</span>[<span class="ruby-value">1</span>]
+  <span class="ruby-keyword">when</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">:defn</span>, <span class="ruby-value">:defs</span>, <span class="ruby-value">:class</span>, <span class="ruby-value">:sclass</span>, <span class="ruby-value">:if</span>, <span class="ruby-value">:iter</span>, <span class="ruby-value">:resbody</span>, <span class="ruby-value">:when</span>, <span class="ruby-value">:while</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">exp</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-node">&quot;(#{exp})&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- parenthesize-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- parenthesize-method -->
+
+    
+      <div id="method-i-re_opt" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">re_opt</span><span
+            class="method-args">(options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Return the appropriate regexp flags for a given numeric code.</p>
+          
+
+          
+          <div class="method-source-code" id="re_opt-source">
+            <pre><span class="ruby-comment"># File lib/ruby2ruby.rb, line 1010</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">re_opt</span> <span class="ruby-identifier">options</span>
+  <span class="ruby-identifier">bits</span> = (<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">8</span>).<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">n</span>] * <span class="ruby-value">2</span><span class="ruby-operator">**</span><span class="ruby-identifier">n</span> }
+  <span class="ruby-identifier">bits</span>.<span class="ruby-identifier">delete</span> <span class="ruby-value">0</span>
+  <span class="ruby-identifier">bits</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span> <span class="ruby-constant">Regexp</span><span class="ruby-operator">::</span><span class="ruby-constant">CODES</span>[<span class="ruby-identifier">n</span>] }.<span class="ruby-identifier">join</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- re_opt-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- re_opt-method -->
+
+    
+      <div id="method-i-splat" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">splat</span><span
+            class="method-args">(sym)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Return a splatted symbol for <code>sym</code>.</p>
+          
+
+          
+          <div class="method-source-code" id="splat-source">
+            <pre><span class="ruby-comment"># File lib/ruby2ruby.rb, line 1019</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">splat</span>(<span class="ruby-identifier">sym</span>)
+  <span class="ruby-value">:&quot;*#{sym}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- splat-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- splat-method -->
+
+    
+      <div id="method-i-util_dthing" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">util_dthing</span><span
+            class="method-args">(type, exp)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Utility method to generate something interpolated.</p>
+          
+
+          
+          <div class="method-source-code" id="util_dthing-source">
+            <pre><span class="ruby-comment"># File lib/ruby2ruby.rb, line 1026</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">util_dthing</span>(<span class="ruby-identifier">type</span>, <span class="ruby-identifier">exp</span>)
+  <span class="ruby-identifier">s</span> = []
+
+  <span class="ruby-comment"># first item in sexp is a string literal</span>
+  <span class="ruby-identifier">s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">dthing_escape</span>(<span class="ruby-identifier">type</span>, <span class="ruby-identifier">exp</span>.<span class="ruby-identifier">shift</span>)
+
+  <span class="ruby-keyword">until</span> <span class="ruby-identifier">exp</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-identifier">pt</span> = <span class="ruby-identifier">exp</span>.<span class="ruby-identifier">shift</span>
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">pt</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">Sexp</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-keyword">case</span> <span class="ruby-identifier">pt</span>.<span class="ruby-identifier">first</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-value">:str</span> <span class="ruby-keyword">then</span>
+        <span class="ruby-identifier">s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">dthing_escape</span>(<span class="ruby-identifier">type</span>, <span class="ruby-identifier">pt</span>.<span class="ruby-identifier">last</span>)
+      <span class="ruby-keyword">when</span> <span class="ruby-value">:evstr</span> <span class="ruby-keyword">then</span>
+        <span class="ruby-identifier">s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">'#{'</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">process</span>(<span class="ruby-identifier">pt</span>) <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">'}'</span> <span class="ruby-comment"># do not use interpolation here</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;unknown type: #{pt.inspect}&quot;</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;unhandled value in d-thing: #{pt.inspect}&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">s</span>.<span class="ruby-identifier">join</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- util_dthing-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- util_dthing-method -->
+
+    
+      <div id="method-i-util_module_or_class" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">util_module_or_class</span><span
+            class="method-args">(exp, is_class=false)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Utility method to generate ether a module or class.</p>
+          
+
+          
+          <div class="method-source-code" id="util_module_or_class-source">
+            <pre><span class="ruby-comment"># File lib/ruby2ruby.rb, line 1055</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">util_module_or_class</span>(<span class="ruby-identifier">exp</span>, <span class="ruby-identifier">is_class</span>=<span class="ruby-keyword">false</span>)
+  <span class="ruby-identifier">result</span> = []
+
+  <span class="ruby-identifier">name</span> = <span class="ruby-identifier">exp</span>.<span class="ruby-identifier">shift</span>
+  <span class="ruby-identifier">name</span> = <span class="ruby-identifier">process</span> <span class="ruby-identifier">name</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">Sexp</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">name</span>
+
+  <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">name</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">is_class</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">superk</span> = <span class="ruby-identifier">process</span>(<span class="ruby-identifier">exp</span>.<span class="ruby-identifier">shift</span>)
+    <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot; &lt; #{superk}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">superk</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;\n&quot;</span>
+
+  <span class="ruby-identifier">body</span> = []
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">code</span> = <span class="ruby-identifier">process</span>(<span class="ruby-identifier">exp</span>.<span class="ruby-identifier">shift</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">exp</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-identifier">body</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">code</span>.<span class="ruby-identifier">chomp</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">code</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">code</span>.<span class="ruby-identifier">chomp</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-keyword">end</span> <span class="ruby-keyword">until</span> <span class="ruby-identifier">exp</span>.<span class="ruby-identifier">empty?</span>
+
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">body</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">body</span> = <span class="ruby-identifier">indent</span>(<span class="ruby-identifier">body</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;\n\n&quot;</span>)) <span class="ruby-operator">+</span> <span class="ruby-string">&quot;\n&quot;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">body</span> = <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">body</span>
+  <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;end&quot;</span>
+
+  <span class="ruby-identifier">result</span>.<span class="ruby-identifier">join</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- util_module_or_class-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- util_module_or_class-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

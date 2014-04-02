@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"require_empty:EFI" SexpProcessor#require_empty;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"ARaise an exception if the Sexp is not empty after processing;T:
+@fileI"lib/sexp_processor.rb;TF@

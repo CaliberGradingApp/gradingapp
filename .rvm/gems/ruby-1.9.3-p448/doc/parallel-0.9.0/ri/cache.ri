@@ -1,0 +1,4 @@
+{:ancestors{	I"Parallel::DeadWorker:EF[I"Exception;FI"Parallel::Break;F[I"Exception;FI"Parallel::ExceptionWrapper;F[I"Object;FI"Parallel::Worker;F[I"Object;F:attributes{@[I"attr_reader exception;F@[I"attr_reader pid;FI"attr_reader read;FI"attr_reader write;F:class_methods{@[I"new;F@[I"new;FI"Parallel;F[I"	each;FI"each_with_index;FI"in_processes;FI"in_threads;FI"map;FI"map_with_index;FI"physical_processor_count;FI"processor_count;F:encodingIu:Encoding
+UTF-8;F:instance_methods{@[I"exception;F@[I"close_pipes;FI"pid;FI"	read;FI"	wait;FI"	work;FI"
+write;F:modules[
+I"Parallel;FI"Parallel::Break;FI"Parallel::DeadWorker;FI"Parallel::ExceptionWrapper;FI"Parallel::Worker;F

@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"method:EFI"FlogTask#method;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"5Method to use to score. Defaults to :total_score;T:
+@fileI"lib/flog_task.rb;TF@

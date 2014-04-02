@@ -1,0 +1,7 @@
+edit sd/seeds.rb &
+rake db:seed
+Movie.all
+Movie.fine(4)
+Movie.find(4)
+Movie.find_by_rating('PG')
+exit

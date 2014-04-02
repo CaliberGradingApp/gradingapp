@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"context:EFI"SexpProcessor#context;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I";Return a stack of contexts. Most recent node is first.;T:
+@fileI"lib/sexp_processor.rb;TF@

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module Hirb::DynamicView - hirb-0.7.1 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/hirb/dynamic_view.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-add">::add</a>
+    
+    <li><a href="#method-i-dynamic_options">#dynamic_options</a>
+    
+    <li><a href="#method-i-view_methods">#view_methods</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../LICENSE_txt.html">LICENSE</a>
+  
+    <li class="file"><a href="../README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Hirb.html">Hirb</a>
+  
+    <li><a href="../Hirb/Console.html">Hirb::Console</a>
+  
+    <li><a href="../Hirb/DynamicView.html">Hirb::DynamicView</a>
+  
+    <li><a href="../Hirb/Formatter.html">Hirb::Formatter</a>
+  
+    <li><a href="../Hirb/Helpers.html">Hirb::Helpers</a>
+  
+    <li><a href="../Hirb/Helpers/AutoTable.html">Hirb::Helpers::AutoTable</a>
+  
+    <li><a href="../Hirb/Helpers/MarkdownTable.html">Hirb::Helpers::MarkdownTable</a>
+  
+    <li><a href="../Hirb/Helpers/ObjectTable.html">Hirb::Helpers::ObjectTable</a>
+  
+    <li><a href="../Hirb/Helpers/ParentChildTree.html">Hirb::Helpers::ParentChildTree</a>
+  
+    <li><a href="../Hirb/Helpers/TabTable.html">Hirb::Helpers::TabTable</a>
+  
+    <li><a href="../Hirb/Helpers/Table.html">Hirb::Helpers::Table</a>
+  
+    <li><a href="../Hirb/Helpers/Table/Filters.html">Hirb::Helpers::Table::Filters</a>
+  
+    <li><a href="../Hirb/Helpers/Table/Resizer.html">Hirb::Helpers::Table::Resizer</a>
+  
+    <li><a href="../Hirb/Helpers/Table/TooManyFieldsForWidthError.html">Hirb::Helpers::Table::TooManyFieldsForWidthError</a>
+  
+    <li><a href="../Hirb/Helpers/Tree.html">Hirb::Helpers::Tree</a>
+  
+    <li><a href="../Hirb/Helpers/Tree/Node.html">Hirb::Helpers::Tree::Node</a>
+  
+    <li><a href="../Hirb/Helpers/Tree/Node/MissingLevelError.html">Hirb::Helpers::Tree::Node::MissingLevelError</a>
+  
+    <li><a href="../Hirb/Helpers/Tree/Node/MissingValueError.html">Hirb::Helpers::Tree::Node::MissingValueError</a>
+  
+    <li><a href="../Hirb/Helpers/Tree/ParentlessNodeError.html">Hirb::Helpers::Tree::ParentlessNodeError</a>
+  
+    <li><a href="../Hirb/Helpers/UnicodeTable.html">Hirb::Helpers::UnicodeTable</a>
+  
+    <li><a href="../Hirb/Helpers/VerticalTable.html">Hirb::Helpers::VerticalTable</a>
+  
+    <li><a href="../Hirb/Menu.html">Hirb::Menu</a>
+  
+    <li><a href="../Hirb/Menu/Error.html">Hirb::Menu::Error</a>
+  
+    <li><a href="../Hirb/ObjectMethods.html">Hirb::ObjectMethods</a>
+  
+    <li><a href="../Hirb/Pager.html">Hirb::Pager</a>
+  
+    <li><a href="../Hirb/String.html">Hirb::String</a>
+  
+    <li><a href="../Hirb/Util.html">Hirb::Util</a>
+  
+    <li><a href="../Hirb/View.html">Hirb::View</a>
+  
+    <li><a href="../Hirb/Views.html">Hirb::Views</a>
+  
+    <li><a href="../Ripl.html">Ripl</a>
+  
+    <li><a href="../Ripl/Hirb.html">Ripl::Hirb</a>
+  
+    <li><a href="../Object.html">Object</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module Hirb::DynamicView</h1>
+
+  <div id="description" class="description">
+    
+<p>This module extends a Helper with the ability to have dynamic views for
+configured output classes. After a Helper has extended this module, it can
+use it within a render() by calling <a
+href="DynamicView.html#method-i-dynamic_options">#dynamic_options</a>() to
+get dynamically generated options for the object it’s rendering. See <a
+href="Helpers/AutoTable.html">Hirb::Helpers::AutoTable</a> as an example.</p>
+
+<h2 id="label-Dynamic+Views">Dynamic <a href="Views.html">Views</a></h2>
+
+<p>Whereas normal views are generated from helpers with static helper options,
+dynamic views are generated from helpers and dynamically generated helper
+options. Let’s look at an example for Rails’ ActiveRecord classes:</p>
+
+<pre class="ruby"><span class="ruby-constant">Hirb</span>.<span class="ruby-identifier">add_dynamic_view</span>(<span class="ruby-string">&quot;ActiveRecord::Base&quot;</span>, :<span class="ruby-identifier">helper=</span><span class="ruby-operator">&gt;</span>:<span class="ruby-identifier">auto_table</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">obj</span><span class="ruby-operator">|</span>
+ {:<span class="ruby-identifier">fields=</span><span class="ruby-operator">&gt;</span><span class="ruby-identifier">obj</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">column_names</span>} }
+</pre>
+
+<p>From this dynamic view definition, <em>any</em> ActiveRecord model class
+will render a table with the correct fields, since the fields are extracted
+from the output object’s class at runtime. Note that dynamic view
+definitions should return a hash of helper options.</p>
+
+<p>To define multiple dynamic views, create a <a href="Views.html">Views</a>
+module where each method ending in ‘_view’ maps to a class/module:</p>
+
+<pre class="ruby"><span class="ruby-keyword">module</span> <span class="ruby-constant">Hirb</span><span class="ruby-operator">::</span><span class="ruby-constant">Views</span><span class="ruby-operator">::</span><span class="ruby-constant">ORM</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">data_mapper__resource_view</span>(<span class="ruby-identifier">obj</span>)
+    {:<span class="ruby-identifier">fields=</span><span class="ruby-operator">&gt;</span><span class="ruby-identifier">obj</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">properties</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">name</span> }}
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">sequel__model_view</span>(<span class="ruby-identifier">obj</span>)
+    {:<span class="ruby-identifier">fields=</span><span class="ruby-operator">&gt;</span><span class="ruby-identifier">obj</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">columns</span>}
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-constant">Hirb</span>.<span class="ruby-identifier">add_dynamic_view</span> <span class="ruby-constant">Hirb</span><span class="ruby-operator">::</span><span class="ruby-constant">Views</span><span class="ruby-operator">::</span><span class="ruby-constant">ORM</span>, :<span class="ruby-identifier">helper=</span><span class="ruby-operator">&gt;</span>:<span class="ruby-identifier">auto_table</span>
+</pre>
+
+<p>In this example, ‘data_mapper__resource_view’ maps to DataMapper::Resource
+and ‘sequel__model_view’ maps to Sequel::Model. Note that when mapping
+method names to class names, ‘__’ maps to ‘::’ and ‘_’ signals the next
+letter to be capitalized.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-add" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add</span><span
+            class="method-args">(view, options, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Add dynamic views to output class(es) for a given helper. If defining one
+view, the first argument is the output class and a block defines the
+dynamic view. If defining multiple views, the first argument should be a
+Views::* module where each method in the module ending in _view defines a
+view for an output class. To map output classes to method names in a <a
+href="Views.html">Views</a> module, translate’::‘ to ’__’ and a capital
+letter translates to a ‘_’ and a lowercase letter.</p>
+
+<h4 id="method-c-add-label-Options%3A">Options:</h4>
+<dl class="rdoc-list label-list"><dt><strong>:helper</strong>
+<dd>
+<p>Required option. Helper class that view(s) use to format. <a
+href="Helpers/AutoTable.html">Hirb::Helpers::AutoTable</a> is the only
+valid helper among default helpers. Can be given in aliased form i.e.
+:auto_table -&gt; <a
+href="Helpers/AutoTable.html">Hirb::Helpers::AutoTable</a>.</p>
+</dd></dl>
+
+<p>Examples:</p>
+
+<pre class="ruby"><span class="ruby-constant">Hirb</span>.<span class="ruby-identifier">add_dynamic_view</span> <span class="ruby-constant">Hirb</span><span class="ruby-operator">::</span><span class="ruby-constant">Views</span><span class="ruby-operator">::</span><span class="ruby-constant">ORM</span>, :<span class="ruby-identifier">helper=</span><span class="ruby-operator">&gt;</span>:<span class="ruby-identifier">auto_table</span>
+<span class="ruby-constant">Hirb</span>.<span class="ruby-identifier">add_dynamic_view</span>(<span class="ruby-string">&quot;ActiveRecord::Base&quot;</span>, :<span class="ruby-identifier">helper=</span><span class="ruby-operator">&gt;</span>:<span class="ruby-identifier">auto_table</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">obj</span><span class="ruby-operator">|</span> {:<span class="ruby-identifier">fields=</span><span class="ruby-operator">&gt;</span><span class="ruby-identifier">obj</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">column_names</span>} }
+</pre>
+          
+
+          
+          <div class="method-source-code" id="add-source">
+            <pre><span class="ruby-comment"># File lib/hirb/dynamic_view.rb, line 44</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">add</span>(<span class="ruby-identifier">view</span>, <span class="ruby-identifier">options</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;:helper option is required&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:helper</span>]
+  <span class="ruby-identifier">helper</span> = <span class="ruby-constant">Helpers</span>.<span class="ruby-identifier">helper_class</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:helper</span>]
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">helper</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Module</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-keyword">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">helper</span>; <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ancestors</span>; <span class="ruby-keyword">end</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-keyword">self</span>)
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;:helper option must be a helper that has extended DynamicView&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">mod</span> = <span class="ruby-identifier">block</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">generate_single_view_module</span>(<span class="ruby-identifier">view</span>, &amp;<span class="ruby-identifier">block</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">view</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;'#{mod}' must be a module&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">mod</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Module</span>)
+  <span class="ruby-identifier">helper</span>.<span class="ruby-identifier">add_module</span> <span class="ruby-identifier">mod</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-dynamic_options" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">dynamic_options</span><span
+            class="method-args">(obj)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns a hash of options based on dynamic views defined for the object’s
+ancestry. If no config is found returns nil.</p>
+          
+
+          
+          <div class="method-source-code" id="dynamic_options-source">
+            <pre><span class="ruby-comment"># File lib/hirb/dynamic_view.rb, line 69</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">dynamic_options</span>(<span class="ruby-identifier">obj</span>)
+  <span class="ruby-identifier">view_methods</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">meth</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">ancestors</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">to_s</span> }.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">method_to_class</span>(<span class="ruby-identifier">meth</span>))
+      <span class="ruby-keyword">begin</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">send</span>(<span class="ruby-identifier">meth</span>, <span class="ruby-identifier">obj</span>)
+      <span class="ruby-keyword">rescue</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;View failed to generate for '#{method_to_class(meth)}' &quot;</span><span class="ruby-operator">+</span>
+          <span class="ruby-node">&quot;while in '#{meth}' with error:\n#{$!.message}&quot;</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- dynamic_options-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- dynamic_options-method -->
+
+    
+      <div id="method-i-view_methods" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">view_methods</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Stores view methods that a Helper has been given via <a
+href="DynamicView.html#method-c-add">::add</a></p>
+          
+
+          
+          <div class="method-source-code" id="view_methods-source">
+            <pre><span class="ruby-comment"># File lib/hirb/dynamic_view.rb, line 109</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">view_methods</span>
+  <span class="ruby-ivar">@view_methods</span> <span class="ruby-operator">||=</span> []
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- view_methods-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- view_methods-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

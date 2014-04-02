@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class RubyParserStuff::RubyParser - ruby_parser-3.2.2 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/ruby_parser_extras.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-for_current_ruby">::for_current_ruby</a>
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-parse">#parse</a>
+    
+    <li><a href="#method-i-process">#process</a>
+    
+    <li><a href="#method-i-reset">#reset</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../History_txt.html">History</a>
+  
+    <li class="file"><a href="../Manifest_txt.html">Manifest</a>
+  
+    <li class="file"><a href="../README_txt.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../RubyParserStuff.html">RubyParserStuff</a>
+  
+    <li><a href="../RubyParserStuff/Environment.html">RubyParserStuff::Environment</a>
+  
+    <li><a href="../RubyParserStuff/Keyword.html">RubyParserStuff::Keyword</a>
+  
+    <li><a href="../RubyParserStuff/Keyword/KWtable.html">RubyParserStuff::Keyword::KWtable</a>
+  
+    <li><a href="../RubyParserStuff/Ruby18Parser.html">RubyParserStuff::Ruby18Parser</a>
+  
+    <li><a href="../RubyParserStuff/Ruby19Parser.html">RubyParserStuff::Ruby19Parser</a>
+  
+    <li><a href="../RubyParserStuff/Ruby20Parser.html">RubyParserStuff::Ruby20Parser</a>
+  
+    <li><a href="../RubyParserStuff/RubyParser.html">RubyParserStuff::RubyParser</a>
+  
+    <li><a href="../RubyParserStuff/RubyParser/SyntaxError.html">RubyParserStuff::RubyParser::SyntaxError</a>
+  
+    <li><a href="../RubyParserStuff/Sexp.html">RubyParserStuff::Sexp</a>
+  
+    <li><a href="../RubyParserStuff/StackState.html">RubyParserStuff::StackState</a>
+  
+    <li><a href="../RubyParserStuff/String.html">RubyParserStuff::String</a>
+  
+    <li><a href="../RPStringScanner.html">RPStringScanner</a>
+  
+    <li><a href="../Ruby18Parser.html">Ruby18Parser</a>
+  
+    <li><a href="../Ruby19Parser.html">Ruby19Parser</a>
+  
+    <li><a href="../Ruby20Parser.html">Ruby20Parser</a>
+  
+    <li><a href="../RubyLexer.html">RubyLexer</a>
+  
+    <li><a href="../RubyParserGauntlet.html">RubyParserGauntlet</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class RubyParserStuff::RubyParser</h1>
+
+  <div id="description" class="description">
+    
+<p><a href="RubyParser.html">RubyParser</a> is a compound parser that first
+attempts to parse using the 1.9 syntax parser and falls back to the 1.8
+syntax parser on a parse error.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-for_current_ruby" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">for_current_ruby</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="for_current_ruby-source">
+            <pre><span class="ruby-comment"># File lib/ruby_parser_extras.rb, line 1375</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">for_current_ruby</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-constant">RUBY_VERSION</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-regexp">/^1\.8/</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-constant">Ruby18Parser</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-regexp">/^1\.9/</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-constant">Ruby19Parser</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-regexp">/^2.0/</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-constant">Ruby20Parser</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;unrecognized RUBY_VERSION #{RUBY_VERSION}&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- for_current_ruby-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- for_current_ruby-method -->
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/ruby_parser_extras.rb, line 1352</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>
+  <span class="ruby-ivar">@p18</span> = <span class="ruby-constant">Ruby18Parser</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@p19</span> = <span class="ruby-constant">Ruby19Parser</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@p20</span> = <span class="ruby-constant">Ruby20Parser</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-parse" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">parse</span><span
+            class="method-args">(s, f = "(string)", t = 10)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="RubyParser.html#method-i-process">process</a>
+        </div>
+        
+      </div><!-- parse-method -->
+
+    
+      <div id="method-i-process" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">process</span><span
+            class="method-args">(s, f = "(string)", t = 10)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="process-source">
+            <pre><span class="ruby-comment"># File lib/ruby_parser_extras.rb, line 1358</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">process</span>(<span class="ruby-identifier">s</span>, <span class="ruby-identifier">f</span> = <span class="ruby-string">&quot;(string)&quot;</span>, <span class="ruby-identifier">t</span> = <span class="ruby-value">10</span>) <span class="ruby-comment"># parens for emacs *sigh*</span>
+  <span class="ruby-ivar">@p20</span>.<span class="ruby-identifier">process</span> <span class="ruby-identifier">s</span>, <span class="ruby-identifier">f</span>, <span class="ruby-identifier">t</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">Racc</span><span class="ruby-operator">::</span><span class="ruby-constant">ParseError</span>, <span class="ruby-constant">RubyParser</span><span class="ruby-operator">::</span><span class="ruby-constant">SyntaxError</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-ivar">@p19</span>.<span class="ruby-identifier">process</span> <span class="ruby-identifier">s</span>, <span class="ruby-identifier">f</span>, <span class="ruby-identifier">t</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Racc</span><span class="ruby-operator">::</span><span class="ruby-constant">ParseError</span>, <span class="ruby-constant">RubyParser</span><span class="ruby-operator">::</span><span class="ruby-constant">SyntaxError</span>
+    <span class="ruby-ivar">@p18</span>.<span class="ruby-identifier">process</span> <span class="ruby-identifier">s</span>, <span class="ruby-identifier">f</span>, <span class="ruby-identifier">t</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- process-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="RubyParser.html#method-i-parse">parse</a>
+        </div>
+        
+
+        
+      </div><!-- process-method -->
+
+    
+      <div id="method-i-reset" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">reset</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="reset-source">
+            <pre><span class="ruby-comment"># File lib/ruby_parser_extras.rb, line 1370</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">reset</span>
+  <span class="ruby-ivar">@p18</span>.<span class="ruby-identifier">reset</span>
+  <span class="ruby-ivar">@p19</span>.<span class="ruby-identifier">reset</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- reset-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- reset-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

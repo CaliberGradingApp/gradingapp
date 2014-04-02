@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module OmniAuth::Strategy::ClassMethods - omniauth-1.1.4 Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/omniauth/strategy.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-args">#args</a>
+    
+    <li><a href="#method-i-compile_stack">#compile_stack</a>
+    
+    <li><a href="#method-i-configure">#configure</a>
+    
+    <li><a href="#method-i-default_options">#default_options</a>
+    
+    <li><a href="#method-i-option">#option</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../OmniAuth.html">OmniAuth</a>
+  
+    <li><a href="../../OmniAuth/AuthHash.html">OmniAuth::AuthHash</a>
+  
+    <li><a href="../../OmniAuth/AuthHash/InfoHash.html">OmniAuth::AuthHash::InfoHash</a>
+  
+    <li><a href="../../OmniAuth/Builder.html">OmniAuth::Builder</a>
+  
+    <li><a href="../../OmniAuth/Configuration.html">OmniAuth::Configuration</a>
+  
+    <li><a href="../../OmniAuth/Error.html">OmniAuth::Error</a>
+  
+    <li><a href="../../OmniAuth/FailureEndpoint.html">OmniAuth::FailureEndpoint</a>
+  
+    <li><a href="../../OmniAuth/Form.html">OmniAuth::Form</a>
+  
+    <li><a href="../../OmniAuth/NoSessionError.html">OmniAuth::NoSessionError</a>
+  
+    <li><a href="../../OmniAuth/Strategies.html">OmniAuth::Strategies</a>
+  
+    <li><a href="../../OmniAuth/Strategies/Developer.html">OmniAuth::Strategies::Developer</a>
+  
+    <li><a href="../../OmniAuth/Strategy.html">OmniAuth::Strategy</a>
+  
+    <li><a href="../../OmniAuth/Strategy/ClassMethods.html">OmniAuth::Strategy::ClassMethods</a>
+  
+    <li><a href="../../OmniAuth/Strategy/Options.html">OmniAuth::Strategy::Options</a>
+  
+    <li><a href="../../OmniAuth/Test.html">OmniAuth::Test</a>
+  
+    <li><a href="../../OmniAuth/Test/PhonySession.html">OmniAuth::Test::PhonySession</a>
+  
+    <li><a href="../../OmniAuth/Test/StrategyMacros.html">OmniAuth::Test::StrategyMacros</a>
+  
+    <li><a href="../../OmniAuth/Test/StrategyTestCase.html">OmniAuth::Test::StrategyTestCase</a>
+  
+    <li><a href="../../OmniAuth/Utils.html">OmniAuth::Utils</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module OmniAuth::Strategy::ClassMethods</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-args" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">args</span><span
+            class="method-args">(args = nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Sets (and retrieves) option key names for initializer arguments to be
+recorded as. This takes care of 90% of the use cases for overriding the
+initializer in <a href="../../OmniAuth.html">OmniAuth</a> <a
+href="../Strategies.html">Strategies</a>.</p>
+          
+
+          
+          <div class="method-source-code" id="args-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/strategy.rb, line 82</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">args</span>(<span class="ruby-identifier">args</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">args</span>
+    <span class="ruby-ivar">@args</span> = <span class="ruby-constant">Array</span>(<span class="ruby-identifier">args</span>)
+    <span class="ruby-keyword">return</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">existing</span> = <span class="ruby-identifier">superclass</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:args</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">superclass</span>.<span class="ruby-identifier">args</span> <span class="ruby-operator">:</span> []
+  <span class="ruby-keyword">return</span> (<span class="ruby-identifier">instance_variable_defined?</span>(<span class="ruby-value">:@args</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@args</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">existing</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- args-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- args-method -->
+
+    
+      <div id="method-i-compile_stack" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">compile_stack</span><span
+            class="method-args">(ancestors, method, context)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="compile_stack-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/strategy.rb, line 104</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">compile_stack</span>(<span class="ruby-identifier">ancestors</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">context</span>)
+  <span class="ruby-identifier">stack</span> = <span class="ruby-identifier">ancestors</span>.<span class="ruby-identifier">inject</span>([]) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">a</span>, <span class="ruby-identifier">ancestor</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">a</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">context</span>.<span class="ruby-identifier">instance_eval</span>(&amp;<span class="ruby-identifier">ancestor</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">method</span>)) <span class="ruby-keyword">if</span> <span class="ruby-identifier">ancestor</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">method</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">ancestor</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">method</span>)
+    <span class="ruby-identifier">a</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">stack</span>.<span class="ruby-identifier">reverse!</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- compile_stack-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- compile_stack-method -->
+
+    
+      <div id="method-i-configure" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">configure</span><span
+            class="method-args">(options = nil) { |default_options| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This allows for more declarative subclassing of strategies by allowing
+default options to be set using a simple configure call.</p>
+
+<p>@param options [Hash] If supplied, these will be the default options
+(deep-merged into the superclass’s default options). @yield [Options] The
+options Mash that allows you to set your defaults as you’d like.</p>
+
+<p>@example Using a yield to configure the default options.</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">MyStrategy</span>
+  <span class="ruby-identifier">include</span> <span class="ruby-constant">OmniAuth</span><span class="ruby-operator">::</span><span class="ruby-constant">Strategy</span>
+
+  <span class="ruby-identifier">configure</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">c</span>.<span class="ruby-identifier">foo</span> = <span class="ruby-string">'bar'</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>@example Using a hash to configure the default options.</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">MyStrategy</span>
+  <span class="ruby-identifier">include</span> <span class="ruby-constant">OmniAuth</span><span class="ruby-operator">::</span><span class="ruby-constant">Strategy</span>
+  <span class="ruby-identifier">configure</span> <span class="ruby-identifier">foo</span><span class="ruby-operator">:</span> <span class="ruby-string">'bar'</span>
+<span class="ruby-keyword">end</span>
+</pre>
+          
+
+          
+          <div class="method-source-code" id="configure-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/strategy.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">configure</span>(<span class="ruby-identifier">options</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+    <span class="ruby-keyword">yield</span> <span class="ruby-identifier">default_options</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">default_options</span>.<span class="ruby-identifier">deep_merge!</span>(<span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- configure-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- configure-method -->
+
+    
+      <div id="method-i-default_options" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">default_options</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns an inherited set of default options set at the class-level for each
+strategy.</p>
+          
+
+          
+          <div class="method-source-code" id="default_options-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/strategy.rb, line 24</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">default_options</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-ivar">@default_options</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">instance_variable_defined?</span>(<span class="ruby-value">:@default_options</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@default_options</span>
+  <span class="ruby-identifier">existing</span> = <span class="ruby-identifier">superclass</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:default_options</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">superclass</span>.<span class="ruby-identifier">default_options</span> <span class="ruby-operator">:</span> {}
+  <span class="ruby-ivar">@default_options</span> = <span class="ruby-constant">OmniAuth</span><span class="ruby-operator">::</span><span class="ruby-constant">Strategy</span><span class="ruby-operator">::</span><span class="ruby-constant">Options</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">existing</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- default_options-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- default_options-method -->
+
+    
+      <div id="method-i-option" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">option</span><span
+            class="method-args">(name, value = nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Directly declare a default option for your class. This is a useful from a
+documentation perspective as it provides a simple line-by-line analysis of
+the kinds of options your strategy provides by default.</p>
+
+<p>@param name [Symbol] The key of the default option in your configuration
+hash. @param value [Object] The value your object defaults to. Nil if not
+provided.</p>
+
+<p>@example</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">MyStrategy</span>
+  <span class="ruby-identifier">include</span> <span class="ruby-constant">OmniAuth</span><span class="ruby-operator">::</span><span class="ruby-constant">Strategy</span>
+
+  <span class="ruby-identifier">option</span> :<span class="ruby-identifier">foo</span>, <span class="ruby-string">'bar'</span>
+  <span class="ruby-identifier">option</span>
+<span class="ruby-keyword">end</span>
+</pre>
+          
+
+          
+          <div class="method-source-code" id="option-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/strategy.rb, line 75</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">option</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">default_options</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-identifier">value</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- option-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- option-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

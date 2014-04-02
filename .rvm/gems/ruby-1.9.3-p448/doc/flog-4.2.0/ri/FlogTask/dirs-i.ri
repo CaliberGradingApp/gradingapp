@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"	dirs:EFI"FlogTask#dirs;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"7What directories to operate on. Sensible defaults.;T:
+@fileI"lib/flog_task.rb;TF@

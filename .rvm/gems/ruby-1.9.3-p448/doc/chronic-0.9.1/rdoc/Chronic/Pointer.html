@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Chronic::Pointer - chronic-0.9.1 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/chronic/pointer.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Tag
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-scan">::scan</a>
+    
+    <li><a href="#method-c-scan_for_all">::scan_for_all</a>
+    
+    <li><a href="#method-i-to_s">#to_s</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../LICENSE.html">LICENSE</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Chronic.html">Chronic</a>
+  
+    <li><a href="../Chronic/Grabber.html">Chronic::Grabber</a>
+  
+    <li><a href="../Chronic/Handler.html">Chronic::Handler</a>
+  
+    <li><a href="../Chronic/Handlers.html">Chronic::Handlers</a>
+  
+    <li><a href="../Chronic/MiniDate.html">Chronic::MiniDate</a>
+  
+    <li><a href="../Chronic/Numerizer.html">Chronic::Numerizer</a>
+  
+    <li><a href="../Chronic/Ordinal.html">Chronic::Ordinal</a>
+  
+    <li><a href="../Chronic/Parser.html">Chronic::Parser</a>
+  
+    <li><a href="../Chronic/Pointer.html">Chronic::Pointer</a>
+  
+    <li><a href="../Chronic/Repeater.html">Chronic::Repeater</a>
+  
+    <li><a href="../Chronic/Scalar.html">Chronic::Scalar</a>
+  
+    <li><a href="../Chronic/Season.html">Chronic::Season</a>
+  
+    <li><a href="../Chronic/Separator.html">Chronic::Separator</a>
+  
+    <li><a href="../Chronic/Span.html">Chronic::Span</a>
+  
+    <li><a href="../Chronic/Tag.html">Chronic::Tag</a>
+  
+    <li><a href="../Chronic/TimeZone.html">Chronic::TimeZone</a>
+  
+    <li><a href="../Chronic/Token.html">Chronic::Token</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Chronic::Pointer</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-scan" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">scan</span><span
+            class="method-args">(tokens, options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Scan an Array of <a href="Token.html">Token</a> objects and apply any
+necessary <a href="Pointer.html">Pointer</a> tags to each token.</p>
+
+<p>tokens - An Array of tokens to scan. options - The Hash of options
+specified in <a href="../Chronic.html#method-c-parse">Chronic.parse</a>.</p>
+
+<p>Returns an Array of tokens.</p>
+          
+
+          
+          <div class="method-source-code" id="scan-source">
+            <pre><span class="ruby-comment"># File lib/chronic/pointer.rb, line 11</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-identifier">tokens</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">tokens</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">token</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">t</span> = <span class="ruby-identifier">scan_for_all</span>(<span class="ruby-identifier">token</span>) <span class="ruby-keyword">then</span> <span class="ruby-identifier">token</span>.<span class="ruby-identifier">tag</span>(<span class="ruby-identifier">t</span>) <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- scan-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- scan-method -->
+
+    
+      <div id="method-c-scan_for_all" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">scan_for_all</span><span
+            class="method-args">(token)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>token - The <a href="Token.html">Token</a> object we want to scan.</p>
+
+<p>Returns a new <a href="Pointer.html">Pointer</a> object.</p>
+          
+
+          
+          <div class="method-source-code" id="scan_for_all-source">
+            <pre><span class="ruby-comment"># File lib/chronic/pointer.rb, line 20</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">scan_for_all</span>(<span class="ruby-identifier">token</span>)
+  <span class="ruby-identifier">scan_for</span> <span class="ruby-identifier">token</span>, <span class="ruby-keyword">self</span>,
+  {
+    <span class="ruby-regexp">/\bpast\b/</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:past</span>,
+    <span class="ruby-regexp">/\b(?:future|in)\b/</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:future</span>,
+  }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- scan_for_all-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- scan_for_all-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-to_s" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_s</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="to_s-source">
+            <pre><span class="ruby-comment"># File lib/chronic/pointer.rb, line 28</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>
+  <span class="ruby-string">'pointer-'</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@type</span>.<span class="ruby-identifier">to_s</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- to_s-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- to_s-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

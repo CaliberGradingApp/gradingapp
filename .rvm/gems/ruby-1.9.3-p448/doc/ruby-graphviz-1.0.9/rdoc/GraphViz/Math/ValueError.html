@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class GraphViz::Math::ValueError - ruby-graphviz-1.0.9 Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/graphviz/math/matrix.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">RuntimeError
+  
+</nav>
+
+    
+    
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../AUTHORS_rdoc.html">AUTHORS</a>
+  
+    <li class="file"><a href="../../CHANGELOG_rdoc.html">CHANGELOG</a>
+  
+    <li class="file"><a href="../../COPYING_rdoc.html">COPYING</a>
+  
+    <li class="file"><a href="../../README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../GraphViz.html">GraphViz</a>
+  
+    <li><a href="../../GraphViz/Attrs.html">GraphViz::Attrs</a>
+  
+    <li><a href="../../GraphViz/Constants.html">GraphViz::Constants</a>
+  
+    <li><a href="../../GraphViz/DOTScript.html">GraphViz::DOTScript</a>
+  
+    <li><a href="../../GraphViz/DOTScriptData.html">GraphViz::DOTScriptData</a>
+  
+    <li><a href="../../GraphViz/DSL.html">GraphViz::DSL</a>
+  
+    <li><a href="../../GraphViz/Edge.html">GraphViz::Edge</a>
+  
+    <li><a href="../../GraphViz/Elements.html">GraphViz::Elements</a>
+  
+    <li><a href="../../GraphViz/Ext.html">GraphViz::Ext</a>
+  
+    <li><a href="../../GraphViz/FamilyTree.html">GraphViz::FamilyTree</a>
+  
+    <li><a href="../../GraphViz/FamilyTree/Couple.html">GraphViz::FamilyTree::Couple</a>
+  
+    <li><a href="../../GraphViz/FamilyTree/Generation.html">GraphViz::FamilyTree::Generation</a>
+  
+    <li><a href="../../GraphViz/FamilyTree/Person.html">GraphViz::FamilyTree::Person</a>
+  
+    <li><a href="../../GraphViz/FamilyTree/Sibling.html">GraphViz::FamilyTree::Sibling</a>
+  
+    <li><a href="../../GraphViz/GraphML.html">GraphViz::GraphML</a>
+  
+    <li><a href="../../GraphViz/GraphMLError.html">GraphViz::GraphMLError</a>
+  
+    <li><a href="../../GraphViz/Math.html">GraphViz::Math</a>
+  
+    <li><a href="../../GraphViz/Math/CoordinateError.html">GraphViz::Math::CoordinateError</a>
+  
+    <li><a href="../../GraphViz/Math/Matrix.html">GraphViz::Math::Matrix</a>
+  
+    <li><a href="../../GraphViz/Math/ValueError.html">GraphViz::Math::ValueError</a>
+  
+    <li><a href="../../GraphViz/Node.html">GraphViz::Node</a>
+  
+    <li><a href="../../GraphViz/Theory.html">GraphViz::Theory</a>
+  
+    <li><a href="../../GraphViz/Types.html">GraphViz::Types</a>
+  
+    <li><a href="../../GraphViz/Types/ArrowType.html">GraphViz::Types::ArrowType</a>
+  
+    <li><a href="../../GraphViz/Types/Color.html">GraphViz::Types::Color</a>
+  
+    <li><a href="../../GraphViz/Types/ColorList.html">GraphViz::Types::ColorList</a>
+  
+    <li><a href="../../GraphViz/Types/Common.html">GraphViz::Types::Common</a>
+  
+    <li><a href="../../GraphViz/Types/EscString.html">GraphViz::Types::EscString</a>
+  
+    <li><a href="../../GraphViz/Types/GvBool.html">GraphViz::Types::GvBool</a>
+  
+    <li><a href="../../GraphViz/Types/GvDouble.html">GraphViz::Types::GvDouble</a>
+  
+    <li><a href="../../GraphViz/Types/HtmlString.html">GraphViz::Types::HtmlString</a>
+  
+    <li><a href="../../GraphViz/Types/LblString.html">GraphViz::Types::LblString</a>
+  
+    <li><a href="../../GraphViz/Types/Rect.html">GraphViz::Types::Rect</a>
+  
+    <li><a href="../../GraphViz/Types/SplineType.html">GraphViz::Types::SplineType</a>
+  
+    <li><a href="../../GraphViz/Utils.html">GraphViz::Utils</a>
+  
+    <li><a href="../../GraphViz/Utils/Colors.html">GraphViz::Utils::Colors</a>
+  
+    <li><a href="../../GraphViz/XML.html">GraphViz::XML</a>
+  
+    <li><a href="../../AttributeException.html">AttributeException</a>
+  
+    <li><a href="../../BoolException.html">BoolException</a>
+  
+    <li><a href="../../ColorException.html">ColorException</a>
+  
+    <li><a href="../../DoubleException.html">DoubleException</a>
+  
+    <li><a href="../../Hash.html">Hash</a>
+  
+    <li><a href="../../Object.html">Object</a>
+  
+    <li><a href="../../RectException.html">RectException</a>
+  
+    <li><a href="../../SplineTypeException.html">SplineTypeException</a>
+  
+    <li><a href="../../String.html">String</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class GraphViz::Math::ValueError</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

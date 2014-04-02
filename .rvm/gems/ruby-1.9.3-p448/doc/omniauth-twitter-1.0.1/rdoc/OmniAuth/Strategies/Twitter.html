@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class OmniAuth::Strategies::Twitter - omniauth-twitter-1.0.1 Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/omniauth/strategies/twitter.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">OmniAuth::Strategies::OAuth
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-old_request_phase">#old_request_phase</a>
+    
+    <li><a href="#method-i-raw_info">#raw_info</a>
+    
+    <li><a href="#method-i-request_phase">#request_phase</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../OmniAuth.html">OmniAuth</a>
+  
+    <li><a href="../../OmniAuth/Strategies.html">OmniAuth::Strategies</a>
+  
+    <li><a href="../../OmniAuth/Strategies/Twitter.html">OmniAuth::Strategies::Twitter</a>
+  
+    <li><a href="../../OmniAuth/Twitter.html">OmniAuth::Twitter</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class OmniAuth::Strategies::Twitter</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-old_request_phase" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">old_request_phase</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Twitter.html#method-i-request_phase">request_phase</a>
+        </div>
+        
+      </div><!-- old_request_phase-method -->
+
+    
+      <div id="method-i-raw_info" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">raw_info</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="raw_info-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/strategies/twitter.rb, line 33</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">raw_info</span>
+  <span class="ruby-ivar">@raw_info</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">MultiJson</span>.<span class="ruby-identifier">load</span>(<span class="ruby-identifier">access_token</span>.<span class="ruby-identifier">get</span>(<span class="ruby-string">'/1.1/account/verify_credentials.json?include_entities=false&amp;skip_status=true'</span>).<span class="ruby-identifier">body</span>)
+<span class="ruby-keyword">rescue</span> <span class="ruby-operator">::</span><span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">ETIMEDOUT</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-operator">::</span><span class="ruby-constant">Timeout</span><span class="ruby-operator">::</span><span class="ruby-constant">Error</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- raw_info-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- raw_info-method -->
+
+    
+      <div id="method-i-request_phase" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">request_phase</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="request_phase-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/strategies/twitter.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">request_phase</span>
+  <span class="ruby-node">%w[force_login lang screen_name]</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">request</span>.<span class="ruby-identifier">params</span>[<span class="ruby-identifier">v</span>]
+      <span class="ruby-identifier">options</span>[<span class="ruby-value">:authorize_params</span>][<span class="ruby-identifier">v</span>.<span class="ruby-identifier">to_sym</span>] = <span class="ruby-identifier">request</span>.<span class="ruby-identifier">params</span>[<span class="ruby-identifier">v</span>]
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-node">%w[x_auth_access_type]</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">request</span>.<span class="ruby-identifier">params</span>[<span class="ruby-identifier">v</span>]
+      <span class="ruby-identifier">options</span>[<span class="ruby-value">:request_params</span>][<span class="ruby-identifier">v</span>.<span class="ruby-identifier">to_sym</span>] = <span class="ruby-identifier">request</span>.<span class="ruby-identifier">params</span>[<span class="ruby-identifier">v</span>]
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">request</span>.<span class="ruby-identifier">params</span>[<span class="ruby-string">'use_authorize'</span>] <span class="ruby-operator">==</span> <span class="ruby-string">'true'</span>
+    <span class="ruby-identifier">options</span>[<span class="ruby-value">:client_options</span>][<span class="ruby-value">:authorize_path</span>] = <span class="ruby-string">'/oauth/authorize'</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">options</span>[<span class="ruby-value">:client_options</span>][<span class="ruby-value">:authorize_path</span>] = <span class="ruby-string">'/oauth/authenticate'</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">old_request_phase</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- request_phase-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Twitter.html#method-i-old_request_phase">old_request_phase</a>
+        </div>
+        
+
+        
+      </div><!-- request_phase-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

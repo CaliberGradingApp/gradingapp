@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Gherkin::Formatter::Model::Row - gherkin-2.12.2 Documentation</title>
+
+<link type="text/css" media="screen" href="../../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../../index.html">Home</a>
+    <a href="../../../table_of_contents.html#classes">Classes</a>
+    <a href="../../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/gherkin/formatter/model.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Hashable
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../../lib/gherkin/parser/meta_txt.html">meta</a>
+  
+    <li class="file"><a href="../../../lib/gherkin/parser/root_txt.html">root</a>
+  
+    <li class="file"><a href="../../../lib/gherkin/parser/steps_txt.html">steps</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../../Gherkin.html">Gherkin</a>
+  
+    <li><a href="../../../Gherkin/CLexer.html">Gherkin::CLexer</a>
+  
+    <li><a href="../../../Gherkin/Formatter.html">Gherkin::Formatter</a>
+  
+    <li><a href="../../../Gherkin/Formatter/AnsiEscapes.html">Gherkin::Formatter::AnsiEscapes</a>
+  
+    <li><a href="../../../Gherkin/Formatter/Argument.html">Gherkin::Formatter::Argument</a>
+  
+    <li><a href="../../../Gherkin/Formatter/Escaping.html">Gherkin::Formatter::Escaping</a>
+  
+    <li><a href="../../../Gherkin/Formatter/FilterFormatter.html">Gherkin::Formatter::FilterFormatter</a>
+  
+    <li><a href="../../../Gherkin/Formatter/Hashable.html">Gherkin::Formatter::Hashable</a>
+  
+    <li><a href="../../../Gherkin/Formatter/JSONFormatter.html">Gherkin::Formatter::JSONFormatter</a>
+  
+    <li><a href="../../../Gherkin/Formatter/LineFilter.html">Gherkin::Formatter::LineFilter</a>
+  
+    <li><a href="../../../Gherkin/Formatter/Model.html">Gherkin::Formatter::Model</a>
+  
+    <li><a href="../../../Gherkin/Formatter/Model/Background.html">Gherkin::Formatter::Model::Background</a>
+  
+    <li><a href="../../../Gherkin/Formatter/Model/BasicStatement.html">Gherkin::Formatter::Model::BasicStatement</a>
+  
+    <li><a href="../../../Gherkin/Formatter/Model/Comment.html">Gherkin::Formatter::Model::Comment</a>
+  
+    <li><a href="../../../Gherkin/Formatter/Model/DataTableRow.html">Gherkin::Formatter::Model::DataTableRow</a>
+  
+    <li><a href="../../../Gherkin/Formatter/Model/DescribedStatement.html">Gherkin::Formatter::Model::DescribedStatement</a>
+  
+    <li><a href="../../../Gherkin/Formatter/Model/DocString.html">Gherkin::Formatter::Model::DocString</a>
+  
+    <li><a href="../../../Gherkin/Formatter/Model/Examples.html">Gherkin::Formatter::Model::Examples</a>
+  
+    <li><a href="../../../Gherkin/Formatter/Model/Examples/Builder.html">Gherkin::Formatter::Model::Examples::Builder</a>
+  
+    <li><a href="../../../Gherkin/Formatter/Model/ExamplesTableRow.html">Gherkin::Formatter::Model::ExamplesTableRow</a>
+  
+    <li><a href="../../../Gherkin/Formatter/Model/Feature.html">Gherkin::Formatter::Model::Feature</a>
+  
+    <li><a href="../../../Gherkin/Formatter/Model/Match.html">Gherkin::Formatter::Model::Match</a>
+  
+    <li><a href="../../../Gherkin/Formatter/Model/Result.html">Gherkin::Formatter::Model::Result</a>
+  
+    <li><a href="../../../Gherkin/Formatter/Model/Row.html">Gherkin::Formatter::Model::Row</a>
+  
+    <li><a href="../../../Gherkin/Formatter/Model/Scenario.html">Gherkin::Formatter::Model::Scenario</a>
+  
+    <li><a href="../../../Gherkin/Formatter/Model/ScenarioOutline.html">Gherkin::Formatter::Model::ScenarioOutline</a>
+  
+    <li><a href="../../../Gherkin/Formatter/Model/Step.html">Gherkin::Formatter::Model::Step</a>
+  
+    <li><a href="../../../Gherkin/Formatter/Model/Step/Builder.html">Gherkin::Formatter::Model::Step::Builder</a>
+  
+    <li><a href="../../../Gherkin/Formatter/Model/Tag.html">Gherkin::Formatter::Model::Tag</a>
+  
+    <li><a href="../../../Gherkin/Formatter/Model/TagStatement.html">Gherkin::Formatter::Model::TagStatement</a>
+  
+    <li><a href="../../../Gherkin/Formatter/PrettyFormatter.html">Gherkin::Formatter::PrettyFormatter</a>
+  
+    <li><a href="../../../Gherkin/Formatter/PrettyFormatter/ColorFormat.html">Gherkin::Formatter::PrettyFormatter::ColorFormat</a>
+  
+    <li><a href="../../../Gherkin/Formatter/PrettyFormatter/MonochromeFormat.html">Gherkin::Formatter::PrettyFormatter::MonochromeFormat</a>
+  
+    <li><a href="../../../Gherkin/Formatter/RegexpFilter.html">Gherkin::Formatter::RegexpFilter</a>
+  
+    <li><a href="../../../Gherkin/Formatter/StepPrinter.html">Gherkin::Formatter::StepPrinter</a>
+  
+    <li><a href="../../../Gherkin/Formatter/TagCountFormatter.html">Gherkin::Formatter::TagCountFormatter</a>
+  
+    <li><a href="../../../Gherkin/Formatter/TagFilter.html">Gherkin::Formatter::TagFilter</a>
+  
+    <li><a href="../../../Gherkin/I18n.html">Gherkin::I18n</a>
+  
+    <li><a href="../../../Gherkin/JSONParser.html">Gherkin::JSONParser</a>
+  
+    <li><a href="../../../Gherkin/Lexer.html">Gherkin::Lexer</a>
+  
+    <li><a href="../../../Gherkin/Lexer/Encoding.html">Gherkin::Lexer::Encoding</a>
+  
+    <li><a href="../../../Gherkin/Lexer/I18nLexer.html">Gherkin::Lexer::I18nLexer</a>
+  
+    <li><a href="../../../Gherkin/Listener.html">Gherkin::Listener</a>
+  
+    <li><a href="../../../Gherkin/Listener/Event.html">Gherkin::Listener::Event</a>
+  
+    <li><a href="../../../Gherkin/Listener/FormatterListener.html">Gherkin::Listener::FormatterListener</a>
+  
+    <li><a href="../../../Gherkin/Listener/FormatterListener/Stash.html">Gherkin::Listener::FormatterListener::Stash</a>
+  
+    <li><a href="../../../Gherkin/Parser.html">Gherkin::Parser</a>
+  
+    <li><a href="../../../Gherkin/Parser/ParseError.html">Gherkin::Parser::ParseError</a>
+  
+    <li><a href="../../../Gherkin/Parser/Parser.html">Gherkin::Parser::Parser</a>
+  
+    <li><a href="../../../Gherkin/Parser/Parser/Machine.html">Gherkin::Parser::Parser::Machine</a>
+  
+    <li><a href="../../../Gherkin/Parser/Parser/Machine/StateMachineReader.html">Gherkin::Parser::Parser::Machine::StateMachineReader</a>
+  
+    <li><a href="../../../Gherkin/Rubify.html">Gherkin::Rubify</a>
+  
+    <li><a href="../../../Gherkin/TagExpression.html">Gherkin::TagExpression</a>
+  
+    <li><a href="../../../Class.html">Class</a>
+  
+    <li><a href="../../../Class/IOWriter.html">Class::IOWriter</a>
+  
+    <li><a href="../../../Class/Proxy.html">Class::Proxy</a>
+  
+    <li><a href="../../../Class/Proxy/STDOUT.html">Class::Proxy::STDOUT</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Gherkin::Formatter::Model::Row</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-cells" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">cells</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-comments" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">comments</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-line" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">line</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(comments, cells, line)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/gherkin/formatter/model.rb, line 233</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">comments</span>, <span class="ruby-identifier">cells</span>, <span class="ruby-identifier">line</span>)
+  <span class="ruby-ivar">@comments</span>, <span class="ruby-ivar">@cells</span>, <span class="ruby-ivar">@line</span> = <span class="ruby-identifier">comments</span>, <span class="ruby-identifier">cells</span>, <span class="ruby-identifier">line</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

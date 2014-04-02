@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"fail_on_error:EFI"#Reek::Rake::Task#fail_on_error;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"XWhether or not to fail Rake when an error occurs (typically when smells are found).;TI"Defaults to true.;T:
+@fileI"lib/reek/rake/task.rb;TF@

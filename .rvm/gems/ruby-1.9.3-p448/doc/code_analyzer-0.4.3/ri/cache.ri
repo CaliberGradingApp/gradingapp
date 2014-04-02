@@ -1,0 +1,10 @@
+{:ancestors{I"CodeAnalyzer::Checker:EF[I"Object;FI"CodeAnalyzer::Warning;F[I"Object;FI"CodeAnalyzer::Nil;F[I"Object;FI")CodeAnalyzer::CheckingVisitor::Plain;F[I"	Base;FI"(CodeAnalyzer::CheckingVisitor::Base;F[I"Object;FI"+CodeAnalyzer::CheckingVisitor::Default;F[I"(CodeAnalyzer::CheckingVisitor::Base;FI"$CodeAnalyzer::AnalyzerException;F[I"Exception;FI"	Sexp;F[I"Object;F:attributes{@
+[I"attr_reader filename;FI"attr_reader line_number;FI"attr_reader message;F:class_methods{	@[
+I"add_callback;FI"callbacks;FI"get_callbacks;FI"interesting_files;FI"interesting_nodes;F@
+[I"new;F@[I"new;F@[I"new;F:encodingIu:Encoding
+UTF-8;F:instance_methods{@[I"add_warning;FI"interesting_files;FI"interesting_nodes;FI"node_end;FI"node_start;FI"parse_file?;FI"warnings;F@
+[	I"filename;FI"line_number;FI"message;FI"	to_s;F@[I"array_size;FI"blank?;FI"hash_size;FI"method_missing;FI"present?;FI"	to_s;F@[I"
+check;F@[I"after_check;FI"warnings;F@[	I"after_check;FI"
+check;FI"check_node;FI"
+parse;FI"	Sexp;F[,I"all;FI"all_conditions;FI"argument;FI"arguments;FI"array_size;FI"array_values;FI"base_class;FI"blank?;FI"block_node;FI"	body;FI"
+check;FI"children;FI"class_name;FI"conditional_statement;FI"const?;FI"exception_classes;FI"exception_variable;FI"grep_node;FI"grep_nodes;FI"grep_nodes_count;FI"hash_keys;FI"hash_size;FI"hash_value;FI"hash_values;FI"left_value;FI"line_number;FI"message;FI"method_name;FI"module_name;FI"new_method;FI"old_method;FI"present?;FI"receiver;FI"recursive_children;FI"remove_line_and_column;FI"right_value;FI"statements;FI"to_object;FI"	to_s;F:modules[I"CodeAnalyzer;FI"$CodeAnalyzer::AnalyzerException;FI"CodeAnalyzer::Checker;FI""CodeAnalyzer::CheckingVisitor;F@I"+CodeAnalyzer::CheckingVisitor::Default;FI")CodeAnalyzer::CheckingVisitor::Plain;FI"CodeAnalyzer::Nil;FI"CodeAnalyzer::Warning;FI"	Sexp;F

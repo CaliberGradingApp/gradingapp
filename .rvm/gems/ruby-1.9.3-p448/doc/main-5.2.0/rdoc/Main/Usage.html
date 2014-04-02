@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Main::Usage - main-5.2.0 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/main/usage.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Array
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-default_synopsis">::default_synopsis</a>
+    
+    <li><a href="#method-c-default_usage">::default_usage</a>
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-author_section">#author_section</a>
+    
+    <li><a href="#method-i-clear">#clear</a>
+    
+    <li><a href="#method-i-description_section">#description_section</a>
+    
+    <li><a href="#method-i-name_section">#name_section</a>
+    
+    <li><a href="#method-i-parameters_section">#parameters_section</a>
+    
+    <li><a href="#method-i-set_defaults-21">#set_defaults!</a>
+    
+    <li><a href="#method-i-synopsis_section">#synopsis_section</a>
+    
+    <li><a href="#method-i-to_s">#to_s</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Main.html">Main</a>
+  
+    <li><a href="../Main/Cast.html">Main::Cast</a>
+  
+    <li><a href="../Main/GetoptLong.html">Main::GetoptLong</a>
+  
+    <li><a href="../Main/GetoptLong/AmbigousOption.html">Main::GetoptLong::AmbigousOption</a>
+  
+    <li><a href="../Main/GetoptLong/InvalidOption.html">Main::GetoptLong::InvalidOption</a>
+  
+    <li><a href="../Main/GetoptLong/MissingArgument.html">Main::GetoptLong::MissingArgument</a>
+  
+    <li><a href="../Main/GetoptLong/NeedlessArgument.html">Main::GetoptLong::NeedlessArgument</a>
+  
+    <li><a href="../Main/Logger.html">Main::Logger</a>
+  
+    <li><a href="../Main/Logger/OnOff.html">Main::Logger::OnOff</a>
+  
+    <li><a href="../Main/Mode.html">Main::Mode</a>
+  
+    <li><a href="../Main/Mode/Ambiguous.html">Main::Mode::Ambiguous</a>
+  
+    <li><a href="../Main/Mode/Duplicate.html">Main::Mode::Duplicate</a>
+  
+    <li><a href="../Main/Mode/Error.html">Main::Mode::Error</a>
+  
+    <li><a href="../Main/Mode/List.html">Main::Mode::List</a>
+  
+    <li><a href="../Main/Parameter.html">Main::Parameter</a>
+  
+    <li><a href="../Main/Parameter/AmbigousOption.html">Main::Parameter::AmbigousOption</a>
+  
+    <li><a href="../Main/Parameter/Argument.html">Main::Parameter::Argument</a>
+  
+    <li><a href="../Main/Parameter/Arity.html">Main::Parameter::Arity</a>
+  
+    <li><a href="../Main/Parameter/DSL.html">Main::Parameter::DSL</a>
+  
+    <li><a href="../Main/Parameter/Environment.html">Main::Parameter::Environment</a>
+  
+    <li><a href="../Main/Parameter/Error.html">Main::Parameter::Error</a>
+  
+    <li><a href="../Main/Parameter/InValid.html">Main::Parameter::InValid</a>
+  
+    <li><a href="../Main/Parameter/InvalidOption.html">Main::Parameter::InvalidOption</a>
+  
+    <li><a href="../Main/Parameter/Keyword.html">Main::Parameter::Keyword</a>
+  
+    <li><a href="../Main/Parameter/List.html">Main::Parameter::List</a>
+  
+    <li><a href="../Main/Parameter/MissingArgument.html">Main::Parameter::MissingArgument</a>
+  
+    <li><a href="../Main/Parameter/NeedlessArgument.html">Main::Parameter::NeedlessArgument</a>
+  
+    <li><a href="../Main/Parameter/NoneSuch.html">Main::Parameter::NoneSuch</a>
+  
+    <li><a href="../Main/Parameter/NotGiven.html">Main::Parameter::NotGiven</a>
+  
+    <li><a href="../Main/Parameter/Option.html">Main::Parameter::Option</a>
+  
+    <li><a href="../Main/Parameter/Table.html">Main::Parameter::Table</a>
+  
+    <li><a href="../Main/Parameter/Table/BoundsCheck.html">Main::Parameter::Table::BoundsCheck</a>
+  
+    <li><a href="../Main/Program.html">Main::Program</a>
+  
+    <li><a href="../Main/Program/ClassMethods.html">Main::Program::ClassMethods</a>
+  
+    <li><a href="../Main/Program/ClassMethods/Factory.html">Main::Program::ClassMethods::Factory</a>
+  
+    <li><a href="../Main/Program/InstanceMethods.html">Main::Program::InstanceMethods</a>
+  
+    <li><a href="../Main/Softspoken.html">Main::Softspoken</a>
+  
+    <li><a href="../Main/Usage.html">Main::Usage</a>
+  
+    <li><a href="../Main/Util.html">Main::Util</a>
+  
+    <li><a href="../Main/Util/ClassMethods.html">Main::Util::ClassMethods</a>
+  
+    <li><a href="../Main/Util/InstanceMethods.html">Main::Util::InstanceMethods</a>
+  
+    <li><a href="../Main/Util/Methods.html">Main::Util::Methods</a>
+  
+    <li><a href="../Kernel.html">Kernel</a>
+  
+    <li><a href="../Object.html">Object</a>
+  
+    <li><a href="../Process.html">Process</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Main::Usage</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-default_synopsis" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">default_synopsis</span><span
+            class="method-args">(main)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="default_synopsis-source">
+            <pre><span class="ruby-comment"># File lib/main/usage.rb, line 25</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">default_synopsis</span> <span class="ruby-identifier">main</span>
+    <span class="ruby-comment"># build up synopsis</span>
+      <span class="ruby-identifier">s</span> = <span class="ruby-node">&quot;#{ main.name }&quot;</span>
+
+    <span class="ruby-comment"># mode info</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">main</span>.<span class="ruby-identifier">mode_name</span> <span class="ruby-operator">!=</span> <span class="ruby-string">'main'</span>
+        <span class="ruby-identifier">s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot; #{ main.fully_qualified_mode.join ' ' }&quot;</span>
+      <span class="ruby-keyword">end</span>
+
+<span class="ruby-comment">#p 'main.breadth_first_modes' =&gt; main.breadth_first_modes.map{|m| m.name}</span>
+<span class="ruby-comment">#p 'main.depth_first_modes' =&gt; main.depth_first_modes.map{|m| m.name}</span>
+<span class="ruby-comment">#p 'main.modes' =&gt; main.modes.map{|m| m.name}</span>
+
+      <span class="ruby-keyword">unless</span> <span class="ruby-identifier">main</span>.<span class="ruby-identifier">breadth_first_modes</span>.<span class="ruby-identifier">empty?</span>
+        <span class="ruby-identifier">modes</span> = <span class="ruby-identifier">main</span>.<span class="ruby-identifier">breadth_first_modes</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">mode</span><span class="ruby-operator">|</span> <span class="ruby-identifier">mode</span>.<span class="ruby-identifier">name</span>}.<span class="ruby-identifier">join</span>(<span class="ruby-string">'|'</span>)
+        <span class="ruby-identifier">s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot; (#{ modes })&quot;</span>
+      <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># argument info</span>
+      <span class="ruby-identifier">main</span>.<span class="ruby-identifier">parameters</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-value">:argument</span>
+          <span class="ruby-keyword">if</span>(<span class="ruby-identifier">p</span>.<span class="ruby-identifier">required?</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">arity</span> <span class="ruby-operator">!=</span> <span class="ruby-value">-1</span>)
+            <span class="ruby-keyword">if</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">arity</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+              <span class="ruby-identifier">p</span>.<span class="ruby-identifier">arity</span>.<span class="ruby-identifier">times</span>{ <span class="ruby-identifier">s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot; #{ p.name }&quot;</span> }
+            <span class="ruby-keyword">else</span>
+              (<span class="ruby-identifier">p</span>.<span class="ruby-identifier">arity</span>.<span class="ruby-identifier">abs</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>).<span class="ruby-identifier">times</span>{ <span class="ruby-identifier">s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot; #{ p.name }&quot;</span> }
+              <span class="ruby-identifier">s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot; #{ p.name }*&quot;</span>
+            <span class="ruby-keyword">end</span>
+          <span class="ruby-keyword">else</span>
+            <span class="ruby-comment">#s &lt;&lt; &quot; [#{ p.name }]&quot;</span>
+            <span class="ruby-keyword">if</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">arity</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+              <span class="ruby-identifier">a</span> = []
+              <span class="ruby-identifier">p</span>.<span class="ruby-identifier">arity</span>.<span class="ruby-identifier">times</span>{ <span class="ruby-identifier">a</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;#{ p.name }&quot;</span> }
+              <span class="ruby-identifier">s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot; [#{ a.join ' ' }]&quot;</span>
+            <span class="ruby-keyword">else</span>
+              <span class="ruby-identifier">a</span> = []
+              (<span class="ruby-identifier">p</span>.<span class="ruby-identifier">arity</span>.<span class="ruby-identifier">abs</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>).<span class="ruby-identifier">times</span>{ <span class="ruby-identifier">a</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;#{ p.name }&quot;</span> }
+              <span class="ruby-identifier">a</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;#{ p.name }*&quot;</span>
+              <span class="ruby-identifier">s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot; [#{ a.join ' ' }]&quot;</span>
+            <span class="ruby-keyword">end</span>
+          <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># keyword info</span>
+      <span class="ruby-identifier">main</span>.<span class="ruby-identifier">parameters</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-value">:keyword</span>
+          <span class="ruby-keyword">if</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">required?</span>
+            <span class="ruby-identifier">s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot; #{ p.name }=#{ p.name }&quot;</span>
+          <span class="ruby-keyword">else</span>
+            <span class="ruby-identifier">s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot; [#{ p.name }=#{ p.name }]&quot;</span>
+          <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># option info</span>
+      <span class="ruby-identifier">n</span> = <span class="ruby-value">0</span>
+      <span class="ruby-identifier">main</span>.<span class="ruby-identifier">parameters</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-value">:option</span>
+          <span class="ruby-keyword">if</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">required?</span>
+            <span class="ruby-keyword">case</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">argument</span>
+              <span class="ruby-keyword">when</span> <span class="ruby-value">:required</span>
+                <span class="ruby-identifier">s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot; --#{ p.name }=#{ p.name }&quot;</span>
+              <span class="ruby-keyword">when</span> <span class="ruby-value">:optional</span>
+                <span class="ruby-identifier">s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot; --#{ p.name }=[#{ p.name }]&quot;</span>
+              <span class="ruby-keyword">else</span>
+                <span class="ruby-identifier">s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot; --#{ p.name }&quot;</span>
+            <span class="ruby-keyword">end</span>
+          <span class="ruby-keyword">else</span>
+            <span class="ruby-identifier">n</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+          <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">n</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+        <span class="ruby-identifier">s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot; [options]+&quot;</span>
+      <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># help info</span>
+<span class="ruby-comment">      if main.modes.size &gt; 0
+        modes = main.modes.keys.join('|')
+        s &lt;&lt; &quot;\n#{ main.name } (#{ modes }) help&quot;
+      end
+      if main.mode_name != 'main'
+        s &lt;&lt; &quot;\n#{ main.name } #{ main.fully_qualified_mode.join ' ' } help&quot;
+      else
+        s &lt;&lt; &quot;\n#{ main.name } help&quot;
+      end
+</span>
+      <span class="ruby-identifier">s</span>
+    <span class="ruby-keyword">end</span></pre>
+          </div><!-- default_synopsis-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- default_synopsis-method -->
+
+    
+      <div id="method-c-default_usage" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">default_usage</span><span
+            class="method-args">(main)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="default_usage-source">
+            <pre><span class="ruby-comment"># File lib/main/usage.rb, line 173</span>
+      <span class="ruby-keyword">def</span> <span class="ruby-identifier">default_usage</span> <span class="ruby-identifier">main</span>
+        <span class="ruby-identifier">usage</span> = <span class="ruby-identifier">new</span>
+        <span class="ruby-identifier">usage</span>.<span class="ruby-identifier">main</span> = <span class="ruby-identifier">main</span>
+<span class="ruby-comment"># HACK</span>
+        <span class="ruby-node">%w( name synopsis description parameters author )</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">usage</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-keyword">nil</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">usage</span>
+      <span class="ruby-keyword">end</span></pre>
+          </div><!-- default_usage-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- default_usage-method -->
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(opts={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/main/usage.rb, line 7</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span> <span class="ruby-identifier">opts</span>={} 
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">fields</span>=[]
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">chunkname</span> = <span class="ruby-identifier">lambda</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">chunkname</span><span class="ruby-operator">|</span> <span class="ruby-identifier">chunkname</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">strip</span>.<span class="ruby-identifier">upcase</span>}
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">upcase</span> = <span class="ruby-keyword">true</span> 
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">eos</span> = <span class="ruby-string">&quot;\n\n&quot;</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:upcase</span>) <span class="ruby-keyword">or</span> <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-string">'upcase'</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">upcase</span> = <span class="ruby-identifier">opts</span>[<span class="ruby-value">:upcase</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">opts</span>[<span class="ruby-string">'optcase'</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-author_section" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">author_section</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="author_section-source">
+            <pre><span class="ruby-comment"># File lib/main/usage.rb, line 168</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">author_section</span>
+  <span class="ruby-identifier">main</span>.<span class="ruby-identifier">author</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- author_section-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- author_section-method -->
+
+    
+      <div id="method-i-clear" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">clear</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="clear-source">
+            <pre><span class="ruby-comment"># File lib/main/usage.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">clear</span>
+  <span class="ruby-keyword">super</span>
+<span class="ruby-keyword">ensure</span>
+  <span class="ruby-identifier">fields</span>.<span class="ruby-identifier">clear</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- clear-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- clear-method -->
+
+    
+      <div id="method-i-description_section" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">description_section</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="description_section-source">
+            <pre><span class="ruby-comment"># File lib/main/usage.rb, line 130</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">description_section</span>
+  <span class="ruby-identifier">main</span>.<span class="ruby-identifier">description</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">main</span>.<span class="ruby-identifier">description?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- description_section-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- description_section-method -->
+
+    
+      <div id="method-i-name_section" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">name_section</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="name_section-source">
+            <pre><span class="ruby-comment"># File lib/main/usage.rb, line 118</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">name_section</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">main</span>.<span class="ruby-identifier">version?</span>
+    <span class="ruby-node">&quot;#{ main.name } v#{ main.version }&quot;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-node">&quot;#{ main.name }&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- name_section-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- name_section-method -->
+
+    
+      <div id="method-i-parameters_section" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">parameters_section</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="parameters_section-source">
+            <pre><span class="ruby-comment"># File lib/main/usage.rb, line 134</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">parameters_section</span>
+  <span class="ruby-identifier">arguments</span> = <span class="ruby-identifier">main</span>.<span class="ruby-identifier">parameters</span>.<span class="ruby-identifier">select</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-value">:argument</span>}
+  <span class="ruby-identifier">keywords</span> = <span class="ruby-identifier">main</span>.<span class="ruby-identifier">parameters</span>.<span class="ruby-identifier">select</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-value">:keyword</span>}
+  <span class="ruby-identifier">options</span> = <span class="ruby-identifier">main</span>.<span class="ruby-identifier">parameters</span>.<span class="ruby-identifier">select</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-value">:option</span>}
+  <span class="ruby-identifier">environment</span> = <span class="ruby-identifier">main</span>.<span class="ruby-identifier">parameters</span>.<span class="ruby-identifier">select</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-value">:environment</span>}
+
+  <span class="ruby-identifier">help</span>, <span class="ruby-identifier">nothelp</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">partition</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-string">'help'</span>}
+  <span class="ruby-identifier">options</span> = <span class="ruby-identifier">nothelp</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">help</span>
+
+  <span class="ruby-identifier">parameters</span> = <span class="ruby-identifier">arguments</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">keywords</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">options</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">environment</span>
+
+  <span class="ruby-identifier">s</span> =
+    <span class="ruby-identifier">parameters</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">ps</span> = <span class="ruby-string">''</span>
+      <span class="ruby-identifier">ps</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Util</span>.<span class="ruby-identifier">columnize</span>(<span class="ruby-node">&quot;#{ p.synopsis }&quot;</span>, <span class="ruby-value">:indent</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">2</span>, <span class="ruby-value">:width</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">78</span>)
+      <span class="ruby-comment">#ps &lt;&lt; Util.columnize(&quot;* #{ p.synopsis }&quot;, :indent =&gt; 2, :width =&gt; 78)</span>
+      <span class="ruby-comment">#ps &lt;&lt; &quot;\n&quot;</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">description?</span>
+        <span class="ruby-identifier">ps</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;\n&quot;</span>
+        <span class="ruby-identifier">ps</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Util</span>.<span class="ruby-identifier">columnize</span>(<span class="ruby-node">&quot;#{ p.description }&quot;</span>, <span class="ruby-value">:indent</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">6</span>, <span class="ruby-value">:width</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">78</span>)
+        <span class="ruby-comment">#ps &lt;&lt; Util.columnize(p.description, :indent =&gt; 6, :width =&gt; 78)</span>
+        <span class="ruby-comment">#ps &lt;&lt; &quot;\n&quot;</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-comment">#ps &lt;&lt; &quot;\n&quot;</span>
+      <span class="ruby-keyword">unless</span>(<span class="ruby-identifier">p</span>.<span class="ruby-identifier">examples</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">examples</span>.<span class="ruby-identifier">empty?</span>)
+        <span class="ruby-identifier">p</span>.<span class="ruby-identifier">examples</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">example</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">ps</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;\n&quot;</span>
+          <span class="ruby-identifier">ps</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Util</span>.<span class="ruby-identifier">columnize</span>(<span class="ruby-node">&quot;#{ example }&quot;</span>, <span class="ruby-value">:indent</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">8</span>, <span class="ruby-value">:width</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">78</span>)
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">ps</span>
+    <span class="ruby-keyword">end</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;\n&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- parameters_section-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- parameters_section-method -->
+
+    
+      <div id="method-i-set_defaults-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">set_defaults!</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="set_defaults-21-source">
+            <pre><span class="ruby-comment"># File lib/main/usage.rb, line 188</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">set_defaults!</span>
+  <span class="ruby-identifier">usage</span> = <span class="ruby-keyword">self</span>
+  <span class="ruby-identifier">usage</span>[<span class="ruby-string">'name'</span>]        <span class="ruby-operator">||=</span> <span class="ruby-identifier">name_section</span>
+  <span class="ruby-identifier">usage</span>[<span class="ruby-string">'synopsis'</span>]    <span class="ruby-operator">||=</span> <span class="ruby-identifier">synopsis_section</span>
+  <span class="ruby-identifier">usage</span>[<span class="ruby-string">'description'</span>] <span class="ruby-operator">||=</span> <span class="ruby-identifier">description_section</span>
+  <span class="ruby-identifier">usage</span>[<span class="ruby-string">'parameters'</span>]  <span class="ruby-operator">||=</span> <span class="ruby-identifier">parameters_section</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">main</span>.<span class="ruby-identifier">parameters</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-identifier">usage</span>[<span class="ruby-string">'author'</span>]      <span class="ruby-operator">||=</span> <span class="ruby-identifier">author_section</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">main</span>.<span class="ruby-identifier">author?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- set_defaults-21-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- set_defaults-21-method -->
+
+    
+      <div id="method-i-synopsis_section" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">synopsis_section</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="synopsis_section-source">
+            <pre><span class="ruby-comment"># File lib/main/usage.rb, line 126</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">synopsis_section</span>
+  <span class="ruby-identifier">main</span>.<span class="ruby-identifier">synopsis</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- synopsis_section-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- synopsis_section-method -->
+
+    
+      <div id="method-i-to_s" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_s</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="to_s-source">
+            <pre><span class="ruby-comment"># File lib/main/usage.rb, line 197</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>
+  <span class="ruby-identifier">set_defaults!</span>
+  <span class="ruby-identifier">s</span> = <span class="ruby-string">''</span> 
+  <span class="ruby-identifier">each_pair</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">next</span> <span class="ruby-keyword">unless</span>(<span class="ruby-identifier">key</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">value</span>)
+    <span class="ruby-identifier">up</span>, <span class="ruby-identifier">down</span> = <span class="ruby-identifier">key</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">upcase</span>, <span class="ruby-identifier">key</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">downcase</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>
+      <span class="ruby-identifier">s</span> <span class="ruby-operator">&lt;&lt;</span> (<span class="ruby-identifier">upcase</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">up</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">down</span>) <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;\n&quot;</span> 
+      <span class="ruby-identifier">s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Util</span>.<span class="ruby-identifier">indent</span>(<span class="ruby-constant">Util</span>.<span class="ruby-identifier">unindent</span>(<span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_s</span>), <span class="ruby-value">2</span>)
+      <span class="ruby-identifier">s</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">eos</span> 
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">s</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- to_s-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- to_s-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class OmniAuth::FailureEndpoint - omniauth-1.1.4 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/omniauth/failure_endpoint.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-call">::call</a>
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-call">#call</a>
+    
+    <li><a href="#method-i-origin_query_param">#origin_query_param</a>
+    
+    <li><a href="#method-i-raise_out-21">#raise_out!</a>
+    
+    <li><a href="#method-i-redirect_to_failure">#redirect_to_failure</a>
+    
+    <li><a href="#method-i-strategy_name_query_param">#strategy_name_query_param</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../OmniAuth.html">OmniAuth</a>
+  
+    <li><a href="../OmniAuth/AuthHash.html">OmniAuth::AuthHash</a>
+  
+    <li><a href="../OmniAuth/AuthHash/InfoHash.html">OmniAuth::AuthHash::InfoHash</a>
+  
+    <li><a href="../OmniAuth/Builder.html">OmniAuth::Builder</a>
+  
+    <li><a href="../OmniAuth/Configuration.html">OmniAuth::Configuration</a>
+  
+    <li><a href="../OmniAuth/Error.html">OmniAuth::Error</a>
+  
+    <li><a href="../OmniAuth/FailureEndpoint.html">OmniAuth::FailureEndpoint</a>
+  
+    <li><a href="../OmniAuth/Form.html">OmniAuth::Form</a>
+  
+    <li><a href="../OmniAuth/NoSessionError.html">OmniAuth::NoSessionError</a>
+  
+    <li><a href="../OmniAuth/Strategies.html">OmniAuth::Strategies</a>
+  
+    <li><a href="../OmniAuth/Strategies/Developer.html">OmniAuth::Strategies::Developer</a>
+  
+    <li><a href="../OmniAuth/Strategy.html">OmniAuth::Strategy</a>
+  
+    <li><a href="../OmniAuth/Strategy/ClassMethods.html">OmniAuth::Strategy::ClassMethods</a>
+  
+    <li><a href="../OmniAuth/Strategy/Options.html">OmniAuth::Strategy::Options</a>
+  
+    <li><a href="../OmniAuth/Test.html">OmniAuth::Test</a>
+  
+    <li><a href="../OmniAuth/Test/PhonySession.html">OmniAuth::Test::PhonySession</a>
+  
+    <li><a href="../OmniAuth/Test/StrategyMacros.html">OmniAuth::Test::StrategyMacros</a>
+  
+    <li><a href="../OmniAuth/Test/StrategyTestCase.html">OmniAuth::Test::StrategyTestCase</a>
+  
+    <li><a href="../OmniAuth/Utils.html">OmniAuth::Utils</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class OmniAuth::FailureEndpoint</h1>
+
+  <div id="description" class="description">
+    
+<p>This simple Rack endpoint that serves as the default ‘failure’ mechanism
+for <a href="../OmniAuth.html">OmniAuth</a>. If a strategy fails for any
+reason this endpoint will be invoked. The default behavior is to redirect
+to `/auth/failure` except in the case of a development `RACK_ENV`, in which
+case an exception will be raised.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-env" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">env</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-call" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">call</span><span
+            class="method-args">(env)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="call-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/failure_endpoint.rb, line 11</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">env</span>)
+  <span class="ruby-identifier">new</span>(<span class="ruby-identifier">env</span>).<span class="ruby-identifier">call</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- call-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- call-method -->
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(env)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/failure_endpoint.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">env</span>)
+  <span class="ruby-ivar">@env</span> = <span class="ruby-identifier">env</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-call" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">call</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="call-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/failure_endpoint.rb, line 19</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">call</span>
+  <span class="ruby-identifier">raise_out!</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">ENV</span>[<span class="ruby-string">'RACK_ENV'</span>].<span class="ruby-identifier">to_s</span> <span class="ruby-operator">==</span> <span class="ruby-string">'development'</span>
+  <span class="ruby-identifier">redirect_to_failure</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- call-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- call-method -->
+
+    
+      <div id="method-i-origin_query_param" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">origin_query_param</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="origin_query_param-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/failure_endpoint.rb, line 39</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">origin_query_param</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">env</span>[<span class="ruby-string">'omniauth.origin'</span>]
+  <span class="ruby-node">&quot;&amp;origin=#{Rack::Utils.escape(env['omniauth.origin'])}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- origin_query_param-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- origin_query_param-method -->
+
+    
+      <div id="method-i-raise_out-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">raise_out!</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="raise_out-21-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/failure_endpoint.rb, line 24</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">raise_out!</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-identifier">env</span>[<span class="ruby-string">'omniauth.error'</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">OmniAuth</span><span class="ruby-operator">::</span><span class="ruby-constant">Error</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">env</span>[<span class="ruby-string">'omniauth.error.type'</span>])
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- raise_out-21-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- raise_out-21-method -->
+
+    
+      <div id="method-i-redirect_to_failure" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">redirect_to_failure</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="redirect_to_failure-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/failure_endpoint.rb, line 28</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">redirect_to_failure</span>
+  <span class="ruby-identifier">message_key</span> = <span class="ruby-identifier">env</span>[<span class="ruby-string">'omniauth.error.type'</span>]
+  <span class="ruby-identifier">new_path</span> = <span class="ruby-node">&quot;#{env['SCRIPT_NAME']}#{OmniAuth.config.path_prefix}/failure?message=#{message_key}#{origin_query_param}#{strategy_name_query_param}&quot;</span>
+  <span class="ruby-constant">Rack</span><span class="ruby-operator">::</span><span class="ruby-constant">Response</span>.<span class="ruby-identifier">new</span>([<span class="ruby-string">&quot;302 Moved&quot;</span>], <span class="ruby-value">302</span>, <span class="ruby-string">'Location'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">new_path</span>).<span class="ruby-identifier">finish</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- redirect_to_failure-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- redirect_to_failure-method -->
+
+    
+      <div id="method-i-strategy_name_query_param" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">strategy_name_query_param</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="strategy_name_query_param-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/failure_endpoint.rb, line 34</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">strategy_name_query_param</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">env</span>[<span class="ruby-string">'omniauth.error.strategy'</span>]
+  <span class="ruby-node">&quot;&amp;strategy=#{env['omniauth.error.strategy'].name}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- strategy_name_query_param-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- strategy_name_query_param-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

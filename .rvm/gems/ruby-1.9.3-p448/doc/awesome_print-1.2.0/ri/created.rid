@@ -1,0 +1,22 @@
+Thu, 07 Nov 2013 23:10:45 -0400
+lib/awesome_print.rb	Thu, 07 Nov 2013 23:09:40 -0400
+lib/ap.rb	Thu, 07 Nov 2013 23:09:40 -0400
+lib/awesome_print/core_ext/class.rb	Thu, 07 Nov 2013 23:09:40 -0400
+lib/awesome_print/core_ext/object.rb	Thu, 07 Nov 2013 23:09:40 -0400
+lib/awesome_print/core_ext/kernel.rb	Thu, 07 Nov 2013 23:09:40 -0400
+lib/awesome_print/core_ext/method.rb	Thu, 07 Nov 2013 23:09:40 -0400
+lib/awesome_print/core_ext/logger.rb	Thu, 07 Nov 2013 23:09:40 -0400
+lib/awesome_print/core_ext/string.rb	Thu, 07 Nov 2013 23:09:40 -0400
+lib/awesome_print/core_ext/array.rb	Thu, 07 Nov 2013 23:09:40 -0400
+lib/awesome_print/inspector.rb	Thu, 07 Nov 2013 23:09:40 -0400
+lib/awesome_print/version.rb	Thu, 07 Nov 2013 23:09:40 -0400
+lib/awesome_print/ext/ripple.rb	Thu, 07 Nov 2013 23:09:40 -0400
+lib/awesome_print/ext/no_brainer.rb	Thu, 07 Nov 2013 23:09:40 -0400
+lib/awesome_print/ext/mongo_mapper.rb	Thu, 07 Nov 2013 23:09:40 -0400
+lib/awesome_print/ext/sequel.rb	Thu, 07 Nov 2013 23:09:40 -0400
+lib/awesome_print/ext/active_support.rb	Thu, 07 Nov 2013 23:09:40 -0400
+lib/awesome_print/ext/active_record.rb	Thu, 07 Nov 2013 23:09:40 -0400
+lib/awesome_print/ext/action_view.rb	Thu, 07 Nov 2013 23:09:40 -0400
+lib/awesome_print/ext/nokogiri.rb	Thu, 07 Nov 2013 23:09:40 -0400
+lib/awesome_print/ext/mongoid.rb	Thu, 07 Nov 2013 23:09:40 -0400
+lib/awesome_print/formatter.rb	Thu, 07 Nov 2013 23:09:40 -0400

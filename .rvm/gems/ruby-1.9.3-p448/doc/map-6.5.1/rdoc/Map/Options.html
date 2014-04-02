@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module Map::Options - map-6.5.1 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/map/options.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-for">::for</a>
+    
+    <li><a href="#method-c-parse">::parse</a>
+    
+    <li><a href="#method-i-del_opt">#del_opt</a>
+    
+    <li><a href="#method-i-del_opts">#del_opts</a>
+    
+    <li><a href="#method-i-get_opt">#get_opt</a>
+    
+    <li><a href="#method-i-get_opts">#get_opts</a>
+    
+    <li><a href="#method-i-has_opt">#has_opt</a>
+    
+    <li><a href="#method-i-has_opts">#has_opts</a>
+    
+    <li><a href="#method-i-pop">#pop</a>
+    
+    <li><a href="#method-i-pop-21">#pop!</a>
+    
+    <li><a href="#method-i-popped-3F">#popped?</a>
+    
+    <li><a href="#method-i-set_opt">#set_opt</a>
+    
+    <li><a href="#method-i-set_opts">#set_opts</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Map.html">Map</a>
+  
+    <li><a href="../Map/Arguments.html">Map::Arguments</a>
+  
+    <li><a href="../Map/Integrations.html">Map::Integrations</a>
+  
+    <li><a href="../Map/Integrations/ActiveRecord.html">Map::Integrations::ActiveRecord</a>
+  
+    <li><a href="../Map/Integrations/ActiveRecord/ClassMethods.html">Map::Integrations::ActiveRecord::ClassMethods</a>
+  
+    <li><a href="../Map/Options.html">Map::Options</a>
+  
+    <li><a href="../Map/Param.html">Map::Param</a>
+  
+    <li><a href="../Map/Struct.html">Map::Struct</a>
+  
+    <li><a href="../Kernel.html">Kernel</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module Map::Options</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-arguments" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">arguments</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-for" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">for</span><span
+            class="method-args">(arg)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="for-source">
+            <pre><span class="ruby-comment"># File lib/map/options.rb, line 5</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">for</span>(<span class="ruby-identifier">arg</span>)
+  <span class="ruby-identifier">options</span> =
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">arg</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-constant">Hash</span>
+        <span class="ruby-identifier">arg</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-constant">Array</span>
+        <span class="ruby-identifier">parse</span>(<span class="ruby-identifier">arg</span>)
+      <span class="ruby-keyword">when</span> <span class="ruby-constant">String</span>, <span class="ruby-constant">Symbol</span>
+        {<span class="ruby-identifier">arg</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>}
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">raise</span>(<span class="ruby-constant">ArgumentError</span>, <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">inspect</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:to_hash</span>)
+        <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">to_hash</span>
+    <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Options</span>)
+    <span class="ruby-identifier">options</span> = <span class="ruby-constant">Map</span>.<span class="ruby-identifier">for</span>(<span class="ruby-identifier">options</span>)
+    <span class="ruby-identifier">options</span>.<span class="ruby-identifier">extend</span>(<span class="ruby-constant">Options</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">raise</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Map</span>)
+
+  <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- for-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- for-method -->
+
+    
+      <div id="method-c-parse" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">parse</span><span
+            class="method-args">(arg)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="parse-source">
+            <pre><span class="ruby-comment"># File lib/map/options.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">parse</span>(<span class="ruby-identifier">arg</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">arg</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">Array</span>
+      <span class="ruby-identifier">arguments</span> = <span class="ruby-identifier">arg</span>
+      <span class="ruby-identifier">arguments</span>.<span class="ruby-identifier">extend</span>(<span class="ruby-constant">Arguments</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">arguments</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Arguments</span>)
+      <span class="ruby-identifier">options</span> = <span class="ruby-identifier">arguments</span>.<span class="ruby-identifier">options</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">Hash</span>
+      <span class="ruby-identifier">options</span> = <span class="ruby-identifier">arg</span>
+      <span class="ruby-identifier">options</span> = <span class="ruby-constant">Options</span>.<span class="ruby-identifier">for</span>(<span class="ruby-identifier">options</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">raise</span>(<span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;`arg` should be an Array or Hash&quot;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- parse-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- parse-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-del_opt" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">del_opt</span><span
+            class="method-args">(opts)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="del_opt-source">
+            <pre><span class="ruby-comment"># File lib/map/options.rb, line 98</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">del_opt</span>(<span class="ruby-identifier">opts</span>)
+  [ <span class="ruby-identifier">opts</span> ].<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">opt</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">delete</span>(<span class="ruby-identifier">opt</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">opt</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- del_opt-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- del_opt-method -->
+
+    
+      <div id="method-i-del_opts" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">del_opts</span><span
+            class="method-args">(*opts)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="del_opts-source">
+            <pre><span class="ruby-comment"># File lib/map/options.rb, line 106</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">del_opts</span>(*<span class="ruby-identifier">opts</span>)
+  <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">opt</span><span class="ruby-operator">|</span> <span class="ruby-identifier">delopt</span>(<span class="ruby-identifier">opt</span>)}
+  <span class="ruby-identifier">opts</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- del_opts-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- del_opts-method -->
+
+    
+      <div id="method-i-get_opt" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_opt</span><span
+            class="method-args">(opts, options = {})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="get_opt-source">
+            <pre><span class="ruby-comment"># File lib/map/options.rb, line 67</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_opt</span>(<span class="ruby-identifier">opts</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">options</span> = <span class="ruby-constant">Map</span>.<span class="ruby-identifier">for</span>(<span class="ruby-identifier">options</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">options</span> <span class="ruby-operator">:</span> {<span class="ruby-value">:default</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>})
+  <span class="ruby-identifier">default</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:default</span>]
+  [ <span class="ruby-identifier">opts</span> ].<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">opt</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">opt</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">opt</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">default</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_opt-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_opt-method -->
+
+    
+      <div id="method-i-get_opts" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_opts</span><span
+            class="method-args">(*opts)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="get_opts-source">
+            <pre><span class="ruby-comment"># File lib/map/options.rb, line 77</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_opts</span>(*<span class="ruby-identifier">opts</span>)
+  <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">opt</span><span class="ruby-operator">|</span> <span class="ruby-identifier">getopt</span>(<span class="ruby-identifier">opt</span>)}
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_opts-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_opts-method -->
+
+    
+      <div id="method-i-has_opt" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">has_opt</span><span
+            class="method-args">(opts)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="has_opt-source">
+            <pre><span class="ruby-comment"># File lib/map/options.rb, line 82</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">has_opt</span>(<span class="ruby-identifier">opts</span>)
+  [ <span class="ruby-identifier">opts</span> ].<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">opt</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">opt</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- has_opt-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- has_opt-method -->
+
+    
+      <div id="method-i-has_opts" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">has_opts</span><span
+            class="method-args">(*opts)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="has_opts-source">
+            <pre><span class="ruby-comment"># File lib/map/options.rb, line 92</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">has_opts</span>(*<span class="ruby-identifier">opts</span>)
+  <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">all?</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">opt</span><span class="ruby-operator">|</span> <span class="ruby-identifier">hasopt</span>(<span class="ruby-identifier">opt</span>)}
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- has_opts-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- has_opts-method -->
+
+    
+      <div id="method-i-pop" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pop</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="pop-source">
+            <pre><span class="ruby-comment"># File lib/map/options.rb, line 46</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">pop</span>
+  <span class="ruby-identifier">arguments</span>.<span class="ruby-identifier">pop</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">arguments</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">object_id</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">object_id</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- pop-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- pop-method -->
+
+    
+      <div id="method-i-pop-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pop!</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="pop-21-source">
+            <pre><span class="ruby-comment"># File lib/map/options.rb, line 55</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">pop!</span>
+  <span class="ruby-identifier">arguments</span>.<span class="ruby-identifier">pop</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">arguments</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">object_id</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">object_id</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- pop-21-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- pop-21-method -->
+
+    
+      <div id="method-i-popped-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">popped?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="popped-3F-source">
+            <pre><span class="ruby-comment"># File lib/map/options.rb, line 51</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">popped?</span>
+  <span class="ruby-operator">!</span>(<span class="ruby-identifier">arguments</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">object_id</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">object_id</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- popped-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- popped-3F-method -->
+
+    
+      <div id="method-i-set_opt" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">set_opt</span><span
+            class="method-args">(opts, value = nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="set_opt-source">
+            <pre><span class="ruby-comment"># File lib/map/options.rb, line 113</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">set_opt</span>(<span class="ruby-identifier">opts</span>, <span class="ruby-identifier">value</span> = <span class="ruby-keyword">nil</span>)
+  [ <span class="ruby-identifier">opts</span> ].<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">opt</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>[<span class="ruby-identifier">opt</span>]=<span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">value</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- set_opt-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- set_opt-method -->
+
+    
+      <div id="method-i-set_opts" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">set_opts</span><span
+            class="method-args">(opts)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="set_opts-source">
+            <pre><span class="ruby-comment"># File lib/map/options.rb, line 122</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">set_opts</span>(<span class="ruby-identifier">opts</span>)
+  <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">each</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span> <span class="ruby-identifier">setopt</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span>)}
+  <span class="ruby-identifier">opts</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- set_opts-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- set_opts-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

@@ -1,0 +1,13 @@
+Thu, 07 Nov 2013 23:14:23 -0400
+lib/omniauth/strategies/developer.rb	Thu, 07 Nov 2013 23:14:20 -0400
+lib/omniauth/test/strategy_test_case.rb	Thu, 07 Nov 2013 23:14:20 -0400
+lib/omniauth/test/phony_session.rb	Thu, 07 Nov 2013 23:14:20 -0400
+lib/omniauth/test/strategy_macros.rb	Thu, 07 Nov 2013 23:14:20 -0400
+lib/omniauth/auth_hash.rb	Thu, 07 Nov 2013 23:14:20 -0400
+lib/omniauth/builder.rb	Thu, 07 Nov 2013 23:14:20 -0400
+lib/omniauth/test.rb	Thu, 07 Nov 2013 23:14:20 -0400
+lib/omniauth/form.rb	Thu, 07 Nov 2013 23:14:20 -0400
+lib/omniauth/version.rb	Thu, 07 Nov 2013 23:14:20 -0400
+lib/omniauth/failure_endpoint.rb	Thu, 07 Nov 2013 23:14:20 -0400
+lib/omniauth/strategy.rb	Thu, 07 Nov 2013 23:14:20 -0400
+lib/omniauth.rb	Thu, 07 Nov 2013 23:14:20 -0400

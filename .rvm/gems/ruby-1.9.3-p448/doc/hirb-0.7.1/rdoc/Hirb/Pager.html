@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Hirb::Pager - hirb-0.7.1 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/hirb/pager.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="../Object.html">Object</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-command_pager">::command_pager</a>
+    
+    <li><a href="#method-c-default_pager">::default_pager</a>
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-activated_by-3F">#activated_by?</a>
+    
+    <li><a href="#method-i-page">#page</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../LICENSE_txt.html">LICENSE</a>
+  
+    <li class="file"><a href="../README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Hirb.html">Hirb</a>
+  
+    <li><a href="../Hirb/Console.html">Hirb::Console</a>
+  
+    <li><a href="../Hirb/DynamicView.html">Hirb::DynamicView</a>
+  
+    <li><a href="../Hirb/Formatter.html">Hirb::Formatter</a>
+  
+    <li><a href="../Hirb/Helpers.html">Hirb::Helpers</a>
+  
+    <li><a href="../Hirb/Helpers/AutoTable.html">Hirb::Helpers::AutoTable</a>
+  
+    <li><a href="../Hirb/Helpers/MarkdownTable.html">Hirb::Helpers::MarkdownTable</a>
+  
+    <li><a href="../Hirb/Helpers/ObjectTable.html">Hirb::Helpers::ObjectTable</a>
+  
+    <li><a href="../Hirb/Helpers/ParentChildTree.html">Hirb::Helpers::ParentChildTree</a>
+  
+    <li><a href="../Hirb/Helpers/TabTable.html">Hirb::Helpers::TabTable</a>
+  
+    <li><a href="../Hirb/Helpers/Table.html">Hirb::Helpers::Table</a>
+  
+    <li><a href="../Hirb/Helpers/Table/Filters.html">Hirb::Helpers::Table::Filters</a>
+  
+    <li><a href="../Hirb/Helpers/Table/Resizer.html">Hirb::Helpers::Table::Resizer</a>
+  
+    <li><a href="../Hirb/Helpers/Table/TooManyFieldsForWidthError.html">Hirb::Helpers::Table::TooManyFieldsForWidthError</a>
+  
+    <li><a href="../Hirb/Helpers/Tree.html">Hirb::Helpers::Tree</a>
+  
+    <li><a href="../Hirb/Helpers/Tree/Node.html">Hirb::Helpers::Tree::Node</a>
+  
+    <li><a href="../Hirb/Helpers/Tree/Node/MissingLevelError.html">Hirb::Helpers::Tree::Node::MissingLevelError</a>
+  
+    <li><a href="../Hirb/Helpers/Tree/Node/MissingValueError.html">Hirb::Helpers::Tree::Node::MissingValueError</a>
+  
+    <li><a href="../Hirb/Helpers/Tree/ParentlessNodeError.html">Hirb::Helpers::Tree::ParentlessNodeError</a>
+  
+    <li><a href="../Hirb/Helpers/UnicodeTable.html">Hirb::Helpers::UnicodeTable</a>
+  
+    <li><a href="../Hirb/Helpers/VerticalTable.html">Hirb::Helpers::VerticalTable</a>
+  
+    <li><a href="../Hirb/Menu.html">Hirb::Menu</a>
+  
+    <li><a href="../Hirb/Menu/Error.html">Hirb::Menu::Error</a>
+  
+    <li><a href="../Hirb/ObjectMethods.html">Hirb::ObjectMethods</a>
+  
+    <li><a href="../Hirb/Pager.html">Hirb::Pager</a>
+  
+    <li><a href="../Hirb/String.html">Hirb::String</a>
+  
+    <li><a href="../Hirb/Util.html">Hirb::Util</a>
+  
+    <li><a href="../Hirb/View.html">Hirb::View</a>
+  
+    <li><a href="../Hirb/Views.html">Hirb::Views</a>
+  
+    <li><a href="../Ripl.html">Ripl</a>
+  
+    <li><a href="../Ripl/Hirb.html">Ripl::Hirb</a>
+  
+    <li><a href="../Object.html">Object</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Hirb::Pager</h1>
+
+  <div id="description" class="description">
+    
+<p>This class provides class methods for paging and an object which can
+conditionally page given a terminal size that is exceeded.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-height" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">height</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-width" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">width</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-command_pager" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">command_pager</span><span
+            class="method-args">(output, options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Pages using a configured or detected shell command.</p>
+          
+
+          
+          <div class="method-source-code" id="command_pager-source">
+            <pre><span class="ruby-comment"># File lib/hirb/pager.rb, line 6</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">command_pager</span>(<span class="ruby-identifier">output</span>, <span class="ruby-identifier">options</span>={})
+  <span class="ruby-identifier">basic_pager</span>(<span class="ruby-identifier">output</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">valid_pager_command?</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:pager_command</span>])
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- command_pager-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- command_pager-method -->
+
+    
+      <div id="method-c-default_pager" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">default_pager</span><span
+            class="method-args">(output, options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Pages with a ruby-only pager which either pages or quits.</p>
+          
+
+          
+          <div class="method-source-code" id="default_pager-source">
+            <pre><span class="ruby-comment"># File lib/hirb/pager.rb, line 19</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">default_pager</span>(<span class="ruby-identifier">output</span>, <span class="ruby-identifier">options</span>={})
+  <span class="ruby-identifier">pager</span> = <span class="ruby-identifier">new</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:width</span>], <span class="ruby-identifier">options</span>[<span class="ruby-value">:height</span>])
+  <span class="ruby-keyword">while</span> <span class="ruby-identifier">pager</span>.<span class="ruby-identifier">activated_by?</span>(<span class="ruby-identifier">output</span>, <span class="ruby-identifier">options</span>[<span class="ruby-value">:inspect</span>])
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">pager</span>.<span class="ruby-identifier">slice!</span>(<span class="ruby-identifier">output</span>, <span class="ruby-identifier">options</span>[<span class="ruby-value">:inspect</span>])
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">continue_paging?</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-identifier">output</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;=== Pager finished. ===&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- default_pager-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- default_pager-method -->
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(width, height, options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/hirb/pager.rb, line 58</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span>, <span class="ruby-identifier">options</span>={})
+  <span class="ruby-identifier">resize</span>(<span class="ruby-identifier">width</span>, <span class="ruby-identifier">height</span>)
+  <span class="ruby-ivar">@pager_command</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:pager_command</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:pager_command</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-activated_by-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">activated_by?</span><span
+            class="method-args">(string_to_page, inspect_mode=false)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Determines if string should be paged based on configured width and height.</p>
+          
+
+          
+          <div class="method-source-code" id="activated_by-3F-source">
+            <pre><span class="ruby-comment"># File lib/hirb/pager.rb, line 87</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">activated_by?</span>(<span class="ruby-identifier">string_to_page</span>, <span class="ruby-identifier">inspect_mode</span>=<span class="ruby-keyword">false</span>)
+  <span class="ruby-identifier">inspect_mode</span> <span class="ruby-operator">?</span> (<span class="ruby-constant">String</span>.<span class="ruby-identifier">size</span>(<span class="ruby-identifier">string_to_page</span>) <span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@height</span> * <span class="ruby-ivar">@width</span>) <span class="ruby-operator">:</span> (<span class="ruby-identifier">string_to_page</span>.<span class="ruby-identifier">count</span>(<span class="ruby-string">&quot;\n&quot;</span>) <span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@height</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- activated_by-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- activated_by-3F-method -->
+
+    
+      <div id="method-i-page" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">page</span><span
+            class="method-args">(string, inspect_mode)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Pages given string using configured pager.</p>
+          
+
+          
+          <div class="method-source-code" id="page-source">
+            <pre><span class="ruby-comment"># File lib/hirb/pager.rb, line 64</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">page</span>(<span class="ruby-identifier">string</span>, <span class="ruby-identifier">inspect_mode</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">valid_pager_command?</span>(<span class="ruby-ivar">@pager_command</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">command_pager</span>(<span class="ruby-identifier">string</span>, <span class="ruby-value">:pager_command=</span><span class="ruby-operator">&gt;</span><span class="ruby-ivar">@pager_command</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">default_pager</span>(<span class="ruby-identifier">string</span>, <span class="ruby-value">:width=</span><span class="ruby-operator">&gt;</span><span class="ruby-ivar">@width</span>, <span class="ruby-value">:height=</span><span class="ruby-operator">&gt;</span><span class="ruby-ivar">@height</span>, <span class="ruby-value">:inspect=</span><span class="ruby-operator">&gt;</span><span class="ruby-identifier">inspect_mode</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- page-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- page-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

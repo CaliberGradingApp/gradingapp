@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Main::Program::ClassMethods::Factory - main-5.2.0 Documentation</title>
+
+<link type="text/css" media="screen" href="../../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../../index.html">Home</a>
+    <a href="../../../table_of_contents.html#classes">Classes</a>
+    <a href="../../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/main/program/class_methods.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="../../../Object.html">Object</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-build">#build</a>
+    
+    <li><a href="#method-i-to_proc">#to_proc</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../../Main.html">Main</a>
+  
+    <li><a href="../../../Main/Cast.html">Main::Cast</a>
+  
+    <li><a href="../../../Main/GetoptLong.html">Main::GetoptLong</a>
+  
+    <li><a href="../../../Main/GetoptLong/AmbigousOption.html">Main::GetoptLong::AmbigousOption</a>
+  
+    <li><a href="../../../Main/GetoptLong/InvalidOption.html">Main::GetoptLong::InvalidOption</a>
+  
+    <li><a href="../../../Main/GetoptLong/MissingArgument.html">Main::GetoptLong::MissingArgument</a>
+  
+    <li><a href="../../../Main/GetoptLong/NeedlessArgument.html">Main::GetoptLong::NeedlessArgument</a>
+  
+    <li><a href="../../../Main/Logger.html">Main::Logger</a>
+  
+    <li><a href="../../../Main/Logger/OnOff.html">Main::Logger::OnOff</a>
+  
+    <li><a href="../../../Main/Mode.html">Main::Mode</a>
+  
+    <li><a href="../../../Main/Mode/Ambiguous.html">Main::Mode::Ambiguous</a>
+  
+    <li><a href="../../../Main/Mode/Duplicate.html">Main::Mode::Duplicate</a>
+  
+    <li><a href="../../../Main/Mode/Error.html">Main::Mode::Error</a>
+  
+    <li><a href="../../../Main/Mode/List.html">Main::Mode::List</a>
+  
+    <li><a href="../../../Main/Parameter.html">Main::Parameter</a>
+  
+    <li><a href="../../../Main/Parameter/AmbigousOption.html">Main::Parameter::AmbigousOption</a>
+  
+    <li><a href="../../../Main/Parameter/Argument.html">Main::Parameter::Argument</a>
+  
+    <li><a href="../../../Main/Parameter/Arity.html">Main::Parameter::Arity</a>
+  
+    <li><a href="../../../Main/Parameter/DSL.html">Main::Parameter::DSL</a>
+  
+    <li><a href="../../../Main/Parameter/Environment.html">Main::Parameter::Environment</a>
+  
+    <li><a href="../../../Main/Parameter/Error.html">Main::Parameter::Error</a>
+  
+    <li><a href="../../../Main/Parameter/InValid.html">Main::Parameter::InValid</a>
+  
+    <li><a href="../../../Main/Parameter/InvalidOption.html">Main::Parameter::InvalidOption</a>
+  
+    <li><a href="../../../Main/Parameter/Keyword.html">Main::Parameter::Keyword</a>
+  
+    <li><a href="../../../Main/Parameter/List.html">Main::Parameter::List</a>
+  
+    <li><a href="../../../Main/Parameter/MissingArgument.html">Main::Parameter::MissingArgument</a>
+  
+    <li><a href="../../../Main/Parameter/NeedlessArgument.html">Main::Parameter::NeedlessArgument</a>
+  
+    <li><a href="../../../Main/Parameter/NoneSuch.html">Main::Parameter::NoneSuch</a>
+  
+    <li><a href="../../../Main/Parameter/NotGiven.html">Main::Parameter::NotGiven</a>
+  
+    <li><a href="../../../Main/Parameter/Option.html">Main::Parameter::Option</a>
+  
+    <li><a href="../../../Main/Parameter/Table.html">Main::Parameter::Table</a>
+  
+    <li><a href="../../../Main/Parameter/Table/BoundsCheck.html">Main::Parameter::Table::BoundsCheck</a>
+  
+    <li><a href="../../../Main/Program.html">Main::Program</a>
+  
+    <li><a href="../../../Main/Program/ClassMethods.html">Main::Program::ClassMethods</a>
+  
+    <li><a href="../../../Main/Program/ClassMethods/Factory.html">Main::Program::ClassMethods::Factory</a>
+  
+    <li><a href="../../../Main/Program/InstanceMethods.html">Main::Program::InstanceMethods</a>
+  
+    <li><a href="../../../Main/Softspoken.html">Main::Softspoken</a>
+  
+    <li><a href="../../../Main/Usage.html">Main::Usage</a>
+  
+    <li><a href="../../../Main/Util.html">Main::Util</a>
+  
+    <li><a href="../../../Main/Util/ClassMethods.html">Main::Util::ClassMethods</a>
+  
+    <li><a href="../../../Main/Util/InstanceMethods.html">Main::Util::InstanceMethods</a>
+  
+    <li><a href="../../../Main/Util/Methods.html">Main::Util::Methods</a>
+  
+    <li><a href="../../../Kernel.html">Kernel</a>
+  
+    <li><a href="../../../Object.html">Object</a>
+  
+    <li><a href="../../../Process.html">Process</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Main::Program::ClassMethods::Factory</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(&block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/main/program/class_methods.rb, line 43</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(&amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-ivar">@block</span> = <span class="ruby-identifier">block</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">lambda</span>{}
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-build" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">build</span><span
+            class="method-args">(*args, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="build-source">
+            <pre><span class="ruby-comment"># File lib/main/program/class_methods.rb, line 51</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">build</span>(*<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">argv</span> = (<span class="ruby-identifier">args</span>.<span class="ruby-identifier">shift</span> <span class="ruby-operator">||</span> <span class="ruby-constant">ARGV</span>).<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">arg</span><span class="ruby-operator">|</span> <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">dup</span>}
+  <span class="ruby-identifier">env</span> = (<span class="ruby-identifier">args</span>.<span class="ruby-identifier">shift</span> <span class="ruby-operator">||</span> <span class="ruby-constant">ENV</span>).<span class="ruby-identifier">to_hash</span>.<span class="ruby-identifier">dup</span>
+  <span class="ruby-identifier">opts</span> = (<span class="ruby-identifier">args</span>.<span class="ruby-identifier">shift</span> <span class="ruby-operator">||</span> {}).<span class="ruby-identifier">to_hash</span>.<span class="ruby-identifier">dup</span>
+
+  <span class="ruby-identifier">factory</span> = <span class="ruby-keyword">self</span>
+
+  <span class="ruby-identifier">program</span> = <span class="ruby-constant">Class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">Program</span>)
+
+  <span class="ruby-identifier">program</span>.<span class="ruby-identifier">factory</span> = <span class="ruby-identifier">factory</span>
+  <span class="ruby-identifier">program</span>.<span class="ruby-identifier">argv</span> = <span class="ruby-identifier">argv</span>
+  <span class="ruby-identifier">program</span>.<span class="ruby-identifier">env</span> = <span class="ruby-identifier">env</span>
+  <span class="ruby-identifier">program</span>.<span class="ruby-identifier">opts</span> = <span class="ruby-identifier">opts</span>
+
+  <span class="ruby-identifier">program</span>.<span class="ruby-identifier">module_eval</span>(&amp;<span class="ruby-identifier">factory</span>)
+
+  <span class="ruby-identifier">program</span>.<span class="ruby-identifier">module_eval</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">dynamically_extend_via_commandline_modes!</span>
+    <span class="ruby-identifier">program</span>.<span class="ruby-identifier">set_default_options!</span>
+    <span class="ruby-identifier">define_method</span>(<span class="ruby-value">:run</span>, &amp;<span class="ruby-identifier">block</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">block</span>
+    <span class="ruby-identifier">wrap_run!</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">program</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- build-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- build-method -->
+
+    
+      <div id="method-i-to_proc" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_proc</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="to_proc-source">
+            <pre><span class="ruby-comment"># File lib/main/program/class_methods.rb, line 47</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_proc</span>
+  <span class="ruby-ivar">@block</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- to_proc-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- to_proc-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

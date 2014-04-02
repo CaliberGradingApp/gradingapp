@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module Hashie::Extensions::Structure::ClassMethods - hashie-2.0.5 Documentation</title>
+
+<link type="text/css" media="screen" href="../../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../../index.html">Home</a>
+    <a href="../../../table_of_contents.html#classes">Classes</a>
+    <a href="../../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/hashie/extensions/structure.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-key">#key</a>
+    
+    <li><a href="#method-i-permitted_keys">#permitted_keys</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../../Hashie.html">Hashie</a>
+  
+    <li><a href="../../../Hashie/Clash.html">Hashie::Clash</a>
+  
+    <li><a href="../../../Hashie/Clash/ChainError.html">Hashie::Clash::ChainError</a>
+  
+    <li><a href="../../../Hashie/Dash.html">Hashie::Dash</a>
+  
+    <li><a href="../../../Hashie/Extensions.html">Hashie::Extensions</a>
+  
+    <li><a href="../../../Hashie/Extensions/Coercion.html">Hashie::Extensions::Coercion</a>
+  
+    <li><a href="../../../Hashie/Extensions/Coercion/ClassMethods.html">Hashie::Extensions::Coercion::ClassMethods</a>
+  
+    <li><a href="../../../Hashie/Extensions/Coercion/InstanceMethods.html">Hashie::Extensions::Coercion::InstanceMethods</a>
+  
+    <li><a href="../../../Hashie/Extensions/DeepMerge.html">Hashie::Extensions::DeepMerge</a>
+  
+    <li><a href="../../../Hashie/Extensions/IndifferentAccess.html">Hashie::Extensions::IndifferentAccess</a>
+  
+    <li><a href="../../../Hashie/Extensions/KeyConversion.html">Hashie::Extensions::KeyConversion</a>
+  
+    <li><a href="../../../Hashie/Extensions/MergeInitializer.html">Hashie::Extensions::MergeInitializer</a>
+  
+    <li><a href="../../../Hashie/Extensions/MethodAccess.html">Hashie::Extensions::MethodAccess</a>
+  
+    <li><a href="../../../Hashie/Extensions/MethodQuery.html">Hashie::Extensions::MethodQuery</a>
+  
+    <li><a href="../../../Hashie/Extensions/MethodReader.html">Hashie::Extensions::MethodReader</a>
+  
+    <li><a href="../../../Hashie/Extensions/MethodWriter.html">Hashie::Extensions::MethodWriter</a>
+  
+    <li><a href="../../../Hashie/Extensions/StringifyKeys.html">Hashie::Extensions::StringifyKeys</a>
+  
+    <li><a href="../../../Hashie/Extensions/Structure.html">Hashie::Extensions::Structure</a>
+  
+    <li><a href="../../../Hashie/Extensions/Structure/ClassMethods.html">Hashie::Extensions::Structure::ClassMethods</a>
+  
+    <li><a href="../../../Hashie/Extensions/SymbolizeKeys.html">Hashie::Extensions::SymbolizeKeys</a>
+  
+    <li><a href="../../../Hashie/Hash.html">Hashie::Hash</a>
+  
+    <li><a href="../../../Hashie/HashExtensions.html">Hashie::HashExtensions</a>
+  
+    <li><a href="../../../Hashie/Mash.html">Hashie::Mash</a>
+  
+    <li><a href="../../../Hashie/PrettyInspect.html">Hashie::PrettyInspect</a>
+  
+    <li><a href="../../../Hashie/Trash.html">Hashie::Trash</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module Hashie::Extensions::Structure::ClassMethods</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-key" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">key</span><span
+            class="method-args">(key, options = {})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="key-source">
+            <pre><span class="ruby-comment"># File lib/hashie/extensions/structure.rb, line 31</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">key</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">options</span> = {})
+  (<span class="ruby-ivar">@permitted_keys</span> <span class="ruby-operator">||=</span> []) <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">key</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:default</span>]
+    (<span class="ruby-ivar">@default_values</span> <span class="ruby-operator">||=</span> {})[<span class="ruby-identifier">key</span>] = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-value">:default</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">permitted_keys</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- key-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- key-method -->
+
+    
+      <div id="method-i-permitted_keys" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">permitted_keys</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="permitted_keys-source">
+            <pre><span class="ruby-comment"># File lib/hashie/extensions/structure.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">permitted_keys</span>
+  <span class="ruby-ivar">@permitted_keys</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- permitted_keys-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- permitted_keys-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

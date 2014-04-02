@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"threshold:EFI"FlayTask#threshold;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"0Threshold to fail the task at. Default 200.;T:
+@fileI"lib/flay_task.rb;TF@

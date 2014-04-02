@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Chronic::Separator - chronic-0.10.2 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/chronic/separator.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Tag
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-scan">::scan</a>
+    
+    <li><a href="#method-c-scan_for_and">::scan_for_and</a>
+    
+    <li><a href="#method-c-scan_for_at">::scan_for_at</a>
+    
+    <li><a href="#method-c-scan_for_colon">::scan_for_colon</a>
+    
+    <li><a href="#method-c-scan_for_commas">::scan_for_commas</a>
+    
+    <li><a href="#method-c-scan_for_dash">::scan_for_dash</a>
+    
+    <li><a href="#method-c-scan_for_dots">::scan_for_dots</a>
+    
+    <li><a href="#method-c-scan_for_in">::scan_for_in</a>
+    
+    <li><a href="#method-c-scan_for_on">::scan_for_on</a>
+    
+    <li><a href="#method-c-scan_for_quote">::scan_for_quote</a>
+    
+    <li><a href="#method-c-scan_for_slash">::scan_for_slash</a>
+    
+    <li><a href="#method-c-scan_for_space">::scan_for_space</a>
+    
+    <li><a href="#method-c-scan_for_t">::scan_for_t</a>
+    
+    <li><a href="#method-c-scan_for_w">::scan_for_w</a>
+    
+    <li><a href="#method-i-to_s">#to_s</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../LICENSE.html">LICENSE</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Chronic.html">Chronic</a>
+  
+    <li><a href="../Chronic/Date.html">Chronic::Date</a>
+  
+    <li><a href="../Chronic/Grabber.html">Chronic::Grabber</a>
+  
+    <li><a href="../Chronic/Handler.html">Chronic::Handler</a>
+  
+    <li><a href="../Chronic/Handlers.html">Chronic::Handlers</a>
+  
+    <li><a href="../Chronic/MiniDate.html">Chronic::MiniDate</a>
+  
+    <li><a href="../Chronic/Numerizer.html">Chronic::Numerizer</a>
+  
+    <li><a href="../Chronic/Ordinal.html">Chronic::Ordinal</a>
+  
+    <li><a href="../Chronic/Parser.html">Chronic::Parser</a>
+  
+    <li><a href="../Chronic/Pointer.html">Chronic::Pointer</a>
+  
+    <li><a href="../Chronic/Repeater.html">Chronic::Repeater</a>
+  
+    <li><a href="../Chronic/Scalar.html">Chronic::Scalar</a>
+  
+    <li><a href="../Chronic/Season.html">Chronic::Season</a>
+  
+    <li><a href="../Chronic/Separator.html">Chronic::Separator</a>
+  
+    <li><a href="../Chronic/Sign.html">Chronic::Sign</a>
+  
+    <li><a href="../Chronic/Span.html">Chronic::Span</a>
+  
+    <li><a href="../Chronic/Tag.html">Chronic::Tag</a>
+  
+    <li><a href="../Chronic/Time.html">Chronic::Time</a>
+  
+    <li><a href="../Chronic/TimeZone.html">Chronic::TimeZone</a>
+  
+    <li><a href="../Chronic/Token.html">Chronic::Token</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Chronic::Separator</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-scan" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">scan</span><span
+            class="method-args">(tokens, options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Scan an Array of <a href="Token.html">Token</a> objects and apply any
+necessary <a href="Separator.html">Separator</a> tags to each token.</p>
+
+<p>tokens - An Array of tokens to scan. options - The Hash of options
+specified in <a href="../Chronic.html#method-c-parse">Chronic.parse</a>.</p>
+
+<p>Returns an Array of tokens.</p>
+          
+
+          
+          <div class="method-source-code" id="scan-source">
+            <pre><span class="ruby-comment"># File lib/chronic/separator.rb, line 11</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-identifier">tokens</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">tokens</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">token</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">t</span> = <span class="ruby-identifier">scan_for_commas</span>(<span class="ruby-identifier">token</span>) <span class="ruby-keyword">then</span> <span class="ruby-identifier">token</span>.<span class="ruby-identifier">tag</span>(<span class="ruby-identifier">t</span>); <span class="ruby-keyword">next</span> <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">t</span> = <span class="ruby-identifier">scan_for_dots</span>(<span class="ruby-identifier">token</span>) <span class="ruby-keyword">then</span> <span class="ruby-identifier">token</span>.<span class="ruby-identifier">tag</span>(<span class="ruby-identifier">t</span>); <span class="ruby-keyword">next</span> <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">t</span> = <span class="ruby-identifier">scan_for_colon</span>(<span class="ruby-identifier">token</span>) <span class="ruby-keyword">then</span> <span class="ruby-identifier">token</span>.<span class="ruby-identifier">tag</span>(<span class="ruby-identifier">t</span>); <span class="ruby-keyword">next</span> <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">t</span> = <span class="ruby-identifier">scan_for_space</span>(<span class="ruby-identifier">token</span>) <span class="ruby-keyword">then</span> <span class="ruby-identifier">token</span>.<span class="ruby-identifier">tag</span>(<span class="ruby-identifier">t</span>); <span class="ruby-keyword">next</span> <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">t</span> = <span class="ruby-identifier">scan_for_slash</span>(<span class="ruby-identifier">token</span>) <span class="ruby-keyword">then</span> <span class="ruby-identifier">token</span>.<span class="ruby-identifier">tag</span>(<span class="ruby-identifier">t</span>); <span class="ruby-keyword">next</span> <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">t</span> = <span class="ruby-identifier">scan_for_dash</span>(<span class="ruby-identifier">token</span>) <span class="ruby-keyword">then</span> <span class="ruby-identifier">token</span>.<span class="ruby-identifier">tag</span>(<span class="ruby-identifier">t</span>); <span class="ruby-keyword">next</span> <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">t</span> = <span class="ruby-identifier">scan_for_quote</span>(<span class="ruby-identifier">token</span>) <span class="ruby-keyword">then</span> <span class="ruby-identifier">token</span>.<span class="ruby-identifier">tag</span>(<span class="ruby-identifier">t</span>); <span class="ruby-keyword">next</span> <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">t</span> = <span class="ruby-identifier">scan_for_at</span>(<span class="ruby-identifier">token</span>) <span class="ruby-keyword">then</span> <span class="ruby-identifier">token</span>.<span class="ruby-identifier">tag</span>(<span class="ruby-identifier">t</span>); <span class="ruby-keyword">next</span> <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">t</span> = <span class="ruby-identifier">scan_for_in</span>(<span class="ruby-identifier">token</span>) <span class="ruby-keyword">then</span> <span class="ruby-identifier">token</span>.<span class="ruby-identifier">tag</span>(<span class="ruby-identifier">t</span>); <span class="ruby-keyword">next</span> <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">t</span> = <span class="ruby-identifier">scan_for_on</span>(<span class="ruby-identifier">token</span>) <span class="ruby-keyword">then</span> <span class="ruby-identifier">token</span>.<span class="ruby-identifier">tag</span>(<span class="ruby-identifier">t</span>); <span class="ruby-keyword">next</span> <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">t</span> = <span class="ruby-identifier">scan_for_and</span>(<span class="ruby-identifier">token</span>) <span class="ruby-keyword">then</span> <span class="ruby-identifier">token</span>.<span class="ruby-identifier">tag</span>(<span class="ruby-identifier">t</span>); <span class="ruby-keyword">next</span> <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">t</span> = <span class="ruby-identifier">scan_for_t</span>(<span class="ruby-identifier">token</span>) <span class="ruby-keyword">then</span> <span class="ruby-identifier">token</span>.<span class="ruby-identifier">tag</span>(<span class="ruby-identifier">t</span>); <span class="ruby-keyword">next</span> <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">t</span> = <span class="ruby-identifier">scan_for_w</span>(<span class="ruby-identifier">token</span>) <span class="ruby-keyword">then</span> <span class="ruby-identifier">token</span>.<span class="ruby-identifier">tag</span>(<span class="ruby-identifier">t</span>); <span class="ruby-keyword">next</span> <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- scan-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- scan-method -->
+
+    
+      <div id="method-c-scan_for_and" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">scan_for_and</span><span
+            class="method-args">(token)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>token - The <a href="Token.html">Token</a> object we want to scan.</p>
+
+<p>Returns a new SeperatorAnd Object object.</p>
+          
+
+          
+          <div class="method-source-code" id="scan_for_and-source">
+            <pre><span class="ruby-comment"># File lib/chronic/separator.rb, line 106</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">scan_for_and</span>(<span class="ruby-identifier">token</span>)
+  <span class="ruby-identifier">scan_for</span> <span class="ruby-identifier">token</span>, <span class="ruby-constant">SeparatorAnd</span>, { <span class="ruby-regexp">/^and$/</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:and</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- scan_for_and-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- scan_for_and-method -->
+
+    
+      <div id="method-c-scan_for_at" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">scan_for_at</span><span
+            class="method-args">(token)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>token - The <a href="Token.html">Token</a> object we want to scan.</p>
+
+<p>Returns a new SeparatorAt object.</p>
+          
+
+          
+          <div class="method-source-code" id="scan_for_at-source">
+            <pre><span class="ruby-comment"># File lib/chronic/separator.rb, line 85</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">scan_for_at</span>(<span class="ruby-identifier">token</span>)
+  <span class="ruby-identifier">scan_for</span> <span class="ruby-identifier">token</span>, <span class="ruby-constant">SeparatorAt</span>, { <span class="ruby-regexp">/^(at|@)$/</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:at</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- scan_for_at-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- scan_for_at-method -->
+
+    
+      <div id="method-c-scan_for_colon" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">scan_for_colon</span><span
+            class="method-args">(token)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>token - The <a href="Token.html">Token</a> object we want to scan.</p>
+
+<p>Returns a new SeparatorColon object.</p>
+          
+
+          
+          <div class="method-source-code" id="scan_for_colon-source">
+            <pre><span class="ruby-comment"># File lib/chronic/separator.rb, line 46</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">scan_for_colon</span>(<span class="ruby-identifier">token</span>)
+  <span class="ruby-identifier">scan_for</span> <span class="ruby-identifier">token</span>, <span class="ruby-constant">SeparatorColon</span>, { <span class="ruby-regexp">/^:$/</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:colon</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- scan_for_colon-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- scan_for_colon-method -->
+
+    
+      <div id="method-c-scan_for_commas" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">scan_for_commas</span><span
+            class="method-args">(token)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>token - The <a href="Token.html">Token</a> object we want to scan.</p>
+
+<p>Returns a new SeparatorComma object.</p>
+          
+
+          
+          <div class="method-source-code" id="scan_for_commas-source">
+            <pre><span class="ruby-comment"># File lib/chronic/separator.rb, line 32</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">scan_for_commas</span>(<span class="ruby-identifier">token</span>)
+  <span class="ruby-identifier">scan_for</span> <span class="ruby-identifier">token</span>, <span class="ruby-constant">SeparatorComma</span>, { <span class="ruby-regexp">/^,$/</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:comma</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- scan_for_commas-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- scan_for_commas-method -->
+
+    
+      <div id="method-c-scan_for_dash" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">scan_for_dash</span><span
+            class="method-args">(token)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>token - The <a href="Token.html">Token</a> object we want to scan.</p>
+
+<p>Returns a new SeparatorDash object.</p>
+          
+
+          
+          <div class="method-source-code" id="scan_for_dash-source">
+            <pre><span class="ruby-comment"># File lib/chronic/separator.rb, line 67</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">scan_for_dash</span>(<span class="ruby-identifier">token</span>)
+  <span class="ruby-identifier">scan_for</span> <span class="ruby-identifier">token</span>, <span class="ruby-constant">SeparatorDash</span>, { <span class="ruby-regexp">/^-$/</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:dash</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- scan_for_dash-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- scan_for_dash-method -->
+
+    
+      <div id="method-c-scan_for_dots" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">scan_for_dots</span><span
+            class="method-args">(token)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>token - The <a href="Token.html">Token</a> object we want to scan.</p>
+
+<p>Returns a new SeparatorDot object.</p>
+          
+
+          
+          <div class="method-source-code" id="scan_for_dots-source">
+            <pre><span class="ruby-comment"># File lib/chronic/separator.rb, line 39</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">scan_for_dots</span>(<span class="ruby-identifier">token</span>)
+  <span class="ruby-identifier">scan_for</span> <span class="ruby-identifier">token</span>, <span class="ruby-constant">SeparatorDot</span>, { <span class="ruby-regexp">/^\.$/</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:dot</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- scan_for_dots-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- scan_for_dots-method -->
+
+    
+      <div id="method-c-scan_for_in" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">scan_for_in</span><span
+            class="method-args">(token)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>token - The <a href="Token.html">Token</a> object we want to scan.</p>
+
+<p>Returns a new SeparatorIn object.</p>
+          
+
+          
+          <div class="method-source-code" id="scan_for_in-source">
+            <pre><span class="ruby-comment"># File lib/chronic/separator.rb, line 92</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">scan_for_in</span>(<span class="ruby-identifier">token</span>)
+  <span class="ruby-identifier">scan_for</span> <span class="ruby-identifier">token</span>, <span class="ruby-constant">SeparatorIn</span>, { <span class="ruby-regexp">/^in$/</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:in</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- scan_for_in-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- scan_for_in-method -->
+
+    
+      <div id="method-c-scan_for_on" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">scan_for_on</span><span
+            class="method-args">(token)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>token - The <a href="Token.html">Token</a> object we want to scan.</p>
+
+<p>Returns a new SeparatorOn object.</p>
+          
+
+          
+          <div class="method-source-code" id="scan_for_on-source">
+            <pre><span class="ruby-comment"># File lib/chronic/separator.rb, line 99</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">scan_for_on</span>(<span class="ruby-identifier">token</span>)
+  <span class="ruby-identifier">scan_for</span> <span class="ruby-identifier">token</span>, <span class="ruby-constant">SeparatorOn</span>, { <span class="ruby-regexp">/^on$/</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:on</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- scan_for_on-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- scan_for_on-method -->
+
+    
+      <div id="method-c-scan_for_quote" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">scan_for_quote</span><span
+            class="method-args">(token)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>token - The <a href="Token.html">Token</a> object we want to scan.</p>
+
+<p>Returns a new SeparatorQuote object.</p>
+          
+
+          
+          <div class="method-source-code" id="scan_for_quote-source">
+            <pre><span class="ruby-comment"># File lib/chronic/separator.rb, line 74</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">scan_for_quote</span>(<span class="ruby-identifier">token</span>)
+  <span class="ruby-identifier">scan_for</span> <span class="ruby-identifier">token</span>, <span class="ruby-constant">SeparatorQuote</span>,
+  {
+    <span class="ruby-regexp">/^'$/</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:single_quote</span>,
+    <span class="ruby-regexp">/^&quot;$/</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:double_quote</span>
+  }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- scan_for_quote-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- scan_for_quote-method -->
+
+    
+      <div id="method-c-scan_for_slash" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">scan_for_slash</span><span
+            class="method-args">(token)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>token - The <a href="Token.html">Token</a> object we want to scan.</p>
+
+<p>Returns a new SeparatorSlash object.</p>
+          
+
+          
+          <div class="method-source-code" id="scan_for_slash-source">
+            <pre><span class="ruby-comment"># File lib/chronic/separator.rb, line 60</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">scan_for_slash</span>(<span class="ruby-identifier">token</span>)
+  <span class="ruby-identifier">scan_for</span> <span class="ruby-identifier">token</span>, <span class="ruby-constant">SeparatorSlash</span>, { <span class="ruby-regexp">/^\/$/</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:slash</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- scan_for_slash-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- scan_for_slash-method -->
+
+    
+      <div id="method-c-scan_for_space" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">scan_for_space</span><span
+            class="method-args">(token)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>token - The <a href="Token.html">Token</a> object we want to scan.</p>
+
+<p>Returns a new SeparatorSpace object.</p>
+          
+
+          
+          <div class="method-source-code" id="scan_for_space-source">
+            <pre><span class="ruby-comment"># File lib/chronic/separator.rb, line 53</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">scan_for_space</span>(<span class="ruby-identifier">token</span>)
+  <span class="ruby-identifier">scan_for</span> <span class="ruby-identifier">token</span>, <span class="ruby-constant">SeparatorSpace</span>, { <span class="ruby-regexp">/^ $/</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:space</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- scan_for_space-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- scan_for_space-method -->
+
+    
+      <div id="method-c-scan_for_t" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">scan_for_t</span><span
+            class="method-args">(token)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>token - The <a href="Token.html">Token</a> object we want to scan.</p>
+
+<p>Returns a new SeperatorT Object object.</p>
+          
+
+          
+          <div class="method-source-code" id="scan_for_t-source">
+            <pre><span class="ruby-comment"># File lib/chronic/separator.rb, line 113</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">scan_for_t</span>(<span class="ruby-identifier">token</span>)
+  <span class="ruby-identifier">scan_for</span> <span class="ruby-identifier">token</span>, <span class="ruby-constant">SeparatorT</span>, { <span class="ruby-regexp">/^t$/</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:T</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- scan_for_t-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- scan_for_t-method -->
+
+    
+      <div id="method-c-scan_for_w" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">scan_for_w</span><span
+            class="method-args">(token)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>token - The <a href="Token.html">Token</a> object we want to scan.</p>
+
+<p>Returns a new SeperatorW Object object.</p>
+          
+
+          
+          <div class="method-source-code" id="scan_for_w-source">
+            <pre><span class="ruby-comment"># File lib/chronic/separator.rb, line 120</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">scan_for_w</span>(<span class="ruby-identifier">token</span>)
+  <span class="ruby-identifier">scan_for</span> <span class="ruby-identifier">token</span>, <span class="ruby-constant">SeparatorW</span>, { <span class="ruby-regexp">/^w$/</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:W</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- scan_for_w-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- scan_for_w-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-to_s" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_s</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="to_s-source">
+            <pre><span class="ruby-comment"># File lib/chronic/separator.rb, line 124</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>
+  <span class="ruby-string">'separator'</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- to_s-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- to_s-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

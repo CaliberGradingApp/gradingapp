@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Cane::RakeTask - cane-2.6.1 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/cane/rake_task.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Rake::TaskLib
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-add_threshold">#add_threshold</a>
+    
+    <li><a href="#method-i-canefile-3D">#canefile=</a>
+    
+    <li><a href="#method-i-use">#use</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Cane.html">Cane</a>
+  
+    <li><a href="../Cane/AbcCheck.html">Cane::AbcCheck</a>
+  
+    <li><a href="../Cane/AbcCheck/InvalidAst.html">Cane::AbcCheck::InvalidAst</a>
+  
+    <li><a href="../Cane/AbcCheck/RubyAst.html">Cane::AbcCheck::RubyAst</a>
+  
+    <li><a href="../Cane/CLI.html">Cane::CLI</a>
+  
+    <li><a href="../Cane/CLI/Parser.html">Cane::CLI::Parser</a>
+  
+    <li><a href="../Cane/CLI/Parser/OptionsHandled.html">Cane::CLI::Parser::OptionsHandled</a>
+  
+    <li><a href="../Cane/DocCheck.html">Cane::DocCheck</a>
+  
+    <li><a href="../Cane/EncodingAwareIterator.html">Cane::EncodingAwareIterator</a>
+  
+    <li><a href="../Cane/File.html">Cane::File</a>
+  
+    <li><a href="../Cane/JsonFormatter.html">Cane::JsonFormatter</a>
+  
+    <li><a href="../Cane/RakeTask.html">Cane::RakeTask</a>
+  
+    <li><a href="../Cane/Runner.html">Cane::Runner</a>
+  
+    <li><a href="../Cane/SimpleTaskRunner.html">Cane::SimpleTaskRunner</a>
+  
+    <li><a href="../Cane/StyleCheck.html">Cane::StyleCheck</a>
+  
+    <li><a href="../Cane/ThresholdCheck.html">Cane::ThresholdCheck</a>
+  
+    <li><a href="../Cane/ThresholdCheck/UnavailableValue.html">Cane::ThresholdCheck::UnavailableValue</a>
+  
+    <li><a href="../Cane/ViolationFormatter.html">Cane::ViolationFormatter</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Cane::RakeTask</h1>
+
+  <div id="description" class="description">
+    
+<p>Creates a rake task to run cane with given configuration.</p>
+
+<p>Examples</p>
+
+<pre class="ruby"><span class="ruby-identifier">desc</span> <span class="ruby-string">&quot;Run code quality checks&quot;</span>
+<span class="ruby-constant">Cane</span><span class="ruby-operator">::</span><span class="ruby-constant">RakeTask</span>.<span class="ruby-identifier">new</span>(:<span class="ruby-identifier">quality</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">cane</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">cane</span>.<span class="ruby-identifier">abc_max</span> = <span class="ruby-value">10</span>
+  <span class="ruby-identifier">cane</span>.<span class="ruby-identifier">doc_glob</span> = <span class="ruby-string">'lib   /*.rb'</span>
+  <span class="ruby-identifier">cane</span>.<span class="ruby-identifier">no_style</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-identifier">cane</span>.<span class="ruby-identifier">add_threshold</span> <span class="ruby-string">'coverage/covered_percent'</span>, :<span class="ruby-operator">&gt;=</span>, <span class="ruby-value">99</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-name" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">name</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-options" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">options</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(task_name = nil) { |self| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/cane/rake_task.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">task_name</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">name</span> = <span class="ruby-identifier">task_name</span> <span class="ruby-operator">||</span> <span class="ruby-value">:cane</span>
+  <span class="ruby-ivar">@gte</span> = []
+  <span class="ruby-ivar">@options</span> = <span class="ruby-constant">Cane</span><span class="ruby-operator">::</span><span class="ruby-constant">CLI</span>.<span class="ruby-identifier">default_options</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+    <span class="ruby-keyword">yield</span> <span class="ruby-keyword">self</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">canefile</span> = <span class="ruby-string">'./.cane'</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">unless</span> <span class="ruby-operator">::</span><span class="ruby-constant">Rake</span>.<span class="ruby-identifier">application</span>.<span class="ruby-identifier">last_comment</span>
+    <span class="ruby-identifier">desc</span> <span class="ruby-string">%Q(Check code quality metrics with cane)</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">task</span> <span class="ruby-identifier">name</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">require</span> <span class="ruby-string">'cane/cli'</span>
+    <span class="ruby-identifier">abort</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">Cane</span>.<span class="ruby-identifier">run</span>(<span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-add_threshold" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_threshold</span><span
+            class="method-args">(file, operator, value)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Add a threshold check. If the file exists and it contains a number, compare
+that number with the given value using the operator.</p>
+          
+
+          
+          <div class="method-source-code" id="add_threshold-source">
+            <pre><span class="ruby-comment"># File lib/cane/rake_task.rb, line 35</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_threshold</span>(<span class="ruby-identifier">file</span>, <span class="ruby-identifier">operator</span>, <span class="ruby-identifier">value</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">operator</span> <span class="ruby-operator">==</span> <span class="ruby-value">:&gt;=</span>
+    <span class="ruby-ivar">@options</span>[<span class="ruby-value">:gte</span>] <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">file</span>, <span class="ruby-identifier">value</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_threshold-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_threshold-method -->
+
+    
+      <div id="method-i-canefile-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">canefile=</span><span
+            class="method-args">(file)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="canefile-3D-source">
+            <pre><span class="ruby-comment"># File lib/cane/rake_task.rb, line 46</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">canefile=</span>(<span class="ruby-identifier">file</span>)
+  <span class="ruby-identifier">canefile</span> = <span class="ruby-constant">Cane</span><span class="ruby-operator">::</span><span class="ruby-constant">CLI</span><span class="ruby-operator">::</span><span class="ruby-constant">Parser</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">canefile</span>.<span class="ruby-identifier">parser</span>.<span class="ruby-identifier">parse!</span>(<span class="ruby-identifier">canefile</span>.<span class="ruby-identifier">read_options_from_file</span>(<span class="ruby-identifier">file</span>))
+  <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge!</span> <span class="ruby-identifier">canefile</span>.<span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- canefile-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- canefile-3D-method -->
+
+    
+      <div id="method-i-use" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">use</span><span
+            class="method-args">(check, options = {})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="use-source">
+            <pre><span class="ruby-comment"># File lib/cane/rake_task.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">use</span>(<span class="ruby-identifier">check</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-ivar">@options</span>.<span class="ruby-identifier">merge!</span>(<span class="ruby-identifier">options</span>)
+  <span class="ruby-ivar">@options</span>[<span class="ruby-value">:checks</span>] = <span class="ruby-ivar">@options</span>[<span class="ruby-value">:checks</span>] <span class="ruby-operator">+</span> [<span class="ruby-identifier">check</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- use-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- use-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

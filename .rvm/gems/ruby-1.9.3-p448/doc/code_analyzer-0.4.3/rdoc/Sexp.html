@@ -1,0 +1,2104 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Sexp - code_analyzer-0.4.3 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/code_analyzer/sexp.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-all">#all</a>
+    
+    <li><a href="#method-i-all_conditions">#all_conditions</a>
+    
+    <li><a href="#method-i-argument">#argument</a>
+    
+    <li><a href="#method-i-arguments">#arguments</a>
+    
+    <li><a href="#method-i-array_size">#array_size</a>
+    
+    <li><a href="#method-i-array_values">#array_values</a>
+    
+    <li><a href="#method-i-base_class">#base_class</a>
+    
+    <li><a href="#method-i-blank-3F">#blank?</a>
+    
+    <li><a href="#method-i-block_node">#block_node</a>
+    
+    <li><a href="#method-i-body">#body</a>
+    
+    <li><a href="#method-i-check">#check</a>
+    
+    <li><a href="#method-i-children">#children</a>
+    
+    <li><a href="#method-i-class_name">#class_name</a>
+    
+    <li><a href="#method-i-conditional_statement">#conditional_statement</a>
+    
+    <li><a href="#method-i-const-3F">#const?</a>
+    
+    <li><a href="#method-i-exception_classes">#exception_classes</a>
+    
+    <li><a href="#method-i-exception_variable">#exception_variable</a>
+    
+    <li><a href="#method-i-grep_node">#grep_node</a>
+    
+    <li><a href="#method-i-grep_nodes">#grep_nodes</a>
+    
+    <li><a href="#method-i-grep_nodes_count">#grep_nodes_count</a>
+    
+    <li><a href="#method-i-hash_keys">#hash_keys</a>
+    
+    <li><a href="#method-i-hash_size">#hash_size</a>
+    
+    <li><a href="#method-i-hash_value">#hash_value</a>
+    
+    <li><a href="#method-i-hash_values">#hash_values</a>
+    
+    <li><a href="#method-i-left_value">#left_value</a>
+    
+    <li><a href="#method-i-line_number">#line_number</a>
+    
+    <li><a href="#method-i-message">#message</a>
+    
+    <li><a href="#method-i-method_name">#method_name</a>
+    
+    <li><a href="#method-i-module_name">#module_name</a>
+    
+    <li><a href="#method-i-new_method">#new_method</a>
+    
+    <li><a href="#method-i-old_method">#old_method</a>
+    
+    <li><a href="#method-i-present-3F">#present?</a>
+    
+    <li><a href="#method-i-receiver">#receiver</a>
+    
+    <li><a href="#method-i-recursive_children">#recursive_children</a>
+    
+    <li><a href="#method-i-remove_line_and_column">#remove_line_and_column</a>
+    
+    <li><a href="#method-i-right_value">#right_value</a>
+    
+    <li><a href="#method-i-statements">#statements</a>
+    
+    <li><a href="#method-i-to_object">#to_object</a>
+    
+    <li><a href="#method-i-to_s">#to_s</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./CodeAnalyzer.html">CodeAnalyzer</a>
+  
+    <li><a href="./CodeAnalyzer/AnalyzerException.html">CodeAnalyzer::AnalyzerException</a>
+  
+    <li><a href="./CodeAnalyzer/Checker.html">CodeAnalyzer::Checker</a>
+  
+    <li><a href="./CodeAnalyzer/CheckingVisitor.html">CodeAnalyzer::CheckingVisitor</a>
+  
+    <li><a href="./CodeAnalyzer/CheckingVisitor/Base.html">CodeAnalyzer::CheckingVisitor::Base</a>
+  
+    <li><a href="./CodeAnalyzer/CheckingVisitor/Default.html">CodeAnalyzer::CheckingVisitor::Default</a>
+  
+    <li><a href="./CodeAnalyzer/CheckingVisitor/Plain.html">CodeAnalyzer::CheckingVisitor::Plain</a>
+  
+    <li><a href="./CodeAnalyzer/Nil.html">CodeAnalyzer::Nil</a>
+  
+    <li><a href="./CodeAnalyzer/Warning.html">CodeAnalyzer::Warning</a>
+  
+    <li><a href="./Sexp.html">Sexp</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Sexp</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-all" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">all</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get all arguments.</p>
+
+<pre class="ruby"><span class="ruby-identifier">s</span>(:<span class="ruby-identifier">args_add_block</span>,
+  <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">args_add</span>,
+    <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">args_add</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">args_new</span>), <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_literal</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_add</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_content</span>), <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@tstring_content</span>, <span class="ruby-string">&quot;hello&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">6</span>))))),
+    <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_literal</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_add</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_content</span>), <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@tstring_content</span>, <span class="ruby-string">&quot;world&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">15</span>))))
+  ), <span class="ruby-keyword">false</span>
+)
+    =<span class="ruby-operator">&gt;</span> [
+         <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">args_add</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">args_new</span>), <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_literal</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_add</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_content</span>), <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@tstring_content</span>, <span class="ruby-string">&quot;hello&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">6</span>))))),
+         <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_literal</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_add</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_content</span>), <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@tstring_content</span>, <span class="ruby-string">&quot;world&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">15</span>))))
+       ]
+</pre>
+
+<p>@return [Array] all arguments</p>
+          
+
+          
+          <div class="method-source-code" id="all-source">
+            <pre><span class="ruby-comment"># File lib/code_analyzer/sexp.rb, line 298</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">all</span>
+  <span class="ruby-identifier">nodes</span> = []
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">sexp_type</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:args_add_block</span>, <span class="ruby-value">:array</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-value">:args_new</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">self</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">sexp_type</span>
+      <span class="ruby-identifier">nodes</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">self</span>[<span class="ruby-value">2</span>]
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">node</span> = <span class="ruby-keyword">self</span>[<span class="ruby-value">1</span>]
+      <span class="ruby-keyword">while</span> <span class="ruby-keyword">true</span>
+        <span class="ruby-keyword">if</span> [<span class="ruby-value">:args_add</span>, <span class="ruby-value">:args_add_star</span>].<span class="ruby-identifier">include?</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">sexp_type</span>
+          <span class="ruby-identifier">nodes</span>.<span class="ruby-identifier">unshift</span> <span class="ruby-identifier">node</span>[<span class="ruby-value">2</span>]
+          <span class="ruby-identifier">node</span> = <span class="ruby-identifier">node</span>[<span class="ruby-value">1</span>]
+        <span class="ruby-keyword">elsif</span> <span class="ruby-value">:args_new</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">sexp_type</span>
+          <span class="ruby-keyword">break</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:args_add</span>
+    <span class="ruby-identifier">nodes</span>.<span class="ruby-identifier">unshift</span> <span class="ruby-keyword">self</span>[<span class="ruby-value">2</span>]
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">nodes</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- all-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- all-method -->
+
+    
+      <div id="method-i-all_conditions" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">all_conditions</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get all condition nodes.</p>
+
+<pre class="ruby"><span class="ruby-identifier">s</span>(:<span class="ruby-identifier">binary</span>,
+  <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">binary</span>,
+    <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">var_ref</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@ident</span>, <span class="ruby-string">&quot;user&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">0</span>))),
+    :<span class="ruby-operator">==</span>,
+    <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">var_ref</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@ident</span>, <span class="ruby-string">&quot;current_user&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">8</span>)))
+  ),
+  :<span class="ruby-string">&quot;&amp;&amp;&quot;</span>,
+  <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">call</span>,
+    <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">var_ref</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@ident</span>, <span class="ruby-string">&quot;user&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">24</span>))),
+    :<span class="ruby-string">&quot;.&quot;</span>,
+    <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@ident</span>, <span class="ruby-string">&quot;valid?&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">29</span>))
+  )
+)
+    =<span class="ruby-operator">&gt;</span> [
+         <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">binary</span>,
+           <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">var_ref</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@ident</span>, <span class="ruby-string">&quot;user&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">0</span>))),
+           :<span class="ruby-operator">==</span>,
+           <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">var_ref</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@ident</span>, <span class="ruby-string">&quot;current_user&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">8</span>)))
+         ),
+         <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">call</span>,
+           <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">var_ref</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@ident</span>, <span class="ruby-string">&quot;user&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">24</span>))),
+             :<span class="ruby-string">&quot;.&quot;</span>,
+             <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@ident</span>, <span class="ruby-string">&quot;valid?&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">29</span>))
+         )
+       ]
+</pre>
+
+<p>@return [Array] all condition nodes</p>
+          
+
+          
+          <div class="method-source-code" id="all_conditions-source">
+            <pre><span class="ruby-comment"># File lib/code_analyzer/sexp.rb, line 366</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">all_conditions</span>
+  <span class="ruby-identifier">nodes</span> = []
+  <span class="ruby-keyword">if</span> <span class="ruby-value">:binary</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">sexp_type</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-node">%w(&amp;&amp; || and or)</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-keyword">self</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">to_s</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-value">:binary</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">self</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">sexp_type</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-node">%w(&amp;&amp; || and or)</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-keyword">self</span>[<span class="ruby-value">1</span>][<span class="ruby-value">2</span>].<span class="ruby-identifier">to_s</span>)
+      <span class="ruby-identifier">nodes</span> <span class="ruby-operator">+=</span> <span class="ruby-keyword">self</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">all_conditions</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">nodes</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">self</span>[<span class="ruby-value">1</span>]
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-value">:binary</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">self</span>[<span class="ruby-value">3</span>].<span class="ruby-identifier">sexp_type</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-node">%w(&amp;&amp; || and or)</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-keyword">self</span>[<span class="ruby-value">3</span>][<span class="ruby-value">2</span>].<span class="ruby-identifier">to_s</span>)
+      <span class="ruby-identifier">nodes</span> <span class="ruby-operator">+=</span> <span class="ruby-keyword">self</span>[<span class="ruby-value">3</span>].<span class="ruby-identifier">all_conditions</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">nodes</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">self</span>[<span class="ruby-value">3</span>]
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">self</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- all_conditions-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- all_conditions-method -->
+
+    
+      <div id="method-i-argument" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">argument</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get only argument for binary.</p>
+
+<pre class="ruby"><span class="ruby-identifier">s</span>(:<span class="ruby-identifier">binary</span>,
+  <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">var_ref</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@ident</span>, <span class="ruby-string">&quot;user&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">0</span>))),
+  :<span class="ruby-operator">==</span>,
+  <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">var_ref</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@ident</span>, <span class="ruby-string">&quot;current_user&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">8</span>)))
+)
+    =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">var_ref</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@ident</span>, <span class="ruby-string">&quot;current_user&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">8</span>)))
+</pre>
+
+<p>@return [Sexp] argument node</p>
+          
+
+          
+          <div class="method-source-code" id="argument-source">
+            <pre><span class="ruby-comment"># File lib/code_analyzer/sexp.rb, line 278</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">argument</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-value">:binary</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">sexp_type</span>
+    <span class="ruby-keyword">self</span>[<span class="ruby-value">3</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- argument-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- argument-method -->
+
+    
+      <div id="method-i-arguments" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">arguments</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get arguments node.</p>
+
+<pre class="ruby"><span class="ruby-identifier">s</span>(:<span class="ruby-identifier">command</span>,
+  <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@ident</span>, <span class="ruby-string">&quot;resources&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">0</span>)),
+  <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">args_add_block</span>,
+    <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">args_add</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">args_new</span>),
+      <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">symbol_literal</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">symbol</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@ident</span>, <span class="ruby-string">&quot;posts&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">11</span>))))
+    ), <span class="ruby-keyword">false</span>
+  )
+)
+    =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">args_add_block</span>,
+         <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">args_add</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">args_new</span>),
+           <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">symbol_literal</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">symbol</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@ident</span>, <span class="ruby-string">&quot;posts&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">11</span>))))
+         ), <span class="ruby-keyword">false</span>
+       )
+</pre>
+
+<p>@return [Sexp] arguments node</p>
+          
+
+          
+          <div class="method-source-code" id="arguments-source">
+            <pre><span class="ruby-comment"># File lib/code_analyzer/sexp.rb, line 251</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">arguments</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">sexp_type</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:command</span>
+    <span class="ruby-keyword">self</span>[<span class="ruby-value">2</span>]
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:command_call</span>
+    <span class="ruby-keyword">self</span>[<span class="ruby-value">4</span>]
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:method_add_arg</span>
+    <span class="ruby-keyword">self</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">arguments</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:method_add_block</span>
+    <span class="ruby-keyword">self</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">arguments</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:arg_paren</span>
+    <span class="ruby-keyword">self</span>[<span class="ruby-value">1</span>]
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:array</span>
+    <span class="ruby-keyword">self</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- arguments-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- arguments-method -->
+
+    
+      <div id="method-i-array_size" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">array_size</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get the array size.</p>
+
+<pre class="ruby"><span class="ruby-identifier">s</span>(:<span class="ruby-identifier">array</span>,
+  <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">args_add</span>,
+    <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">args_add</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">args_new</span>), <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_literal</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_add</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_content</span>), <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@tstring_content</span>, <span class="ruby-string">&quot;first_name&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">2</span>))))),
+    <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_literal</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_add</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_content</span>), <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@tstring_content</span>, <span class="ruby-string">&quot;last_name&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">16</span>))))
+  )
+)
+    =<span class="ruby-operator">&gt;</span> <span class="ruby-value">2</span>
+</pre>
+
+<p>@return [Integer] array size</p>
+          
+
+          
+          <div class="method-source-code" id="array_size-source">
+            <pre><span class="ruby-comment"># File lib/code_analyzer/sexp.rb, line 702</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">array_size</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-value">:array</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">sexp_type</span>
+    <span class="ruby-identifier">first_node</span> = <span class="ruby-keyword">self</span>[<span class="ruby-value">1</span>]
+    <span class="ruby-identifier">array_size</span> = <span class="ruby-value">0</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">first_node</span>
+      <span class="ruby-keyword">while</span> <span class="ruby-keyword">true</span>
+        <span class="ruby-identifier">array_size</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+        <span class="ruby-identifier">first_node</span> = <span class="ruby-identifier">s</span>(<span class="ruby-value">:args_new</span>) <span class="ruby-operator">==</span> <span class="ruby-identifier">first_node</span>[<span class="ruby-value">1</span>] <span class="ruby-operator">?</span> <span class="ruby-identifier">first_node</span>[<span class="ruby-value">2</span>] <span class="ruby-operator">:</span> <span class="ruby-identifier">first_node</span>[<span class="ruby-value">1</span>]
+        <span class="ruby-keyword">if</span> <span class="ruby-value">:args_add</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">first_node</span>.<span class="ruby-identifier">sexp_type</span>
+          <span class="ruby-keyword">if</span> <span class="ruby-value">:array</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">first_node</span>.<span class="ruby-identifier">sexp_type</span>
+            <span class="ruby-identifier">array_size</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">first_node</span>.<span class="ruby-identifier">array_size</span>
+          <span class="ruby-keyword">end</span>
+          <span class="ruby-keyword">break</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">array_size</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- array_size-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- array_size-method -->
+
+    
+      <div id="method-i-array_values" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">array_values</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get the array values.</p>
+
+<pre class="ruby"><span class="ruby-identifier">s</span>(:<span class="ruby-identifier">array</span>,
+  <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">args_add</span>,
+    <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">args_add</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">args_new</span>), <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_literal</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_add</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_content</span>), <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@tstring_content</span>, <span class="ruby-string">&quot;first_name&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">2</span>))))),
+    <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_literal</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_add</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_content</span>), <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@tstring_content</span>, <span class="ruby-string">&quot;last_name&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">16</span>))))
+  )
+)
+    =<span class="ruby-operator">&gt;</span> [
+         <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_literal</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_add</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_content</span>), <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@tstring_content</span>, <span class="ruby-string">&quot;first_name&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">2</span>)))),
+         <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_literal</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_add</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_content</span>), <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@tstring_content</span>, <span class="ruby-string">&quot;last_name&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">16</span>))))
+       ]
+</pre>
+
+<p>@return [Array] array values</p>
+          
+
+          
+          <div class="method-source-code" id="array_values-source">
+            <pre><span class="ruby-comment"># File lib/code_analyzer/sexp.rb, line 736</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">array_values</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">sexp_type</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:array</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">self</span>[<span class="ruby-value">1</span>]
+      []
+    <span class="ruby-keyword">elsif</span> [<span class="ruby-value">:words_add</span>, <span class="ruby-value">:qwords_add</span>, <span class="ruby-value">:qsymbols_add</span>].<span class="ruby-identifier">include?</span> <span class="ruby-keyword">self</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">sexp_type</span>
+      <span class="ruby-keyword">self</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">array_values</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">arguments</span>.<span class="ruby-identifier">all</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:words_add</span>, <span class="ruby-value">:qwords_add</span>, <span class="ruby-value">:qsymbols_add</span>
+    <span class="ruby-identifier">values</span> = []
+    <span class="ruby-identifier">node</span> = <span class="ruby-keyword">self</span>
+    <span class="ruby-keyword">while</span> <span class="ruby-keyword">true</span>
+      <span class="ruby-keyword">if</span> [<span class="ruby-value">:words_add</span>, <span class="ruby-value">:qwords_add</span>, <span class="ruby-value">:qsymbols_add</span>].<span class="ruby-identifier">include?</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">sexp_type</span>
+        <span class="ruby-identifier">values</span>.<span class="ruby-identifier">unshift</span> <span class="ruby-identifier">node</span>[<span class="ruby-value">2</span>]
+        <span class="ruby-identifier">node</span> = <span class="ruby-identifier">node</span>[<span class="ruby-value">1</span>]
+      <span class="ruby-keyword">elsif</span> [<span class="ruby-value">:words_new</span>, <span class="ruby-value">:qwords_new</span>, <span class="ruby-value">:qsymbols_new</span>].<span class="ruby-identifier">include?</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">sexp_type</span>
+        <span class="ruby-keyword">break</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">values</span>
+  <span class="ruby-keyword">else</span>
+    []
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- array_values-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- array_values-method -->
+
+    
+      <div id="method-i-base_class" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">base_class</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get the base class of the class node.</p>
+
+<pre class="ruby"><span class="ruby-identifier">s</span>(:<span class="ruby-keyword">class</span>,
+  <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">const_ref</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@const</span>, <span class="ruby-string">&quot;User&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">6</span>))),
+  <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">const_path_ref</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">var_ref</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@const</span>, <span class="ruby-string">&quot;ActiveRecord&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">13</span>))), <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@const</span>, <span class="ruby-string">&quot;Base&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">27</span>))),
+  <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">bodystmt</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">stmts_add</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">stmts_new</span>), <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">void_stmt</span>)), <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>)
+)
+    =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">const_path_ref</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">var_ref</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@const</span>, <span class="ruby-string">&quot;ActiveRecord&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">13</span>))), <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@const</span>, <span class="ruby-string">&quot;Base&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">27</span>))),
+</pre>
+
+<p>@return [Sexp] base class of class node</p>
+          
+
+          
+          <div class="method-source-code" id="base_class-source">
+            <pre><span class="ruby-comment"># File lib/code_analyzer/sexp.rb, line 171</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">base_class</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-value">:class</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">sexp_type</span>
+    <span class="ruby-keyword">self</span>[<span class="ruby-value">2</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- base_class-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- base_class-method -->
+
+    
+      <div id="method-i-blank-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">blank?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>false</p>
+          
+
+          
+          <div class="method-source-code" id="blank-3F-source">
+            <pre><span class="ruby-comment"># File lib/code_analyzer/sexp.rb, line 854</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">blank?</span>
+  <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- blank-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- blank-3F-method -->
+
+    
+      <div id="method-i-block_node" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">block_node</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get block node.</p>
+
+<pre class="ruby"><span class="ruby-identifier">s</span>(:<span class="ruby-identifier">method_add_block</span>,
+  <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">command</span>,
+    <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@ident</span>, <span class="ruby-string">&quot;resources&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">0</span>)),
+    <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">args_add_block</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">args_add</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">args_new</span>), <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">symbol_literal</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">symbol</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@ident</span>, <span class="ruby-string">&quot;posts&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">11</span>))))), <span class="ruby-keyword">false</span>)
+  ),
+  <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">do_block</span>, <span class="ruby-keyword">nil</span>,
+    <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">stmts_add</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">stmts_add</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">stmts_new</span>), <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">void_stmt</span>)),
+      <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">command</span>,
+      <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@ident</span>, <span class="ruby-string">&quot;resources&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">21</span>)),
+      <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">args_add_block</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">args_add</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">args_new</span>), <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">symbol_literal</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">symbol</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@ident</span>, <span class="ruby-string">&quot;comments&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">32</span>))))), <span class="ruby-keyword">false</span>))
+    )
+  )
+)
+    =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">do_block</span>, <span class="ruby-keyword">nil</span>,
+         <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">stmts_add</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">stmts_add</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">stmts_new</span>), <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">void_stmt</span>)),
+           <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">command</span>,
+           <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@ident</span>, <span class="ruby-string">&quot;resources&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">21</span>)),
+           <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">args_add_block</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">args_add</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">args_new</span>), <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">symbol_literal</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">symbol</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@ident</span>, <span class="ruby-string">&quot;comments&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">32</span>))))), <span class="ruby-keyword">false</span>))
+         )
+       )
+</pre>
+
+<p>@return [Sexp] body node</p>
+          
+
+          
+          <div class="method-source-code" id="block_node-source">
+            <pre><span class="ruby-comment"># File lib/code_analyzer/sexp.rb, line 467</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">block_node</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">sexp_type</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:method_add_block</span>
+    <span class="ruby-keyword">self</span>[<span class="ruby-value">2</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- block_node-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- block_node-method -->
+
+    
+      <div id="method-i-body" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">body</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get body node.</p>
+
+<pre class="ruby"><span class="ruby-identifier">s</span>(:<span class="ruby-keyword">class</span>,
+  <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">const_ref</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@const</span>, <span class="ruby-string">&quot;User&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">6</span>))),
+  <span class="ruby-keyword">nil</span>,
+  <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">bodystmt</span>,
+    <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">stmts_add</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">stmts_new</span>),
+      <span class="ruby-identifier">s</span>(:<span class="ruby-keyword">def</span>,
+        <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@ident</span>, <span class="ruby-string">&quot;login&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">16</span>)),
+        <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">params</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>),
+        <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">bodystmt</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">stmts_add</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">stmts_new</span>), <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">void_stmt</span>)), <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>)
+      )
+    ), <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>
+  )
+)
+    =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">bodystmt</span>,
+         <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">stmts_add</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">stmts_new</span>),
+           <span class="ruby-identifier">s</span>(:<span class="ruby-keyword">def</span>,
+             <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@ident</span>, <span class="ruby-string">&quot;login&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">16</span>)),
+             <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">params</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>),
+             <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">bodystmt</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">stmts_add</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">stmts_new</span>), <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">void_stmt</span>)), <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>)
+           )
+         ), <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>
+       )
+</pre>
+
+<p>@return [Sexp] body node</p>
+          
+
+          
+          <div class="method-source-code" id="body-source">
+            <pre><span class="ruby-comment"># File lib/code_analyzer/sexp.rb, line 430</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">body</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">sexp_type</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:else</span>
+    <span class="ruby-keyword">self</span>[<span class="ruby-value">1</span>]
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:module</span>, <span class="ruby-value">:if</span>, <span class="ruby-value">:elsif</span>, <span class="ruby-value">:unless</span>, <span class="ruby-value">:if_mod</span>, <span class="ruby-value">:unless_mod</span>, <span class="ruby-value">:ifop</span>
+    <span class="ruby-keyword">self</span>[<span class="ruby-value">2</span>]
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:class</span>, <span class="ruby-value">:def</span>
+    <span class="ruby-keyword">self</span>[<span class="ruby-value">3</span>]
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:defs</span>
+    <span class="ruby-keyword">self</span>[<span class="ruby-value">5</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- body-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- body-method -->
+
+    
+      <div id="method-i-check" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">check</span><span
+            class="method-args">(visitor)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>check current node.</p>
+
+<p>@param [CodeAnalyzer::CheckingVisitor::Default] visitor the visitor to
+check current node</p>
+          
+
+          
+          <div class="method-source-code" id="check-source">
+            <pre><span class="ruby-comment"># File lib/code_analyzer/sexp.rb, line 7</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">check</span>(<span class="ruby-identifier">visitor</span>)
+  <span class="ruby-identifier">visitor</span>.<span class="ruby-identifier">check_node</span>(<span class="ruby-keyword">self</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- check-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- check-method -->
+
+    
+      <div id="method-i-children" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">children</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>return child nodes of a sexp node.</p>
+
+<p>@return [Array] child nodes.</p>
+          
+
+          
+          <div class="method-source-code" id="children-source">
+            <pre><span class="ruby-comment"># File lib/code_analyzer/sexp.rb, line 39</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">children</span>
+  <span class="ruby-identifier">find_all</span> { <span class="ruby-operator">|</span> <span class="ruby-identifier">sexp</span> <span class="ruby-operator">|</span> <span class="ruby-constant">Sexp</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">sexp</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- children-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- children-method -->
+
+    
+      <div id="method-i-class_name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">class_name</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get the class name of the class node.</p>
+
+<pre class="ruby"><span class="ruby-identifier">s</span>(:<span class="ruby-keyword">class</span>,
+  <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">const_ref</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@const</span>, <span class="ruby-string">&quot;User&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">6</span>))),
+  <span class="ruby-keyword">nil</span>,
+  <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">bodystmt</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">stmts_add</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">stmts_new</span>), <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">void_stmt</span>)), <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>)
+)
+    =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">const_ref</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@const</span>, <span class="ruby-string">&quot;User&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">6</span>))),
+</pre>
+
+<p>@return [Sexp] class name node</p>
+          
+
+          
+          <div class="method-source-code" id="class_name-source">
+            <pre><span class="ruby-comment"># File lib/code_analyzer/sexp.rb, line 155</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">class_name</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-value">:class</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">sexp_type</span>
+    <span class="ruby-keyword">self</span>[<span class="ruby-value">1</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- class_name-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- class_name-method -->
+
+    
+      <div id="method-i-conditional_statement" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">conditional_statement</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get the conditional statement of if node.</p>
+
+<pre class="ruby"><span class="ruby-identifier">s</span>(:<span class="ruby-keyword">if</span>,
+  <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">var_ref</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@kw</span>, <span class="ruby-string">&quot;true&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">3</span>))),
+  <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">stmts_add</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">stmts_new</span>), <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">void_stmt</span>)),
+  <span class="ruby-keyword">nil</span>
+)
+    =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">var_ref</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@kw</span>, <span class="ruby-string">&quot;true&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">3</span>))),
+</pre>
+
+<p>@return [Sexp] conditional statement of if node</p>
+          
+
+          
+          <div class="method-source-code" id="conditional_statement-source">
+            <pre><span class="ruby-comment"># File lib/code_analyzer/sexp.rb, line 331</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">conditional_statement</span>
+  <span class="ruby-keyword">if</span> [<span class="ruby-value">:if</span>, <span class="ruby-value">:unless</span>, <span class="ruby-value">:elsif</span>, <span class="ruby-value">:ifop</span>, <span class="ruby-value">:if_mod</span>, <span class="ruby-value">:unless_mod</span>].<span class="ruby-identifier">include?</span> <span class="ruby-identifier">sexp_type</span>
+    <span class="ruby-keyword">self</span>[<span class="ruby-value">1</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- conditional_statement-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- conditional_statement-method -->
+
+    
+      <div id="method-i-const-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">const?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>check if the self node is a const.</p>
+          
+
+          
+          <div class="method-source-code" id="const-3F-source">
+            <pre><span class="ruby-comment"># File lib/code_analyzer/sexp.rb, line 844</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">const?</span>
+  <span class="ruby-value">:@const</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">sexp_type</span> <span class="ruby-operator">||</span> ([<span class="ruby-value">:var_ref</span>, <span class="ruby-value">:vcall</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">sexp_type</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-value">:@const</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">self</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">sexp_type</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- const-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- const-3F-method -->
+
+    
+      <div id="method-i-exception_classes" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">exception_classes</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get expcetion class of rescue node.</p>
+
+<pre class="ruby"><span class="ruby-identifier">s</span>(:<span class="ruby-keyword">rescue</span>,
+  <span class="ruby-identifier">s</span>(
+    <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">var_ref</span>,
+      <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@const</span>, <span class="ruby-string">&quot;CustomException&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">17</span>))
+    )
+  ),
+  <span class="ruby-keyword">nil</span>,
+  <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">stmts_add</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">stmts_new</span>), <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">void_stmt</span>)),
+  <span class="ruby-keyword">nil</span>
+)
+    =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">s</span>(<span class="ruby-identifier">s</span>(:<span class="ruby-identifier">var_ref</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@const</span>, <span class="ruby-string">&quot;CustomException&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">17</span>))))
+</pre>
+          
+
+          
+          <div class="method-source-code" id="exception_classes-source">
+            <pre><span class="ruby-comment"># File lib/code_analyzer/sexp.rb, line 541</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">exception_classes</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-value">:rescue</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">sexp_type</span>
+    <span class="ruby-keyword">return</span> [] <span class="ruby-keyword">unless</span> <span class="ruby-keyword">self</span>[<span class="ruby-value">1</span>]
+    <span class="ruby-keyword">if</span> <span class="ruby-value">:mrhs_add</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">self</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">sexp_type</span>
+      <span class="ruby-identifier">exceptions</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>[<span class="ruby-value">1</span>][<span class="ruby-value">2</span>])
+      <span class="ruby-identifier">arg_nodes</span> = <span class="ruby-keyword">self</span>[<span class="ruby-value">1</span>][<span class="ruby-value">1</span>][<span class="ruby-value">1</span>]
+      <span class="ruby-keyword">while</span> <span class="ruby-value">:args_add</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">arg_nodes</span>.<span class="ruby-identifier">sexp_type</span>
+        <span class="ruby-identifier">exceptions</span>.<span class="ruby-identifier">unshift</span> <span class="ruby-identifier">arg_nodes</span>[<span class="ruby-value">2</span>]
+        <span class="ruby-identifier">arg_nodes</span> = <span class="ruby-identifier">arg_nodes</span>[<span class="ruby-value">1</span>]
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">exceptions</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-keyword">self</span>[<span class="ruby-value">1</span>]
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- exception_classes-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- exception_classes-method -->
+
+    
+      <div id="method-i-exception_variable" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">exception_variable</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get exception variable of rescue node.</p>
+
+<pre class="ruby"><span class="ruby-identifier">s</span>(:<span class="ruby-keyword">rescue</span>,
+  <span class="ruby-keyword">nil</span>,
+  <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">var_field</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@ident</span>, <span class="ruby-string">&quot;e&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">20</span>))),
+  <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">stmts_add</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">stmts_new</span>), <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">void_stmt</span>)),
+  <span class="ruby-keyword">nil</span>
+)
+    =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">var_field</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@ident</span>, <span class="ruby-string">&quot;e&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">20</span>)))
+</pre>
+          
+
+          
+          <div class="method-source-code" id="exception_variable-source">
+            <pre><span class="ruby-comment"># File lib/code_analyzer/sexp.rb, line 567</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">exception_variable</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-value">:rescue</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">sexp_type</span>
+    <span class="ruby-keyword">self</span>[<span class="ruby-value">2</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- exception_variable-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- exception_variable-method -->
+
+    
+      <div id="method-i-grep_node" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">grep_node</span><span
+            class="method-args">(options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>grep all the recursive child nodes with conditions, and yield the first
+match node.</p>
+
+<p>@param [Hash] options grep conditions</p>
+
+<p>options is the grep conditions, like</p>
+
+<pre>sexp_type: :call,
+receiver: s(:const, Post),
+message: [:find, :new]</pre>
+
+<p>the condition key is one of :sexp_type, :receiver, :message, and <a
+href="Sexp.html#method-i-to_s">#to_s</a>, the condition value can be
+Symbol, Array or <a href="Sexp.html">Sexp</a>.</p>
+          
+
+          
+          <div class="method-source-code" id="grep_node-source">
+            <pre><span class="ruby-comment"># File lib/code_analyzer/sexp.rb, line 91</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">grep_node</span>(<span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">result</span> = <span class="ruby-constant">CodeAnalyzer</span><span class="ruby-operator">::</span><span class="ruby-constant">Nil</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">grep_nodes</span>(<span class="ruby-identifier">options</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">node</span><span class="ruby-operator">|</span> <span class="ruby-identifier">result</span> = <span class="ruby-identifier">node</span>; <span class="ruby-keyword">break</span>; }
+  <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- grep_node-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- grep_node-method -->
+
+    
+      <div id="method-i-grep_nodes" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">grep_nodes</span><span
+            class="method-args">(options) { |child| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>grep all the recursive child nodes with conditions, and yield each match
+node.</p>
+
+<p>@param [Hash] options grep conditions</p>
+
+<p>options is the grep conditions, like</p>
+
+<pre>sexp_type: :call,
+receiver: &quot;Post&quot;,
+message: [&quot;find&quot;, &quot;new&quot;]
+to_s: &quot;devise&quot;</pre>
+
+<p>the condition key is one of :sexp_type, :receiver, :message, :<a
+href="Sexp.html#method-i-to_s">#to_s</a>, the condition value can be
+Symbol, Array or <a href="Sexp.html">Sexp</a>.</p>
+          
+
+          
+          <div class="method-source-code" id="grep_nodes-source">
+            <pre><span class="ruby-comment"># File lib/code_analyzer/sexp.rb, line 64</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">grep_nodes</span>(<span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">sexp_type</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:sexp_type</span>]
+  <span class="ruby-identifier">receiver</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:receiver</span>]
+  <span class="ruby-identifier">message</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:message</span>]
+  <span class="ruby-identifier">to_s</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:to_s</span>]
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">recursive_children</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">child</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> (<span class="ruby-operator">!</span><span class="ruby-identifier">sexp_type</span> <span class="ruby-operator">||</span> (<span class="ruby-identifier">sexp_type</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">sexp_type</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">child</span>.<span class="ruby-identifier">sexp_type</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">sexp_type</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">child</span>.<span class="ruby-identifier">sexp_type</span>)) <span class="ruby-operator">&amp;&amp;</span>
+       (<span class="ruby-operator">!</span><span class="ruby-identifier">receiver</span> <span class="ruby-operator">||</span> (<span class="ruby-identifier">receiver</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">receiver</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">child</span>.<span class="ruby-identifier">receiver</span>.<span class="ruby-identifier">to_s</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">receiver</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">child</span>.<span class="ruby-identifier">receiver</span>.<span class="ruby-identifier">to_s</span>)) <span class="ruby-operator">&amp;&amp;</span>
+       (<span class="ruby-operator">!</span><span class="ruby-identifier">message</span> <span class="ruby-operator">||</span> (<span class="ruby-identifier">message</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">message</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">child</span>.<span class="ruby-identifier">message</span>.<span class="ruby-identifier">to_s</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">message</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">child</span>.<span class="ruby-identifier">message</span>.<span class="ruby-identifier">to_s</span>)) <span class="ruby-operator">&amp;&amp;</span>
+       (<span class="ruby-operator">!</span><span class="ruby-identifier">to_s</span> <span class="ruby-operator">||</span> (<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">child</span>.<span class="ruby-identifier">to_s</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">to_s</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">child</span>.<span class="ruby-identifier">to_s</span>))
+      <span class="ruby-keyword">yield</span> <span class="ruby-identifier">child</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- grep_nodes-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- grep_nodes-method -->
+
+    
+      <div id="method-i-grep_nodes_count" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">grep_nodes_count</span><span
+            class="method-args">(options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>grep all the recursive child nodes with conditions, and get the count of
+match nodes.</p>
+
+<p>@param [Hash] options grep conditions @return [Integer] the count of metch
+nodes</p>
+          
+
+          
+          <div class="method-source-code" id="grep_nodes_count-source">
+            <pre><span class="ruby-comment"># File lib/code_analyzer/sexp.rb, line 101</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">grep_nodes_count</span>(<span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">count</span> = <span class="ruby-value">0</span>
+  <span class="ruby-identifier">grep_nodes</span>(<span class="ruby-identifier">options</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">node</span><span class="ruby-operator">|</span> <span class="ruby-identifier">count</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span> }
+  <span class="ruby-identifier">count</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- grep_nodes_count-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- grep_nodes_count-method -->
+
+    
+      <div id="method-i-hash_keys" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">hash_keys</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get the hash keys.</p>
+
+<pre class="ruby"><span class="ruby-identifier">s</span>(:<span class="ruby-identifier">hash</span>,
+  <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">assoclist_from_args</span>,
+    <span class="ruby-identifier">s</span>(
+      <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">assoc_new</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@label</span>, <span class="ruby-string">&quot;first_name:&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">1</span>)), <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_literal</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_add</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_content</span>), <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@tstring_content</span>, <span class="ruby-string">&quot;Richard&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">14</span>))))),
+      <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">assoc_new</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@label</span>, <span class="ruby-string">&quot;last_name:&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">24</span>)), <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_literal</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_add</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_content</span>), <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@tstring_content</span>, <span class="ruby-string">&quot;Huang&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">36</span>)))))
+    )
+  )
+)
+    =<span class="ruby-operator">&gt;</span> [<span class="ruby-string">&quot;first_name&quot;</span>, <span class="ruby-string">&quot;last_name&quot;</span>]
+</pre>
+
+<p>@return [Array] hash keys</p>
+          
+
+          
+          <div class="method-source-code" id="hash_keys-source">
+            <pre><span class="ruby-comment"># File lib/code_analyzer/sexp.rb, line 641</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">hash_keys</span>
+  <span class="ruby-identifier">pair_nodes</span> = <span class="ruby-keyword">case</span> <span class="ruby-identifier">sexp_type</span>
+               <span class="ruby-keyword">when</span> <span class="ruby-value">:bare_assoc_hash</span>
+                 <span class="ruby-keyword">self</span>[<span class="ruby-value">1</span>]
+               <span class="ruby-keyword">when</span> <span class="ruby-value">:hash</span>
+                 <span class="ruby-keyword">self</span>[<span class="ruby-value">1</span>][<span class="ruby-value">1</span>]
+               <span class="ruby-keyword">else</span>
+               <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">pair_nodes</span>
+    <span class="ruby-identifier">keys</span> = []
+    <span class="ruby-identifier">pair_nodes</span>.<span class="ruby-identifier">size</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">keys</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">pair_nodes</span>[<span class="ruby-identifier">i</span>][<span class="ruby-value">1</span>].<span class="ruby-identifier">to_s</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">keys</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- hash_keys-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- hash_keys-method -->
+
+    
+      <div id="method-i-hash_size" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">hash_size</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get hash size.</p>
+
+<pre class="ruby"><span class="ruby-identifier">s</span>(:<span class="ruby-identifier">hash</span>,
+  <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">assoclist_from_args</span>,
+    <span class="ruby-identifier">s</span>(
+      <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">assoc_new</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@label</span>, <span class="ruby-string">&quot;first_name:&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">1</span>)), <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_literal</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_add</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_content</span>), <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@tstring_content</span>, <span class="ruby-string">&quot;Richard&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">14</span>))))),
+      <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">assoc_new</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@label</span>, <span class="ruby-string">&quot;last_name:&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">24</span>)), <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_literal</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_add</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_content</span>), <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@tstring_content</span>, <span class="ruby-string">&quot;Huang&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">36</span>)))))
+    )
+  )
+)
+    =<span class="ruby-operator">&gt;</span> <span class="ruby-value">2</span>
+</pre>
+
+<p>@return [Integer] hash size</p>
+          
+
+          
+          <div class="method-source-code" id="hash_size-source">
+            <pre><span class="ruby-comment"># File lib/code_analyzer/sexp.rb, line 617</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">hash_size</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">sexp_type</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:hash</span>
+    <span class="ruby-keyword">self</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">hash_size</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:assoclist_from_args</span>
+    <span class="ruby-keyword">self</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">size</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:bare_assoc_hash</span>
+    <span class="ruby-keyword">self</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">size</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- hash_size-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- hash_size-method -->
+
+    
+      <div id="method-i-hash_value" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">hash_value</span><span
+            class="method-args">(key)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get hash value node.</p>
+
+<pre class="ruby"><span class="ruby-identifier">s</span>(:<span class="ruby-identifier">hash</span>,
+  <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">assoclist_from_args</span>,
+    <span class="ruby-identifier">s</span>(
+      <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">assoc_new</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@label</span>, <span class="ruby-string">&quot;first_name:&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">1</span>)), <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_literal</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_add</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_content</span>), <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@tstring_content</span>, <span class="ruby-string">&quot;Richard&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">14</span>))))),
+      <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">assoc_new</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@label</span>, <span class="ruby-string">&quot;last_name:&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">24</span>)), <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_literal</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_add</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_content</span>), <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@tstring_content</span>, <span class="ruby-string">&quot;Huang&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">36</span>)))))
+    )
+  )
+)
+    =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_literal</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_add</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_content</span>), <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@tstring_content</span>, <span class="ruby-string">&quot;Richard&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">14</span>))))
+</pre>
+
+<p>@return [Sexp] hash value node</p>
+          
+
+          
+          <div class="method-source-code" id="hash_value-source">
+            <pre><span class="ruby-comment"># File lib/code_analyzer/sexp.rb, line 586</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">hash_value</span>(<span class="ruby-identifier">key</span>)
+  <span class="ruby-identifier">pair_nodes</span> = <span class="ruby-keyword">case</span> <span class="ruby-identifier">sexp_type</span>
+               <span class="ruby-keyword">when</span> <span class="ruby-value">:bare_assoc_hash</span>
+                 <span class="ruby-keyword">self</span>[<span class="ruby-value">1</span>]
+               <span class="ruby-keyword">when</span> <span class="ruby-value">:hash</span>
+                 <span class="ruby-keyword">self</span>[<span class="ruby-value">1</span>][<span class="ruby-value">1</span>]
+               <span class="ruby-keyword">else</span>
+               <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">pair_nodes</span>
+    <span class="ruby-identifier">pair_nodes</span>.<span class="ruby-identifier">size</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">key</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">pair_nodes</span>[<span class="ruby-identifier">i</span>][<span class="ruby-value">1</span>].<span class="ruby-identifier">to_s</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">pair_nodes</span>[<span class="ruby-identifier">i</span>][<span class="ruby-value">2</span>]
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-constant">CodeAnalyzer</span><span class="ruby-operator">::</span><span class="ruby-constant">Nil</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- hash_value-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- hash_value-method -->
+
+    
+      <div id="method-i-hash_values" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">hash_values</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get the hash values.</p>
+
+<pre class="ruby"><span class="ruby-identifier">s</span>(:<span class="ruby-identifier">hash</span>,
+  <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">assoclist_from_args</span>,
+    <span class="ruby-identifier">s</span>(
+      <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">assoc_new</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@label</span>, <span class="ruby-string">&quot;first_name:&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">1</span>)), <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_literal</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_add</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_content</span>), <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@tstring_content</span>, <span class="ruby-string">&quot;Richard&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">14</span>))))),
+      <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">assoc_new</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@label</span>, <span class="ruby-string">&quot;last_name:&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">24</span>)), <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_literal</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_add</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_content</span>), <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@tstring_content</span>, <span class="ruby-string">&quot;Huang&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">36</span>)))))
+    )
+  )
+)
+    =<span class="ruby-operator">&gt;</span> [
+         <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_literal</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_add</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_content</span>), <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@tstring_content</span>, <span class="ruby-string">&quot;Richard&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">14</span>)))),
+         <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_literal</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_add</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_content</span>), <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@tstring_content</span>, <span class="ruby-string">&quot;Huang&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">36</span>))))
+       ]
+</pre>
+
+<p>@return [Array] hash values</p>
+          
+
+          
+          <div class="method-source-code" id="hash_values-source">
+            <pre><span class="ruby-comment"># File lib/code_analyzer/sexp.rb, line 674</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">hash_values</span>
+  <span class="ruby-identifier">pair_nodes</span> = <span class="ruby-keyword">case</span> <span class="ruby-identifier">sexp_type</span>
+               <span class="ruby-keyword">when</span> <span class="ruby-value">:bare_assoc_hash</span>
+                 <span class="ruby-keyword">self</span>[<span class="ruby-value">1</span>]
+               <span class="ruby-keyword">when</span> <span class="ruby-value">:hash</span>
+                 <span class="ruby-keyword">self</span>[<span class="ruby-value">1</span>][<span class="ruby-value">1</span>]
+               <span class="ruby-keyword">else</span>
+               <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">pair_nodes</span>
+    <span class="ruby-identifier">values</span> = []
+    <span class="ruby-identifier">pair_nodes</span>.<span class="ruby-identifier">size</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">values</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">pair_nodes</span>[<span class="ruby-identifier">i</span>][<span class="ruby-value">2</span>]
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">values</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- hash_values-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- hash_values-method -->
+
+    
+      <div id="method-i-left_value" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">left_value</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get the left value of the assign node.</p>
+
+<pre class="ruby"><span class="ruby-identifier">s</span>(:<span class="ruby-identifier">assign</span>,
+  <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">var_field</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@ident</span>, <span class="ruby-string">&quot;user&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">0</span>))),
+  <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">var_ref</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@ident</span>, <span class="ruby-string">&quot;current_user&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">7</span>)))
+)
+    =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">var_field</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@ident</span>, <span class="ruby-string">&quot;user&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">0</span>))),
+</pre>
+
+<p>@return [Symbol] left value of lasgn or iasgn node</p>
+          
+
+          
+          <div class="method-source-code" id="left_value-source">
+            <pre><span class="ruby-comment"># File lib/code_analyzer/sexp.rb, line 186</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">left_value</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-value">:assign</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">sexp_type</span>
+    <span class="ruby-keyword">self</span>[<span class="ruby-value">1</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- left_value-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- left_value-method -->
+
+    
+      <div id="method-i-line_number" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">line_number</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>return the line number of a sexp node.</p>
+
+<pre class="ruby"><span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@ident</span>, <span class="ruby-string">&quot;test&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">2</span>, <span class="ruby-value">12</span>)
+  =<span class="ruby-operator">&gt;</span> <span class="ruby-value">2</span>
+</pre>
+          
+
+          
+          <div class="method-source-code" id="line_number-source">
+            <pre><span class="ruby-comment"># File lib/code_analyzer/sexp.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">line_number</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">sexp_type</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:def</span>, <span class="ruby-value">:defs</span>, <span class="ruby-value">:command</span>, <span class="ruby-value">:command_call</span>, <span class="ruby-value">:call</span>, <span class="ruby-value">:fcall</span>, <span class="ruby-value">:method_add_arg</span>, <span class="ruby-value">:method_add_block</span>,
+       <span class="ruby-value">:var_ref</span>, <span class="ruby-value">:vcall</span>, <span class="ruby-value">:const_ref</span>, <span class="ruby-value">:const_path_ref</span>, <span class="ruby-value">:class</span>, <span class="ruby-value">:module</span>,
+       <span class="ruby-value">:if</span>, <span class="ruby-value">:unless</span>, <span class="ruby-value">:elsif</span>, <span class="ruby-value">:ifop</span>, <span class="ruby-value">:if_mod</span>, <span class="ruby-value">:unless_mod</span>, <span class="ruby-value">:binary</span>,
+       <span class="ruby-value">:alias</span>, <span class="ruby-value">:symbol_literal</span>, <span class="ruby-value">:symbol</span>, <span class="ruby-value">:aref</span>, <span class="ruby-value">:hash</span>, <span class="ruby-value">:assoc_new</span>, <span class="ruby-value">:string_literal</span>,
+       <span class="ruby-value">:massign</span>
+    <span class="ruby-keyword">self</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">line_number</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:assoclist_from_args</span>, <span class="ruby-value">:bare_assoc_hash</span>
+    <span class="ruby-keyword">self</span>[<span class="ruby-value">1</span>][<span class="ruby-value">0</span>].<span class="ruby-identifier">line_number</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:string_add</span>, <span class="ruby-value">:opassign</span>
+    <span class="ruby-keyword">self</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">line_number</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:array</span>
+    <span class="ruby-identifier">array_values</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">line_number</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:mlhs_add</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">line_number</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">first</span> <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Array</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- line_number-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- line_number-method -->
+
+    
+      <div id="method-i-message" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">message</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get the message node.</p>
+
+<pre class="ruby"><span class="ruby-identifier">s</span>(:<span class="ruby-identifier">command</span>,
+  <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@ident</span>, <span class="ruby-string">&quot;has_many&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">0</span>)),
+  <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">args_add_block</span>,
+    <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">args_add</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">args_new</span>),
+      <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">symbol_literal</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">symbol</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@ident</span>, <span class="ruby-string">&quot;projects&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">10</span>))))
+    ),
+    <span class="ruby-keyword">false</span>
+  )
+)
+    =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@ident</span>, <span class="ruby-string">&quot;has_many&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">0</span>)),
+</pre>
+
+<p>@return [Symbol] message node</p>
+          
+
+          
+          <div class="method-source-code" id="message-source">
+            <pre><span class="ruby-comment"># File lib/code_analyzer/sexp.rb, line 221</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">message</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">sexp_type</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:command</span>, <span class="ruby-value">:fcall</span>
+    <span class="ruby-keyword">self</span>[<span class="ruby-value">1</span>]
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:binary</span>
+    <span class="ruby-keyword">self</span>[<span class="ruby-value">2</span>]
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:command_call</span>, <span class="ruby-value">:field</span>, <span class="ruby-value">:call</span>
+    <span class="ruby-keyword">self</span>[<span class="ruby-value">3</span>]
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:method_add_arg</span>, <span class="ruby-value">:method_add_block</span>
+    <span class="ruby-keyword">self</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">message</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- message-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- message-method -->
+
+    
+      <div id="method-i-method_name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">method_name</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get the method name of def node.</p>
+
+<pre class="ruby"><span class="ruby-identifier">s</span>(:<span class="ruby-keyword">def</span>,
+  <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@ident</span>, <span class="ruby-string">&quot;show&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">4</span>)),
+  <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">params</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>),
+  <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">bodystmt</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">stmts_add</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">stmts_new</span>), <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">void_stmt</span>)), <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>)
+)
+    =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@ident</span>, <span class="ruby-string">&quot;show&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">4</span>)),
+</pre>
+
+<p>@return [Sexp] method name node</p>
+          
+
+          
+          <div class="method-source-code" id="method_name-source">
+            <pre><span class="ruby-comment"># File lib/code_analyzer/sexp.rb, line 394</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">method_name</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">sexp_type</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:def</span>
+    <span class="ruby-keyword">self</span>[<span class="ruby-value">1</span>]
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:defs</span>
+    <span class="ruby-keyword">self</span>[<span class="ruby-value">3</span>]
+  <span class="ruby-keyword">else</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- method_name-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- method_name-method -->
+
+    
+      <div id="method-i-module_name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">module_name</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get the module name of the module node.</p>
+
+<pre class="ruby"><span class="ruby-identifier">s</span>(:<span class="ruby-keyword">module</span>,
+  <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">const_ref</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@const</span>, <span class="ruby-string">&quot;Admin&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">7</span>))),
+  <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">bodystmt</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">stmts_add</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">stmts_new</span>), <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">void_stmt</span>)), <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>)
+)
+    =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">const_ref</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@const</span>, <span class="ruby-string">&quot;Admin&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">7</span>))),
+</pre>
+
+<p>@return [Sexp] module name node</p>
+          
+
+          
+          <div class="method-source-code" id="module_name-source">
+            <pre><span class="ruby-comment"># File lib/code_analyzer/sexp.rb, line 139</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">module_name</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-value">:module</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">sexp_type</span>
+    <span class="ruby-keyword">self</span>[<span class="ruby-value">1</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- module_name-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- module_name-method -->
+
+    
+      <div id="method-i-new_method" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new_method</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>new method for alias node.</p>
+
+<pre class="ruby"><span class="ruby-identifier">s</span>(:<span class="ruby-keyword">alias</span>,
+  <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">symbol_literal</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@ident</span>, <span class="ruby-string">&quot;new&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">6</span>))),
+  <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">symbol_literal</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@ident</span>, <span class="ruby-string">&quot;old&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">10</span>)))
+)
+    =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">symbol_literal</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@ident</span>, <span class="ruby-string">&quot;new&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">6</span>))),
+</pre>
+          
+
+          
+          <div class="method-source-code" id="new_method-source">
+            <pre><span class="ruby-comment"># File lib/code_analyzer/sexp.rb, line 781</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">new_method</span>
+  <span class="ruby-keyword">self</span>[<span class="ruby-value">1</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new_method-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new_method-method -->
+
+    
+      <div id="method-i-old_method" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">old_method</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>old method for alias node.</p>
+
+<pre class="ruby"><span class="ruby-identifier">s</span>(:<span class="ruby-keyword">alias</span>,
+  <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">symbol_literal</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@ident</span>, <span class="ruby-string">&quot;new&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">6</span>))),
+  <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">symbol_literal</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@ident</span>, <span class="ruby-string">&quot;old&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">10</span>)))
+)
+    =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">symbol_literal</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@ident</span>, <span class="ruby-string">&quot;old&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">10</span>))),
+</pre>
+          
+
+          
+          <div class="method-source-code" id="old_method-source">
+            <pre><span class="ruby-comment"># File lib/code_analyzer/sexp.rb, line 770</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">old_method</span>
+  <span class="ruby-keyword">self</span>[<span class="ruby-value">2</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- old_method-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- old_method-method -->
+
+    
+      <div id="method-i-present-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">present?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>true</p>
+          
+
+          
+          <div class="method-source-code" id="present-3F-source">
+            <pre><span class="ruby-comment"># File lib/code_analyzer/sexp.rb, line 849</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">present?</span>
+  <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- present-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- present-3F-method -->
+
+    
+      <div id="method-i-receiver" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">receiver</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get receiver node.</p>
+
+<pre class="ruby"><span class="ruby-identifier">s</span>(:<span class="ruby-identifier">call</span>,
+  <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">var_ref</span>,
+    <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@ident</span>, <span class="ruby-string">&quot;user&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">0</span>))
+  ),
+  :<span class="ruby-string">&quot;.&quot;</span>,
+  <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@ident</span>, <span class="ruby-string">&quot;name&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">5</span>))
+)
+    =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">var_ref</span>,
+         <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@ident</span>, <span class="ruby-string">&quot;user&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">0</span>))
+       )
+</pre>
+
+<p>@return [Sexp] receiver node</p>
+          
+
+          
+          <div class="method-source-code" id="receiver-source">
+            <pre><span class="ruby-comment"># File lib/code_analyzer/sexp.rb, line 121</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">receiver</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">sexp_type</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:assign</span>, <span class="ruby-value">:field</span>, <span class="ruby-value">:call</span>, <span class="ruby-value">:binary</span>, <span class="ruby-value">:command_call</span>
+    <span class="ruby-keyword">self</span>[<span class="ruby-value">1</span>]
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:method_add_arg</span>, <span class="ruby-value">:method_add_block</span>
+    <span class="ruby-keyword">self</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">receiver</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- receiver-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- receiver-method -->
+
+    
+      <div id="method-i-recursive_children" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">recursive_children</span><span
+            class="method-args">() { |child| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>recursively find all child nodes, and yeild each child node.</p>
+          
+
+          
+          <div class="method-source-code" id="recursive_children-source">
+            <pre><span class="ruby-comment"># File lib/code_analyzer/sexp.rb, line 44</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">recursive_children</span>
+  <span class="ruby-identifier">children</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">child</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">yield</span> <span class="ruby-identifier">child</span>
+    <span class="ruby-identifier">child</span>.<span class="ruby-identifier">recursive_children</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-keyword">yield</span> <span class="ruby-identifier">c</span> }
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- recursive_children-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- recursive_children-method -->
+
+    
+      <div id="method-i-remove_line_and_column" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">remove_line_and_column</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>remove the line and column info from sexp.</p>
+          
+
+          
+          <div class="method-source-code" id="remove_line_and_column-source">
+            <pre><span class="ruby-comment"># File lib/code_analyzer/sexp.rb, line 859</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">remove_line_and_column</span>
+  <span class="ruby-identifier">node</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">clone</span>
+  <span class="ruby-identifier">last_node</span> = <span class="ruby-identifier">node</span>.<span class="ruby-identifier">last</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">Sexp</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">last_node</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">last_node</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">2</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">last_node</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Integer</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">last_node</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Integer</span>)
+    <span class="ruby-identifier">node</span>.<span class="ruby-identifier">delete_at</span>(<span class="ruby-value">-1</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">node</span>.<span class="ruby-identifier">sexp_body</span>.<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">child</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-constant">Sexp</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">child</span>
+      <span class="ruby-identifier">node</span>[<span class="ruby-identifier">index</span><span class="ruby-operator">+</span><span class="ruby-value">1</span>] = <span class="ruby-identifier">child</span>.<span class="ruby-identifier">remove_line_and_column</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">node</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- remove_line_and_column-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- remove_line_and_column-method -->
+
+    
+      <div id="method-i-right_value" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">right_value</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get the right value of assign node.</p>
+
+<pre class="ruby"><span class="ruby-identifier">s</span>(:<span class="ruby-identifier">assign</span>,
+  <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">var_field</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@ident</span>, <span class="ruby-string">&quot;user&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">0</span>))),
+  <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">var_ref</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@ident</span>, <span class="ruby-string">&quot;current_user&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">7</span>)))
+)
+    =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">var_ref</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@ident</span>, <span class="ruby-string">&quot;current_user&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">7</span>)))
+</pre>
+
+<p>@return [Sexp] right value of assign node</p>
+          
+
+          
+          <div class="method-source-code" id="right_value-source">
+            <pre><span class="ruby-comment"># File lib/code_analyzer/sexp.rb, line 201</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">right_value</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-value">:assign</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">sexp_type</span>
+    <span class="ruby-keyword">self</span>[<span class="ruby-value">2</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- right_value-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- right_value-method -->
+
+    
+      <div id="method-i-statements" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">statements</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get all statements nodes.</p>
+
+<pre class="ruby"><span class="ruby-identifier">s</span>(:<span class="ruby-identifier">bodystmt</span>,
+  <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">stmts_add</span>,
+    <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">stmts_add</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">stmts_new</span>),
+      <span class="ruby-identifier">s</span>(:<span class="ruby-keyword">def</span>,
+        <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@ident</span>, <span class="ruby-string">&quot;login?&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">16</span>)),
+        <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">params</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>),
+        <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">bodystmt</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">stmts_add</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">stmts_new</span>), <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">void_stmt</span>)), <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>)
+      )
+    ),
+    <span class="ruby-identifier">s</span>(:<span class="ruby-keyword">def</span>,
+      <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@ident</span>, <span class="ruby-string">&quot;admin?&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">33</span>)),
+      <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">params</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>),
+      <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">bodystmt</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">stmts_add</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">stmts_new</span>), <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">void_stmt</span>)), <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>)
+    )
+  ), <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>
+)
+    =<span class="ruby-operator">&gt;</span> [
+         <span class="ruby-identifier">s</span>(:<span class="ruby-keyword">def</span>,
+           <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@ident</span>, <span class="ruby-string">&quot;login?&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">16</span>)),
+           <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">params</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>),
+           <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">bodystmt</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">stmts_add</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">stmts_new</span>), <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">void_stmt</span>)), <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>)
+         ),
+         <span class="ruby-identifier">s</span>(:<span class="ruby-keyword">def</span>,
+           <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@ident</span>, <span class="ruby-string">&quot;admin?&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">33</span>)),
+           <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">params</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>),
+           <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">bodystmt</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">stmts_add</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">stmts_new</span>), <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">void_stmt</span>)), <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>)
+         )
+       ]
+</pre>
+
+<p>@return [Array] all statements</p>
+          
+
+          
+          <div class="method-source-code" id="statements-source">
+            <pre><span class="ruby-comment"># File lib/code_analyzer/sexp.rb, line 506</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">statements</span>
+  <span class="ruby-identifier">stmts</span> = []
+  <span class="ruby-identifier">node</span> = <span class="ruby-keyword">case</span> <span class="ruby-identifier">sexp_type</span>
+         <span class="ruby-keyword">when</span> <span class="ruby-value">:do_block</span>, <span class="ruby-value">:brace_block</span>
+           <span class="ruby-keyword">self</span>[<span class="ruby-value">2</span>]
+         <span class="ruby-keyword">when</span> <span class="ruby-value">:bodystmt</span>
+           <span class="ruby-keyword">self</span>[<span class="ruby-value">1</span>]
+         <span class="ruby-keyword">else</span>
+         <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">node</span>
+    <span class="ruby-keyword">while</span> <span class="ruby-keyword">true</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-value">:stmts_add</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">sexp_type</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">s</span>(<span class="ruby-value">:void_stmt</span>) <span class="ruby-operator">!=</span> <span class="ruby-identifier">node</span>[<span class="ruby-value">2</span>]
+        <span class="ruby-identifier">stmts</span>.<span class="ruby-identifier">unshift</span> <span class="ruby-identifier">node</span>[<span class="ruby-value">2</span>]
+        <span class="ruby-identifier">node</span> = <span class="ruby-identifier">node</span>[<span class="ruby-value">1</span>]
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-keyword">break</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">stmts</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- statements-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- statements-method -->
+
+    
+      <div id="method-i-to_object" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_object</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>To object.</p>
+
+<pre class="ruby"><span class="ruby-identifier">s</span>(:<span class="ruby-identifier">array</span>,
+  <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">args_add</span>,
+    <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">args_add</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">args_new</span>), <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_literal</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_add</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_content</span>), <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@tstring_content</span>, <span class="ruby-string">&quot;first_name&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">2</span>))))),
+    <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_literal</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_add</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">string_content</span>), <span class="ruby-identifier">s</span>(:<span class="ruby-ivar">@tstring_content</span>, <span class="ruby-string">&quot;last_name&quot;</span>, <span class="ruby-identifier">s</span>(<span class="ruby-value">1</span>, <span class="ruby-value">16</span>))))
+  )
+)
+    =<span class="ruby-operator">&gt;</span> [<span class="ruby-string">&quot;first_name&quot;</span>, <span class="ruby-string">&quot;last_name&quot;</span>]
+</pre>
+
+<p>@return [Object]</p>
+          
+
+          
+          <div class="method-source-code" id="to_object-source">
+            <pre><span class="ruby-comment"># File lib/code_analyzer/sexp.rb, line 796</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_object</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">sexp_type</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:array</span>
+    <span class="ruby-identifier">array_values</span>.<span class="ruby-identifier">map</span>(&amp;<span class="ruby-value">:to_s</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">to_s</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- to_object-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- to_object-method -->
+
+    
+      <div id="method-i-to_s" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_s</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>to_s.</p>
+
+<p>@return [String] <a href="Sexp.html#method-i-to_s">#to_s</a></p>
+          
+
+          
+          <div class="method-source-code" id="to_s-source">
+            <pre><span class="ruby-comment"># File lib/code_analyzer/sexp.rb, line 808</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">sexp_type</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:string_literal</span>, <span class="ruby-value">:xstring_literal</span>, <span class="ruby-value">:string_content</span>, <span class="ruby-value">:const_ref</span>, <span class="ruby-value">:symbol_literal</span>, <span class="ruby-value">:symbol</span>,
+       <span class="ruby-value">:args_add_block</span>, <span class="ruby-value">:var_ref</span>, <span class="ruby-value">:vcall</span>, <span class="ruby-value">:var_field</span>,
+       <span class="ruby-value">:@ident</span>, <span class="ruby-value">:@tstring_content</span>, <span class="ruby-value">:@const</span>, <span class="ruby-value">:@ivar</span>, <span class="ruby-value">:@kw</span>, <span class="ruby-value">:@gvar</span>, <span class="ruby-value">:@cvar</span>
+    <span class="ruby-keyword">self</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">to_s</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:string_add</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">s</span>(<span class="ruby-value">:string_content</span>) <span class="ruby-operator">==</span> <span class="ruby-keyword">self</span>[<span class="ruby-value">1</span>]
+      <span class="ruby-keyword">self</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">to_s</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-keyword">self</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">to_s</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:args_add</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">s</span>(<span class="ruby-value">:args_new</span>) <span class="ruby-operator">==</span> <span class="ruby-keyword">self</span>[<span class="ruby-value">1</span>]
+      <span class="ruby-keyword">self</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">to_s</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-keyword">self</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">to_s</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:qwords_add</span>
+    <span class="ruby-keyword">self</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">to_s</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:word_add</span>
+    <span class="ruby-keyword">self</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">to_s</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:const_path_ref</span>
+    <span class="ruby-node">&quot;#{self[1]}::#{self[2]}&quot;</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:@label</span>
+    <span class="ruby-keyword">self</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">to_s</span>[<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">-2</span>]
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:aref</span>
+    <span class="ruby-node">&quot;#{self[1]}[#{self[2]}]&quot;</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:call</span>, <span class="ruby-value">:field</span>
+    <span class="ruby-node">&quot;#{self.receiver}.#{self.message}&quot;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- to_s-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- to_s-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

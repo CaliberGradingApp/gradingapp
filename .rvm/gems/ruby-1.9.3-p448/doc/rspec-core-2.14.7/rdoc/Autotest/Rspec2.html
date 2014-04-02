@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Autotest::Rspec2 - rspec-core-2.14.7 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/autotest/rspec2.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="../Autotest.html">Autotest</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-consolidate_failures">#consolidate_failures</a>
+    
+    <li><a href="#method-i-make_test_cmd">#make_test_cmd</a>
+    
+    <li><a href="#method-i-normalize">#normalize</a>
+    
+    <li><a href="#method-i-setup_rspec_project_mappings">#setup_rspec_project_mappings</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../RSpec.html">RSpec</a>
+  
+    <li><a href="../RSpec/Core.html">RSpec::Core</a>
+  
+    <li><a href="../RSpec/Core/BacktraceCleaner.html">RSpec::Core::BacktraceCleaner</a>
+  
+    <li><a href="../RSpec/Core/BacktraceFormatter.html">RSpec::Core::BacktraceFormatter</a>
+  
+    <li><a href="../RSpec/Core/CommandLine.html">RSpec::Core::CommandLine</a>
+  
+    <li><a href="../RSpec/Core/Configuration.html">RSpec::Core::Configuration</a>
+  
+    <li><a href="../RSpec/Core/Configuration/MustBeConfiguredBeforeExampleGroupsError.html">RSpec::Core::Configuration::MustBeConfiguredBeforeExampleGroupsError</a>
+  
+    <li><a href="../RSpec/Core/ConfigurationOptions.html">RSpec::Core::ConfigurationOptions</a>
+  
+    <li><a href="../RSpec/Core/ConstMissing.html">RSpec::Core::ConstMissing</a>
+  
+    <li><a href="../RSpec/Core/DRbCommandLine.html">RSpec::Core::DRbCommandLine</a>
+  
+    <li><a href="../RSpec/Core/DSL.html">RSpec::Core::DSL</a>
+  
+    <li><a href="../RSpec/Core/Deprecation.html">RSpec::Core::Deprecation</a>
+  
+    <li><a href="../RSpec/Core/DrbOptions.html">RSpec::Core::DrbOptions</a>
+  
+    <li><a href="../RSpec/Core/Example.html">RSpec::Core::Example</a>
+  
+    <li><a href="../RSpec/Core/Example/Procsy.html">RSpec::Core::Example::Procsy</a>
+  
+    <li><a href="../RSpec/Core/ExampleGroup.html">RSpec::Core::ExampleGroup</a>
+  
+    <li><a href="../RSpec/Core/Extensions.html">RSpec::Core::Extensions</a>
+  
+    <li><a href="../RSpec/Core/Extensions/InstanceEvalWithArgs.html">RSpec::Core::Extensions::InstanceEvalWithArgs</a>
+  
+    <li><a href="../RSpec/Core/Extensions/ModuleEvalWithArgs.html">RSpec::Core::Extensions::ModuleEvalWithArgs</a>
+  
+    <li><a href="../RSpec/Core/Extensions/Ordered.html">RSpec::Core::Extensions::Ordered</a>
+  
+    <li><a href="../RSpec/Core/Extensions/Ordered/ExampleGroups.html">RSpec::Core::Extensions::Ordered::ExampleGroups</a>
+  
+    <li><a href="../RSpec/Core/Extensions/Ordered/Examples.html">RSpec::Core::Extensions::Ordered::Examples</a>
+  
+    <li><a href="../RSpec/Core/FilterManager.html">RSpec::Core::FilterManager</a>
+  
+    <li><a href="../RSpec/Core/FilterManager/BackwardCompatibility.html">RSpec::Core::FilterManager::BackwardCompatibility</a>
+  
+    <li><a href="../RSpec/Core/FilterManager/Describable.html">RSpec::Core::FilterManager::Describable</a>
+  
+    <li><a href="../RSpec/Core/Formatters.html">RSpec::Core::Formatters</a>
+  
+    <li><a href="../RSpec/Core/Formatters/BaseFormatter.html">RSpec::Core::Formatters::BaseFormatter</a>
+  
+    <li><a href="../RSpec/Core/Formatters/BaseTextFormatter.html">RSpec::Core::Formatters::BaseTextFormatter</a>
+  
+    <li><a href="../RSpec/Core/Formatters/DeprecationFormatter.html">RSpec::Core::Formatters::DeprecationFormatter</a>
+  
+    <li><a href="../RSpec/Core/Formatters/DocumentationFormatter.html">RSpec::Core::Formatters::DocumentationFormatter</a>
+  
+    <li><a href="../RSpec/Core/Formatters/Helpers.html">RSpec::Core::Formatters::Helpers</a>
+  
+    <li><a href="../RSpec/Core/Formatters/HtmlFormatter.html">RSpec::Core::Formatters::HtmlFormatter</a>
+  
+    <li><a href="../RSpec/Core/Formatters/HtmlPrinter.html">RSpec::Core::Formatters::HtmlPrinter</a>
+  
+    <li><a href="../RSpec/Core/Formatters/JsonFormatter.html">RSpec::Core::Formatters::JsonFormatter</a>
+  
+    <li><a href="../RSpec/Core/Formatters/ProgressFormatter.html">RSpec::Core::Formatters::ProgressFormatter</a>
+  
+    <li><a href="../RSpec/Core/Formatters/SnippetExtractor.html">RSpec::Core::Formatters::SnippetExtractor</a>
+  
+    <li><a href="../RSpec/Core/Formatters/SnippetExtractor/NullConverter.html">RSpec::Core::Formatters::SnippetExtractor::NullConverter</a>
+  
+    <li><a href="../RSpec/Core/Formatters/TextMateFormatter.html">RSpec::Core::Formatters::TextMateFormatter</a>
+  
+    <li><a href="../RSpec/Core/Hooks.html">RSpec::Core::Hooks</a>
+  
+    <li><a href="../RSpec/Core/Hooks/AfterAllHook.html">RSpec::Core::Hooks::AfterAllHook</a>
+  
+    <li><a href="../RSpec/Core/Hooks/AfterHook.html">RSpec::Core::Hooks::AfterHook</a>
+  
+    <li><a href="../RSpec/Core/Hooks/AroundHook.html">RSpec::Core::Hooks::AroundHook</a>
+  
+    <li><a href="../RSpec/Core/Hooks/AroundHookCollection.html">RSpec::Core::Hooks::AroundHookCollection</a>
+  
+    <li><a href="../RSpec/Core/Hooks/BeforeHook.html">RSpec::Core::Hooks::BeforeHook</a>
+  
+    <li><a href="../RSpec/Core/Hooks/GroupHookCollection.html">RSpec::Core::Hooks::GroupHookCollection</a>
+  
+    <li><a href="../RSpec/Core/Hooks/Hook.html">RSpec::Core::Hooks::Hook</a>
+  
+    <li><a href="../RSpec/Core/Hooks/HookCollection.html">RSpec::Core::Hooks::HookCollection</a>
+  
+    <li><a href="../RSpec/Core/Hooks/HookCollectionAliases.html">RSpec::Core::Hooks::HookCollectionAliases</a>
+  
+    <li><a href="../RSpec/Core/Hooks/RegistersGlobals.html">RSpec::Core::Hooks::RegistersGlobals</a>
+  
+    <li><a href="../RSpec/Core/MemoizedHelpers.html">RSpec::Core::MemoizedHelpers</a>
+  
+    <li><a href="../RSpec/Core/MemoizedHelpers/BeforeAllMemoizedHash.html">RSpec::Core::MemoizedHelpers::BeforeAllMemoizedHash</a>
+  
+    <li><a href="../RSpec/Core/MemoizedHelpers/ClassMethods.html">RSpec::Core::MemoizedHelpers::ClassMethods</a>
+  
+    <li><a href="../RSpec/Core/Metadata.html">RSpec::Core::Metadata</a>
+  
+    <li><a href="../RSpec/Core/Metadata/ExampleMetadataHash.html">RSpec::Core::Metadata::ExampleMetadataHash</a>
+  
+    <li><a href="../RSpec/Core/Metadata/GroupMetadataHash.html">RSpec::Core::Metadata::GroupMetadataHash</a>
+  
+    <li><a href="../RSpec/Core/Metadata/MetadataHash.html">RSpec::Core::Metadata::MetadataHash</a>
+  
+    <li><a href="../RSpec/Core/MetadataHashBuilder.html">RSpec::Core::MetadataHashBuilder</a>
+  
+    <li><a href="../RSpec/Core/MetadataHashBuilder/Common.html">RSpec::Core::MetadataHashBuilder::Common</a>
+  
+    <li><a href="../RSpec/Core/MetadataHashBuilder/WithConfigWarning.html">RSpec::Core::MetadataHashBuilder::WithConfigWarning</a>
+  
+    <li><a href="../RSpec/Core/MetadataHashBuilder/WithDeprecationWarning.html">RSpec::Core::MetadataHashBuilder::WithDeprecationWarning</a>
+  
+    <li><a href="../RSpec/Core/MockFrameworkAdapter.html">RSpec::Core::MockFrameworkAdapter</a>
+  
+    <li><a href="../RSpec/Core/Parser.html">RSpec::Core::Parser</a>
+  
+    <li><a href="../RSpec/Core/Pending.html">RSpec::Core::Pending</a>
+  
+    <li><a href="../RSpec/Core/Pending/PendingDeclaredInExample.html">RSpec::Core::Pending::PendingDeclaredInExample</a>
+  
+    <li><a href="../RSpec/Core/Pending/PendingExampleFixedError.html">RSpec::Core::Pending::PendingExampleFixedError</a>
+  
+    <li><a href="../RSpec/Core/ProjectInitializer.html">RSpec::Core::ProjectInitializer</a>
+  
+    <li><a href="../RSpec/Core/RakeTask.html">RSpec::Core::RakeTask</a>
+  
+    <li><a href="../RSpec/Core/Reporter.html">RSpec::Core::Reporter</a>
+  
+    <li><a href="../RSpec/Core/RubyProject.html">RSpec::Core::RubyProject</a>
+  
+    <li><a href="../RSpec/Core/Runner.html">RSpec::Core::Runner</a>
+  
+    <li><a href="../RSpec/Core/SharedContext.html">RSpec::Core::SharedContext</a>
+  
+    <li><a href="../RSpec/Core/SharedExampleGroup.html">RSpec::Core::SharedExampleGroup</a>
+  
+    <li><a href="../RSpec/Core/SharedExampleGroup/Collection.html">RSpec::Core::SharedExampleGroup::Collection</a>
+  
+    <li><a href="../RSpec/Core/SharedExampleGroup/Registry.html">RSpec::Core::SharedExampleGroup::Registry</a>
+  
+    <li><a href="../RSpec/Core/SharedExampleGroup/TopLevelDSL.html">RSpec::Core::SharedExampleGroup::TopLevelDSL</a>
+  
+    <li><a href="../RSpec/Core/Time.html">RSpec::Core::Time</a>
+  
+    <li><a href="../RSpec/Core/Version.html">RSpec::Core::Version</a>
+  
+    <li><a href="../RSpec/Core/World.html">RSpec::Core::World</a>
+  
+    <li><a href="../RSpec/Rake.html">RSpec::Rake</a>
+  
+    <li><a href="../RSpec/Runner.html">RSpec::Runner</a>
+  
+    <li><a href="../Autotest.html">Autotest</a>
+  
+    <li><a href="../Autotest/Rspec2.html">Autotest::Rspec2</a>
+  
+    <li><a href="../Kernel.html">Kernel</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Autotest::Rspec2</h1>
+
+  <div id="description" class="description">
+    
+<p>Derived from the `Autotest` class, extends the `autotest` command to work
+with <a href="../RSpec.html">RSpec</a>.</p>
+
+<p>@note this will be extracted to a separate gem when we release rspec-3.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="RSPEC_EXECUTABLE">RSPEC_EXECUTABLE
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/autotest/rspec2.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>
+  <span class="ruby-keyword">super</span>()
+  <span class="ruby-identifier">clear_mappings</span>
+  <span class="ruby-identifier">setup_rspec_project_mappings</span>
+
+  <span class="ruby-comment"># Example for Ruby 1.8: http://rubular.com/r/AOXNVDrZpx</span>
+  <span class="ruby-comment"># Example for Ruby 1.9: http://rubular.com/r/85ag5AZ2jP</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">failed_results_re</span> = <span class="ruby-node">/^\s*\d+\).*\n\s+(?:\e\[\d*m)?Failure.*(\n(?:\e\[\d*m)?\s+#\s(.*)?:\d+(?::.*)?(?:\e\[\d*m)?)+$/</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">completed_re</span> = <span class="ruby-regexp">/\n(?:\e\[\d*m)?\d* examples?/</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-consolidate_failures" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">consolidate_failures</span><span
+            class="method-args">(failed)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Overrides Autotest’s implementation to read rspec output</p>
+          
+
+          
+          <div class="method-source-code" id="consolidate_failures-source">
+            <pre><span class="ruby-comment"># File lib/autotest/rspec2.rb, line 37</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">consolidate_failures</span>(<span class="ruby-identifier">failed</span>)
+  <span class="ruby-identifier">filters</span> = <span class="ruby-identifier">new_hash_of_arrays</span>
+  <span class="ruby-identifier">failed</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">spec</span>, <span class="ruby-identifier">trace</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">trace</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/(.*spec\.rb)/</span>
+      <span class="ruby-identifier">filters</span>[<span class="ruby-node">$1</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">spec</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">filters</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- consolidate_failures-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- consolidate_failures-method -->
+
+    
+      <div id="method-i-make_test_cmd" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">make_test_cmd</span><span
+            class="method-args">(files_to_test)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Overrides Autotest’s implementation to generate the rspec command to run</p>
+          
+
+          
+          <div class="method-source-code" id="make_test_cmd-source">
+            <pre><span class="ruby-comment"># File lib/autotest/rspec2.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">make_test_cmd</span>(<span class="ruby-identifier">files_to_test</span>)
+  <span class="ruby-identifier">files_to_test</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">?</span> <span class="ruby-string">''</span> <span class="ruby-operator">:</span>
+    <span class="ruby-node">%Q#{prefix}&quot;#{ruby}&quot;#{suffix} -S &quot;#{RSPEC_EXECUTABLE}&quot; --tty #{normalize(files_to_test).keys.flatten.map { |f| %|&quot;#{f}&quot;|}.join(' ')}|</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- make_test_cmd-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- make_test_cmd-method -->
+
+    
+      <div id="method-i-normalize" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">normalize</span><span
+            class="method-args">(files_to_test)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Generates a map of filenames to Arrays for <a
+href="../Autotest.html">Autotest</a></p>
+          
+
+          
+          <div class="method-source-code" id="normalize-source">
+            <pre><span class="ruby-comment"># File lib/autotest/rspec2.rb, line 54</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">normalize</span>(<span class="ruby-identifier">files_to_test</span>)
+  <span class="ruby-identifier">files_to_test</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">inject</span>({}) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">result</span>, <span class="ruby-identifier">filename</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">result</span>.<span class="ruby-identifier">merge!</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">filename</span>) =<span class="ruby-operator">&gt;</span> [])
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- normalize-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- normalize-method -->
+
+    
+      <div id="method-i-setup_rspec_project_mappings" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">setup_rspec_project_mappings</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Adds conventional spec-to-file mappings to <a
+href="../Autotest.html">Autotest</a> configuation.</p>
+          
+
+          
+          <div class="method-source-code" id="setup_rspec_project_mappings-source">
+            <pre><span class="ruby-comment"># File lib/autotest/rspec2.rb, line 24</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">setup_rspec_project_mappings</span>
+  <span class="ruby-identifier">add_mapping</span>(<span class="ruby-regexp">%r^spec/.*_spec\.rb$%</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">filename</span>, <span class="ruby-identifier">_</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">filename</span>
+  }
+  <span class="ruby-identifier">add_mapping</span>(<span class="ruby-regexp">%r^lib/(.*)\.rb$%</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">_</span>, <span class="ruby-identifier">m</span><span class="ruby-operator">|</span>
+    [<span class="ruby-node">&quot;spec/#{m[1]}_spec.rb&quot;</span>]
+  }
+  <span class="ruby-identifier">add_mapping</span>(<span class="ruby-regexp">%r^spec/(spec_helper|shared/.*)\.rb$%</span>) {
+    <span class="ruby-identifier">files_matching</span> <span class="ruby-regexp">%r^spec/.*_spec\.rb$%</span>
+  }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- setup_rspec_project_mappings-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- setup_rspec_project_mappings-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Nokogiri::CSS::Node - nokogiri-1.6.0 Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/nokogiri/css/node.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="../../Object.html">Object</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-accept">#accept</a>
+    
+    <li><a href="#method-i-find_by_type">#find_by_type</a>
+    
+    <li><a href="#method-i-preprocess-21">#preprocess!</a>
+    
+    <li><a href="#method-i-to_a">#to_a</a>
+    
+    <li><a href="#method-i-to_type">#to_type</a>
+    
+    <li><a href="#method-i-to_xpath">#to_xpath</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../CHANGELOG_ja_rdoc.html">CHANGELOG.ja</a>
+  
+    <li class="file"><a href="../../CHANGELOG_rdoc.html">CHANGELOG</a>
+  
+    <li class="file"><a href="../../C_CODING_STYLE_rdoc.html">C_CODING_STYLE</a>
+  
+    <li class="file"><a href="../../Manifest_txt.html">Manifest</a>
+  
+    <li class="file"><a href="../../README_ja_rdoc.html">README.ja</a>
+  
+    <li class="file"><a href="../../README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../Nokogiri.html">Nokogiri</a>
+  
+    <li><a href="../../Nokogiri/CSS.html">Nokogiri::CSS</a>
+  
+    <li><a href="../../Nokogiri/CSS/Node.html">Nokogiri::CSS::Node</a>
+  
+    <li><a href="../../Nokogiri/CSS/Parser.html">Nokogiri::CSS::Parser</a>
+  
+    <li><a href="../../Nokogiri/CSS/SyntaxError.html">Nokogiri::CSS::SyntaxError</a>
+  
+    <li><a href="../../Nokogiri/CSS/Tokenizer.html">Nokogiri::CSS::Tokenizer</a>
+  
+    <li><a href="../../Nokogiri/CSS/Tokenizer/ScanError.html">Nokogiri::CSS::Tokenizer::ScanError</a>
+  
+    <li><a href="../../Nokogiri/Decorators.html">Nokogiri::Decorators</a>
+  
+    <li><a href="../../Nokogiri/Decorators/Slop.html">Nokogiri::Decorators::Slop</a>
+  
+    <li><a href="../../Nokogiri/EncodingHandler.html">Nokogiri::EncodingHandler</a>
+  
+    <li><a href="../../Nokogiri/HTML.html">Nokogiri::HTML</a>
+  
+    <li><a href="../../Nokogiri/HTML/Builder.html">Nokogiri::HTML::Builder</a>
+  
+    <li><a href="../../Nokogiri/HTML/Document.html">Nokogiri::HTML::Document</a>
+  
+    <li><a href="../../Nokogiri/HTML/Document/EncodingReader.html">Nokogiri::HTML::Document::EncodingReader</a>
+  
+    <li><a href="../../Nokogiri/HTML/Document/EncodingReader/JumpSAXHandler.html">Nokogiri::HTML::Document::EncodingReader::JumpSAXHandler</a>
+  
+    <li><a href="../../Nokogiri/HTML/DocumentFragment.html">Nokogiri::HTML::DocumentFragment</a>
+  
+    <li><a href="../../Nokogiri/HTML/ElementDescription.html">Nokogiri::HTML::ElementDescription</a>
+  
+    <li><a href="../../Nokogiri/HTML/EntityDescription.html">Nokogiri::HTML::EntityDescription</a>
+  
+    <li><a href="../../Nokogiri/HTML/EntityLookup.html">Nokogiri::HTML::EntityLookup</a>
+  
+    <li><a href="../../Nokogiri/HTML/SAX.html">Nokogiri::HTML::SAX</a>
+  
+    <li><a href="../../Nokogiri/HTML/SAX/Parser.html">Nokogiri::HTML::SAX::Parser</a>
+  
+    <li><a href="../../Nokogiri/HTML/SAX/ParserContext.html">Nokogiri::HTML::SAX::ParserContext</a>
+  
+    <li><a href="../../Nokogiri/HTML/SAX/PushParser.html">Nokogiri::HTML::SAX::PushParser</a>
+  
+    <li><a href="../../Nokogiri/SyntaxError.html">Nokogiri::SyntaxError</a>
+  
+    <li><a href="../../Nokogiri/XML.html">Nokogiri::XML</a>
+  
+    <li><a href="../../Nokogiri/XML/Attr.html">Nokogiri::XML::Attr</a>
+  
+    <li><a href="../../Nokogiri/XML/AttributeDecl.html">Nokogiri::XML::AttributeDecl</a>
+  
+    <li><a href="../../Nokogiri/XML/Builder.html">Nokogiri::XML::Builder</a>
+  
+    <li><a href="../../Nokogiri/XML/CDATA.html">Nokogiri::XML::CDATA</a>
+  
+    <li><a href="../../Nokogiri/XML/CharacterData.html">Nokogiri::XML::CharacterData</a>
+  
+    <li><a href="../../Nokogiri/XML/Comment.html">Nokogiri::XML::Comment</a>
+  
+    <li><a href="../../Nokogiri/XML/DTD.html">Nokogiri::XML::DTD</a>
+  
+    <li><a href="../../Nokogiri/XML/Document.html">Nokogiri::XML::Document</a>
+  
+    <li><a href="../../Nokogiri/XML/DocumentFragment.html">Nokogiri::XML::DocumentFragment</a>
+  
+    <li><a href="../../Nokogiri/XML/Element.html">Nokogiri::XML::Element</a>
+  
+    <li><a href="../../Nokogiri/XML/ElementContent.html">Nokogiri::XML::ElementContent</a>
+  
+    <li><a href="../../Nokogiri/XML/ElementDecl.html">Nokogiri::XML::ElementDecl</a>
+  
+    <li><a href="../../Nokogiri/XML/EntityDecl.html">Nokogiri::XML::EntityDecl</a>
+  
+    <li><a href="../../Nokogiri/XML/EntityReference.html">Nokogiri::XML::EntityReference</a>
+  
+    <li><a href="../../Nokogiri/XML/Namespace.html">Nokogiri::XML::Namespace</a>
+  
+    <li><a href="../../Nokogiri/XML/Node.html">Nokogiri::XML::Node</a>
+  
+    <li><a href="../../Nokogiri/XML/Node/SaveOptions.html">Nokogiri::XML::Node::SaveOptions</a>
+  
+    <li><a href="../../Nokogiri/XML/NodeSet.html">Nokogiri::XML::NodeSet</a>
+  
+    <li><a href="../../Nokogiri/XML/Notation.html">Nokogiri::XML::Notation</a>
+  
+    <li><a href="../../Nokogiri/XML/PP.html">Nokogiri::XML::PP</a>
+  
+    <li><a href="../../Nokogiri/XML/PP/CharacterData.html">Nokogiri::XML::PP::CharacterData</a>
+  
+    <li><a href="../../Nokogiri/XML/PP/Node.html">Nokogiri::XML::PP::Node</a>
+  
+    <li><a href="../../Nokogiri/XML/ParseOptions.html">Nokogiri::XML::ParseOptions</a>
+  
+    <li><a href="../../Nokogiri/XML/ProcessingInstruction.html">Nokogiri::XML::ProcessingInstruction</a>
+  
+    <li><a href="../../Nokogiri/XML/Reader.html">Nokogiri::XML::Reader</a>
+  
+    <li><a href="../../Nokogiri/XML/RelaxNG.html">Nokogiri::XML::RelaxNG</a>
+  
+    <li><a href="../../Nokogiri/XML/SAX.html">Nokogiri::XML::SAX</a>
+  
+    <li><a href="../../Nokogiri/XML/SAX/Document.html">Nokogiri::XML::SAX::Document</a>
+  
+    <li><a href="../../Nokogiri/XML/SAX/Parser.html">Nokogiri::XML::SAX::Parser</a>
+  
+    <li><a href="../../Nokogiri/XML/SAX/Parser/Attribute.html">Nokogiri::XML::SAX::Parser::Attribute</a>
+  
+    <li><a href="../../Nokogiri/XML/SAX/ParserContext.html">Nokogiri::XML::SAX::ParserContext</a>
+  
+    <li><a href="../../Nokogiri/XML/SAX/PushParser.html">Nokogiri::XML::SAX::PushParser</a>
+  
+    <li><a href="../../Nokogiri/XML/Schema.html">Nokogiri::XML::Schema</a>
+  
+    <li><a href="../../Nokogiri/XML/SyntaxError.html">Nokogiri::XML::SyntaxError</a>
+  
+    <li><a href="../../Nokogiri/XML/Text.html">Nokogiri::XML::Text</a>
+  
+    <li><a href="../../Nokogiri/XML/XPath.html">Nokogiri::XML::XPath</a>
+  
+    <li><a href="../../Nokogiri/XML/XPath/SyntaxError.html">Nokogiri::XML::XPath::SyntaxError</a>
+  
+    <li><a href="../../Nokogiri/XML/XPathContext.html">Nokogiri::XML::XPathContext</a>
+  
+    <li><a href="../../Nokogiri/XSLT.html">Nokogiri::XSLT</a>
+  
+    <li><a href="../../Nokogiri/XSLT/Stylesheet.html">Nokogiri::XSLT::Stylesheet</a>
+  
+    <li><a href="../../XSD.html">XSD</a>
+  
+    <li><a href="../../XSD/XMLParser.html">XSD::XMLParser</a>
+  
+    <li><a href="../../XSD/XMLParser/Nokogiri.html">XSD::XMLParser::Nokogiri</a>
+  
+    <li><a href="../../Object.html">Object</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Nokogiri::CSS::Node</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="ALLOW_COMBINATOR_ON_SELF">ALLOW_COMBINATOR_ON_SELF
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-type" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">type</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Get the type of this node</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-value" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">value</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Get the value of this node</p>
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(type, value)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Create a new <a href="Node.html">Node</a> with <code>type</code> and
+<code>value</code></p>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/nokogiri/css/node.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span> <span class="ruby-identifier">type</span>, <span class="ruby-identifier">value</span>
+  <span class="ruby-ivar">@type</span> = <span class="ruby-identifier">type</span>
+  <span class="ruby-ivar">@value</span> = <span class="ruby-identifier">value</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-accept" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">accept</span><span
+            class="method-args">(visitor)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Accept <code>visitor</code></p>
+          
+
+          
+          <div class="method-source-code" id="accept-source">
+            <pre><span class="ruby-comment"># File lib/nokogiri/css/node.rb, line 18</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">accept</span> <span class="ruby-identifier">visitor</span>
+  <span class="ruby-identifier">visitor</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:&quot;visit_#{type.to_s.downcase}&quot;</span>, <span class="ruby-keyword">self</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- accept-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- accept-method -->
+
+    
+      <div id="method-i-find_by_type" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find_by_type</span><span
+            class="method-args">(types)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Find a node by type using <code>types</code></p>
+          
+
+          
+          <div class="method-source-code" id="find_by_type-source">
+            <pre><span class="ruby-comment"># File lib/nokogiri/css/node.rb, line 80</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">find_by_type</span> <span class="ruby-identifier">types</span>
+  <span class="ruby-identifier">matches</span> = []
+  <span class="ruby-identifier">matches</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">self</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">to_type</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">types</span>
+  <span class="ruby-ivar">@value</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">matches</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">find_by_type</span>(<span class="ruby-identifier">types</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:find_by_type</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">matches</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- find_by_type-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- find_by_type-method -->
+
+    
+      <div id="method-i-preprocess-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">preprocess!</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Preprocess this node tree</p>
+          
+
+          
+          <div class="method-source-code" id="preprocess-21-source">
+            <pre><span class="ruby-comment"># File lib/nokogiri/css/node.rb, line 31</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">preprocess!</span>
+  <span class="ruby-comment">### Deal with nth-child</span>
+  <span class="ruby-identifier">matches</span> = <span class="ruby-identifier">find_by_type</span>(
+    [<span class="ruby-value">:CONDITIONAL_SELECTOR</span>,
+      [<span class="ruby-value">:ELEMENT_NAME</span>],
+      [<span class="ruby-value">:PSEUDO_CLASS</span>,
+        [<span class="ruby-value">:FUNCTION</span>]
+      ]
+    ]
+  )
+  <span class="ruby-identifier">matches</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">match</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">match</span>.<span class="ruby-identifier">value</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">value</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">value</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">=~</span> <span class="ruby-regexp">/^nth-(last-)?child/</span>
+      <span class="ruby-identifier">tag_name</span> = <span class="ruby-identifier">match</span>.<span class="ruby-identifier">value</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">value</span>.<span class="ruby-identifier">first</span>
+      <span class="ruby-identifier">match</span>.<span class="ruby-identifier">value</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">value</span> = [<span class="ruby-string">'*'</span>]
+      <span class="ruby-identifier">match</span>.<span class="ruby-identifier">value</span>[<span class="ruby-value">1</span>] = <span class="ruby-constant">Node</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:COMBINATOR</span>, [
+        <span class="ruby-identifier">match</span>.<span class="ruby-identifier">value</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">value</span>[<span class="ruby-value">0</span>],
+        <span class="ruby-constant">Node</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:FUNCTION</span>, [<span class="ruby-string">'self('</span>, <span class="ruby-identifier">tag_name</span>])
+      ])
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment">### Deal with first-child, last-child</span>
+  <span class="ruby-identifier">matches</span> = <span class="ruby-identifier">find_by_type</span>(
+    [<span class="ruby-value">:CONDITIONAL_SELECTOR</span>,
+      [<span class="ruby-value">:ELEMENT_NAME</span>], [<span class="ruby-value">:PSEUDO_CLASS</span>]
+  ])
+  <span class="ruby-identifier">matches</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">match</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> [<span class="ruby-string">'first-child'</span>, <span class="ruby-string">'last-child'</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">match</span>.<span class="ruby-identifier">value</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">value</span>.<span class="ruby-identifier">first</span>)
+      <span class="ruby-identifier">which</span> = <span class="ruby-identifier">match</span>.<span class="ruby-identifier">value</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">value</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/-\w*$/</span>, <span class="ruby-string">''</span>)
+      <span class="ruby-identifier">tag_name</span> = <span class="ruby-identifier">match</span>.<span class="ruby-identifier">value</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">value</span>.<span class="ruby-identifier">first</span>
+      <span class="ruby-identifier">match</span>.<span class="ruby-identifier">value</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">value</span> = [<span class="ruby-string">'*'</span>]
+      <span class="ruby-identifier">match</span>.<span class="ruby-identifier">value</span>[<span class="ruby-value">1</span>] = <span class="ruby-constant">Node</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:COMBINATOR</span>, [
+        <span class="ruby-constant">Node</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:FUNCTION</span>, [<span class="ruby-node">&quot;#{which}(&quot;</span>]),
+        <span class="ruby-constant">Node</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:FUNCTION</span>, [<span class="ruby-string">'self('</span>, <span class="ruby-identifier">tag_name</span>])
+      ])
+    <span class="ruby-keyword">elsif</span> <span class="ruby-string">'only-child'</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">match</span>.<span class="ruby-identifier">value</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">value</span>.<span class="ruby-identifier">first</span>
+      <span class="ruby-identifier">tag_name</span> = <span class="ruby-identifier">match</span>.<span class="ruby-identifier">value</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">value</span>.<span class="ruby-identifier">first</span>
+      <span class="ruby-identifier">match</span>.<span class="ruby-identifier">value</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">value</span> = [<span class="ruby-string">'*'</span>]
+      <span class="ruby-identifier">match</span>.<span class="ruby-identifier">value</span>[<span class="ruby-value">1</span>] = <span class="ruby-constant">Node</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:COMBINATOR</span>, [
+        <span class="ruby-constant">Node</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:FUNCTION</span>, [<span class="ruby-node">&quot;#{match.value[1].value.first}(&quot;</span>]),
+        <span class="ruby-constant">Node</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:FUNCTION</span>, [<span class="ruby-string">'self('</span>, <span class="ruby-identifier">tag_name</span>])
+      ])
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- preprocess-21-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- preprocess-21-method -->
+
+    
+      <div id="method-i-to_a" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_a</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Convert to array</p>
+          
+
+          
+          <div class="method-source-code" id="to_a-source">
+            <pre><span class="ruby-comment"># File lib/nokogiri/css/node.rb, line 97</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_a</span>
+  [<span class="ruby-ivar">@type</span>] <span class="ruby-operator">+</span> <span class="ruby-ivar">@value</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span> <span class="ruby-identifier">n</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:to_a</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">n</span>.<span class="ruby-identifier">to_a</span> <span class="ruby-operator">:</span> [<span class="ruby-identifier">n</span>] }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- to_a-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- to_a-method -->
+
+    
+      <div id="method-i-to_type" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_type</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Convert <a href="Node.html#method-i-to_type">#to_type</a></p>
+          
+
+          
+          <div class="method-source-code" id="to_type-source">
+            <pre><span class="ruby-comment"># File lib/nokogiri/css/node.rb, line 90</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_type</span>
+  [<span class="ruby-ivar">@type</span>] <span class="ruby-operator">+</span> <span class="ruby-ivar">@value</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">n</span>.<span class="ruby-identifier">to_type</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">n</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:to_type</span>)
+  }.<span class="ruby-identifier">compact</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- to_type-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- to_type-method -->
+
+    
+      <div id="method-i-to_xpath" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_xpath</span><span
+            class="method-args">(prefix = '//', visitor = XPathVisitor.new)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Convert this <a href="../CSS.html">CSS</a> node to xpath with
+<code>prefix</code> using <code>visitor</code></p>
+          
+
+          
+          <div class="method-source-code" id="to_xpath-source">
+            <pre><span class="ruby-comment"># File lib/nokogiri/css/node.rb, line 24</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_xpath</span> <span class="ruby-identifier">prefix</span> = <span class="ruby-string">'//'</span>, <span class="ruby-identifier">visitor</span> = <span class="ruby-constant">XPathVisitor</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">preprocess!</span>
+  <span class="ruby-identifier">prefix</span> = <span class="ruby-string">'.'</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">ALLOW_COMBINATOR_ON_SELF</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">type</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">prefix</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">visitor</span>.<span class="ruby-identifier">accept</span>(<span class="ruby-keyword">self</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- to_xpath-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- to_xpath-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

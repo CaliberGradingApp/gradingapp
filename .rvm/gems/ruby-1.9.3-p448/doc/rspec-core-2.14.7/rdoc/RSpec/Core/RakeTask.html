@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class RSpec::Core::RakeTask - rspec-core-2.14.7 Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/rspec/core/rake_task.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Rake::TaskLib
+  
+</nav>
+
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><span class="include">::Rake::DSL</span>
+  
+  
+  </ul>
+</nav>
+
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-gemfile-3D">#gemfile=</a>
+    
+    <li><a href="#method-i-run_task">#run_task</a>
+    
+    <li><a href="#method-i-setup_ivars">#setup_ivars</a>
+    
+    <li><a href="#method-i-skip_bundler-3D">#skip_bundler=</a>
+    
+    <li><a href="#method-i-spec_opts-3D">#spec_opts=</a>
+    
+    <li><a href="#method-i-warning-3D">#warning=</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../RSpec.html">RSpec</a>
+  
+    <li><a href="../../RSpec/Core.html">RSpec::Core</a>
+  
+    <li><a href="../../RSpec/Core/BacktraceCleaner.html">RSpec::Core::BacktraceCleaner</a>
+  
+    <li><a href="../../RSpec/Core/BacktraceFormatter.html">RSpec::Core::BacktraceFormatter</a>
+  
+    <li><a href="../../RSpec/Core/CommandLine.html">RSpec::Core::CommandLine</a>
+  
+    <li><a href="../../RSpec/Core/Configuration.html">RSpec::Core::Configuration</a>
+  
+    <li><a href="../../RSpec/Core/Configuration/MustBeConfiguredBeforeExampleGroupsError.html">RSpec::Core::Configuration::MustBeConfiguredBeforeExampleGroupsError</a>
+  
+    <li><a href="../../RSpec/Core/ConfigurationOptions.html">RSpec::Core::ConfigurationOptions</a>
+  
+    <li><a href="../../RSpec/Core/ConstMissing.html">RSpec::Core::ConstMissing</a>
+  
+    <li><a href="../../RSpec/Core/DRbCommandLine.html">RSpec::Core::DRbCommandLine</a>
+  
+    <li><a href="../../RSpec/Core/DSL.html">RSpec::Core::DSL</a>
+  
+    <li><a href="../../RSpec/Core/Deprecation.html">RSpec::Core::Deprecation</a>
+  
+    <li><a href="../../RSpec/Core/DrbOptions.html">RSpec::Core::DrbOptions</a>
+  
+    <li><a href="../../RSpec/Core/Example.html">RSpec::Core::Example</a>
+  
+    <li><a href="../../RSpec/Core/Example/Procsy.html">RSpec::Core::Example::Procsy</a>
+  
+    <li><a href="../../RSpec/Core/ExampleGroup.html">RSpec::Core::ExampleGroup</a>
+  
+    <li><a href="../../RSpec/Core/Extensions.html">RSpec::Core::Extensions</a>
+  
+    <li><a href="../../RSpec/Core/Extensions/InstanceEvalWithArgs.html">RSpec::Core::Extensions::InstanceEvalWithArgs</a>
+  
+    <li><a href="../../RSpec/Core/Extensions/ModuleEvalWithArgs.html">RSpec::Core::Extensions::ModuleEvalWithArgs</a>
+  
+    <li><a href="../../RSpec/Core/Extensions/Ordered.html">RSpec::Core::Extensions::Ordered</a>
+  
+    <li><a href="../../RSpec/Core/Extensions/Ordered/ExampleGroups.html">RSpec::Core::Extensions::Ordered::ExampleGroups</a>
+  
+    <li><a href="../../RSpec/Core/Extensions/Ordered/Examples.html">RSpec::Core::Extensions::Ordered::Examples</a>
+  
+    <li><a href="../../RSpec/Core/FilterManager.html">RSpec::Core::FilterManager</a>
+  
+    <li><a href="../../RSpec/Core/FilterManager/BackwardCompatibility.html">RSpec::Core::FilterManager::BackwardCompatibility</a>
+  
+    <li><a href="../../RSpec/Core/FilterManager/Describable.html">RSpec::Core::FilterManager::Describable</a>
+  
+    <li><a href="../../RSpec/Core/Formatters.html">RSpec::Core::Formatters</a>
+  
+    <li><a href="../../RSpec/Core/Formatters/BaseFormatter.html">RSpec::Core::Formatters::BaseFormatter</a>
+  
+    <li><a href="../../RSpec/Core/Formatters/BaseTextFormatter.html">RSpec::Core::Formatters::BaseTextFormatter</a>
+  
+    <li><a href="../../RSpec/Core/Formatters/DeprecationFormatter.html">RSpec::Core::Formatters::DeprecationFormatter</a>
+  
+    <li><a href="../../RSpec/Core/Formatters/DocumentationFormatter.html">RSpec::Core::Formatters::DocumentationFormatter</a>
+  
+    <li><a href="../../RSpec/Core/Formatters/Helpers.html">RSpec::Core::Formatters::Helpers</a>
+  
+    <li><a href="../../RSpec/Core/Formatters/HtmlFormatter.html">RSpec::Core::Formatters::HtmlFormatter</a>
+  
+    <li><a href="../../RSpec/Core/Formatters/HtmlPrinter.html">RSpec::Core::Formatters::HtmlPrinter</a>
+  
+    <li><a href="../../RSpec/Core/Formatters/JsonFormatter.html">RSpec::Core::Formatters::JsonFormatter</a>
+  
+    <li><a href="../../RSpec/Core/Formatters/ProgressFormatter.html">RSpec::Core::Formatters::ProgressFormatter</a>
+  
+    <li><a href="../../RSpec/Core/Formatters/SnippetExtractor.html">RSpec::Core::Formatters::SnippetExtractor</a>
+  
+    <li><a href="../../RSpec/Core/Formatters/SnippetExtractor/NullConverter.html">RSpec::Core::Formatters::SnippetExtractor::NullConverter</a>
+  
+    <li><a href="../../RSpec/Core/Formatters/TextMateFormatter.html">RSpec::Core::Formatters::TextMateFormatter</a>
+  
+    <li><a href="../../RSpec/Core/Hooks.html">RSpec::Core::Hooks</a>
+  
+    <li><a href="../../RSpec/Core/Hooks/AfterAllHook.html">RSpec::Core::Hooks::AfterAllHook</a>
+  
+    <li><a href="../../RSpec/Core/Hooks/AfterHook.html">RSpec::Core::Hooks::AfterHook</a>
+  
+    <li><a href="../../RSpec/Core/Hooks/AroundHook.html">RSpec::Core::Hooks::AroundHook</a>
+  
+    <li><a href="../../RSpec/Core/Hooks/AroundHookCollection.html">RSpec::Core::Hooks::AroundHookCollection</a>
+  
+    <li><a href="../../RSpec/Core/Hooks/BeforeHook.html">RSpec::Core::Hooks::BeforeHook</a>
+  
+    <li><a href="../../RSpec/Core/Hooks/GroupHookCollection.html">RSpec::Core::Hooks::GroupHookCollection</a>
+  
+    <li><a href="../../RSpec/Core/Hooks/Hook.html">RSpec::Core::Hooks::Hook</a>
+  
+    <li><a href="../../RSpec/Core/Hooks/HookCollection.html">RSpec::Core::Hooks::HookCollection</a>
+  
+    <li><a href="../../RSpec/Core/Hooks/HookCollectionAliases.html">RSpec::Core::Hooks::HookCollectionAliases</a>
+  
+    <li><a href="../../RSpec/Core/Hooks/RegistersGlobals.html">RSpec::Core::Hooks::RegistersGlobals</a>
+  
+    <li><a href="../../RSpec/Core/MemoizedHelpers.html">RSpec::Core::MemoizedHelpers</a>
+  
+    <li><a href="../../RSpec/Core/MemoizedHelpers/BeforeAllMemoizedHash.html">RSpec::Core::MemoizedHelpers::BeforeAllMemoizedHash</a>
+  
+    <li><a href="../../RSpec/Core/MemoizedHelpers/ClassMethods.html">RSpec::Core::MemoizedHelpers::ClassMethods</a>
+  
+    <li><a href="../../RSpec/Core/Metadata.html">RSpec::Core::Metadata</a>
+  
+    <li><a href="../../RSpec/Core/Metadata/ExampleMetadataHash.html">RSpec::Core::Metadata::ExampleMetadataHash</a>
+  
+    <li><a href="../../RSpec/Core/Metadata/GroupMetadataHash.html">RSpec::Core::Metadata::GroupMetadataHash</a>
+  
+    <li><a href="../../RSpec/Core/Metadata/MetadataHash.html">RSpec::Core::Metadata::MetadataHash</a>
+  
+    <li><a href="../../RSpec/Core/MetadataHashBuilder.html">RSpec::Core::MetadataHashBuilder</a>
+  
+    <li><a href="../../RSpec/Core/MetadataHashBuilder/Common.html">RSpec::Core::MetadataHashBuilder::Common</a>
+  
+    <li><a href="../../RSpec/Core/MetadataHashBuilder/WithConfigWarning.html">RSpec::Core::MetadataHashBuilder::WithConfigWarning</a>
+  
+    <li><a href="../../RSpec/Core/MetadataHashBuilder/WithDeprecationWarning.html">RSpec::Core::MetadataHashBuilder::WithDeprecationWarning</a>
+  
+    <li><a href="../../RSpec/Core/MockFrameworkAdapter.html">RSpec::Core::MockFrameworkAdapter</a>
+  
+    <li><a href="../../RSpec/Core/Parser.html">RSpec::Core::Parser</a>
+  
+    <li><a href="../../RSpec/Core/Pending.html">RSpec::Core::Pending</a>
+  
+    <li><a href="../../RSpec/Core/Pending/PendingDeclaredInExample.html">RSpec::Core::Pending::PendingDeclaredInExample</a>
+  
+    <li><a href="../../RSpec/Core/Pending/PendingExampleFixedError.html">RSpec::Core::Pending::PendingExampleFixedError</a>
+  
+    <li><a href="../../RSpec/Core/ProjectInitializer.html">RSpec::Core::ProjectInitializer</a>
+  
+    <li><a href="../../RSpec/Core/RakeTask.html">RSpec::Core::RakeTask</a>
+  
+    <li><a href="../../RSpec/Core/Reporter.html">RSpec::Core::Reporter</a>
+  
+    <li><a href="../../RSpec/Core/RubyProject.html">RSpec::Core::RubyProject</a>
+  
+    <li><a href="../../RSpec/Core/Runner.html">RSpec::Core::Runner</a>
+  
+    <li><a href="../../RSpec/Core/SharedContext.html">RSpec::Core::SharedContext</a>
+  
+    <li><a href="../../RSpec/Core/SharedExampleGroup.html">RSpec::Core::SharedExampleGroup</a>
+  
+    <li><a href="../../RSpec/Core/SharedExampleGroup/Collection.html">RSpec::Core::SharedExampleGroup::Collection</a>
+  
+    <li><a href="../../RSpec/Core/SharedExampleGroup/Registry.html">RSpec::Core::SharedExampleGroup::Registry</a>
+  
+    <li><a href="../../RSpec/Core/SharedExampleGroup/TopLevelDSL.html">RSpec::Core::SharedExampleGroup::TopLevelDSL</a>
+  
+    <li><a href="../../RSpec/Core/Time.html">RSpec::Core::Time</a>
+  
+    <li><a href="../../RSpec/Core/Version.html">RSpec::Core::Version</a>
+  
+    <li><a href="../../RSpec/Core/World.html">RSpec::Core::World</a>
+  
+    <li><a href="../../RSpec/Rake.html">RSpec::Rake</a>
+  
+    <li><a href="../../RSpec/Runner.html">RSpec::Runner</a>
+  
+    <li><a href="../../Autotest.html">Autotest</a>
+  
+    <li><a href="../../Autotest/Rspec2.html">Autotest::Rspec2</a>
+  
+    <li><a href="../../Kernel.html">Kernel</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class RSpec::Core::RakeTask</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-fail_on_error" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">fail_on_error</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Whether or not to fail <a href="../Rake.html">Rake</a> when an error occurs
+(typically when examples fail).</p>
+
+<p>default:</p>
+
+<pre>true</pre>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-failure_message" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">failure_message</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>A message to print to stderr when there are failures.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-name" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">name</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Name of task.</p>
+
+<p>default:</p>
+
+<pre>:spec</pre>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-pattern" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">pattern</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Glob pattern to match files.</p>
+
+<p>default:</p>
+
+<pre>'spec   /*_spec.rb'</pre>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-rcov" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">rcov</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Use rcov for code coverage?</p>
+
+<p>Due to the many ways `rcov` can run, if this option is enabled, it is
+required that `require ‘rspec/autorun’` appears in `spec_helper`.rb</p>
+
+<p>default:</p>
+
+<pre>false</pre>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-rcov_opts" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">rcov_opts</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Command line options to pass to rcov.</p>
+
+<p>default:</p>
+
+<pre>nil</pre>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-rcov_path" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">rcov_path</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Path to rcov.</p>
+
+<p>default:</p>
+
+<pre>'rcov'</pre>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-rspec_opts" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">rspec_opts</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Command line options to pass to rspec.</p>
+
+<p>default:</p>
+
+<pre>nil</pre>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-rspec_path" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">rspec_path</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Path to rspec</p>
+
+<p>default:</p>
+
+<pre>'rspec'</pre>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-ruby_opts" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">ruby_opts</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Command line options to pass to ruby.</p>
+
+<p>default:</p>
+
+<pre>nil</pre>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-verbose" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">verbose</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Use verbose output. If this is set to true, the task will print the
+executed spec command to stdout.</p>
+
+<p>default:</p>
+
+<pre>true</pre>
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(*args, &task_block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/rspec/core/rake_task.rb, line 115</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(*<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">task_block</span>)
+  <span class="ruby-identifier">setup_ivars</span>(<span class="ruby-identifier">args</span>)
+
+  <span class="ruby-identifier">desc</span> <span class="ruby-string">&quot;Run RSpec code examples&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-operator">::</span><span class="ruby-constant">Rake</span>.<span class="ruby-identifier">application</span>.<span class="ruby-identifier">last_comment</span>
+
+  <span class="ruby-identifier">task</span> <span class="ruby-identifier">name</span>, *<span class="ruby-identifier">args</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">_</span>, <span class="ruby-identifier">task_args</span><span class="ruby-operator">|</span>
+    <span class="ruby-constant">RakeFileUtils</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:verbose</span>, <span class="ruby-identifier">verbose</span>) <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">task_block</span>.<span class="ruby-identifier">call</span>(*[<span class="ruby-keyword">self</span>, <span class="ruby-identifier">task_args</span>].<span class="ruby-identifier">slice</span>(<span class="ruby-value">0</span>, <span class="ruby-identifier">task_block</span>.<span class="ruby-identifier">arity</span>)) <span class="ruby-keyword">if</span> <span class="ruby-identifier">task_block</span>
+      <span class="ruby-identifier">run_task</span> <span class="ruby-identifier">verbose</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-gemfile-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">gemfile=</span><span
+            class="method-args">(*)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@deprecated Has no effect. The rake task now checks <a
+href="http://'BUNDLE_GEMFILE'">ENV</a> instead.</p>
+          
+
+          
+          <div class="method-source-code" id="gemfile-3D-source">
+            <pre><span class="ruby-comment"># File lib/rspec/core/rake_task.rb, line 31</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">gemfile=</span>(*)
+  <span class="ruby-identifier">deprecate</span>(<span class="ruby-node">&quot;RSpec::Core::RakeTask#gemfile=&quot;</span>, <span class="ruby-value">:replacement</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'ENV[&quot;BUNDLE_GEMFILE&quot;]'</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- gemfile-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- gemfile-3D-method -->
+
+    
+      <div id="method-i-run_task" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">run_task</span><span
+            class="method-args">(verbose)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="run_task-source">
+            <pre><span class="ruby-comment"># File lib/rspec/core/rake_task.rb, line 139</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">run_task</span>(<span class="ruby-identifier">verbose</span>)
+  <span class="ruby-identifier">command</span> = <span class="ruby-identifier">spec_command</span>
+
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">command</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">verbose</span>
+    <span class="ruby-identifier">success</span> = <span class="ruby-identifier">system</span>(<span class="ruby-identifier">command</span>)
+  <span class="ruby-keyword">rescue</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-identifier">failure_message</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">failure_message</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">abort</span>(<span class="ruby-node">&quot;#{command} failed&quot;</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">fail_on_error</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">success</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- run_task-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- run_task-method -->
+
+    
+      <div id="method-i-setup_ivars" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">setup_ivars</span><span
+            class="method-args">(args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="setup_ivars-source">
+            <pre><span class="ruby-comment"># File lib/rspec/core/rake_task.rb, line 128</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">setup_ivars</span>(<span class="ruby-identifier">args</span>)
+  <span class="ruby-ivar">@name</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">shift</span> <span class="ruby-operator">||</span> <span class="ruby-value">:spec</span>
+  <span class="ruby-ivar">@rcov_opts</span>, <span class="ruby-ivar">@ruby_opts</span>, <span class="ruby-ivar">@rspec_opts</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@warning</span>, <span class="ruby-ivar">@rcov</span> = <span class="ruby-keyword">false</span>, <span class="ruby-keyword">false</span>
+  <span class="ruby-ivar">@verbose</span>, <span class="ruby-ivar">@fail_on_error</span> = <span class="ruby-keyword">true</span>, <span class="ruby-keyword">true</span>
+
+  <span class="ruby-ivar">@rcov_path</span>  = <span class="ruby-string">'rcov'</span>
+  <span class="ruby-ivar">@rspec_path</span> = <span class="ruby-string">'rspec'</span>
+  <span class="ruby-ivar">@pattern</span>    = <span class="ruby-string">'./spec{,/*/**}/*_spec.rb'</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- setup_ivars-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- setup_ivars-method -->
+
+    
+      <div id="method-i-skip_bundler-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">skip_bundler=</span><span
+            class="method-args">(*)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@deprecated Has no effect. The rake task now checks <a
+href="http://'BUNDLE_GEMFILE'">ENV</a> instead.</p>
+          
+
+          
+          <div class="method-source-code" id="skip_bundler-3D-source">
+            <pre><span class="ruby-comment"># File lib/rspec/core/rake_task.rb, line 25</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">skip_bundler=</span>(*)
+  <span class="ruby-identifier">deprecate</span>(<span class="ruby-node">&quot;RSpec::Core::RakeTask#skip_bundler=&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- skip_bundler-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- skip_bundler-3D-method -->
+
+    
+      <div id="method-i-spec_opts-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">spec_opts=</span><span
+            class="method-args">(opts)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@deprecated Use <a
+href="RakeTask.html#attribute-i-rspec_opts">#rspec_opts</a> instead.</p>
+
+<p>Command line options to pass to rspec.</p>
+
+<p>default:</p>
+
+<pre>nil</pre>
+          
+
+          
+          <div class="method-source-code" id="spec_opts-3D-source">
+            <pre><span class="ruby-comment"># File lib/rspec/core/rake_task.rb, line 110</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">spec_opts=</span>(<span class="ruby-identifier">opts</span>)
+  <span class="ruby-identifier">deprecate</span>(<span class="ruby-string">'RSpec::Core::RakeTask#spec_opts='</span>, <span class="ruby-value">:replacement</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'rspec_opts='</span>)
+  <span class="ruby-ivar">@rspec_opts</span> = <span class="ruby-identifier">opts</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- spec_opts-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- spec_opts-3D-method -->
+
+    
+      <div id="method-i-warning-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">warning=</span><span
+            class="method-args">(true_or_false)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@deprecated Use <a
+href="RakeTask.html#attribute-i-ruby_opts">#ruby_opts</a>=“-w” instead.</p>
+
+<p>When true, requests that the specs be run with the warning flag set. e.g.
+“ruby -w”</p>
+
+<p>default:</p>
+
+<pre>false</pre>
+          
+
+          
+          <div class="method-source-code" id="warning-3D-source">
+            <pre><span class="ruby-comment"># File lib/rspec/core/rake_task.rb, line 43</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">warning=</span>(<span class="ruby-identifier">true_or_false</span>)
+  <span class="ruby-identifier">deprecate</span>(<span class="ruby-node">&quot;RSpec::Core::RakeTask#warning=&quot;</span>, <span class="ruby-value">:replacement</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'ruby_opts=&quot;-w&quot;'</span>)
+  <span class="ruby-ivar">@warning</span> = <span class="ruby-identifier">true_or_false</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- warning-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- warning-3D-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

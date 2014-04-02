@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>README - mini_portile-0.5.2 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body class="file">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./History_txt.html">History</a>
+  
+    <li class="file"><a href="./LICENSE_txt.html">LICENSE</a>
+  
+    <li class="file"><a href="./README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./MiniPortile.html">MiniPortile</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<h1 id="label-MiniPortile"><a href="MiniPortile.html">MiniPortile</a></h1>
+<ul><li>
+<p><a href="https://github.com/luislavena/mini_portile">Source Code</a></p>
+</li><li>
+<p><a href="https://github.com/luislavena/mini_portile/issues">Bug Reports</a></p>
+</li></ul>
+
+<p>This project is a minimalistic, simplistic and stupid implementation of a
+port/recipe system <strong>for developers</strong>.</p>
+
+<h2 id="label-Another+port+system%2C+srsly%3F">Another port system, srsly?</h2>
+
+<p>No, is not a general port system, is not aimed to take over apt, macports
+or anything like that.</p>
+
+<p>The rationale is simple.</p>
+
+<p>You create a library A that uses B at runtime or compile time. Target
+audience of your library might have different versions of B installed than
+yours.</p>
+
+<p>You know, <em>Works on my machine</em> is not what you expect from one
+developer to another.</p>
+
+<p>Developers having problems report them back to you, and what you do then?
+Compile B locally, replacing your existing installation of B or simply
+hacking things around so nothing breaks.</p>
+
+<p>All this, manually.</p>
+
+<p>Computers are tools, are meant to help us, not the other way around.</p>
+
+<p>What if I tell you the above scenario can be simplified with something like
+this:</p>
+
+<pre>rake compile B_VERSION=1.2.3</pre>
+
+<p>And your library will use the version of B you specified. Done.</p>
+
+<h2 id="label-You+make+it+sound+easy%2C+where+is+the+catch%3F">You make it sound easy, where is the catch?</h2>
+
+<p>You got me, there is a catch. At this time (and highly likely will be
+always) <a href="MiniPortile.html">MiniPortile</a> is only compatible with
+GCC compilers and autoconf/configure-based projects.</p>
+
+<p>It assumes the library you want to build contains a <code>configure</code>
+script, which all the autoconf-based libraries do.</p>
+
+<h3 id="label-How+to+use">How to use</h3>
+
+<p>Now that you know the catch, and you’re still reading this, let me show you
+a quick example:</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&quot;mini_portile&quot;</span>
+<span class="ruby-identifier">recipe</span> = <span class="ruby-constant">MiniPortile</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;libiconv&quot;</span>, <span class="ruby-string">&quot;1.13.1&quot;</span>)
+<span class="ruby-identifier">recipe</span>.<span class="ruby-identifier">files</span> = [<span class="ruby-string">&quot;http://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.13.1.tar.gz&quot;</span>]
+<span class="ruby-identifier">recipe</span>.<span class="ruby-identifier">cook</span>
+<span class="ruby-identifier">recipe</span>.<span class="ruby-identifier">activate</span>
+</pre>
+
+<p>That’s all. <code>cook</code> will download, extract, patch, configure and
+compile the library into a namespaced structure. <code>activate</code>
+ensures GCC find this library and prefers it over a system-wide
+installation.</p>
+
+<h3 id="label-Structure">Structure</h3>
+
+<p>At this time, if you haven’t digged into the code yet, are wondering
+<em>what is all that structure talk about?</em>.</p>
+
+<p><a href="MiniPortile.html">MiniPortile</a> follows the principle of
+<strong>convention over configuration</strong> and established a folder
+structure where is going to place files and perform work.</p>
+
+<p>Take the above example, and let’s draw some picture:</p>
+
+<pre>mylib
+  |-- ports
+  |   |-- archives
+  |   |   `-- libiconv-1.13.1.tar.gz
+  |   `-- &lt;platform&gt;
+  |       `-- libiconv
+  |           `-- 1.13.1
+  |               |-- bin
+  |               |-- include
+  |               `-- lib
+  `-- tmp
+      `-- &lt;platform&gt;
+          `-- ports</pre>
+
+<p>In above structure, <code>platform</code> refers to the architecture that
+represents the operating system you’re using (e.g. i686-linux,
+i386-mingw32, etc).</p>
+
+<p>Inside this folder, <a href="MiniPortile.html">MiniPortile</a> will store
+the artifacts that result from the compilation process. As you cans see, it
+versions out the library so you can run multiple version combination
+without compromising these overlap each other.</p>
+
+<p><code>archives</code> is where downloaded source files are stored. It is
+recommended you avoid trashing that folder so no further downloads will be
+required (save bandwidth, save the world).</p>
+
+<p>The <code>tmp</code> is where compilation is performed and can be safely
+discarded.</p>
+
+<p>Don’t worry, you don’t need to know the path structure by memory, just use
+recipe’s <code>path</code> to obtain the full path to the installation
+directory:</p>
+
+<pre class="ruby"><span class="ruby-identifier">recipe</span>.<span class="ruby-identifier">cook</span>
+<span class="ruby-identifier">recipe</span>.<span class="ruby-identifier">path</span> <span class="ruby-comment"># =&gt; /home/luis/projects/myapp/ports/i686-linux/libiconv/1.13.1</span>
+</pre>
+
+<h3 id="label-How+can+I+combine+this+with+my+compilation+task%3F">How can I combine this with my compilation task?</h3>
+
+<p>In the simplified proposal, the idea is that using Rake, your
+<code>compile</code> task depends on <a
+href="MiniPortile.html">MiniPortile</a> compilation and most important,
+activation.</p>
+
+<p>Take the following as a simplification of how you can use <a
+href="MiniPortile.html">MiniPortile</a> with Rake:</p>
+
+<pre class="ruby"><span class="ruby-identifier">task</span> :<span class="ruby-identifier">libiconv</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">recipe</span> = <span class="ruby-constant">MiniPortile</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;libiconv&quot;</span>, <span class="ruby-string">&quot;1.13.1&quot;</span>)
+  <span class="ruby-identifier">recipe</span>.<span class="ruby-identifier">files</span> = [<span class="ruby-string">&quot;http://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.13.1.tar.gz&quot;</span>]
+  <span class="ruby-identifier">checkpoint</span> = <span class="ruby-node">&quot;.#{recipe.name}-#{recipe.version}.installed&quot;</span>
+
+  <span class="ruby-keyword">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span>(<span class="ruby-identifier">checkpoint</span>)
+    <span class="ruby-identifier">recipe</span>.<span class="ruby-identifier">cook</span>
+    <span class="ruby-identifier">touch</span> <span class="ruby-identifier">checkpoint</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">recipe</span>.<span class="ruby-identifier">activate</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">task</span> :<span class="ruby-identifier">compile</span> =<span class="ruby-operator">&gt;</span> [:<span class="ruby-identifier">libiconv</span>] <span class="ruby-keyword">do</span>
+  <span class="ruby-comment"># ...</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>This example will:</p>
+<ul><li>
+<p>Compile the library only once (using a timestamp file)</p>
+</li><li>
+<p>Ensure compiled library gets activated every time</p>
+</li><li>
+<p>Make compile task depend on compiled library activation</p>
+</li></ul>
+
+<p>For your homework, you can make libiconv version be taken from
+<code>ENV</code> variables.</p>
+
+<h3 id="label-Native+or+cross-compilation">Native or cross-compilation</h3>
+
+<p>Above examples cover the normal use case: compile support libraries
+natively.</p>
+
+<p><a href="MiniPortile.html">MiniPortile</a> also covers another use case,
+which is the cross-compilation of the support libraries to be used as part
+of a binary gem compilation.</p>
+
+<p>It is the perfect complementary tool for rake-compiler and it’s
+<code>cross</code> Rake task.</p>
+
+<p>Depending on your usage of rake-compiler, you will need to use
+<code>host</code> to match the installed cross-compiler toolchain.</p>
+
+<p>Please refer to the examples directory for simplified and practical usage.</p>
+
+<h3 id="label-Supported+scenarios">Supported scenarios</h3>
+
+<p>As mentioned before, <a href="MiniPortile.html">MiniPortile</a> requires a
+GCC compiler toolchain. This has been tested against Ubuntu, OSX and even
+Windows (RubyInstaller with DevKit)</p>
+
+<h2 id="label-Disclaimer">Disclaimer</h2>
+
+<p>If you have any trouble, don’t hesitate to contact the author. As always,
+I’m not going to say <em>Use at your own risk</em> because I don’t want
+this library to be risky.</p>
+
+<p>If you trip on something, I’ll share the liability by repairing things as
+quickly as I can. Your responsibility is to report the inadequacies.</p>
+
+<h2 id="label-License">License</h2>
+
+<p>This library is licensed under MIT license. Please see <a
+href="LICENSE_txt.html">LICENSE.txt</a> for details.</p>
+
+</div>
+
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

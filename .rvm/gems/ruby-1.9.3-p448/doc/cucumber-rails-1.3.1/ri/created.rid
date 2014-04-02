@@ -1,0 +1,20 @@
+Thu, 07 Nov 2013 23:06:55 -0400
+lib/cucumber/rails.rb	Thu, 07 Nov 2013 23:06:47 -0400
+lib/cucumber/rails/capybara.rb	Thu, 07 Nov 2013 23:06:47 -0400
+lib/cucumber/rails/application.rb	Thu, 07 Nov 2013 23:06:47 -0400
+lib/cucumber/rails/action_controller.rb	Thu, 07 Nov 2013 23:06:47 -0400
+lib/cucumber/rails/capybara/select_dates_and_times.rb	Thu, 07 Nov 2013 23:06:47 -0400
+lib/cucumber/rails/capybara/javascript_emulation.rb	Thu, 07 Nov 2013 23:06:47 -0400
+lib/cucumber/rails/world.rb	Thu, 07 Nov 2013 23:06:47 -0400
+lib/cucumber/rails/database.rb	Thu, 07 Nov 2013 23:06:47 -0400
+lib/cucumber/rails/hooks.rb	Thu, 07 Nov 2013 23:06:47 -0400
+lib/cucumber/rails/hooks/mail.rb	Thu, 07 Nov 2013 23:06:47 -0400
+lib/cucumber/rails/hooks/active_record.rb	Thu, 07 Nov 2013 23:06:47 -0400
+lib/cucumber/rails/hooks/allow_rescue.rb	Thu, 07 Nov 2013 23:06:47 -0400
+lib/cucumber/rails/hooks/database_cleaner.rb	Thu, 07 Nov 2013 23:06:47 -0400
+lib/cucumber/rails/rspec.rb	Thu, 07 Nov 2013 23:06:47 -0400
+lib/generators/cucumber/install/install_generator.rb	Thu, 07 Nov 2013 23:06:47 -0400
+lib/generators/cucumber/install/USAGE	Thu, 07 Nov 2013 23:06:47 -0400
+lib/generators/cucumber/install/templates/support/capybara.rb	Thu, 07 Nov 2013 23:06:47 -0400
+lib/generators/cucumber/install/templates/support/edit_warning.txt	Thu, 07 Nov 2013 23:06:47 -0400
+lib/generators/cucumber/install/templates/script/cucumber	Thu, 07 Nov 2013 23:06:47 -0400

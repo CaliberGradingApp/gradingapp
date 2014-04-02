@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>oauth-0.4.7 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body>
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./LICENSE.html">LICENSE</a>
+  
+    <li class="file"><a href="./README_rdoc.html">README</a>
+  
+    <li class="file"><a href="./TODO.html">TODO</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./OAuth.html">OAuth</a>
+  
+    <li><a href="./OAuth/AccessToken.html">OAuth::AccessToken</a>
+  
+    <li><a href="./OAuth/CLI.html">OAuth::CLI</a>
+  
+    <li><a href="./OAuth/Client.html">OAuth::Client</a>
+  
+    <li><a href="./OAuth/Client/Helper.html">OAuth::Client::Helper</a>
+  
+    <li><a href="./OAuth/Consumer.html">OAuth::Consumer</a>
+  
+    <li><a href="./OAuth/ConsumerToken.html">OAuth::ConsumerToken</a>
+  
+    <li><a href="./OAuth/Error.html">OAuth::Error</a>
+  
+    <li><a href="./OAuth/Helper.html">OAuth::Helper</a>
+  
+    <li><a href="./OAuth/OAuthTestHelper.html">OAuth::OAuthTestHelper</a>
+  
+    <li><a href="./OAuth/Problem.html">OAuth::Problem</a>
+  
+    <li><a href="./OAuth/RequestProxy.html">OAuth::RequestProxy</a>
+  
+    <li><a href="./OAuth/RequestProxy/ActionControllerRequest.html">OAuth::RequestProxy::ActionControllerRequest</a>
+  
+    <li><a href="./OAuth/RequestProxy/Base.html">OAuth::RequestProxy::Base</a>
+  
+    <li><a href="./OAuth/RequestProxy/Curl.html">OAuth::RequestProxy::Curl</a>
+  
+    <li><a href="./OAuth/RequestProxy/Curl/Easy.html">OAuth::RequestProxy::Curl::Easy</a>
+  
+    <li><a href="./OAuth/RequestProxy/EventMachine.html">OAuth::RequestProxy::EventMachine</a>
+  
+    <li><a href="./OAuth/RequestProxy/EventMachine/HttpRequest.html">OAuth::RequestProxy::EventMachine::HttpRequest</a>
+  
+    <li><a href="./OAuth/RequestProxy/JabberRequest.html">OAuth::RequestProxy::JabberRequest</a>
+  
+    <li><a href="./OAuth/RequestProxy/MockRequest.html">OAuth::RequestProxy::MockRequest</a>
+  
+    <li><a href="./OAuth/RequestProxy/Net.html">OAuth::RequestProxy::Net</a>
+  
+    <li><a href="./OAuth/RequestProxy/Net/HTTP.html">OAuth::RequestProxy::Net::HTTP</a>
+  
+    <li><a href="./OAuth/RequestProxy/Net/HTTP/HTTPRequest.html">OAuth::RequestProxy::Net::HTTP::HTTPRequest</a>
+  
+    <li><a href="./OAuth/RequestProxy/RackRequest.html">OAuth::RequestProxy::RackRequest</a>
+  
+    <li><a href="./OAuth/RequestProxy/Typhoeus.html">OAuth::RequestProxy::Typhoeus</a>
+  
+    <li><a href="./OAuth/RequestProxy/Typhoeus/Request.html">OAuth::RequestProxy::Typhoeus::Request</a>
+  
+    <li><a href="./OAuth/RequestProxy/UnknownRequestType.html">OAuth::RequestProxy::UnknownRequestType</a>
+  
+    <li><a href="./OAuth/RequestToken.html">OAuth::RequestToken</a>
+  
+    <li><a href="./OAuth/Server.html">OAuth::Server</a>
+  
+    <li><a href="./OAuth/ServerToken.html">OAuth::ServerToken</a>
+  
+    <li><a href="./OAuth/Signature.html">OAuth::Signature</a>
+  
+    <li><a href="./OAuth/Signature/Base.html">OAuth::Signature::Base</a>
+  
+    <li><a href="./OAuth/Signature/HMAC.html">OAuth::Signature::HMAC</a>
+  
+    <li><a href="./OAuth/Signature/HMAC/Base.html">OAuth::Signature::HMAC::Base</a>
+  
+    <li><a href="./OAuth/Signature/HMAC/MD5.html">OAuth::Signature::HMAC::MD5</a>
+  
+    <li><a href="./OAuth/Signature/HMAC/RMD160.html">OAuth::Signature::HMAC::RMD160</a>
+  
+    <li><a href="./OAuth/Signature/HMAC/SHA1.html">OAuth::Signature::HMAC::SHA1</a>
+  
+    <li><a href="./OAuth/Signature/HMAC/SHA2.html">OAuth::Signature::HMAC::SHA2</a>
+  
+    <li><a href="./OAuth/Signature/MD5.html">OAuth::Signature::MD5</a>
+  
+    <li><a href="./OAuth/Signature/PLAINTEXT.html">OAuth::Signature::PLAINTEXT</a>
+  
+    <li><a href="./OAuth/Signature/RSA.html">OAuth::Signature::RSA</a>
+  
+    <li><a href="./OAuth/Signature/RSA/SHA1.html">OAuth::Signature::RSA::SHA1</a>
+  
+    <li><a href="./OAuth/Signature/SHA1.html">OAuth::Signature::SHA1</a>
+  
+    <li><a href="./OAuth/Signature/UnknownSignatureMethod.html">OAuth::Signature::UnknownSignatureMethod</a>
+  
+    <li><a href="./OAuth/Token.html">OAuth::Token</a>
+  
+    <li><a href="./OAuth/Unauthorized.html">OAuth::Unauthorized</a>
+  
+    <li><a href="./ActionController.html">ActionController</a>
+  
+    <li><a href="./ActionController/Base.html">ActionController::Base</a>
+  
+    <li><a href="./ActionController/TestRequest.html">ActionController::TestRequest</a>
+  
+    <li><a href="./Digest.html">Digest</a>
+  
+    <li><a href="./Digest/HMAC.html">Digest::HMAC</a>
+  
+    <li><a href="./EventMachine.html">EventMachine</a>
+  
+    <li><a href="./EventMachine/HttpClient.html">EventMachine::HttpClient</a>
+  
+    <li><a href="./Net.html">Net</a>
+  
+    <li><a href="./Net/HTTPGenericRequest.html">Net::HTTPGenericRequest</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./String.html">String</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<p>This is the API documentation for oauth-0.4.7 Documentation.
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

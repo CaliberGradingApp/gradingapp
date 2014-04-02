@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"dynamic_config:EFI"$Hirb::Formatter::dynamic_config;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"pThis config is used by Formatter.format_output to lazily load dynamic views defined with Hirb::DynamicView.;TI"7This hash has the same format as Formatter.config.;T:
+@fileI"lib/hirb/formatter.rb;TT@

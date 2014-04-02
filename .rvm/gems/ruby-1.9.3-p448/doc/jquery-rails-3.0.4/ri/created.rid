@@ -1,0 +1,8 @@
+Thu, 07 Nov 2013 23:20:31 -0400
+lib/generators/jquery/install/install_generator.rb	Thu, 07 Nov 2013 23:20:26 -0400
+lib/jquery-rails.rb	Thu, 07 Nov 2013 23:20:26 -0400
+lib/jquery/rails.rb	Thu, 07 Nov 2013 23:20:26 -0400
+lib/jquery/rails/version.rb	Thu, 07 Nov 2013 23:20:26 -0400
+lib/jquery/rails/engine.rb	Thu, 07 Nov 2013 23:20:26 -0400
+lib/jquery/rails/railtie.rb	Thu, 07 Nov 2013 23:20:26 -0400
+lib/jquery/assert_select.rb	Thu, 07 Nov 2013 23:20:26 -0400

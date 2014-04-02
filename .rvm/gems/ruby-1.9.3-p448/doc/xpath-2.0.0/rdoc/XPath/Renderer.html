@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class XPath::Renderer - xpath-2.0.0 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/xpath/renderer.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-c-render">::render</a>
+    
+    <li><a href="#method-i-and">#and</a>
+    
+    <li><a href="#method-i-anywhere">#anywhere</a>
+    
+    <li><a href="#method-i-attribute">#attribute</a>
+    
+    <li><a href="#method-i-axis">#axis</a>
+    
+    <li><a href="#method-i-child">#child</a>
+    
+    <li><a href="#method-i-contains">#contains</a>
+    
+    <li><a href="#method-i-convert_argument">#convert_argument</a>
+    
+    <li><a href="#method-i-css">#css</a>
+    
+    <li><a href="#method-i-descendant">#descendant</a>
+    
+    <li><a href="#method-i-equality">#equality</a>
+    
+    <li><a href="#method-i-inverse">#inverse</a>
+    
+    <li><a href="#method-i-is">#is</a>
+    
+    <li><a href="#method-i-literal">#literal</a>
+    
+    <li><a href="#method-i-next_sibling">#next_sibling</a>
+    
+    <li><a href="#method-i-node_name">#node_name</a>
+    
+    <li><a href="#method-i-normalized_space">#normalized_space</a>
+    
+    <li><a href="#method-i-one_of">#one_of</a>
+    
+    <li><a href="#method-i-or">#or</a>
+    
+    <li><a href="#method-i-previous_sibling">#previous_sibling</a>
+    
+    <li><a href="#method-i-render">#render</a>
+    
+    <li><a href="#method-i-starts_with">#starts_with</a>
+    
+    <li><a href="#method-i-string_function">#string_function</a>
+    
+    <li><a href="#method-i-string_literal">#string_literal</a>
+    
+    <li><a href="#method-i-text">#text</a>
+    
+    <li><a href="#method-i-this_node">#this_node</a>
+    
+    <li><a href="#method-i-union">#union</a>
+    
+    <li><a href="#method-i-variable">#variable</a>
+    
+    <li><a href="#method-i-where">#where</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../XPath.html">XPath</a>
+  
+    <li><a href="../XPath/DSL.html">XPath::DSL</a>
+  
+    <li><a href="../XPath/DSL/ExpressionLevel.html">XPath::DSL::ExpressionLevel</a>
+  
+    <li><a href="../XPath/DSL/TopLevel.html">XPath::DSL::TopLevel</a>
+  
+    <li><a href="../XPath/Expression.html">XPath::Expression</a>
+  
+    <li><a href="../XPath/HTML.html">XPath::HTML</a>
+  
+    <li><a href="../XPath/Literal.html">XPath::Literal</a>
+  
+    <li><a href="../XPath/Renderer.html">XPath::Renderer</a>
+  
+    <li><a href="../XPath/Union.html">XPath::Union</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class XPath::Renderer</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(type)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/xpath/renderer.rb, line 7</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">type</span>)
+  <span class="ruby-ivar">@type</span> = <span class="ruby-identifier">type</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+      <div id="method-c-render" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">render</span><span
+            class="method-args">(node, type)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="render-source">
+            <pre><span class="ruby-comment"># File lib/xpath/renderer.rb, line 3</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">render</span>(<span class="ruby-identifier">node</span>, <span class="ruby-identifier">type</span>)
+  <span class="ruby-identifier">new</span>(<span class="ruby-identifier">type</span>).<span class="ruby-identifier">render</span>(<span class="ruby-identifier">node</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- render-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- render-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-and" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">and</span><span
+            class="method-args">(one, two)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="and-source">
+            <pre><span class="ruby-comment"># File lib/xpath/renderer.rb, line 134</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">and</span>(<span class="ruby-identifier">one</span>, <span class="ruby-identifier">two</span>)
+  <span class="ruby-node">&quot;(#{one} and #{two})&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- and-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- and-method -->
+
+    
+      <div id="method-i-anywhere" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">anywhere</span><span
+            class="method-args">(element_names)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="anywhere-source">
+            <pre><span class="ruby-comment"># File lib/xpath/renderer.rb, line 116</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">anywhere</span>(<span class="ruby-identifier">element_names</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">element_names</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+    <span class="ruby-node">&quot;//#{element_names.first}&quot;</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">element_names</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>
+    <span class="ruby-node">&quot;//*[#{element_names.map { |e| &quot;self::#{e}&quot; }.join(&quot; | &quot;)}]&quot;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-string">&quot;//*&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- anywhere-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- anywhere-method -->
+
+    
+      <div id="method-i-attribute" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">attribute</span><span
+            class="method-args">(current, name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="attribute-source">
+            <pre><span class="ruby-comment"># File lib/xpath/renderer.rb, line 73</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">attribute</span>(<span class="ruby-identifier">current</span>, <span class="ruby-identifier">name</span>)
+  <span class="ruby-node">&quot;#{current}/@#{name}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- attribute-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- attribute-method -->
+
+    
+      <div id="method-i-axis" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">axis</span><span
+            class="method-args">(parent, name, tag_name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="axis-source">
+            <pre><span class="ruby-comment"># File lib/xpath/renderer.rb, line 61</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">axis</span>(<span class="ruby-identifier">parent</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">tag_name</span>)
+  <span class="ruby-node">&quot;#{parent}/#{name}::#{tag_name}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- axis-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- axis-method -->
+
+    
+      <div id="method-i-child" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">child</span><span
+            class="method-args">(parent, element_names)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="child-source">
+            <pre><span class="ruby-comment"># File lib/xpath/renderer.rb, line 51</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">child</span>(<span class="ruby-identifier">parent</span>, <span class="ruby-identifier">element_names</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">element_names</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+    <span class="ruby-node">&quot;#{parent}/#{element_names.first}&quot;</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">element_names</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>
+    <span class="ruby-node">&quot;#{parent}/*[#{element_names.map { |e| &quot;self::#{e}&quot; }.join(&quot; | &quot;)}]&quot;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-node">&quot;#{parent}/*&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- child-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- child-method -->
+
+    
+      <div id="method-i-contains" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">contains</span><span
+            class="method-args">(current, value)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="contains-source">
+            <pre><span class="ruby-comment"># File lib/xpath/renderer.rb, line 126</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">contains</span>(<span class="ruby-identifier">current</span>, <span class="ruby-identifier">value</span>)
+  <span class="ruby-node">&quot;contains(#{current}, #{value})&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- contains-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- contains-method -->
+
+    
+      <div id="method-i-convert_argument" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">convert_argument</span><span
+            class="method-args">(argument)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="convert_argument-source">
+            <pre><span class="ruby-comment"># File lib/xpath/renderer.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">convert_argument</span>(<span class="ruby-identifier">argument</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">argument</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">Expression</span>, <span class="ruby-constant">Union</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">render</span>(<span class="ruby-identifier">argument</span>)
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">Array</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">argument</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">element</span><span class="ruby-operator">|</span> <span class="ruby-identifier">convert_argument</span>(<span class="ruby-identifier">element</span>) }
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">String</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">string_literal</span>(<span class="ruby-identifier">argument</span>)
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">Literal</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">argument</span>.<span class="ruby-identifier">value</span>
+    <span class="ruby-keyword">else</span> <span class="ruby-identifier">argument</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- convert_argument-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- convert_argument-method -->
+
+    
+      <div id="method-i-css" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">css</span><span
+            class="method-args">(current, selector)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="css-source">
+            <pre><span class="ruby-comment"># File lib/xpath/renderer.rb, line 105</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">css</span>(<span class="ruby-identifier">current</span>, <span class="ruby-identifier">selector</span>)
+  <span class="ruby-identifier">paths</span> = <span class="ruby-constant">Nokogiri</span><span class="ruby-operator">::</span><span class="ruby-constant">CSS</span>.<span class="ruby-identifier">xpath_for</span>(<span class="ruby-identifier">selector</span>).<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">xpath_selector</span><span class="ruby-operator">|</span>
+    <span class="ruby-node">&quot;#{current}#{xpath_selector}&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">union</span>(<span class="ruby-identifier">paths</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- css-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- css-method -->
+
+    
+      <div id="method-i-descendant" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">descendant</span><span
+            class="method-args">(parent, element_names)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="descendant-source">
+            <pre><span class="ruby-comment"># File lib/xpath/renderer.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">descendant</span>(<span class="ruby-identifier">parent</span>, <span class="ruby-identifier">element_names</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">element_names</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+    <span class="ruby-node">&quot;#{parent}//#{element_names.first}&quot;</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">element_names</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>
+    <span class="ruby-node">&quot;#{parent}//*[#{element_names.map { |e| &quot;self::#{e}&quot; }.join(&quot; | &quot;)}]&quot;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-node">&quot;#{parent}//*&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- descendant-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- descendant-method -->
+
+    
+      <div id="method-i-equality" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">equality</span><span
+            class="method-args">(one, two)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="equality-source">
+            <pre><span class="ruby-comment"># File lib/xpath/renderer.rb, line 77</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">equality</span>(<span class="ruby-identifier">one</span>, <span class="ruby-identifier">two</span>)
+  <span class="ruby-node">&quot;#{one} = #{two}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- equality-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- equality-method -->
+
+    
+      <div id="method-i-inverse" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">inverse</span><span
+            class="method-args">(current)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="inverse-source">
+            <pre><span class="ruby-comment"># File lib/xpath/renderer.rb, line 166</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">inverse</span>(<span class="ruby-identifier">current</span>)
+  <span class="ruby-node">&quot;not(#{current})&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- inverse-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- inverse-method -->
+
+    
+      <div id="method-i-is" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">is</span><span
+            class="method-args">(one, two)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="is-source">
+            <pre><span class="ruby-comment"># File lib/xpath/renderer.rb, line 81</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">is</span>(<span class="ruby-identifier">one</span>, <span class="ruby-identifier">two</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@type</span> <span class="ruby-operator">==</span> <span class="ruby-value">:exact</span>
+    <span class="ruby-identifier">equality</span>(<span class="ruby-identifier">one</span>, <span class="ruby-identifier">two</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">contains</span>(<span class="ruby-identifier">one</span>, <span class="ruby-identifier">two</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- is-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- is-method -->
+
+    
+      <div id="method-i-literal" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">literal</span><span
+            class="method-args">(node)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="literal-source">
+            <pre><span class="ruby-comment"># File lib/xpath/renderer.rb, line 101</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">literal</span>(<span class="ruby-identifier">node</span>)
+  <span class="ruby-identifier">node</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- literal-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- literal-method -->
+
+    
+      <div id="method-i-next_sibling" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">next_sibling</span><span
+            class="method-args">(current, element_names)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="next_sibling-source">
+            <pre><span class="ruby-comment"># File lib/xpath/renderer.rb, line 146</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">next_sibling</span>(<span class="ruby-identifier">current</span>, <span class="ruby-identifier">element_names</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">element_names</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+    <span class="ruby-node">&quot;#{current}/following-sibling::*[1]/self::#{element_names.first}&quot;</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">element_names</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>
+    <span class="ruby-node">&quot;#{current}/following-sibling::*[1]/self::*[#{element_names.map { |e| &quot;self::#{e}&quot; }.join(&quot; | &quot;)}]&quot;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-node">&quot;#{current}/following-sibling::*[1]/self::*&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- next_sibling-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- next_sibling-method -->
+
+    
+      <div id="method-i-node_name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">node_name</span><span
+            class="method-args">(current)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="node_name-source">
+            <pre><span class="ruby-comment"># File lib/xpath/renderer.rb, line 65</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">node_name</span>(<span class="ruby-identifier">current</span>)
+  <span class="ruby-node">&quot;name(#{current})&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- node_name-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- node_name-method -->
+
+    
+      <div id="method-i-normalized_space" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">normalized_space</span><span
+            class="method-args">(current)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="normalized_space-source">
+            <pre><span class="ruby-comment"># File lib/xpath/renderer.rb, line 97</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">normalized_space</span>(<span class="ruby-identifier">current</span>)
+  <span class="ruby-node">&quot;normalize-space(#{current})&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- normalized_space-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- normalized_space-method -->
+
+    
+      <div id="method-i-one_of" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">one_of</span><span
+            class="method-args">(current, values)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="one_of-source">
+            <pre><span class="ruby-comment"># File lib/xpath/renderer.rb, line 142</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">one_of</span>(<span class="ruby-identifier">current</span>, <span class="ruby-identifier">values</span>)
+  <span class="ruby-identifier">values</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot;#{current} = #{value}&quot;</span> }.<span class="ruby-identifier">join</span>(<span class="ruby-string">' or '</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- one_of-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- one_of-method -->
+
+    
+      <div id="method-i-or" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">or</span><span
+            class="method-args">(one, two)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="or-source">
+            <pre><span class="ruby-comment"># File lib/xpath/renderer.rb, line 138</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">or</span>(<span class="ruby-identifier">one</span>, <span class="ruby-identifier">two</span>)
+  <span class="ruby-node">&quot;(#{one} or #{two})&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- or-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- or-method -->
+
+    
+      <div id="method-i-previous_sibling" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">previous_sibling</span><span
+            class="method-args">(current, element_names)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="previous_sibling-source">
+            <pre><span class="ruby-comment"># File lib/xpath/renderer.rb, line 156</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">previous_sibling</span>(<span class="ruby-identifier">current</span>, <span class="ruby-identifier">element_names</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">element_names</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+    <span class="ruby-node">&quot;#{current}/preceding-sibling::*[1]/self::#{element_names.first}&quot;</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">element_names</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>
+    <span class="ruby-node">&quot;#{current}/preceding-sibling::*[1]/self::*[#{element_names.map { |e| &quot;self::#{e}&quot; }.join(&quot; | &quot;)}]&quot;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-node">&quot;#{current}/preceding-sibling::*[1]/self::*&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- previous_sibling-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- previous_sibling-method -->
+
+    
+      <div id="method-i-render" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">render</span><span
+            class="method-args">(node)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="render-source">
+            <pre><span class="ruby-comment"># File lib/xpath/renderer.rb, line 11</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">render</span>(<span class="ruby-identifier">node</span>)
+  <span class="ruby-identifier">arguments</span> = <span class="ruby-identifier">node</span>.<span class="ruby-identifier">arguments</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">argument</span><span class="ruby-operator">|</span> <span class="ruby-identifier">convert_argument</span>(<span class="ruby-identifier">argument</span>) }
+  <span class="ruby-identifier">send</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">expression</span>, *<span class="ruby-identifier">arguments</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- render-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- render-method -->
+
+    
+      <div id="method-i-starts_with" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">starts_with</span><span
+            class="method-args">(current, value)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="starts_with-source">
+            <pre><span class="ruby-comment"># File lib/xpath/renderer.rb, line 130</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">starts_with</span>(<span class="ruby-identifier">current</span>, <span class="ruby-identifier">value</span>)
+  <span class="ruby-node">&quot;starts-with(#{current}, #{value})&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- starts_with-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- starts_with-method -->
+
+    
+      <div id="method-i-string_function" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">string_function</span><span
+            class="method-args">(current)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="string_function-source">
+            <pre><span class="ruby-comment"># File lib/xpath/renderer.rb, line 170</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">string_function</span>(<span class="ruby-identifier">current</span>)
+  <span class="ruby-node">&quot;string(#{current})&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- string_function-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- string_function-method -->
+
+    
+      <div id="method-i-string_literal" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">string_literal</span><span
+            class="method-args">(string)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="string_literal-source">
+            <pre><span class="ruby-comment"># File lib/xpath/renderer.rb, line 26</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">string_literal</span>(<span class="ruby-identifier">string</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">string</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">&quot;'&quot;</span>)
+    <span class="ruby-identifier">string</span> = <span class="ruby-identifier">string</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;'&quot;</span>, <span class="ruby-value">-1</span>).<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">substr</span><span class="ruby-operator">|</span>
+      <span class="ruby-node">&quot;'#{substr}'&quot;</span>
+    <span class="ruby-keyword">end</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">%q{,&quot;'&quot;,}</span>)
+    <span class="ruby-node">&quot;concat(#{string})&quot;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-node">&quot;'#{string}'&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- string_literal-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- string_literal-method -->
+
+    
+      <div id="method-i-text" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">text</span><span
+            class="method-args">(current)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="text-source">
+            <pre><span class="ruby-comment"># File lib/xpath/renderer.rb, line 93</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">text</span>(<span class="ruby-identifier">current</span>)
+  <span class="ruby-node">&quot;#{current}/text()&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- text-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- text-method -->
+
+    
+      <div id="method-i-this_node" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">this_node</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="this_node-source">
+            <pre><span class="ruby-comment"># File lib/xpath/renderer.rb, line 37</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">this_node</span>
+  <span class="ruby-string">'.'</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- this_node-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- this_node-method -->
+
+    
+      <div id="method-i-union" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">union</span><span
+            class="method-args">(*expressions)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="union-source">
+            <pre><span class="ruby-comment"># File lib/xpath/renderer.rb, line 112</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">union</span>(*<span class="ruby-identifier">expressions</span>)
+  <span class="ruby-identifier">expressions</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">' | '</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- union-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- union-method -->
+
+    
+      <div id="method-i-variable" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">variable</span><span
+            class="method-args">(name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="variable-source">
+            <pre><span class="ruby-comment"># File lib/xpath/renderer.rb, line 89</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">variable</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-node">&quot;%{#{name}}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- variable-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- variable-method -->
+
+    
+      <div id="method-i-where" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">where</span><span
+            class="method-args">(on, condition)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="where-source">
+            <pre><span class="ruby-comment"># File lib/xpath/renderer.rb, line 69</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">where</span>(<span class="ruby-identifier">on</span>, <span class="ruby-identifier">condition</span>)
+  <span class="ruby-node">&quot;#{on}[#{condition}]&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- where-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- where-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

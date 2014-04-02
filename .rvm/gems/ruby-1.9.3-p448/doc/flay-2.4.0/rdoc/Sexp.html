@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Sexp - flay-2.4.0 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/flay.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-all_structural_subhashes">#all_structural_subhashes</a>
+    
+    <li><a href="#method-i-code_index">#code_index</a>
+    
+    <li><a href="#method-i-has_code-3F">#has_code?</a>
+    
+    <li><a href="#method-i-split_at">#split_at</a>
+    
+    <li><a href="#method-i-split_code">#split_code</a>
+    
+    <li><a href="#method-i-structural_hash">#structural_hash</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./History_txt.html">History</a>
+  
+    <li class="file"><a href="./Manifest_txt.html">Manifest</a>
+  
+    <li class="file"><a href="./README_txt.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./File.html">File</a>
+  
+    <li><a href="./Flay.html">Flay</a>
+  
+    <li><a href="./FlayTask.html">FlayTask</a>
+  
+    <li><a href="./Sexp.html">Sexp</a>
+  
+    <li><a href="./String.html">String</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Sexp</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-modified" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">modified</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Whether or not this sexp is a mutated/modified sexp.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-modified-3F" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">modified?</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Whether or not this sexp is a mutated/modified sexp.</p>
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-all_structural_subhashes" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">all_structural_subhashes</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns a list of structural hashes for all nodes (and sub-nodes) of this
+sexp.</p>
+          
+
+          
+          <div class="method-source-code" id="all_structural_subhashes-source">
+            <pre><span class="ruby-comment"># File lib/flay.rb, line 532</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">all_structural_subhashes</span>
+  <span class="ruby-identifier">hashes</span> = []
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">deep_each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">node</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">hashes</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">structural_hash</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">hashes</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- all_structural_subhashes-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- all_structural_subhashes-method -->
+
+    
+      <div id="method-i-code_index" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">code_index</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Return the index of the last non-code element, or nil if this sexp is not a
+code-bearing node.</p>
+          
+
+          
+          <div class="method-source-code" id="code_index-source">
+            <pre><span class="ruby-comment"># File lib/flay.rb, line 574</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">code_index</span>
+  {
+   <span class="ruby-value">:block</span>  =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>,    <span class="ruby-comment"># s(:block,                   *code)</span>
+   <span class="ruby-value">:class</span>  =<span class="ruby-operator">&gt;</span> <span class="ruby-value">2</span>,    <span class="ruby-comment"># s(:class,      name, super, *code)</span>
+   <span class="ruby-value">:module</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>,    <span class="ruby-comment"># s(:module,     name,        *code)</span>
+   <span class="ruby-value">:defn</span>   =<span class="ruby-operator">&gt;</span> <span class="ruby-value">2</span>,    <span class="ruby-comment"># s(:defn,       name, args,  *code)</span>
+   <span class="ruby-value">:defs</span>   =<span class="ruby-operator">&gt;</span> <span class="ruby-value">3</span>,    <span class="ruby-comment"># s(:defs, recv, name, args,  *code)</span>
+   <span class="ruby-value">:iter</span>   =<span class="ruby-operator">&gt;</span> <span class="ruby-value">2</span>,    <span class="ruby-comment"># s(:iter, recv,       args,  *code)</span>
+  }[<span class="ruby-keyword">self</span>.<span class="ruby-identifier">sexp_type</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- code_index-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Sexp.html#method-i-has_code-3F">has_code?</a>
+        </div>
+        
+
+        
+      </div><!-- code_index-method -->
+
+    
+      <div id="method-i-has_code-3F" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">has_code?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Sexp.html#method-i-code_index">code_index</a>
+        </div>
+        
+      </div><!-- has_code-3F-method -->
+
+    
+      <div id="method-i-split_at" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">split_at</span><span
+            class="method-args">(n)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Useful general array method that splits the array from 0..<code>n</code>
+and the rest. Returns both sections.</p>
+          
+
+          
+          <div class="method-source-code" id="split_at-source">
+            <pre><span class="ruby-comment"># File lib/flay.rb, line 566</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">split_at</span> <span class="ruby-identifier">n</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>[<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-identifier">n</span>], <span class="ruby-keyword">self</span>[<span class="ruby-identifier">n</span><span class="ruby-operator">+</span><span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- split_at-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- split_at-method -->
+
+    
+      <div id="method-i-split_code" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">split_code</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Split the sexp into front-matter and code-matter, returning both. See <a
+href="Sexp.html#method-i-code_index">code_index</a>.</p>
+          
+
+          
+          <div class="method-source-code" id="split_code-source">
+            <pre><span class="ruby-comment"># File lib/flay.rb, line 591</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">split_code</span>
+  <span class="ruby-identifier">index</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">code_index</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">split_at</span> <span class="ruby-identifier">index</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">index</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- split_code-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- split_code-method -->
+
+    
+      <div id="method-i-structural_hash" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">structural_hash</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Calculate the structural hash for this sexp. Cached, so don’t modify the
+sexp afterwards and expect it to be correct.</p>
+          
+
+          
+          <div class="method-source-code" id="structural_hash-source">
+            <pre><span class="ruby-comment"># File lib/flay.rb, line 524</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">structural_hash</span>
+  <span class="ruby-ivar">@structural_hash</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">structure</span>.<span class="ruby-identifier">hash</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- structural_hash-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- structural_hash-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

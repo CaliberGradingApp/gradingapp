@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module MetricFu::Environment - metric_fu-4.5.1 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/metric_fu/environment.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-included">::included</a>
+    
+    <li><a href="#method-i-debug_info">#debug_info</a>
+    
+    <li><a href="#method-i-environment_details">#environment_details</a>
+    
+    <li><a href="#method-i-is_cruise_control_rb-3F">#is_cruise_control_rb?</a>
+    
+    <li><a href="#method-i-jruby-3F">#jruby?</a>
+    
+    <li><a href="#method-i-library_details">#library_details</a>
+    
+    <li><a href="#method-i-mri-3F">#mri?</a>
+    
+    <li><a href="#method-i-osx-3F">#osx?</a>
+    
+    <li><a href="#method-i-rails-3F">#rails?</a>
+    
+    <li><a href="#method-i-rubinius-3F">#rubinius?</a>
+    
+    <li><a href="#method-i-ruby18-3F">#ruby18?</a>
+    
+    <li><a href="#method-i-ruby192-3F">#ruby192?</a>
+    
+    <li><a href="#method-i-ruby_details">#ruby_details</a>
+    
+    <li><a href="#method-i-ruby_flavor">#ruby_flavor</a>
+    
+    <li><a href="#method-i-ruby_strangely_makes_accessors_private-3F">#ruby_strangely_makes_accessors_private?</a>
+    
+    <li><a href="#method-i-ruby_version">#ruby_version</a>
+    
+    <li><a href="#method-i-supports_ripper-3F">#supports_ripper?</a>
+    
+    <li><a href="#method-i-verbose">#verbose</a>
+    
+    <li><a href="#method-i-verbose-3D">#verbose=</a>
+    
+    <li><a href="#method-i-version">#version</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../MIT-LICENSE.html">MIT-LICENSE</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../MetricFu.html">MetricFu</a>
+  
+    <li><a href="../MetricFu/AnalysisError.html">MetricFu::AnalysisError</a>
+  
+    <li><a href="../MetricFu/AnalyzerTables.html">MetricFu::AnalyzerTables</a>
+  
+    <li><a href="../MetricFu/CaneGenerator.html">MetricFu::CaneGenerator</a>
+  
+    <li><a href="../MetricFu/CaneGrapher.html">MetricFu::CaneGrapher</a>
+  
+    <li><a href="../MetricFu/CaneViolations.html">MetricFu::CaneViolations</a>
+  
+    <li><a href="../MetricFu/CaneViolations/AbcComplexity.html">MetricFu::CaneViolations::AbcComplexity</a>
+  
+    <li><a href="../MetricFu/CaneViolations/Comment.html">MetricFu::CaneViolations::Comment</a>
+  
+    <li><a href="../MetricFu/CaneViolations/Documentation.html">MetricFu::CaneViolations::Documentation</a>
+  
+    <li><a href="../MetricFu/CaneViolations/LineStyle.html">MetricFu::CaneViolations::LineStyle</a>
+  
+    <li><a href="../MetricFu/CaneViolations/Others.html">MetricFu::CaneViolations::Others</a>
+  
+    <li><a href="../MetricFu/ChurnGenerator.html">MetricFu::ChurnGenerator</a>
+  
+    <li><a href="../MetricFu/ChurnHotspot.html">MetricFu::ChurnHotspot</a>
+  
+    <li><a href="../MetricFu/ClassMethodNode.html">MetricFu::ClassMethodNode</a>
+  
+    <li><a href="../MetricFu/Cli.html">MetricFu::Cli</a>
+  
+    <li><a href="../MetricFu/Cli/Client.html">MetricFu::Cli::Client</a>
+  
+    <li><a href="../MetricFu/Cli/Helper.html">MetricFu::Cli::Helper</a>
+  
+    <li><a href="../MetricFu/Cli/MicroOptParse.html">MetricFu::Cli::MicroOptParse</a>
+  
+    <li><a href="../MetricFu/Cli/MicroOptParse/Parser.html">MetricFu::Cli::MicroOptParse::Parser</a>
+  
+    <li><a href="../MetricFu/Configuration.html">MetricFu::Configuration</a>
+  
+    <li><a href="../MetricFu/Constantize.html">MetricFu::Constantize</a>
+  
+    <li><a href="../MetricFu/Environment.html">MetricFu::Environment</a>
+  
+    <li><a href="../MetricFu/FlayGenerator.html">MetricFu::FlayGenerator</a>
+  
+    <li><a href="../MetricFu/FlayGrapher.html">MetricFu::FlayGrapher</a>
+  
+    <li><a href="../MetricFu/FlayHotspot.html">MetricFu::FlayHotspot</a>
+  
+    <li><a href="../MetricFu/FlogGenerator.html">MetricFu::FlogGenerator</a>
+  
+    <li><a href="../MetricFu/FlogGrapher.html">MetricFu::FlogGrapher</a>
+  
+    <li><a href="../MetricFu/FlogHotspot.html">MetricFu::FlogHotspot</a>
+  
+    <li><a href="../MetricFu/Formatter.html">MetricFu::Formatter</a>
+  
+    <li><a href="../MetricFu/Formatter/HTML.html">MetricFu::Formatter::HTML</a>
+  
+    <li><a href="../MetricFu/Formatter/Templates.html">MetricFu::Formatter::Templates</a>
+  
+    <li><a href="../MetricFu/Formatter/YAML.html">MetricFu::Formatter::YAML</a>
+  
+    <li><a href="../MetricFu/GemRun.html">MetricFu::GemRun</a>
+  
+    <li><a href="../MetricFu/GemVersion.html">MetricFu::GemVersion</a>
+  
+    <li><a href="../MetricFu/Generator.html">MetricFu::Generator</a>
+  
+    <li><a href="../MetricFu/Graph.html">MetricFu::Graph</a>
+  
+    <li><a href="../MetricFu/Grapher.html">MetricFu::Grapher</a>
+  
+    <li><a href="../MetricFu/Grouping.html">MetricFu::Grouping</a>
+  
+    <li><a href="../MetricFu/Hotspot.html">MetricFu::Hotspot</a>
+  
+    <li><a href="../MetricFu/HotspotAnalyzedProblems.html">MetricFu::HotspotAnalyzedProblems</a>
+  
+    <li><a href="../MetricFu/HotspotAnalyzer.html">MetricFu::HotspotAnalyzer</a>
+  
+    <li><a href="../MetricFu/HotspotGroupings.html">MetricFu::HotspotGroupings</a>
+  
+    <li><a href="../MetricFu/HotspotProblems.html">MetricFu::HotspotProblems</a>
+  
+    <li><a href="../MetricFu/HotspotRankedProblemLocation.html">MetricFu::HotspotRankedProblemLocation</a>
+  
+    <li><a href="../MetricFu/HotspotRankings.html">MetricFu::HotspotRankings</a>
+  
+    <li><a href="../MetricFu/HotspotScoringStrategies.html">MetricFu::HotspotScoringStrategies</a>
+  
+    <li><a href="../MetricFu/HotspotsGenerator.html">MetricFu::HotspotsGenerator</a>
+  
+    <li><a href="../MetricFu/InstanceMethodNode.html">MetricFu::InstanceMethodNode</a>
+  
+    <li><a href="../MetricFu/Io.html">MetricFu::Io</a>
+  
+    <li><a href="../MetricFu/Io/FileSystem.html">MetricFu::Io::FileSystem</a>
+  
+    <li><a href="../MetricFu/LineNumbers.html">MetricFu::LineNumbers</a>
+  
+    <li><a href="../MetricFu/Loader.html">MetricFu::Loader</a>
+  
+    <li><a href="../MetricFu/Location.html">MetricFu::Location</a>
+  
+    <li><a href="../MetricFu/MethodContainer.html">MetricFu::MethodContainer</a>
+  
+    <li><a href="../MetricFu/Metric.html">MetricFu::Metric</a>
+  
+    <li><a href="../MetricFu/MetricCane.html">MetricFu::MetricCane</a>
+  
+    <li><a href="../MetricFu/MetricChurn.html">MetricFu::MetricChurn</a>
+  
+    <li><a href="../MetricFu/MetricFlay.html">MetricFu::MetricFlay</a>
+  
+    <li><a href="../MetricFu/MetricFlog.html">MetricFu::MetricFlog</a>
+  
+    <li><a href="../MetricFu/MetricHotspots.html">MetricFu::MetricHotspots</a>
+  
+    <li><a href="../MetricFu/MetricRailsBestPractices.html">MetricFu::MetricRailsBestPractices</a>
+  
+    <li><a href="../MetricFu/MetricRcov.html">MetricFu::MetricRcov</a>
+  
+    <li><a href="../MetricFu/MetricReek.html">MetricFu::MetricReek</a>
+  
+    <li><a href="../MetricFu/MetricRoodi.html">MetricFu::MetricRoodi</a>
+  
+    <li><a href="../MetricFu/MetricSaikuro.html">MetricFu::MetricSaikuro</a>
+  
+    <li><a href="../MetricFu/MetricStats.html">MetricFu::MetricStats</a>
+  
+    <li><a href="../MetricFu/RailsBestPracticesGenerator.html">MetricFu::RailsBestPracticesGenerator</a>
+  
+    <li><a href="../MetricFu/RailsBestPracticesGrapher.html">MetricFu::RailsBestPracticesGrapher</a>
+  
+    <li><a href="../MetricFu/Ranking.html">MetricFu::Ranking</a>
+  
+    <li><a href="../MetricFu/RcovGenerator.html">MetricFu::RcovGenerator</a>
+  
+    <li><a href="../MetricFu/RcovGenerator/Line.html">MetricFu::RcovGenerator::Line</a>
+  
+    <li><a href="../MetricFu/RcovGrapher.html">MetricFu::RcovGrapher</a>
+  
+    <li><a href="../MetricFu/RcovHotspot.html">MetricFu::RcovHotspot</a>
+  
+    <li><a href="../MetricFu/Record.html">MetricFu::Record</a>
+  
+    <li><a href="../MetricFu/ReekGenerator.html">MetricFu::ReekGenerator</a>
+  
+    <li><a href="../MetricFu/ReekGrapher.html">MetricFu::ReekGrapher</a>
+  
+    <li><a href="../MetricFu/Reporter.html">MetricFu::Reporter</a>
+  
+    <li><a href="../MetricFu/Result.html">MetricFu::Result</a>
+  
+    <li><a href="../MetricFu/RoodiGenerator.html">MetricFu::RoodiGenerator</a>
+  
+    <li><a href="../MetricFu/RoodiGrapher.html">MetricFu::RoodiGrapher</a>
+  
+    <li><a href="../MetricFu/RoodiHotspot.html">MetricFu::RoodiHotspot</a>
+  
+    <li><a href="../MetricFu/Run.html">MetricFu::Run</a>
+  
+    <li><a href="../MetricFu/SaikuroGenerator.html">MetricFu::SaikuroGenerator</a>
+  
+    <li><a href="../MetricFu/SaikuroHotspot.html">MetricFu::SaikuroHotspot</a>
+  
+    <li><a href="../MetricFu/SaikuroParsingElement.html">MetricFu::SaikuroParsingElement</a>
+  
+    <li><a href="../MetricFu/SaikuroScratchFile.html">MetricFu::SaikuroScratchFile</a>
+  
+    <li><a href="../MetricFu/SingletonMethodNode.html">MetricFu::SingletonMethodNode</a>
+  
+    <li><a href="../MetricFu/StatsGenerator.html">MetricFu::StatsGenerator</a>
+  
+    <li><a href="../MetricFu/StatsGrapher.html">MetricFu::StatsGrapher</a>
+  
+    <li><a href="../MetricFu/StatsHotspot.html">MetricFu::StatsHotspot</a>
+  
+    <li><a href="../MetricFu/Table.html">MetricFu::Table</a>
+  
+    <li><a href="../MetricFu/Template.html">MetricFu::Template</a>
+  
+    <li><a href="../MetricFu/Utility.html">MetricFu::Utility</a>
+  
+    <li><a href="../MfDebugger.html">MfDebugger</a>
+  
+    <li><a href="../MfDebugger/Logger.html">MfDebugger::Logger</a>
+  
+    <li><a href="../AwesomeTemplate.html">AwesomeTemplate</a>
+  
+    <li><a href="../Object.html">Object</a>
+  
+    <li><a href="../ReekHotspot.html">ReekHotspot</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module MetricFu::Environment</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-included" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">included</span><span
+            class="method-args">(host_class)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>HACK: for using this module via inclusion in <a
+href="Configuration.html">Configuration</a></p>
+          
+
+          
+          <div class="method-source-code" id="included-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/environment.rb, line 130</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">included</span>(<span class="ruby-identifier">host_class</span>)
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">host_class</span>.<span class="ruby-identifier">ruby_strangely_makes_accessors_private?</span>
+    <span class="ruby-ivar">@private_accessors</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">allocate</span>.<span class="ruby-identifier">ruby_strangely_makes_accessors_private?</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- included-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- included-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-debug_info" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">debug_info</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="debug_info-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/environment.rb, line 113</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">debug_info</span>
+  <span class="ruby-ivar">@debug_info</span> <span class="ruby-operator">||=</span> {
+    <span class="ruby-string">'Ruby'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">ruby_details</span>,
+    <span class="ruby-string">'Environment'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">environment_details</span>,
+    <span class="ruby-string">'MetricFu'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">library_details</span>,
+  }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- debug_info-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- debug_info-method -->
+
+    
+      <div id="method-i-environment_details" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">environment_details</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="environment_details-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/environment.rb, line 79</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">environment_details</span>
+  <span class="ruby-ivar">@environment_details</span> <span class="ruby-operator">||=</span> {
+    <span class="ruby-string">'VERBOSE'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">$VERBOSE</span>.<span class="ruby-identifier">inspect</span>,
+    <span class="ruby-string">'External Encoding'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Encoding</span>.<span class="ruby-identifier">default_external</span>.<span class="ruby-identifier">to_s</span>,
+    <span class="ruby-string">'Internal Encoding'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Encoding</span>.<span class="ruby-identifier">default_internal</span>.<span class="ruby-identifier">to_s</span>,
+    <span class="ruby-string">'Host Architecture'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">RbConfig</span><span class="ruby-operator">::</span><span class="ruby-constant">CONFIG</span>[<span class="ruby-string">'build'</span>],
+    <span class="ruby-string">'Ruby Prefix'</span>       =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">RbConfig</span><span class="ruby-operator">::</span><span class="ruby-constant">CONFIG</span>[<span class="ruby-string">'prefix'</span>],
+    <span class="ruby-string">'Ruby Options'</span>      =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">ENV</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">grep</span>(<span class="ruby-regexp">/RUBYOPT/</span>).<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot;#{key}=#{ENV[key]}&quot;</span> }.<span class="ruby-identifier">join</span>(<span class="ruby-string">', '</span>),
+  }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- environment_details-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- environment_details-method -->
+
+    
+      <div id="method-i-is_cruise_control_rb-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">is_cruise_control_rb?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="is_cruise_control_rb-3F-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/environment.rb, line 30</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">is_cruise_control_rb?</span>
+  <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-constant">ENV</span>[<span class="ruby-string">'CC_BUILD_ARTIFACTS'</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- is_cruise_control_rb-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- is_cruise_control_rb-3F-method -->
+
+    
+      <div id="method-i-jruby-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">jruby?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="jruby-3F-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/environment.rb, line 34</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">jruby?</span>
+  <span class="ruby-ivar">@jruby</span> <span class="ruby-operator">||=</span> <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-constant">RedCard</span>.<span class="ruby-identifier">check</span>(<span class="ruby-value">:jruby</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- jruby-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- jruby-3F-method -->
+
+    
+      <div id="method-i-library_details" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">library_details</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="library_details-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/environment.rb, line 104</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">library_details</span>
+  <span class="ruby-ivar">@library_details</span> <span class="ruby-operator">||=</span> {
+    <span class="ruby-string">'Version'</span> =<span class="ruby-operator">&gt;</span>  <span class="ruby-identifier">version</span>,
+    <span class="ruby-string">'Verbose Mode'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">verbose</span>,
+    <span class="ruby-string">'Enabled Metrics'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">MetricFu</span><span class="ruby-operator">::</span><span class="ruby-constant">Metric</span>.<span class="ruby-identifier">enabled_metrics</span>.<span class="ruby-identifier">map</span>(&amp;<span class="ruby-value">:name</span>),
+    <span class="ruby-string">'Dependencies'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">MetricFu</span><span class="ruby-operator">::</span><span class="ruby-constant">GemVersion</span>.<span class="ruby-identifier">dependencies_summary</span>,
+  }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- library_details-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- library_details-method -->
+
+    
+      <div id="method-i-mri-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mri?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="mri-3F-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/environment.rb, line 38</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mri?</span>
+  <span class="ruby-ivar">@mri</span> <span class="ruby-operator">||=</span> <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-constant">RedCard</span>.<span class="ruby-identifier">check</span>(<span class="ruby-value">:ruby</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- mri-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- mri-3F-method -->
+
+    
+      <div id="method-i-osx-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">osx?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="osx-3F-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/environment.rb, line 121</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">osx?</span>
+  <span class="ruby-ivar">@osx</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">platform</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">'darwin'</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- osx-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- osx-3F-method -->
+
+    
+      <div id="method-i-rails-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">rails?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Perform a simple check to try and guess if we’re running against a rails
+app.</p>
+
+<p>TODO This should probably be made a bit more robust.</p>
+          
+
+          
+          <div class="method-source-code" id="rails-3F-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/environment.rb, line 20</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">rails?</span>
+  <span class="ruby-ivar">@rails</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword">begin</span>
+               <span class="ruby-identifier">exists</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span>(<span class="ruby-string">&quot;config/environment.rb&quot;</span>)
+               <span class="ruby-keyword">def</span> <span class="ruby-constant">MetricFu</span>.<span class="ruby-identifier">rails?</span>
+                 <span class="ruby-identifier">exists</span>
+               <span class="ruby-keyword">end</span>
+               <span class="ruby-identifier">exists</span>
+             <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- rails-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- rails-3F-method -->
+
+    
+      <div id="method-i-rubinius-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">rubinius?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="rubinius-3F-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/environment.rb, line 58</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">rubinius?</span>
+  <span class="ruby-ivar">@rubinius</span> <span class="ruby-operator">||=</span> <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-constant">RedCard</span>.<span class="ruby-identifier">check</span>(<span class="ruby-value">:rubinius</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- rubinius-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- rubinius-3F-method -->
+
+    
+      <div id="method-i-ruby18-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ruby18?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="ruby18-3F-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/environment.rb, line 50</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ruby18?</span>
+  <span class="ruby-ivar">@ruby18</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">mri?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-constant">RedCard</span>.<span class="ruby-identifier">check</span>(<span class="ruby-string">'1.8'</span><span class="ruby-operator">...</span><span class="ruby-string">'1.9'</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- ruby18-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- ruby18-3F-method -->
+
+    
+      <div id="method-i-ruby192-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ruby192?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="ruby192-3F-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/environment.rb, line 54</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ruby192?</span>
+  <span class="ruby-ivar">@ruby192</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">mri?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">ruby_version</span> <span class="ruby-operator">==</span> <span class="ruby-string">'1.9.2'</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- ruby192-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- ruby192-3F-method -->
+
+    
+      <div id="method-i-ruby_details" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ruby_details</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>To consider $LOADED_FEATURES $LOAD_PATH</p>
+          
+
+          
+          <div class="method-source-code" id="ruby_details-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/environment.rb, line 93</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ruby_details</span>
+  <span class="ruby-ivar">@ruby_details</span> <span class="ruby-operator">||=</span> {
+    <span class="ruby-string">'Engine'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">ruby_flavor</span>,
+    <span class="ruby-string">'Version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">ruby_version</span>,
+    <span class="ruby-string">'Patchlevel'</span> =<span class="ruby-operator">&gt;</span> (<span class="ruby-keyword">defined?</span>(<span class="ruby-constant">RUBY_PATCHLEVEL</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">RUBY_PATCHLEVEL</span>),
+    <span class="ruby-string">'Ripper Support'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">supports_ripper?</span>,
+    <span class="ruby-string">'Rubygems Version'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">VERSION</span>,
+    <span class="ruby-string">'Long Description'</span> =<span class="ruby-operator">&gt;</span> (<span class="ruby-keyword">defined?</span>(<span class="ruby-constant">RUBY_DESCRIPTION</span>) <span class="ruby-operator">?</span> <span class="ruby-constant">RUBY_DESCRIPTION</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">platform</span>),
+  }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- ruby_details-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- ruby_details-method -->
+
+    
+      <div id="method-i-ruby_flavor" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ruby_flavor</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="ruby_flavor-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/environment.rb, line 42</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ruby_flavor</span>
+  <span class="ruby-ivar">@ruby_flavor</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">RedCard</span>.<span class="ruby-identifier">engine</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- ruby_flavor-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- ruby_flavor-method -->
+
+    
+      <div id="method-i-ruby_strangely_makes_accessors_private-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ruby_strangely_makes_accessors_private?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="ruby_strangely_makes_accessors_private-3F-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/environment.rb, line 125</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ruby_strangely_makes_accessors_private?</span>
+   <span class="ruby-identifier">ruby192?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">jruby?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- ruby_strangely_makes_accessors_private-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- ruby_strangely_makes_accessors_private-3F-method -->
+
+    
+      <div id="method-i-ruby_version" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ruby_version</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="ruby_version-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/environment.rb, line 46</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ruby_version</span>
+  <span class="ruby-ivar">@ruby_version</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">RedCard</span>.<span class="ruby-identifier">engine_version</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- ruby_version-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- ruby_version-method -->
+
+    
+      <div id="method-i-supports_ripper-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">supports_ripper?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="supports_ripper-3F-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/environment.rb, line 62</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">supports_ripper?</span>
+  <span class="ruby-ivar">@supports_ripper</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword">begin</span>
+                         <span class="ruby-identifier">require</span> <span class="ruby-string">'ripper'</span>
+                         <span class="ruby-keyword">true</span>
+                       <span class="ruby-keyword">rescue</span> <span class="ruby-constant">LoadError</span>
+                         <span class="ruby-keyword">false</span>
+                       <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- supports_ripper-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- supports_ripper-3F-method -->
+
+    
+      <div id="method-i-verbose" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">verbose</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>TODO: Set log_level here, instead</p>
+          
+
+          
+          <div class="method-source-code" id="verbose-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/environment.rb, line 8</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">verbose</span>
+  <span class="ruby-constant">MfDebugger</span><span class="ruby-operator">::</span><span class="ruby-constant">Logger</span>.<span class="ruby-identifier">debug_on</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- verbose-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- verbose-method -->
+
+    
+      <div id="method-i-verbose-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">verbose=</span><span
+            class="method-args">(toggle)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="verbose-3D-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/environment.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">verbose=</span>(<span class="ruby-identifier">toggle</span>)
+  <span class="ruby-constant">MfDebugger</span><span class="ruby-operator">::</span><span class="ruby-constant">Logger</span>.<span class="ruby-identifier">debug_on</span> = <span class="ruby-identifier">toggle</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- verbose-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- verbose-3D-method -->
+
+    
+      <div id="method-i-version" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">version</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="version-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/environment.rb, line 75</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">version</span>
+  <span class="ruby-constant">MetricFu</span><span class="ruby-operator">::</span><span class="ruby-constant">VERSION</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- version-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- version-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

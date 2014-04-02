@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"verbose:EFI"Reek::Rake::Task#verbose;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"DUse verbose output. If this is set to true, the task will print;TI"3the reek command to stdout. Defaults to false.;T:
+@fileI"lib/reek/rake/task.rb;TF@

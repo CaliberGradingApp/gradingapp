@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>spork-0.9.2 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body>
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./MIT-LICENSE.html">MIT-LICENSE</a>
+  
+    <li class="file"><a href="./README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Spork.html">Spork</a>
+  
+    <li><a href="./Spork/AppFramework.html">Spork::AppFramework</a>
+  
+    <li><a href="./Spork/AppFramework/Padrino.html">Spork::AppFramework::Padrino</a>
+  
+    <li><a href="./Spork/AppFramework/Rails.html">Spork::AppFramework::Rails</a>
+  
+    <li><a href="./Spork/AppFramework/Unknown.html">Spork::AppFramework::Unknown</a>
+  
+    <li><a href="./Spork/CustomIOStreams.html">Spork::CustomIOStreams</a>
+  
+    <li><a href="./Spork/CustomIOStreams/ClassMethods.html">Spork::CustomIOStreams::ClassMethods</a>
+  
+    <li><a href="./Spork/Diagnoser.html">Spork::Diagnoser</a>
+  
+    <li><a href="./Spork/Forker.html">Spork::Forker</a>
+  
+    <li><a href="./Spork/Forker/ForkDiedException.html">Spork::Forker::ForkDiedException</a>
+  
+    <li><a href="./Spork/GemHelpers.html">Spork::GemHelpers</a>
+  
+    <li><a href="./Spork/GemHelpers/GemPath.html">Spork::GemHelpers::GemPath</a>
+  
+    <li><a href="./Spork/RunStrategy.html">Spork::RunStrategy</a>
+  
+    <li><a href="./Spork/RunStrategy/Forking.html">Spork::RunStrategy::Forking</a>
+  
+    <li><a href="./Spork/RunStrategy/Magazine.html">Spork::RunStrategy::Magazine</a>
+  
+    <li><a href="./Spork/Runner.html">Spork::Runner</a>
+  
+    <li><a href="./Spork/Server.html">Spork::Server</a>
+  
+    <li><a href="./Spork/TestFramework.html">Spork::TestFramework</a>
+  
+    <li><a href="./Spork/TestFramework/Cucumber.html">Spork::TestFramework::Cucumber</a>
+  
+    <li><a href="./Spork/TestFramework/FactoryException.html">Spork::TestFramework::FactoryException</a>
+  
+    <li><a href="./Spork/TestFramework/FrameworkNotAvailable.html">Spork::TestFramework::FrameworkNotAvailable</a>
+  
+    <li><a href="./Spork/TestFramework/NoFrameworkMatched.html">Spork::TestFramework::NoFrameworkMatched</a>
+  
+    <li><a href="./Spork/TestFramework/NoFrameworksAvailable.html">Spork::TestFramework::NoFrameworksAvailable</a>
+  
+    <li><a href="./Spork/TestFramework/RSpec.html">Spork::TestFramework::RSpec</a>
+  
+    <li><a href="./SporkDebugger.html">SporkDebugger</a>
+  
+    <li><a href="./SporkDebugger/EachRunState.html">SporkDebugger::EachRunState</a>
+  
+    <li><a href="./SporkDebugger/NetworkHelpers.html">SporkDebugger::NetworkHelpers</a>
+  
+    <li><a href="./SporkDebugger/PreloadState.html">SporkDebugger::PreloadState</a>
+  
+    <li><a href="./MagazineSlave.html">MagazineSlave</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<h1 id="label-Spork"><a href="Spork.html">Spork</a></h1>
+<ul><li>
+<p>Repository: <a
+href="http://github.com/sporkrb/spork">github.com/sporkrb/spork</a></p>
+</li><li>
+<p>Issues: <a
+href="http://github.com/sporkrb/spork/issues">github.com/sporkrb/spork/issues</a></p>
+</li><li>
+<p>Changes: <a
+href="http://github.com/sporkrb/spork/blob/master/History.txt">github.com/sporkrb/spork/blob/master/History.txt</a></p>
+</li><li>
+<p>Mailing list: <a
+href="http://groups.google.com/group/sporkgem">groups.google.com/group/sporkgem</a></p>
+</li><li>
+<p>Wiki: <a
+href="http://wiki.github.com/sporkrb/spork">wiki.github.com/sporkrb/spork</a></p>
+</li></ul>
+
+<h2 id="label-SYNOPSIS%3A">SYNOPSIS:</h2>
+
+<p><a href="Spork.html">Spork</a> is Tim Harper's implementation of test
+server (similar to the script/spec_server that used to be provided by
+rspec-rails), except rather than using the Rails constant unloading to
+reload your files, it forks a copy of the server each time you run your
+tests.  The result?  <a href="Spork.html">Spork</a> runs more solid: it
+doesn't get corrupted over time, it can work with any ruby framework, and
+it properly handles modules and any voodoo meta programming you may have
+put in your app.</p>
+
+<p><a href="Spork.html">Spork</a> runs on POSIX systems using fork. It also
+runs on windows by pre-populating a pool of ready processes (referred to
+here as the "magazine" strategy).</p>
+
+<h2 id="label-Supported+Testing+Frameworks">Supported Testing Frameworks</h2>
+<ul><li>
+<p>Rspec</p>
+</li><li>
+<p>Cucumber</p>
+</li><li>
+<p>Test::Unit (via ‘gem install spork-testunit’)</p>
+</li></ul>
+
+<h2 id="label-Supported+Application+Frameworks">Supported Application Frameworks</h2>
+
+<p>Actually, <a href="Spork.html">Spork</a> ~can~ work with any application
+framework.  But, it ships with hooks and helpers to make an “out of the
+box” experience.</p>
+<ul><li>
+<p>Rails 3.0 (for Rails 2.{1,2,3}.x, please try spork 0.8.x)</p>
+</li><li>
+<p>Padrino</p>
+</li></ul>
+
+<h2 id="label-INSTALL%3A">INSTALL:</h2>
+
+<h3 id="label-rubygems%3A">rubygems:</h3>
+
+<pre>[sudo] gem install spork --version 0.9.0</pre>
+
+<p>(Rails 2.x)</p>
+
+<pre>[sudo] gem install spork --version 0.8.4</pre>
+
+<h3 id="label-bundler%3A">bundler:</h3>
+
+<p>Add to your Gemfile:</p>
+
+<pre>gem 'spork', '~&gt; 0.9.0'</pre>
+
+<p>(Rails 2.x, use this)</p>
+
+<pre>gem 'spork', '~&gt; 0.8'</pre>
+
+<h2 id="label-Usage">Usage</h2>
+
+<p>From a terminal, change to your project directory.</p>
+
+<p>Then, bootstrap your spec/spec_helper.rb file.</p>
+
+<pre>spork --bootstrap</pre>
+
+<p>Next, edit spec/spec_helper.rb and follow the instructions that were put at
+the top.</p>
+
+<p>Finally, run spork.  A spec DRb server will be running!</p>
+
+<pre>spork</pre>
+
+<h2 id="label-Diagnostic+mode">Diagnostic mode</h2>
+
+<p>Initially, you may find that a few files don’t reload automatically.  This
+is because they are being loaded during <a href="Spork.html">Spork</a>
+startup.  To identify which project files are being pre-loaded, and why,
+run:</p>
+
+<pre>spork --diagnose | less
+(or spork -d, for short)</pre>
+
+<p>It will output a lot of stuff.  At the top you’ll find a summary of all
+project files loaded.  Down below, the stack trace for each file (how it
+got loaded).  <a href="Spork.html">Spork</a> hooks into Rails and does some
+magic (TM) to prevent ApplicationController observers, etc from
+pre-loading.  Similar hooks for other ruby frameworks may come as support
+demands.</p>
+
+<p>Some project changes will require a spork restart, and you shouldn’t expect
+them to not (IE: modifying your project gem dependencies or core
+application config).  Any file that is loaded during <a
+href="Spork.html">Spork</a> start-up will be cached until <a
+href="Spork.html">Spork</a> is restarted.  You can restart spork by sending
+a USR2 signal to the server process.  This could be automated with a gem
+such as Kicker (<a
+href="https://github.com/alloy/kicker">github.com/alloy/kicker</a>).  Since
+a native hook is required for each operating system to efficiently watch
+for filesystem changes, automatic restarting has not been built into <a
+href="Spork.html">Spork</a>.</p>
+
+<p>You may find this wiki page useful for common ways to battle a variety of
+common pre-loading issues: <a
+href="http://github.com/sporkrb/spork/wiki/Spork.trap_method-Jujutsu">github.com/sporkrb/spork/wiki/Spork.trap_method-Jujutsu</a></p>
+
+<h2 id="label-Running+specs+over+Spork">Running specs over <a href="Spork.html">Spork</a></h2>
+
+<h3 id="label-RSpec">RSpec</h3>
+
+<p>To get the TextMate RSpec bundle to use spork, go to
+config-&gt;advanced-&gt;shell variables, and add:</p>
+
+<pre>TM_RSPEC_OPTS=--drb.</pre>
+
+<p>To run from the command line, use:</p>
+
+<pre>rspec --drb spec/lib/my_spec.rb</pre>
+
+<p>Or, you could add the following flag to your <code>spec.opts</code> (or
+<code>.rspec</code> depending on your version of rspec) file.</p>
+
+<pre>--drb</pre>
+
+<h3 id="label-Cucumber">Cucumber</h3>
+
+<p>Cucumber has DRb support (see <a
+href="http://wiki.github.com/cucumber/cucumber/spork-and---drb">wiki.github.com/cucumber/cucumber/spork-and—drb</a>)</p>
+
+<pre>cucumber --drb features/my.feature</pre>
+
+<p>Use this as a guideline when “Sporking” your features/support/env.rb file</p>
+
+<pre>http://gist.github.com/123370</pre>
+
+<h2 id="label-Running+the+Spork+test+suite">Running the <a href="Spork.html">Spork</a> test suite</h2>
+
+<p>If you wish to hack on spork, you will want to run the automated test suite
+to make sure your changes don’t break anything.  <a
+href="Spork.html">Spork</a> uses bundler to manage and install
+dependencies.  To start:</p>
+
+<pre>bundle install</pre>
+
+<p>Then, to run the specs:</p>
+
+<pre>bundle exec rspec spec/</pre>
+
+<p>(or, alternatively…)</p>
+
+<pre>bundle exec rake</pre>
+
+<h3 id="label-running+features+%3D%3D%3D">running features ===</h3>
+
+<p>Essentially:</p>
+
+<pre>bundle exec cucumber features</pre>
+
+<h2 id="label-Some+potential+issues+and+ways+to+overcome+them%3A">Some potential issues and ways to overcome them:</h2>
+
+<p>See <a
+href="http://wiki.github.com/sporkrb/spork/troubleshooting">wiki.github.com/sporkrb/spork/troubleshooting</a></p>
+
+<h2 id="label-Kudos+to">Kudos to</h2>
+<ul><li>
+<p>Ben Mabey - help with documentation, testing, suggestions, patches, and
+bringing Cucumber support.</p>
+</li><li>
+<p>David Chelimsky - for the fine RSpec testing framework, and the original
+rspec-rails spec_server implementation, which <a
+href="Spork.html">Spork</a> has built upon.</p>
+</li><li>
+<p>LeadTune - just for being an awesome place to work.</p>
+</li><li>
+<p>Alan Aslak - for the fine Cucumber testing framework, and for much
+collaboration getting cucumber working with spork.</p>
+</li><li>
+<p>Roger Pack - JRuby support / Windows</p>
+</li><li>
+<p>Donald Parish - Windows support (Magazine strategy)</p>
+</li></ul>
+
+<p><a href="Spork.html">Spork</a> (c) 2011 Tim Harper, released under the MIT
+license</p>
+
+</div>
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

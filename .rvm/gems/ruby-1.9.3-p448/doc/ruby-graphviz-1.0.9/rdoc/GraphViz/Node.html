@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class GraphViz::Node - ruby-graphviz-1.0.9 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/graphviz/node.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="../Object.html">Object</a>
+  
+</nav>
+
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><a class="include" href="Constants.html">GraphViz::Constants</a>
+  
+  
+  </ul>
+</nav>
+
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-2D">#-</a>
+    
+    <li><a href="#method-i-3C-3C">#&lt;&lt;</a>
+    
+    <li><a href="#method-i-3E">#&gt;</a>
+    
+    <li><a href="#method-i-3E-3E">#&gt;&gt;</a>
+    
+    <li><a href="#method-i-5B-5D">#[]</a>
+    
+    <li><a href="#method-i-5B-5D-3D">#[]=</a>
+    
+    <li><a href="#method-i-each_attribut">#each_attribut</a>
+    
+    <li><a href="#method-i-each_attribute">#each_attribute</a>
+    
+    <li><a href="#method-i-id">#id</a>
+    
+    <li><a href="#method-i-index">#index</a>
+    
+    <li><a href="#method-i-root_graph">#root_graph</a>
+    
+    <li><a href="#method-i-set">#set</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../AUTHORS_rdoc.html">AUTHORS</a>
+  
+    <li class="file"><a href="../CHANGELOG_rdoc.html">CHANGELOG</a>
+  
+    <li class="file"><a href="../COPYING_rdoc.html">COPYING</a>
+  
+    <li class="file"><a href="../README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../GraphViz.html">GraphViz</a>
+  
+    <li><a href="../GraphViz/Attrs.html">GraphViz::Attrs</a>
+  
+    <li><a href="../GraphViz/Constants.html">GraphViz::Constants</a>
+  
+    <li><a href="../GraphViz/DOTScript.html">GraphViz::DOTScript</a>
+  
+    <li><a href="../GraphViz/DOTScriptData.html">GraphViz::DOTScriptData</a>
+  
+    <li><a href="../GraphViz/DSL.html">GraphViz::DSL</a>
+  
+    <li><a href="../GraphViz/Edge.html">GraphViz::Edge</a>
+  
+    <li><a href="../GraphViz/Elements.html">GraphViz::Elements</a>
+  
+    <li><a href="../GraphViz/Ext.html">GraphViz::Ext</a>
+  
+    <li><a href="../GraphViz/FamilyTree.html">GraphViz::FamilyTree</a>
+  
+    <li><a href="../GraphViz/FamilyTree/Couple.html">GraphViz::FamilyTree::Couple</a>
+  
+    <li><a href="../GraphViz/FamilyTree/Generation.html">GraphViz::FamilyTree::Generation</a>
+  
+    <li><a href="../GraphViz/FamilyTree/Person.html">GraphViz::FamilyTree::Person</a>
+  
+    <li><a href="../GraphViz/FamilyTree/Sibling.html">GraphViz::FamilyTree::Sibling</a>
+  
+    <li><a href="../GraphViz/GraphML.html">GraphViz::GraphML</a>
+  
+    <li><a href="../GraphViz/GraphMLError.html">GraphViz::GraphMLError</a>
+  
+    <li><a href="../GraphViz/Math.html">GraphViz::Math</a>
+  
+    <li><a href="../GraphViz/Math/CoordinateError.html">GraphViz::Math::CoordinateError</a>
+  
+    <li><a href="../GraphViz/Math/Matrix.html">GraphViz::Math::Matrix</a>
+  
+    <li><a href="../GraphViz/Math/ValueError.html">GraphViz::Math::ValueError</a>
+  
+    <li><a href="../GraphViz/Node.html">GraphViz::Node</a>
+  
+    <li><a href="../GraphViz/Theory.html">GraphViz::Theory</a>
+  
+    <li><a href="../GraphViz/Types.html">GraphViz::Types</a>
+  
+    <li><a href="../GraphViz/Types/ArrowType.html">GraphViz::Types::ArrowType</a>
+  
+    <li><a href="../GraphViz/Types/Color.html">GraphViz::Types::Color</a>
+  
+    <li><a href="../GraphViz/Types/ColorList.html">GraphViz::Types::ColorList</a>
+  
+    <li><a href="../GraphViz/Types/Common.html">GraphViz::Types::Common</a>
+  
+    <li><a href="../GraphViz/Types/EscString.html">GraphViz::Types::EscString</a>
+  
+    <li><a href="../GraphViz/Types/GvBool.html">GraphViz::Types::GvBool</a>
+  
+    <li><a href="../GraphViz/Types/GvDouble.html">GraphViz::Types::GvDouble</a>
+  
+    <li><a href="../GraphViz/Types/HtmlString.html">GraphViz::Types::HtmlString</a>
+  
+    <li><a href="../GraphViz/Types/LblString.html">GraphViz::Types::LblString</a>
+  
+    <li><a href="../GraphViz/Types/Rect.html">GraphViz::Types::Rect</a>
+  
+    <li><a href="../GraphViz/Types/SplineType.html">GraphViz::Types::SplineType</a>
+  
+    <li><a href="../GraphViz/Utils.html">GraphViz::Utils</a>
+  
+    <li><a href="../GraphViz/Utils/Colors.html">GraphViz::Utils::Colors</a>
+  
+    <li><a href="../GraphViz/XML.html">GraphViz::XML</a>
+  
+    <li><a href="../AttributeException.html">AttributeException</a>
+  
+    <li><a href="../BoolException.html">BoolException</a>
+  
+    <li><a href="../ColorException.html">ColorException</a>
+  
+    <li><a href="../DoubleException.html">DoubleException</a>
+  
+    <li><a href="../Hash.html">Hash</a>
+  
+    <li><a href="../Object.html">Object</a>
+  
+    <li><a href="../RectException.html">RectException</a>
+  
+    <li><a href="../SplineTypeException.html">SplineTypeException</a>
+  
+    <li><a href="../String.html">String</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class GraphViz::Node</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-incidents" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">incidents</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>List of nodes that are incident to the given node (in a directed graph
+neighbors == incidents)</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-neighbors" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">neighbors</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>List of nodes that are directly accessible from given node (in a directed
+graph neighbors == incidents)</p>
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">( node_id, parent_graph )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Create a new node</p>
+<ul><li>
+<p>node_id : ID of the node</p>
+</li><li>
+<p>parent_graph : Graph</p>
+</li></ul>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/graphviz/node.rb, line 33</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>( <span class="ruby-identifier">node_id</span>, <span class="ruby-identifier">parent_graph</span> )
+   <span class="ruby-ivar">@neighbors</span> = []
+   <span class="ruby-ivar">@incidents</span> = []
+   <span class="ruby-ivar">@node_id</span> = <span class="ruby-identifier">node_id</span>
+   <span class="ruby-ivar">@parent_graph</span> = <span class="ruby-identifier">parent_graph</span>
+   <span class="ruby-ivar">@node_attributes</span> = <span class="ruby-constant">GraphViz</span><span class="ruby-operator">::</span><span class="ruby-constant">Attrs</span><span class="ruby-operator">::</span><span class="ruby-identifier">new</span>( <span class="ruby-keyword">nil</span>, <span class="ruby-string">&quot;node&quot;</span>, <span class="ruby-constant">NODESATTRS</span> )
+   <span class="ruby-ivar">@index</span> = <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-2D" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">-</span><span
+            class="method-args">( node )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Node.html#method-i-3C-3C">&lt;&lt;</a>
+        </div>
+        
+      </div><!-- 2D-method -->
+
+    
+      <div id="method-i-3C-3C" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">&lt;&lt;</span><span
+            class="method-args">( node )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Create an edge between the current node and the node <code>node</code></p>
+          
+
+          
+          <div class="method-source-code" id="3C-3C-source">
+            <pre><span class="ruby-comment"># File lib/graphviz/node.rb, line 97</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">&lt;&lt;</span>( <span class="ruby-identifier">node</span> )
+   <span class="ruby-keyword">if</span>( <span class="ruby-identifier">node</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Array</span> )
+      <span class="ruby-identifier">node</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">no</span><span class="ruby-operator">|</span>
+         <span class="ruby-keyword">self</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">no</span>
+      <span class="ruby-keyword">end</span>
+   <span class="ruby-keyword">else</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-constant">GraphViz</span><span class="ruby-operator">::</span><span class="ruby-identifier">commonGraph</span>( <span class="ruby-identifier">node</span>, <span class="ruby-keyword">self</span> ).<span class="ruby-identifier">add_edges</span>( <span class="ruby-keyword">self</span>, <span class="ruby-identifier">node</span> )
+   <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- 3C-3C-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Node.html#method-i-3E">&gt;</a>, <a href="Node.html#method-i-2D">-</a>, <a href="Node.html#method-i-3E-3E">&gt;&gt;</a>
+        </div>
+        
+
+        
+      </div><!-- 3C-3C-method -->
+
+    
+      <div id="method-i-3E" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">&gt;</span><span
+            class="method-args">( node )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Node.html#method-i-3C-3C">&lt;&lt;</a>
+        </div>
+        
+      </div><!-- 3E-method -->
+
+    
+      <div id="method-i-3E-3E" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">&gt;&gt;</span><span
+            class="method-args">( node )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Node.html#method-i-3C-3C">&lt;&lt;</a>
+        </div>
+        
+      </div><!-- 3E-3E-method -->
+
+    
+      <div id="method-i-5B-5D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">[]</span><span
+            class="method-args">( attribute_name )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get the value of the node attribute <code>attribute_name</code></p>
+          
+
+          
+          <div class="method-source-code" id="5B-5D-source">
+            <pre><span class="ruby-comment"># File lib/graphviz/node.rb, line 67</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">[]</span>( <span class="ruby-identifier">attribute_name</span> )
+   <span class="ruby-keyword">if</span> <span class="ruby-constant">Hash</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">attribute_name</span>
+      <span class="ruby-identifier">attribute_name</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+         <span class="ruby-keyword">self</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-identifier">value</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>
+   <span class="ruby-keyword">else</span>
+      (<span class="ruby-ivar">@node_attributes</span>[<span class="ruby-identifier">attribute_name</span>.<span class="ruby-identifier">to_s</span>].<span class="ruby-identifier">nil?</span>)<span class="ruby-operator">?</span><span class="ruby-keyword">nil</span><span class="ruby-operator">:</span><span class="ruby-ivar">@node_attributes</span>[<span class="ruby-identifier">attribute_name</span>.<span class="ruby-identifier">to_s</span>].<span class="ruby-identifier">clone</span>
+   <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- 5B-5D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- 5B-5D-method -->
+
+    
+      <div id="method-i-5B-5D-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">[]=</span><span
+            class="method-args">( attribute_name, attribute_value )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Set value <code>attribute_value</code> to the node attribute
+<code>attribute_name</code></p>
+          
+
+          
+          <div class="method-source-code" id="5B-5D-3D-source">
+            <pre><span class="ruby-comment"># File lib/graphviz/node.rb, line 61</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">[]=</span>( <span class="ruby-identifier">attribute_name</span>, <span class="ruby-identifier">attribute_value</span> )
+   <span class="ruby-identifier">attribute_value</span> = <span class="ruby-identifier">attribute_value</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">attribute_value</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Symbol</span>
+   <span class="ruby-ivar">@node_attributes</span>[<span class="ruby-identifier">attribute_name</span>.<span class="ruby-identifier">to_s</span>] = <span class="ruby-identifier">attribute_value</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- 5B-5D-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- 5B-5D-3D-method -->
+
+    
+      <div id="method-i-each_attribut" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">each_attribut</span><span
+            class="method-args">(global = true, &b)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="each_attribut-source">
+            <pre><span class="ruby-comment"># File lib/graphviz/node.rb, line 91</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">each_attribut</span>(<span class="ruby-identifier">global</span> = <span class="ruby-keyword">true</span>, &amp;<span class="ruby-identifier">b</span>)
+   <span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;`GraphViz::Node#each_attribut` is deprecated, please use `GraphViz::Node#each_attribute`&quot;</span>
+   <span class="ruby-identifier">each_attribute</span>(<span class="ruby-identifier">global</span>, &amp;<span class="ruby-identifier">b</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- each_attribut-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- each_attribut-method -->
+
+    
+      <div id="method-i-each_attribute" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">each_attribute</span><span
+            class="method-args">(global = true) { |k,v| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Calls block once for each attribute of the node, passing the name and value
+to the block as a two-element array.</p>
+
+<p>If global is set to false, the block does not receive the attributes set
+globally</p>
+          
+
+          
+          <div class="method-source-code" id="each_attribute-source">
+            <pre><span class="ruby-comment"># File lib/graphviz/node.rb, line 82</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">each_attribute</span>(<span class="ruby-identifier">global</span> = <span class="ruby-keyword">true</span>, &amp;<span class="ruby-identifier">b</span>)
+   <span class="ruby-identifier">attrs</span> = <span class="ruby-ivar">@node_attributes</span>.<span class="ruby-identifier">to_h</span>
+   <span class="ruby-keyword">if</span> <span class="ruby-identifier">global</span>
+      <span class="ruby-identifier">attrs</span> = <span class="ruby-identifier">pg</span>.<span class="ruby-identifier">node</span>.<span class="ruby-identifier">to_h</span>.<span class="ruby-identifier">merge</span> <span class="ruby-identifier">attrs</span>
+   <span class="ruby-keyword">end</span>
+   <span class="ruby-identifier">attrs</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">yield</span>(<span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span>)
+   <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- each_attribute-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- each_attribute-method -->
+
+    
+      <div id="method-i-id" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">id</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get the node ID</p>
+          
+
+          
+          <div class="method-source-code" id="id-source">
+            <pre><span class="ruby-comment"># File lib/graphviz/node.rb, line 43</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">id</span>
+   <span class="ruby-ivar">@node_id</span>.<span class="ruby-identifier">clone</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- id-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- id-method -->
+
+    
+      <div id="method-i-index" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">index</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Return the node index</p>
+          
+
+          
+          <div class="method-source-code" id="index-source">
+            <pre><span class="ruby-comment"># File lib/graphviz/node.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">index</span>
+   <span class="ruby-ivar">@index</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- index-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- index-method -->
+
+    
+      <div id="method-i-root_graph" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">root_graph</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Return the root graph</p>
+          
+
+          
+          <div class="method-source-code" id="root_graph-source">
+            <pre><span class="ruby-comment"># File lib/graphviz/node.rb, line 56</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">root_graph</span>
+   <span class="ruby-keyword">return</span>( (<span class="ruby-keyword">self</span>.<span class="ruby-identifier">pg</span>.<span class="ruby-identifier">nil?</span>) <span class="ruby-operator">?</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">pg</span>.<span class="ruby-identifier">root_graph</span> )
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- root_graph-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- root_graph-method -->
+
+    
+      <div id="method-i-set" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">set</span><span
+            class="method-args">( ) { |self| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Set node attributes</p>
+
+<p>Example :</p>
+
+<pre class="ruby"><span class="ruby-identifier">n</span> = <span class="ruby-identifier">graph</span>.<span class="ruby-identifier">add_nodes</span>( <span class="ruby-operator">...</span> )
+<span class="ruby-operator">...</span>
+<span class="ruby-identifier">n</span>.<span class="ruby-identifier">set</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">_n</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">_n</span>.<span class="ruby-identifier">color</span> = <span class="ruby-string">&quot;blue&quot;</span>
+  <span class="ruby-identifier">_n</span>.<span class="ruby-identifier">fontcolor</span> = <span class="ruby-string">&quot;red&quot;</span>
+}
+</pre>
+          
+
+          
+          <div class="method-source-code" id="set-source">
+            <pre><span class="ruby-comment"># File lib/graphviz/node.rb, line 120</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">set</span>( &amp;<span class="ruby-identifier">b</span> )
+   <span class="ruby-keyword">yield</span>( <span class="ruby-keyword">self</span> )
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- set-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- set-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

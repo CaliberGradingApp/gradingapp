@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"formatters:EFI"'MetricFu::Configuration#formatters;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"@TODO review if these code is functionally duplicated in the;TI"base generator initialize;T:
+@fileI"#lib/metric_fu/configuration.rb;TF@

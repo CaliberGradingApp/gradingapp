@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>History - ruby_parser-3.2.2 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body class="file">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./History_txt.html">History</a>
+  
+    <li class="file"><a href="./Manifest_txt.html">Manifest</a>
+  
+    <li class="file"><a href="./README_txt.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./RubyParserStuff.html">RubyParserStuff</a>
+  
+    <li><a href="./RubyParserStuff/Environment.html">RubyParserStuff::Environment</a>
+  
+    <li><a href="./RubyParserStuff/Keyword.html">RubyParserStuff::Keyword</a>
+  
+    <li><a href="./RubyParserStuff/Keyword/KWtable.html">RubyParserStuff::Keyword::KWtable</a>
+  
+    <li><a href="./RubyParserStuff/Ruby18Parser.html">RubyParserStuff::Ruby18Parser</a>
+  
+    <li><a href="./RubyParserStuff/Ruby19Parser.html">RubyParserStuff::Ruby19Parser</a>
+  
+    <li><a href="./RubyParserStuff/Ruby20Parser.html">RubyParserStuff::Ruby20Parser</a>
+  
+    <li><a href="./RubyParserStuff/RubyParser.html">RubyParserStuff::RubyParser</a>
+  
+    <li><a href="./RubyParserStuff/RubyParser/SyntaxError.html">RubyParserStuff::RubyParser::SyntaxError</a>
+  
+    <li><a href="./RubyParserStuff/Sexp.html">RubyParserStuff::Sexp</a>
+  
+    <li><a href="./RubyParserStuff/StackState.html">RubyParserStuff::StackState</a>
+  
+    <li><a href="./RubyParserStuff/String.html">RubyParserStuff::String</a>
+  
+    <li><a href="./RPStringScanner.html">RPStringScanner</a>
+  
+    <li><a href="./Ruby18Parser.html">Ruby18Parser</a>
+  
+    <li><a href="./Ruby19Parser.html">Ruby19Parser</a>
+  
+    <li><a href="./Ruby20Parser.html">Ruby20Parser</a>
+  
+    <li><a href="./RubyLexer.html">RubyLexer</a>
+  
+    <li><a href="./RubyParserGauntlet.html">RubyParserGauntlet</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<h3 id="label-3.2.2+%2F+2013-07-11">3.2.2 / 2013-07-11</h3>
+<ul><li>
+<p>5 bug fixes:</p>
+<ul><li>
+<p>1.9/2.0: fixed assocs in return args. (presidentbeef)</p>
+</li><li>
+<p>Fixed handling of parse error when class is nested in multiple defs.
+(whitequark)</p>
+</li><li>
+<p>Fixed lexing of %w[] w/ funny whitespace separators. (whitequark)</p>
+</li><li>
+<p>Fixed more call nodes that have trailing comma syntax. (presidentbeef)</p>
+</li><li>
+<p>Fixed more call_args slippage.</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-3.2.1+%2F+2013-07-03">3.2.1 / 2013-07-03</h3>
+<ul><li>
+<p>1 bug fix:</p>
+<ul><li>
+<p>1.9/2.0: Trailing assocs were being munged into arrays. (presidentbeef)</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-3.2.0+%2F+2013-07-02">3.2.0 / 2013-07-02</h3>
+<ul><li>
+<p>1 major enhancement:</p>
+<ul><li>
+<p>Added (rough draft) 2.0 support. Still missing some small / rare things.</p>
+</li></ul>
+</li><li>
+<p>12 minor enhancements:</p>
+<ul><li>
+<p>Added %i(symbol-names…) support. (%I too)</p>
+</li><li>
+<p>Added 140 more tests, jumping test count from 1376 to 2143. Yay for test
+reuse!</p>
+</li><li>
+<p>Added <a
+href="RubyLexer.html#attribute-i-brace_nest">RubyLexer#brace_nest</a>.</p>
+</li><li>
+<p>Added compare20 rake task to diff the grammar architecture against MRI.</p>
+</li><li>
+<p>Added lpar_beg and paren_nest to lexer to track state of parens in stabbies</p>
+</li><li>
+<p>Added shadow nodes for scoped block args.</p>
+</li><li>
+<p>Compound RubyParser now defaults to 2.0.</p>
+</li><li>
+<p>Fixed rake to &lt; 10, because 10’s file dependency handling is so very
+broken.</p>
+</li><li>
+<p>Made it possible to specify version in bin/ruby_parse_extract_error w/ -v
+18|19|20</p>
+</li><li>
+<p>Refactored to RubyParserStuff::ENCODING_ORDER to allow custom tweaking of
+encoding guessing. (samlown)</p>
+</li><li>
+<p>Switched `rake debug` to default to 2.0.</p>
+</li><li>
+<p>Translated some fixes across 1.8 and 1.9 from 2.0.</p>
+</li></ul>
+</li><li>
+<p>42 bug fixes:</p>
+<ul><li>
+<p>2.0: Fixed a number of block args scenarios w/ kwargs</p>
+</li><li>
+<p>2.0: Fixed args_tail mismatching against lexer.</p>
+</li><li>
+<p>2.0: Fixed assocs to return a hash node.</p>
+</li><li>
+<p>2.0: Fixed f_block_kw production.</p>
+</li><li>
+<p>2.0: Fixed f_block_kwarg production.</p>
+</li><li>
+<p>2.0: Fixed handling of stabby proc args in parens.</p>
+</li><li>
+<p>2.0: Fixed lexing of kwsplat nodes.</p>
+</li><li>
+<p>2.0: Implemented kwsplat nodes.</p>
+</li><li>
+<p>Added tUBANG to lexer.</p>
+</li><li>
+<p>Apparently ruby doesn’t warn for escaped octal that goes above 7. wtf.</p>
+</li><li>
+<p>Cleaned up a LOT of arg handling (block and defn, not calls) by using args.</p>
+</li><li>
+<p>ESC_RE is set to unicode. This seems problematic. <strong>shrug</strong></p>
+</li><li>
+<p>Either found a bug in MRI and/or fixed paren_nest count for []=? methods.</p>
+</li><li>
+<p>Extended IDENT_CHAR_RE on 1.9+ to top out at u{10ffff}… because we NEED a
+million unicode chars.</p>
+</li><li>
+<p>Fixed % strings with interpolation.</p>
+</li><li>
+<p>Fixed BEGIN {} to return a sexp.</p>
+</li><li>
+<p>Fixed a[] += b. (stormbrew)</p>
+</li><li>
+<p>Fixed arg_blk_pass to allow for sub-args nodes.</p>
+</li><li>
+<p>Fixed assignable to allow for sexps to be passed to it.</p>
+</li><li>
+<p>Fixed assoc args in 1.9.</p>
+</li><li>
+<p>Fixed block_command and block_call (eg a.b c d) to to_sym their args
+properly.</p>
+</li><li>
+<p>Fixed bug in compound RubyParser so it rescues RubyParser::SyntaxError.</p>
+</li><li>
+<p>Fixed env registration of cdecls.</p>
+</li><li>
+<p>Fixed lex value for { when expr_endfn.</p>
+</li><li>
+<p>Fixed lex_state for close paren/brace/bracket.</p>
+</li><li>
+<p>Fixed lex_state transition for 1.9 if we lexed a defn name. Only 1.8 is
+odd.</p>
+</li><li>
+<p>Fixed lexer problem with state mgmt of identifiers that also have
+registered var name.</p>
+</li><li>
+<p>Fixed lexing of “1 *n” to have the correct lex_state.</p>
+</li><li>
+<p>Fixed lexing of heredocs vs chevron for some lex_states.</p>
+</li><li>
+<p>Fixed op_asgn nodes to to_sym their args properly.</p>
+</li><li>
+<p>Fixed optional value block args.</p>
+</li><li>
+<p>Fixed parsing of __ENCODING__ on ruby 1.8 (vcall).</p>
+</li><li>
+<p>Fixed some oddity where 1.9 lexing was blowing up on “0o”. Seems invalid
+now.</p>
+</li><li>
+<p>Fixed strings with escaped octals &gt; 128. Also… wtf.</p>
+</li><li>
+<p>Fixed support for empty symbol (wtf?).</p>
+</li><li>
+<p>Lexer is now declared UTF-8 internally. Hopefully this will fix the
+encoding mess.</p>
+</li><li>
+<p>Made UTF_8 the default guess on encodings when it isn’t explicit.</p>
+</li><li>
+<p>Parsing of __ENCODING__ on ruby 1.9+ (in ruby 1.9+) is now colon2 sexp.
+(whitequark)</p>
+</li><li>
+<p>Renamed RubyLexer#nest to string_nest</p>
+</li><li>
+<p><a href="RubyLexer.html#method-i-unescape">RubyLexer#unescape</a> ignores
+bad octal/hex and returns unicode strings.</p>
+</li><li>
+<p>Switched a number of lexical constructs to use IDENT_CHAR_RE instead of w.
+I wish there were something cleaner for regexps + unicode.</p>
+</li><li>
+<p>Switched ruby_parse_extract_error to use binread.</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-3.1.3+%2F+2013-04-09">3.1.3 / 2013-04-09</h3>
+<ul><li>
+<p>2 bug fixes:</p>
+<ul><li>
+<p>Fixed begin w/ else but no rescue. (whitequark)</p>
+</li><li>
+<p>Removed literal stripping from block_append. Not its job.</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-3.1.2+%2F+2013-03-18">3.1.2 / 2013-03-18</h3>
+<ul><li>
+<p>1 minor enhancement:</p>
+<ul><li>
+<p>OMG A SECURITY ISSUE FOR CODE NOBODY USES… EVER</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-3.1.1+%2F+2012-12-19">3.1.1 / 2012-12-19</h3>
+<ul><li>
+<p>1 minor enhancement:</p>
+<ul><li>
+<p>Added MOVE_TIMEOUT env var for ruby_parse_extract_error to move slow files
+to a sibling directory</p>
+</li></ul>
+</li><li>
+<p>4 bug fixes:</p>
+<ul><li>
+<p>1.9: Fixed lexing of “0o”. (whitequark)</p>
+</li><li>
+<p>1.9: Fixed parsing of unary plus on literals. (whitequark)</p>
+</li><li>
+<p>Added timeout arg to RubyParser#process to pass through to the real parser</p>
+</li><li>
+<p>Updated Synopsis to reflect new options for running RP. (louismullie)</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-3.1.0+%2F+2012-12-06">3.1.0 / 2012-12-06</h3>
+<ul><li>
+<p>2 minor enhancements:</p>
+<ul><li>
+<p>Added RubyParser.for_current_ruby to provide a parser that matches your
+runtime. (neilconway)</p>
+</li><li>
+<p>Duck-typed IDENT_CHAR_RE instead of using RUBY_VERSION</p>
+</li></ul>
+</li><li>
+<p>3 bug fixes:</p>
+<ul><li>
+<p>Cleared out body comments in class/module/defn/defs</p>
+</li><li>
+<p>Flipped lexer tests to US-ASCII to avoid encoding hell</p>
+</li><li>
+<p>yyerror is now an alias for syntax_error</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-3.0.4+%2F+2012-11-26">3.0.4 / 2012-11-26</h3>
+<ul><li>
+<p>1 bug fix:</p>
+<ul><li>
+<p><a href="RPStringScanner.html#method-i-lineno">RPStringScanner#lineno</a>
+was still using byte offset, not char offset. (brynary)</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-3.0.3+%2F+2012-11-23">3.0.3 / 2012-11-23</h3>
+<ul><li>
+<p>1 minor enhancement:</p>
+<ul><li>
+<p>Improved error output on invalid char in expression.</p>
+</li></ul>
+</li><li>
+<p>1 bug fix:</p>
+<ul><li>
+<p>Fixed lexing of no-name ivars. (whitequark)</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-3.0.2+%2F+2012-11-21">3.0.2 / 2012-11-21</h3>
+
+<p>52 down makes 99.9767% or 3.7σ. 130 files failed to parse out of 558k.</p>
+<ul><li>
+<p>4 minor enhancements:</p>
+<ul><li>
+<p>Added RP_TIMEOUT env var to override default timeout of 10 seconds.</p>
+</li><li>
+<p>Minor optimization to <a
+href="RubyLexer.html#method-i-parse_number">RubyLexer#parse_number</a></p>
+</li><li>
+<p>Only output parseerror output to stderr if $DEBUG.</p>
+</li><li>
+<p>ruby_parse_extract_error modified to include ‘it’ blocks in its search.</p>
+</li></ul>
+</li><li>
+<p>7 bug fixes:</p>
+<ul><li>
+<p>1.9: Fixed args in dot-call forms (eg f.(…)).</p>
+</li><li>
+<p>1.9: Fixed lexing stabby lambda w/ do/end</p>
+</li><li>
+<p>Deal better with DOS files. Ugh.</p>
+</li><li>
+<p>Fix line number of production after heredoc.</p>
+</li><li>
+<p>Fixed RubyParser#process to reuse parser instances across calls.</p>
+</li><li>
+<p>Fixed line numbers for several productions.</p>
+</li><li>
+<p>new_call sets line number to smallest line number of members.</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-3.0.1+%2F+2012-11-02">3.0.1 / 2012-11-02</h3>
+<ul><li>
+<p>2 bug fixes – both based on MRI bugs… Yay?:</p>
+<ul><li>
+<p>1.9.2 doesn’t have String#byteslice… so I have to do the
+<strong>HORRIBLE</strong>.</p>
+</li><li>
+<p>Lexing regexps w/ bad character encodings and no declared options will fall
+back to /…/n.</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-3.0.0+%2F+2012-11-02">3.0.0 / 2012-11-02</h3>
+
+<p>I’ve hit 99.967% success rate against 558k files! 3.6σ!! 182 files failed
+to parse and spot checking them shows that they’re pretty much lost causes.
+I’m sure I missed some stuff, but it is more important at this point to
+release a version to get more people using it in more diverse ways than I
+can come up with.</p>
+<ul><li>
+<p>3 minor enhancements:</p>
+<ul><li>
+<p>Added RBStringScanner#charpos using string_to_pos.</p>
+</li><li>
+<p>Added RBStringScanner#string_to_pos using String#byteslice.</p>
+</li><li>
+<p>Optimized regexp used for escape chars in strings. (presidentbeef)</p>
+</li></ul>
+</li><li>
+<p>3 bug fixes:</p>
+<ul><li>
+<p>Fixed current_line and unread_many depending on StringScanner#pos</p>
+</li><li>
+<p>Fixed parsing of ‘a[] = b’</p>
+</li><li>
+<p>Fixed the worst abuse of heredocs EVER. Just because it is valid doesn’t
+mean you should.</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-3.0.0.a10+%2F+2012-10-26">3.0.0.a10 / 2012-10-26</h3>
+<ul><li>
+<p>1 major enhancement:</p>
+<ul><li>
+<p>iter nodes are now structurally the same as defs. Block args are COMPLETELY
+different.</p>
+</li></ul>
+</li><li>
+<p>4 minor enhancements:</p>
+<ul><li>
+<p>1.8 and 1.9 now treat f { |(…)| } differently, per MRI.</p>
+</li><li>
+<p>1.9: Added __ENCODING__ support. (witlessbird)</p>
+</li><li>
+<p>1.9: Finished coverage for masgn variants in block args</p>
+</li><li>
+<p>1.9: covered all forms of block args: optional, splat, block, and
+destructuring</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-3.0.0.a9+%2F+2012-10-22">3.0.0.a9 / 2012-10-22</h3>
+
+<p>Holy crap! I’ve hit a 99.92% success rate against 558k files! 492 failed
+parses to go. NOW is the time to start testing ruby_parser against your
+code!</p>
+<ul><li>
+<p>16 minor enhancements:</p>
+<ul><li>
+<p>1.9 parser: Finished magic encoding and utf-8 bom support.</p>
+</li><li>
+<p>1.9: Added leading dot support eg “an.b”.</p>
+</li><li>
+<p>1.9: Added partial handling for *arg and opt=val args in block args.</p>
+</li><li>
+<p>1.9: OMFG Encoding is the worst thing ever. Overhauled encoding support
+once again. It is much better at doing last ditch guessing of the encoding
+of the source file.</p>
+</li><li>
+<p>1.9: added String#grep for legacy support.</p>
+</li><li>
+<p>Added Sexp#block_pass?</p>
+</li><li>
+<p>Added ability to delete slow files when they timeout.</p>
+</li><li>
+<p>Added block_dup_check and refactored grammar code to use it for block arg
+handling.</p>
+</li><li>
+<p>Added in_lex_state?(*states) to clean up lexer code.</p>
+</li><li>
+<p>Added tentative support for optional block args. THIS IS SUBJECT TO
+CHANGE!!</p>
+</li><li>
+<p>Added toggleable debugging to StackState to make my life easier</p>
+</li><li>
+<p>All untested uses have not moved but have been laced with poison.</p>
+</li><li>
+<p>Finally got good tests for most forms of double-block arg errors.</p>
+</li><li>
+<p>Moved all <em>known</em> uses of SyntaxError to RubyParser::SyntaxError</p>
+</li><li>
+<p>f_block_optarg now always returns a block node.</p>
+</li><li>
+<p>ruby_parse_extract_error uses Find.find instead of globbing so dot files
+aren’t missed.</p>
+</li></ul>
+</li><li>
+<p>12 bug fixes:</p>
+<ul><li>
+<p>1.9: Completely ignore IndexError in unread_many because… you know… it
+sucks.</p>
+</li><li>
+<p>1.9: Fixed lex state after lexing ? in trinary.</p>
+</li><li>
+<p>1.9: Fixed lex state in some ternarys.</p>
+</li><li>
+<p>1.9: Fixed parsing of “1 ? b(”) : 2na d: 3”… ARE YOU NOT GLAD?!?!</p>
+</li><li>
+<p>Fix Timeout differences between 1.8 and 1.9 :(</p>
+</li><li>
+<p>Fixed emacs-style encodings to deal with no whitespace.</p>
+</li><li>
+<p>Fixed error message for bad % codes. (whitequark)</p>
+</li><li>
+<p>Fixed lexing of :a==&gt;b vs :a===b vs :a==&gt;b. P.S. Your space bar is
+broken. chump.</p>
+</li><li>
+<p>Fixed lexing of rare numeric formats.</p>
+</li><li>
+<p>Fixed magic comment encodings on DOS files … :/</p>
+</li><li>
+<p>Fixed ruby_parse_extract_error to exit non-zero on errors.</p>
+</li><li>
+<p>Removed Symbol#is_argument and switch usage to is_arg?</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-3.0.0.a8+%2F+2012-09-26">3.0.0.a8 / 2012-09-26</h3>
+<ul><li>
+<p>1 bug fix:</p>
+<ul><li>
+<p>Remove method d from global namespace. (alexch)</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-3.0.0.a7+%2F+2012-09-21">3.0.0.a7 / 2012-09-21</h3>
+<ul><li>
+<p>3 minor enhancements:</p>
+<ul><li>
+<p>Reorganized ruby_parse_extract_error so it will start much faster with a
+bunch of glob directories</p>
+</li><li>
+<p><a href="RubyParserStuff.html#method-i-process">RubyParserStuff#process</a>
+takes optional time arg and raises Timeout::Error if it goes too long. You
+should rescue that, ya know...</p>
+</li><li>
+<p>ruby_parse_extract_error now checks *.rake and Rakefile on dir scan.</p>
+</li></ul>
+</li><li>
+<p>3 bug fixes:</p>
+<ul><li>
+<p>1.9: Fixed ternary state tracking so {a:f{f()},b:nil} won’t trip up the
+lexer.</p>
+</li><li>
+<p>Fixed optional values in block args (no20/no21)</p>
+</li><li>
+<p>ruby_parse_extract_error skips non-files. Some asshats put .rb on their
+dirs. :(</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-3.0.0.a6+%2F+2012-08-20">3.0.0.a6 / 2012-08-20</h3>
+<ul><li>
+<p>2 minor enhancements:</p>
+<ul><li>
+<p>1.8: Added basic encoding support to 1.8 parser. Assumes -Ku.</p>
+</li><li>
+<p>1.9: Added encoding magic comment support to 1.9 parser.</p>
+</li></ul>
+</li><li>
+<p>8 bug fixes:</p>
+<ul><li>
+<p>1.9: Fixed lexing of -1 w/in conditionals. yeah… I dunno.</p>
+</li><li>
+<p>1.9: Fixed parsing of a do | | end.</p>
+</li><li>
+<p>1.9: Fixed parsing of not(x).</p>
+</li><li>
+<p>1.9: Fixed parsing of op_asgn + rescue: ‘a ||= b rescue nil’</p>
+</li><li>
+<p>1.9: added r to the EOL backslash handler. dos files blow</p>
+</li><li>
+<p>1.9: hacked in a workaround for 1.9 specific regexps running in 1.8.</p>
+</li><li>
+<p>Added reset to RubyParser proxy class</p>
+</li><li>
+<p>Fixed lexing of conditional w/ %() tokens</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-3.0.0.a5+%2F+2012-07-31">3.0.0.a5 / 2012-07-31</h3>
+<ul><li>
+<p>5 bug fixes:</p>
+<ul><li>
+<p>1.9: Fix construction of ‘f(:x, y: nil,)’ w/ trailing comma.</p>
+</li><li>
+<p>1.9: cleaned up lexing exit lex_state handling. Fixes bug parsing ‘if f :x;
+end’</p>
+</li><li>
+<p>1.9: fixed building of right-leaning masgns: ‘f { |a, (b, c)| }’</p>
+</li><li>
+<p>1.9: fixed lexing ‘when *splat’</p>
+</li><li>
+<p>1.9: fixed lexing of regexps in whens</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-3.0.0.a4+%2F+2012-07-26">3.0.0.a4 / 2012-07-26</h3>
+<ul><li>
+<p>10 minor enhancements:</p>
+<ul><li>
+<p>‘rake debug’ defaults to 1.9 parser since that’s all I’m doing these days</p>
+</li><li>
+<p>1.9: Fixed f { |(a, b, …), …| … } handling.</p>
+</li><li>
+<p>Added ‘rake extract F=path’ task to quickly extract errors from large files</p>
+</li><li>
+<p>Added on_error handler to provide more readable error message.</p>
+</li><li>
+<p>Aliased process to parse.</p>
+</li><li>
+<p>Renamed parse to process (legacy name), added default path of ‘(string)’</p>
+</li><li>
+<p>cleaned ruby_parse_extract_error  output and fixed to 1.9 parser</p>
+</li><li>
+<p>ruby_parse_extract_error expands shell globs from ARGV</p>
+</li><li>
+<p>ruby_parse_extract_error should also capture RuntimeError</p>
+</li><li>
+<p>yyerror(msg) now warns with the message instead of ignoring it.</p>
+</li></ul>
+</li><li>
+<p>3 bug fixes:</p>
+<ul><li>
+<p>1.9: Fixed bug lexing/parsing [ in rhs.</p>
+</li><li>
+<p>1.9: Fixed f { |((a, b), c)| … } handling</p>
+</li><li>
+<p>1.9: fixed newline handling during expr_value</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-3.0.0.a3+%2F+2012-07-03">3.0.0.a3 / 2012-07-03</h3>
+<ul><li>
+<p>1 major enhancement:</p>
+<ul><li>
+<p>OMG! Implemented all the 1.9 arg crap and I went from 500 lines of
+structural diff to 32!</p>
+</li></ul>
+</li><li>
+<p>17 minor enhancements:</p>
+<ul><li>
+<p>1.9: !(…) is now a method call. ugh</p>
+</li><li>
+<p>1.9: Added __ENCODING__ keyword (returns Unsupported atm).</p>
+</li><li>
+<p>1.9: Added support for “a.()” thingy. whatever you call it. Have I ever
+mentioned that ruby has too much syntax? I mean really…</p>
+</li><li>
+<p>1.9: Moved kRETURN/kBREAK/kNEXT from command_call to command</p>
+</li><li>
+<p>1.9: Removed when_args and refactored into args production.</p>
+</li><li>
+<p>1.9: Support for not/! being a call to #!. why matz? why?!?</p>
+</li><li>
+<p>1.9: Support for trailing comma support in opt call args.</p>
+</li><li>
+<p>1.9: Switched keyword support to deal with 1.8 vs 1.9 differences.</p>
+</li><li>
+<p>1.9: refactored and created command_asgn</p>
+</li><li>
+<p>1.9: removed case/else from primary</p>
+</li><li>
+<p>1.9: reworked mlhs and family. Now horrible things like ‘a, *, c = f’ work</p>
+</li><li>
+<p>1.9: reworked top level rules from program to expr. Lots of lame
+refactorings in mri.</p>
+</li><li>
+<p>Moved ‘a[]’ from primary down to method_call</p>
+</li><li>
+<p>Removed ‘args trailer’ production from assoc_list (eg {1, 2}).</p>
+</li><li>
+<p>Removed 1.9 support for : as a terminator in do/then</p>
+</li><li>
+<p>RubyParser no longer subclasses the 18 parser, so I had to change some
+consts around.</p>
+</li><li>
+<p>Undeprecated RubyParser - but now it is a compound parser that tries 1.9
+first.</p>
+</li></ul>
+</li><li>
+<p>3 bug fixes:</p>
+<ul><li>
+<p>1.9: fixed bang method name.</p>
+</li><li>
+<p>Fixed case/when/splat handling on both 1.8 and 1.9.</p>
+</li><li>
+<p>Removed lambda_body production from lambda</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-3.0.0.a2+%2F+2012-06-19">3.0.0.a2 / 2012-06-19</h3>
+<ul><li>
+<p>1 minor enhancement:</p>
+<ul><li>
+<p>Updated to sexp_processor ~&gt; 4.0</p>
+</li></ul>
+</li><li>
+<p>1 bug fix:</p>
+<ul><li>
+<p>Fixed new_module to remove scope/block. Not enough tests on module
+variance.</p>
+</li></ul>
+</li><li>
+<p>1 known issue:</p>
+<ul><li>
+<p>No parsing of “a.()” thingy. (reported by julian7) (patches welcome!)</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-3.0.0.a1+%2F+2012-05-22">3.0.0.a1 / 2012-05-22</h3>
+
+<p>This is the first alpha release of the 3.0.0 series. It is probably
+woefully incomplete, bug ridden, and hasn’t showered in several days.
+Please please please beat the crap out of it and send
+bugs/patches/complaints/suggestions.</p>
+<ul><li>
+<p>5 major enhancements:</p>
+<ul><li>
+<p>1.9 parsing! Thanks to EVERYONE for submitting patches for this!</p>
+</li><li>
+<p>Removed :arglist from everything but :op_asgn1</p>
+</li><li>
+<p>Removed :block from resbody</p>
+</li><li>
+<p>Removed :block from when</p>
+</li><li>
+<p>Removed :block nodes inside of scope nodes (defn/defs/class/sclass).</p>
+</li><li>
+<p>Removed :scope nodes in defn/defs/class/sclass nodes.</p>
+</li><li>
+<p>(probably more sexp cleanup to come before 3.0.0 final)</p>
+</li></ul>
+</li><li>
+<p>25 minor enhancements:</p>
+<ul><li>
+<p>1.9: Fix !a. (wanabe)</p>
+</li><li>
+<p>1.9: Method calling with postargs. (wanabe)</p>
+</li><li>
+<p>1.9: Method definition with postargs. (wanabe)</p>
+</li><li>
+<p>1.9: Support lambda args without parentheses. (wanabe)</p>
+</li><li>
+<p>Added R arg to `rake debug` to debug ruby straight up</p>
+</li><li>
+<p>Added RubyParser, subclassing <a href="Ruby18Parser.html">Ruby18Parser</a>
+but warning on instantiation.</p>
+</li><li>
+<p>Added backref_assign_error (needs tests)</p>
+</li><li>
+<p>Added bin/ruby_parse_extract_error to help with error submissions</p>
+</li><li>
+<p>Added debug task to help quickly get into a bug</p>
+</li><li>
+<p>Added more 18 vs 19 lexing tests for ?c.</p>
+</li><li>
+<p>Added ruby_parser.rb that pulls everything together in proper order.</p>
+</li><li>
+<p>Added tLABEL. (brynary)</p>
+</li><li>
+<p>Branched ruby_parser.y to ruby18_parser.y</p>
+</li><li>
+<p>Fix to pass test_lambda_args_block__19 test. (mrmargolis)</p>
+</li><li>
+<p>Got rid of one instance of unread_many. (Confusion)</p>
+</li><li>
+<p>Moved everything from RubyParser to <a
+href="RubyParserStuff.html">RubyParserStuff</a> and included module in
+both.</p>
+</li><li>
+<p>Refactored 1.9 args handling</p>
+</li><li>
+<p>Refactored and added new_resbody to ruby_parser_extras.</p>
+</li><li>
+<p>Refactored and added new_when</p>
+</li><li>
+<p>Refactored tests infrastructure and added both 1.8 and 1.9 test branches.</p>
+</li><li>
+<p>Removed unused methods: unread, begin_of_line? was_begin_of_line. (YAY!)
+(Confusion)</p>
+</li><li>
+<p>Renamed ruby_parser.y to ruby19_parser.y</p>
+</li><li>
+<p><a href="RubyLexer.html">RubyLexer</a> now takes a version specifier.</p>
+</li><li>
+<p>Started doing comparative refactoring between MRI’s 1.9 parser and RP’s.
+Shouldn’t differ functionally except where we missed stuff in RP.</p>
+</li><li>
+<p>`rake debug` prints the output if it succeeds.</p>
+</li></ul>
+</li><li>
+<p>21 bug fixes:</p>
+<ul><li>
+<p>Added missing gvar arg error. (1.8)</p>
+</li><li>
+<p>Attach parser files to isolate to ensure they can build</p>
+</li><li>
+<p>Conditionalize handling of tLABEL to ruby19+. Fixes issue #33.</p>
+</li><li>
+<p>DOH. I deactivated some tests and never reactivated them. (Confusion ftw)</p>
+</li><li>
+<p>Duplicate the input so that heredoc processing doesn’t morph original.
+(banister)</p>
+</li><li>
+<p>Entirely reworked block arg handling. (1.8)</p>
+</li><li>
+<p>Fix ?x char literal. (nobu)</p>
+</li><li>
+<p>Fixed 4/5 of literal lambda tests (jamie)</p>
+</li><li>
+<p>Fixed deps for parser</p>
+</li><li>
+<p>Fixed lexing of ?c for ruby 1.8 and 1.9.</p>
+</li><li>
+<p>Fixed more Ruby 1.9 args tests (brynary)</p>
+</li><li>
+<p>Fixed reswords to match MRI (1.8, 1.9)</p>
+</li><li>
+<p>Fixed symbols with no spaces in method calls (e.g. foo:bar) (YAY! brynary)</p>
+</li><li>
+<p>Fixed ternary_nil_no_space and other ternary edge cases for 1.9.
+(lastobelus)</p>
+</li><li>
+<p>Fixed test_call_not_equal__19. First bug bounty! (albus522)</p>
+</li><li>
+<p>Made lambda w/o arg list zero out the arg slot.</p>
+</li><li>
+<p>Renamed awords to qwords to match stupid MRI naming. (1.8, 1.9) :(</p>
+</li><li>
+<p>Rolled out brynary’s symbols-no-spaces (foo:bar) changes when parsing 1.8
+code</p>
+</li><li>
+<p>Split 1.8 from 1.9 open paren lexer. Gawd that’s ugly code.</p>
+</li><li>
+<p>Split block_var from for_var. (1.8, 1.9)</p>
+</li><li>
+<p>Use binread (and emulate in ruby 1.8) to avoid encoding issues</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-2.3.1+%2F+2011-09-21">2.3.1 / 2011-09-21</h3>
+<ul><li>
+<p>2 bug fixes:</p>
+<ul><li>
+<p>Fixed line numbers at end of special var+whitespace (larsch)</p>
+</li><li>
+<p>Holy crap I was smokin’ something good… Fixed 1.9.3 warning</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-2.3.0+%2F+2011-09-06">2.3.0 / 2011-09-06</h3>
+<ul><li>
+<p>2 minor enhancements:</p>
+<ul><li>
+<p>Add -g flag to parser compile if DEBUG</p>
+</li><li>
+<p>Lexer now embeds line number in yacc_value for keywords, helping fix up
+line numbers</p>
+</li></ul>
+</li><li>
+<p>3 bug fixes:</p>
+<ul><li>
+<p>Fix method line numbers when no args and no parens (quix)</p>
+</li><li>
+<p>Fixed line numbers on return/break/next w/ result expr. (pjnz)</p>
+</li><li>
+<p>Fixed some lexing state in order to parse: ‘f (1), 2’ as ‘f(1, 2)’.
+(invernizzi)</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-2.2.0+%2F+2011-08-23">2.2.0 / 2011-08-23</h3>
+<ul><li>
+<p>2 minor enhancements:</p>
+<ul><li>
+<p>Moved Keyword, Environment, and StackState inside of RubyParser</p>
+</li><li>
+<p>Added proper dsym and dsym-&gt;sym support.</p>
+</li></ul>
+</li><li>
+<p>3 bug fixes:</p>
+<ul><li>
+<p>Added extra (failing) tests for call/iter line number checking (quix)</p>
+</li><li>
+<p>Fixed line numbers for certain call/iter edge cases</p>
+</li><li>
+<p>Fixed parsing of: alias :“&lt;&lt;” :“&gt;&gt;”.</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-2.1.0+%2F+2011-08-15">2.1.0 / 2011-08-15</h3>
+<ul><li>
+<p>2 minor enhancements:</p>
+<ul><li>
+<p>Added new accessor canonicalize_conditions to toggle conditional
+canonicalization (on by default). (confused)</p>
+</li><li>
+<p>Awesome cleanup: Replaced call to append_block by block_append. (Confusion)</p>
+</li></ul>
+</li><li>
+<p>2 bug fixes:</p>
+<ul><li>
+<p>Fixed handling last line of =begin/=end. (raybaxter)</p>
+</li><li>
+<p>Fixed source line numbers after heredocs. (jbarreneche)</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-2.0.6+%2F+2011-02-18">2.0.6 / 2011-02-18</h3>
+<ul><li>
+<p>1 minor enhancement:</p>
+<ul><li>
+<p>Switched to hoe’s racc plugin to clean up rakefile and builds</p>
+</li></ul>
+</li><li>
+<p>1 bug fix:</p>
+<ul><li>
+<p>Fixed empty =begin/end.</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-2.0.5+%2F+2010-09-01">2.0.5 / 2010-09-01</h3>
+<ul><li>
+<p>1 minor enhancement:</p>
+<ul><li>
+<p>Started merging like lexical cases to try to squeeze some optimization out</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-2.0.4+%2F+2009-08-18">2.0.4 / 2009-08-18</h3>
+<ul><li>
+<p>1 minor enhancement:</p>
+<ul><li>
+<p>Changed requires around to be more accurate.</p>
+</li></ul>
+</li><li>
+<p>4 bug fixes:</p>
+<ul><li>
+<p>Fixed .autotest for minitest</p>
+</li><li>
+<p>Fixed emacs escape lexing bug: “C-\” (maglev/gemstone)</p>
+</li><li>
+<p>Fixed octal lexing edgecases. (maglev/gemstone)</p>
+</li><li>
+<p>Fixed regexp lexing edgecases. (maglev/gemstone)</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-2.0.3+%2F+2009-06-23">2.0.3 / 2009-06-23</h3>
+<ul><li>
+<p>4 minor enhancements:</p>
+<ul><li>
+<p>Removed dead code handling d/regex match node cruft.</p>
+</li><li>
+<p>Switched to minitest</p>
+</li><li>
+<p>Updated .autotest and rakefile wrt rcov for new hoe capabilities</p>
+</li><li>
+<p>Updated hoe for new capabilities</p>
+</li></ul>
+</li><li>
+<p>4 bug fixes:</p>
+<ul><li>
+<p>Environment#all now deals with strange edge cases in RAD.</p>
+</li><li>
+<p>Fixed packaging/compilation issue.</p>
+</li><li>
+<p>Minor 1.9 fixes</p>
+</li><li>
+<p>hoe -&gt; flay -&gt; rubyparser rakefile circularity fixed</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-2.0.2+%2F+2009-01-20">2.0.2 / 2009-01-20</h3>
+<ul><li>
+<p>2 minor enhancements:</p>
+<ul><li>
+<p>Added gauntlet_rubyparser plugin. YAY for easy massive bug-hunting.</p>
+</li><li>
+<p>Promoted Sexp’s file/line/comments to sexp_processor.</p>
+</li></ul>
+</li><li>
+<p>4 bug fixes:</p>
+<ul><li>
+<p>Fixed and improved the readme</p>
+</li><li>
+<p>Fixed lexing heredoc newlines.</p>
+</li><li>
+<p>Fixed line numbers on defns.</p>
+</li><li>
+<p>Fixed rdoc generation bug pointed out by hugh sasse (who rocks)</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-2.0.1+%2F+2008-11-04">2.0.1 / 2008-11-04</h3>
+<ul><li>
+<p>2 minor enhancements:</p>
+<ul><li>
+<p>Updated for changes to splat node in many contexts.</p>
+</li><li>
+<p>Made PT a developer dep</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-2.0.0+%2F+2008-10-22">2.0.0 / 2008-10-22</h3>
+<ul><li>
+<p>1 major enhancement</p>
+<ul><li>
+<p>Brought on the AWESOME! 4x faster! no known lexing/parsing bugs!</p>
+</li></ul>
+</li><li>
+<p>71 minor enhancements</p>
+<ul><li>
+<p>1.9: Added Fixnum#ord.</p>
+</li><li>
+<p>1.9: Added missing Regexp constants and did it so it’d work on 1.9.</p>
+</li><li>
+<p>Added store_comment and comments</p>
+</li><li>
+<p>Added StringScanner begin_of_line?</p>
+</li><li>
+<p>Added a bunch of tests for regexp escape chars, parse_string, read_escape,
+? numbers, ? whitespace.</p>
+</li><li>
+<p>Added a hack for rubinius’ r2l eval bug.</p>
+</li><li>
+<p>Added a new token type tSTRING that bypasses tSTRING_BEG/END entirely. Only
+does non-interpolated strings and then falls back to the old way. MUCH
+cleaner tho.</p>
+</li><li>
+<p>Added bin/ruby_parse</p>
+</li><li>
+<p>Added compare rule to Rakefile.</p>
+</li><li>
+<p>Added coverage files/dirs to clean rule.</p>
+</li><li>
+<p>Added file and line numbers to all sexp nodes. Column/ranges to come.</p>
+</li><li>
+<p>Added lex_state change for lvars at the end of yylex.</p>
+</li><li>
+<p>Added lexed comments to defn/defs/class/module nodes.</p>
+</li><li>
+<p>Added stats gathering for yylex. Reordered yylex for avg data</p>
+</li><li>
+<p>Added tSYMBOL token type and parser rule to speed up symbol lexing.</p>
+</li><li>
+<p>Added tally output for getch, unread, and unread_many.</p>
+</li><li>
+<p>Added tests for ambigous uminus/uplus, backtick in cmdarg, square and curly
+brackets, numeric gvars, eos edge cases, string quoting %&lt;&gt; and %%%.</p>
+</li><li>
+<p>All cases throughout yylex now return directly if they match, no
+passthroughs.</p>
+</li><li>
+<p>All lexer cases now slurp entire token in one swoop.</p>
+</li><li>
+<p>All zarrays are now just empty arrays.</p>
+</li><li>
+<p>Changed s(:block_arg, :blah) to :“&amp;blah” in args sexp.</p>
+</li><li>
+<p>Cleaned up lexer error handling. Now just raises all over.</p>
+</li><li>
+<p>Cleaned up read_escape and regx_options</p>
+</li><li>
+<p>Cleaned up tokadd_string (for some definition of cleaned).</p>
+</li><li>
+<p>Converted single quoted strings to new tSTRING token type.</p>
+</li><li>
+<p>Coverage is currently 94.4% on lexer.</p>
+</li><li>
+<p>Done what I can to clean up heredoc lexing… still sucks.</p>
+</li><li>
+<p>Flattened resbodies in rescue node. Fixed .autotest file.</p>
+</li><li>
+<p>Folded lex_keywords back in now that it screams.</p>
+</li><li>
+<p>Found very last instanceof ILiteralNode in the code. haha!</p>
+</li><li>
+<p>Got the tests subclassing PTTC and cleaned up a lot. YAY</p>
+</li><li>
+<p>Handle yield(*ary) properly</p>
+</li><li>
+<p>MASSIVELY cleaned out =begin/=end comment processor.</p>
+</li><li>
+<p>Massive overhaul on Keyword class. All hail the mighty Hash!</p>
+</li><li>
+<p>Massively cleaned up ident= edge cases and fixed a stupid bug from jruby.</p>
+</li><li>
+<p>Merged @/@@ scanner together, going to try to do the same everywhere.</p>
+</li><li>
+<p>Refactored fix_arg_lex_state, common across the lexer.</p>
+</li><li>
+<p>Refactored new_fcall into new_call.</p>
+</li><li>
+<p>Refactored some code to get better profile numbers.</p>
+</li><li>
+<p>Refactored some more fix_arg_lex_state.</p>
+</li><li>
+<p>Refactored tail of yylex into its own method.</p>
+</li><li>
+<p>Removed Module#kill</p>
+</li><li>
+<p>Removed Token, replaced with Sexp.</p>
+</li><li>
+<p>Removed all parse_number and parse_quote tests.</p>
+</li><li>
+<p>Removed argspush, argscat. YAY!</p>
+</li><li>
+<p>Removed as many token_buffer.split(//)‘s as possible. 1 to go.</p>
+</li><li>
+<p>Removed begins from compstmts</p>
+</li><li>
+<p>Removed buffer arg for tokadd_string.</p>
+</li><li>
+<p>Removed crufty (?) solo ‘@’ token… wtf was that anyhow?</p>
+</li><li>
+<p>Removed most jruby/stringio cruft from StringScanner.</p>
+</li><li>
+<p>Removed one unread_many… 2 to go. They’re harder.</p>
+</li><li>
+<p>Removed store_comment, now done directly.</p>
+</li><li>
+<p>Removed token_buffer. Now I just use token ivar.</p>
+</li><li>
+<p>Removed use of s() from lexer. Changed the way line numbers are gathered.</p>
+</li><li>
+<p>Renamed *qwords to *awords.</p>
+</li><li>
+<p>Renamed StringScanner to <a href="RPStringScanner.html">RPStringScanner</a>
+(a subclass) to fix namespace trashing.</p>
+</li><li>
+<p>Renamed parse to process and aliased to parse.</p>
+</li><li>
+<p>Renamed token_buffer to string_buffer since that arcane shit still needs
+it.</p>
+</li><li>
+<p>Resolved the rest of the lexing issues I brought up w/ ruby-core.</p>
+</li><li>
+<p>Revamped tokadd_escape.</p>
+</li><li>
+<p>Rewrote Keyword and KWtable.</p>
+</li><li>
+<p>Rewrote <a href="RubyLexer.html">RubyLexer</a> using StringScanner.</p>
+</li><li>
+<p>Rewrote tokadd_escape. 79 lines down to 21.</p>
+</li><li>
+<p>Split out lib/ruby_parser_extras.rb so lexer is standalone.</p>
+</li><li>
+<p>Started to clean up the parser and make it as skinny as possible</p>
+</li><li>
+<p>Stripped out as much code as possible.</p>
+</li><li>
+<p>Stripped yylex of some dead code.</p>
+</li><li>
+<p>Switched from StringIO to StringScanner.</p>
+</li><li>
+<p>Updated rakefile for new hoe.</p>
+</li><li>
+<p>Uses pure ruby racc if <a href="http://'PURE_RUBY'">ENV</a>, otherwise use
+c.</p>
+</li><li>
+<p>Wrote a ton of lexer tests. Coverage is as close to 100% as possible.</p>
+</li><li>
+<p>Wrote args to clean up the big nasty args processing grammar section.</p>
+</li><li>
+<p>lex_strterm is now a plain array, removed RubyLexer#s(…).</p>
+</li><li>
+<p>yield and super now flatten args.</p>
+</li></ul>
+</li><li>
+<p>21 bug fixes:</p>
+<ul><li>
+<p>I’m sure this list is missing a lot:</p>
+</li><li>
+<p>Fixed 2 bugs both involving attrasgn (and ilk) esp when lhs is an array.</p>
+</li><li>
+<p>Fixed a bug in the lexer for strings with single digit hex escapes.</p>
+</li><li>
+<p>Fixed a bug parsing: a (args) { expr }… the space caused a different route
+to be followed and all hell broke loose.</p>
+</li><li>
+<p>Fixed a bug with xn=beginvar not putting begin back.</p>
+</li><li>
+<p>Fixed attrasgn to have arglists, not arrays.</p>
+</li><li>
+<p>Fixed bug in defn/defs with block fixing.</p>
+</li><li>
+<p>Fixed class/module’s name slot if colon2/3.</p>
+</li><li>
+<p>Fixed dstr with empty interpolation body.</p>
+</li><li>
+<p>Fixed for 1.9 string/char changes.</p>
+</li><li>
+<p>Fixed lexer BS wrt determining token type of words.</p>
+</li><li>
+<p>Fixed lexer BS wrt pass through values and lexing words. SO STUPID.</p>
+</li><li>
+<p>Fixed lexing of floats.</p>
+</li><li>
+<p>Fixed lexing of identifiers followed by equals. I hope.</p>
+</li><li>
+<p>Fixed masgn with splat on lhs</p>
+</li><li>
+<p>Fixed new_super to deal with block_pass correctly.</p>
+</li><li>
+<p>Fixed parser’s treatment of :colon2 and :colon3.</p>
+</li><li>
+<p>Fixed regexp scanning of escaped numbers, ANY number is valid, not just
+octs.</p>
+</li><li>
+<p>Fixed string scanning of escaped octs, allowing 1-3 chars.</p>
+</li><li>
+<p>Fixed unescape for n</p>
+</li><li>
+<p>Fixed: omg this is stupid. ‘()’ was returning bare nil</p>
+</li><li>
+<p>Fixed: remove_begin now goes to the end, not sure why it didn’t before.</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-1.0.0+%2F+2007-12-20">1.0.0 / 2007-12-20</h3>
+<ul><li>
+<p>1 major enhancement</p>
+<ul><li>
+<p>Birthday!</p>
+</li></ul>
+</li></ul>
+
+</div>
+
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

@@ -1,0 +1,10 @@
+Thu, 07 Nov 2013 22:45:11 -0400
+lib/rubygems_executable_plugin.rb	Thu, 07 Nov 2013 22:45:09 -0400
+lib/executable-hooks/installer.rb	Thu, 07 Nov 2013 22:45:09 -0400
+lib/executable-hooks/wrapper.rb	Thu, 07 Nov 2013 22:45:09 -0400
+lib/executable-hooks/version.rb	Thu, 07 Nov 2013 22:45:09 -0400
+lib/executable-hooks/regenerate_binstubs_command.rb	Thu, 07 Nov 2013 22:45:09 -0400
+lib/executable-hooks/specification.rb	Thu, 07 Nov 2013 22:45:09 -0400
+lib/executable-hooks/hooks.rb	Thu, 07 Nov 2013 22:45:09 -0400
+lib/executable-hooks/uninstaller.rb	Thu, 07 Nov 2013 22:45:09 -0400
+lib/rubygems_plugin.rb	Thu, 07 Nov 2013 22:45:09 -0400

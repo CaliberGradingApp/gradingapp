@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Debugger::Context - debugger-1.6.2 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/debugger/test/context.rb
+    <li>lib/ruby-debug-base.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-__c_frame_binding">#__c_frame_binding</a>
+    
+    <li><a href="#method-i-frame_binding">#frame_binding</a>
+    
+    <li><a href="#method-i-inspect">#inspect</a>
+    
+    <li><a href="#method-i-interrupt">#interrupt</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Debugger.html">Debugger</a>
+  
+    <li><a href="../Debugger/AddBreakpoint.html">Debugger::AddBreakpoint</a>
+  
+    <li><a href="../Debugger/Breakpoint.html">Debugger::Breakpoint</a>
+  
+    <li><a href="../Debugger/Context.html">Debugger::Context</a>
+  
+    <li><a href="../Debugger/ContinueCommand.html">Debugger::ContinueCommand</a>
+  
+    <li><a href="../Debugger/DeleteBreakpointCommand.html">Debugger::DeleteBreakpointCommand</a>
+  
+    <li><a href="../Debugger/FinishCommand.html">Debugger::FinishCommand</a>
+  
+    <li><a href="../Debugger/HelpCommand.html">Debugger::HelpCommand</a>
+  
+    <li><a href="../Debugger/IRBCommand.html">Debugger::IRBCommand</a>
+  
+    <li><a href="../Debugger/InfoCommand.html">Debugger::InfoCommand</a>
+  
+    <li><a href="../Debugger/JumpCommand.html">Debugger::JumpCommand</a>
+  
+    <li><a href="../Debugger/KillCommand.html">Debugger::KillCommand</a>
+  
+    <li><a href="../Debugger/ListCommand.html">Debugger::ListCommand</a>
+  
+    <li><a href="../Debugger/LocalInterface.html">Debugger::LocalInterface</a>
+  
+    <li><a href="../Debugger/LocalInterface/Debugger.html">Debugger::LocalInterface::Debugger</a>
+  
+    <li><a href="../Debugger/MethodCommand.html">Debugger::MethodCommand</a>
+  
+    <li><a href="../Debugger/MethodSigCommand.html">Debugger::MethodSigCommand</a>
+  
+    <li><a href="../Debugger/NextCommand.html">Debugger::NextCommand</a>
+  
+    <li><a href="../Debugger/ParseFunctions.html">Debugger::ParseFunctions</a>
+  
+    <li><a href="../Debugger/Processor.html">Debugger::Processor</a>
+  
+    <li><a href="../Debugger/QuitCommand.html">Debugger::QuitCommand</a>
+  
+    <li><a href="../Debugger/ReloadCommand.html">Debugger::ReloadCommand</a>
+  
+    <li><a href="../Debugger/SetCommand.html">Debugger::SetCommand</a>
+  
+    <li><a href="../Debugger/ShowCommand.html">Debugger::ShowCommand</a>
+  
+    <li><a href="../Debugger/SkipCommand.html">Debugger::SkipCommand</a>
+  
+    <li><a href="../Debugger/SourceCommand.html">Debugger::SourceCommand</a>
+  
+    <li><a href="../Debugger/StepCommand.html">Debugger::StepCommand</a>
+  
+    <li><a href="../Debugger/VarClassVarCommand.html">Debugger::VarClassVarCommand</a>
+  
+    <li><a href="../Debugger/VarInheritCommand.html">Debugger::VarInheritCommand</a>
+  
+    <li><a href="../Debugger/VarLocalCommand.html">Debugger::VarLocalCommand</a>
+  
+    <li><a href="../Debugger/WhereCommand.html">Debugger::WhereCommand</a>
+  
+    <li><a href="../Printers.html">Printers</a>
+  
+    <li><a href="../Printers/Base.html">Printers::Base</a>
+  
+    <li><a href="../Printers/Base/MissedArgument.html">Printers::Base::MissedArgument</a>
+  
+    <li><a href="../Printers/Base/MissedPath.html">Printers::Base::MissedPath</a>
+  
+    <li><a href="../Printers/Plain.html">Printers::Plain</a>
+  
+    <li><a href="../Mocha.html">Mocha</a>
+  
+    <li><a href="../Mocha/Call.html">Mocha::Call</a>
+  
+    <li><a href="../Mocha/Expectation.html">Mocha::Expectation</a>
+  
+    <li><a href="../Mocha/Mock.html">Mocha::Mock</a>
+  
+    <li><a href="../MiniTest.html">MiniTest</a>
+  
+    <li><a href="../MiniTest/Assertions.html">MiniTest::Assertions</a>
+  
+    <li><a href="../MiniTest/Expectations.html">MiniTest::Expectations</a>
+  
+    <li><a href="../TestDsl.html">TestDsl</a>
+  
+    <li><a href="../TestDsl/ClassMethods.html">TestDsl::ClassMethods</a>
+  
+    <li><a href="../TestDsl/Shared.html">TestDsl::Shared</a>
+  
+    <li><a href="../Kernel.html">Kernel</a>
+  
+    <li><a href="../Module.html">Module</a>
+  
+    <li><a href="../PrinterHelpers.html">PrinterHelpers</a>
+  
+    <li><a href="../TestInterface.html">TestInterface</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Debugger::Context</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-__c_frame_binding" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">__c_frame_binding</span><span
+            class="method-args">(frame)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Context.html#method-i-frame_binding">frame_binding</a>
+        </div>
+        
+      </div><!-- __c_frame_binding-method -->
+
+    
+      <div id="method-i-frame_binding" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">frame_binding</span><span
+            class="method-args">(frame)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="frame_binding-source">
+            <pre><span class="ruby-comment"># File lib/ruby-debug-base.rb, line 20</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">frame_binding</span>(<span class="ruby-identifier">frame</span>)
+  <span class="ruby-identifier">__c_frame_binding</span>(<span class="ruby-identifier">frame</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">hbinding</span>(<span class="ruby-identifier">frame</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- frame_binding-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Context.html#method-i-__c_frame_binding">__c_frame_binding</a>
+        </div>
+        
+
+        
+      </div><!-- frame_binding-method -->
+
+    
+      <div id="method-i-inspect" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">inspect</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="inspect-source">
+            <pre><span class="ruby-comment"># File lib/debugger/test/context.rb, line 4</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">inspect</span>
+  <span class="ruby-identifier">values</span> = <span class="ruby-node">%w{
+    thread thnum stop_reason suspended? tracing ignored? stack_size dead? frame_line frame_file frame_self
+  }</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">field</span><span class="ruby-operator">|</span>
+    <span class="ruby-node">&quot;#{field}: #{send(field)}&quot;</span>
+  <span class="ruby-keyword">end</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;, &quot;</span>)
+  <span class="ruby-node">&quot;#&lt;Debugger::Context #{values}&gt;&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- inspect-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- inspect-method -->
+
+    
+      <div id="method-i-interrupt" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">interrupt</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="interrupt-source">
+            <pre><span class="ruby-comment"># File lib/ruby-debug-base.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">interrupt</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">stop_next</span> = <span class="ruby-value">1</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- interrupt-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- interrupt-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

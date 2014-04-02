@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Cane::StyleCheck - cane-2.6.1 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/cane/style_check.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Struct.new(:opts)
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-key">::key</a>
+    
+    <li><a href="#method-c-name">::name</a>
+    
+    <li><a href="#method-c-options">::options</a>
+    
+    <li><a href="#method-i-excluded-3F">#excluded?</a>
+    
+    <li><a href="#method-i-exclusions">#exclusions</a>
+    
+    <li><a href="#method-i-file_list">#file_list</a>
+    
+    <li><a href="#method-i-map_lines">#map_lines</a>
+    
+    <li><a href="#method-i-measure">#measure</a>
+    
+    <li><a href="#method-i-violations">#violations</a>
+    
+    <li><a href="#method-i-violations_for_line">#violations_for_line</a>
+    
+    <li><a href="#method-i-worker">#worker</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Cane.html">Cane</a>
+  
+    <li><a href="../Cane/AbcCheck.html">Cane::AbcCheck</a>
+  
+    <li><a href="../Cane/AbcCheck/InvalidAst.html">Cane::AbcCheck::InvalidAst</a>
+  
+    <li><a href="../Cane/AbcCheck/RubyAst.html">Cane::AbcCheck::RubyAst</a>
+  
+    <li><a href="../Cane/CLI.html">Cane::CLI</a>
+  
+    <li><a href="../Cane/CLI/Parser.html">Cane::CLI::Parser</a>
+  
+    <li><a href="../Cane/CLI/Parser/OptionsHandled.html">Cane::CLI::Parser::OptionsHandled</a>
+  
+    <li><a href="../Cane/DocCheck.html">Cane::DocCheck</a>
+  
+    <li><a href="../Cane/EncodingAwareIterator.html">Cane::EncodingAwareIterator</a>
+  
+    <li><a href="../Cane/File.html">Cane::File</a>
+  
+    <li><a href="../Cane/JsonFormatter.html">Cane::JsonFormatter</a>
+  
+    <li><a href="../Cane/RakeTask.html">Cane::RakeTask</a>
+  
+    <li><a href="../Cane/Runner.html">Cane::Runner</a>
+  
+    <li><a href="../Cane/SimpleTaskRunner.html">Cane::SimpleTaskRunner</a>
+  
+    <li><a href="../Cane/StyleCheck.html">Cane::StyleCheck</a>
+  
+    <li><a href="../Cane/ThresholdCheck.html">Cane::ThresholdCheck</a>
+  
+    <li><a href="../Cane/ThresholdCheck/UnavailableValue.html">Cane::ThresholdCheck::UnavailableValue</a>
+  
+    <li><a href="../Cane/ViolationFormatter.html">Cane::ViolationFormatter</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Cane::StyleCheck</h1>
+
+  <div id="description" class="description">
+    
+<p>Creates violations for files that do not meet style conventions. Only
+highly obvious, probable, and non-controversial checks are performed here.
+It is not the goal of the tool to provide an extensive style report, but
+only to prevent stupid mistakes.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-key" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">key</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="key-source">
+            <pre><span class="ruby-comment"># File lib/cane/style_check.rb, line 14</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">key</span>; <span class="ruby-value">:style</span>; <span class="ruby-keyword">end</span></pre>
+          </div><!-- key-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- key-method -->
+
+    
+      <div id="method-c-name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">name</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="name-source">
+            <pre><span class="ruby-comment"># File lib/cane/style_check.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">name</span>; <span class="ruby-string">&quot;style checking&quot;</span>; <span class="ruby-keyword">end</span></pre>
+          </div><!-- name-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- name-method -->
+
+    
+      <div id="method-c-options" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">options</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="options-source">
+            <pre><span class="ruby-comment"># File lib/cane/style_check.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">options</span>
+  {
+    <span class="ruby-identifier">style_glob</span><span class="ruby-operator">:</span>    [<span class="ruby-string">'Glob to run style checks over'</span>,
+                       <span class="ruby-identifier">default</span><span class="ruby-operator">:</span>  <span class="ruby-string">'{app,lib,spec}/**/*.rb'</span>,
+                       <span class="ruby-identifier">variable</span><span class="ruby-operator">:</span> <span class="ruby-string">'GLOB'</span>,
+                       <span class="ruby-identifier">clobber</span><span class="ruby-operator">:</span>  <span class="ruby-value">:no_style</span>],
+    <span class="ruby-identifier">style_measure</span><span class="ruby-operator">:</span> [<span class="ruby-string">'Max line length'</span>,
+                       <span class="ruby-identifier">default</span><span class="ruby-operator">:</span> <span class="ruby-value">80</span>,
+                       <span class="ruby-identifier">cast</span><span class="ruby-operator">:</span>    <span class="ruby-value">:to_i</span>,
+                       <span class="ruby-identifier">clobber</span><span class="ruby-operator">:</span> <span class="ruby-value">:no_style</span>],
+    <span class="ruby-identifier">style_exclude</span><span class="ruby-operator">:</span> [<span class="ruby-string">'Exclude file or glob from style checking'</span>,
+                     <span class="ruby-identifier">variable</span><span class="ruby-operator">:</span> <span class="ruby-string">'GLOB'</span>,
+                     <span class="ruby-identifier">type</span><span class="ruby-operator">:</span> <span class="ruby-constant">Array</span>,
+                     <span class="ruby-identifier">default</span><span class="ruby-operator">:</span> [],
+                     <span class="ruby-identifier">clobber</span><span class="ruby-operator">:</span> <span class="ruby-value">:no_style</span>],
+    <span class="ruby-identifier">no_style</span><span class="ruby-operator">:</span>      [<span class="ruby-string">'Disable style checking'</span>, <span class="ruby-identifier">cast</span><span class="ruby-operator">:</span> <span class="ruby-operator">-</span><span class="ruby-operator">&gt;</span>(<span class="ruby-identifier">x</span>) { <span class="ruby-operator">!</span><span class="ruby-identifier">x</span> }]
+  }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- options-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- options-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-violations" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">violations</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="violations-source">
+            <pre><span class="ruby-comment"># File lib/cane/style_check.rb, line 35</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">violations</span>
+  <span class="ruby-keyword">return</span> [] <span class="ruby-keyword">if</span> <span class="ruby-identifier">opts</span>[<span class="ruby-value">:no_style</span>]
+
+  <span class="ruby-identifier">worker</span>.<span class="ruby-identifier">map</span>(<span class="ruby-identifier">file_list</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file_path</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">map_lines</span>(<span class="ruby-identifier">file_path</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span>, <span class="ruby-identifier">line_number</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">violations_for_line</span>(<span class="ruby-identifier">line</span>.<span class="ruby-identifier">chomp</span>).<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">message</span><span class="ruby-operator">|</span> {
+        <span class="ruby-identifier">file</span><span class="ruby-operator">:</span>        <span class="ruby-identifier">file_path</span>,
+        <span class="ruby-identifier">line</span><span class="ruby-operator">:</span>        <span class="ruby-identifier">line_number</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>,
+        <span class="ruby-identifier">label</span><span class="ruby-operator">:</span>       <span class="ruby-identifier">message</span>,
+        <span class="ruby-identifier">description</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;Lines violated style requirements&quot;</span>
+      }}
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>.<span class="ruby-identifier">flatten</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- violations-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- violations-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+     <section id="protected-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Protected Instance Methods</h3>
+
+    
+      <div id="method-i-excluded-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">excluded?</span><span
+            class="method-args">(file)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="excluded-3F-source">
+            <pre><span class="ruby-comment"># File lib/cane/style_check.rb, line 80</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">excluded?</span>(<span class="ruby-identifier">file</span>)
+  <span class="ruby-identifier">exclusions</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">file</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- excluded-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- excluded-3F-method -->
+
+    
+      <div id="method-i-exclusions" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">exclusions</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="exclusions-source">
+            <pre><span class="ruby-comment"># File lib/cane/style_check.rb, line 74</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">exclusions</span>
+  <span class="ruby-ivar">@exclusions</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value">:style_exclude</span>, []).<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+    <span class="ruby-constant">Dir</span>[<span class="ruby-identifier">i</span>]
+  <span class="ruby-keyword">end</span>.<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">to_set</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- exclusions-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- exclusions-method -->
+
+    
+      <div id="method-i-file_list" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">file_list</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="file_list-source">
+            <pre><span class="ruby-comment"># File lib/cane/style_check.rb, line 62</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">file_list</span>
+  <span class="ruby-constant">Dir</span>[<span class="ruby-identifier">opts</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value">:style_glob</span>)].<span class="ruby-identifier">reject</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">excluded?</span>(<span class="ruby-identifier">f</span>) }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- file_list-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- file_list-method -->
+
+    
+      <div id="method-i-map_lines" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">map_lines</span><span
+            class="method-args">(file_path, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="map_lines-source">
+            <pre><span class="ruby-comment"># File lib/cane/style_check.rb, line 70</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">map_lines</span>(<span class="ruby-identifier">file_path</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-constant">Cane</span><span class="ruby-operator">::</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">iterator</span>(<span class="ruby-identifier">file_path</span>).<span class="ruby-identifier">map</span>.<span class="ruby-identifier">with_index</span>(&amp;<span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- map_lines-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- map_lines-method -->
+
+    
+      <div id="method-i-measure" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">measure</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="measure-source">
+            <pre><span class="ruby-comment"># File lib/cane/style_check.rb, line 66</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">measure</span>
+  <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value">:style_measure</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- measure-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- measure-method -->
+
+    
+      <div id="method-i-violations_for_line" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">violations_for_line</span><span
+            class="method-args">(line)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="violations_for_line-source">
+            <pre><span class="ruby-comment"># File lib/cane/style_check.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">violations_for_line</span>(<span class="ruby-identifier">line</span>)
+  <span class="ruby-identifier">result</span> = []
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">line</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">measure</span>
+    <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;Line is &gt;%i characters (%i)&quot;</span> <span class="ruby-operator">%</span> [<span class="ruby-identifier">measure</span>, <span class="ruby-identifier">line</span>.<span class="ruby-identifier">length</span>]
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;Line contains trailing whitespace&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/\s$/</span>
+  <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;Line contains hard tabs&quot;</span>           <span class="ruby-keyword">if</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/\t/</span>
+  <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- violations_for_line-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- violations_for_line-method -->
+
+    
+      <div id="method-i-worker" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">worker</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="worker-source">
+            <pre><span class="ruby-comment"># File lib/cane/style_check.rb, line 84</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">worker</span>
+  <span class="ruby-constant">Cane</span>.<span class="ruby-identifier">task_runner</span>(<span class="ruby-identifier">opts</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- worker-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- worker-method -->
+
+    
+    </section><!-- protected-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

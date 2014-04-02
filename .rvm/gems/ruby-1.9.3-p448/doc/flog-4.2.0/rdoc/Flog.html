@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Flog - flog-4.2.0 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/flog.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">MethodBasedSexpProcessor
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-add_to_score">#add_to_score</a>
+    
+    <li><a href="#method-i-average">#average</a>
+    
+    <li><a href="#method-i-calculate">#calculate</a>
+    
+    <li><a href="#method-i-calculate_total_scores">#calculate_total_scores</a>
+    
+    <li><a href="#method-i-dsl_name-3F">#dsl_name?</a>
+    
+    <li><a href="#method-i-each_by_score">#each_by_score</a>
+    
+    <li><a href="#method-i-flog">#flog</a>
+    
+    <li><a href="#method-i-flog_ruby">#flog_ruby</a>
+    
+    <li><a href="#method-i-flog_ruby-21">#flog_ruby!</a>
+    
+    <li><a href="#method-i-max_method">#max_method</a>
+    
+    <li><a href="#method-i-max_score">#max_score</a>
+    
+    <li><a href="#method-i-penalize_by">#penalize_by</a>
+    
+    <li><a href="#method-i-reset">#reset</a>
+    
+    <li><a href="#method-i-score_method">#score_method</a>
+    
+    <li><a href="#method-i-threshold">#threshold</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./History_txt.html">History</a>
+  
+    <li class="file"><a href="./Manifest_txt.html">Manifest</a>
+  
+    <li class="file"><a href="./README_txt.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./File.html">File</a>
+  
+    <li><a href="./Flog.html">Flog</a>
+  
+    <li><a href="./FlogCLI.html">FlogCLI</a>
+  
+    <li><a href="./FlogTask.html">FlogTask</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Flog</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="BRANCHING">BRANCHING
+        
+        <dd class="description"><p>Names of nodes that branch.</p>
+        
+      
+        <dt id="OTHER_SCORES">OTHER_SCORES
+        
+        <dd class="description"><p>Various non-call constructs</p>
+        
+      
+        <dt id="SCORES">SCORES
+        
+        <dd class="description"><p>The scoring system hash. Maps node type to score.</p>
+        
+      
+        <dt id="THRESHOLD">THRESHOLD
+        
+        <dd class="description"><p>Cut off point where the report should stop unless –all given.</p>
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(option = {})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Creates a new <a href="Flog.html">Flog</a> instance with
+<code>options</code>.</p>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/flog.rb, line 230</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span> <span class="ruby-identifier">option</span> = {}
+  <span class="ruby-keyword">super</span>()
+  <span class="ruby-ivar">@option</span>              = <span class="ruby-identifier">option</span>
+  <span class="ruby-ivar">@method_locations</span>    = {}
+  <span class="ruby-ivar">@mass</span>                = {}
+  <span class="ruby-ivar">@parser</span>              = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">auto_shift_type</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">reset</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-add_to_score" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_to_score</span><span
+            class="method-args">(name, score = OTHER_SCORES[name])</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Add a score to the tally. Score can be predetermined or looked up
+automatically. Uses multiplier for additional spankings. Spankings!</p>
+          
+
+          
+          <div class="method-source-code" id="add_to_score-source">
+            <pre><span class="ruby-comment"># File lib/flog.rb, line 109</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_to_score</span> <span class="ruby-identifier">name</span>, <span class="ruby-identifier">score</span> = <span class="ruby-constant">OTHER_SCORES</span>[<span class="ruby-identifier">name</span>]
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">option</span>[<span class="ruby-value">:methods</span>] <span class="ruby-keyword">and</span> <span class="ruby-identifier">method_stack</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-ivar">@calls</span>[<span class="ruby-identifier">signature</span>][<span class="ruby-identifier">name</span>] <span class="ruby-operator">+=</span> <span class="ruby-identifier">score</span> * <span class="ruby-ivar">@multiplier</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_to_score-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_to_score-method -->
+
+    
+      <div id="method-i-average" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">average</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>really?</p>
+          
+
+          
+          <div class="method-source-code" id="average-source">
+            <pre><span class="ruby-comment"># File lib/flog.rb, line 117</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">average</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-value">0</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">calls</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+  <span class="ruby-identifier">total_score</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">calls</span>.<span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- average-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- average-method -->
+
+    
+      <div id="method-i-calculate" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">calculate</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Calculates classes and methods scores.</p>
+          
+
+          
+          <div class="method-source-code" id="calculate-source">
+            <pre><span class="ruby-comment"># File lib/flog.rb, line 125</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">calculate</span>
+  <span class="ruby-identifier">each_by_score</span> <span class="ruby-identifier">threshold</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">class_method</span>, <span class="ruby-identifier">score</span>, <span class="ruby-identifier">call_list</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">klass</span> = <span class="ruby-identifier">class_method</span>.<span class="ruby-identifier">split</span>(<span class="ruby-node">/#|::/</span>).<span class="ruby-identifier">first</span>
+
+    <span class="ruby-identifier">method_scores</span>[<span class="ruby-identifier">klass</span>] <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">class_method</span>, <span class="ruby-identifier">score</span>]
+    <span class="ruby-identifier">scores</span>[<span class="ruby-identifier">klass</span>] <span class="ruby-operator">+=</span> <span class="ruby-identifier">score</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- calculate-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- calculate-method -->
+
+    
+      <div id="method-i-calculate_total_scores" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">calculate_total_scores</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Calculates the total score and populates @totals.</p>
+          
+
+          
+          <div class="method-source-code" id="calculate_total_scores-source">
+            <pre><span class="ruby-comment"># File lib/flog.rb, line 303</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">calculate_total_scores</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@totals</span>
+
+  <span class="ruby-ivar">@total_score</span> = <span class="ruby-value">0</span>
+  <span class="ruby-ivar">@totals</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">0</span>)
+
+  <span class="ruby-identifier">calls</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">meth</span>, <span class="ruby-identifier">tally</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">score</span> = <span class="ruby-identifier">score_method</span>(<span class="ruby-identifier">tally</span>)
+
+    <span class="ruby-ivar">@totals</span>[<span class="ruby-identifier">meth</span>] = <span class="ruby-identifier">score</span>
+    <span class="ruby-ivar">@total_score</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">score</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- calculate_total_scores-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- calculate_total_scores-method -->
+
+    
+      <div id="method-i-dsl_name-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">dsl_name?</span><span
+            class="method-args">(args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns true if the form looks like a “DSL” construct.</p>
+
+<pre class="ruby"><span class="ruby-identifier">task</span> :<span class="ruby-identifier">blah</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">...</span> <span class="ruby-keyword">end</span>
+=<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">iter</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">call</span>, <span class="ruby-keyword">nil</span>, :<span class="ruby-identifier">task</span>, <span class="ruby-identifier">s</span>(:<span class="ruby-identifier">lit</span>, :<span class="ruby-identifier">blah</span>)), <span class="ruby-operator">...</span>)
+</pre>
+          
+
+          
+          <div class="method-source-code" id="dsl_name-3F-source">
+            <pre><span class="ruby-comment"># File lib/flog.rb, line 140</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">dsl_name?</span> <span class="ruby-identifier">args</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">args</span> <span class="ruby-keyword">and</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span>
+
+  <span class="ruby-identifier">first_arg</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>
+  <span class="ruby-identifier">first_arg</span> = <span class="ruby-identifier">first_arg</span>[<span class="ruby-value">1</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">first_arg</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">==</span> <span class="ruby-value">:hash</span>
+
+  [<span class="ruby-value">:lit</span>, <span class="ruby-value">:str</span>].<span class="ruby-identifier">include?</span> <span class="ruby-identifier">first_arg</span>[<span class="ruby-value">0</span>] <span class="ruby-keyword">and</span> <span class="ruby-identifier">first_arg</span>[<span class="ruby-value">1</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- dsl_name-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- dsl_name-3F-method -->
+
+    
+      <div id="method-i-each_by_score" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">each_by_score</span><span
+            class="method-args">(max = nil) { |class_method, score, call_list| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Iterate over the calls sorted (descending) by score.</p>
+          
+
+          
+          <div class="method-source-code" id="each_by_score-source">
+            <pre><span class="ruby-comment"># File lib/flog.rb, line 152</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">each_by_score</span> <span class="ruby-identifier">max</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">current</span> = <span class="ruby-value">0</span>
+
+  <span class="ruby-identifier">calls</span>.<span class="ruby-identifier">sort_by</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-operator">-</span><span class="ruby-identifier">totals</span>[<span class="ruby-identifier">k</span>] }.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">class_method</span>, <span class="ruby-identifier">call_list</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">score</span> = <span class="ruby-identifier">totals</span>[<span class="ruby-identifier">class_method</span>]
+
+    <span class="ruby-keyword">yield</span> <span class="ruby-identifier">class_method</span>, <span class="ruby-identifier">score</span>, <span class="ruby-identifier">call_list</span>
+
+    <span class="ruby-identifier">current</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">score</span>
+    <span class="ruby-keyword">break</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">max</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">current</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">max</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- each_by_score-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- each_by_score-method -->
+
+    
+      <div id="method-i-flog" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">flog</span><span
+            class="method-args">(*files)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><a href="Flog.html">Flog</a> the given files. Deals with "-", and syntax
+errors.</p>
+
+<p>Not as smart as FlogCLI’s <a href="Flog.html#method-i-flog">flog</a> method
+as it doesn’t traverse dirs. Use <a
+href="FlogCLI.html#method-c-expand_dirs_to_files">FlogCLI.expand_dirs_to_files</a>
+or see <a href="FlogCLI.html#method-i-flog">FlogCLI#flog</a>.</p>
+          
+
+          
+          <div class="method-source-code" id="flog-source">
+            <pre><span class="ruby-comment"># File lib/flog.rb, line 171</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">flog</span>(*<span class="ruby-identifier">files</span>)
+  <span class="ruby-identifier">files</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">next</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">file</span> <span class="ruby-operator">==</span> <span class="ruby-string">'-'</span> <span class="ruby-keyword">or</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">readable?</span> <span class="ruby-identifier">file</span>
+
+    <span class="ruby-identifier">ruby</span> = <span class="ruby-identifier">file</span> <span class="ruby-operator">==</span> <span class="ruby-string">'-'</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">$stdin</span>.<span class="ruby-identifier">read</span> <span class="ruby-operator">:</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">binread</span>(<span class="ruby-identifier">file</span>)
+
+    <span class="ruby-identifier">flog_ruby</span> <span class="ruby-identifier">ruby</span>, <span class="ruby-identifier">file</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">calculate_total_scores</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- flog-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- flog-method -->
+
+    
+      <div id="method-i-flog_ruby" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">flog_ruby</span><span
+            class="method-args">(ruby, file="-", timeout = 10)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><a href="Flog.html">Flog</a> the given ruby source, optionally using file
+to provide paths for methods. Smart. Handles syntax errors and timeouts so
+you don't have to.</p>
+          
+
+          
+          <div class="method-source-code" id="flog_ruby-source">
+            <pre><span class="ruby-comment"># File lib/flog.rb, line 188</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">flog_ruby</span> <span class="ruby-identifier">ruby</span>, <span class="ruby-identifier">file</span>=<span class="ruby-string">&quot;-&quot;</span>, <span class="ruby-identifier">timeout</span> = <span class="ruby-value">10</span>
+  <span class="ruby-identifier">flog_ruby!</span> <span class="ruby-identifier">ruby</span>, <span class="ruby-identifier">file</span>, <span class="ruby-identifier">timeout</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">Timeout</span><span class="ruby-operator">::</span><span class="ruby-constant">Error</span>
+  <span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;TIMEOUT parsing #{file}. Skipping.&quot;</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">RubyParser</span><span class="ruby-operator">::</span><span class="ruby-constant">SyntaxError</span>, <span class="ruby-constant">Racc</span><span class="ruby-operator">::</span><span class="ruby-constant">ParseError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-identifier">q</span> = <span class="ruby-identifier">option</span>[<span class="ruby-value">:quiet</span>]
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">inspect</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/&lt;\%|%\&gt;/</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">ruby</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/&lt;\%|%\&gt;/</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">q</span>
+    <span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;#{e.inspect} at #{e.backtrace.first(5).join(', ')}&quot;</span>
+    <span class="ruby-identifier">warn</span> <span class="ruby-string">&quot;\n...stupid lemmings and their bad erb templates... skipping&quot;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;ERROR: parsing ruby file #{file}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">q</span>
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">option</span>[<span class="ruby-value">:continue</span>] <span class="ruby-keyword">then</span>
+      <span class="ruby-identifier">warn</span> <span class="ruby-string">&quot;ERROR! Aborting. You may want to run with --continue.&quot;</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">q</span>
+    <span class="ruby-identifier">warn</span> <span class="ruby-string">&quot;%s: %s at:\n  %s&quot;</span> <span class="ruby-operator">%</span> [<span class="ruby-identifier">e</span>.<span class="ruby-identifier">class</span>, <span class="ruby-identifier">e</span>.<span class="ruby-identifier">message</span>.<span class="ruby-identifier">strip</span>,
+                               <span class="ruby-identifier">e</span>.<span class="ruby-identifier">backtrace</span>.<span class="ruby-identifier">first</span>(<span class="ruby-value">5</span>).<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;\n  &quot;</span>)]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- flog_ruby-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- flog_ruby-method -->
+
+    
+      <div id="method-i-flog_ruby-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">flog_ruby!</span><span
+            class="method-args">(ruby, file="-", timeout = 10)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><a href="Flog.html">Flog</a> the given ruby source, optionally using file
+to provide paths for methods. Does not handle timeouts or syntax errors.
+See <a href="Flog.html#method-i-flog_ruby">flog_ruby</a>.</p>
+          
+
+          
+          <div class="method-source-code" id="flog_ruby-21-source">
+            <pre><span class="ruby-comment"># File lib/flog.rb, line 214</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">flog_ruby!</span> <span class="ruby-identifier">ruby</span>, <span class="ruby-identifier">file</span>=<span class="ruby-string">&quot;-&quot;</span>, <span class="ruby-identifier">timeout</span> = <span class="ruby-value">10</span>
+  <span class="ruby-ivar">@parser</span> = (<span class="ruby-identifier">option</span>[<span class="ruby-value">:parser</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">RubyParser</span>).<span class="ruby-identifier">new</span>
+
+  <span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;** flogging #{file}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">option</span>[<span class="ruby-value">:verbose</span>]
+
+  <span class="ruby-identifier">ast</span> = <span class="ruby-ivar">@parser</span>.<span class="ruby-identifier">process</span> <span class="ruby-identifier">ruby</span>, <span class="ruby-identifier">file</span>, <span class="ruby-identifier">timeout</span>
+
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">ast</span>
+
+  <span class="ruby-identifier">mass</span>[<span class="ruby-identifier">file</span>] = <span class="ruby-identifier">ast</span>.<span class="ruby-identifier">mass</span>
+  <span class="ruby-identifier">process</span> <span class="ruby-identifier">ast</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- flog_ruby-21-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- flog_ruby-21-method -->
+
+    
+      <div id="method-i-max_method" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">max_method</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the method/score pair of the maximum score.</p>
+          
+
+          
+          <div class="method-source-code" id="max_method-source">
+            <pre><span class="ruby-comment"># File lib/flog.rb, line 243</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">max_method</span>
+  <span class="ruby-identifier">totals</span>.<span class="ruby-identifier">max_by</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">_</span>, <span class="ruby-identifier">score</span><span class="ruby-operator">|</span> <span class="ruby-identifier">score</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- max_method-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- max_method-method -->
+
+    
+      <div id="method-i-max_score" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">max_score</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the maximum score for a single method. Used for <a
+href="FlogTask.html">FlogTask</a>.</p>
+          
+
+          
+          <div class="method-source-code" id="max_score-source">
+            <pre><span class="ruby-comment"># File lib/flog.rb, line 250</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">max_score</span>
+  <span class="ruby-identifier">max_method</span>.<span class="ruby-identifier">last</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- max_score-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- max_score-method -->
+
+    
+      <div id="method-i-penalize_by" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">penalize_by</span><span
+            class="method-args">(bonus) { || ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>For the duration of the block the complexity factor is increased by bonus
+This allows the complexity of sub-expressions to be influenced by the
+expressions in which they are found.  Yields 42 to the supplied block.</p>
+          
+
+          
+          <div class="method-source-code" id="penalize_by-source">
+            <pre><span class="ruby-comment"># File lib/flog.rb, line 260</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">penalize_by</span> <span class="ruby-identifier">bonus</span>
+  <span class="ruby-ivar">@multiplier</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">bonus</span>
+  <span class="ruby-keyword">yield</span>
+  <span class="ruby-ivar">@multiplier</span> <span class="ruby-operator">-=</span> <span class="ruby-identifier">bonus</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- penalize_by-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- penalize_by-method -->
+
+    
+      <div id="method-i-reset" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">reset</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Reset score data</p>
+          
+
+          
+          <div class="method-source-code" id="reset-source">
+            <pre><span class="ruby-comment"># File lib/flog.rb, line 269</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">reset</span>
+  <span class="ruby-ivar">@totals</span>           = <span class="ruby-ivar">@total_score</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@multiplier</span>       = <span class="ruby-value">1.0</span>
+  <span class="ruby-ivar">@calls</span>            = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">h</span>,<span class="ruby-identifier">k</span><span class="ruby-operator">|</span> <span class="ruby-identifier">h</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span> <span class="ruby-value">0</span> }
+  <span class="ruby-ivar">@method_scores</span>    = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">h</span>,<span class="ruby-identifier">k</span><span class="ruby-operator">|</span> <span class="ruby-identifier">h</span>[<span class="ruby-identifier">k</span>] = [] }
+  <span class="ruby-ivar">@scores</span>           = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span> <span class="ruby-value">0</span>
+  <span class="ruby-identifier">method_locations</span>.<span class="ruby-identifier">clear</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- reset-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- reset-method -->
+
+    
+      <div id="method-i-score_method" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">score_method</span><span
+            class="method-args">(tally)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Compute the distance formula for a given tally</p>
+          
+
+          
+          <div class="method-source-code" id="score_method-source">
+            <pre><span class="ruby-comment"># File lib/flog.rb, line 281</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">score_method</span>(<span class="ruby-identifier">tally</span>)
+  <span class="ruby-identifier">a</span>, <span class="ruby-identifier">b</span>, <span class="ruby-identifier">c</span> = <span class="ruby-value">0</span>, <span class="ruby-value">0</span>, <span class="ruby-value">0</span>
+  <span class="ruby-identifier">tally</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">cat</span>, <span class="ruby-identifier">score</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">cat</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:assignment</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">a</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">score</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:branch</span>     <span class="ruby-keyword">then</span> <span class="ruby-identifier">b</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">score</span>
+    <span class="ruby-keyword">else</span>                  <span class="ruby-identifier">c</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">score</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sqrt</span>(<span class="ruby-identifier">a</span>*<span class="ruby-identifier">a</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">b</span>*<span class="ruby-identifier">b</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">c</span>*<span class="ruby-identifier">c</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- score_method-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- score_method-method -->
+
+    
+      <div id="method-i-threshold" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">threshold</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Final threshold that is used for report</p>
+          
+
+          
+          <div class="method-source-code" id="threshold-source">
+            <pre><span class="ruby-comment"># File lib/flog.rb, line 296</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">threshold</span>
+  <span class="ruby-identifier">option</span>[<span class="ruby-value">:all</span>] <span class="ruby-operator">?</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">total_score</span> * <span class="ruby-constant">THRESHOLD</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- threshold-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- threshold-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

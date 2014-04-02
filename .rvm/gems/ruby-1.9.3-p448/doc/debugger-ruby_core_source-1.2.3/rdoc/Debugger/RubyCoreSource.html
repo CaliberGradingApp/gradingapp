@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module Debugger::RubyCoreSource - debugger-ruby_core_source-1.2.3 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/debugger/ruby_core_source/version.rb
+    <li>lib/debugger/ruby_core_source.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-create_makefile_with_core">::create_makefile_with_core</a>
+    
+    <li><a href="#method-c-no_source_abort">::no_source_abort</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Debugger.html">Debugger</a>
+  
+    <li><a href="../Debugger/RubyCoreSource.html">Debugger::RubyCoreSource</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module Debugger::RubyCoreSource</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="REVISION_MAP">REVISION_MAP
+        
+        <dd class="description">
+        
+      
+        <dt id="VERSION">VERSION
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-create_makefile_with_core" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create_makefile_with_core</span><span
+            class="method-args">(hdrs, name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="create_makefile_with_core-source">
+            <pre><span class="ruby-comment"># File lib/debugger/ruby_core_source.rb, line 19</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">create_makefile_with_core</span>(<span class="ruby-identifier">hdrs</span>, <span class="ruby-identifier">name</span>)
+  <span class="ruby-comment"># First, see if the gem already has the needed headers</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">hdrs</span>.<span class="ruby-identifier">call</span>
+    <span class="ruby-identifier">create_makefile</span>(<span class="ruby-identifier">name</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">ruby_dir</span> = <span class="ruby-keyword">if</span> <span class="ruby-constant">RUBY_PATCHLEVEL</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span>
+    <span class="ruby-constant">REVISION_MAP</span>[<span class="ruby-constant">RUBY_REVISION</span>] <span class="ruby-keyword">or</span>
+      <span class="ruby-identifier">no_source_abort</span>(<span class="ruby-node">&quot;ruby-#{RUBY_VERSION} (revision #{RUBY_REVISION})&quot;</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-node">&quot;ruby-#{RUBY_VERSION}-p#{RUBY_PATCHLEVEL}&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Check if core headers were already downloaded; if so, use them</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">RbConfig</span><span class="ruby-operator">::</span><span class="ruby-constant">CONFIG</span>[<span class="ruby-string">&quot;rubyhdrdir&quot;</span>]
+    <span class="ruby-identifier">dest_dir</span> = <span class="ruby-constant">RbConfig</span><span class="ruby-operator">::</span><span class="ruby-constant">CONFIG</span>[<span class="ruby-string">&quot;rubyhdrdir&quot;</span>] <span class="ruby-operator">+</span> <span class="ruby-string">&quot;/&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">ruby_dir</span>
+    <span class="ruby-identifier">with_cppflags</span>(<span class="ruby-string">&quot;-I&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">dest_dir</span>) {
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">hdrs</span>.<span class="ruby-identifier">call</span>
+        <span class="ruby-identifier">create_makefile</span>(<span class="ruby-identifier">name</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>
+      <span class="ruby-keyword">end</span>
+    }
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Look for sources that ship with gem</span>
+  <span class="ruby-identifier">dest_dir</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-keyword">__FILE__</span>) <span class="ruby-operator">+</span> <span class="ruby-node">&quot;/ruby_core_source/#{ruby_dir}&quot;</span>
+  <span class="ruby-identifier">no_source_abort</span>(<span class="ruby-identifier">ruby_dir</span>) <span class="ruby-keyword">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-identifier">dest_dir</span>)
+
+  <span class="ruby-identifier">with_cppflags</span>(<span class="ruby-string">&quot;-I&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">dest_dir</span>) {
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">hdrs</span>.<span class="ruby-identifier">call</span>
+      <span class="ruby-identifier">create_makefile</span>(<span class="ruby-identifier">name</span>)
+      <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>
+    <span class="ruby-keyword">end</span>
+  }
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- create_makefile_with_core-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- create_makefile_with_core-method -->
+
+    
+      <div id="method-c-no_source_abort" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">no_source_abort</span><span
+            class="method-args">(ruby_version)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="no_source_abort-source">
+            <pre><span class="ruby-comment"># File lib/debugger/ruby_core_source.rb, line 57</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">no_source_abort</span>(<span class="ruby-identifier">ruby_version</span>)
+      <span class="ruby-identifier">abort</span> <span class="ruby-value">&lt;&lt;-STR
+Makefile creation failed
+**************************************************************************
+No source for #{ruby_version} provided with debugger-ruby_core_source gem.
+**************************************************************************
+STR</span>
+    <span class="ruby-keyword">end</span></pre>
+          </div><!-- no_source_abort-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- no_source_abort-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

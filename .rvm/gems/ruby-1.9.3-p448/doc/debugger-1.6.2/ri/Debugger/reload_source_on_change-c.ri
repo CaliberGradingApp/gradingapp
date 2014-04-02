@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"reload_source_on_change:EFI"&Debugger::reload_source_on_change;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"bif <tt>true</tt>, checks the modification time of source files and reloads if it was modified;T:
+@fileI"lib/ruby-debug-base.rb;TT@

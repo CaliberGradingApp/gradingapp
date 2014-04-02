@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Chronic::Date - chronic-0.10.2 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/chronic/date.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-could_be_day-3F">::could_be_day?</a>
+    
+    <li><a href="#method-c-could_be_month-3F">::could_be_month?</a>
+    
+    <li><a href="#method-c-could_be_year-3F">::could_be_year?</a>
+    
+    <li><a href="#method-c-make_year">::make_year</a>
+    
+    <li><a href="#method-c-month_overflow-3F">::month_overflow?</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../LICENSE.html">LICENSE</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Chronic.html">Chronic</a>
+  
+    <li><a href="../Chronic/Date.html">Chronic::Date</a>
+  
+    <li><a href="../Chronic/Grabber.html">Chronic::Grabber</a>
+  
+    <li><a href="../Chronic/Handler.html">Chronic::Handler</a>
+  
+    <li><a href="../Chronic/Handlers.html">Chronic::Handlers</a>
+  
+    <li><a href="../Chronic/MiniDate.html">Chronic::MiniDate</a>
+  
+    <li><a href="../Chronic/Numerizer.html">Chronic::Numerizer</a>
+  
+    <li><a href="../Chronic/Ordinal.html">Chronic::Ordinal</a>
+  
+    <li><a href="../Chronic/Parser.html">Chronic::Parser</a>
+  
+    <li><a href="../Chronic/Pointer.html">Chronic::Pointer</a>
+  
+    <li><a href="../Chronic/Repeater.html">Chronic::Repeater</a>
+  
+    <li><a href="../Chronic/Scalar.html">Chronic::Scalar</a>
+  
+    <li><a href="../Chronic/Season.html">Chronic::Season</a>
+  
+    <li><a href="../Chronic/Separator.html">Chronic::Separator</a>
+  
+    <li><a href="../Chronic/Sign.html">Chronic::Sign</a>
+  
+    <li><a href="../Chronic/Span.html">Chronic::Span</a>
+  
+    <li><a href="../Chronic/Tag.html">Chronic::Tag</a>
+  
+    <li><a href="../Chronic/Time.html">Chronic::Time</a>
+  
+    <li><a href="../Chronic/TimeZone.html">Chronic::TimeZone</a>
+  
+    <li><a href="../Chronic/Token.html">Chronic::Token</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Chronic::Date</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="DAYS">DAYS
+        
+        <dd class="description">
+        
+      
+        <dt id="DAY_SECONDS">DAY_SECONDS
+        
+        <dd class="description">
+        
+      
+        <dt id="FORTNIGHT_SECONDS">FORTNIGHT_SECONDS
+        
+        <dd class="description">
+        
+      
+        <dt id="MONTHS">MONTHS
+        
+        <dd class="description">
+        
+      
+        <dt id="MONTH_DAYS">MONTH_DAYS
+        
+        <dd class="description">
+        
+      
+        <dt id="MONTH_DAYS_LEAP">MONTH_DAYS_LEAP
+        
+        <dd class="description">
+        
+      
+        <dt id="MONTH_SECONDS">MONTH_SECONDS
+        
+        <dd class="description">
+        
+      
+        <dt id="SEASON_SECONDS">SEASON_SECONDS
+        
+        <dd class="description">
+        
+      
+        <dt id="WEEKEND_SECONDS">WEEKEND_SECONDS
+        
+        <dd class="description">
+        
+      
+        <dt id="WEEK_SECONDS">WEEK_SECONDS
+        
+        <dd class="description">
+        
+      
+        <dt id="YEAR_MONTHS">YEAR_MONTHS
+        
+        <dd class="description">
+        
+      
+        <dt id="YEAR_SECONDS">YEAR_SECONDS
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-could_be_day-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">could_be_day?</span><span
+            class="method-args">(day)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Checks if given number could be day</p>
+          
+
+          
+          <div class="method-source-code" id="could_be_day-3F-source">
+            <pre><span class="ruby-comment"># File lib/chronic/date.rb, line 38</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">could_be_day?</span>(<span class="ruby-identifier">day</span>)
+  <span class="ruby-identifier">day</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value">1</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">day</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-value">31</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- could_be_day-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- could_be_day-3F-method -->
+
+    
+      <div id="method-c-could_be_month-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">could_be_month?</span><span
+            class="method-args">(month)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Checks if given number could be month</p>
+          
+
+          
+          <div class="method-source-code" id="could_be_month-3F-source">
+            <pre><span class="ruby-comment"># File lib/chronic/date.rb, line 43</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">could_be_month?</span>(<span class="ruby-identifier">month</span>)
+  <span class="ruby-identifier">month</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value">1</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">month</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-value">12</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- could_be_month-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- could_be_month-3F-method -->
+
+    
+      <div id="method-c-could_be_year-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">could_be_year?</span><span
+            class="method-args">(year)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Checks if given number could be year</p>
+          
+
+          
+          <div class="method-source-code" id="could_be_year-3F-source">
+            <pre><span class="ruby-comment"># File lib/chronic/date.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">could_be_year?</span>(<span class="ruby-identifier">year</span>)
+  <span class="ruby-identifier">year</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value">1</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">year</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-value">9999</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- could_be_year-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- could_be_year-3F-method -->
+
+    
+      <div id="method-c-make_year" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">make_year</span><span
+            class="method-args">(year, bias)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Build a year from a 2 digit suffix.</p>
+
+<p>year - The two digit Integer year to build from. bias - The Integer amount
+of future years to bias.</p>
+
+<p>Examples:</p>
+
+<pre class="ruby"><span class="ruby-identifier">make_year</span>(<span class="ruby-value">96</span>, <span class="ruby-value">50</span>) <span class="ruby-comment">#=&gt; 1996</span>
+<span class="ruby-identifier">make_year</span>(<span class="ruby-value">79</span>, <span class="ruby-value">20</span>) <span class="ruby-comment">#=&gt; 2079</span>
+<span class="ruby-identifier">make_year</span>(<span class="ruby-value">00</span>, <span class="ruby-value">50</span>) <span class="ruby-comment">#=&gt; 2000</span>
+</pre>
+
+<p>Returns The Integer 4 digit year.</p>
+          
+
+          
+          <div class="method-source-code" id="make_year-source">
+            <pre><span class="ruby-comment"># File lib/chronic/date.rb, line 64</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">make_year</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">bias</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">year</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">year</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">2</span>
+  <span class="ruby-identifier">start_year</span> = <span class="ruby-constant">Chronic</span>.<span class="ruby-identifier">time_class</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">year</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">bias</span>
+  <span class="ruby-identifier">century</span> = (<span class="ruby-identifier">start_year</span> <span class="ruby-operator">/</span> <span class="ruby-value">100</span>) * <span class="ruby-value">100</span>
+  <span class="ruby-identifier">full_year</span> = <span class="ruby-identifier">century</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">year</span>
+  <span class="ruby-identifier">full_year</span> <span class="ruby-operator">+=</span> <span class="ruby-value">100</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">full_year</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">start_year</span>
+  <span class="ruby-identifier">full_year</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- make_year-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- make_year-method -->
+
+    
+      <div id="method-c-month_overflow-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">month_overflow?</span><span
+            class="method-args">(year, month, day)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="month_overflow-3F-source">
+            <pre><span class="ruby-comment"># File lib/chronic/date.rb, line 73</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">month_overflow?</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>, <span class="ruby-identifier">day</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-operator">::</span><span class="ruby-constant">Date</span>.<span class="ruby-identifier">leap?</span>(<span class="ruby-identifier">year</span>)
+    <span class="ruby-identifier">day</span> <span class="ruby-operator">&gt;</span> <span class="ruby-constant">Date</span><span class="ruby-operator">::</span><span class="ruby-constant">MONTH_DAYS_LEAP</span>[<span class="ruby-identifier">month</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">day</span> <span class="ruby-operator">&gt;</span> <span class="ruby-constant">Date</span><span class="ruby-operator">::</span><span class="ruby-constant">MONTH_DAYS</span>[<span class="ruby-identifier">month</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- month_overflow-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- month_overflow-3F-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

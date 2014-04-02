@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"	edge:EFI"GraphViz#edge;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I";This accessor allow you to set global edges attributes;T:
+@fileI"lib/graphviz.rb;TF@

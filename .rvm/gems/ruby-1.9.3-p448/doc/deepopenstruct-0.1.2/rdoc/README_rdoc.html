@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>README - deepopenstruct-0.1.2 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body class="file">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./DeepOpenStruct.html">DeepOpenStruct</a>
+  
+    <li><a href="./PatchedOpenStruct.html">PatchedOpenStruct</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<h2 id="label-deepopenstruct">deepopenstruct</h2>
+
+<p><a href="DeepOpenStruct.html">DeepOpenStruct</a> is a simple library for
+creating easy-to-use data structures from complex sets of nested Hashes and
+Arrays. It is particularly suitable for creating easy-to-use data
+structures from YAML files, and as such is a useful tool for creating
+simple reflective API wrappers.</p>
+
+<h3 id="label-Installation">Installation</h3>
+
+<pre>gem install deepopenstruct</pre>
+
+<h3 id="label-Usage">Usage</h3>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">'rubygems'</span>
+<span class="ruby-identifier">require</span> <span class="ruby-string">'deepopenstruct'</span>
+<span class="ruby-identifier">complex_data</span> = {
+  :<span class="ruby-identifier">name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Bob Winkle&quot;</span>,
+  :<span class="ruby-identifier">age</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">65</span>,
+  :<span class="ruby-identifier">jobs</span> =<span class="ruby-operator">&gt;</span> [
+    {<span class="ruby-string">'start_year'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1980</span>, <span class="ruby-string">'title'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'Chef'</span>},
+    {<span class="ruby-string">'start_year'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1985</span>, <span class="ruby-string">'title'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'Programmer'</span>}
+  ],
+  :<span class="ruby-identifier">attributes</span> =<span class="ruby-operator">&gt;</span> {
+    :<span class="ruby-identifier">birthplace</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Darwin&quot;</span>,
+    :<span class="ruby-identifier">year_of_birth</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1945</span>
+  }
+}
+<span class="ruby-identifier">simple_data</span> = <span class="ruby-constant">DeepOpenStruct</span>.<span class="ruby-identifier">load</span>(<span class="ruby-identifier">complex_data</span>)
+<span class="ruby-identifier">simple_data</span>.<span class="ruby-identifier">name</span>
+<span class="ruby-comment"># =&gt; &quot;Bob Winkle&quot;</span>
+<span class="ruby-identifier">simple_data</span>.<span class="ruby-identifier">jobs</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">title</span>
+<span class="ruby-comment"># =&gt; &quot;Chef&quot;</span>
+<span class="ruby-identifier">simple_data</span>.<span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">birthplace</span>
+<span class="ruby-comment"># =&gt; &quot;Darwin&quot;</span>
+</pre>
+
+<h3 id="label-Note+on+Patches%2FPull+Requests">Note on Patches/Pull Requests</h3>
+<ul><li>
+<p>Fork the project.</p>
+</li><li>
+<p>Make your feature addition or bug fix.</p>
+</li><li>
+<p>Add tests for it. This is important so I don’t break it in a future version
+unintentionally.</p>
+</li><li>
+<p>Commit, do not mess with rakefile, version, or history. (if you want to
+have your own version, that is fine but bump version in a commit by itself
+I can ignore when I pull)</p>
+</li><li>
+<p>Send me a pull request! Bonus points for topic/feature branches.</p>
+</li></ul>
+
+<h3 id="label-Author+%26+Credits">Author &amp; Credits</h3>
+<dl class="rdoc-list note-list"><dt>Author
+<dd>
+<p><a href="mailto:aaron@aarongough.com">Aaron Gough</a></p>
+</dd></dl>
+
+<p>Copyright © 2010 <a href="http://thingsaaronmade.com/">Aaron Gough</a> (<a
+href="http://thingsaaronmade.com/">thingsaaronmade.com</a>), released under
+the MIT license</p>
+
+</div>
+
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

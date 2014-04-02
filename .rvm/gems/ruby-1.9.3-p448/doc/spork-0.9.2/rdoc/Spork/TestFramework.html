@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Spork::TestFramework - spork-0.9.2 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/spork/test_framework.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-available-3F">::available?</a>
+    
+    <li><a href="#method-c-available_test_frameworks">::available_test_frameworks</a>
+    
+    <li><a href="#method-c-default_port">::default_port</a>
+    
+    <li><a href="#method-c-factory">::factory</a>
+    
+    <li><a href="#method-c-helper_file">::helper_file</a>
+    
+    <li><a href="#method-c-inherited">::inherited</a>
+    
+    <li><a href="#method-c-load_preference_index">::load_preference_index</a>
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-c-short_name">::short_name</a>
+    
+    <li><a href="#method-c-supported_test_frameworks">::supported_test_frameworks</a>
+    
+    <li><a href="#method-i-bootstrap">#bootstrap</a>
+    
+    <li><a href="#method-i-bootstrapped-3F">#bootstrapped?</a>
+    
+    <li><a href="#method-i-default_port">#default_port</a>
+    
+    <li><a href="#method-i-entry_point">#entry_point</a>
+    
+    <li><a href="#method-i-framework">#framework</a>
+    
+    <li><a href="#method-i-helper_file">#helper_file</a>
+    
+    <li><a href="#method-i-preload">#preload</a>
+    
+    <li><a href="#method-i-run_tests">#run_tests</a>
+    
+    <li><a href="#method-i-short_name">#short_name</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../MIT-LICENSE.html">MIT-LICENSE</a>
+  
+    <li class="file"><a href="../README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Spork.html">Spork</a>
+  
+    <li><a href="../Spork/AppFramework.html">Spork::AppFramework</a>
+  
+    <li><a href="../Spork/AppFramework/Padrino.html">Spork::AppFramework::Padrino</a>
+  
+    <li><a href="../Spork/AppFramework/Rails.html">Spork::AppFramework::Rails</a>
+  
+    <li><a href="../Spork/AppFramework/Unknown.html">Spork::AppFramework::Unknown</a>
+  
+    <li><a href="../Spork/CustomIOStreams.html">Spork::CustomIOStreams</a>
+  
+    <li><a href="../Spork/CustomIOStreams/ClassMethods.html">Spork::CustomIOStreams::ClassMethods</a>
+  
+    <li><a href="../Spork/Diagnoser.html">Spork::Diagnoser</a>
+  
+    <li><a href="../Spork/Forker.html">Spork::Forker</a>
+  
+    <li><a href="../Spork/Forker/ForkDiedException.html">Spork::Forker::ForkDiedException</a>
+  
+    <li><a href="../Spork/GemHelpers.html">Spork::GemHelpers</a>
+  
+    <li><a href="../Spork/GemHelpers/GemPath.html">Spork::GemHelpers::GemPath</a>
+  
+    <li><a href="../Spork/RunStrategy.html">Spork::RunStrategy</a>
+  
+    <li><a href="../Spork/RunStrategy/Forking.html">Spork::RunStrategy::Forking</a>
+  
+    <li><a href="../Spork/RunStrategy/Magazine.html">Spork::RunStrategy::Magazine</a>
+  
+    <li><a href="../Spork/Runner.html">Spork::Runner</a>
+  
+    <li><a href="../Spork/Server.html">Spork::Server</a>
+  
+    <li><a href="../Spork/TestFramework.html">Spork::TestFramework</a>
+  
+    <li><a href="../Spork/TestFramework/Cucumber.html">Spork::TestFramework::Cucumber</a>
+  
+    <li><a href="../Spork/TestFramework/FactoryException.html">Spork::TestFramework::FactoryException</a>
+  
+    <li><a href="../Spork/TestFramework/FrameworkNotAvailable.html">Spork::TestFramework::FrameworkNotAvailable</a>
+  
+    <li><a href="../Spork/TestFramework/NoFrameworkMatched.html">Spork::TestFramework::NoFrameworkMatched</a>
+  
+    <li><a href="../Spork/TestFramework/NoFrameworksAvailable.html">Spork::TestFramework::NoFrameworksAvailable</a>
+  
+    <li><a href="../Spork/TestFramework/RSpec.html">Spork::TestFramework::RSpec</a>
+  
+    <li><a href="../SporkDebugger.html">SporkDebugger</a>
+  
+    <li><a href="../SporkDebugger/EachRunState.html">SporkDebugger::EachRunState</a>
+  
+    <li><a href="../SporkDebugger/NetworkHelpers.html">SporkDebugger::NetworkHelpers</a>
+  
+    <li><a href="../SporkDebugger/PreloadState.html">SporkDebugger::PreloadState</a>
+  
+    <li><a href="../MagazineSlave.html">MagazineSlave</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Spork::TestFramework</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-available-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">available?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns true if the testing frameworks helper file exists.  Override if
+this is not sufficient to detect your testing framework.</p>
+          
+
+          
+          <div class="method-source-code" id="available-3F-source">
+            <pre><span class="ruby-comment"># File lib/spork/test_framework.rb, line 110</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">available?</span>
+  <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span>(<span class="ruby-identifier">helper_file</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- available-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- available-3F-method -->
+
+    
+      <div id="method-c-available_test_frameworks" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">available_test_frameworks</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns a list of all testing servers that have detected their testing
+framework being used in the project.</p>
+          
+
+          
+          <div class="method-source-code" id="available_test_frameworks-source">
+            <pre><span class="ruby-comment"># File lib/spork/test_framework.rb, line 65</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">available_test_frameworks</span>
+  <span class="ruby-identifier">supported_test_frameworks</span>.<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">available?</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- available_test_frameworks-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- available_test_frameworks-method -->
+
+    
+      <div id="method-c-default_port" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">default_port</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="default_port-source">
+            <pre><span class="ruby-comment"># File lib/spork/test_framework.rb, line 56</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">default_port</span>
+  (<span class="ruby-constant">ENV</span>[<span class="ruby-node">&quot;#{short_name.upcase}_DRB&quot;</span>] <span class="ruby-operator">||</span> <span class="ruby-keyword">self</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT_PORT</span>).<span class="ruby-identifier">to_i</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- default_port-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- default_port-method -->
+
+    
+      <div id="method-c-factory" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">factory</span><span
+            class="method-args">(output = STDOUT, error = STDERR, beginning_with = nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="factory-source">
+            <pre><span class="ruby-comment"># File lib/spork/test_framework.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">factory</span>(<span class="ruby-identifier">output</span> = <span class="ruby-constant">STDOUT</span>, <span class="ruby-identifier">error</span> = <span class="ruby-constant">STDERR</span>, <span class="ruby-identifier">beginning_with</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">beginning_with</span>
+    <span class="ruby-ivar">@klass</span> = <span class="ruby-identifier">supported_test_frameworks</span>(<span class="ruby-identifier">beginning_with</span>).<span class="ruby-identifier">first</span>
+    <span class="ruby-identifier">raise</span>(<span class="ruby-constant">NoFrameworkMatched</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">beginning_with</span>)) <span class="ruby-keyword">if</span> <span class="ruby-ivar">@klass</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-identifier">raise</span>(<span class="ruby-constant">FrameworkNotAvailable</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@klass</span>)) <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@klass</span>.<span class="ruby-identifier">available?</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@klass</span> = <span class="ruby-identifier">available_test_frameworks</span>.<span class="ruby-identifier">first</span>
+    <span class="ruby-identifier">raise</span>(<span class="ruby-constant">NoFrameworksAvailable</span>.<span class="ruby-identifier">new</span>) <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@klass</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@klass</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">output</span>, <span class="ruby-identifier">error</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- factory-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- factory-method -->
+
+    
+      <div id="method-c-helper_file" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">helper_file</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="helper_file-source">
+            <pre><span class="ruby-comment"># File lib/spork/test_framework.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">helper_file</span>
+  <span class="ruby-keyword">self</span><span class="ruby-operator">::</span><span class="ruby-constant">HELPER_FILE</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- helper_file-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- helper_file-method -->
+
+    
+      <div id="method-c-load_preference_index" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">load_preference_index</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Used to specify</p>
+          
+
+          
+          <div class="method-source-code" id="load_preference_index-source">
+            <pre><span class="ruby-comment"># File lib/spork/test_framework.rb, line 115</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">load_preference_index</span>
+  <span class="ruby-constant">LOAD_PREFERENCE</span>.<span class="ruby-identifier">index</span>(<span class="ruby-identifier">short_name</span>) <span class="ruby-operator">||</span> <span class="ruby-constant">LOAD_PREFERENCE</span>.<span class="ruby-identifier">length</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- load_preference_index-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- load_preference_index-method -->
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(stdout = STDOUT, stderr = STDERR)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/spork/test_framework.rb, line 36</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">stdout</span> = <span class="ruby-constant">STDOUT</span>, <span class="ruby-identifier">stderr</span> = <span class="ruby-constant">STDERR</span>)
+  <span class="ruby-ivar">@stdout</span>, <span class="ruby-ivar">@stderr</span> = <span class="ruby-identifier">stdout</span>, <span class="ruby-identifier">stderr</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+      <div id="method-c-short_name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">short_name</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="short_name-source">
+            <pre><span class="ruby-comment"># File lib/spork/test_framework.rb, line 60</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">short_name</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">name</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-string">'Spork::TestFramework::'</span>, <span class="ruby-string">''</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- short_name-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- short_name-method -->
+
+    
+      <div id="method-c-supported_test_frameworks" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">supported_test_frameworks</span><span
+            class="method-args">(starting_with = nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns a list of all servers that have been implemented (it keeps track of
+them automatically via Class.inherited)</p>
+          
+
+          
+          <div class="method-source-code" id="supported_test_frameworks-source">
+            <pre><span class="ruby-comment"># File lib/spork/test_framework.rb, line 70</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">supported_test_frameworks</span>(<span class="ruby-identifier">starting_with</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">@@supported_test_frameworks</span>.<span class="ruby-identifier">sort!</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">a</span>,<span class="ruby-identifier">b</span><span class="ruby-operator">|</span> <span class="ruby-identifier">a</span>.<span class="ruby-identifier">load_preference_index</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">load_preference_index</span> }
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">@@supported_test_frameworks</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">starting_with</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">@@supported_test_frameworks</span>.<span class="ruby-identifier">select</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">s</span>.<span class="ruby-identifier">short_name</span>.<span class="ruby-identifier">match</span>(<span class="ruby-node">/^#{Regexp.escape(starting_with)}/</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- supported_test_frameworks-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- supported_test_frameworks-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="protected-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Protected Class Methods</h3>
+
+    
+      <div id="method-c-inherited" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">inherited</span><span
+            class="method-args">(subclass)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="inherited-source">
+            <pre><span class="ruby-comment"># File lib/spork/test_framework.rb, line 158</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">inherited</span>(<span class="ruby-identifier">subclass</span>)
+  <span class="ruby-identifier">@@supported_test_frameworks</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">subclass</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- inherited-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- inherited-method -->
+
+    
+    </section><!-- protected-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-bootstrap" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">bootstrap</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Bootstraps the current test helper file by prepending a <a
+href="../Spork.html#method-c-prefork">Spork.prefork</a> and <a
+href="../Spork.html#method-c-each_run">Spork.each_run</a> block at the
+beginning.</p>
+          
+
+          
+          <div class="method-source-code" id="bootstrap-source">
+            <pre><span class="ruby-comment"># File lib/spork/test_framework.rb, line 92</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">bootstrap</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">bootstrapped?</span>
+    <span class="ruby-identifier">stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Already bootstrapped!&quot;</span>
+    <span class="ruby-keyword">return</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Bootstrapping #{helper_file}.&quot;</span>
+  <span class="ruby-identifier">contents</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">helper_file</span>)
+  <span class="ruby-identifier">bootstrap_code</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-constant">BOOTSTRAP_FILE</span>)
+  <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">helper_file</span>, <span class="ruby-string">&quot;wb&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">bootstrap_code</span>
+    <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">contents</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Done. Edit #{helper_file} now with your favorite text editor and follow the instructions.&quot;</span>
+  <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- bootstrap-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- bootstrap-method -->
+
+    
+      <div id="method-i-bootstrapped-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">bootstrapped?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Detects if the test helper has been bootstrapped.</p>
+          
+
+          
+          <div class="method-source-code" id="bootstrapped-3F-source">
+            <pre><span class="ruby-comment"># File lib/spork/test_framework.rb, line 87</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">bootstrapped?</span>
+  <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">helper_file</span>).<span class="ruby-identifier">include?</span>(<span class="ruby-string">&quot;Spork.prefork&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- bootstrapped-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- bootstrapped-3F-method -->
+
+    
+      <div id="method-i-default_port" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">default_port</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="default_port-source">
+            <pre><span class="ruby-comment"># File lib/spork/test_framework.rb, line 153</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">default_port</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">default_port</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- default_port-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- default_port-method -->
+
+    
+      <div id="method-i-entry_point" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">entry_point</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="entry_point-source">
+            <pre><span class="ruby-comment"># File lib/spork/test_framework.rb, line 149</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">entry_point</span>
+  <span class="ruby-identifier">bootstrapped?</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">helper_file</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">framework</span>.<span class="ruby-identifier">entry_point</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- entry_point-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- entry_point-method -->
+
+    
+      <div id="method-i-helper_file" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">helper_file</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="helper_file-source">
+            <pre><span class="ruby-comment"># File lib/spork/test_framework.rb, line 82</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">helper_file</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">helper_file</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- helper_file-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- helper_file-method -->
+
+    
+      <div id="method-i-preload" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">preload</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="preload-source">
+            <pre><span class="ruby-comment"># File lib/spork/test_framework.rb, line 119</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">preload</span>
+  <span class="ruby-constant">Spork</span>.<span class="ruby-identifier">exec_prefork</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">bootstrapped?</span>
+      <span class="ruby-identifier">stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{helper_file} has not been bootstrapped.  Run spork --bootstrap to do so.&quot;</span>
+      <span class="ruby-identifier">stderr</span>.<span class="ruby-identifier">flush</span>
+
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">framework</span>.<span class="ruby-identifier">bootstrap_required?</span>
+        <span class="ruby-identifier">stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;I can't do anything for you by default for the framework you're using: #{framework.short_name}.\nYou must bootstrap #{helper_file} to continue.&quot;</span>
+        <span class="ruby-identifier">stderr</span>.<span class="ruby-identifier">flush</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">load</span>(<span class="ruby-identifier">framework</span>.<span class="ruby-identifier">entry_point</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">framework</span>.<span class="ruby-identifier">preload</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">bootstrapped?</span>
+        <span class="ruby-identifier">stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Loading Spork.prefork block...&quot;</span>
+        <span class="ruby-identifier">stderr</span>.<span class="ruby-identifier">flush</span>
+        <span class="ruby-identifier">load</span>(<span class="ruby-identifier">helper_file</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- preload-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- preload-method -->
+
+    
+      <div id="method-i-run_tests" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">run_tests</span><span
+            class="method-args">(argv, stderr, stdout)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="run_tests-source">
+            <pre><span class="ruby-comment"># File lib/spork/test_framework.rb, line 145</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">run_tests</span>(<span class="ruby-identifier">argv</span>, <span class="ruby-identifier">stderr</span>, <span class="ruby-identifier">stdout</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- run_tests-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- run_tests-method -->
+
+    
+      <div id="method-i-short_name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">short_name</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="short_name-source">
+            <pre><span class="ruby-comment"># File lib/spork/test_framework.rb, line 78</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">short_name</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">short_name</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- short_name-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- short_name-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+     <section id="protected-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Protected Instance Methods</h3>
+
+    
+      <div id="method-i-framework" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">framework</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="framework-source">
+            <pre><span class="ruby-comment"># File lib/spork/test_framework.rb, line 162</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">framework</span>
+  <span class="ruby-ivar">@framework</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Spork</span><span class="ruby-operator">::</span><span class="ruby-constant">AppFramework</span>.<span class="ruby-identifier">detect_framework</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- framework-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- framework-method -->
+
+    
+    </section><!-- protected-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

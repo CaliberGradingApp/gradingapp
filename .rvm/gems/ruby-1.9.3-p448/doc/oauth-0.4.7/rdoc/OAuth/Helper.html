@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module OAuth::Helper - oauth-0.4.7 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/oauth/helper.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-escape">#escape</a>
+    
+    <li><a href="#method-i-generate_key">#generate_key</a>
+    
+    <li><a href="#method-i-generate_nonce">#generate_nonce</a>
+    
+    <li><a href="#method-i-normalize">#normalize</a>
+    
+    <li><a href="#method-i-normalize_nested_query">#normalize_nested_query</a>
+    
+    <li><a href="#method-i-parse_header">#parse_header</a>
+    
+    <li><a href="#method-i-stringify_keys">#stringify_keys</a>
+    
+    <li><a href="#method-i-unescape">#unescape</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../LICENSE.html">LICENSE</a>
+  
+    <li class="file"><a href="../README_rdoc.html">README</a>
+  
+    <li class="file"><a href="../TODO.html">TODO</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../OAuth.html">OAuth</a>
+  
+    <li><a href="../OAuth/AccessToken.html">OAuth::AccessToken</a>
+  
+    <li><a href="../OAuth/CLI.html">OAuth::CLI</a>
+  
+    <li><a href="../OAuth/Client.html">OAuth::Client</a>
+  
+    <li><a href="../OAuth/Client/Helper.html">OAuth::Client::Helper</a>
+  
+    <li><a href="../OAuth/Consumer.html">OAuth::Consumer</a>
+  
+    <li><a href="../OAuth/ConsumerToken.html">OAuth::ConsumerToken</a>
+  
+    <li><a href="../OAuth/Error.html">OAuth::Error</a>
+  
+    <li><a href="../OAuth/Helper.html">OAuth::Helper</a>
+  
+    <li><a href="../OAuth/OAuthTestHelper.html">OAuth::OAuthTestHelper</a>
+  
+    <li><a href="../OAuth/Problem.html">OAuth::Problem</a>
+  
+    <li><a href="../OAuth/RequestProxy.html">OAuth::RequestProxy</a>
+  
+    <li><a href="../OAuth/RequestProxy/ActionControllerRequest.html">OAuth::RequestProxy::ActionControllerRequest</a>
+  
+    <li><a href="../OAuth/RequestProxy/Base.html">OAuth::RequestProxy::Base</a>
+  
+    <li><a href="../OAuth/RequestProxy/Curl.html">OAuth::RequestProxy::Curl</a>
+  
+    <li><a href="../OAuth/RequestProxy/Curl/Easy.html">OAuth::RequestProxy::Curl::Easy</a>
+  
+    <li><a href="../OAuth/RequestProxy/EventMachine.html">OAuth::RequestProxy::EventMachine</a>
+  
+    <li><a href="../OAuth/RequestProxy/EventMachine/HttpRequest.html">OAuth::RequestProxy::EventMachine::HttpRequest</a>
+  
+    <li><a href="../OAuth/RequestProxy/JabberRequest.html">OAuth::RequestProxy::JabberRequest</a>
+  
+    <li><a href="../OAuth/RequestProxy/MockRequest.html">OAuth::RequestProxy::MockRequest</a>
+  
+    <li><a href="../OAuth/RequestProxy/Net.html">OAuth::RequestProxy::Net</a>
+  
+    <li><a href="../OAuth/RequestProxy/Net/HTTP.html">OAuth::RequestProxy::Net::HTTP</a>
+  
+    <li><a href="../OAuth/RequestProxy/Net/HTTP/HTTPRequest.html">OAuth::RequestProxy::Net::HTTP::HTTPRequest</a>
+  
+    <li><a href="../OAuth/RequestProxy/RackRequest.html">OAuth::RequestProxy::RackRequest</a>
+  
+    <li><a href="../OAuth/RequestProxy/Typhoeus.html">OAuth::RequestProxy::Typhoeus</a>
+  
+    <li><a href="../OAuth/RequestProxy/Typhoeus/Request.html">OAuth::RequestProxy::Typhoeus::Request</a>
+  
+    <li><a href="../OAuth/RequestProxy/UnknownRequestType.html">OAuth::RequestProxy::UnknownRequestType</a>
+  
+    <li><a href="../OAuth/RequestToken.html">OAuth::RequestToken</a>
+  
+    <li><a href="../OAuth/Server.html">OAuth::Server</a>
+  
+    <li><a href="../OAuth/ServerToken.html">OAuth::ServerToken</a>
+  
+    <li><a href="../OAuth/Signature.html">OAuth::Signature</a>
+  
+    <li><a href="../OAuth/Signature/Base.html">OAuth::Signature::Base</a>
+  
+    <li><a href="../OAuth/Signature/HMAC.html">OAuth::Signature::HMAC</a>
+  
+    <li><a href="../OAuth/Signature/HMAC/Base.html">OAuth::Signature::HMAC::Base</a>
+  
+    <li><a href="../OAuth/Signature/HMAC/MD5.html">OAuth::Signature::HMAC::MD5</a>
+  
+    <li><a href="../OAuth/Signature/HMAC/RMD160.html">OAuth::Signature::HMAC::RMD160</a>
+  
+    <li><a href="../OAuth/Signature/HMAC/SHA1.html">OAuth::Signature::HMAC::SHA1</a>
+  
+    <li><a href="../OAuth/Signature/HMAC/SHA2.html">OAuth::Signature::HMAC::SHA2</a>
+  
+    <li><a href="../OAuth/Signature/MD5.html">OAuth::Signature::MD5</a>
+  
+    <li><a href="../OAuth/Signature/PLAINTEXT.html">OAuth::Signature::PLAINTEXT</a>
+  
+    <li><a href="../OAuth/Signature/RSA.html">OAuth::Signature::RSA</a>
+  
+    <li><a href="../OAuth/Signature/RSA/SHA1.html">OAuth::Signature::RSA::SHA1</a>
+  
+    <li><a href="../OAuth/Signature/SHA1.html">OAuth::Signature::SHA1</a>
+  
+    <li><a href="../OAuth/Signature/UnknownSignatureMethod.html">OAuth::Signature::UnknownSignatureMethod</a>
+  
+    <li><a href="../OAuth/Token.html">OAuth::Token</a>
+  
+    <li><a href="../OAuth/Unauthorized.html">OAuth::Unauthorized</a>
+  
+    <li><a href="../ActionController.html">ActionController</a>
+  
+    <li><a href="../ActionController/Base.html">ActionController::Base</a>
+  
+    <li><a href="../ActionController/TestRequest.html">ActionController::TestRequest</a>
+  
+    <li><a href="../Digest.html">Digest</a>
+  
+    <li><a href="../Digest/HMAC.html">Digest::HMAC</a>
+  
+    <li><a href="../EventMachine.html">EventMachine</a>
+  
+    <li><a href="../EventMachine/HttpClient.html">EventMachine::HttpClient</a>
+  
+    <li><a href="../Net.html">Net</a>
+  
+    <li><a href="../Net/HTTPGenericRequest.html">Net::HTTPGenericRequest</a>
+  
+    <li><a href="../Object.html">Object</a>
+  
+    <li><a href="../String.html">String</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module OAuth::Helper</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-escape" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">escape</span><span
+            class="method-args">(value)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Escape <code>value</code> by URL encoding all non-reserved character.</p>
+
+<p>See Also: <a href="http://oauth.net/core/1.0#rfc.section.5.1">OAuth core
+spec version 1.0, section 5.1</a></p>
+          
+
+          
+          <div class="method-source-code" id="escape-source">
+            <pre><span class="ruby-comment"># File lib/oauth/helper.rb, line 11</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">escape</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-constant">URI</span><span class="ruby-operator">::</span><span class="ruby-identifier">escape</span>(<span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-constant">OAuth</span><span class="ruby-operator">::</span><span class="ruby-constant">RESERVED_CHARACTERS</span>)
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">ArgumentError</span>
+  <span class="ruby-constant">URI</span><span class="ruby-operator">::</span><span class="ruby-identifier">escape</span>(<span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">force_encoding</span>(<span class="ruby-constant">Encoding</span><span class="ruby-operator">::</span><span class="ruby-constant">UTF_8</span>), <span class="ruby-constant">OAuth</span><span class="ruby-operator">::</span><span class="ruby-constant">RESERVED_CHARACTERS</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- escape-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- escape-method -->
+
+    
+      <div id="method-i-generate_key" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">generate_key</span><span
+            class="method-args">(size=32)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Generate a random key of up to <code>size</code> bytes. The value returned
+is Base64 encoded with non-word characters removed.</p>
+          
+
+          
+          <div class="method-source-code" id="generate_key-source">
+            <pre><span class="ruby-comment"># File lib/oauth/helper.rb, line 19</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">generate_key</span>(<span class="ruby-identifier">size</span>=<span class="ruby-value">32</span>)
+  <span class="ruby-constant">Base64</span>.<span class="ruby-identifier">encode64</span>(<span class="ruby-constant">OpenSSL</span><span class="ruby-operator">::</span><span class="ruby-constant">Random</span>.<span class="ruby-identifier">random_bytes</span>(<span class="ruby-identifier">size</span>)).<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/\W/</span>, <span class="ruby-string">''</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- generate_key-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Helper.html#method-i-generate_nonce">generate_nonce</a>
+        </div>
+        
+
+        
+      </div><!-- generate_key-method -->
+
+    
+      <div id="method-i-generate_nonce" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">generate_nonce</span><span
+            class="method-args">(size=32)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Helper.html#method-i-generate_key">generate_key</a>
+        </div>
+        
+      </div><!-- generate_nonce-method -->
+
+    
+      <div id="method-i-normalize" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">normalize</span><span
+            class="method-args">(params)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Normalize a <code>Hash</code> of parameter values. Parameters are sorted by
+name, using lexicographical byte value ordering. If two or more parameters
+share the same name, they are sorted by their value. Parameters are
+concatenated in their sorted order into a single string. For each
+parameter, the name is separated from the corresponding value by an “=”
+character, even if the value is empty. Each name-value pair is separated by
+an “&amp;” character.</p>
+
+<p>See Also: <a href="http://oauth.net/core/1.0#rfc.section.9.1.1">OAuth core
+spec version 1.0, section 9.1.1</a></p>
+          
+
+          
+          <div class="method-source-code" id="normalize-source">
+            <pre><span class="ruby-comment"># File lib/oauth/helper.rb, line 36</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">normalize</span>(<span class="ruby-identifier">params</span>)
+  <span class="ruby-identifier">params</span>.<span class="ruby-identifier">sort</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">values</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">values</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>)
+      <span class="ruby-comment"># make sure the array has an element so we don't lose the key</span>
+      <span class="ruby-identifier">values</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">values</span>.<span class="ruby-identifier">empty?</span>
+      <span class="ruby-comment"># multiple values were provided for a single key</span>
+      <span class="ruby-identifier">values</span>.<span class="ruby-identifier">sort</span>.<span class="ruby-identifier">collect</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+        [<span class="ruby-identifier">escape</span>(<span class="ruby-identifier">k</span>),<span class="ruby-identifier">escape</span>(<span class="ruby-identifier">v</span>)] * <span class="ruby-string">&quot;=&quot;</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">values</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
+      <span class="ruby-identifier">normalize_nested_query</span>(<span class="ruby-identifier">values</span>, <span class="ruby-identifier">k</span>)
+    <span class="ruby-keyword">else</span>
+      [<span class="ruby-identifier">escape</span>(<span class="ruby-identifier">k</span>),<span class="ruby-identifier">escape</span>(<span class="ruby-identifier">values</span>)] * <span class="ruby-string">&quot;=&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span> * <span class="ruby-string">&quot;&amp;&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- normalize-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- normalize-method -->
+
+    
+      <div id="method-i-normalize_nested_query" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">normalize_nested_query</span><span
+            class="method-args">(value, prefix = nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns a string representation of the Hash like in URL query string</p>
+
+<pre class="ruby"><span class="ruby-identifier">build_nested_query</span>({:<span class="ruby-identifier">level_1</span> =<span class="ruby-operator">&gt;</span> {:<span class="ruby-identifier">level_2</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-string">'value_1'</span>,<span class="ruby-string">'value_2'</span>]}}, <span class="ruby-string">'prefix'</span>))
+  <span class="ruby-comment">#=&gt; [&quot;prefix%5Blevel_1%5D%5Blevel_2%5D%5B%5D=value_1&quot;, &quot;prefix%5Blevel_1%5D%5Blevel_2%5D%5B%5D=value_2&quot;]</span>
+</pre>
+          
+
+          
+          <div class="method-source-code" id="normalize_nested_query-source">
+            <pre><span class="ruby-comment"># File lib/oauth/helper.rb, line 56</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">normalize_nested_query</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">prefix</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Array</span>
+    <span class="ruby-identifier">value</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">normalize_nested_query</span>(<span class="ruby-identifier">v</span>, <span class="ruby-node">&quot;#{prefix}[]&quot;</span>)
+    <span class="ruby-keyword">end</span>.<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">sort</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Hash</span>
+    <span class="ruby-identifier">value</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">normalize_nested_query</span>(<span class="ruby-identifier">v</span>, <span class="ruby-identifier">prefix</span> <span class="ruby-operator">?</span> <span class="ruby-node">&quot;#{prefix}[#{k}]&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">k</span>)
+    <span class="ruby-keyword">end</span>.<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">sort</span>
+  <span class="ruby-keyword">else</span>
+    [<span class="ruby-identifier">escape</span>(<span class="ruby-identifier">prefix</span>), <span class="ruby-identifier">escape</span>(<span class="ruby-identifier">value</span>)] * <span class="ruby-string">&quot;=&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- normalize_nested_query-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- normalize_nested_query-method -->
+
+    
+      <div id="method-i-parse_header" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">parse_header</span><span
+            class="method-args">(header)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Parse an Authorization / WWW-Authenticate header into a hash. Takes care of
+unescaping and removing surrounding quotes. Raises a <a
+href="Problem.html">OAuth::Problem</a> if the header is not parsable into a
+valid hash. Does not validate the keys or values.</p>
+
+<pre class="ruby"><span class="ruby-identifier">hash</span> = <span class="ruby-identifier">parse_header</span>(<span class="ruby-identifier">headers</span>[<span class="ruby-string">'Authorization'</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">headers</span>[<span class="ruby-string">'WWW-Authenticate'</span>])
+<span class="ruby-identifier">hash</span>[<span class="ruby-string">'oauth_timestamp'</span>]
+  <span class="ruby-comment">#=&gt;&quot;1234567890&quot;</span>
+</pre>
+          
+
+          
+          <div class="method-source-code" id="parse_header-source">
+            <pre><span class="ruby-comment"># File lib/oauth/helper.rb, line 79</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">parse_header</span>(<span class="ruby-identifier">header</span>)
+  <span class="ruby-comment"># decompose</span>
+  <span class="ruby-identifier">params</span> = <span class="ruby-identifier">header</span>[<span class="ruby-value">6</span>,<span class="ruby-identifier">header</span>.<span class="ruby-identifier">length</span>].<span class="ruby-identifier">split</span>(<span class="ruby-regexp">/[,=&amp;]/</span>)
+
+  <span class="ruby-comment"># odd number of arguments - must be a malformed header.</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">OAuth</span><span class="ruby-operator">::</span><span class="ruby-constant">Problem</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Invalid authorization header&quot;</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">params</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">%</span> <span class="ruby-value">2</span> <span class="ruby-operator">!=</span> <span class="ruby-value">0</span>
+
+  <span class="ruby-identifier">params</span>.<span class="ruby-identifier">map!</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+    <span class="ruby-comment"># strip and unescape</span>
+    <span class="ruby-identifier">val</span> = <span class="ruby-identifier">unescape</span>(<span class="ruby-identifier">v</span>.<span class="ruby-identifier">strip</span>)
+    <span class="ruby-comment"># strip quotes</span>
+    <span class="ruby-identifier">val</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp">/^\&quot;(.*)\&quot;$/</span>, <span class="ruby-string">'\1'</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># convert into a Hash</span>
+  <span class="ruby-constant">Hash</span>[*<span class="ruby-identifier">params</span>.<span class="ruby-identifier">flatten</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- parse_header-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- parse_header-method -->
+
+    
+      <div id="method-i-stringify_keys" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">stringify_keys</span><span
+            class="method-args">(hash)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="stringify_keys-source">
+            <pre><span class="ruby-comment"># File lib/oauth/helper.rb, line 101</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">stringify_keys</span>(<span class="ruby-identifier">hash</span>)
+  <span class="ruby-identifier">new_h</span> = {}
+  <span class="ruby-identifier">hash</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">new_h</span>[<span class="ruby-identifier">k</span>.<span class="ruby-identifier">to_s</span>] = <span class="ruby-identifier">v</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">stringify_keys</span>(<span class="ruby-identifier">v</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">v</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">new_h</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- stringify_keys-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- stringify_keys-method -->
+
+    
+      <div id="method-i-unescape" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">unescape</span><span
+            class="method-args">(value)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="unescape-source">
+            <pre><span class="ruby-comment"># File lib/oauth/helper.rb, line 97</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">unescape</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-constant">URI</span>.<span class="ruby-identifier">unescape</span>(<span class="ruby-identifier">value</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-string">'+'</span>, <span class="ruby-string">'%2B'</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- unescape-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- unescape-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

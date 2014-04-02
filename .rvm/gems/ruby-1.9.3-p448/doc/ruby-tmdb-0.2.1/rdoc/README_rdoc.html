@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>README - ruby-tmdb-0.2.1 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body class="file">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./MIT-LICENSE.html">MIT-LICENSE</a>
+  
+    <li class="file"><a href="./README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Tmdb.html">Tmdb</a>
+  
+    <li><a href="./TmdbCast.html">TmdbCast</a>
+  
+    <li><a href="./TmdbMovie.html">TmdbMovie</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<h1 id="label-ruby-tmdb">ruby-tmdb</h1>
+
+<p>ruby-tmdb is an ActiveRecord-style API wrapper for <a
+href="http://www.themoviedb.org/">TheMovieDB.org (TMDb)</a>. ruby-tmdb is
+designed to streamline common tasks associated with finding information
+about movies and cast members.</p>
+
+<h3 id="label-Examples">Examples</h3>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">'rubygems'</span>
+<span class="ruby-identifier">require</span> <span class="ruby-string">'ruby-tmdb'</span>
+
+<span class="ruby-comment"># setup your API key</span>
+<span class="ruby-constant">Tmdb</span>.<span class="ruby-identifier">api_key</span> = <span class="ruby-string">&quot;t478f8de5776c799de5a&quot;</span>
+
+<span class="ruby-comment"># setup your default language</span>
+<span class="ruby-constant">Tmdb</span>.<span class="ruby-identifier">default_language</span> = <span class="ruby-string">&quot;en&quot;</span>
+
+<span class="ruby-ivar">@movie</span> = <span class="ruby-constant">TmdbMovie</span>.<span class="ruby-identifier">find</span>(:<span class="ruby-identifier">title</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Iron Man&quot;</span>, :<span class="ruby-identifier">limit</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>)
+<span class="ruby-comment"># =&gt; &lt;OpenStruct&gt;</span>
+
+<span class="ruby-ivar">@movie</span>.<span class="ruby-identifier">name</span>
+<span class="ruby-comment"># =&gt; &quot;Iron Man&quot;</span>
+
+<span class="ruby-ivar">@movie</span>.<span class="ruby-identifier">posters</span>.<span class="ruby-identifier">length</span>
+<span class="ruby-comment"># =&gt; 12</span>
+
+<span class="ruby-ivar">@movie</span>.<span class="ruby-identifier">posters</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">data</span>
+<span class="ruby-comment"># =&gt; [binary blob representing JPEG]</span>
+</pre>
+
+<h3 id="label-Installation">Installation</h3>
+
+<p>For ease of use ruby-tmdb is packaged as a Rubygem. Installing it is as
+simple as:</p>
+
+<pre>gem install ruby-tmdb</pre>
+
+<h3 id="label-Usage">Usage</h3>
+
+<p>There are 3 main methods you can use to get information about movies and
+cast members:</p>
+
+<h4 id="label-TmdbMovie.find%28%5B%3Aid%2C+%3Aimdb%2C+%3Atitle%2C+%3Alimit%2C+%3Aexpand_results%2C+%3Alanguage%5D%29"><a href="TmdbMovie.html#method-c-find">TmdbMovie.find</a>([:id, :imdb, :title, :limit, :expand_results, :language])</h4>
+
+<p>Find information about an individual movie, or a set of movies that share a
+similar title, eg:</p>
+
+<pre class="ruby"><span class="ruby-constant">TmdbMovie</span>.<span class="ruby-identifier">find</span>(:<span class="ruby-identifier">title</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;fight club&quot;</span>, :<span class="ruby-identifier">limit</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">10</span>, :<span class="ruby-identifier">expand_results</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>, :<span class="ruby-identifier">language</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;en&quot;</span>)
+</pre>
+
+<p>Parameters:</p>
+<dl class="rdoc-list label-list"><dt>:id
+<dd>
+<p>Specifies an individual movie via it’s TMDb id</p>
+</dd><dt>:title
+<dd>
+<p>Specifies a query string to look for in the movie titles</p>
+</dd><dt>:imdb
+<dd>
+<p>Specifies an individual movie via it’s IMDB id</p>
+</dd><dt>:limit
+<dd>
+<p>Specifies the maximum number of results to be returned</p>
+</dd><dt>:expand_results
+<dd>
+<p>The TMDb API by default returns only partial info for any API method that
+can return multiple results. When :expand_results is set to true ruby-tmdb
+automatically makes extra API calls to fetch the full information for each
+item. This can result in <strong>very</strong> slow requests though. If you
+only need basic information for a search listing then set this to false.
+Defaults to ‘true’.</p>
+</dd><dt>:language
+<dd>
+<p>Allows you to override the default API language on a per-query basis.</p>
+</dd></dl>
+
+<p>You must supply at least one of :id, :title, or :imdb. All other parameters
+are optional.</p>
+
+<h4 id="label-TmdbMovie.browse%28%2C%5B%3Alanguage%2C+%3Aexpand_results%5D%29"><a href="TmdbMovie.html#method-c-browse">TmdbMovie.browse</a>,[:language, :expand_results])</h4>
+
+<p>Find information about a set of movies grouped by one or more defined
+criteria, eg:</p>
+
+<pre class="ruby"><span class="ruby-constant">TmdbMovie</span>.<span class="ruby-identifier">browse</span>(:<span class="ruby-identifier">order_by</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;rating&quot;</span>, :<span class="ruby-identifier">order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;desc&quot;</span>, :<span class="ruby-identifier">genres</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">18</span>, :<span class="ruby-identifier">min_votes</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">5</span>, :<span class="ruby-identifier">page</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>, :<span class="ruby-identifier">per_page</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">10</span>, :<span class="ruby-identifier">language</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;en&quot;</span>, :<span class="ruby-identifier">expand_results</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>)
+</pre>
+
+<p>Parameters:</p>
+<dl class="rdoc-list label-list"><dt>query_options
+<dd>
+<p>These are defined by the TMDB.org API, for more info on which options are
+available please have a look at the <a
+href="http://api.themoviedb.org/2.1/methods/Movie.browse">‘browse’ API
+documentation</a></p>
+</dd><dt>:expand_results
+<dd>
+<p>See <a href="TmdbMovie.html">TmdbMovie</a></p>
+</dd><dt>:language
+<dd>
+<p>See <a href="TmdbMovie.html">TmdbMovie</a></p>
+</dd></dl>
+
+<h4 id="label-TmdbCast.find%28%5B%3Aid%2C+%3Aname%2C+%3Alimit%2C+%3Aexpand_results%2C+%3Alanguage%5D%29"><a href="TmdbCast.html#method-c-find">TmdbCast.find</a>([:id, :name, :limit, :expand_results, :language])</h4>
+
+<p>Find information about an individual cast member, or a set of cast members
+sharing similar names, eg:</p>
+
+<pre class="ruby"><span class="ruby-constant">TmdbCast</span>.<span class="ruby-identifier">find</span>( :<span class="ruby-identifier">id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">123</span>, :<span class="ruby-identifier">name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Brad&quot;</span>, :<span class="ruby-identifier">limit</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>, :<span class="ruby-identifier">expand_results</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>, :<span class="ruby-identifier">language</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;fr&quot;</span>)
+</pre>
+<dl class="rdoc-list label-list"><dt>:id
+<dd>
+<p>Specifies an individual cast member via their TMDb id</p>
+</dd><dt>:name
+<dd>
+<p>Specifies a query string to look for in the cast names</p>
+</dd><dt>:limit
+<dd>
+<p>See <a href="TmdbMovie.html">TmdbMovie</a></p>
+</dd><dt>:expand_results
+<dd>
+<p>See <a href="TmdbMovie.html">TmdbMovie</a></p>
+</dd><dt>:language
+<dd>
+<p>See <a href="TmdbMovie.html">TmdbMovie</a></p>
+</dd></dl>
+
+<p>You must supply at least one of :id or :name. All other parameters are
+optional.</p>
+
+<h3 id="label-Usage+Examples">Usage Examples</h3>
+
+<p>Find all movies whose titles match a given string:</p>
+
+<pre class="ruby"><span class="ruby-ivar">@movies</span> = <span class="ruby-constant">TmdbMovie</span>.<span class="ruby-identifier">find</span>(:<span class="ruby-identifier">title</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'Iron Man'</span>)
+</pre>
+
+<p>Find the movie most likely to be associated with a given title:</p>
+
+<pre class="ruby"><span class="ruby-ivar">@movie</span> = <span class="ruby-constant">TmdbMovie</span>.<span class="ruby-identifier">find</span>(:<span class="ruby-identifier">title</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'Sin City'</span>, :<span class="ruby-identifier">limit</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>)
+</pre>
+
+<p>Find a single movie by it’s TMDb ID:</p>
+
+<pre class="ruby"><span class="ruby-ivar">@movie</span> = <span class="ruby-constant">TmdbMovie</span>.<span class="ruby-identifier">find</span>(:<span class="ruby-identifier">id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">187</span>)
+</pre>
+
+<p>Find a single movie by it’s IMDB ID:</p>
+
+<pre class="ruby"><span class="ruby-ivar">@movie</span> = <span class="ruby-constant">TmdbMovie</span>.<span class="ruby-identifier">find</span>(:<span class="ruby-identifier">imdb</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'tt0401792'</span>)
+</pre>
+
+<p>Find all cast members whose names match a given string:</p>
+
+<pre class="ruby"><span class="ruby-ivar">@actors</span> = <span class="ruby-constant">TmdbCast</span>.<span class="ruby-identifier">find</span>(:<span class="ruby-identifier">name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'Fred'</span>)
+</pre>
+
+<p>Find an individual cast member via their TMDb ID:</p>
+
+<pre class="ruby"><span class="ruby-ivar">@actor</span> = <span class="ruby-constant">TmdbCast</span>.<span class="ruby-identifier">find</span>(:<span class="ruby-identifier">id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">101</span>)
+</pre>
+
+<p>Get the info for a movie in French:</p>
+
+<pre class="ruby"><span class="ruby-ivar">@movie</span> = <span class="ruby-constant">TmdbMovie</span>.<span class="ruby-identifier">find</span>(:<span class="ruby-identifier">title</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'Sin City'</span>, :<span class="ruby-identifier">limit</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>, :<span class="ruby-identifier">language</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;fr&quot;</span>)
+</pre>
+
+<h3 id="label-Item+information">Item information</h3>
+
+<p>To find out more about the information each object offers on retrieved
+items have a look at the <a href="http://api.themoviedb.org/2.1">TMDb API
+Docs</a>. For the most accurate information about the information available
+have a look at the data directly through ruby-tmdb by calling
+@item.raw_data.inspect</p>
+
+<h3 id="label-Author+%26+Credits">Author &amp; Credits</h3>
+<dl class="rdoc-list note-list"><dt>Author
+<dd>
+<p><a href="mailto:aaron@aarongough.com">Aaron Gough</a></p>
+</dd><dt>Contributors
+<dd>
+<p><a href="https://github.com/alexhayes">Alex Hayes</a>, <a
+href="https://github.com/xenda">Alvaro Pereyra Rabanal</a>, <a
+href="https://github.com/oleander">Linus Oleander</a>, <a
+href="https://github.com/aristides">aristides</a>, <a
+href="https://github.com/niuage">Robin Boutros</a></p>
+</dd></dl>
+
+<p>Copyright © 2010 <a href="http://thingsaaronmade.com/">Aaron Gough</a> (<a
+href="http://thingsaaronmade.com/">thingsaaronmade.com</a>), released under
+the MIT license</p>
+
+</div>
+
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

@@ -1,0 +1,19 @@
+Thu, 07 Nov 2013 22:58:57 -0400
+lib/diff-lcs.rb	Thu, 07 Nov 2013 22:57:59 -0400
+lib/diff/lcs/callbacks.rb	Thu, 07 Nov 2013 22:57:59 -0400
+lib/diff/lcs/change.rb	Thu, 07 Nov 2013 22:57:59 -0400
+lib/diff/lcs/ldiff.rb	Thu, 07 Nov 2013 22:57:59 -0400
+lib/diff/lcs/hunk.rb	Thu, 07 Nov 2013 22:57:59 -0400
+lib/diff/lcs/block.rb	Thu, 07 Nov 2013 22:57:59 -0400
+lib/diff/lcs/string.rb	Thu, 07 Nov 2013 22:57:59 -0400
+lib/diff/lcs/htmldiff.rb	Thu, 07 Nov 2013 22:57:59 -0400
+lib/diff/lcs/internals.rb	Thu, 07 Nov 2013 22:57:59 -0400
+lib/diff/lcs/array.rb	Thu, 07 Nov 2013 22:57:59 -0400
+lib/diff/lcs.rb	Thu, 07 Nov 2013 22:57:59 -0400
+Contributing.rdoc	Thu, 07 Nov 2013 22:57:59 -0400
+History.rdoc	Thu, 07 Nov 2013 22:57:59 -0400
+License.rdoc	Thu, 07 Nov 2013 22:57:59 -0400
+Manifest.txt	Thu, 07 Nov 2013 22:57:59 -0400
+README.rdoc	Thu, 07 Nov 2013 22:57:59 -0400
+docs/COPYING.txt	Thu, 07 Nov 2013 22:57:59 -0400
+docs/artistic.txt	Thu, 07 Nov 2013 22:57:59 -0400

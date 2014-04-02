@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Capybara::Node::Base - capybara-2.1.0 Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/capybara/node/base.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="../../Object.html">Object</a>
+  
+</nav>
+
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><a class="include" href="Finders.html">Capybara::Node::Finders</a>
+  
+  
+  
+    <li><a class="include" href="Actions.html">Capybara::Node::Actions</a>
+  
+  
+  
+    <li><a class="include" href="Matchers.html">Capybara::Node::Matchers</a>
+  
+  
+  </ul>
+</nav>
+
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-catch_error-3F">#catch_error?</a>
+    
+    <li><a href="#method-i-driver">#driver</a>
+    
+    <li><a href="#method-i-reload">#reload</a>
+    
+    <li><a href="#method-i-synchronize">#synchronize</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../lib/capybara/spec/fixtures/another_test_file_txt.html">another_test_file</a>
+  
+    <li class="file"><a href="../../lib/capybara/spec/fixtures/test_file_txt.html">test_file</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../Capybara.html">Capybara</a>
+  
+    <li><a href="../../Capybara/Ambiguous.html">Capybara::Ambiguous</a>
+  
+    <li><a href="../../Capybara/CapybaraError.html">Capybara::CapybaraError</a>
+  
+    <li><a href="../../Capybara/DSL.html">Capybara::DSL</a>
+  
+    <li><a href="../../Capybara/Driver.html">Capybara::Driver</a>
+  
+    <li><a href="../../Capybara/Driver/Base.html">Capybara::Driver::Base</a>
+  
+    <li><a href="../../Capybara/Driver/Node.html">Capybara::Driver::Node</a>
+  
+    <li><a href="../../Capybara/DriverNotFoundError.html">Capybara::DriverNotFoundError</a>
+  
+    <li><a href="../../Capybara/ElementNotFound.html">Capybara::ElementNotFound</a>
+  
+    <li><a href="../../Capybara/ExpectationNotMet.html">Capybara::ExpectationNotMet</a>
+  
+    <li><a href="../../Capybara/Features.html">Capybara::Features</a>
+  
+    <li><a href="../../Capybara/FileNotFound.html">Capybara::FileNotFound</a>
+  
+    <li><a href="../../Capybara/FrozenInTime.html">Capybara::FrozenInTime</a>
+  
+    <li><a href="../../Capybara/Helpers.html">Capybara::Helpers</a>
+  
+    <li><a href="../../Capybara/InfiniteRedirectError.html">Capybara::InfiniteRedirectError</a>
+  
+    <li><a href="../../Capybara/Node.html">Capybara::Node</a>
+  
+    <li><a href="../../Capybara/Node/Actions.html">Capybara::Node::Actions</a>
+  
+    <li><a href="../../Capybara/Node/Base.html">Capybara::Node::Base</a>
+  
+    <li><a href="../../Capybara/Node/Document.html">Capybara::Node::Document</a>
+  
+    <li><a href="../../Capybara/Node/Element.html">Capybara::Node::Element</a>
+  
+    <li><a href="../../Capybara/Node/Finders.html">Capybara::Node::Finders</a>
+  
+    <li><a href="../../Capybara/Node/Matchers.html">Capybara::Node::Matchers</a>
+  
+    <li><a href="../../Capybara/Node/Simple.html">Capybara::Node::Simple</a>
+  
+    <li><a href="../../Capybara/NotSupportedByDriverError.html">Capybara::NotSupportedByDriverError</a>
+  
+    <li><a href="../../Capybara/Query.html">Capybara::Query</a>
+  
+    <li><a href="../../Capybara/RSpecMatchers.html">Capybara::RSpecMatchers</a>
+  
+    <li><a href="../../Capybara/RSpecMatchers/HaveSelector.html">Capybara::RSpecMatchers::HaveSelector</a>
+  
+    <li><a href="../../Capybara/RSpecMatchers/HaveText.html">Capybara::RSpecMatchers::HaveText</a>
+  
+    <li><a href="../../Capybara/RSpecMatchers/HaveTitle.html">Capybara::RSpecMatchers::HaveTitle</a>
+  
+    <li><a href="../../Capybara/RSpecMatchers/Matcher.html">Capybara::RSpecMatchers::Matcher</a>
+  
+    <li><a href="../../Capybara/RackTest.html">Capybara::RackTest</a>
+  
+    <li><a href="../../Capybara/RackTest/Browser.html">Capybara::RackTest::Browser</a>
+  
+    <li><a href="../../Capybara/RackTest/CSSHandlers.html">Capybara::RackTest::CSSHandlers</a>
+  
+    <li><a href="../../Capybara/RackTest/Driver.html">Capybara::RackTest::Driver</a>
+  
+    <li><a href="../../Capybara/RackTest/Form.html">Capybara::RackTest::Form</a>
+  
+    <li><a href="../../Capybara/RackTest/Form/NilUploadedFile.html">Capybara::RackTest::Form::NilUploadedFile</a>
+  
+    <li><a href="../../Capybara/RackTest/Node.html">Capybara::RackTest::Node</a>
+  
+    <li><a href="../../Capybara/Result.html">Capybara::Result</a>
+  
+    <li><a href="../../Capybara/Selector.html">Capybara::Selector</a>
+  
+    <li><a href="../../Capybara/Selector/Filter.html">Capybara::Selector::Filter</a>
+  
+    <li><a href="../../Capybara/Selenium.html">Capybara::Selenium</a>
+  
+    <li><a href="../../Capybara/Selenium/Driver.html">Capybara::Selenium::Driver</a>
+  
+    <li><a href="../../Capybara/Selenium/Node.html">Capybara::Selenium::Node</a>
+  
+    <li><a href="../../Capybara/Server.html">Capybara::Server</a>
+  
+    <li><a href="../../Capybara/Server/Middleware.html">Capybara::Server::Middleware</a>
+  
+    <li><a href="../../Capybara/Session.html">Capybara::Session</a>
+  
+    <li><a href="../../Capybara/SpecHelper.html">Capybara::SpecHelper</a>
+  
+    <li><a href="../../Capybara/UnselectNotAllowed.html">Capybara::UnselectNotAllowed</a>
+  
+    <li><a href="../../TestApp.html">TestApp</a>
+  
+    <li><a href="../../TestApp/TestAppError.html">TestApp::TestAppError</a>
+  
+    <li><a href="../../Object.html">Object</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Capybara::Node::Base</h1>
+
+  <div id="description" class="description">
+    
+<p>A {Capybara::Node::Base} represents either an element on a page through the
+subclass {Capybara::Node::Element} or a document through
+{Capybara::Node::Document}.</p>
+
+<p>Both types of <a href="../Node.html">Node</a> share the same methods, used
+for interacting with the elements on the page. These methods are divided
+into three categories, finders, actions and matchers. These are found in
+the modules {Capybara::Node::Finders}, {Capybara::Node::Actions} and
+{Capybara::Node::Matchers} respectively.</p>
+
+<p>A {Capybara::Session} exposes all methods from {Capybara::Node::Document}
+directly:</p>
+
+<pre class="ruby"><span class="ruby-identifier">session</span> = <span class="ruby-constant">Capybara</span><span class="ruby-operator">::</span><span class="ruby-constant">Session</span>.<span class="ruby-identifier">new</span>(:<span class="ruby-identifier">rack_test</span>, <span class="ruby-identifier">my_app</span>)
+<span class="ruby-identifier">session</span>.<span class="ruby-identifier">visit</span>(<span class="ruby-string">'/'</span>)
+<span class="ruby-identifier">session</span>.<span class="ruby-identifier">fill_in</span>(<span class="ruby-string">'Foo'</span>, :<span class="ruby-identifier">with</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'Bar'</span>)    <span class="ruby-comment"># from Capybara::Node::Actions</span>
+<span class="ruby-identifier">bar</span> = <span class="ruby-identifier">session</span>.<span class="ruby-identifier">find</span>(<span class="ruby-string">'#bar'</span>)                <span class="ruby-comment"># from Capybara::Node::Finders</span>
+<span class="ruby-identifier">bar</span>.<span class="ruby-identifier">select</span>(<span class="ruby-string">'Baz'</span>, :<span class="ruby-identifier">from</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'Quox'</span>)        <span class="ruby-comment"># from Capybara::Node::Actions</span>
+<span class="ruby-identifier">session</span>.<span class="ruby-identifier">has_css?</span>(<span class="ruby-string">'#foobar'</span>)               <span class="ruby-comment"># from Capybara::Node::Matchers</span>
+</pre>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-base" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">base</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-parent" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">parent</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-session" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">session</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(session, base)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/capybara/node/base.rb, line 31</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">session</span>, <span class="ruby-identifier">base</span>)
+  <span class="ruby-ivar">@session</span> = <span class="ruby-identifier">session</span>
+  <span class="ruby-ivar">@base</span> = <span class="ruby-identifier">base</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-reload" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">reload</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>overridden in subclasses, e.g. <a
+href="Element.html">Capybara::Node::Element</a></p>
+          
+
+          
+          <div class="method-source-code" id="reload-source">
+            <pre><span class="ruby-comment"># File lib/capybara/node/base.rb, line 37</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">reload</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- reload-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- reload-method -->
+
+    
+      <div id="method-i-synchronize" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">synchronize</span><span
+            class="method-args">(seconds=Capybara.default_wait_time) { || ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This method is Capybara’s primary defence agains asynchronicity problems.
+It works by attempting to run a given block of code until it succeeds. The
+exact behaviour of this method depends on a number of factors. Basically
+there are certain exceptions which, when raised from the block, instead of
+bubbling up, are caught, and the block is re-run.</p>
+
+<p>Certain drivers, such as <a href="../RackTest.html">RackTest</a>, have no
+support for aynchronous processes, these drivers run the block, and any
+error raised bubbles up immediately. This allows faster turn around in the
+case where an expectation fails.</p>
+
+<p>Only exceptions that are {Capybara::ElementNotFound} or any subclass
+thereof cause the block to be rerun. Drivers may specify additional
+exceptions which also cause reruns. This usually occurs when a node is
+manipulated which no longer exists on the page. For example, the <a
+href="../Selenium.html">Selenium</a> driver specifies
+`Selenium::WebDriver::Error::ObsoleteElementError`.</p>
+
+<p>As long as any of these exceptions are thrown, the block is re-run, until a
+certain amount of time passes. The amount of time defaults to {<a
+href="../../Capybara.html#attribute-c-default_wait_time">Capybara.default_wait_time</a>}
+and can be overriden through the `seconds` argument. This time is compared
+with the system time to see how much time has passed. If the return value
+of `Time.now` is stubbed out, <a href="../../Capybara.html">Capybara</a>
+will raise `Capybara::FrozenInTime`.</p>
+
+<p>@param  [Integer] seconds         Number of seconds to retry this block
+@return [Object]                  The result of the given block @raise 
+[Capybara::FrozenInTime]  If the return value of `Time.now` appears stuck</p>
+          
+
+          
+          <div class="method-source-code" id="synchronize-source">
+            <pre><span class="ruby-comment"># File lib/capybara/node/base.rb, line 73</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">synchronize</span>(<span class="ruby-identifier">seconds</span>=<span class="ruby-constant">Capybara</span>.<span class="ruby-identifier">default_wait_time</span>)
+  <span class="ruby-identifier">start_time</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">session</span>.<span class="ruby-identifier">synchronized</span>
+    <span class="ruby-keyword">yield</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">session</span>.<span class="ruby-identifier">synchronized</span> = <span class="ruby-keyword">true</span>
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-keyword">yield</span>
+    <span class="ruby-keyword">rescue</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">driver</span>.<span class="ruby-identifier">wait?</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">catch_error?</span>(<span class="ruby-identifier">e</span>)
+      <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span> <span class="ruby-keyword">if</span> (<span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">start_time</span>) <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">seconds</span>
+      <span class="ruby-identifier">sleep</span>(<span class="ruby-value">0.05</span>)
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">Capybara</span><span class="ruby-operator">::</span><span class="ruby-constant">FrozenInTime</span>, <span class="ruby-string">&quot;time appears to be frozen, Capybara does not work with libraries which freeze time, consider using time travelling instead&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">start_time</span>
+      <span class="ruby-identifier">reload</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">Capybara</span>.<span class="ruby-identifier">automatic_reload</span>
+      <span class="ruby-keyword">retry</span>
+    <span class="ruby-keyword">ensure</span>
+      <span class="ruby-identifier">session</span>.<span class="ruby-identifier">synchronized</span> = <span class="ruby-keyword">false</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- synchronize-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- synchronize-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+     <section id="protected-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Protected Instance Methods</h3>
+
+    
+      <div id="method-i-catch_error-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">catch_error?</span><span
+            class="method-args">(error)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="catch_error-3F-source">
+            <pre><span class="ruby-comment"># File lib/capybara/node/base.rb, line 98</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">catch_error?</span>(<span class="ruby-identifier">error</span>)
+  (<span class="ruby-identifier">driver</span>.<span class="ruby-identifier">invalid_element_errors</span> <span class="ruby-operator">+</span> [<span class="ruby-constant">Capybara</span><span class="ruby-operator">::</span><span class="ruby-constant">ElementNotFound</span>]).<span class="ruby-identifier">any?</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">type</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">error</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-identifier">type</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- catch_error-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- catch_error-3F-method -->
+
+    
+      <div id="method-i-driver" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">driver</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="driver-source">
+            <pre><span class="ruby-comment"># File lib/capybara/node/base.rb, line 104</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">driver</span>
+  <span class="ruby-identifier">session</span>.<span class="ruby-identifier">driver</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- driver-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- driver-method -->
+
+    
+    </section><!-- protected-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

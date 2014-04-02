@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>CHANGELOG - ruby-graphviz-1.0.9 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body class="file">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./AUTHORS_rdoc.html">AUTHORS</a>
+  
+    <li class="file"><a href="./CHANGELOG_rdoc.html">CHANGELOG</a>
+  
+    <li class="file"><a href="./COPYING_rdoc.html">COPYING</a>
+  
+    <li class="file"><a href="./README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./GraphViz.html">GraphViz</a>
+  
+    <li><a href="./GraphViz/Attrs.html">GraphViz::Attrs</a>
+  
+    <li><a href="./GraphViz/Constants.html">GraphViz::Constants</a>
+  
+    <li><a href="./GraphViz/DOTScript.html">GraphViz::DOTScript</a>
+  
+    <li><a href="./GraphViz/DOTScriptData.html">GraphViz::DOTScriptData</a>
+  
+    <li><a href="./GraphViz/DSL.html">GraphViz::DSL</a>
+  
+    <li><a href="./GraphViz/Edge.html">GraphViz::Edge</a>
+  
+    <li><a href="./GraphViz/Elements.html">GraphViz::Elements</a>
+  
+    <li><a href="./GraphViz/Ext.html">GraphViz::Ext</a>
+  
+    <li><a href="./GraphViz/FamilyTree.html">GraphViz::FamilyTree</a>
+  
+    <li><a href="./GraphViz/FamilyTree/Couple.html">GraphViz::FamilyTree::Couple</a>
+  
+    <li><a href="./GraphViz/FamilyTree/Generation.html">GraphViz::FamilyTree::Generation</a>
+  
+    <li><a href="./GraphViz/FamilyTree/Person.html">GraphViz::FamilyTree::Person</a>
+  
+    <li><a href="./GraphViz/FamilyTree/Sibling.html">GraphViz::FamilyTree::Sibling</a>
+  
+    <li><a href="./GraphViz/GraphML.html">GraphViz::GraphML</a>
+  
+    <li><a href="./GraphViz/GraphMLError.html">GraphViz::GraphMLError</a>
+  
+    <li><a href="./GraphViz/Math.html">GraphViz::Math</a>
+  
+    <li><a href="./GraphViz/Math/CoordinateError.html">GraphViz::Math::CoordinateError</a>
+  
+    <li><a href="./GraphViz/Math/Matrix.html">GraphViz::Math::Matrix</a>
+  
+    <li><a href="./GraphViz/Math/ValueError.html">GraphViz::Math::ValueError</a>
+  
+    <li><a href="./GraphViz/Node.html">GraphViz::Node</a>
+  
+    <li><a href="./GraphViz/Theory.html">GraphViz::Theory</a>
+  
+    <li><a href="./GraphViz/Types.html">GraphViz::Types</a>
+  
+    <li><a href="./GraphViz/Types/ArrowType.html">GraphViz::Types::ArrowType</a>
+  
+    <li><a href="./GraphViz/Types/Color.html">GraphViz::Types::Color</a>
+  
+    <li><a href="./GraphViz/Types/ColorList.html">GraphViz::Types::ColorList</a>
+  
+    <li><a href="./GraphViz/Types/Common.html">GraphViz::Types::Common</a>
+  
+    <li><a href="./GraphViz/Types/EscString.html">GraphViz::Types::EscString</a>
+  
+    <li><a href="./GraphViz/Types/GvBool.html">GraphViz::Types::GvBool</a>
+  
+    <li><a href="./GraphViz/Types/GvDouble.html">GraphViz::Types::GvDouble</a>
+  
+    <li><a href="./GraphViz/Types/HtmlString.html">GraphViz::Types::HtmlString</a>
+  
+    <li><a href="./GraphViz/Types/LblString.html">GraphViz::Types::LblString</a>
+  
+    <li><a href="./GraphViz/Types/Rect.html">GraphViz::Types::Rect</a>
+  
+    <li><a href="./GraphViz/Types/SplineType.html">GraphViz::Types::SplineType</a>
+  
+    <li><a href="./GraphViz/Utils.html">GraphViz::Utils</a>
+  
+    <li><a href="./GraphViz/Utils/Colors.html">GraphViz::Utils::Colors</a>
+  
+    <li><a href="./GraphViz/XML.html">GraphViz::XML</a>
+  
+    <li><a href="./AttributeException.html">AttributeException</a>
+  
+    <li><a href="./BoolException.html">BoolException</a>
+  
+    <li><a href="./ColorException.html">ColorException</a>
+  
+    <li><a href="./DoubleException.html">DoubleException</a>
+  
+    <li><a href="./Hash.html">Hash</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./RectException.html">RectException</a>
+  
+    <li><a href="./SplineTypeException.html">SplineTypeException</a>
+  
+    <li><a href="./String.html">String</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<h1 id="label-CHANGELOG"><a href="CHANGELOG_rdoc.html">CHANGELOG</a></h1>
+
+<h2 id="label-1.0.9+%3A">1.0.9 :</h2>
+<ul><li>
+<p>Add support for attributs</p>
+<ul><li>
+<p>forcelabels</p>
+</li><li>
+<p>gradientangle</p>
+</li><li>
+<p>imagepath</p>
+</li><li>
+<p>layerlistsep</p>
+</li><li>
+<p>layerselect</p>
+</li></ul>
+</li><li>
+<p>Issue #52 : Extracted xDOTScript to DOTScript class (by markus1189)</p>
+</li><li>
+<p>Issue #54 : Fixes a couple of typos and spacing (by Mike Fiedler)</p>
+</li><li>
+<p>Issue #55 : Avoid autoload</p>
+</li><li>
+<p>Update graphviz attributs</p>
+</li></ul>
+
+<h2 id="label-1.0.8+%3A">1.0.8 :</h2>
+<ul><li>
+<p>Cleanup format (by markus1189)</p>
+</li><li>
+<p>Issue #49 : (undefined local variable or method `file’ ) (by markus1189)</p>
+</li></ul>
+
+<h2 id="label-1.0.7+%3A">1.0.7 :</h2>
+<ul><li>
+<p>Issue #48 : add_graph fails when passed a <a
+href="GraphViz.html">GraphViz</a> object</p>
+</li><li>
+<p>Issue #47 : Find executable (by markus1189)</p>
+</li></ul>
+
+<h2 id="label-1.0.6+%3A">1.0.6 :</h2>
+<ul><li>
+<p>Issue #46 : Some tests fail because it cannot find ‘dot’</p>
+</li><li>
+<p>Issue #45 : Fix for copy/paste error (by coding46)</p>
+</li><li>
+<p>Issue #44 : characters escaping (by Neven Has)</p>
+</li><li>
+<p>Issue #43 : Added lib/ruby-graphviz to match the gem name (by Postmodern)</p>
+</li><li>
+<p>Issue #42 : “escaped dot in label” aka “GVPR error in Dot2Ruby”</p>
+</li><li>
+<p>Issue #40 : GraphML importation doesn’t work…</p>
+</li><li>
+<p>Bug correction (with Ruby 1.8)</p>
+</li><li>
+<p>Add (experimental) support of LibXML/LibXSLT</p>
+</li></ul>
+
+<h2 id="label-1.0.5+%3A">1.0.5 :</h2>
+<ul><li>
+<p>Change deprecated methods in gem2gv, git2gv and ruby2gv</p>
+</li><li>
+<p>Issue #38</p>
+</li><li>
+<p>Issue #39</p>
+</li></ul>
+
+<h2 id="label-1.0.4+%3A">1.0.4 :</h2>
+<ul><li>
+<p><a
+href="GraphViz/Edge.html#method-i-each_attribut">GraphViz::Edge#each_attribut</a>
+is deprecated, please use <a
+href="GraphViz/Edge.html#method-i-each_attribute">GraphViz::Edge#each_attribute</a></p>
+</li><li>
+<p><a
+href="GraphViz/GraphML.html#method-i-attributs">GraphViz::GraphML#attributs</a>
+is deprecated, please, use <a
+href="GraphViz/GraphML.html#attribute-i-attributes">GraphViz::GraphML#attributes</a></p>
+</li><li>
+<p><a
+href="GraphViz/Node.html#method-i-each_attribut">GraphViz::Node#each_attribut</a>
+is deprecated, please use <a
+href="GraphViz/Node.html#method-i-each_attribute">GraphViz::Node#each_attribute</a></p>
+</li><li>
+<p>Major bug correction in <a href="GraphViz/Attrs.html">GraphViz::Attrs</a>
+and <a href="GraphViz.html#method-c-parse">GraphViz.parse</a></p>
+</li><li>
+<p>An empty string means “false” for boolean attributes</p>
+</li></ul>
+
+<h2 id="label-1.0.3+%3A">1.0.3 :</h2>
+<ul><li>
+<p>The <a
+href="GraphViz/Theory.html#method-i-moore_dijkstra">GraphViz::Theory#moore_dijkstra</a>
+return a path which contains <a
+href="GraphViz/Node.html">GraphViz::Node</a> instead of <a
+href="GraphViz/Node.html#method-i-id">GraphViz::Node#id</a></p>
+</li><li>
+<p>Add Breadth First Search algorithm (<a
+href="GraphViz/Theory.html#method-i-bfs">GraphViz::Theory#bfs</a>)</p>
+</li><li>
+<p>Add Depth First Search algorithm (<a
+href="GraphViz/Theory.html#method-i-dfs">GraphViz::Theory#dfs</a>)</p>
+</li><li>
+<p>Add <a href="GraphViz.html#method-i-add_edges">GraphViz#add_edges</a> (<a
+href="GraphViz.html#method-i-add_edge">GraphViz#add_edge</a> is deprecated)</p>
+</li><li>
+<p>Add <a href="GraphViz.html#method-i-add_nodes">GraphViz#add_nodes</a> (<a
+href="GraphViz.html#method-i-add_node">GraphViz#add_node</a> is deprecated)</p>
+</li><li>
+<p>Add GraphViz::generate</p>
+</li><li>
+<p>Remove definition of Array#all?</p>
+</li></ul>
+
+<h2 id="label-1.0.2+%3A">1.0.2 :</h2>
+<ul><li>
+<p>Add PageRank algorithm</p>
+</li><li>
+<p>Major bug corrections</p>
+</li><li>
+<p>Fix utils/colors.rb’s case syntax</p>
+</li><li>
+<p>Modify deprecated method: Hash#index to <a
+href="Hash.html#method-i-key">Hash#key</a></p>
+</li></ul>
+
+<h2 id="label-1.0.1+%3A+">1.0.1 : </h2>
+<ul><li>
+<p>Add <a href="GraphViz/DSL.html">GraphViz::DSL</a></p>
+</li><li>
+<p>Change project to use Bundler gem tools</p>
+</li><li>
+<p>Fix a few typos in the <a href="README_rdoc.html">README</a></p>
+</li><li>
+<p>Change Config to RbConfig</p>
+</li><li>
+<p>Add possibility to get the x,y coordinates of each of the nodes</p>
+</li></ul>
+
+<h2 id="label-1.0.0+%3A+">1.0.0 : </h2>
+<ul><li>
+<p>o/</p>
+</li><li>
+<p>GraphViz::Node#name has been removed - use <a
+href="GraphViz/Node.html#method-i-id">GraphViz::Node#id</a></p>
+</li><li>
+<p>The html attribute has been removed - use a label attribut (<code>:label
+=&gt; '&lt;&lt;html/&gt;&gt;'</code>)</p>
+</li><li>
+<p>:output option has been removed - use :&lt;format&gt; =&gt; :&lt;file&gt;</p>
+</li><li>
+<p>:file option has been removed - use :&lt;format&gt; =&gt; :&lt;file&gt;</p>
+</li><li>
+<p>Add <a href="GraphViz.html#method-i-to_s">GraphViz#to_s</a></p>
+</li><li>
+<p>Add <a href="GraphViz.html#method-i-add">GraphViz#add</a> (see sample59.rb)</p>
+</li><li>
+<p><a href="GraphViz/XML.html#method-i-output">GraphViz::XML#output</a> is
+deprecated, use <a
+href="GraphViz/XML.html#attribute-i-graph">GraphViz::XML#graph</a>.output</p>
+</li><li>
+<p>Issue #22 : Error when generating a graph with an ID containing a space.</p>
+</li></ul>
+
+<h2 id="label-0.9.21+%3A">0.9.21 :</h2>
+<ul><li>
+<p>Add attributes “label_scheme” and “rotation”</p>
+</li><li>
+<p>Add missing options :</p>
+<ul><li>
+<p><code>:scale =&gt; v</code> : Scale input by 'v' (=72)</p>
+</li><li>
+<p><code>:inverty =&gt; [true|false]</code> : Invert y coordinate in output</p>
+</li><li>
+<p><code>:no_layout =&gt; v</code> : No layout mode 'v' (=1) -- neato only</p>
+</li><li>
+<p><code>:reduce =&gt; [true|false]</code> : Reduce graph -- neato only</p>
+</li><li>
+<p><code>:Lg =&gt; [true|false]</code> : Don't use grid -- fdp only</p>
+</li><li>
+<p><code>:LO =&gt; [true|false]</code> : Use old attractive force -- fdp only</p>
+</li><li>
+<p><code>:Ln =&gt; i</code> : Set number of iterations to i -- fdp only</p>
+</li><li>
+<p><code>:LU =&gt; i</code> : Set unscaled factor to i -- fdp only</p>
+</li><li>
+<p><code>:LC =&gt; v</code> : Set overlap expansion factor to v -- fdp only</p>
+</li><li>
+<p><code>:LT =&gt; [*]v</code> : Set temperature (temperature factor) to v --
+fdp only</p>
+</li></ul>
+</li></ul>
+
+<h2 id="label-0.9.20+%3A">0.9.20 :</h2>
+<ul><li>
+<p>Add <a
+href="GraphViz.html#method-i-each_attribut">GraphViz#each_attribut</a>,
+Node#each_attribut and Edge#each_attribut</p>
+</li><li>
+<p>Bugs corrections in tests (by oupo)</p>
+</li><li>
+<p>Major bug correction in <a
+href="GraphViz.html#method-i-output">GraphViz#output</a> for subgraphs</p>
+</li><li>
+<p>Update GraphViz.escape</p>
+</li></ul>
+
+<h2 id="label-0.9.19+%3A">0.9.19 :</h2>
+<ul><li>
+<p>Add strict digraph support (by Jonas Elfström) (see sample58.rb)</p>
+
+<pre class="ruby"><span class="ruby-identifier">g</span> = <span class="ruby-constant">GraphViz</span>.<span class="ruby-identifier">new</span>(:<span class="ruby-constant">G</span>, :<span class="ruby-identifier">type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;strict digraph&quot;</span>)
+<span class="ruby-comment"># or </span>
+<span class="ruby-identifier">g</span> = <span class="ruby-constant">GraphViz</span>.<span class="ruby-identifier">new</span>(:<span class="ruby-constant">G</span>, :<span class="ruby-identifier">type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;digraph&quot;</span>, :<span class="ruby-identifier">strict</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>)
+<span class="ruby-comment"># or </span>
+<span class="ruby-identifier">g</span> = <span class="ruby-constant">GraphViz</span>.<span class="ruby-identifier">digraph</span>(:<span class="ruby-constant">G</span>, :<span class="ruby-identifier">strict</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>)
+<span class="ruby-comment"># or </span>
+<span class="ruby-identifier">g</span> = <span class="ruby-constant">GraphViz</span>.<span class="ruby-identifier">strict_digraph</span>(:<span class="ruby-constant">G</span>)
+</pre>
+</li><li>
+<p>Add <a href="GraphViz.html#method-i-root_graph">GraphViz#root_graph</a>,
+Node#root_graph, Edge#root_graph</p>
+</li><li>
+<p>The GraphML parser now accept a graphml file or string</p>
+</li></ul>
+
+<h2 id="label-0.9.18+%3A">0.9.18 :</h2>
+<ul><li>
+<p>JRuby bug correction (by Nigel Thorne)</p>
+</li><li>
+<p>Fix autoload problem for Rubinius (by Rolf Timmermans)</p>
+</li><li>
+<p>Bugs corrections</p>
+</li></ul>
+
+<h2 id="label-0.9.17+%3A">0.9.17 :</h2>
+<ul><li>
+<p><a href="GraphViz/Edge.html#method-i-node_one">GraphViz::Edge#node_one</a>
+and <a
+href="GraphViz/Edge.html#method-i-node_one">GraphViz::Edge#node_one</a> now
+have un optional parameter to indicate if you want to (or not) get the port
+in the name (default: true)</p>
+</li><li>
+<p><a href="GraphViz.html#method-i-each_node">GraphViz#each_node</a> now
+returns the <a href="Hash.html">Hash</a> of nodes if there is no block
+given.</p>
+</li><li>
+<p><a href="GraphViz.html#method-i-each_edge">GraphViz#each_edge</a> now
+returns the list of edges if there is no block given.</p>
+</li><li>
+<p><a href="GraphViz.html#method-i-each_graph">GraphViz#each_graph</a> now
+returns the <a href="Hash.html">Hash</a> of graphs if there is no block
+given.</p>
+</li><li>
+<p>Add <a href="GraphViz/Node.html#method-i-index">GraphViz::Node#index</a> :
+return the node index</p>
+</li><li>
+<p>Add <a href="GraphViz/Edge.html#method-i-index">GraphViz::Edge#index</a> :
+return the edge index</p>
+</li><li>
+<p>Add <a href="GraphViz.html#method-i-type">GraphViz#type</a> : return the
+graph type (graph or digraph)</p>
+</li><li>
+<p>Add <a
+href="GraphViz.html#method-i-get_edge_at_index">GraphViz#get_edge_at_index</a>
+and <a
+href="GraphViz.html#method-i-get_node_at_index">GraphViz#get_node_at_index</a></p>
+</li><li>
+<p>Add GvDouble</p>
+</li><li>
+<p>Add <a href="GraphViz/Theory.html">GraphViz::Theory</a> (see
+examples/theory/tests.rb)</p>
+</li><li>
+<p>Add <a href="http://graphml.graphdrawing.org/">GraphML</a> support (see
+sample57.rb)</p>
+</li><li>
+<p>fixed “edge attribut ‘to_ary’ invalid” on mri 1.9.2 (by Stefan Huber)</p>
+</li></ul>
+
+<h2 id="label-0.9.16+%3A">0.9.16 :</h2>
+<ul><li>
+<p>Add <code>xml2gv</code></p>
+</li><li>
+<p>Rename <code>GraphViz.parser2</code> to <code>GraphViz.parser</code></p>
+</li><li>
+<p>Remove treetop dependency</p>
+</li><li>
+<p>Ruby 1.9 (and MacRuby) compatibility – Issue #12: see sample38.rb</p>
+</li><li>
+<p>Add <a href="GraphViz/Attrs.html#method-i-each">GraphViz::Attrs#each</a>
+and <a href="GraphViz/Attrs.html#method-i-to_h">GraphViz::Attrs#to_h</a></p>
+</li><li>
+<p>Add <a
+href="GraphViz/Edge.html#method-i-node_one">GraphViz::Edge#node_one</a> and
+<a href="GraphViz/Edge.html#method-i-node_two">GraphViz::Edge#node_two</a></p>
+</li></ul>
+
+<h2 id="label-0.9.15+%3A">0.9.15 :</h2>
+<ul><li>
+<p>Add <code>GraphViz.parser2</code>. <strong>WARNING</strong> this method
+will replace <code>GraphViz.parser</code>. So please don’t use it, or only
+for testing.</p>
+</li><li>
+<p>Bug correction in <code>dot2ruby</code></p>
+</li><li>
+<p>Add <code>--output-format</code> option to <code>dot2ruby</code></p>
+</li><li>
+<p>Add <code>git2gv</code></p>
+</li><li>
+<p>Issue #16 : escape graph ID</p>
+</li></ul>
+
+<h2 id="label-0.9.14+%3A">0.9.14 :</h2>
+<ul><li>
+<p>Add dot2ruby script</p>
+</li><li>
+<p>Remove NULL character in the DOT script</p>
+</li><li>
+<p><strong>WARNING</strong> : FamilyTree is (still) broken in this version !</p>
+</li></ul>
+
+<h2 id="label-0.9.13+%3A">0.9.13 :</h2>
+<ul><li>
+<p>Add dot2ruby.g</p>
+</li><li>
+<p>Bug correction with HTML label</p>
+</li><li>
+<p>The html attribut is deprecated. You can use the label attribut, as dot do
+it : <code>:label =&gt; '&lt;&lt;html/&gt;&gt;'</code></p>
+</li><li>
+<p>Issue #15 : Thin server</p>
+</li><li>
+<p><strong>WARNING</strong> : FamilyTree is (still) broken in this version !</p>
+</li></ul>
+
+<h2 id="label-0.9.12+%3A">0.9.12 :</h2>
+<ul><li>
+<p>GraphViz::Node#name is deprecated, you must use <a
+href="GraphViz/Node.html#method-i-id">GraphViz::Node#id</a> (issue #14)</p>
+</li><li>
+<p>Add :nothugly option to <a
+href="GraphViz.html#method-i-output">GraphViz#output</a> (see sample41.rb
+and <a
+href="http://www.hokstad.com/making-graphviz-output-pretty-with-xsl.html">www.hokstad.com/making-graphviz-output-pretty-with-xsl.html</a>)</p>
+</li><li>
+<p>Issue #13 : you must now specify a port in <a
+href="GraphViz/Edge.html#method-c-new">GraphViz::Edge.new</a> with a syntax
+like this :</p>
+
+<pre class="ruby"><span class="ruby-constant">GraphViz</span><span class="ruby-operator">::</span><span class="ruby-constant">Edge</span>.<span class="ruby-identifier">new</span>( {<span class="ruby-identifier">nodeOne</span> =<span class="ruby-operator">&gt;</span> :<span class="ruby-identifier">port</span>}, {<span class="ruby-identifier">nodeTwo</span> =<span class="ruby-operator">&gt;</span> :<span class="ruby-identifier">other</span>} )
+</pre>
+</li><li>
+<p>Issue #12 : UTF8 support (see sample38.rb)</p>
+</li><li>
+<p>Move and rename examples + remove <a href="http://sh|bat">maketest.</a></p>
+</li><li>
+<p><strong>WARNING</strong> : FamilyTree is broken in this version !</p>
+</li></ul>
+
+<h2 id="label-0.9.11+%3A">0.9.11 :</h2>
+<ul><li>
+<p>Issue #11 : Cygwin PATH</p>
+</li><li>
+<p>Major bugs correction in output</p>
+</li><li>
+<p>Bug correction in find_executable</p>
+</li><li>
+<p>Add tests (by Chip Malice : <a
+href="http://github.com/hipe">github.com/hipe</a>)</p>
+</li></ul>
+
+<h2 id="label-0.9.10+%3A">0.9.10 :</h2>
+<ul><li>
+<p>Move ChangeLog in <a href="README_rdoc.html">README</a></p>
+</li><li>
+<p>Add <a href="GraphViz/FamilyTree.html">GraphViz::FamilyTree</a> (alpha).
+See examples/sample33.rb</p>
+</li><li>
+<p>Major bugs corrections in GraphViz::Parser</p>
+</li><li>
+<p>Issue #10 : Anonymous graph (see Subgraphs and Clusters at <a
+href="http://www.graphviz.org/doc/info/lang.html">www.graphviz.org/doc/info/lang.html</a>).
+See examples/sample34.rb</p>
+</li><li>
+<p><a href="GraphViz.html#method-i-add_graph">GraphViz#add_graph</a> can now
+take a block parameter. See example/sample34.rb</p>
+</li><li>
+<p>Add <a href="Object.html#method-i-digraph">Object#digraph</a> and <a
+href="GraphViz.html#attribute-i-graph">GraphViz#graph</a> (same as <a
+href="GraphViz.html#method-c-new">GraphViz.new</a>( …, :type =&gt;
+“digraph” ) and <a href="GraphViz.html#method-c-new">GraphViz.new</a>( …,
+:type =&gt; “graph” )). See examples/sample35.rb</p>
+</li><li>
+<p>Add <a href="GraphViz.html#method-i-subgraph">GraphViz#subgraph</a>. See
+examples/sample35.rb</p>
+</li><li>
+<p>GraphViz::Parser support anonymous graph</p>
+</li><li>
+<p>Add lage node example. See examples/sample36.rb</p>
+</li></ul>
+
+<h2 id="label-0.9.9+%3A">0.9.9 :</h2>
+<ul><li>
+<p>Add graph as an accessor to allow you to set global graph attributs (like
+edge and node)</p>
+</li><li>
+<p>Add each_node, each_edge, each_graph (thanks to @metellius) and graph_count</p>
+</li><li>
+<p>Issue #9 (partial) - Solution : by default, a node will have his label set
+with the node ID)</p>
+</li></ul>
+
+<h2 id="label-0.9.8+%3A">0.9.8 :</h2>
+<ul><li>
+<p>Update graph and node posibility to set properties (see sample28.rb)</p>
+</li><li>
+<p>Issue #7: Path option is never being used to find the executable</p>
+</li><li>
+<p>Adding classes to check if the attributes are in the correct type</p>
+</li><li>
+<p>Issue #8: dots in href are escaped with backslash, which corrupts the URL
+(see sample29.rb)</p>
+</li><li>
+<p>Add posibility to use external libraries (see sample30.rb)</p>
+</li><li>
+<p>Add options -u and -s to ruby2gv</p>
+</li><li>
+<p>Add gem2gv</p>
+</li></ul>
+
+<h2 id="label-0.9.7+%3A">0.9.7 :</h2>
+<ul><li>
+<p>Issue #2: Small bug correction in escape_path_containing_blanks (by Andreas
+Ronge)</p>
+</li><li>
+<p>Issue #4: New find_executable (by reactive)</p>
+</li><li>
+<p>Issue #3: Tempfiles created in current working directory only in Windows</p>
+</li><li>
+<p>Issue #6: Respect “none” format in output options hash and respect <a
+href="String.html">String</a> output-filename when the “none” format is
+selected. See examples/sample27.rb (by Dave Burt)</p>
+</li></ul>
+
+<h2 id="label-0.9.6+%3A">0.9.6 :</h2>
+<ul><li>
+<p>jRuby support (by obruening)</p>
+</li><li>
+<p>Issue #1 : STDOUT in binmode</p>
+</li></ul>
+
+<h2 id="label-0.9.5+%3A">0.9.5 :</h2>
+<ul><li>
+<p>Remove ‘mkmf’ dependency</p>
+</li><li>
+<p>GraphViz::Edge#[] modification</p>
+</li><li>
+<p>Small correction to escape the dot (‘.’) character (by Miguel Cabrera)</p>
+</li></ul>
+
+<h2 id="label-0.9.4+%3A">0.9.4 :</h2>
+<ul><li>
+<p>Escape nodes and edges attributs</p>
+</li><li>
+<p>GraphViz::escape corrections (by Dave Burt)</p>
+</li><li>
+<p>Add :errors option to set level of message suppression (default : suppress
+warning messages)</p>
+</li></ul>
+
+<h2 id="label-0.9.3+%3A">0.9.3 :</h2>
+<ul><li>
+<p>Minor bug correction for Windows</p>
+</li><li>
+<p>Use Open3.popen3 if installed, else use IO.popen (by Dave Burt)</p>
+</li><li>
+<p>Add ‘-’, ‘&gt;’ and ‘&gt;&gt;’ has aliases of ‘&lt;&lt;’ to create an edge.</p>
+</li></ul>
+
+<h2 id="label-0.9.2+%3A">0.9.2 :</h2>
+<ul><li>
+<p>Escape nodes (by Dave Burt)</p>
+</li><li>
+<p>Handle errors from graphviz command (by Dave Burt)</p>
+</li><li>
+<p>Output as string (if <a href="String.html">String</a> class is passed as
+file i.e. output(:pdf =&gt; <a href="String.html">String</a>)) (by Dave
+Burt)</p>
+</li></ul>
+
+<h2 id="label-0.9.1+%3A">0.9.1 :</h2>
+<ul><li>
+<p>Bugs corrections</p>
+</li><li>
+<p>Add the ability to create edge like that : node1 &lt;&lt; node2 &lt;&lt;
+node3 …</p>
+</li><li>
+<p>Complete <a href="README_rdoc.html">README</a></p>
+</li><li>
+<p>Add a DOT parser. This parser has a lot of limitations. So don’t use it in
+a production context !</p>
+</li><li>
+<p>:output and :file options are deprecated, please use :&lt;format&gt; =&gt;
+:&lt;file&gt;</p>
+</li><li>
+<p>You can now specify multiple outputs via :&lt;format&gt; =&gt;
+:&lt;file&gt; (see sample 22).</p>
+</li></ul>
+
+<h2 id="label-0.9.0+%3A">0.9.0 :</h2>
+<ul><li>
+<p>Add fdp example (sample 15)</p>
+</li><li>
+<p>Add edge between cluster and node and cluster and cluster support</p>
+</li><li>
+<p><a href="GraphViz.html#method-i-add_node">GraphViz#add_node</a> now support
+array (sample 16)</p>
+</li><li>
+<p>Bug correction in <a
+href="GraphViz.html#method-i-output">GraphViz#output</a> (sample 19)</p>
+</li><li>
+<p>Add GraphViz#default to set default options (:use, :path and :output)</p>
+</li><li>
+<p>Add possibility to set node or edge attribut via :</p>
+
+<pre>node.&lt;attribut&gt;=&lt;value&gt; or node.&lt;attribut&gt;( &lt;value&gt; )
+edge.&lt;attribut&gt;=&lt;value&gt; or edge.&lt;attribut&gt;( &lt;value&gt; )</pre>
+</li><li>
+<p>Add <a href="GraphViz/Edge.html#method-i-set">GraphViz::Edge#set</a> and <a
+href="GraphViz/Node.html#method-i-set">GraphViz::Node#set</a></p>
+</li><li>
+<p>Add sample 20</p>
+</li><li>
+<p>Add <a href="GraphViz.html#method-i-node_count">GraphViz#node_count</a> and
+<a href="GraphViz.html#method-i-edge_count">GraphViz#edge_count</a> by
+Daniel Cadenas Nión</p>
+</li></ul>
+
+<h2 id="label-0.8.2+%3A+">0.8.2 : </h2>
+<ul><li>
+<p>Update Node, Edge and Graph Attributes (see <a
+href="http://www.graphviz.org/doc/info/attrs.html">www.graphviz.org/doc/info/attrs.html</a>)</p>
+</li><li>
+<p>Bugs corrections</p>
+</li></ul>
+
+<h2 id="label-0.8.1+%3A">0.8.1 :</h2>
+<ul><li>
+<p>Documentation</p>
+</li></ul>
+
+<h2 id="label-0.8.0+%3A">0.8.0 :</h2>
+<ul><li>
+<p>Add all the features of the current graphviz version</p>
+</li></ul>
+
+<h2 id="label-0.7.0+%3A">0.7.0 :</h2>
+<ul><li>
+<p>Add option “path” to output</p>
+</li></ul>
+
+<h2 id="label-0.6.0+%3A">0.6.0 :</h2>
+<ul><li>
+<p>Add undirected graph support</p>
+</li></ul>
+
+<h2 id="label-0.5.0+%3A">0.5.0 :</h2>
+<ul><li>
+<p>Preserve the original order of creation of nodes and edges</p>
+</li></ul>
+
+<h2 id="label-0.4.0+%3A">0.4.0 :</h2>
+<ul><li>
+<p>Add HTML-Labels</p>
+</li></ul>
+
+<h2 id="label-0.3.0+%3A">0.3.0 :</h2>
+<ul><li>
+<p>Bugs corrections</p>
+</li></ul>
+
+<h2 id="label-0.2.0+%3A">0.2.0 :</h2>
+<ul><li>
+<p>Pure ruby</p>
+</li></ul>
+
+<h2 id="label-0.1.0+%3A">0.1.0 :</h2>
+<ul><li>
+<p>Initial version</p>
+</li></ul>
+
+</div>
+
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

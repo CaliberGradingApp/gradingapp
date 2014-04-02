@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"warn_on_default:EFI""SexpProcessor#warn_on_default;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"AEmit a warning when the method in #default_method is called.;T:
+@fileI"lib/sexp_processor.rb;TF@

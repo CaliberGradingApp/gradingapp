@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class ParallelEach - minitest-4.7.5 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/minitest/parallel_each.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="Object.html">Object</a>
+  
+</nav>
+
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><span class="include">Enumerable</span>
+  
+  
+  </ul>
+</nav>
+
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-count">#count</a>
+    
+    <li><a href="#method-i-each">#each</a>
+    
+    <li><a href="#method-i-size">#size</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./History_txt.html">History</a>
+  
+    <li class="file"><a href="./Manifest_txt.html">Manifest</a>
+  
+    <li class="file"><a href="./README_txt.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./MiniTest.html">MiniTest</a>
+  
+    <li><a href="./MiniTest/Assertion.html">MiniTest::Assertion</a>
+  
+    <li><a href="./MiniTest/Assertions.html">MiniTest::Assertions</a>
+  
+    <li><a href="./MiniTest/Expectations.html">MiniTest::Expectations</a>
+  
+    <li><a href="./MiniTest/Mock.html">MiniTest::Mock</a>
+  
+    <li><a href="./MiniTest/Skip.html">MiniTest::Skip</a>
+  
+    <li><a href="./MiniTest/Spec.html">MiniTest::Spec</a>
+  
+    <li><a href="./MiniTest/Spec/DSL.html">MiniTest::Spec::DSL</a>
+  
+    <li><a href="./MiniTest/Unit.html">MiniTest::Unit</a>
+  
+    <li><a href="./MiniTest/Unit/Guard.html">MiniTest::Unit::Guard</a>
+  
+    <li><a href="./MiniTest/Unit/LifecycleHooks.html">MiniTest::Unit::LifecycleHooks</a>
+  
+    <li><a href="./MiniTest/Unit/TestCase.html">MiniTest::Unit::TestCase</a>
+  
+    <li><a href="./Minitest.html">Minitest</a>
+  
+    <li><a href="./Minitest/Unit.html">Minitest::Unit</a>
+  
+    <li><a href="./Minitest/Unit/TestCase.html">Minitest::Unit::TestCase</a>
+  
+    <li><a href="./MockExpectationError.html">MockExpectationError</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./ParallelEach.html">ParallelEach</a>
+  
+    <li><a href="./PrideIO.html">PrideIO</a>
+  
+    <li><a href="./PrideLOL.html">PrideLOL</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class ParallelEach</h1>
+
+  <div id="description" class="description">
+    
+<p>Provides a parallel <a href="ParallelEach.html#method-i-each">each</a> that
+lets you enumerate using <a href="ParallelEach.html#N">N</a> threads. Use
+environment variable <a href="ParallelEach.html#N">N</a> to customize.
+Defaults to 2. Enumerable, so all the goodies come along (tho not all are
+wrapped yet to return another <a href="ParallelEach.html">ParallelEach</a>
+instance).</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="N">N
+        
+        <dd class="description"><p>How many Threads to use for this parallel <a
+href="ParallelEach.html#method-i-each">each</a>.</p>
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(list)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Create a new <a href="ParallelEach.html">ParallelEach</a> instance over
+<code>list</code>.</p>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/minitest/parallel_each.rb, line 19</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span> <span class="ruby-identifier">list</span>
+  <span class="ruby-ivar">@queue</span> = <span class="ruby-constant">Queue</span>.<span class="ruby-identifier">new</span> <span class="ruby-comment"># *sigh*... the Queue api sucks sooo much...</span>
+
+  <span class="ruby-identifier">list</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-ivar">@queue</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">i</span> }
+  <span class="ruby-constant">N</span>.<span class="ruby-identifier">times</span> { <span class="ruby-ivar">@queue</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">nil</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-count" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">count</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="count-source">
+            <pre><span class="ruby-comment"># File lib/minitest/parallel_each.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">count</span>
+  [<span class="ruby-ivar">@queue</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-constant">N</span>, <span class="ruby-value">0</span>].<span class="ruby-identifier">max</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- count-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="ParallelEach.html#method-i-size">size</a>
+        </div>
+        
+
+        
+      </div><!-- count-method -->
+
+    
+      <div id="method-i-each" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">each</span><span
+            class="method-args">() { |job| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Starts <a href="ParallelEach.html#N">N</a> threads that yield each element
+to your block. Joins the threads at the end.</p>
+          
+
+          
+          <div class="method-source-code" id="each-source">
+            <pre><span class="ruby-comment"># File lib/minitest/parallel_each.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">each</span>
+  <span class="ruby-identifier">threads</span> = <span class="ruby-constant">N</span>.<span class="ruby-identifier">times</span>.<span class="ruby-identifier">map</span> {
+    <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>.<span class="ruby-identifier">abort_on_exception</span> = <span class="ruby-keyword">true</span>
+      <span class="ruby-keyword">while</span> <span class="ruby-identifier">job</span> = <span class="ruby-ivar">@queue</span>.<span class="ruby-identifier">pop</span>
+        <span class="ruby-keyword">yield</span> <span class="ruby-identifier">job</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  }
+  <span class="ruby-identifier">threads</span>.<span class="ruby-identifier">map</span>(&amp;<span class="ruby-value">:join</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- each-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- each-method -->
+
+    
+      <div id="method-i-size" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">size</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="ParallelEach.html#method-i-count">count</a>
+        </div>
+        
+      </div><!-- size-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

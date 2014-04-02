@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"neighbors:EFI"GraphViz::Node#neighbors;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"lList of nodes that are directly accessible from given node (in a directed graph neighbors == incidents);T:
+@fileI"lib/graphviz/node.rb;TF@

@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Cucumber::PySupport::PyLanguage - cucumber-1.3.8 Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/cucumber/py_support/py_language.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="../../Object.html">Object</a>
+  
+</nav>
+
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><a class="include" href="../LanguageSupport/LanguageMethods.html">Cucumber::LanguageSupport::LanguageMethods</a>
+  
+  
+  </ul>
+</nav>
+
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-alias_adverbs">#alias_adverbs</a>
+    
+    <li><a href="#method-i-begin_scenario">#begin_scenario</a>
+    
+    <li><a href="#method-i-end_scenario">#end_scenario</a>
+    
+    <li><a href="#method-i-load_code_file">#load_code_file</a>
+    
+    <li><a href="#method-i-snippet_text">#snippet_text</a>
+    
+    <li><a href="#method-i-step_matches">#step_matches</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../lib/README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../Cucumber.html">Cucumber</a>
+  
+    <li><a href="../../Cucumber/Ambiguous.html">Cucumber::Ambiguous</a>
+  
+    <li><a href="../../Cucumber/ArityMismatchError.html">Cucumber::ArityMismatchError</a>
+  
+    <li><a href="../../Cucumber/Ast.html">Cucumber::Ast</a>
+  
+    <li><a href="../../Cucumber/Ast/EmptyBackground.html">Cucumber::Ast::EmptyBackground</a>
+  
+    <li><a href="../../Cucumber/Ast/HasLocation.html">Cucumber::Ast::HasLocation</a>
+  
+    <li><a href="../../Cucumber/Ast/Location.html">Cucumber::Ast::Location</a>
+  
+    <li><a href="../../Cucumber/Ast/MultilineArgument.html">Cucumber::Ast::MultilineArgument</a>
+  
+    <li><a href="../../Cucumber/Ast/Names.html">Cucumber::Ast::Names</a>
+  
+    <li><a href="../../Cucumber/Ast/OutlineTable.html">Cucumber::Ast::OutlineTable</a>
+  
+    <li><a href="../../Cucumber/Ast/OutlineTable/ExampleRow.html">Cucumber::Ast::OutlineTable::ExampleRow</a>
+  
+    <li><a href="../../Cucumber/Ast/OutlineTable/ExampleRow/InvalidForHeaderRowError.html">Cucumber::Ast::OutlineTable::ExampleRow::InvalidForHeaderRowError</a>
+  
+    <li><a href="../../Cucumber/Ast/Table.html">Cucumber::Ast::Table</a>
+  
+    <li><a href="../../Cucumber/Ast/Table/Builder.html">Cucumber::Ast::Table::Builder</a>
+  
+    <li><a href="../../Cucumber/Ast/Table/Different.html">Cucumber::Ast::Table::Different</a>
+  
+    <li><a href="../../Cucumber/Ast/TreeWalker.html">Cucumber::Ast::TreeWalker</a>
+  
+    <li><a href="../../Cucumber/Ast/Visitor.html">Cucumber::Ast::Visitor</a>
+  
+    <li><a href="../../Cucumber/Cli.html">Cucumber::Cli</a>
+  
+    <li><a href="../../Cucumber/Cli/Configuration.html">Cucumber::Cli::Configuration</a>
+  
+    <li><a href="../../Cucumber/Cli/Configuration/LogFormatter.html">Cucumber::Cli::Configuration::LogFormatter</a>
+  
+    <li><a href="../../Cucumber/Cli/DRbClient.html">Cucumber::Cli::DRbClient</a>
+  
+    <li><a href="../../Cucumber/Cli/DRbClientError.html">Cucumber::Cli::DRbClientError</a>
+  
+    <li><a href="../../Cucumber/Cli/Main.html">Cucumber::Cli::Main</a>
+  
+    <li><a href="../../Cucumber/Cli/Options.html">Cucumber::Cli::Options</a>
+  
+    <li><a href="../../Cucumber/Cli/ProfileLoader.html">Cucumber::Cli::ProfileLoader</a>
+  
+    <li><a href="../../Cucumber/Cli/ProfileNotFound.html">Cucumber::Cli::ProfileNotFound</a>
+  
+    <li><a href="../../Cucumber/Cli/ProfilesNotDefinedError.html">Cucumber::Cli::ProfilesNotDefinedError</a>
+  
+    <li><a href="../../Cucumber/Cli/YmlLoadError.html">Cucumber::Cli::YmlLoadError</a>
+  
+    <li><a href="../../Cucumber/Configuration.html">Cucumber::Configuration</a>
+  
+    <li><a href="../../Cucumber/FeatureFile.html">Cucumber::FeatureFile</a>
+  
+    <li><a href="../../Cucumber/Formatter.html">Cucumber::Formatter</a>
+  
+    <li><a href="../../Cucumber/Formatter/ANSIColor.html">Cucumber::Formatter::ANSIColor</a>
+  
+    <li><a href="../../Cucumber/Formatter/Console.html">Cucumber::Formatter::Console</a>
+  
+    <li><a href="../../Cucumber/Formatter/Debug.html">Cucumber::Formatter::Debug</a>
+  
+    <li><a href="../../Cucumber/Formatter/Duration.html">Cucumber::Formatter::Duration</a>
+  
+    <li><a href="../../Cucumber/Formatter/GherkinFormatterAdapter.html">Cucumber::Formatter::GherkinFormatterAdapter</a>
+  
+    <li><a href="../../Cucumber/Formatter/Gpretty.html">Cucumber::Formatter::Gpretty</a>
+  
+    <li><a href="../../Cucumber/Formatter/Html.html">Cucumber::Formatter::Html</a>
+  
+    <li><a href="../../Cucumber/Formatter/Html/SnippetExtractor.html">Cucumber::Formatter::Html::SnippetExtractor</a>
+  
+    <li><a href="../../Cucumber/Formatter/Html/SnippetExtractor/NullConverter.html">Cucumber::Formatter::Html::SnippetExtractor::NullConverter</a>
+  
+    <li><a href="../../Cucumber/Formatter/Interceptor.html">Cucumber::Formatter::Interceptor</a>
+  
+    <li><a href="../../Cucumber/Formatter/Interceptor/Pipe.html">Cucumber::Formatter::Interceptor::Pipe</a>
+  
+    <li><a href="../../Cucumber/Formatter/Io.html">Cucumber::Formatter::Io</a>
+  
+    <li><a href="../../Cucumber/Formatter/Json.html">Cucumber::Formatter::Json</a>
+  
+    <li><a href="../../Cucumber/Formatter/JsonPretty.html">Cucumber::Formatter::JsonPretty</a>
+  
+    <li><a href="../../Cucumber/Formatter/Junit.html">Cucumber::Formatter::Junit</a>
+  
+    <li><a href="../../Cucumber/Formatter/Junit/UnNamedFeatureError.html">Cucumber::Formatter::Junit::UnNamedFeatureError</a>
+  
+    <li><a href="../../Cucumber/Formatter/Pretty.html">Cucumber::Formatter::Pretty</a>
+  
+    <li><a href="../../Cucumber/Formatter/Progress.html">Cucumber::Formatter::Progress</a>
+  
+    <li><a href="../../Cucumber/Formatter/Rerun.html">Cucumber::Formatter::Rerun</a>
+  
+    <li><a href="../../Cucumber/Formatter/Stepdefs.html">Cucumber::Formatter::Stepdefs</a>
+  
+    <li><a href="../../Cucumber/Formatter/Steps.html">Cucumber::Formatter::Steps</a>
+  
+    <li><a href="../../Cucumber/Formatter/Summary.html">Cucumber::Formatter::Summary</a>
+  
+    <li><a href="../../Cucumber/Formatter/Usage.html">Cucumber::Formatter::Usage</a>
+  
+    <li><a href="../../Cucumber/Formatter/Usage/StepDefKey.html">Cucumber::Formatter::Usage::StepDefKey</a>
+  
+    <li><a href="../../Cucumber/JsSupport.html">Cucumber::JsSupport</a>
+  
+    <li><a href="../../Cucumber/JsSupport/JsArg.html">Cucumber::JsSupport::JsArg</a>
+  
+    <li><a href="../../Cucumber/JsSupport/JsHook.html">Cucumber::JsSupport::JsHook</a>
+  
+    <li><a href="../../Cucumber/JsSupport/JsLanguage.html">Cucumber::JsSupport::JsLanguage</a>
+  
+    <li><a href="../../Cucumber/JsSupport/JsSnippets.html">Cucumber::JsSupport::JsSnippets</a>
+  
+    <li><a href="../../Cucumber/JsSupport/JsStepDefinition.html">Cucumber::JsSupport::JsStepDefinition</a>
+  
+    <li><a href="../../Cucumber/JsSupport/JsTransform.html">Cucumber::JsSupport::JsTransform</a>
+  
+    <li><a href="../../Cucumber/JsSupport/JsWorld.html">Cucumber::JsSupport::JsWorld</a>
+  
+    <li><a href="../../Cucumber/LanguageSupport.html">Cucumber::LanguageSupport</a>
+  
+    <li><a href="../../Cucumber/LanguageSupport/LanguageMethods.html">Cucumber::LanguageSupport::LanguageMethods</a>
+  
+    <li><a href="../../Cucumber/LoadPath.html">Cucumber::LoadPath</a>
+  
+    <li><a href="../../Cucumber/Parser.html">Cucumber::Parser</a>
+  
+    <li><a href="../../Cucumber/Parser/GherkinBuilder.html">Cucumber::Parser::GherkinBuilder</a>
+  
+    <li><a href="../../Cucumber/Parser/GherkinBuilder/BackgroundBuilder.html">Cucumber::Parser::GherkinBuilder::BackgroundBuilder</a>
+  
+    <li><a href="../../Cucumber/Parser/GherkinBuilder/Builder.html">Cucumber::Parser::GherkinBuilder::Builder</a>
+  
+    <li><a href="../../Cucumber/Parser/GherkinBuilder/FeatureBuilder.html">Cucumber::Parser::GherkinBuilder::FeatureBuilder</a>
+  
+    <li><a href="../../Cucumber/Parser/GherkinBuilder/ScenarioBuilder.html">Cucumber::Parser::GherkinBuilder::ScenarioBuilder</a>
+  
+    <li><a href="../../Cucumber/Parser/GherkinBuilder/ScenarioOutlineBuilder.html">Cucumber::Parser::GherkinBuilder::ScenarioOutlineBuilder</a>
+  
+    <li><a href="../../Cucumber/Parser/GherkinBuilder/StepBuilder.html">Cucumber::Parser::GherkinBuilder::StepBuilder</a>
+  
+    <li><a href="../../Cucumber/Pending.html">Cucumber::Pending</a>
+  
+    <li><a href="../../Cucumber/PySupport.html">Cucumber::PySupport</a>
+  
+    <li><a href="../../Cucumber/PySupport/PyLanguage.html">Cucumber::PySupport::PyLanguage</a>
+  
+    <li><a href="../../Cucumber/Rake.html">Cucumber::Rake</a>
+  
+    <li><a href="../../Cucumber/Rake/Task.html">Cucumber::Rake::Task</a>
+  
+    <li><a href="../../Cucumber/RbSupport.html">Cucumber::RbSupport</a>
+  
+    <li><a href="../../Cucumber/RbSupport/MultipleWorld.html">Cucumber::RbSupport::MultipleWorld</a>
+  
+    <li><a href="../../Cucumber/RbSupport/NilWorld.html">Cucumber::RbSupport::NilWorld</a>
+  
+    <li><a href="../../Cucumber/RbSupport/RbDsl.html">Cucumber::RbSupport::RbDsl</a>
+  
+    <li><a href="../../Cucumber/RbSupport/RbHook.html">Cucumber::RbSupport::RbHook</a>
+  
+    <li><a href="../../Cucumber/RbSupport/RbLanguage.html">Cucumber::RbSupport::RbLanguage</a>
+  
+    <li><a href="../../Cucumber/RbSupport/RbStepDefinition.html">Cucumber::RbSupport::RbStepDefinition</a>
+  
+    <li><a href="../../Cucumber/RbSupport/RbStepDefinition/MissingProc.html">Cucumber::RbSupport::RbStepDefinition::MissingProc</a>
+  
+    <li><a href="../../Cucumber/RbSupport/RbTransform.html">Cucumber::RbSupport::RbTransform</a>
+  
+    <li><a href="../../Cucumber/RbSupport/RbTransform/MissingProc.html">Cucumber::RbSupport::RbTransform::MissingProc</a>
+  
+    <li><a href="../../Cucumber/RbSupport/RbWorld.html">Cucumber::RbSupport::RbWorld</a>
+  
+    <li><a href="../../Cucumber/RbSupport/RegexpArgumentMatcher.html">Cucumber::RbSupport::RegexpArgumentMatcher</a>
+  
+    <li><a href="../../Cucumber/RbSupport/Snippet.html">Cucumber::RbSupport::Snippet</a>
+  
+    <li><a href="../../Cucumber/RbSupport/Snippet/BaseSnippet.html">Cucumber::RbSupport::Snippet::BaseSnippet</a>
+  
+    <li><a href="../../Cucumber/RbSupport/Snippet/Classic.html">Cucumber::RbSupport::Snippet::Classic</a>
+  
+    <li><a href="../../Cucumber/RbSupport/Snippet/Percent.html">Cucumber::RbSupport::Snippet::Percent</a>
+  
+    <li><a href="../../Cucumber/RbSupport/Snippet/Regexp.html">Cucumber::RbSupport::Snippet::Regexp</a>
+  
+    <li><a href="../../Cucumber/Runtime.html">Cucumber::Runtime</a>
+  
+    <li><a href="../../Cucumber/Runtime/FeaturesLoader.html">Cucumber::Runtime::FeaturesLoader</a>
+  
+    <li><a href="../../Cucumber/Runtime/ForProgrammingLanguages.html">Cucumber::Runtime::ForProgrammingLanguages</a>
+  
+    <li><a href="../../Cucumber/Runtime/Results.html">Cucumber::Runtime::Results</a>
+  
+    <li><a href="../../Cucumber/Runtime/SupportCode.html">Cucumber::Runtime::SupportCode</a>
+  
+    <li><a href="../../Cucumber/Runtime/SupportCode/StepInvoker.html">Cucumber::Runtime::SupportCode::StepInvoker</a>
+  
+    <li><a href="../../Cucumber/Runtime/UserInterface.html">Cucumber::Runtime::UserInterface</a>
+  
+    <li><a href="../../Cucumber/StepDefinitionLight.html">Cucumber::StepDefinitionLight</a>
+  
+    <li><a href="../../Cucumber/StepDefinitions.html">Cucumber::StepDefinitions</a>
+  
+    <li><a href="../../Cucumber/StepMother.html">Cucumber::StepMother</a>
+  
+    <li><a href="../../Cucumber/TagExcess.html">Cucumber::TagExcess</a>
+  
+    <li><a href="../../Cucumber/Term.html">Cucumber::Term</a>
+  
+    <li><a href="../../Cucumber/Term/ANSIColor.html">Cucumber::Term::ANSIColor</a>
+  
+    <li><a href="../../Cucumber/Undefined.html">Cucumber::Undefined</a>
+  
+    <li><a href="../../Cucumber/Unit.html">Cucumber::Unit</a>
+  
+    <li><a href="../../Cucumber/WireSupport.html">Cucumber::WireSupport</a>
+  
+    <li><a href="../../Cucumber/WireSupport/Configuration.html">Cucumber::WireSupport::Configuration</a>
+  
+    <li><a href="../../Cucumber/WireSupport/Connection.html">Cucumber::WireSupport::Connection</a>
+  
+    <li><a href="../../Cucumber/WireSupport/Connection/ConnectionError.html">Cucumber::WireSupport::Connection::ConnectionError</a>
+  
+    <li><a href="../../Cucumber/WireSupport/RequestHandler.html">Cucumber::WireSupport::RequestHandler</a>
+  
+    <li><a href="../../Cucumber/WireSupport/WireException.html">Cucumber::WireSupport::WireException</a>
+  
+    <li><a href="../../Cucumber/WireSupport/WireException/CanSetName.html">Cucumber::WireSupport::WireException::CanSetName</a>
+  
+    <li><a href="../../Cucumber/WireSupport/WireLanguage.html">Cucumber::WireSupport::WireLanguage</a>
+  
+    <li><a href="../../Cucumber/WireSupport/WirePacket.html">Cucumber::WireSupport::WirePacket</a>
+  
+    <li><a href="../../Cucumber/WireSupport/WireProtocol.html">Cucumber::WireSupport::WireProtocol</a>
+  
+    <li><a href="../../Cucumber/WireSupport/WireProtocol/Requests.html">Cucumber::WireSupport::WireProtocol::Requests</a>
+  
+    <li><a href="../../Cucumber/WireSupport/WireProtocol/Requests/BeginScenario.html">Cucumber::WireSupport::WireProtocol::Requests::BeginScenario</a>
+  
+    <li><a href="../../Cucumber/WireSupport/WireProtocol/Requests/DiffFailed.html">Cucumber::WireSupport::WireProtocol::Requests::DiffFailed</a>
+  
+    <li><a href="../../Cucumber/WireSupport/WireProtocol/Requests/DiffOk.html">Cucumber::WireSupport::WireProtocol::Requests::DiffOk</a>
+  
+    <li><a href="../../Cucumber/WireSupport/WireProtocol/Requests/EndScenario.html">Cucumber::WireSupport::WireProtocol::Requests::EndScenario</a>
+  
+    <li><a href="../../Cucumber/WireSupport/WireProtocol/Requests/Invoke.html">Cucumber::WireSupport::WireProtocol::Requests::Invoke</a>
+  
+    <li><a href="../../Cucumber/WireSupport/WireProtocol/Requests/SnippetText.html">Cucumber::WireSupport::WireProtocol::Requests::SnippetText</a>
+  
+    <li><a href="../../Cucumber/WireSupport/WireProtocol/Requests/StepMatches.html">Cucumber::WireSupport::WireProtocol::Requests::StepMatches</a>
+  
+    <li><a href="../../Cucumber/WireSupport/WireProtocol/Requests/Tags.html">Cucumber::WireSupport::WireProtocol::Requests::Tags</a>
+  
+    <li><a href="../../Cucumber/WireSupport/WireStepDefinition.html">Cucumber::WireSupport::WireStepDefinition</a>
+  
+    <li><a href="../../Autotest.html">Autotest</a>
+  
+    <li><a href="../../Autotest/Cucumber.html">Autotest::Cucumber</a>
+  
+    <li><a href="../../Autotest/CucumberMixin.html">Autotest::CucumberMixin</a>
+  
+    <li><a href="../../Autotest/CucumberRails.html">Autotest::CucumberRails</a>
+  
+    <li><a href="../../Autotest/CucumberRailsRspec.html">Autotest::CucumberRailsRspec</a>
+  
+    <li><a href="../../Autotest/CucumberRailsRspec2.html">Autotest::CucumberRailsRspec2</a>
+  
+    <li><a href="../../Autotest/CucumberRspec.html">Autotest::CucumberRspec</a>
+  
+    <li><a href="../../Autotest/CucumberRspec2.html">Autotest::CucumberRspec2</a>
+  
+    <li><a href="../../Spec.html">Spec</a>
+  
+    <li><a href="../../Spec/Runner.html">Spec::Runner</a>
+  
+    <li><a href="../../Spec/Runner/OptionParser.html">Spec::Runner::OptionParser</a>
+  
+    <li><a href="../../Spec/Runner/OptionParser/NEUTERED_RSPEC.html">Spec::Runner::OptionParser::NEUTERED_RSPEC</a>
+  
+    <li><a href="../../Object.html">Object</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Cucumber::PySupport::PyLanguage</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(runtime)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/cucumber/py_support/py_language.rb, line 8</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">runtime</span>)
+  <span class="ruby-ivar">@step_def_files</span> = []
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment"># @python_path = ENV['PYTHONPATH'] ? ENV['PYTHONPATH'].split(':') : []</span>
+  <span class="ruby-comment"># add_to_python_path(File.dirname(__FILE__))</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment"># RubyPython.start</span>
+  <span class="ruby-comment"># at_exit{RubyPython.stop}</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment"># import(File.dirname(__FILE__) + '/py_language.py')</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-alias_adverbs" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">alias_adverbs</span><span
+            class="method-args">(adverbs)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="alias_adverbs-source">
+            <pre><span class="ruby-comment"># File lib/cucumber/py_support/py_language.rb, line 24</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">alias_adverbs</span>(<span class="ruby-identifier">adverbs</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- alias_adverbs-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- alias_adverbs-method -->
+
+    
+      <div id="method-i-begin_scenario" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">begin_scenario</span><span
+            class="method-args">(scenario)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="begin_scenario-source">
+            <pre><span class="ruby-comment"># File lib/cucumber/py_support/py_language.rb, line 31</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">begin_scenario</span>(<span class="ruby-identifier">scenario</span>)
+  <span class="ruby-ivar">@python_path</span> = []
+  <span class="ruby-identifier">add_to_python_path</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-keyword">__FILE__</span>))
+  <span class="ruby-ivar">@step_def_files</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">add_to_python_path</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-identifier">f</span>)) }
+
+  <span class="ruby-constant">RubyPython</span>.<span class="ruby-identifier">start</span>
+
+  <span class="ruby-ivar">@delegate</span> = <span class="ruby-identifier">import</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-keyword">__FILE__</span>) <span class="ruby-operator">+</span> <span class="ruby-string">'/py_language.py'</span>)
+  <span class="ruby-ivar">@step_def_files</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">import</span>(<span class="ruby-identifier">f</span>) }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- begin_scenario-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- begin_scenario-method -->
+
+    
+      <div id="method-i-end_scenario" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">end_scenario</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="end_scenario-source">
+            <pre><span class="ruby-comment"># File lib/cucumber/py_support/py_language.rb, line 42</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">end_scenario</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- end_scenario-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- end_scenario-method -->
+
+    
+      <div id="method-i-load_code_file" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">load_code_file</span><span
+            class="method-args">(py_file)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="load_code_file-source">
+            <pre><span class="ruby-comment"># File lib/cucumber/py_support/py_language.rb, line 20</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">load_code_file</span>(<span class="ruby-identifier">py_file</span>)
+  <span class="ruby-ivar">@step_def_files</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">py_file</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- load_code_file-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- load_code_file-method -->
+
+    
+      <div id="method-i-snippet_text" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">snippet_text</span><span
+            class="method-args">(code_keyword, step_name, multiline_arg_class, snippet_type)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="snippet_text-source">
+            <pre><span class="ruby-comment"># File lib/cucumber/py_support/py_language.rb, line 27</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">snippet_text</span>(<span class="ruby-identifier">code_keyword</span>, <span class="ruby-identifier">step_name</span>, <span class="ruby-identifier">multiline_arg_class</span>, <span class="ruby-identifier">snippet_type</span>)
+  <span class="ruby-node">&quot;python snippet: #{code_keyword}, #{step_name}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- snippet_text-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- snippet_text-method -->
+
+    
+      <div id="method-i-step_matches" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">step_matches</span><span
+            class="method-args">(step_name, name_to_report)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="step_matches-source">
+            <pre><span class="ruby-comment"># File lib/cucumber/py_support/py_language.rb, line 45</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">step_matches</span>(<span class="ruby-identifier">step_name</span>, <span class="ruby-identifier">name_to_report</span>)
+  <span class="ruby-ivar">@delegate</span>.<span class="ruby-identifier">step_matches</span>(<span class="ruby-identifier">step_name</span>, <span class="ruby-identifier">name_to_report</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- step_matches-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- step_matches-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

@@ -1,0 +1,2055 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module Chronic::Handlers - chronic-0.10.2 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/chronic/handlers.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-day_or_time">#day_or_time</a>
+    
+    <li><a href="#method-i-dealias_and_disambiguate_times">#dealias_and_disambiguate_times</a>
+    
+    <li><a href="#method-i-find_within">#find_within</a>
+    
+    <li><a href="#method-i-get_anchor">#get_anchor</a>
+    
+    <li><a href="#method-i-get_repeaters">#get_repeaters</a>
+    
+    <li><a href="#method-i-handle_generic">#handle_generic</a>
+    
+    <li><a href="#method-i-handle_m_d">#handle_m_d</a>
+    
+    <li><a href="#method-i-handle_o_r_g_r">#handle_o_r_g_r</a>
+    
+    <li><a href="#method-i-handle_o_r_s_r">#handle_o_r_s_r</a>
+    
+    <li><a href="#method-i-handle_od_rm">#handle_od_rm</a>
+    
+    <li><a href="#method-i-handle_od_rmn">#handle_od_rmn</a>
+    
+    <li><a href="#method-i-handle_od_rmn_sy">#handle_od_rmn_sy</a>
+    
+    <li><a href="#method-i-handle_orr">#handle_orr</a>
+    
+    <li><a href="#method-i-handle_p_s_r">#handle_p_s_r</a>
+    
+    <li><a href="#method-i-handle_r">#handle_r</a>
+    
+    <li><a href="#method-i-handle_r_g_r">#handle_r_g_r</a>
+    
+    <li><a href="#method-i-handle_rdn_od">#handle_rdn_od</a>
+    
+    <li><a href="#method-i-handle_rdn_rmn_od">#handle_rdn_rmn_od</a>
+    
+    <li><a href="#method-i-handle_rdn_rmn_od_sy">#handle_rdn_rmn_od_sy</a>
+    
+    <li><a href="#method-i-handle_rdn_rmn_sd">#handle_rdn_rmn_sd</a>
+    
+    <li><a href="#method-i-handle_rdn_rmn_sd_sy">#handle_rdn_rmn_sd_sy</a>
+    
+    <li><a href="#method-i-handle_rmn_od">#handle_rmn_od</a>
+    
+    <li><a href="#method-i-handle_rmn_od_on">#handle_rmn_od_on</a>
+    
+    <li><a href="#method-i-handle_rmn_od_sy">#handle_rmn_od_sy</a>
+    
+    <li><a href="#method-i-handle_rmn_sd">#handle_rmn_sd</a>
+    
+    <li><a href="#method-i-handle_rmn_sd_on">#handle_rmn_sd_on</a>
+    
+    <li><a href="#method-i-handle_rmn_sd_sy">#handle_rmn_sd_sy</a>
+    
+    <li><a href="#method-i-handle_rmn_sy">#handle_rmn_sy</a>
+    
+    <li><a href="#method-i-handle_s_r_a_s_r_p_a">#handle_s_r_a_s_r_p_a</a>
+    
+    <li><a href="#method-i-handle_s_r_p">#handle_s_r_p</a>
+    
+    <li><a href="#method-i-handle_s_r_p_a">#handle_s_r_p_a</a>
+    
+    <li><a href="#method-i-handle_sd_rmn">#handle_sd_rmn</a>
+    
+    <li><a href="#method-i-handle_sd_rmn_sy">#handle_sd_rmn_sy</a>
+    
+    <li><a href="#method-i-handle_sd_sm">#handle_sd_sm</a>
+    
+    <li><a href="#method-i-handle_sd_sm_sy">#handle_sd_sm_sy</a>
+    
+    <li><a href="#method-i-handle_sm_rmn_sy">#handle_sm_rmn_sy</a>
+    
+    <li><a href="#method-i-handle_sm_sd">#handle_sm_sd</a>
+    
+    <li><a href="#method-i-handle_sm_sd_sy">#handle_sm_sd_sy</a>
+    
+    <li><a href="#method-i-handle_sm_sy">#handle_sm_sy</a>
+    
+    <li><a href="#method-i-handle_srp">#handle_srp</a>
+    
+    <li><a href="#method-i-handle_sy_rmn_od">#handle_sy_rmn_od</a>
+    
+    <li><a href="#method-i-handle_sy_sm">#handle_sy_sm</a>
+    
+    <li><a href="#method-i-handle_sy_sm_sd">#handle_sy_sm_sd</a>
+    
+    <li><a href="#method-i-handle_year_and_month">#handle_year_and_month</a>
+    
+    <li><a href="#method-i-month_overflow-3F">#month_overflow?</a>
+    
+    <li><a href="#method-i-time_with_rollover">#time_with_rollover</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../LICENSE.html">LICENSE</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Chronic.html">Chronic</a>
+  
+    <li><a href="../Chronic/Date.html">Chronic::Date</a>
+  
+    <li><a href="../Chronic/Grabber.html">Chronic::Grabber</a>
+  
+    <li><a href="../Chronic/Handler.html">Chronic::Handler</a>
+  
+    <li><a href="../Chronic/Handlers.html">Chronic::Handlers</a>
+  
+    <li><a href="../Chronic/MiniDate.html">Chronic::MiniDate</a>
+  
+    <li><a href="../Chronic/Numerizer.html">Chronic::Numerizer</a>
+  
+    <li><a href="../Chronic/Ordinal.html">Chronic::Ordinal</a>
+  
+    <li><a href="../Chronic/Parser.html">Chronic::Parser</a>
+  
+    <li><a href="../Chronic/Pointer.html">Chronic::Pointer</a>
+  
+    <li><a href="../Chronic/Repeater.html">Chronic::Repeater</a>
+  
+    <li><a href="../Chronic/Scalar.html">Chronic::Scalar</a>
+  
+    <li><a href="../Chronic/Season.html">Chronic::Season</a>
+  
+    <li><a href="../Chronic/Separator.html">Chronic::Separator</a>
+  
+    <li><a href="../Chronic/Sign.html">Chronic::Sign</a>
+  
+    <li><a href="../Chronic/Span.html">Chronic::Span</a>
+  
+    <li><a href="../Chronic/Tag.html">Chronic::Tag</a>
+  
+    <li><a href="../Chronic/Time.html">Chronic::Time</a>
+  
+    <li><a href="../Chronic/TimeZone.html">Chronic::TimeZone</a>
+  
+    <li><a href="../Chronic/Token.html">Chronic::Token</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module Chronic::Handlers</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-day_or_time" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">day_or_time</span><span
+            class="method-args">(day_start, time_tokens, options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>support methods</p>
+          
+
+          
+          <div class="method-source-code" id="day_or_time-source">
+            <pre><span class="ruby-comment"># File lib/chronic/handlers.rb, line 495</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">day_or_time</span>(<span class="ruby-identifier">day_start</span>, <span class="ruby-identifier">time_tokens</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">outer_span</span> = <span class="ruby-constant">Span</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">day_start</span>, <span class="ruby-identifier">day_start</span> <span class="ruby-operator">+</span> (<span class="ruby-value">24</span> * <span class="ruby-value">60</span> * <span class="ruby-value">60</span>))
+
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">time_tokens</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">now</span> = <span class="ruby-identifier">outer_span</span>.<span class="ruby-identifier">begin</span>
+    <span class="ruby-identifier">get_anchor</span>(<span class="ruby-identifier">dealias_and_disambiguate_times</span>(<span class="ruby-identifier">time_tokens</span>, <span class="ruby-identifier">options</span>), <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:context</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:future</span>))
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">outer_span</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- day_or_time-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- day_or_time-method -->
+
+    
+      <div id="method-i-dealias_and_disambiguate_times" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">dealias_and_disambiguate_times</span><span
+            class="method-args">(tokens, options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="dealias_and_disambiguate_times-source">
+            <pre><span class="ruby-comment"># File lib/chronic/handlers.rb, line 586</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">dealias_and_disambiguate_times</span>(<span class="ruby-identifier">tokens</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-comment"># handle aliases of am/pm</span>
+  <span class="ruby-comment"># 5:00 in the morning -&gt; 5:00 am</span>
+  <span class="ruby-comment"># 7:00 in the evening -&gt; 7:00 pm</span>
+
+  <span class="ruby-identifier">day_portion_index</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">tokens</span>.<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span>, <span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">t</span>.<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">RepeaterDayPortion</span>)
+      <span class="ruby-identifier">day_portion_index</span> = <span class="ruby-identifier">i</span>
+      <span class="ruby-keyword">break</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">time_index</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">tokens</span>.<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span>, <span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">t</span>.<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">RepeaterTime</span>)
+      <span class="ruby-identifier">time_index</span> = <span class="ruby-identifier">i</span>
+      <span class="ruby-keyword">break</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">day_portion_index</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">time_index</span>
+    <span class="ruby-identifier">t1</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-identifier">day_portion_index</span>]
+    <span class="ruby-identifier">t1tag</span> = <span class="ruby-identifier">t1</span>.<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">RepeaterDayPortion</span>)
+
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">t1tag</span>.<span class="ruby-identifier">type</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:morning</span>
+      <span class="ruby-identifier">puts</span> <span class="ruby-string">'--morning-&gt;am'</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">Chronic</span>.<span class="ruby-identifier">debug</span>
+      <span class="ruby-identifier">t1</span>.<span class="ruby-identifier">untag</span>(<span class="ruby-constant">RepeaterDayPortion</span>)
+      <span class="ruby-identifier">t1</span>.<span class="ruby-identifier">tag</span>(<span class="ruby-constant">RepeaterDayPortion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:am</span>))
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:afternoon</span>, <span class="ruby-value">:evening</span>, <span class="ruby-value">:night</span>
+      <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;--#{t1tag.type}-&gt;pm&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">Chronic</span>.<span class="ruby-identifier">debug</span>
+      <span class="ruby-identifier">t1</span>.<span class="ruby-identifier">untag</span>(<span class="ruby-constant">RepeaterDayPortion</span>)
+      <span class="ruby-identifier">t1</span>.<span class="ruby-identifier">tag</span>(<span class="ruby-constant">RepeaterDayPortion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:pm</span>))
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># handle ambiguous times if :ambiguous_time_range is specified</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:ambiguous_time_range</span>] <span class="ruby-operator">!=</span> <span class="ruby-value">:none</span>
+    <span class="ruby-identifier">ambiguous_tokens</span> = []
+
+    <span class="ruby-identifier">tokens</span>.<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">token</span>, <span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">ambiguous_tokens</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">token</span>
+      <span class="ruby-identifier">next_token</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-identifier">i</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>]
+
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">token</span>.<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">RepeaterTime</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">token</span>.<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">RepeaterTime</span>).<span class="ruby-identifier">type</span>.<span class="ruby-identifier">ambiguous?</span> <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-operator">!</span><span class="ruby-identifier">next_token</span> <span class="ruby-operator">||</span> <span class="ruby-operator">!</span><span class="ruby-identifier">next_token</span>.<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">RepeaterDayPortion</span>))
+        <span class="ruby-identifier">distoken</span> = <span class="ruby-constant">Token</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'disambiguator'</span>)
+
+        <span class="ruby-identifier">distoken</span>.<span class="ruby-identifier">tag</span>(<span class="ruby-constant">RepeaterDayPortion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:ambiguous_time_range</span>]))
+        <span class="ruby-identifier">ambiguous_tokens</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">distoken</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">tokens</span> = <span class="ruby-identifier">ambiguous_tokens</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">tokens</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- dealias_and_disambiguate_times-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- dealias_and_disambiguate_times-method -->
+
+    
+      <div id="method-i-find_within" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find_within</span><span
+            class="method-args">(tags, span, pointer)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Recursively finds repeaters within other repeaters. Returns a <a
+href="Span.html">Span</a> representing the innermost time span or nil if no
+repeater union could be found</p>
+          
+
+          
+          <div class="method-source-code" id="find_within-source">
+            <pre><span class="ruby-comment"># File lib/chronic/handlers.rb, line 559</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">find_within</span>(<span class="ruby-identifier">tags</span>, <span class="ruby-identifier">span</span>, <span class="ruby-identifier">pointer</span>)
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;--#{span}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">Chronic</span>.<span class="ruby-identifier">debug</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">span</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">tags</span>.<span class="ruby-identifier">empty?</span>
+
+  <span class="ruby-identifier">head</span> = <span class="ruby-identifier">tags</span>.<span class="ruby-identifier">shift</span>
+  <span class="ruby-identifier">head</span>.<span class="ruby-identifier">start</span> = (<span class="ruby-identifier">pointer</span> <span class="ruby-operator">==</span> <span class="ruby-value">:future</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">span</span>.<span class="ruby-identifier">begin</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">span</span>.<span class="ruby-identifier">end</span>)
+  <span class="ruby-identifier">h</span> = <span class="ruby-identifier">head</span>.<span class="ruby-identifier">this</span>(<span class="ruby-value">:none</span>)
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">span</span>.<span class="ruby-identifier">cover?</span>(<span class="ruby-identifier">h</span>.<span class="ruby-identifier">begin</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">span</span>.<span class="ruby-identifier">cover?</span>(<span class="ruby-identifier">h</span>.<span class="ruby-identifier">end</span>)
+    <span class="ruby-identifier">find_within</span>(<span class="ruby-identifier">tags</span>, <span class="ruby-identifier">h</span>, <span class="ruby-identifier">pointer</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- find_within-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- find_within-method -->
+
+    
+      <div id="method-i-get_anchor" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_anchor</span><span
+            class="method-args">(tokens, options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="get_anchor-source">
+            <pre><span class="ruby-comment"># File lib/chronic/handlers.rb, line 506</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_anchor</span>(<span class="ruby-identifier">tokens</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">grabber</span> = <span class="ruby-constant">Grabber</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:this</span>)
+  <span class="ruby-identifier">pointer</span> = <span class="ruby-value">:future</span>
+  <span class="ruby-identifier">repeaters</span> = <span class="ruby-identifier">get_repeaters</span>(<span class="ruby-identifier">tokens</span>)
+  <span class="ruby-identifier">repeaters</span>.<span class="ruby-identifier">size</span>.<span class="ruby-identifier">times</span> { <span class="ruby-identifier">tokens</span>.<span class="ruby-identifier">pop</span> }
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">tokens</span>.<span class="ruby-identifier">first</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">tokens</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">Grabber</span>)
+    <span class="ruby-identifier">grabber</span> = <span class="ruby-identifier">tokens</span>.<span class="ruby-identifier">shift</span>.<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">Grabber</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">head</span> = <span class="ruby-identifier">repeaters</span>.<span class="ruby-identifier">shift</span>
+  <span class="ruby-identifier">head</span>.<span class="ruby-identifier">start</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">now</span>
+
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">grabber</span>.<span class="ruby-identifier">type</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:last</span>
+    <span class="ruby-identifier">outer_span</span> = <span class="ruby-identifier">head</span>.<span class="ruby-identifier">next</span>(<span class="ruby-value">:past</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:this</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:context</span>] <span class="ruby-operator">!=</span> <span class="ruby-value">:past</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">repeaters</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+      <span class="ruby-identifier">outer_span</span> = <span class="ruby-identifier">head</span>.<span class="ruby-identifier">this</span>(<span class="ruby-value">:none</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">outer_span</span> = <span class="ruby-identifier">head</span>.<span class="ruby-identifier">this</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:context</span>])
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:next</span>
+    <span class="ruby-identifier">outer_span</span> = <span class="ruby-identifier">head</span>.<span class="ruby-identifier">next</span>(<span class="ruby-value">:future</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;Invalid grabber&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">Chronic</span>.<span class="ruby-identifier">debug</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Handler-class: #{head.class}&quot;</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;--#{outer_span}&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">find_within</span>(<span class="ruby-identifier">repeaters</span>, <span class="ruby-identifier">outer_span</span>, <span class="ruby-identifier">pointer</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_anchor-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_anchor-method -->
+
+    
+      <div id="method-i-get_repeaters" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_repeaters</span><span
+            class="method-args">(tokens)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="get_repeaters-source">
+            <pre><span class="ruby-comment"># File lib/chronic/handlers.rb, line 542</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get_repeaters</span>(<span class="ruby-identifier">tokens</span>)
+  <span class="ruby-identifier">tokens</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">token</span><span class="ruby-operator">|</span> <span class="ruby-identifier">token</span>.<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">Repeater</span>) }.<span class="ruby-identifier">compact</span>.<span class="ruby-identifier">sort</span>.<span class="ruby-identifier">reverse</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_repeaters-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_repeaters-method -->
+
+    
+      <div id="method-i-handle_generic" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">handle_generic</span><span
+            class="method-args">(tokens, options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Handle generic timestamp (ruby 1.8)</p>
+          
+
+          
+          <div class="method-source-code" id="handle_generic-source">
+            <pre><span class="ruby-comment"># File lib/chronic/handlers.rb, line 134</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">handle_generic</span>(<span class="ruby-identifier">tokens</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">t</span> = <span class="ruby-constant">Chronic</span>.<span class="ruby-identifier">time_class</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:text</span>])
+  <span class="ruby-constant">Span</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">t</span>, <span class="ruby-identifier">t</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>)
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">ArgumentError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">message</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/out of range/</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- handle_generic-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- handle_generic-method -->
+
+    
+      <div id="method-i-handle_m_d" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">handle_m_d</span><span
+            class="method-args">(month, day, time_tokens, options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Handle month/day</p>
+          
+
+          
+          <div class="method-source-code" id="handle_m_d-source">
+            <pre><span class="ruby-comment"># File lib/chronic/handlers.rb, line 6</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">handle_m_d</span>(<span class="ruby-identifier">month</span>, <span class="ruby-identifier">day</span>, <span class="ruby-identifier">time_tokens</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">month</span>.<span class="ruby-identifier">start</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">now</span>
+  <span class="ruby-identifier">span</span> = <span class="ruby-identifier">month</span>.<span class="ruby-identifier">this</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:context</span>])
+  <span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span> = <span class="ruby-identifier">span</span>.<span class="ruby-identifier">begin</span>.<span class="ruby-identifier">year</span>, <span class="ruby-identifier">span</span>.<span class="ruby-identifier">begin</span>.<span class="ruby-identifier">month</span>
+  <span class="ruby-identifier">day_start</span> = <span class="ruby-constant">Chronic</span>.<span class="ruby-identifier">time_class</span>.<span class="ruby-identifier">local</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>, <span class="ruby-identifier">day</span>)
+
+  <span class="ruby-identifier">day_or_time</span>(<span class="ruby-identifier">day_start</span>, <span class="ruby-identifier">time_tokens</span>, <span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- handle_m_d-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- handle_m_d-method -->
+
+    
+      <div id="method-i-handle_o_r_g_r" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">handle_o_r_g_r</span><span
+            class="method-args">(tokens, options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Handle ordinal/repeater/grabber/repeater</p>
+          
+
+          
+          <div class="method-source-code" id="handle_o_r_g_r-source">
+            <pre><span class="ruby-comment"># File lib/chronic/handlers.rb, line 488</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">handle_o_r_g_r</span>(<span class="ruby-identifier">tokens</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">outer_span</span> = <span class="ruby-identifier">get_anchor</span>(<span class="ruby-identifier">tokens</span>[<span class="ruby-value">2</span><span class="ruby-operator">..</span><span class="ruby-value">3</span>], <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">handle_orr</span>(<span class="ruby-identifier">tokens</span>[<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">1</span>], <span class="ruby-identifier">outer_span</span>, <span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- handle_o_r_g_r-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- handle_o_r_g_r-method -->
+
+    
+      <div id="method-i-handle_o_r_s_r" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">handle_o_r_s_r</span><span
+            class="method-args">(tokens, options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Handle ordinal/repeater/separator/repeater</p>
+          
+
+          
+          <div class="method-source-code" id="handle_o_r_s_r-source">
+            <pre><span class="ruby-comment"># File lib/chronic/handlers.rb, line 482</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">handle_o_r_s_r</span>(<span class="ruby-identifier">tokens</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">outer_span</span> = <span class="ruby-identifier">get_anchor</span>([<span class="ruby-identifier">tokens</span>[<span class="ruby-value">3</span>]], <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">handle_orr</span>(<span class="ruby-identifier">tokens</span>[<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">1</span>], <span class="ruby-identifier">outer_span</span>, <span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- handle_o_r_s_r-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- handle_o_r_s_r-method -->
+
+    
+      <div id="method-i-handle_od_rm" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">handle_od_rm</span><span
+            class="method-args">(tokens, options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Handle ordinal this month</p>
+          
+
+          
+          <div class="method-source-code" id="handle_od_rm-source">
+            <pre><span class="ruby-comment"># File lib/chronic/handlers.rb, line 53</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">handle_od_rm</span>(<span class="ruby-identifier">tokens</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">day</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">OrdinalDay</span>).<span class="ruby-identifier">type</span>
+  <span class="ruby-identifier">month</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">RepeaterMonth</span>)
+  <span class="ruby-identifier">handle_m_d</span>(<span class="ruby-identifier">month</span>, <span class="ruby-identifier">day</span>, <span class="ruby-identifier">tokens</span>[<span class="ruby-value">3</span><span class="ruby-operator">..</span><span class="ruby-identifier">tokens</span>.<span class="ruby-identifier">size</span>], <span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- handle_od_rm-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- handle_od_rm-method -->
+
+    
+      <div id="method-i-handle_od_rmn" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">handle_od_rmn</span><span
+            class="method-args">(tokens, options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Handle ordinal-day/repeater-month-name</p>
+          
+
+          
+          <div class="method-source-code" id="handle_od_rmn-source">
+            <pre><span class="ruby-comment"># File lib/chronic/handlers.rb, line 60</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">handle_od_rmn</span>(<span class="ruby-identifier">tokens</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">month</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">RepeaterMonthName</span>)
+  <span class="ruby-identifier">day</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">OrdinalDay</span>).<span class="ruby-identifier">type</span>
+
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">month_overflow?</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>.<span class="ruby-identifier">index</span>, <span class="ruby-identifier">day</span>)
+
+  <span class="ruby-identifier">handle_m_d</span>(<span class="ruby-identifier">month</span>, <span class="ruby-identifier">day</span>, <span class="ruby-identifier">tokens</span>[<span class="ruby-value">2</span><span class="ruby-operator">..</span><span class="ruby-identifier">tokens</span>.<span class="ruby-identifier">size</span>], <span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- handle_od_rmn-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- handle_od_rmn-method -->
+
+    
+      <div id="method-i-handle_od_rmn_sy" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">handle_od_rmn_sy</span><span
+            class="method-args">(tokens, options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Handle oridinal-day/repeater-month-name/scalar-year</p>
+          
+
+          
+          <div class="method-source-code" id="handle_od_rmn_sy-source">
+            <pre><span class="ruby-comment"># File lib/chronic/handlers.rb, line 176</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">handle_od_rmn_sy</span>(<span class="ruby-identifier">tokens</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">day</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">OrdinalDay</span>).<span class="ruby-identifier">type</span>
+  <span class="ruby-identifier">month</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">RepeaterMonthName</span>).<span class="ruby-identifier">index</span>
+  <span class="ruby-identifier">year</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">ScalarYear</span>).<span class="ruby-identifier">type</span>
+  <span class="ruby-identifier">time_tokens</span> = <span class="ruby-identifier">tokens</span>.<span class="ruby-identifier">last</span>(<span class="ruby-identifier">tokens</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">3</span>)
+
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">month_overflow?</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>, <span class="ruby-identifier">day</span>)
+
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">day_start</span> = <span class="ruby-constant">Chronic</span>.<span class="ruby-identifier">time_class</span>.<span class="ruby-identifier">local</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>, <span class="ruby-identifier">day</span>)
+    <span class="ruby-identifier">day_or_time</span>(<span class="ruby-identifier">day_start</span>, <span class="ruby-identifier">time_tokens</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">ArgumentError</span>
+    <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- handle_od_rmn_sy-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- handle_od_rmn_sy-method -->
+
+    
+      <div id="method-i-handle_orr" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">handle_orr</span><span
+            class="method-args">(tokens, outer_span, options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Handle oridinal repeaters</p>
+          
+
+          
+          <div class="method-source-code" id="handle_orr-source">
+            <pre><span class="ruby-comment"># File lib/chronic/handlers.rb, line 463</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">handle_orr</span>(<span class="ruby-identifier">tokens</span>, <span class="ruby-identifier">outer_span</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">repeater</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">Repeater</span>)
+  <span class="ruby-identifier">repeater</span>.<span class="ruby-identifier">start</span> = <span class="ruby-identifier">outer_span</span>.<span class="ruby-identifier">begin</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>
+  <span class="ruby-identifier">ordinal</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">Ordinal</span>).<span class="ruby-identifier">type</span>
+  <span class="ruby-identifier">span</span> = <span class="ruby-keyword">nil</span>
+
+  <span class="ruby-identifier">ordinal</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">span</span> = <span class="ruby-identifier">repeater</span>.<span class="ruby-identifier">next</span>(<span class="ruby-value">:future</span>)
+
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">span</span>.<span class="ruby-identifier">begin</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">outer_span</span>.<span class="ruby-identifier">end</span>
+      <span class="ruby-identifier">span</span> = <span class="ruby-keyword">nil</span>
+      <span class="ruby-keyword">break</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">span</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- handle_orr-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- handle_orr-method -->
+
+    
+      <div id="method-i-handle_p_s_r" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">handle_p_s_r</span><span
+            class="method-args">(tokens, options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Handle pointer/scalar/repeater</p>
+          
+
+          
+          <div class="method-source-code" id="handle_p_s_r-source">
+            <pre><span class="ruby-comment"># File lib/chronic/handlers.rb, line 442</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">handle_p_s_r</span>(<span class="ruby-identifier">tokens</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">new_tokens</span> = [<span class="ruby-identifier">tokens</span>[<span class="ruby-value">1</span>], <span class="ruby-identifier">tokens</span>[<span class="ruby-value">2</span>], <span class="ruby-identifier">tokens</span>[<span class="ruby-value">0</span>]]
+  <span class="ruby-identifier">handle_s_r_p</span>(<span class="ruby-identifier">new_tokens</span>, <span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- handle_p_s_r-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- handle_p_s_r-method -->
+
+    
+      <div id="method-i-handle_r" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">handle_r</span><span
+            class="method-args">(tokens, options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Handle repeaters</p>
+          
+
+          
+          <div class="method-source-code" id="handle_r-source">
+            <pre><span class="ruby-comment"># File lib/chronic/handlers.rb, line 412</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">handle_r</span>(<span class="ruby-identifier">tokens</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">dd_tokens</span> = <span class="ruby-identifier">dealias_and_disambiguate_times</span>(<span class="ruby-identifier">tokens</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">get_anchor</span>(<span class="ruby-identifier">dd_tokens</span>, <span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- handle_r-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- handle_r-method -->
+
+    
+      <div id="method-i-handle_r_g_r" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">handle_r_g_r</span><span
+            class="method-args">(tokens, options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Handle repeater/grabber/repeater</p>
+          
+
+          
+          <div class="method-source-code" id="handle_r_g_r-source">
+            <pre><span class="ruby-comment"># File lib/chronic/handlers.rb, line 418</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">handle_r_g_r</span>(<span class="ruby-identifier">tokens</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">new_tokens</span> = [<span class="ruby-identifier">tokens</span>[<span class="ruby-value">1</span>], <span class="ruby-identifier">tokens</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">tokens</span>[<span class="ruby-value">2</span>]]
+  <span class="ruby-identifier">handle_r</span>(<span class="ruby-identifier">new_tokens</span>, <span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- handle_r_g_r-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- handle_r_g_r-method -->
+
+    
+      <div id="method-i-handle_rdn_od" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">handle_rdn_od</span><span
+            class="method-args">(tokens, options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Handle RepeaterDayName OrdinalDay</p>
+          
+
+          
+          <div class="method-source-code" id="handle_rdn_od-source">
+            <pre><span class="ruby-comment"># File lib/chronic/handlers.rb, line 327</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">handle_rdn_od</span>(<span class="ruby-identifier">tokens</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">day</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">OrdinalDay</span>).<span class="ruby-identifier">type</span>
+  <span class="ruby-identifier">time_tokens</span> = <span class="ruby-identifier">tokens</span>.<span class="ruby-identifier">last</span>(<span class="ruby-identifier">tokens</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">2</span>)
+  <span class="ruby-identifier">year</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">year</span>
+  <span class="ruby-identifier">month</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">month</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:context</span>] <span class="ruby-operator">==</span> <span class="ruby-value">:future</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">day</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">day</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">month</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">month</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">month_overflow?</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>, <span class="ruby-identifier">day</span>)
+
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">time_tokens</span>.<span class="ruby-identifier">empty?</span>
+      <span class="ruby-identifier">start_time</span> = <span class="ruby-constant">Chronic</span>.<span class="ruby-identifier">time_class</span>.<span class="ruby-identifier">local</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>, <span class="ruby-identifier">day</span>)
+      <span class="ruby-identifier">end_time</span> = <span class="ruby-identifier">time_with_rollover</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>, <span class="ruby-identifier">day</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>)
+      <span class="ruby-constant">Span</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">start_time</span>, <span class="ruby-identifier">end_time</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">day_start</span> = <span class="ruby-constant">Chronic</span>.<span class="ruby-identifier">time_class</span>.<span class="ruby-identifier">local</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>, <span class="ruby-identifier">day</span>)
+      <span class="ruby-identifier">day_or_time</span>(<span class="ruby-identifier">day_start</span>, <span class="ruby-identifier">time_tokens</span>, <span class="ruby-identifier">options</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">ArgumentError</span>
+    <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- handle_rdn_od-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- handle_rdn_od-method -->
+
+    
+      <div id="method-i-handle_rdn_rmn_od" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">handle_rdn_rmn_od</span><span
+            class="method-args">(tokens, options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Handle RepeaterDayName RepeaterMonthName OrdinalDay</p>
+          
+
+          
+          <div class="method-source-code" id="handle_rdn_rmn_od-source">
+            <pre><span class="ruby-comment"># File lib/chronic/handlers.rb, line 287</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">handle_rdn_rmn_od</span>(<span class="ruby-identifier">tokens</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">month</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">RepeaterMonthName</span>)
+  <span class="ruby-identifier">day</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">OrdinalDay</span>).<span class="ruby-identifier">type</span>
+  <span class="ruby-identifier">time_tokens</span> = <span class="ruby-identifier">tokens</span>.<span class="ruby-identifier">last</span>(<span class="ruby-identifier">tokens</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">3</span>)
+  <span class="ruby-identifier">year</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">year</span>
+
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">month_overflow?</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>.<span class="ruby-identifier">index</span>, <span class="ruby-identifier">day</span>)
+
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">time_tokens</span>.<span class="ruby-identifier">empty?</span>
+      <span class="ruby-identifier">start_time</span> = <span class="ruby-constant">Chronic</span>.<span class="ruby-identifier">time_class</span>.<span class="ruby-identifier">local</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>.<span class="ruby-identifier">index</span>, <span class="ruby-identifier">day</span>)
+      <span class="ruby-identifier">end_time</span> = <span class="ruby-identifier">time_with_rollover</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>.<span class="ruby-identifier">index</span>, <span class="ruby-identifier">day</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>)
+      <span class="ruby-constant">Span</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">start_time</span>, <span class="ruby-identifier">end_time</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">day_start</span> = <span class="ruby-constant">Chronic</span>.<span class="ruby-identifier">time_class</span>.<span class="ruby-identifier">local</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>.<span class="ruby-identifier">index</span>, <span class="ruby-identifier">day</span>)
+      <span class="ruby-identifier">day_or_time</span>(<span class="ruby-identifier">day_start</span>, <span class="ruby-identifier">time_tokens</span>, <span class="ruby-identifier">options</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">ArgumentError</span>
+    <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- handle_rdn_rmn_od-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- handle_rdn_rmn_od-method -->
+
+    
+      <div id="method-i-handle_rdn_rmn_od_sy" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">handle_rdn_rmn_od_sy</span><span
+            class="method-args">(tokens, options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Handle RepeaterDayName RepeaterMonthName OrdinalDay ScalarYear</p>
+          
+
+          
+          <div class="method-source-code" id="handle_rdn_rmn_od_sy-source">
+            <pre><span class="ruby-comment"># File lib/chronic/handlers.rb, line 310</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">handle_rdn_rmn_od_sy</span>(<span class="ruby-identifier">tokens</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">month</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">RepeaterMonthName</span>)
+  <span class="ruby-identifier">day</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">OrdinalDay</span>).<span class="ruby-identifier">type</span>
+  <span class="ruby-identifier">year</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">3</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">ScalarYear</span>).<span class="ruby-identifier">type</span>
+
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">month_overflow?</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>.<span class="ruby-identifier">index</span>, <span class="ruby-identifier">day</span>)
+
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">start_time</span> = <span class="ruby-constant">Chronic</span>.<span class="ruby-identifier">time_class</span>.<span class="ruby-identifier">local</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>.<span class="ruby-identifier">index</span>, <span class="ruby-identifier">day</span>)
+    <span class="ruby-identifier">end_time</span> = <span class="ruby-identifier">time_with_rollover</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>.<span class="ruby-identifier">index</span>, <span class="ruby-identifier">day</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>)
+    <span class="ruby-constant">Span</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">start_time</span>, <span class="ruby-identifier">end_time</span>)
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">ArgumentError</span>
+    <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- handle_rdn_rmn_od_sy-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- handle_rdn_rmn_od_sy-method -->
+
+    
+      <div id="method-i-handle_rdn_rmn_sd" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">handle_rdn_rmn_sd</span><span
+            class="method-args">(tokens, options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Handle RepeaterDayName RepeaterMonthName ScalarDay</p>
+          
+
+          
+          <div class="method-source-code" id="handle_rdn_rmn_sd-source">
+            <pre><span class="ruby-comment"># File lib/chronic/handlers.rb, line 353</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">handle_rdn_rmn_sd</span>(<span class="ruby-identifier">tokens</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">month</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">RepeaterMonthName</span>)
+  <span class="ruby-identifier">day</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">ScalarDay</span>).<span class="ruby-identifier">type</span>
+  <span class="ruby-identifier">time_tokens</span> = <span class="ruby-identifier">tokens</span>.<span class="ruby-identifier">last</span>(<span class="ruby-identifier">tokens</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">3</span>)
+  <span class="ruby-identifier">year</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">year</span>
+
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">month_overflow?</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>.<span class="ruby-identifier">index</span>, <span class="ruby-identifier">day</span>)
+
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">time_tokens</span>.<span class="ruby-identifier">empty?</span>
+      <span class="ruby-identifier">start_time</span> = <span class="ruby-constant">Chronic</span>.<span class="ruby-identifier">time_class</span>.<span class="ruby-identifier">local</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>.<span class="ruby-identifier">index</span>, <span class="ruby-identifier">day</span>)
+      <span class="ruby-identifier">end_time</span> = <span class="ruby-identifier">time_with_rollover</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>.<span class="ruby-identifier">index</span>, <span class="ruby-identifier">day</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>)
+      <span class="ruby-constant">Span</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">start_time</span>, <span class="ruby-identifier">end_time</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">day_start</span> = <span class="ruby-constant">Chronic</span>.<span class="ruby-identifier">time_class</span>.<span class="ruby-identifier">local</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>.<span class="ruby-identifier">index</span>, <span class="ruby-identifier">day</span>)
+      <span class="ruby-identifier">day_or_time</span>(<span class="ruby-identifier">day_start</span>, <span class="ruby-identifier">time_tokens</span>, <span class="ruby-identifier">options</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">ArgumentError</span>
+    <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- handle_rdn_rmn_sd-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- handle_rdn_rmn_sd-method -->
+
+    
+      <div id="method-i-handle_rdn_rmn_sd_sy" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">handle_rdn_rmn_sd_sy</span><span
+            class="method-args">(tokens, options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Handle RepeaterDayName RepeaterMonthName ScalarDay ScalarYear</p>
+          
+
+          
+          <div class="method-source-code" id="handle_rdn_rmn_sd_sy-source">
+            <pre><span class="ruby-comment"># File lib/chronic/handlers.rb, line 376</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">handle_rdn_rmn_sd_sy</span>(<span class="ruby-identifier">tokens</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">month</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">RepeaterMonthName</span>)
+  <span class="ruby-identifier">day</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">ScalarDay</span>).<span class="ruby-identifier">type</span>
+  <span class="ruby-identifier">year</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">3</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">ScalarYear</span>).<span class="ruby-identifier">type</span>
+
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">month_overflow?</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>.<span class="ruby-identifier">index</span>, <span class="ruby-identifier">day</span>)
+
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">start_time</span> = <span class="ruby-constant">Chronic</span>.<span class="ruby-identifier">time_class</span>.<span class="ruby-identifier">local</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>.<span class="ruby-identifier">index</span>, <span class="ruby-identifier">day</span>)
+    <span class="ruby-identifier">end_time</span> = <span class="ruby-identifier">time_with_rollover</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>.<span class="ruby-identifier">index</span>, <span class="ruby-identifier">day</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>)
+    <span class="ruby-constant">Span</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">start_time</span>, <span class="ruby-identifier">end_time</span>)
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">ArgumentError</span>
+    <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- handle_rdn_rmn_sd_sy-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- handle_rdn_rmn_sd_sy-method -->
+
+    
+      <div id="method-i-handle_rmn_od" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">handle_rmn_od</span><span
+            class="method-args">(tokens, options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Handle repeater-month-name/ordinal-day</p>
+          
+
+          
+          <div class="method-source-code" id="handle_rmn_od-source">
+            <pre><span class="ruby-comment"># File lib/chronic/handlers.rb, line 43</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">handle_rmn_od</span>(<span class="ruby-identifier">tokens</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">month</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">RepeaterMonthName</span>)
+  <span class="ruby-identifier">day</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">OrdinalDay</span>).<span class="ruby-identifier">type</span>
+
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">month_overflow?</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>.<span class="ruby-identifier">index</span>, <span class="ruby-identifier">day</span>)
+
+  <span class="ruby-identifier">handle_m_d</span>(<span class="ruby-identifier">month</span>, <span class="ruby-identifier">day</span>, <span class="ruby-identifier">tokens</span>[<span class="ruby-value">2</span><span class="ruby-operator">..</span><span class="ruby-identifier">tokens</span>.<span class="ruby-identifier">size</span>], <span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- handle_rmn_od-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- handle_rmn_od-method -->
+
+    
+      <div id="method-i-handle_rmn_od_on" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">handle_rmn_od_on</span><span
+            class="method-args">(tokens, options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Handle repeater-month-name/ordinal-day with separator-on</p>
+          
+
+          
+          <div class="method-source-code" id="handle_rmn_od_on-source">
+            <pre><span class="ruby-comment"># File lib/chronic/handlers.rb, line 96</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">handle_rmn_od_on</span>(<span class="ruby-identifier">tokens</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">tokens</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">3</span>
+    <span class="ruby-identifier">month</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">RepeaterMonthName</span>)
+    <span class="ruby-identifier">day</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">3</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">OrdinalDay</span>).<span class="ruby-identifier">type</span>
+    <span class="ruby-identifier">token_range</span> = <span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">1</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">month</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">RepeaterMonthName</span>)
+    <span class="ruby-identifier">day</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">OrdinalDay</span>).<span class="ruby-identifier">type</span>
+    <span class="ruby-identifier">token_range</span> = <span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">0</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">month_overflow?</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>.<span class="ruby-identifier">index</span>, <span class="ruby-identifier">day</span>)
+
+  <span class="ruby-identifier">handle_m_d</span>(<span class="ruby-identifier">month</span>, <span class="ruby-identifier">day</span>, <span class="ruby-identifier">tokens</span>[<span class="ruby-identifier">token_range</span>], <span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- handle_rmn_od_on-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- handle_rmn_od_on-method -->
+
+    
+      <div id="method-i-handle_rmn_od_sy" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">handle_rmn_od_sy</span><span
+            class="method-args">(tokens, options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Handle repeater-month-name/ordinal-day/scalar-year</p>
+          
+
+          
+          <div class="method-source-code" id="handle_rmn_od_sy-source">
+            <pre><span class="ruby-comment"># File lib/chronic/handlers.rb, line 159</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">handle_rmn_od_sy</span>(<span class="ruby-identifier">tokens</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">month</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">RepeaterMonthName</span>).<span class="ruby-identifier">index</span>
+  <span class="ruby-identifier">day</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">OrdinalDay</span>).<span class="ruby-identifier">type</span>
+  <span class="ruby-identifier">year</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">ScalarYear</span>).<span class="ruby-identifier">type</span>
+  <span class="ruby-identifier">time_tokens</span> = <span class="ruby-identifier">tokens</span>.<span class="ruby-identifier">last</span>(<span class="ruby-identifier">tokens</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">3</span>)
+
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">month_overflow?</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>, <span class="ruby-identifier">day</span>)
+
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">day_start</span> = <span class="ruby-constant">Chronic</span>.<span class="ruby-identifier">time_class</span>.<span class="ruby-identifier">local</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>, <span class="ruby-identifier">day</span>)
+    <span class="ruby-identifier">day_or_time</span>(<span class="ruby-identifier">day_start</span>, <span class="ruby-identifier">time_tokens</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">ArgumentError</span>
+    <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- handle_rmn_od_sy-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- handle_rmn_od_sy-method -->
+
+    
+      <div id="method-i-handle_rmn_sd" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">handle_rmn_sd</span><span
+            class="method-args">(tokens, options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Handle repeater-month-name/scalar-day</p>
+          
+
+          
+          <div class="method-source-code" id="handle_rmn_sd-source">
+            <pre><span class="ruby-comment"># File lib/chronic/handlers.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">handle_rmn_sd</span>(<span class="ruby-identifier">tokens</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">month</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">RepeaterMonthName</span>)
+  <span class="ruby-identifier">day</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">ScalarDay</span>).<span class="ruby-identifier">type</span>
+
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">month_overflow?</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>.<span class="ruby-identifier">index</span>, <span class="ruby-identifier">day</span>)
+
+  <span class="ruby-identifier">handle_m_d</span>(<span class="ruby-identifier">month</span>, <span class="ruby-identifier">day</span>, <span class="ruby-identifier">tokens</span>[<span class="ruby-value">2</span><span class="ruby-operator">..</span><span class="ruby-identifier">tokens</span>.<span class="ruby-identifier">size</span>], <span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- handle_rmn_sd-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- handle_rmn_sd-method -->
+
+    
+      <div id="method-i-handle_rmn_sd_on" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">handle_rmn_sd_on</span><span
+            class="method-args">(tokens, options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Handle repeater-month-name/scalar-day with separator-on</p>
+          
+
+          
+          <div class="method-source-code" id="handle_rmn_sd_on-source">
+            <pre><span class="ruby-comment"># File lib/chronic/handlers.rb, line 26</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">handle_rmn_sd_on</span>(<span class="ruby-identifier">tokens</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">tokens</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">3</span>
+    <span class="ruby-identifier">month</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">RepeaterMonthName</span>)
+    <span class="ruby-identifier">day</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">3</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">ScalarDay</span>).<span class="ruby-identifier">type</span>
+    <span class="ruby-identifier">token_range</span> = <span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">1</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">month</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">RepeaterMonthName</span>)
+    <span class="ruby-identifier">day</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">ScalarDay</span>).<span class="ruby-identifier">type</span>
+    <span class="ruby-identifier">token_range</span> = <span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">0</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">month_overflow?</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>.<span class="ruby-identifier">index</span>, <span class="ruby-identifier">day</span>)
+
+  <span class="ruby-identifier">handle_m_d</span>(<span class="ruby-identifier">month</span>, <span class="ruby-identifier">day</span>, <span class="ruby-identifier">tokens</span>[<span class="ruby-identifier">token_range</span>], <span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- handle_rmn_sd_on-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- handle_rmn_sd_on-method -->
+
+    
+      <div id="method-i-handle_rmn_sd_sy" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">handle_rmn_sd_sy</span><span
+            class="method-args">(tokens, options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Handle repeater-month-name/scalar-day/scalar-year</p>
+          
+
+          
+          <div class="method-source-code" id="handle_rmn_sd_sy-source">
+            <pre><span class="ruby-comment"># File lib/chronic/handlers.rb, line 142</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">handle_rmn_sd_sy</span>(<span class="ruby-identifier">tokens</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">month</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">RepeaterMonthName</span>).<span class="ruby-identifier">index</span>
+  <span class="ruby-identifier">day</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">ScalarDay</span>).<span class="ruby-identifier">type</span>
+  <span class="ruby-identifier">year</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">ScalarYear</span>).<span class="ruby-identifier">type</span>
+  <span class="ruby-identifier">time_tokens</span> = <span class="ruby-identifier">tokens</span>.<span class="ruby-identifier">last</span>(<span class="ruby-identifier">tokens</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">3</span>)
+
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">month_overflow?</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>, <span class="ruby-identifier">day</span>)
+
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">day_start</span> = <span class="ruby-constant">Chronic</span>.<span class="ruby-identifier">time_class</span>.<span class="ruby-identifier">local</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>, <span class="ruby-identifier">day</span>)
+    <span class="ruby-identifier">day_or_time</span>(<span class="ruby-identifier">day_start</span>, <span class="ruby-identifier">time_tokens</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">ArgumentError</span>
+    <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- handle_rmn_sd_sy-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- handle_rmn_sd_sy-method -->
+
+    
+      <div id="method-i-handle_rmn_sy" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">handle_rmn_sy</span><span
+            class="method-args">(tokens, options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Handle repeater-month-name/scalar-year</p>
+          
+
+          
+          <div class="method-source-code" id="handle_rmn_sy-source">
+            <pre><span class="ruby-comment"># File lib/chronic/handlers.rb, line 113</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">handle_rmn_sy</span>(<span class="ruby-identifier">tokens</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">month</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">RepeaterMonthName</span>).<span class="ruby-identifier">index</span>
+  <span class="ruby-identifier">year</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">ScalarYear</span>).<span class="ruby-identifier">type</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">month</span> <span class="ruby-operator">==</span> <span class="ruby-value">12</span>
+    <span class="ruby-identifier">next_month_year</span> = <span class="ruby-identifier">year</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>
+    <span class="ruby-identifier">next_month_month</span> = <span class="ruby-value">1</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">next_month_year</span> = <span class="ruby-identifier">year</span>
+    <span class="ruby-identifier">next_month_month</span> = <span class="ruby-identifier">month</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">end_time</span> = <span class="ruby-constant">Chronic</span>.<span class="ruby-identifier">time_class</span>.<span class="ruby-identifier">local</span>(<span class="ruby-identifier">next_month_year</span>, <span class="ruby-identifier">next_month_month</span>)
+    <span class="ruby-constant">Span</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">Chronic</span>.<span class="ruby-identifier">time_class</span>.<span class="ruby-identifier">local</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>), <span class="ruby-identifier">end_time</span>)
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">ArgumentError</span>
+    <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- handle_rmn_sy-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- handle_rmn_sy-method -->
+
+    
+      <div id="method-i-handle_s_r_a_s_r_p_a" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">handle_s_r_a_s_r_p_a</span><span
+            class="method-args">(tokens, options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="handle_s_r_a_s_r_p_a-source">
+            <pre><span class="ruby-comment"># File lib/chronic/handlers.rb, line 453</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">handle_s_r_a_s_r_p_a</span>(<span class="ruby-identifier">tokens</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">anchor_span</span> = <span class="ruby-identifier">get_anchor</span>(<span class="ruby-identifier">tokens</span>[<span class="ruby-value">4</span><span class="ruby-operator">..</span><span class="ruby-identifier">tokens</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>], <span class="ruby-identifier">options</span>)
+
+  <span class="ruby-identifier">span</span> = <span class="ruby-identifier">handle_srp</span>(<span class="ruby-identifier">tokens</span>[<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">1</span>]<span class="ruby-operator">+</span><span class="ruby-identifier">tokens</span>[<span class="ruby-value">4</span><span class="ruby-operator">..</span><span class="ruby-value">6</span>], <span class="ruby-identifier">anchor_span</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">handle_srp</span>(<span class="ruby-identifier">tokens</span>[<span class="ruby-value">2</span><span class="ruby-operator">..</span><span class="ruby-value">3</span>]<span class="ruby-operator">+</span><span class="ruby-identifier">tokens</span>[<span class="ruby-value">4</span><span class="ruby-operator">..</span><span class="ruby-value">6</span>], <span class="ruby-identifier">span</span>, <span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- handle_s_r_a_s_r_p_a-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- handle_s_r_a_s_r_p_a-method -->
+
+    
+      <div id="method-i-handle_s_r_p" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">handle_s_r_p</span><span
+            class="method-args">(tokens, options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Handle scalar/repeater/pointer</p>
+          
+
+          
+          <div class="method-source-code" id="handle_s_r_p-source">
+            <pre><span class="ruby-comment"># File lib/chronic/handlers.rb, line 435</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">handle_s_r_p</span>(<span class="ruby-identifier">tokens</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">span</span> = <span class="ruby-constant">Span</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">now</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">now</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>)
+
+  <span class="ruby-identifier">handle_srp</span>(<span class="ruby-identifier">tokens</span>, <span class="ruby-identifier">span</span>, <span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- handle_s_r_p-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- handle_s_r_p-method -->
+
+    
+      <div id="method-i-handle_s_r_p_a" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">handle_s_r_p_a</span><span
+            class="method-args">(tokens, options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Handle scalar/repeater/pointer/anchor</p>
+          
+
+          
+          <div class="method-source-code" id="handle_s_r_p_a-source">
+            <pre><span class="ruby-comment"># File lib/chronic/handlers.rb, line 448</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">handle_s_r_p_a</span>(<span class="ruby-identifier">tokens</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">anchor_span</span> = <span class="ruby-identifier">get_anchor</span>(<span class="ruby-identifier">tokens</span>[<span class="ruby-value">3</span><span class="ruby-operator">..</span><span class="ruby-identifier">tokens</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>], <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">handle_srp</span>(<span class="ruby-identifier">tokens</span>, <span class="ruby-identifier">anchor_span</span>, <span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- handle_s_r_p_a-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- handle_s_r_p_a-method -->
+
+    
+      <div id="method-i-handle_sd_rmn" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">handle_sd_rmn</span><span
+            class="method-args">(tokens, options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Handle scalar-day/repeater-month-name</p>
+          
+
+          
+          <div class="method-source-code" id="handle_sd_rmn-source">
+            <pre><span class="ruby-comment"># File lib/chronic/handlers.rb, line 86</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">handle_sd_rmn</span>(<span class="ruby-identifier">tokens</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">month</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">RepeaterMonthName</span>)
+  <span class="ruby-identifier">day</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">ScalarDay</span>).<span class="ruby-identifier">type</span>
+
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">month_overflow?</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>.<span class="ruby-identifier">index</span>, <span class="ruby-identifier">day</span>)
+
+  <span class="ruby-identifier">handle_m_d</span>(<span class="ruby-identifier">month</span>, <span class="ruby-identifier">day</span>, <span class="ruby-identifier">tokens</span>[<span class="ruby-value">2</span><span class="ruby-operator">..</span><span class="ruby-identifier">tokens</span>.<span class="ruby-identifier">size</span>], <span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- handle_sd_rmn-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- handle_sd_rmn-method -->
+
+    
+      <div id="method-i-handle_sd_rmn_sy" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">handle_sd_rmn_sy</span><span
+            class="method-args">(tokens, options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Handle scalar-day/repeater-month-name/scalar-year</p>
+          
+
+          
+          <div class="method-source-code" id="handle_sd_rmn_sy-source">
+            <pre><span class="ruby-comment"># File lib/chronic/handlers.rb, line 193</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">handle_sd_rmn_sy</span>(<span class="ruby-identifier">tokens</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">new_tokens</span> = [<span class="ruby-identifier">tokens</span>[<span class="ruby-value">1</span>], <span class="ruby-identifier">tokens</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">tokens</span>[<span class="ruby-value">2</span>]]
+  <span class="ruby-identifier">time_tokens</span> = <span class="ruby-identifier">tokens</span>.<span class="ruby-identifier">last</span>(<span class="ruby-identifier">tokens</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">3</span>)
+  <span class="ruby-identifier">handle_rmn_sd_sy</span>(<span class="ruby-identifier">new_tokens</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">time_tokens</span>, <span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- handle_sd_rmn_sy-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- handle_sd_rmn_sy-method -->
+
+    
+      <div id="method-i-handle_sd_sm" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">handle_sd_sm</span><span
+            class="method-args">(tokens, options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Handle scalar-day/scalar-month</p>
+          
+
+          
+          <div class="method-source-code" id="handle_sd_sm-source">
+            <pre><span class="ruby-comment"># File lib/chronic/handlers.rb, line 249</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">handle_sd_sm</span>(<span class="ruby-identifier">tokens</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">new_tokens</span> = [<span class="ruby-identifier">tokens</span>[<span class="ruby-value">1</span>], <span class="ruby-identifier">tokens</span>[<span class="ruby-value">0</span>]]
+  <span class="ruby-identifier">time_tokens</span> = <span class="ruby-identifier">tokens</span>.<span class="ruby-identifier">last</span>(<span class="ruby-identifier">tokens</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">2</span>)
+  <span class="ruby-identifier">handle_sm_sd</span>(<span class="ruby-identifier">new_tokens</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">time_tokens</span>, <span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- handle_sd_sm-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- handle_sd_sm-method -->
+
+    
+      <div id="method-i-handle_sd_sm_sy" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">handle_sd_sm_sy</span><span
+            class="method-args">(tokens, options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Handle scalar-day/scalar-month/scalar-year (endian little)</p>
+          
+
+          
+          <div class="method-source-code" id="handle_sd_sm_sy-source">
+            <pre><span class="ruby-comment"># File lib/chronic/handlers.rb, line 217</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">handle_sd_sm_sy</span>(<span class="ruby-identifier">tokens</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">new_tokens</span> = [<span class="ruby-identifier">tokens</span>[<span class="ruby-value">1</span>], <span class="ruby-identifier">tokens</span>[<span class="ruby-value">0</span>], <span class="ruby-identifier">tokens</span>[<span class="ruby-value">2</span>]]
+  <span class="ruby-identifier">time_tokens</span> = <span class="ruby-identifier">tokens</span>.<span class="ruby-identifier">last</span>(<span class="ruby-identifier">tokens</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">3</span>)
+  <span class="ruby-identifier">handle_sm_sd_sy</span>(<span class="ruby-identifier">new_tokens</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">time_tokens</span>, <span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- handle_sd_sm_sy-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- handle_sd_sm_sy-method -->
+
+    
+      <div id="method-i-handle_sm_rmn_sy" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">handle_sm_rmn_sy</span><span
+            class="method-args">(tokens, options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="handle_sm_rmn_sy-source">
+            <pre><span class="ruby-comment"># File lib/chronic/handlers.rb, line 392</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">handle_sm_rmn_sy</span>(<span class="ruby-identifier">tokens</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">day</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">ScalarDay</span>).<span class="ruby-identifier">type</span>
+  <span class="ruby-identifier">month</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">RepeaterMonthName</span>).<span class="ruby-identifier">index</span>
+  <span class="ruby-identifier">year</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">ScalarYear</span>).<span class="ruby-identifier">type</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">tokens</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">3</span>
+    <span class="ruby-identifier">time</span> = <span class="ruby-identifier">get_anchor</span>([<span class="ruby-identifier">tokens</span>.<span class="ruby-identifier">last</span>], <span class="ruby-identifier">options</span>).<span class="ruby-identifier">begin</span>
+    <span class="ruby-identifier">h</span>, <span class="ruby-identifier">m</span>, <span class="ruby-identifier">s</span> = <span class="ruby-identifier">time</span>.<span class="ruby-identifier">hour</span>, <span class="ruby-identifier">time</span>.<span class="ruby-identifier">min</span>, <span class="ruby-identifier">time</span>.<span class="ruby-identifier">sec</span>
+    <span class="ruby-identifier">time</span> = <span class="ruby-constant">Chronic</span>.<span class="ruby-identifier">time_class</span>.<span class="ruby-identifier">local</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>, <span class="ruby-identifier">day</span>, <span class="ruby-identifier">h</span>, <span class="ruby-identifier">m</span>, <span class="ruby-identifier">s</span>)
+    <span class="ruby-identifier">end_time</span> = <span class="ruby-constant">Chronic</span>.<span class="ruby-identifier">time_class</span>.<span class="ruby-identifier">local</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>, <span class="ruby-identifier">day</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>, <span class="ruby-identifier">h</span>, <span class="ruby-identifier">m</span>, <span class="ruby-identifier">s</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">time</span> = <span class="ruby-constant">Chronic</span>.<span class="ruby-identifier">time_class</span>.<span class="ruby-identifier">local</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>, <span class="ruby-identifier">day</span>)
+    <span class="ruby-identifier">day</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">day</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value">31</span>
+    <span class="ruby-identifier">end_time</span> = <span class="ruby-constant">Chronic</span>.<span class="ruby-identifier">time_class</span>.<span class="ruby-identifier">local</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>, <span class="ruby-identifier">day</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-constant">Span</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">time</span>, <span class="ruby-identifier">end_time</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- handle_sm_rmn_sy-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- handle_sm_rmn_sy-method -->
+
+    
+      <div id="method-i-handle_sm_sd" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">handle_sm_sd</span><span
+            class="method-args">(tokens, options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Handle scalar-month/scalar-day</p>
+          
+
+          
+          <div class="method-source-code" id="handle_sm_sd-source">
+            <pre><span class="ruby-comment"># File lib/chronic/handlers.rb, line 231</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">handle_sm_sd</span>(<span class="ruby-identifier">tokens</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">month</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">ScalarMonth</span>).<span class="ruby-identifier">type</span>
+  <span class="ruby-identifier">day</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">ScalarDay</span>).<span class="ruby-identifier">type</span>
+  <span class="ruby-identifier">year</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">year</span>
+  <span class="ruby-identifier">time_tokens</span> = <span class="ruby-identifier">tokens</span>.<span class="ruby-identifier">last</span>(<span class="ruby-identifier">tokens</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">2</span>)
+
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">month_overflow?</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>, <span class="ruby-identifier">day</span>)
+
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">day_start</span> = <span class="ruby-constant">Chronic</span>.<span class="ruby-identifier">time_class</span>.<span class="ruby-identifier">local</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>, <span class="ruby-identifier">day</span>)
+    <span class="ruby-identifier">day_start</span> = <span class="ruby-constant">Chronic</span>.<span class="ruby-identifier">time_class</span>.<span class="ruby-identifier">local</span>(<span class="ruby-identifier">year</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>, <span class="ruby-identifier">month</span>, <span class="ruby-identifier">day</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:context</span>] <span class="ruby-operator">==</span> <span class="ruby-value">:future</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">day_start</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">now</span>
+    <span class="ruby-identifier">day_or_time</span>(<span class="ruby-identifier">day_start</span>, <span class="ruby-identifier">time_tokens</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">ArgumentError</span>
+    <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- handle_sm_sd-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- handle_sm_sd-method -->
+
+    
+      <div id="method-i-handle_sm_sd_sy" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">handle_sm_sd_sy</span><span
+            class="method-args">(tokens, options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Handle scalar-month/scalar-day/scalar-year (endian middle)</p>
+          
+
+          
+          <div class="method-source-code" id="handle_sm_sd_sy-source">
+            <pre><span class="ruby-comment"># File lib/chronic/handlers.rb, line 200</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">handle_sm_sd_sy</span>(<span class="ruby-identifier">tokens</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">month</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">ScalarMonth</span>).<span class="ruby-identifier">type</span>
+  <span class="ruby-identifier">day</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">ScalarDay</span>).<span class="ruby-identifier">type</span>
+  <span class="ruby-identifier">year</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">ScalarYear</span>).<span class="ruby-identifier">type</span>
+  <span class="ruby-identifier">time_tokens</span> = <span class="ruby-identifier">tokens</span>.<span class="ruby-identifier">last</span>(<span class="ruby-identifier">tokens</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">3</span>)
+
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">month_overflow?</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>, <span class="ruby-identifier">day</span>)
+
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">day_start</span> = <span class="ruby-constant">Chronic</span>.<span class="ruby-identifier">time_class</span>.<span class="ruby-identifier">local</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>, <span class="ruby-identifier">day</span>)
+    <span class="ruby-identifier">day_or_time</span>(<span class="ruby-identifier">day_start</span>, <span class="ruby-identifier">time_tokens</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">ArgumentError</span>
+    <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- handle_sm_sd_sy-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- handle_sm_sd_sy-method -->
+
+    
+      <div id="method-i-handle_sm_sy" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">handle_sm_sy</span><span
+            class="method-args">(tokens, options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Handle scalar-month/scalar-year</p>
+          
+
+          
+          <div class="method-source-code" id="handle_sm_sy-source">
+            <pre><span class="ruby-comment"># File lib/chronic/handlers.rb, line 273</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">handle_sm_sy</span>(<span class="ruby-identifier">tokens</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">month</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">ScalarMonth</span>).<span class="ruby-identifier">type</span>
+  <span class="ruby-identifier">year</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">ScalarYear</span>).<span class="ruby-identifier">type</span>
+  <span class="ruby-identifier">handle_year_and_month</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- handle_sm_sy-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- handle_sm_sy-method -->
+
+    
+      <div id="method-i-handle_srp" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">handle_srp</span><span
+            class="method-args">(tokens, span, options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Handle scalar/repeater/pointer helper</p>
+          
+
+          
+          <div class="method-source-code" id="handle_srp-source">
+            <pre><span class="ruby-comment"># File lib/chronic/handlers.rb, line 426</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">handle_srp</span>(<span class="ruby-identifier">tokens</span>, <span class="ruby-identifier">span</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">distance</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">Scalar</span>).<span class="ruby-identifier">type</span>
+  <span class="ruby-identifier">repeater</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">Repeater</span>)
+  <span class="ruby-identifier">pointer</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">Pointer</span>).<span class="ruby-identifier">type</span>
+
+  <span class="ruby-identifier">repeater</span>.<span class="ruby-identifier">offset</span>(<span class="ruby-identifier">span</span>, <span class="ruby-identifier">distance</span>, <span class="ruby-identifier">pointer</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">repeater</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:offset</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- handle_srp-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- handle_srp-method -->
+
+    
+      <div id="method-i-handle_sy_rmn_od" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">handle_sy_rmn_od</span><span
+            class="method-args">(tokens, options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="handle_sy_rmn_od-source">
+            <pre><span class="ruby-comment"># File lib/chronic/handlers.rb, line 69</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">handle_sy_rmn_od</span>(<span class="ruby-identifier">tokens</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">year</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">ScalarYear</span>).<span class="ruby-identifier">type</span>
+  <span class="ruby-identifier">month</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">RepeaterMonthName</span>).<span class="ruby-identifier">index</span>
+  <span class="ruby-identifier">day</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">OrdinalDay</span>).<span class="ruby-identifier">type</span>
+  <span class="ruby-identifier">time_tokens</span> = <span class="ruby-identifier">tokens</span>.<span class="ruby-identifier">last</span>(<span class="ruby-identifier">tokens</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">3</span>)
+
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">month_overflow?</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>, <span class="ruby-identifier">day</span>)
+
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">day_start</span> = <span class="ruby-constant">Chronic</span>.<span class="ruby-identifier">time_class</span>.<span class="ruby-identifier">local</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>, <span class="ruby-identifier">day</span>)
+    <span class="ruby-identifier">day_or_time</span>(<span class="ruby-identifier">day_start</span>, <span class="ruby-identifier">time_tokens</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">ArgumentError</span>
+    <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- handle_sy_rmn_od-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- handle_sy_rmn_od-method -->
+
+    
+      <div id="method-i-handle_sy_sm" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">handle_sy_sm</span><span
+            class="method-args">(tokens, options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Handle scalar-year/scalar-month</p>
+          
+
+          
+          <div class="method-source-code" id="handle_sy_sm-source">
+            <pre><span class="ruby-comment"># File lib/chronic/handlers.rb, line 280</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">handle_sy_sm</span>(<span class="ruby-identifier">tokens</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">year</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">ScalarYear</span>).<span class="ruby-identifier">type</span>
+  <span class="ruby-identifier">month</span> = <span class="ruby-identifier">tokens</span>[<span class="ruby-value">1</span>].<span class="ruby-identifier">get_tag</span>(<span class="ruby-constant">ScalarMonth</span>).<span class="ruby-identifier">type</span>
+  <span class="ruby-identifier">handle_year_and_month</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- handle_sy_sm-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- handle_sy_sm-method -->
+
+    
+      <div id="method-i-handle_sy_sm_sd" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">handle_sy_sm_sd</span><span
+            class="method-args">(tokens, options)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Handle scalar-year/scalar-month/scalar-day</p>
+          
+
+          
+          <div class="method-source-code" id="handle_sy_sm_sd-source">
+            <pre><span class="ruby-comment"># File lib/chronic/handlers.rb, line 224</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">handle_sy_sm_sd</span>(<span class="ruby-identifier">tokens</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">new_tokens</span> = [<span class="ruby-identifier">tokens</span>[<span class="ruby-value">1</span>], <span class="ruby-identifier">tokens</span>[<span class="ruby-value">2</span>], <span class="ruby-identifier">tokens</span>[<span class="ruby-value">0</span>]]
+  <span class="ruby-identifier">time_tokens</span> = <span class="ruby-identifier">tokens</span>.<span class="ruby-identifier">last</span>(<span class="ruby-identifier">tokens</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">3</span>)
+  <span class="ruby-identifier">handle_sm_sd_sy</span>(<span class="ruby-identifier">new_tokens</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">time_tokens</span>, <span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- handle_sy_sm_sd-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- handle_sy_sm_sd-method -->
+
+    
+      <div id="method-i-handle_year_and_month" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">handle_year_and_month</span><span
+            class="method-args">(year, month)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="handle_year_and_month-source">
+            <pre><span class="ruby-comment"># File lib/chronic/handlers.rb, line 255</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">handle_year_and_month</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">month</span> <span class="ruby-operator">==</span> <span class="ruby-value">12</span>
+    <span class="ruby-identifier">next_month_year</span> = <span class="ruby-identifier">year</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>
+    <span class="ruby-identifier">next_month_month</span> = <span class="ruby-value">1</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">next_month_year</span> = <span class="ruby-identifier">year</span>
+    <span class="ruby-identifier">next_month_month</span> = <span class="ruby-identifier">month</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">end_time</span> = <span class="ruby-constant">Chronic</span>.<span class="ruby-identifier">time_class</span>.<span class="ruby-identifier">local</span>(<span class="ruby-identifier">next_month_year</span>, <span class="ruby-identifier">next_month_month</span>)
+    <span class="ruby-constant">Span</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">Chronic</span>.<span class="ruby-identifier">time_class</span>.<span class="ruby-identifier">local</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>), <span class="ruby-identifier">end_time</span>)
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">ArgumentError</span>
+    <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- handle_year_and_month-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- handle_year_and_month-method -->
+
+    
+      <div id="method-i-month_overflow-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">month_overflow?</span><span
+            class="method-args">(year, month, day)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="month_overflow-3F-source">
+            <pre><span class="ruby-comment"># File lib/chronic/handlers.rb, line 546</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">month_overflow?</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>, <span class="ruby-identifier">day</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-operator">::</span><span class="ruby-constant">Date</span>.<span class="ruby-identifier">leap?</span>(<span class="ruby-identifier">year</span>)
+    <span class="ruby-identifier">day</span> <span class="ruby-operator">&gt;</span> <span class="ruby-constant">RepeaterMonth</span><span class="ruby-operator">::</span><span class="ruby-constant">MONTH_DAYS_LEAP</span>[<span class="ruby-identifier">month</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">day</span> <span class="ruby-operator">&gt;</span> <span class="ruby-constant">RepeaterMonth</span><span class="ruby-operator">::</span><span class="ruby-constant">MONTH_DAYS</span>[<span class="ruby-identifier">month</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">ArgumentError</span>
+  <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- month_overflow-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- month_overflow-3F-method -->
+
+    
+      <div id="method-i-time_with_rollover" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">time_with_rollover</span><span
+            class="method-args">(year, month, day)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="time_with_rollover-source">
+            <pre><span class="ruby-comment"># File lib/chronic/handlers.rb, line 572</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">time_with_rollover</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>, <span class="ruby-identifier">day</span>)
+  <span class="ruby-identifier">date_parts</span> =
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">month_overflow?</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>, <span class="ruby-identifier">day</span>)
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">month</span> <span class="ruby-operator">==</span> <span class="ruby-value">12</span>
+        [<span class="ruby-identifier">year</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>, <span class="ruby-value">1</span>, <span class="ruby-value">1</span>]
+      <span class="ruby-keyword">else</span>
+        [<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>, <span class="ruby-value">1</span>]
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">else</span>
+      [<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span>, <span class="ruby-identifier">day</span>]
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-constant">Chronic</span>.<span class="ruby-identifier">time_class</span>.<span class="ruby-identifier">local</span>(*<span class="ruby-identifier">date_parts</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- time_with_rollover-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- time_with_rollover-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

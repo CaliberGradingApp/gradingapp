@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module XPath::DSL::ExpressionLevel - xpath-2.0.0 Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/xpath/dsl.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><a class="include" href="TopLevel.html">XPath::DSL::TopLevel</a>
+  
+  
+  </ul>
+</nav>
+
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-26">#&amp;</a>
+    
+    <li><a href="#method-i-2B">#+</a>
+    
+    <li><a href="#method-i-3D-3D">#==</a>
+    
+    <li><a href="#method-i-5B-5D">#[]</a>
+    
+    <li><a href="#method-i-and">#and</a>
+    
+    <li><a href="#method-i-equals">#equals</a>
+    
+    <li><a href="#method-i-inverse">#inverse</a>
+    
+    <li><a href="#method-i-is">#is</a>
+    
+    <li><a href="#method-i-n">#n</a>
+    
+    <li><a href="#method-i-normalize">#normalize</a>
+    
+    <li><a href="#method-i-one_of">#one_of</a>
+    
+    <li><a href="#method-i-or">#or</a>
+    
+    <li><a href="#method-i-string_literal">#string_literal</a>
+    
+    <li><a href="#method-i-union">#union</a>
+    
+    <li><a href="#method-i-where">#where</a>
+    
+    <li><a href="#method-i-7C">#|</a>
+    
+    <li><a href="#method-i-7E">#~</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../XPath.html">XPath</a>
+  
+    <li><a href="../../XPath/DSL.html">XPath::DSL</a>
+  
+    <li><a href="../../XPath/DSL/ExpressionLevel.html">XPath::DSL::ExpressionLevel</a>
+  
+    <li><a href="../../XPath/DSL/TopLevel.html">XPath::DSL::TopLevel</a>
+  
+    <li><a href="../../XPath/Expression.html">XPath::Expression</a>
+  
+    <li><a href="../../XPath/HTML.html">XPath::HTML</a>
+  
+    <li><a href="../../XPath/Literal.html">XPath::Literal</a>
+  
+    <li><a href="../../XPath/Renderer.html">XPath::Renderer</a>
+  
+    <li><a href="../../XPath/Union.html">XPath::Union</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module XPath::DSL::ExpressionLevel</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-26" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">&amp;</span><span
+            class="method-args">(expression)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="ExpressionLevel.html#method-i-and">and</a>
+        </div>
+        
+      </div><!-- 26-method -->
+
+    
+      <div id="method-i-2B" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">+</span><span
+            class="method-args">(*expressions)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="ExpressionLevel.html#method-i-union">union</a>
+        </div>
+        
+      </div><!-- 2B-method -->
+
+    
+      <div id="method-i-3D-3D" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">==</span><span
+            class="method-args">(expression)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="ExpressionLevel.html#method-i-equals">equals</a>
+        </div>
+        
+      </div><!-- 3D-3D-method -->
+
+    
+      <div id="method-i-5B-5D" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">[]</span><span
+            class="method-args">(expression)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="ExpressionLevel.html#method-i-where">where</a>
+        </div>
+        
+      </div><!-- 5B-5D-method -->
+
+    
+      <div id="method-i-and" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">and</span><span
+            class="method-args">(expression)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="and-source">
+            <pre><span class="ruby-comment"># File lib/xpath/dsl.rb, line 87</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">and</span>(<span class="ruby-identifier">expression</span>)
+  <span class="ruby-constant">Expression</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:and</span>, <span class="ruby-identifier">current</span>, <span class="ruby-identifier">expression</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- and-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="ExpressionLevel.html#method-i-26">&amp;</a>
+        </div>
+        
+
+        
+      </div><!-- and-method -->
+
+    
+      <div id="method-i-equals" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">equals</span><span
+            class="method-args">(expression)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="equals-source">
+            <pre><span class="ruby-comment"># File lib/xpath/dsl.rb, line 73</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">equals</span>(<span class="ruby-identifier">expression</span>)
+  <span class="ruby-constant">Expression</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:equality</span>, <span class="ruby-identifier">current</span>, <span class="ruby-identifier">expression</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- equals-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="ExpressionLevel.html#method-i-3D-3D">==</a>
+        </div>
+        
+
+        
+      </div><!-- equals-method -->
+
+    
+      <div id="method-i-inverse" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">inverse</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="inverse-source">
+            <pre><span class="ruby-comment"># File lib/xpath/dsl.rb, line 97</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">inverse</span>
+  <span class="ruby-constant">Expression</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:inverse</span>, <span class="ruby-identifier">current</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- inverse-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="ExpressionLevel.html#method-i-7E">~</a>
+        </div>
+        
+
+        
+      </div><!-- inverse-method -->
+
+    
+      <div id="method-i-is" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">is</span><span
+            class="method-args">(expression)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="is-source">
+            <pre><span class="ruby-comment"># File lib/xpath/dsl.rb, line 78</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">is</span>(<span class="ruby-identifier">expression</span>)
+  <span class="ruby-constant">Expression</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:is</span>, <span class="ruby-identifier">current</span>, <span class="ruby-identifier">expression</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- is-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- is-method -->
+
+    
+      <div id="method-i-n" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">n</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="ExpressionLevel.html#method-i-normalize">normalize</a>
+        </div>
+        
+      </div><!-- n-method -->
+
+    
+      <div id="method-i-normalize" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">normalize</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="normalize-source">
+            <pre><span class="ruby-comment"># File lib/xpath/dsl.rb, line 106</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">normalize</span>
+  <span class="ruby-constant">Expression</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:normalized_space</span>, <span class="ruby-identifier">current</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- normalize-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="ExpressionLevel.html#method-i-n">n</a>
+        </div>
+        
+
+        
+      </div><!-- normalize-method -->
+
+    
+      <div id="method-i-one_of" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">one_of</span><span
+            class="method-args">(*expressions)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="one_of-source">
+            <pre><span class="ruby-comment"># File lib/xpath/dsl.rb, line 69</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">one_of</span>(*<span class="ruby-identifier">expressions</span>)
+  <span class="ruby-constant">Expression</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:one_of</span>, <span class="ruby-identifier">current</span>, <span class="ruby-identifier">expressions</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- one_of-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- one_of-method -->
+
+    
+      <div id="method-i-or" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">or</span><span
+            class="method-args">(expression)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="or-source">
+            <pre><span class="ruby-comment"># File lib/xpath/dsl.rb, line 82</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">or</span>(<span class="ruby-identifier">expression</span>)
+  <span class="ruby-constant">Expression</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:or</span>, <span class="ruby-identifier">current</span>, <span class="ruby-identifier">expression</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- or-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="ExpressionLevel.html#method-i-7C">|</a>
+        </div>
+        
+
+        
+      </div><!-- or-method -->
+
+    
+      <div id="method-i-string_literal" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">string_literal</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="string_literal-source">
+            <pre><span class="ruby-comment"># File lib/xpath/dsl.rb, line 102</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">string_literal</span>
+  <span class="ruby-constant">Expression</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:string_literal</span>, <span class="ruby-keyword">self</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- string_literal-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- string_literal-method -->
+
+    
+      <div id="method-i-union" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">union</span><span
+            class="method-args">(*expressions)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="union-source">
+            <pre><span class="ruby-comment"># File lib/xpath/dsl.rb, line 92</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">union</span>(*<span class="ruby-identifier">expressions</span>)
+  <span class="ruby-constant">Union</span>.<span class="ruby-identifier">new</span>(*[<span class="ruby-keyword">self</span>, <span class="ruby-identifier">expressions</span>].<span class="ruby-identifier">flatten</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- union-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="ExpressionLevel.html#method-i-2B">+</a>
+        </div>
+        
+
+        
+      </div><!-- union-method -->
+
+    
+      <div id="method-i-where" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">where</span><span
+            class="method-args">(expression)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="where-source">
+            <pre><span class="ruby-comment"># File lib/xpath/dsl.rb, line 64</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">where</span>(<span class="ruby-identifier">expression</span>)
+  <span class="ruby-constant">Expression</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:where</span>, <span class="ruby-identifier">current</span>, <span class="ruby-identifier">expression</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- where-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="ExpressionLevel.html#method-i-5B-5D">[]</a>
+        </div>
+        
+
+        
+      </div><!-- where-method -->
+
+    
+      <div id="method-i-7C" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">|</span><span
+            class="method-args">(expression)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="ExpressionLevel.html#method-i-or">or</a>
+        </div>
+        
+      </div><!-- 7C-method -->
+
+    
+      <div id="method-i-7E" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">~</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="ExpressionLevel.html#method-i-inverse">inverse</a>
+        </div>
+        
+      </div><!-- 7E-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

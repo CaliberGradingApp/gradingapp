@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>README - metric_fu-Saikuro-1.1.1.0 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body class="file">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./README.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./BaseFormater.html">BaseFormater</a>
+  
+    <li><a href="./EndableParseState.html">EndableParseState</a>
+  
+    <li><a href="./Filter.html">Filter</a>
+  
+    <li><a href="./HTMLStyleSheet.html">HTMLStyleSheet</a>
+  
+    <li><a href="./HTMLTokenCounterFormater.html">HTMLTokenCounterFormater</a>
+  
+    <li><a href="./ParseBlock.html">ParseBlock</a>
+  
+    <li><a href="./ParseClass.html">ParseClass</a>
+  
+    <li><a href="./ParseComment.html">ParseComment</a>
+  
+    <li><a href="./ParseCond.html">ParseCond</a>
+  
+    <li><a href="./ParseDef.html">ParseDef</a>
+  
+    <li><a href="./ParseDoCond.html">ParseDoCond</a>
+  
+    <li><a href="./ParseModule.html">ParseModule</a>
+  
+    <li><a href="./ParseState.html">ParseState</a>
+  
+    <li><a href="./ParseStateFormater.html">ParseStateFormater</a>
+  
+    <li><a href="./ParseSymbol.html">ParseSymbol</a>
+  
+    <li><a href="./RDoc.html">RDoc</a>
+  
+    <li><a href="./ResultIndexGenerator.html">ResultIndexGenerator</a>
+  
+    <li><a href="./Saikuro.html">Saikuro</a>
+  
+    <li><a href="./SaikuroCMDLineRunner.html">SaikuroCMDLineRunner</a>
+  
+    <li><a href="./StateHTMLComplexityFormater.html">StateHTMLComplexityFormater</a>
+  
+    <li><a href="./TokenCounter.html">TokenCounter</a>
+  
+    <li><a href="./TokenCounterFormater.html">TokenCounterFormater</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<p>The japgolly fork is a part of an attempt to get metric_fu working in a
+modern Ruby environment, specifically compatibility with Ruby 1.9 and
+Bundler.</p>
+
+<h6 id="label-"></h6>
+
+<p>Version 0.2</p>
+
+<p>Saikuro: <a href="Saikuro.html">Saikuro</a> is a Ruby cyclomatic complexity
+analyzer.  When given Ruby source code <a href="Saikuro.html">Saikuro</a>
+will generate a report listing the cyclomatic complexity of each method
+found.  In addition, <a href="Saikuro.html">Saikuro</a> counts the number
+of lines per method and can generate a listing of the number of tokens on
+each line of code.</p>
+
+<p>License: <a href="Saikuro.html">Saikuro</a> uses the BSD license.</p>
+
+<p>Installation: Option 1: Using setup.rb</p>
+<ul><li>
+<p>login as root</p>
+</li><li>
+<p>run “ruby setup.rb all”</p>
+</li></ul>
+
+<p>Option 2: The manual way <a href="Saikuro.html">Saikuro</a> is a single
+Ruby file that is executable.  You can run it where you unpacked it or you
+can move it your preferred location such as “/usr/local/bin” or “~/bin”.</p>
+
+<p>Note: Ruby 1.8.5 has a bug in ri_options that will prevent <a
+href="Saikuro.html">Saikuro</a> from running.  If you are using 1.8.5
+please apply this patch : <a
+href="http://www.ruby-lang.org/cgi-bin/cvsweb.cgi/ruby/lib/rdoc/ri/ri_options.rb.diff?r1=1.2.2.13;r2=1.2.2.14">www.ruby-lang.org/cgi-bin/cvsweb.cgi/ruby/lib/rdoc/ri/ri_options.rb.diff?r1=1.2.2.13;r2=1.2.2.14</a></p>
+
+<p>Usage: <a href="Saikuro.html">Saikuro</a> is a command line program.
+Running “saikuro -h” will output a usage statement describing all the
+various arguments you can pass to it.</p>
+
+<p>“saikuro -c -p tests/samples.rb”</p>
+
+<p>The above command is a simple example that generates a cyclomatic
+complexity report on the samples.rb file, using the default filter, warning
+and error settings. The report is saved in the current directory.</p>
+
+<p>A more detailed example is “saikuro -c -t -i tests -y 0 -w 11 -e 16 -o
+out/”</p>
+
+<p>This will analyze all Ruby files found in the “tests/” directory. <a
+href="Saikuro.html">Saikuro</a> will generate a token count report and a
+cyclomatic complexity report in the “out” directory .  The “-y 0” command
+will turn off filtering and thus show the complexity of all methods.  The
+“-w 11” will mark all methods with a complexity of 11 or higher with a
+warning.  Finally, “-e 16” will flag all methods with a complexity of 16 or
+higher with an error.</p>
+
+<p>About Cyclomatic Complexity:</p>
+
+<p>The following document provides a very good and detailed description by the
+author of cyclomatic complexity.</p>
+
+<p>NIST Special Publication 500-235 Structured Testing: A Testing Methodology
+Using the Cyclomatic Complexity Metric</p>
+
+<p>By Arthur H. Watson and Thomas J. McCabe HTML <a
+href="http://hissa.nist.gov/HHRFdata/Artifacts/ITLdoc/235/title.htm">hissa.nist.gov/HHRFdata/Artifacts/ITLdoc/235/title.htm</a>
+PDF <a
+href="http://www.mccabe.com/iq_research_nist.htm">www.mccabe.com/iq_research_nist.htm</a></p>
+
+<p>How and what <a href="Saikuro.html">Saikuro</a> counts to calculate the
+cyclomatic complexity:</p>
+
+<p><a href="Saikuro.html">Saikuro</a> uses the Simplified Complexity
+Calculation, which is just adding up the number of branch points in a
+method.</p>
+
+<p>Each method starts with a complexity of 1, because there is at least one
+path through the code.  Then each conditional or looping operator (if,
+unless, while, until, for, elsif, when) adds one point to the complexity.
+Each “when” in a case statement adds one point.  Also each “rescue”
+statement adds one.</p>
+
+<p><a href="Saikuro.html">Saikuro</a> also regards blocks as an addition to a
+method's complexity because in many cases a block does add a path that may
+be traversed. For example, invoking the "each" method of an array with a
+block would only traverse the give block if the array is not empty.  Thus
+if you want to find the basis set to get 100% coverage of your code then a
+block should add one point to the method's complexity.  It is not yet for
+sure however to what level the accuracy is decreased through this
+measurement, as normal Ruby code uses blocks quite heavily and new paths
+are not necessarily introduced by every block.</p>
+
+<p>In addition, the short-circuiting “and” operators (&amp;&amp; and “and”)
+currently do not contribute to a method’s complexity, although McCabe’s
+paper listed above suggests doing so.</p>
+
+<p>#Example for “and” operator handling:</p>
+
+<pre class="ruby"><span class="ruby-comment"># Starting values for case 1 and 2</span>
+<span class="ruby-identifier">x</span> = <span class="ruby-keyword">false</span>
+<span class="ruby-identifier">y</span> = <span class="ruby-value">15</span>
+<span class="ruby-identifier">r</span>, <span class="ruby-identifier">q</span> = <span class="ruby-keyword">nil</span>
+
+<span class="ruby-comment"># case 1</span>
+<span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;W&quot;</span> <span class="ruby-keyword">if</span> ((<span class="ruby-identifier">r</span> = <span class="ruby-identifier">x</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">q</span> = <span class="ruby-identifier">y</span>))
+<span class="ruby-identifier">puts</span> <span class="ruby-identifier">r</span> <span class="ruby-comment"># =&gt; false</span>
+<span class="ruby-identifier">puts</span> <span class="ruby-identifier">q</span> <span class="ruby-comment"># =&gt; nil</span>
+
+<span class="ruby-comment"># case 2</span>
+<span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;W&quot;</span> <span class="ruby-keyword">if</span> ((<span class="ruby-identifier">q</span> = <span class="ruby-identifier">y</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">r</span> = <span class="ruby-identifier">x</span>))
+<span class="ruby-identifier">puts</span> <span class="ruby-identifier">r</span> <span class="ruby-comment"># =&gt; false</span>
+<span class="ruby-identifier">puts</span> <span class="ruby-identifier">q</span> <span class="ruby-comment"># =&gt; 15</span>
+</pre>
+
+<p>Case 1 illustrates why “and” operators should add to a method’s complexity,
+because the result of ( r = x ) is false the if statement stops and returns
+false without evaluating the ( q = y ) branch.  Thus if a total coverage of
+source code is desired, one point should be added to the method’s
+complexity.</p>
+
+<p>So why is it not added? Mainly, because we have not gotten around to it. 
+We are wondering if this would increase the noise more than it should.</p>
+
+<p>Tests: In the test directory is a sample file that has examples of the
+various possible cases that we examined and documented the expected
+cyclomatic complexity result.  If you find mistakes or missing tests please
+report them.</p>
+
+<p>Contact: <a href="Saikuro.html">Saikuro</a> is written by Zev Blut (zb at
+ubit dot com)</p>
+
+<p>Acknowledgments: Thanks to Elbert Corpuz for writing the CSS for the HTML
+output!</p>
+
+<p>Other metric tools for Ruby: Ryan Davis has an abc metric program as an
+example in his ParseTree product:  <a
+href="http://www.zenspider.com/ZSS/Products/ParseTree/">www.zenspider.com/ZSS/Products/ParseTree/</a></p>
+
+<p>The PMD project has a tool called CPD that can scan Ruby source code
+looking for source duplication:  <a
+href="http://pmd.sourceforge.net/">pmd.sourceforge.net/</a></p>
+
+</div>
+
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

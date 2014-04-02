@@ -1,0 +1,63 @@
+#! /usr/bin/env ruby
+require 'main'
+require 'yaml'
+
+#example usage. In the root of a project 'churn', or 'churn --help'
+Main do
+  option('minimum_churn_count', 'c') do
+    argument :required
+    cast :int
+    default 3
+  end
+
+  option('yaml', 'y') do
+    cast :boolean
+    default false
+  end
+
+  option('ignore_files', 'i') do
+    cast :string
+    argument :optional
+    default ''
+  end
+
+  option('start_date', 's') do
+    cast :string
+    argument :optional
+    default ''
+  end
+
+  option('data_directory', 'd') do
+    cast :string
+    argument :optional
+    default ''
+  end
+
+  #grrr h is already taken by --help / -h so whent with 'p'
+  option('past_history', 'p') do
+    cast :string
+    argument :optional
+    default ''
+  end
+
+  def report_churn(output_string)
+    require File.join(File.dirname(__FILE__), '..', 'lib', 'churn', 'churn_calculator')
+    options = {:minimum_churn_count => params['minimum_churn_count'].value,
+      :ignore_files => params['ignore_files'].value,
+      :start_date => params['start_date'].value,
+      :data_directory => params['data_directory'].value,
+      :history => params['past_history'].value
+    }
+    result = Churn::ChurnCalculator.new(options).report(output_string)
+    unless output_string
+      result = YAML::dump(result)
+    end
+    result
+  end
+
+  def run
+    report = report_churn(!params['yaml'].value)
+    puts report
+  end
+
+end

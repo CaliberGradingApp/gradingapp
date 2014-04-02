@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Hashie::Mash - hashie-2.0.5 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/hashie/mash.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Hash
+  
+</nav>
+
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><a class="include" href="PrettyInspect.html">Hashie::PrettyInspect</a>
+  
+  
+  </ul>
+</nav>
+
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-5B-5D">::[]</a>
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-5B-5D">#[]</a>
+    
+    <li><a href="#method-i-custom_reader">#custom_reader</a>
+    
+    <li><a href="#method-i-deep_merge">#deep_merge</a>
+    
+    <li><a href="#method-i-deep_merge-21">#deep_merge!</a>
+    
+    <li><a href="#method-i-deep_update">#deep_update</a>
+    
+    <li><a href="#method-i-delete">#delete</a>
+    
+    <li><a href="#method-i-dup">#dup</a>
+    
+    <li><a href="#method-i-fetch">#fetch</a>
+    
+    <li><a href="#method-i-has_key-3F">#has_key?</a>
+    
+    <li><a href="#method-i-include-3F">#include?</a>
+    
+    <li><a href="#method-i-initializing_reader">#initializing_reader</a>
+    
+    <li><a href="#method-i-key-3F">#key?</a>
+    
+    <li><a href="#method-i-member-3F">#member?</a>
+    
+    <li><a href="#method-i-merge">#merge</a>
+    
+    <li><a href="#method-i-merge-21">#merge!</a>
+    
+    <li><a href="#method-i-method_missing">#method_missing</a>
+    
+    <li><a href="#method-i-regular_dup">#regular_dup</a>
+    
+    <li><a href="#method-i-regular_reader">#regular_reader</a>
+    
+    <li><a href="#method-i-replace">#replace</a>
+    
+    <li><a href="#method-i-respond_to-3F">#respond_to?</a>
+    
+    <li><a href="#method-i-shallow_merge">#shallow_merge</a>
+    
+    <li><a href="#method-i-shallow_update">#shallow_update</a>
+    
+    <li><a href="#method-i-underbang_reader">#underbang_reader</a>
+    
+    <li><a href="#method-i-update">#update</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Hashie.html">Hashie</a>
+  
+    <li><a href="../Hashie/Clash.html">Hashie::Clash</a>
+  
+    <li><a href="../Hashie/Clash/ChainError.html">Hashie::Clash::ChainError</a>
+  
+    <li><a href="../Hashie/Dash.html">Hashie::Dash</a>
+  
+    <li><a href="../Hashie/Extensions.html">Hashie::Extensions</a>
+  
+    <li><a href="../Hashie/Extensions/Coercion.html">Hashie::Extensions::Coercion</a>
+  
+    <li><a href="../Hashie/Extensions/Coercion/ClassMethods.html">Hashie::Extensions::Coercion::ClassMethods</a>
+  
+    <li><a href="../Hashie/Extensions/Coercion/InstanceMethods.html">Hashie::Extensions::Coercion::InstanceMethods</a>
+  
+    <li><a href="../Hashie/Extensions/DeepMerge.html">Hashie::Extensions::DeepMerge</a>
+  
+    <li><a href="../Hashie/Extensions/IndifferentAccess.html">Hashie::Extensions::IndifferentAccess</a>
+  
+    <li><a href="../Hashie/Extensions/KeyConversion.html">Hashie::Extensions::KeyConversion</a>
+  
+    <li><a href="../Hashie/Extensions/MergeInitializer.html">Hashie::Extensions::MergeInitializer</a>
+  
+    <li><a href="../Hashie/Extensions/MethodAccess.html">Hashie::Extensions::MethodAccess</a>
+  
+    <li><a href="../Hashie/Extensions/MethodQuery.html">Hashie::Extensions::MethodQuery</a>
+  
+    <li><a href="../Hashie/Extensions/MethodReader.html">Hashie::Extensions::MethodReader</a>
+  
+    <li><a href="../Hashie/Extensions/MethodWriter.html">Hashie::Extensions::MethodWriter</a>
+  
+    <li><a href="../Hashie/Extensions/StringifyKeys.html">Hashie::Extensions::StringifyKeys</a>
+  
+    <li><a href="../Hashie/Extensions/Structure.html">Hashie::Extensions::Structure</a>
+  
+    <li><a href="../Hashie/Extensions/Structure/ClassMethods.html">Hashie::Extensions::Structure::ClassMethods</a>
+  
+    <li><a href="../Hashie/Extensions/SymbolizeKeys.html">Hashie::Extensions::SymbolizeKeys</a>
+  
+    <li><a href="../Hashie/Hash.html">Hashie::Hash</a>
+  
+    <li><a href="../Hashie/HashExtensions.html">Hashie::HashExtensions</a>
+  
+    <li><a href="../Hashie/Mash.html">Hashie::Mash</a>
+  
+    <li><a href="../Hashie/PrettyInspect.html">Hashie::PrettyInspect</a>
+  
+    <li><a href="../Hashie/Trash.html">Hashie::Trash</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Hashie::Mash</h1>
+
+  <div id="description" class="description">
+    
+<p><a href="Mash.html">Mash</a> allows you to create pseudo-objects that have
+method-like accessors for hash keys. This is useful for such
+implementations as an API-accessing library that wants to fake robust
+objects without the overhead of actually doing so. Think of it as
+OpenStruct with some additional goodies.</p>
+
+<p>A <a href="Mash.html">Mash</a> will look at the methods you pass it and
+perform operations based on the following rules:</p>
+<ul><li>
+<p>No punctuation: Returns the value of the hash for that key, or nil if none
+exists.</p>
+</li><li>
+<p>Assignment (<code>=</code>): Sets the attribute of the given method name.</p>
+</li><li>
+<p>Existence (<code>?</code>): Returns true or false depending on whether that
+key has been set.</p>
+</li><li>
+<p>Bang (<code>!</code>): Forces the existence of this key, used for deep
+Mashes. Think of it as “touch” for mashes.</p>
+</li><li>
+<p>Under Bang (<code>_</code>): Like Bang, but returns a new <a
+href="Mash.html">Mash</a> rather than creating a key.  Used to test
+existance in deep Mashes.</p>
+</li></ul>
+
+<h2 id="label-Basic+Example">Basic Example</h2>
+
+<pre class="ruby"><span class="ruby-identifier">mash</span> = <span class="ruby-constant">Mash</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-identifier">mash</span>.<span class="ruby-identifier">name?</span> <span class="ruby-comment"># =&gt; false</span>
+<span class="ruby-identifier">mash</span>.<span class="ruby-identifier">name</span> = <span class="ruby-string">&quot;Bob&quot;</span>
+<span class="ruby-identifier">mash</span>.<span class="ruby-identifier">name</span> <span class="ruby-comment"># =&gt; &quot;Bob&quot;</span>
+<span class="ruby-identifier">mash</span>.<span class="ruby-identifier">name?</span> <span class="ruby-comment"># =&gt; true</span>
+</pre>
+
+<h2 id="label-Hash+Conversion++Example"><a href="Hash.html">Hash</a> Conversion  Example</h2>
+
+<pre class="ruby"><span class="ruby-identifier">hash</span> = {:<span class="ruby-identifier">a</span> =<span class="ruby-operator">&gt;</span> {:<span class="ruby-identifier">b</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">23</span>, :<span class="ruby-identifier">d</span> =<span class="ruby-operator">&gt;</span> {:<span class="ruby-identifier">e</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;abc&quot;</span>}}, :<span class="ruby-identifier">f</span> =<span class="ruby-operator">&gt;</span> [{:<span class="ruby-identifier">g</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">44</span>, :<span class="ruby-identifier">h</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">29</span>}, <span class="ruby-value">12</span>]}
+<span class="ruby-identifier">mash</span> = <span class="ruby-constant">Mash</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">hash</span>)
+<span class="ruby-identifier">mash</span>.<span class="ruby-identifier">a</span>.<span class="ruby-identifier">b</span> <span class="ruby-comment"># =&gt; 23</span>
+<span class="ruby-identifier">mash</span>.<span class="ruby-identifier">a</span>.<span class="ruby-identifier">d</span>.<span class="ruby-identifier">e</span> <span class="ruby-comment"># =&gt; &quot;abc&quot;</span>
+<span class="ruby-identifier">mash</span>.<span class="ruby-identifier">f</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">g</span> <span class="ruby-comment"># =&gt; 44</span>
+<span class="ruby-identifier">mash</span>.<span class="ruby-identifier">f</span>.<span class="ruby-identifier">last</span> <span class="ruby-comment"># =&gt; 12</span>
+</pre>
+
+<h2 id="label-Bang+Example">Bang Example</h2>
+
+<pre class="ruby"><span class="ruby-identifier">mash</span> = <span class="ruby-constant">Mash</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-identifier">mash</span>.<span class="ruby-identifier">author</span> <span class="ruby-comment"># =&gt; nil</span>
+<span class="ruby-identifier">mash</span>.<span class="ruby-identifier">author!</span> <span class="ruby-comment"># =&gt; &lt;Mash&gt;</span>
+
+<span class="ruby-identifier">mash</span> = <span class="ruby-constant">Mash</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-identifier">mash</span>.<span class="ruby-identifier">author!</span>.<span class="ruby-identifier">name</span> = <span class="ruby-string">&quot;Michael Bleigh&quot;</span>
+<span class="ruby-identifier">mash</span>.<span class="ruby-identifier">author</span> <span class="ruby-comment"># =&gt; &lt;Mash name=&quot;Michael Bleigh&quot;&gt;</span>
+</pre>
+
+<h2 id="label-Under+Bang+Example">Under Bang Example</h2>
+
+<pre class="ruby"><span class="ruby-identifier">mash</span> = <span class="ruby-constant">Mash</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-identifier">mash</span>.<span class="ruby-identifier">author</span> <span class="ruby-comment"># =&gt; nil</span>
+<span class="ruby-identifier">mash</span>.<span class="ruby-identifier">author_</span> <span class="ruby-comment"># =&gt; &lt;Mash&gt;</span>
+<span class="ruby-identifier">mash</span>.<span class="ruby-identifier">author_</span>.<span class="ruby-identifier">name</span> <span class="ruby-comment"># =&gt; nil</span>
+
+<span class="ruby-identifier">mash</span> = <span class="ruby-constant">Mash</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-identifier">mash</span>.<span class="ruby-identifier">author_</span>.<span class="ruby-identifier">name</span> = <span class="ruby-string">&quot;Michael Bleigh&quot;</span>  (<span class="ruby-identifier">assigned</span> <span class="ruby-identifier">to</span> <span class="ruby-identifier">temp</span> <span class="ruby-identifier">object</span>)
+<span class="ruby-identifier">mash</span>.<span class="ruby-identifier">author</span> <span class="ruby-comment"># =&gt; &lt;Mash&gt;</span>
+</pre>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-5B-5D" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">[]</span><span
+            class="method-args">(source_hash = nil, default = nil, &blk)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Mash.html#method-c-new">new</a>
+        </div>
+        
+      </div><!-- 5B-5D-method -->
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(source_hash = nil, default = nil, &blk)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>If you pass in an existing hash, it will convert it to a <a
+href="Mash.html">Mash</a> including recursively descending into arrays and
+hashes, converting them as well.</p>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/hashie/mash.rb, line 65</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">source_hash</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">default</span> = <span class="ruby-keyword">nil</span>, &amp;<span class="ruby-identifier">blk</span>)
+  <span class="ruby-identifier">deep_update</span>(<span class="ruby-identifier">source_hash</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">source_hash</span>
+  <span class="ruby-identifier">default</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">super</span>(<span class="ruby-identifier">default</span>) <span class="ruby-operator">:</span> <span class="ruby-keyword">super</span>(&amp;<span class="ruby-identifier">blk</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Mash.html#method-c-5B-5D">[]</a>
+        </div>
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-5B-5D" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">[]</span><span
+            class="method-args">(key)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Mash.html#method-i-regular_reader">regular_reader</a>
+        </div>
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Mash.html#method-i-custom_reader">custom_reader</a>
+        </div>
+        
+      </div><!-- 5B-5D-method -->
+
+    
+      <div id="method-i-custom_reader" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">custom_reader</span><span
+            class="method-args">(key) { |value| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Retrieves an attribute set in the <a href="Mash.html">Mash</a>. Will
+convert any key passed in to a string before retrieving.</p>
+          
+
+          
+          <div class="method-source-code" id="custom_reader-source">
+            <pre><span class="ruby-comment"># File lib/hashie/mash.rb, line 85</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">custom_reader</span>(<span class="ruby-identifier">key</span>)
+  <span class="ruby-identifier">value</span> = <span class="ruby-identifier">regular_reader</span>(<span class="ruby-identifier">convert_key</span>(<span class="ruby-identifier">key</span>))
+  <span class="ruby-keyword">yield</span> <span class="ruby-identifier">value</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+  <span class="ruby-identifier">value</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- custom_reader-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Mash.html#method-i-5B-5D">[]</a>
+        </div>
+        
+
+        
+      </div><!-- custom_reader-method -->
+
+    
+      <div id="method-i-deep_merge" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">deep_merge</span><span
+            class="method-args">(other_hash, &blk)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Performs a <a href="Mash.html#method-i-deep_update">#deep_update</a> on a
+duplicate of the current mash.</p>
+          
+
+          
+          <div class="method-source-code" id="deep_merge-source">
+            <pre><span class="ruby-comment"># File lib/hashie/mash.rb, line 143</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">deep_merge</span>(<span class="ruby-identifier">other_hash</span>, &amp;<span class="ruby-identifier">blk</span>)
+  <span class="ruby-identifier">dup</span>.<span class="ruby-identifier">deep_update</span>(<span class="ruby-identifier">other_hash</span>, &amp;<span class="ruby-identifier">blk</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- deep_merge-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Mash.html#method-i-merge">merge</a>
+        </div>
+        
+
+        
+      </div><!-- deep_merge-method -->
+
+    
+      <div id="method-i-deep_merge-21" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">deep_merge!</span><span
+            class="method-args">(other_hash, &blk)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Mash.html#method-i-deep_update">deep_update</a>
+        </div>
+        
+      </div><!-- deep_merge-21-method -->
+
+    
+      <div id="method-i-deep_update" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">deep_update</span><span
+            class="method-args">(other_hash, &blk)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Recursively merges this mash with the passed in hash, merging each hash in
+the hierarchy.</p>
+          
+
+          
+          <div class="method-source-code" id="deep_update-source">
+            <pre><span class="ruby-comment"># File lib/hashie/mash.rb, line 150</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">deep_update</span>(<span class="ruby-identifier">other_hash</span>, &amp;<span class="ruby-identifier">blk</span>)
+  <span class="ruby-identifier">other_hash</span>.<span class="ruby-identifier">each_pair</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">key</span> = <span class="ruby-identifier">convert_key</span>(<span class="ruby-identifier">k</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">regular_reader</span>(<span class="ruby-identifier">key</span>).<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Mash</span>) <span class="ruby-keyword">and</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-operator">::</span><span class="ruby-constant">Hash</span>)
+      <span class="ruby-identifier">custom_reader</span>(<span class="ruby-identifier">key</span>).<span class="ruby-identifier">deep_update</span>(<span class="ruby-identifier">v</span>, &amp;<span class="ruby-identifier">blk</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">value</span> = <span class="ruby-identifier">convert_value</span>(<span class="ruby-identifier">v</span>, <span class="ruby-keyword">true</span>)
+      <span class="ruby-identifier">value</span> = <span class="ruby-identifier">blk</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">key</span>, <span class="ruby-keyword">self</span>[<span class="ruby-identifier">k</span>], <span class="ruby-identifier">value</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">blk</span>
+      <span class="ruby-identifier">custom_writer</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- deep_update-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Mash.html#method-i-deep_merge-21">deep_merge!</a>, <a href="Mash.html#method-i-update">update</a>
+        </div>
+        
+
+        
+      </div><!-- deep_update-method -->
+
+    
+      <div id="method-i-delete" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">delete</span><span
+            class="method-args">(key)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="delete-source">
+            <pre><span class="ruby-comment"># File lib/hashie/mash.rb, line 124</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">delete</span>(<span class="ruby-identifier">key</span>)
+  <span class="ruby-keyword">super</span>(<span class="ruby-identifier">convert_key</span>(<span class="ruby-identifier">key</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- delete-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- delete-method -->
+
+    
+      <div id="method-i-dup" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">dup</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Duplicates the current mash as a new mash.</p>
+          
+
+          
+          <div class="method-source-code" id="dup-source">
+            <pre><span class="ruby-comment"># File lib/hashie/mash.rb, line 130</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">dup</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">default</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- dup-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Mash.html#method-i-regular_dup">regular_dup</a>
+        </div>
+        
+
+        
+      </div><!-- dup-method -->
+
+    
+      <div id="method-i-fetch" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">fetch</span><span
+            class="method-args">(key, *args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="fetch-source">
+            <pre><span class="ruby-comment"># File lib/hashie/mash.rb, line 120</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">key</span>, *<span class="ruby-identifier">args</span>)
+  <span class="ruby-keyword">super</span>(<span class="ruby-identifier">convert_key</span>(<span class="ruby-identifier">key</span>), *<span class="ruby-identifier">args</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- fetch-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- fetch-method -->
+
+    
+      <div id="method-i-has_key-3F" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">has_key?</span><span
+            class="method-args">(key)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Mash.html#method-i-key-3F">key?</a>
+        </div>
+        
+      </div><!-- has_key-3F-method -->
+
+    
+      <div id="method-i-include-3F" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">include?</span><span
+            class="method-args">(key)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Mash.html#method-i-key-3F">key?</a>
+        </div>
+        
+      </div><!-- include-3F-method -->
+
+    
+      <div id="method-i-initializing_reader" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">initializing_reader</span><span
+            class="method-args">(key)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This is the bang method reader, it will return a new <a
+href="Mash.html">Mash</a> if there isn’t a value already assigned to the
+key requested.</p>
+          
+
+          
+          <div class="method-source-code" id="initializing_reader-source">
+            <pre><span class="ruby-comment"># File lib/hashie/mash.rb, line 103</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initializing_reader</span>(<span class="ruby-identifier">key</span>)
+  <span class="ruby-identifier">ck</span> = <span class="ruby-identifier">convert_key</span>(<span class="ruby-identifier">key</span>)
+  <span class="ruby-identifier">regular_writer</span>(<span class="ruby-identifier">ck</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">key?</span>(<span class="ruby-identifier">ck</span>)
+  <span class="ruby-identifier">regular_reader</span>(<span class="ruby-identifier">ck</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- initializing_reader-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- initializing_reader-method -->
+
+    
+      <div id="method-i-key-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">key?</span><span
+            class="method-args">(key)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="key-3F-source">
+            <pre><span class="ruby-comment"># File lib/hashie/mash.rb, line 134</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">key?</span>(<span class="ruby-identifier">key</span>)
+  <span class="ruby-keyword">super</span>(<span class="ruby-identifier">convert_key</span>(<span class="ruby-identifier">key</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- key-3F-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Mash.html#method-i-has_key-3F">has_key?</a>, <a href="Mash.html#method-i-include-3F">include?</a>, <a href="Mash.html#method-i-member-3F">member?</a>
+        </div>
+        
+
+        
+      </div><!-- key-3F-method -->
+
+    
+      <div id="method-i-member-3F" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">member?</span><span
+            class="method-args">(key)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Mash.html#method-i-key-3F">key?</a>
+        </div>
+        
+      </div><!-- member-3F-method -->
+
+    
+      <div id="method-i-merge" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">merge</span><span
+            class="method-args">(other_hash, &blk)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Mash.html#method-i-deep_merge">deep_merge</a>
+        </div>
+        
+      </div><!-- merge-method -->
+
+    
+      <div id="method-i-merge-21" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">merge!</span><span
+            class="method-args">(other_hash, &blk)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Mash.html#method-i-update">update</a>
+        </div>
+        
+      </div><!-- merge-21-method -->
+
+    
+      <div id="method-i-method_missing" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">method_missing</span><span
+            class="method-args">(method_name, *args, &blk)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="method_missing-source">
+            <pre><span class="ruby-comment"># File lib/hashie/mash.rb, line 194</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">method_missing</span>(<span class="ruby-identifier">method_name</span>, *<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">blk</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>.[](<span class="ruby-identifier">method_name</span>, &amp;<span class="ruby-identifier">blk</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">key?</span>(<span class="ruby-identifier">method_name</span>)
+  <span class="ruby-identifier">match</span> = <span class="ruby-identifier">method_name</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">match</span>(<span class="ruby-regexp">/(.*?)([?=!_]?)$/</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">match</span>[<span class="ruby-value">2</span>]
+  <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;=&quot;</span>
+    <span class="ruby-keyword">self</span>[<span class="ruby-identifier">match</span>[<span class="ruby-value">1</span>]] = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;?&quot;</span>
+    <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-keyword">self</span>[<span class="ruby-identifier">match</span>[<span class="ruby-value">1</span>]]
+  <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;!&quot;</span>
+    <span class="ruby-identifier">initializing_reader</span>(<span class="ruby-identifier">match</span>[<span class="ruby-value">1</span>])
+  <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;_&quot;</span>
+    <span class="ruby-identifier">underbang_reader</span>(<span class="ruby-identifier">match</span>[<span class="ruby-value">1</span>])
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">default</span>(<span class="ruby-identifier">method_name</span>, *<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">blk</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- method_missing-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- method_missing-method -->
+
+    
+      <div id="method-i-regular_dup" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">regular_dup</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Mash.html#method-i-dup">dup</a>
+        </div>
+        
+      </div><!-- regular_dup-method -->
+
+    
+      <div id="method-i-regular_reader" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">regular_reader</span><span
+            class="method-args">(key)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Mash.html#method-i-5B-5D">[]</a>
+        </div>
+        
+      </div><!-- regular_reader-method -->
+
+    
+      <div id="method-i-replace" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">replace</span><span
+            class="method-args">(other_hash)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="replace-source">
+            <pre><span class="ruby-comment"># File lib/hashie/mash.rb, line 181</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">replace</span>(<span class="ruby-identifier">other_hash</span>)
+  (<span class="ruby-identifier">keys</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">other_hash</span>.<span class="ruby-identifier">keys</span>).<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span> <span class="ruby-identifier">delete</span>(<span class="ruby-identifier">key</span>) }
+  <span class="ruby-identifier">other_hash</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span> <span class="ruby-keyword">self</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-identifier">value</span> }
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- replace-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- replace-method -->
+
+    
+      <div id="method-i-respond_to-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">respond_to?</span><span
+            class="method-args">(method_name, include_private=false)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Will return true if the <a href="Mash.html">Mash</a> has had a key set in
+addition to normal respond_to? functionality.</p>
+          
+
+          
+          <div class="method-source-code" id="respond_to-3F-source">
+            <pre><span class="ruby-comment"># File lib/hashie/mash.rb, line 189</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">method_name</span>, <span class="ruby-identifier">include_private</span>=<span class="ruby-keyword">false</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">key?</span>(<span class="ruby-identifier">method_name</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">method_name</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">slice</span>(<span class="ruby-regexp">/[=?!_]\Z/</span>)
+  <span class="ruby-keyword">super</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- respond_to-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- respond_to-3F-method -->
+
+    
+      <div id="method-i-shallow_merge" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">shallow_merge</span><span
+            class="method-args">(other_hash)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Performs a <a href="Mash.html#method-i-shallow_update">#shallow_update</a>
+on a duplicate of the current mash</p>
+          
+
+          
+          <div class="method-source-code" id="shallow_merge-source">
+            <pre><span class="ruby-comment"># File lib/hashie/mash.rb, line 168</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">shallow_merge</span>(<span class="ruby-identifier">other_hash</span>)
+  <span class="ruby-identifier">dup</span>.<span class="ruby-identifier">shallow_update</span>(<span class="ruby-identifier">other_hash</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- shallow_merge-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- shallow_merge-method -->
+
+    
+      <div id="method-i-shallow_update" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">shallow_update</span><span
+            class="method-args">(other_hash)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Merges (non-recursively) the hash from the argument, changing the receiving
+hash</p>
+          
+
+          
+          <div class="method-source-code" id="shallow_update-source">
+            <pre><span class="ruby-comment"># File lib/hashie/mash.rb, line 174</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">shallow_update</span>(<span class="ruby-identifier">other_hash</span>)
+  <span class="ruby-identifier">other_hash</span>.<span class="ruby-identifier">each_pair</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">regular_writer</span>(<span class="ruby-identifier">convert_key</span>(<span class="ruby-identifier">k</span>), <span class="ruby-identifier">convert_value</span>(<span class="ruby-identifier">v</span>, <span class="ruby-keyword">true</span>))
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- shallow_update-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- shallow_update-method -->
+
+    
+      <div id="method-i-underbang_reader" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">underbang_reader</span><span
+            class="method-args">(key)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This is the under bang method reader, it will return a temporary new <a
+href="Mash.html">Mash</a> if there isn’t a value already assigned to the
+key requested.</p>
+          
+
+          
+          <div class="method-source-code" id="underbang_reader-source">
+            <pre><span class="ruby-comment"># File lib/hashie/mash.rb, line 111</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">underbang_reader</span>(<span class="ruby-identifier">key</span>)
+  <span class="ruby-identifier">ck</span> = <span class="ruby-identifier">convert_key</span>(<span class="ruby-identifier">key</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">key?</span>(<span class="ruby-identifier">ck</span>)
+    <span class="ruby-identifier">regular_reader</span>(<span class="ruby-identifier">ck</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- underbang_reader-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- underbang_reader-method -->
+
+    
+      <div id="method-i-update" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">update</span><span
+            class="method-args">(other_hash, &blk)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Mash.html#method-i-merge-21">merge!</a>
+        </div>
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Mash.html#method-i-deep_update">deep_update</a>
+        </div>
+        
+      </div><!-- update-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

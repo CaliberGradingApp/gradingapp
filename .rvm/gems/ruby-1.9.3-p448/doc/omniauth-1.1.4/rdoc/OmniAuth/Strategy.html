@@ -1,0 +1,1865 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module OmniAuth::Strategy - omniauth-1.1.4 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/omniauth/strategy.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-included">::included</a>
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-auth_hash">#auth_hash</a>
+    
+    <li><a href="#method-i-call">#call</a>
+    
+    <li><a href="#method-i-call-21">#call!</a>
+    
+    <li><a href="#method-i-call_app-21">#call_app!</a>
+    
+    <li><a href="#method-i-callback_call">#callback_call</a>
+    
+    <li><a href="#method-i-callback_path">#callback_path</a>
+    
+    <li><a href="#method-i-callback_phase">#callback_phase</a>
+    
+    <li><a href="#method-i-callback_url">#callback_url</a>
+    
+    <li><a href="#method-i-credentials">#credentials</a>
+    
+    <li><a href="#method-i-current_path">#current_path</a>
+    
+    <li><a href="#method-i-custom_path">#custom_path</a>
+    
+    <li><a href="#method-i-extra">#extra</a>
+    
+    <li><a href="#method-i-fail-21">#fail!</a>
+    
+    <li><a href="#method-i-full_host">#full_host</a>
+    
+    <li><a href="#method-i-info">#info</a>
+    
+    <li><a href="#method-i-inspect">#inspect</a>
+    
+    <li><a href="#method-i-log">#log</a>
+    
+    <li><a href="#method-i-merge_stack">#merge_stack</a>
+    
+    <li><a href="#method-i-mock_call-21">#mock_call!</a>
+    
+    <li><a href="#method-i-mock_callback_call">#mock_callback_call</a>
+    
+    <li><a href="#method-i-mock_request_call">#mock_request_call</a>
+    
+    <li><a href="#method-i-name">#name</a>
+    
+    <li><a href="#method-i-on_auth_path-3F">#on_auth_path?</a>
+    
+    <li><a href="#method-i-on_callback_path-3F">#on_callback_path?</a>
+    
+    <li><a href="#method-i-on_path-3F">#on_path?</a>
+    
+    <li><a href="#method-i-on_request_path-3F">#on_request_path?</a>
+    
+    <li><a href="#method-i-options_call">#options_call</a>
+    
+    <li><a href="#method-i-options_request-3F">#options_request?</a>
+    
+    <li><a href="#method-i-path_prefix">#path_prefix</a>
+    
+    <li><a href="#method-i-query_string">#query_string</a>
+    
+    <li><a href="#method-i-redirect">#redirect</a>
+    
+    <li><a href="#method-i-request">#request</a>
+    
+    <li><a href="#method-i-request_call">#request_call</a>
+    
+    <li><a href="#method-i-request_path">#request_path</a>
+    
+    <li><a href="#method-i-request_phase">#request_phase</a>
+    
+    <li><a href="#method-i-script_name">#script_name</a>
+    
+    <li><a href="#method-i-session">#session</a>
+    
+    <li><a href="#method-i-setup_path">#setup_path</a>
+    
+    <li><a href="#method-i-setup_phase">#setup_phase</a>
+    
+    <li><a href="#method-i-skip_info-3F">#skip_info?</a>
+    
+    <li><a href="#method-i-ssl-3F">#ssl?</a>
+    
+    <li><a href="#method-i-uid">#uid</a>
+    
+    <li><a href="#method-i-user_info">#user_info</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../OmniAuth.html">OmniAuth</a>
+  
+    <li><a href="../OmniAuth/AuthHash.html">OmniAuth::AuthHash</a>
+  
+    <li><a href="../OmniAuth/AuthHash/InfoHash.html">OmniAuth::AuthHash::InfoHash</a>
+  
+    <li><a href="../OmniAuth/Builder.html">OmniAuth::Builder</a>
+  
+    <li><a href="../OmniAuth/Configuration.html">OmniAuth::Configuration</a>
+  
+    <li><a href="../OmniAuth/Error.html">OmniAuth::Error</a>
+  
+    <li><a href="../OmniAuth/FailureEndpoint.html">OmniAuth::FailureEndpoint</a>
+  
+    <li><a href="../OmniAuth/Form.html">OmniAuth::Form</a>
+  
+    <li><a href="../OmniAuth/NoSessionError.html">OmniAuth::NoSessionError</a>
+  
+    <li><a href="../OmniAuth/Strategies.html">OmniAuth::Strategies</a>
+  
+    <li><a href="../OmniAuth/Strategies/Developer.html">OmniAuth::Strategies::Developer</a>
+  
+    <li><a href="../OmniAuth/Strategy.html">OmniAuth::Strategy</a>
+  
+    <li><a href="../OmniAuth/Strategy/ClassMethods.html">OmniAuth::Strategy::ClassMethods</a>
+  
+    <li><a href="../OmniAuth/Strategy/Options.html">OmniAuth::Strategy::Options</a>
+  
+    <li><a href="../OmniAuth/Test.html">OmniAuth::Test</a>
+  
+    <li><a href="../OmniAuth/Test/PhonySession.html">OmniAuth::Test::PhonySession</a>
+  
+    <li><a href="../OmniAuth/Test/StrategyMacros.html">OmniAuth::Test::StrategyMacros</a>
+  
+    <li><a href="../OmniAuth/Test/StrategyTestCase.html">OmniAuth::Test::StrategyTestCase</a>
+  
+    <li><a href="../OmniAuth/Utils.html">OmniAuth::Utils</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module OmniAuth::Strategy</h1>
+
+  <div id="description" class="description">
+    
+<p>The <a href="Strategy.html">Strategy</a> is the base unit of OmniAuth’s
+ability to wrangle multiple providers. Each strategy provided by <a
+href="../OmniAuth.html">OmniAuth</a> includes this mixin to gain the
+default functionality necessary to be compatible with the <a
+href="../OmniAuth.html">OmniAuth</a> library.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-app" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">app</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-env" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">env</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-options" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">options</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-response" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">response</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-included" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">included</span><span
+            class="method-args">(base)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="included-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/strategy.rb, line 11</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">included</span>(<span class="ruby-identifier">base</span>)
+  <span class="ruby-constant">OmniAuth</span>.<span class="ruby-identifier">strategies</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">base</span>
+
+  <span class="ruby-identifier">base</span>.<span class="ruby-identifier">extend</span> <span class="ruby-constant">ClassMethods</span>
+  <span class="ruby-identifier">base</span>.<span class="ruby-identifier">class_eval</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">option</span> <span class="ruby-value">:setup</span>, <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">option</span> <span class="ruby-value">:skip_info</span>, <span class="ruby-keyword">false</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- included-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- included-method -->
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(app, *args) { |options| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Initializes the strategy by passing in the Rack endpoint, the unique URL
+segment name for this strategy, and any additional arguments. An `options`
+hash is automatically created from the last argument if it is a hash.</p>
+
+<p>@param app [Rack application] The application on which this middleware is
+applied.</p>
+
+<p>@overload new(app, options = {})</p>
+
+<pre>If nothing but a hash is supplied, initialized with the supplied options
+overriding the strategy's default options via a deep merge.</pre>
+
+<p>@overload new(app, *args, options = {})</p>
+
+<pre>If the strategy has supplied custom arguments that it accepts, they may
+will be passed through and set to the appropriate values.</pre>
+
+<p>@yield [Options] Yields options to block for further configuration.</p>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/strategy.rb, line 130</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">app</span>, *<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-ivar">@app</span> = <span class="ruby-identifier">app</span>
+  <span class="ruby-ivar">@env</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@options</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">default_options</span>.<span class="ruby-identifier">dup</span>
+
+  <span class="ruby-identifier">options</span>.<span class="ruby-identifier">deep_merge!</span>(<span class="ruby-identifier">args</span>.<span class="ruby-identifier">pop</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
+  <span class="ruby-identifier">options</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">'::'</span>).<span class="ruby-identifier">last</span>.<span class="ruby-identifier">downcase</span>
+
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">args</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">arg</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">options</span>[<span class="ruby-identifier">arg</span>] = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">shift</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Make sure that all of the args have been dealt with, otherwise error out.</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;Received wrong number of arguments. #{args.inspect}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span>
+
+  <span class="ruby-keyword">yield</span> <span class="ruby-identifier">options</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-auth_hash" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">auth_hash</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="auth_hash-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/strategy.rb, line 333</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">auth_hash</span>
+  <span class="ruby-identifier">hash</span> = <span class="ruby-constant">AuthHash</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:provider</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">name</span>, <span class="ruby-value">:uid</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">uid</span>)
+  <span class="ruby-identifier">hash</span>.<span class="ruby-identifier">info</span> = <span class="ruby-identifier">info</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">skip_info?</span>
+  <span class="ruby-identifier">hash</span>.<span class="ruby-identifier">credentials</span> = <span class="ruby-identifier">credentials</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">credentials</span>
+  <span class="ruby-identifier">hash</span>.<span class="ruby-identifier">extra</span> = <span class="ruby-identifier">extra</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">extra</span>
+  <span class="ruby-identifier">hash</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- auth_hash-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- auth_hash-method -->
+
+    
+      <div id="method-i-call" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">call</span><span
+            class="method-args">(env)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Duplicates this instance and runs <a
+href="Strategy.html#method-i-call-21">call!</a> on it. @param [Hash] The
+Rack environment.</p>
+          
+
+          
+          <div class="method-source-code" id="call-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/strategy.rb, line 163</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">call</span>(<span class="ruby-identifier">env</span>)
+  <span class="ruby-identifier">dup</span>.<span class="ruby-identifier">call!</span>(<span class="ruby-identifier">env</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- call-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- call-method -->
+
+    
+      <div id="method-i-call-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">call!</span><span
+            class="method-args">(env)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>The logic for dispatching any additional actions that need to be taken. For
+instance, calling the request phase if the request path is recognized.</p>
+
+<p>@param env [Hash] The Rack environment.</p>
+          
+
+          
+          <div class="method-source-code" id="call-21-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/strategy.rb, line 172</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">call!</span>(<span class="ruby-identifier">env</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">OmniAuth</span><span class="ruby-operator">::</span><span class="ruby-constant">NoSessionError</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;You must provide a session to use OmniAuth.&quot;</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">env</span>[<span class="ruby-string">'rack.session'</span>]
+
+  <span class="ruby-ivar">@env</span> = <span class="ruby-identifier">env</span>
+  <span class="ruby-ivar">@env</span>[<span class="ruby-string">'omniauth.strategy'</span>] = <span class="ruby-keyword">self</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">on_auth_path?</span>
+
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">mock_call!</span>(<span class="ruby-identifier">env</span>) <span class="ruby-keyword">if</span> <span class="ruby-constant">OmniAuth</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">test_mode</span>
+
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">options_call</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">on_auth_path?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">options_request?</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">request_call</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">on_request_path?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">OmniAuth</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">allowed_request_methods</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">request</span>.<span class="ruby-identifier">request_method</span>.<span class="ruby-identifier">downcase</span>.<span class="ruby-identifier">to_sym</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">callback_call</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">on_callback_path?</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">other_phase</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:other_phase</span>)
+  <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">env</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- call-21-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- call-21-method -->
+
+    
+      <div id="method-i-call_app-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">call_app!</span><span
+            class="method-args">(env = @env)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="call_app-21-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/strategy.rb, line 400</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">call_app!</span>(<span class="ruby-identifier">env</span> = <span class="ruby-ivar">@env</span>)
+  <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">env</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- call_app-21-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- call_app-21-method -->
+
+    
+      <div id="method-i-callback_call" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">callback_call</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Performs the steps necessary to run the callback phase of a strategy.</p>
+          
+
+          
+          <div class="method-source-code" id="callback_call-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/strategy.rb, line 219</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">callback_call</span>
+  <span class="ruby-identifier">setup_phase</span>
+
+  <span class="ruby-identifier">log</span> <span class="ruby-value">:info</span>, <span class="ruby-string">&quot;Callback phase initiated.&quot;</span>
+  <span class="ruby-ivar">@env</span>[<span class="ruby-string">'omniauth.origin'</span>] = <span class="ruby-identifier">session</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-string">'omniauth.origin'</span>)
+  <span class="ruby-ivar">@env</span>[<span class="ruby-string">'omniauth.origin'</span>] = <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">env</span>[<span class="ruby-string">'omniauth.origin'</span>] <span class="ruby-operator">==</span> <span class="ruby-string">''</span>
+  <span class="ruby-ivar">@env</span>[<span class="ruby-string">'omniauth.params'</span>] = <span class="ruby-identifier">session</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-string">'omniauth.params'</span>) <span class="ruby-operator">||</span> {}
+  <span class="ruby-identifier">callback_phase</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- callback_call-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- callback_call-method -->
+
+    
+      <div id="method-i-callback_path" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">callback_path</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="callback_path-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/strategy.rb, line 384</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">callback_path</span>
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:callback_path</span>].<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:callback_path</span>] <span class="ruby-operator">:</span> (<span class="ruby-identifier">custom_path</span>(<span class="ruby-value">:request_path</span>) <span class="ruby-operator">||</span> <span class="ruby-node">&quot;#{path_prefix}/#{name}/callback&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- callback_path-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- callback_path-method -->
+
+    
+      <div id="method-i-callback_phase" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">callback_phase</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="callback_phase-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/strategy.rb, line 361</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">callback_phase</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">env</span>[<span class="ruby-string">'omniauth.auth'</span>] = <span class="ruby-identifier">auth_hash</span>
+  <span class="ruby-identifier">call_app!</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- callback_phase-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- callback_phase-method -->
+
+    
+      <div id="method-i-callback_url" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">callback_url</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="callback_url-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/strategy.rb, line 419</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">callback_url</span>
+  <span class="ruby-identifier">full_host</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">script_name</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">callback_path</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">query_string</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- callback_url-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- callback_url-method -->
+
+    
+      <div id="method-i-credentials" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">credentials</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="credentials-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/strategy.rb, line 325</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">credentials</span>
+  <span class="ruby-identifier">merge_stack</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">credentials_stack</span>(<span class="ruby-keyword">self</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- credentials-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- credentials-method -->
+
+    
+      <div id="method-i-current_path" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">current_path</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="current_path-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/strategy.rb, line 392</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">current_path</span>
+  <span class="ruby-identifier">request</span>.<span class="ruby-identifier">path_info</span>.<span class="ruby-identifier">downcase</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp">/\/$/</span>,<span class="ruby-string">''</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- current_path-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- current_path-method -->
+
+    
+      <div id="method-i-custom_path" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">custom_path</span><span
+            class="method-args">(kind)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="custom_path-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/strategy.rb, line 370</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">custom_path</span>(<span class="ruby-identifier">kind</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">kind</span>].<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:call</span>)
+    <span class="ruby-identifier">result</span> = <span class="ruby-identifier">options</span>[<span class="ruby-identifier">kind</span>].<span class="ruby-identifier">call</span>(<span class="ruby-identifier">env</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>)
+    <span class="ruby-identifier">result</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">options</span>[<span class="ruby-identifier">kind</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- custom_path-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- custom_path-method -->
+
+    
+      <div id="method-i-extra" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">extra</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="extra-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/strategy.rb, line 329</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">extra</span>
+  <span class="ruby-identifier">merge_stack</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">extra_stack</span>(<span class="ruby-keyword">self</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- extra-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- extra-method -->
+
+    
+      <div id="method-i-fail-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">fail!</span><span
+            class="method-args">(message_key, exception = nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="fail-21-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/strategy.rb, line 454</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">fail!</span>(<span class="ruby-identifier">message_key</span>, <span class="ruby-identifier">exception</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">env</span>[<span class="ruby-string">'omniauth.error'</span>] = <span class="ruby-identifier">exception</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">env</span>[<span class="ruby-string">'omniauth.error.type'</span>] = <span class="ruby-identifier">message_key</span>.<span class="ruby-identifier">to_sym</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">env</span>[<span class="ruby-string">'omniauth.error.strategy'</span>] = <span class="ruby-keyword">self</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">exception</span>
+    <span class="ruby-identifier">log</span> <span class="ruby-value">:error</span>, <span class="ruby-node">&quot;Authentication failure! #{message_key}: #{exception.class.to_s}, #{exception.message}&quot;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">log</span> <span class="ruby-value">:error</span>, <span class="ruby-node">&quot;Authentication failure! #{message_key} encountered.&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-constant">OmniAuth</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">on_failure</span>.<span class="ruby-identifier">call</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">env</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- fail-21-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- fail-21-method -->
+
+    
+      <div id="method-i-full_host" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">full_host</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="full_host-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/strategy.rb, line 404</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">full_host</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-constant">OmniAuth</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">full_host</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">String</span>
+      <span class="ruby-constant">OmniAuth</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">full_host</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">Proc</span>
+      <span class="ruby-constant">OmniAuth</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">full_host</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">env</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">uri</span> = <span class="ruby-constant">URI</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">request</span>.<span class="ruby-identifier">url</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/\?.*$/</span>,<span class="ruby-string">''</span>))
+      <span class="ruby-identifier">uri</span>.<span class="ruby-identifier">path</span> = <span class="ruby-string">''</span>
+      <span class="ruby-comment">#sometimes the url is actually showing http inside rails because the other layers (like nginx) have handled the ssl termination.</span>
+      <span class="ruby-identifier">uri</span>.<span class="ruby-identifier">scheme</span> = <span class="ruby-string">'https'</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">ssl?</span>
+      <span class="ruby-identifier">uri</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- full_host-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- full_host-method -->
+
+    
+      <div id="method-i-info" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">info</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="info-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/strategy.rb, line 321</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">info</span>
+  <span class="ruby-identifier">merge_stack</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">info_stack</span>(<span class="ruby-keyword">self</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- info-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- info-method -->
+
+    
+      <div id="method-i-inspect" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">inspect</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="inspect-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/strategy.rb, line 148</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">inspect</span>
+  <span class="ruby-node">&quot;#&lt;#{self.class.to_s}&gt;&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- inspect-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- inspect-method -->
+
+    
+      <div id="method-i-log" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">log</span><span
+            class="method-args">(level, message)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Direct access to the <a href="../OmniAuth.html">OmniAuth</a> logger,
+automatically prefixed with this strategy’s name.</p>
+
+<p>@example</p>
+
+<pre>log :warn, &quot;This is a warning.&quot;</pre>
+          
+
+          
+          <div class="method-source-code" id="log-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/strategy.rb, line 157</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">log</span>(<span class="ruby-identifier">level</span>, <span class="ruby-identifier">message</span>)
+  <span class="ruby-constant">OmniAuth</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">level</span>, <span class="ruby-node">&quot;(#{name}) #{message}&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- log-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- log-method -->
+
+    
+      <div id="method-i-mock_call-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mock_call!</span><span
+            class="method-args">(env)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This is called in lieu of the normal request process in the event that <a
+href="../OmniAuth.html">OmniAuth</a> has been configured to be in test
+mode.</p>
+          
+
+          
+          <div class="method-source-code" id="mock_call-21-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/strategy.rb, line 262</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mock_call!</span>(<span class="ruby-identifier">env</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">mock_request_call</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">on_request_path?</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">mock_callback_call</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">on_callback_path?</span>
+  <span class="ruby-identifier">call_app!</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- mock_call-21-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- mock_call-21-method -->
+
+    
+      <div id="method-i-mock_callback_call" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mock_callback_call</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="mock_callback_call-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/strategy.rb, line 281</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mock_callback_call</span>
+  <span class="ruby-identifier">setup_phase</span>
+  <span class="ruby-identifier">mocked_auth</span> = <span class="ruby-constant">OmniAuth</span>.<span class="ruby-identifier">mock_auth_for</span>(<span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">mocked_auth</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Symbol</span>)
+    <span class="ruby-identifier">fail!</span>(<span class="ruby-identifier">mocked_auth</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@env</span>[<span class="ruby-string">'omniauth.auth'</span>] = <span class="ruby-identifier">mocked_auth</span>
+    <span class="ruby-ivar">@env</span>[<span class="ruby-string">'omniauth.params'</span>] = <span class="ruby-identifier">session</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-string">'omniauth.params'</span>) <span class="ruby-operator">||</span> {}
+    <span class="ruby-ivar">@env</span>[<span class="ruby-string">'omniauth.origin'</span>] = <span class="ruby-identifier">session</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-string">'omniauth.origin'</span>)
+    <span class="ruby-ivar">@env</span>[<span class="ruby-string">'omniauth.origin'</span>] = <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">env</span>[<span class="ruby-string">'omniauth.origin'</span>] <span class="ruby-operator">==</span> <span class="ruby-string">''</span>
+    <span class="ruby-identifier">call_app!</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- mock_callback_call-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- mock_callback_call-method -->
+
+    
+      <div id="method-i-mock_request_call" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mock_request_call</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="mock_request_call-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/strategy.rb, line 268</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mock_request_call</span>
+  <span class="ruby-identifier">setup_phase</span>
+
+  <span class="ruby-identifier">session</span>[<span class="ruby-string">'omniauth.params'</span>] = <span class="ruby-identifier">request</span>.<span class="ruby-identifier">params</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">request</span>.<span class="ruby-identifier">params</span>[<span class="ruby-string">'origin'</span>]
+    <span class="ruby-ivar">@env</span>[<span class="ruby-string">'rack.session'</span>][<span class="ruby-string">'omniauth.origin'</span>] = <span class="ruby-identifier">request</span>.<span class="ruby-identifier">params</span>[<span class="ruby-string">'origin'</span>]
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">env</span>[<span class="ruby-string">'HTTP_REFERER'</span>] <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">env</span>[<span class="ruby-string">'HTTP_REFERER'</span>].<span class="ruby-identifier">match</span>(<span class="ruby-node">/#{request_path}$/</span>)
+    <span class="ruby-ivar">@env</span>[<span class="ruby-string">'rack.session'</span>][<span class="ruby-string">'omniauth.origin'</span>] = <span class="ruby-identifier">env</span>[<span class="ruby-string">'HTTP_REFERER'</span>]
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">redirect</span>(<span class="ruby-identifier">script_name</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">callback_path</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">query_string</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- mock_request_call-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- mock_request_call-method -->
+
+    
+      <div id="method-i-name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">name</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="name-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/strategy.rb, line 435</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">name</span>
+  <span class="ruby-identifier">options</span>.<span class="ruby-identifier">name</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- name-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- name-method -->
+
+    
+      <div id="method-i-on_auth_path-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">on_auth_path?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns true if the environment recognizes either the request or callback
+path.</p>
+          
+
+          
+          <div class="method-source-code" id="on_auth_path-3F-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/strategy.rb, line 231</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">on_auth_path?</span>
+  <span class="ruby-identifier">on_request_path?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">on_callback_path?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- on_auth_path-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- on_auth_path-3F-method -->
+
+    
+      <div id="method-i-on_callback_path-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">on_callback_path?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="on_callback_path-3F-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/strategy.rb, line 243</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">on_callback_path?</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">callback_path</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:call</span>)
+    <span class="ruby-identifier">options</span>.<span class="ruby-identifier">callback_path</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">env</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">on_path?</span>(<span class="ruby-identifier">callback_path</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- on_callback_path-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- on_callback_path-3F-method -->
+
+    
+      <div id="method-i-on_path-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">on_path?</span><span
+            class="method-args">(path)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="on_path-3F-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/strategy.rb, line 251</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">on_path?</span>(<span class="ruby-identifier">path</span>)
+  <span class="ruby-identifier">current_path</span>.<span class="ruby-identifier">casecmp</span>(<span class="ruby-identifier">path</span>) <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- on_path-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- on_path-3F-method -->
+
+    
+      <div id="method-i-on_request_path-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">on_request_path?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="on_request_path-3F-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/strategy.rb, line 235</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">on_request_path?</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">request_path</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:call</span>)
+    <span class="ruby-identifier">options</span>.<span class="ruby-identifier">request_path</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">env</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">on_path?</span>(<span class="ruby-identifier">request_path</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- on_request_path-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- on_request_path-3F-method -->
+
+    
+      <div id="method-i-options_call" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">options_call</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Responds to an OPTIONS request.</p>
+          
+
+          
+          <div class="method-source-code" id="options_call-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/strategy.rb, line 188</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">options_call</span>
+  <span class="ruby-identifier">verbs</span> = <span class="ruby-constant">OmniAuth</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">allowed_request_methods</span>.<span class="ruby-identifier">map</span>(&amp;<span class="ruby-value">:to_s</span>).<span class="ruby-identifier">map</span>(&amp;<span class="ruby-value">:upcase</span>).<span class="ruby-identifier">join</span>(<span class="ruby-string">', '</span>)
+  <span class="ruby-keyword">return</span> [ <span class="ruby-value">200</span>, { <span class="ruby-string">'Allow'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">verbs</span> }, [] ]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- options_call-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- options_call-method -->
+
+    
+      <div id="method-i-options_request-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">options_request?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="options_request-3F-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/strategy.rb, line 255</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">options_request?</span>
+  <span class="ruby-identifier">request</span>.<span class="ruby-identifier">request_method</span> <span class="ruby-operator">==</span> <span class="ruby-string">'OPTIONS'</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- options_request-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- options_request-3F-method -->
+
+    
+      <div id="method-i-path_prefix" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">path_prefix</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="path_prefix-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/strategy.rb, line 366</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">path_prefix</span>
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:path_prefix</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">OmniAuth</span>.<span class="ruby-identifier">config</span>.<span class="ruby-identifier">path_prefix</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- path_prefix-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- path_prefix-method -->
+
+    
+      <div id="method-i-query_string" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">query_string</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="query_string-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/strategy.rb, line 396</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">query_string</span>
+  <span class="ruby-identifier">request</span>.<span class="ruby-identifier">query_string</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">?</span> <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-node">&quot;?#{request.query_string}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- query_string-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- query_string-method -->
+
+    
+      <div id="method-i-redirect" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">redirect</span><span
+            class="method-args">(uri)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="redirect-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/strategy.rb, line 439</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">redirect</span>(<span class="ruby-identifier">uri</span>)
+  <span class="ruby-identifier">r</span> = <span class="ruby-constant">Rack</span><span class="ruby-operator">::</span><span class="ruby-constant">Response</span>.<span class="ruby-identifier">new</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:iframe</span>]
+    <span class="ruby-identifier">r</span>.<span class="ruby-identifier">write</span>(<span class="ruby-node">&quot;&lt;script type='text/javascript' charset='utf-8'&gt;top.location.href = '#{uri}';&lt;/script&gt;&quot;</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">r</span>.<span class="ruby-identifier">write</span>(<span class="ruby-node">&quot;Redirecting to #{uri}...&quot;</span>)
+    <span class="ruby-identifier">r</span>.<span class="ruby-identifier">redirect</span>(<span class="ruby-identifier">uri</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">r</span>.<span class="ruby-identifier">finish</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- redirect-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- redirect-method -->
+
+    
+      <div id="method-i-request" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">request</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="request-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/strategy.rb, line 431</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">request</span>
+  <span class="ruby-ivar">@request</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Rack</span><span class="ruby-operator">::</span><span class="ruby-constant">Request</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@env</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- request-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- request-method -->
+
+    
+      <div id="method-i-request_call" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">request_call</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Performs the steps necessary to run the request phase of a strategy.</p>
+          
+
+          
+          <div class="method-source-code" id="request_call-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/strategy.rb, line 194</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">request_call</span>
+  <span class="ruby-identifier">setup_phase</span>
+
+  <span class="ruby-identifier">log</span> <span class="ruby-value">:info</span>, <span class="ruby-string">&quot;Request phase initiated.&quot;</span>
+
+  <span class="ruby-comment">#store query params from the request url, extracted in the callback_phase</span>
+  <span class="ruby-identifier">session</span>[<span class="ruby-string">'omniauth.params'</span>] = <span class="ruby-identifier">request</span>.<span class="ruby-identifier">params</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">form</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:call</span>)
+    <span class="ruby-identifier">log</span> <span class="ruby-value">:info</span>, <span class="ruby-string">&quot;Rendering form from supplied Rack endpoint.&quot;</span>
+    <span class="ruby-identifier">options</span>.<span class="ruby-identifier">form</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">env</span>)
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">form</span>
+    <span class="ruby-identifier">log</span> <span class="ruby-value">:info</span>, <span class="ruby-string">&quot;Rendering form from underlying application.&quot;</span>
+    <span class="ruby-identifier">call_app!</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">request</span>.<span class="ruby-identifier">params</span>[<span class="ruby-string">'origin'</span>]
+      <span class="ruby-identifier">env</span>[<span class="ruby-string">'rack.session'</span>][<span class="ruby-string">'omniauth.origin'</span>] = <span class="ruby-identifier">request</span>.<span class="ruby-identifier">params</span>[<span class="ruby-string">'origin'</span>]
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">env</span>[<span class="ruby-string">'HTTP_REFERER'</span>] <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">env</span>[<span class="ruby-string">'HTTP_REFERER'</span>].<span class="ruby-identifier">match</span>(<span class="ruby-node">/#{request_path}$/</span>)
+      <span class="ruby-identifier">env</span>[<span class="ruby-string">'rack.session'</span>][<span class="ruby-string">'omniauth.origin'</span>] = <span class="ruby-identifier">env</span>[<span class="ruby-string">'HTTP_REFERER'</span>]
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">request_phase</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- request_call-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- request_call-method -->
+
+    
+      <div id="method-i-request_path" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">request_path</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="request_path-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/strategy.rb, line 380</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">request_path</span>
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:request_path</span>].<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:request_path</span>] <span class="ruby-operator">:</span> <span class="ruby-node">&quot;#{path_prefix}/#{name}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- request_path-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- request_path-method -->
+
+    
+      <div id="method-i-request_phase" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">request_phase</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@abstract This method is called when the user is on the request path. You
+should perform any information gathering you need to be able to
+authenticate the user in this phase.</p>
+          
+
+          
+          <div class="method-source-code" id="request_phase-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/strategy.rb, line 313</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">request_phase</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- request_phase-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- request_phase-method -->
+
+    
+      <div id="method-i-script_name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">script_name</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="script_name-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/strategy.rb, line 423</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">script_name</span>
+  <span class="ruby-ivar">@env</span>[<span class="ruby-string">'SCRIPT_NAME'</span>] <span class="ruby-operator">||</span> <span class="ruby-string">''</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- script_name-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- script_name-method -->
+
+    
+      <div id="method-i-session" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">session</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="session-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/strategy.rb, line 427</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">session</span>
+  <span class="ruby-ivar">@env</span>[<span class="ruby-string">'rack.session'</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- session-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- session-method -->
+
+    
+      <div id="method-i-setup_path" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">setup_path</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="setup_path-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/strategy.rb, line 388</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">setup_path</span>
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:setup_path</span>] <span class="ruby-operator">||</span> <span class="ruby-node">&quot;#{path_prefix}/#{name}/setup&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- setup_path-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- setup_path-method -->
+
+    
+      <div id="method-i-setup_phase" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">setup_phase</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>The setup phase looks for the `:setup` option to exist and, if it is, will
+call either the Rack endpoint supplied to the `:setup` option or it will
+call out to the setup path of the underlying application. This will default
+to `/auth/:provider/setup`.</p>
+          
+
+          
+          <div class="method-source-code" id="setup_phase-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/strategy.rb, line 299</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">setup_phase</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:setup</span>].<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:call</span>)
+    <span class="ruby-identifier">log</span> <span class="ruby-value">:info</span>, <span class="ruby-string">&quot;Setup endpoint detected, running now.&quot;</span>
+    <span class="ruby-identifier">options</span>[<span class="ruby-value">:setup</span>].<span class="ruby-identifier">call</span>(<span class="ruby-identifier">env</span>)
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">setup?</span>
+    <span class="ruby-identifier">log</span> <span class="ruby-value">:info</span>, <span class="ruby-string">&quot;Calling through to underlying application for setup.&quot;</span>
+    <span class="ruby-identifier">setup_env</span> = <span class="ruby-identifier">env</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-string">'PATH_INFO'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">setup_path</span>, <span class="ruby-string">'REQUEST_METHOD'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'GET'</span>)
+    <span class="ruby-identifier">call_app!</span>(<span class="ruby-identifier">setup_env</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- setup_phase-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- setup_phase-method -->
+
+    
+      <div id="method-i-skip_info-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">skip_info?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Determines whether or not user info should be retrieved. This allows some
+strategies to save a call to an external API service for existing users.
+You can use it either by setting the `:skip_info` to true or by setting
+`:skip_info` to a Proc that takes a uid and evaluates to true when you
+would like to skip info.</p>
+
+<p>@example</p>
+
+<pre class="ruby"><span class="ruby-identifier">use</span> <span class="ruby-constant">MyStrategy</span>, :<span class="ruby-identifier">skip_info</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">lambda</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">uid</span><span class="ruby-operator">|</span> <span class="ruby-constant">User</span>.<span class="ruby-identifier">find_by_uid</span>(<span class="ruby-identifier">uid</span>)}
+</pre>
+          
+
+          
+          <div class="method-source-code" id="skip_info-3F-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/strategy.rb, line 350</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">skip_info?</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">skip_info?</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">skip_info</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:call</span>)
+      <span class="ruby-keyword">return</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">skip_info</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">uid</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- skip_info-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- skip_info-3F-method -->
+
+    
+      <div id="method-i-uid" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">uid</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="uid-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/strategy.rb, line 317</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">uid</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">uid_stack</span>(<span class="ruby-keyword">self</span>).<span class="ruby-identifier">last</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- uid-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- uid-method -->
+
+    
+      <div id="method-i-user_info" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">user_info</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="user_info-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/strategy.rb, line 452</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">user_info</span>; {} <span class="ruby-keyword">end</span></pre>
+          </div><!-- user_info-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- user_info-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+     <section id="protected-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Protected Instance Methods</h3>
+
+    
+      <div id="method-i-merge_stack" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">merge_stack</span><span
+            class="method-args">(stack)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="merge_stack-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/strategy.rb, line 472</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">merge_stack</span>(<span class="ruby-identifier">stack</span>)
+  <span class="ruby-identifier">stack</span>.<span class="ruby-identifier">inject</span>({}){<span class="ruby-operator">|</span><span class="ruby-identifier">c</span>,<span class="ruby-identifier">h</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">merge!</span>(<span class="ruby-identifier">h</span>); <span class="ruby-identifier">c</span>}
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- merge_stack-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- merge_stack-method -->
+
+    
+      <div id="method-i-ssl-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ssl?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="ssl-3F-source">
+            <pre><span class="ruby-comment"># File lib/omniauth/strategy.rb, line 475</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ssl?</span>
+  <span class="ruby-identifier">request</span>.<span class="ruby-identifier">env</span>[<span class="ruby-string">'HTTPS'</span>] <span class="ruby-operator">==</span> <span class="ruby-string">'on'</span> <span class="ruby-operator">||</span>
+  <span class="ruby-identifier">request</span>.<span class="ruby-identifier">env</span>[<span class="ruby-string">'HTTP_X_FORWARDED_SSL'</span>] <span class="ruby-operator">==</span> <span class="ruby-string">'on'</span> <span class="ruby-operator">||</span>
+  <span class="ruby-identifier">request</span>.<span class="ruby-identifier">env</span>[<span class="ruby-string">'HTTP_X_FORWARDED_SCHEME'</span>] <span class="ruby-operator">==</span> <span class="ruby-string">'https'</span> <span class="ruby-operator">||</span>
+  (<span class="ruby-identifier">request</span>.<span class="ruby-identifier">env</span>[<span class="ruby-string">'HTTP_X_FORWARDED_PROTO'</span>] <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">request</span>.<span class="ruby-identifier">env</span>[<span class="ruby-string">'HTTP_X_FORWARDED_PROTO'</span>].<span class="ruby-identifier">split</span>(<span class="ruby-string">','</span>)[<span class="ruby-value">0</span>] <span class="ruby-operator">==</span> <span class="ruby-string">'https'</span>) <span class="ruby-operator">||</span>
+  <span class="ruby-identifier">request</span>.<span class="ruby-identifier">env</span>[<span class="ruby-string">'rack.url_scheme'</span>] <span class="ruby-operator">==</span> <span class="ruby-string">'https'</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- ssl-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- ssl-3F-method -->
+
+    
+    </section><!-- protected-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

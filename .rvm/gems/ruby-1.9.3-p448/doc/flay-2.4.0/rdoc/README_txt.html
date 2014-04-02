@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>README - flay-2.4.0 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body class="file">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./History_txt.html">History</a>
+  
+    <li class="file"><a href="./Manifest_txt.html">Manifest</a>
+  
+    <li class="file"><a href="./README_txt.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./File.html">File</a>
+  
+    <li><a href="./Flay.html">Flay</a>
+  
+    <li><a href="./FlayTask.html">FlayTask</a>
+  
+    <li><a href="./Sexp.html">Sexp</a>
+  
+    <li><a href="./String.html">String</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<h1 id="label-flay">flay</h1>
+<dl class="rdoc-list note-list"><dt>home 
+<dd>
+<p><a href="http://ruby.sadi.st/">ruby.sadi.st/</a></p>
+</dd><dt>code 
+<dd>
+<p><a href="https://github.com/seattlerb/flay">github.com/seattlerb/flay</a></p>
+</dd><dt>rdoc 
+<dd>
+<p><a
+href="http://seattlerb.rubyforge.org/flay">seattlerb.rubyforge.org/flay</a></p>
+</dd></dl>
+
+<h2 id="label-DESCRIPTION%3A">DESCRIPTION:</h2>
+
+<p><a href="Flay.html">Flay</a> analyzes code for structural similarities.
+Differences in literal values, variable, class, method names, whitespace,
+programming style, braces vs do/end, etc are all ignored. Making this
+totally rad.</p>
+
+<h2 id="label-FEATURES%2FPROBLEMS%3A">FEATURES/PROBLEMS:</h2>
+<ul><li>
+<p>Reports differences at any level of code.</p>
+</li><li>
+<p>Adds a score multiplier to identical nodes.</p>
+</li><li>
+<p>Differences in literal values, variable, class, and method names are
+ignored.</p>
+</li><li>
+<p>Differences in whitespace, programming style, braces vs do/end, etc are
+ignored.</p>
+</li><li>
+<p>Works across files.</p>
+<ul><li>
+<p>Add the flay-persistent plugin to work across large/many projects.</p>
+</li></ul>
+</li><li>
+<p>Run –diff to see an N-way diff of the code.</p>
+</li><li>
+<p>Provides conservative (default) and –liberal pruning options.</p>
+</li><li>
+<p>Provides –fuzzy duplication detection.</p>
+</li><li>
+<p>Language independent: Plugin system allows other languages to be flayed.</p>
+<ul><li>
+<p>Ships with .rb and .erb.</p>
+</li><li>
+<p>javascript and others will be available separately.</p>
+</li></ul>
+</li><li>
+<p>Includes <a href="FlayTask.html">FlayTask</a> for Rakefiles.</p>
+</li><li>
+<p>Totally rad.</p>
+</li></ul>
+
+<h2 id="label-KNOWN+EXTENSIONS%3A">KNOWN EXTENSIONS:</h2>
+<ul><li><dl class="rdoc-list note-list"><dt>flay-actionpack  
+<dd>
+<p>Use Rails ERB handler.</p>
+</dd></dl>
+</li><li><dl class="rdoc-list note-list"><dt>flay-haml        
+<dd>
+<p><a href="Flay.html">Flay</a> your HAML source.</p>
+</dd></dl>
+</li><li><dl class="rdoc-list note-list"><dt>flay-persistence 
+<dd>
+<p>Persist results across runs. Great for multi-project analysis.</p>
+</dd></dl>
+</li></ul>
+
+<h2 id="label-TODO%3A">TODO:</h2>
+<ul><li>
+<p>Editor integration (emacs, textmate, other contributions welcome).</p>
+</li></ul>
+
+<h2 id="label-SYNOPSIS%3A">SYNOPSIS:</h2>
+
+<pre class="ruby"><span class="ruby-string">%Qflay </span><span class="ruby-operator">-</span><span class="ruby-identifier">v</span> <span class="ruby-operator">-</span><span class="ruby-operator">-</span><span class="ruby-identifier">diff</span> <span class="ruby-operator">~</span><span class="ruby-regexp">/Work/</span><span class="ruby-identifier">vn</span><span class="ruby-operator">/</span><span class="ruby-identifier">ruby</span><span class="ruby-operator">/</span><span class="ruby-identifier">ruby_1_8</span><span class="ruby-operator">/</span><span class="ruby-identifier">lib</span><span class="ruby-operator">/</span><span class="ruby-identifier">cgi</span>.<span class="ruby-identifier">rb</span>
+<span class="ruby-constant">Processing</span> <span class="ruby-regexp">/Users/</span><span class="ruby-identifier">ryan</span><span class="ruby-operator">/</span><span class="ruby-constant">Work</span><span class="ruby-operator">/</span><span class="ruby-identifier">svn</span><span class="ruby-operator">/</span><span class="ruby-identifier">ruby</span><span class="ruby-operator">/</span><span class="ruby-identifier">ruby_1_8</span><span class="ruby-operator">/</span><span class="ruby-identifier">lib</span><span class="ruby-operator">/</span><span class="ruby-identifier">cgi</span>.<span class="ruby-identifier">rb</span><span class="ruby-operator">...</span>
+
+<span class="ruby-constant">Matches</span> <span class="ruby-identifier">found</span> <span class="ruby-keyword">in</span> :<span class="ruby-identifier">defn</span> (<span class="ruby-identifier">mass</span> = <span class="ruby-value">184</span>)
+  <span class="ruby-constant">A</span><span class="ruby-operator">:</span> <span class="ruby-regexp">/Users/</span><span class="ruby-identifier">ryan</span><span class="ruby-operator">/</span><span class="ruby-constant">Work</span><span class="ruby-operator">/</span><span class="ruby-identifier">svn</span><span class="ruby-operator">/</span><span class="ruby-identifier">ruby</span><span class="ruby-operator">/</span><span class="ruby-identifier">ruby_1_8</span><span class="ruby-operator">/</span><span class="ruby-identifier">lib</span><span class="ruby-operator">/</span><span class="ruby-identifier">cgi</span>.<span class="ruby-identifier">rb</span>:<span class="ruby-value">1470</span>
+  <span class="ruby-constant">B</span><span class="ruby-operator">:</span> <span class="ruby-regexp">/Users/</span><span class="ruby-identifier">ryan</span><span class="ruby-operator">/</span><span class="ruby-constant">Work</span><span class="ruby-operator">/</span><span class="ruby-identifier">svn</span><span class="ruby-operator">/</span><span class="ruby-identifier">ruby</span><span class="ruby-operator">/</span><span class="ruby-identifier">ruby_1_8</span><span class="ruby-operator">/</span><span class="ruby-identifier">lib</span><span class="ruby-operator">/</span><span class="ruby-identifier">cgi</span>.<span class="ruby-identifier">rb</span>:<span class="ruby-value">1925</span>
+
+<span class="ruby-constant">A</span><span class="ruby-operator">:</span> <span class="ruby-keyword">def</span> <span class="ruby-identifier">checkbox_group</span>(<span class="ruby-identifier">name</span> = <span class="ruby-string">&quot;&quot;</span>, *<span class="ruby-identifier">values</span>)
+<span class="ruby-constant">B</span><span class="ruby-operator">:</span> <span class="ruby-keyword">def</span> <span class="ruby-identifier">radio_group</span>(<span class="ruby-identifier">name</span> = <span class="ruby-string">&quot;&quot;</span>, *<span class="ruby-identifier">values</span>)
+     <span class="ruby-keyword">if</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-keyword">then</span>
+       <span class="ruby-identifier">values</span> = <span class="ruby-identifier">name</span>[<span class="ruby-string">&quot;VALUES&quot;</span>]
+       <span class="ruby-identifier">name</span> = <span class="ruby-identifier">name</span>[<span class="ruby-string">&quot;NAME&quot;</span>]
+     <span class="ruby-keyword">end</span>
+     <span class="ruby-identifier">values</span>.<span class="ruby-identifier">collect</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+       <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">String</span>) <span class="ruby-keyword">then</span>
+<span class="ruby-constant">A</span><span class="ruby-operator">:</span>       (<span class="ruby-identifier">checkbox</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span>) <span class="ruby-operator">+</span> <span class="ruby-identifier">value</span>)
+<span class="ruby-constant">B</span><span class="ruby-operator">:</span>       (<span class="ruby-identifier">radio_button</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span>) <span class="ruby-operator">+</span> <span class="ruby-identifier">value</span>)
+       <span class="ruby-keyword">else</span>
+         <span class="ruby-keyword">if</span> (<span class="ruby-identifier">value</span>[(<span class="ruby-identifier">value</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>)] <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>) <span class="ruby-keyword">then</span>
+<span class="ruby-constant">A</span><span class="ruby-operator">:</span>         (<span class="ruby-identifier">checkbox</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span>[<span class="ruby-value">0</span>], <span class="ruby-keyword">true</span>) <span class="ruby-operator">+</span> <span class="ruby-identifier">value</span>[(<span class="ruby-identifier">value</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">2</span>)])
+<span class="ruby-constant">B</span><span class="ruby-operator">:</span>         (<span class="ruby-identifier">radio_button</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span>[<span class="ruby-value">0</span>], <span class="ruby-keyword">true</span>) <span class="ruby-operator">+</span> <span class="ruby-identifier">value</span>[(<span class="ruby-identifier">value</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">2</span>)])
+         <span class="ruby-keyword">else</span>
+<span class="ruby-constant">A</span><span class="ruby-operator">:</span>         (<span class="ruby-identifier">checkbox</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span>[<span class="ruby-value">0</span>]) <span class="ruby-operator">+</span> <span class="ruby-identifier">value</span>[(<span class="ruby-identifier">value</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>)])
+<span class="ruby-constant">B</span><span class="ruby-operator">:</span>         (<span class="ruby-identifier">radio_button</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span>[<span class="ruby-value">0</span>]) <span class="ruby-operator">+</span> <span class="ruby-identifier">value</span>[(<span class="ruby-identifier">value</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>)])
+         <span class="ruby-keyword">end</span>
+       <span class="ruby-keyword">end</span>
+     <span class="ruby-keyword">end</span>.<span class="ruby-identifier">to_s</span>
+   <span class="ruby-keyword">end</span>
+
+<span class="ruby-constant">IDENTICAL</span> <span class="ruby-constant">Matches</span> <span class="ruby-identifier">found</span> <span class="ruby-keyword">in</span> :<span class="ruby-keyword">for</span> (<span class="ruby-identifier">mass</span>*<span class="ruby-value">2</span> = <span class="ruby-value">144</span>)
+  <span class="ruby-constant">A</span><span class="ruby-operator">:</span> <span class="ruby-regexp">/Users/</span><span class="ruby-identifier">ryan</span><span class="ruby-operator">/</span><span class="ruby-constant">Work</span><span class="ruby-operator">/</span><span class="ruby-identifier">svn</span><span class="ruby-operator">/</span><span class="ruby-identifier">ruby</span><span class="ruby-operator">/</span><span class="ruby-identifier">ruby_1_8</span><span class="ruby-operator">/</span><span class="ruby-identifier">lib</span><span class="ruby-operator">/</span><span class="ruby-identifier">cgi</span>.<span class="ruby-identifier">rb</span>:<span class="ruby-value">2160</span>
+  <span class="ruby-constant">B</span><span class="ruby-operator">:</span> <span class="ruby-regexp">/Users/</span><span class="ruby-identifier">ryan</span><span class="ruby-operator">/</span><span class="ruby-constant">Work</span><span class="ruby-operator">/</span><span class="ruby-identifier">svn</span><span class="ruby-operator">/</span><span class="ruby-identifier">ruby</span><span class="ruby-operator">/</span><span class="ruby-identifier">ruby_1_8</span><span class="ruby-operator">/</span><span class="ruby-identifier">lib</span><span class="ruby-operator">/</span><span class="ruby-identifier">cgi</span>.<span class="ruby-identifier">rb</span>:<span class="ruby-value">2217</span>
+
+   <span class="ruby-keyword">for</span> <span class="ruby-identifier">element</span> <span class="ruby-keyword">in</span> [<span class="ruby-string">&quot;HTML&quot;</span>, <span class="ruby-string">&quot;BODY&quot;</span>, <span class="ruby-string">&quot;P&quot;</span>, <span class="ruby-string">&quot;DT&quot;</span>, <span class="ruby-string">&quot;DD&quot;</span>, <span class="ruby-string">&quot;LI&quot;</span>, <span class="ruby-string">&quot;OPTION&quot;</span>, <span class="ruby-string">&quot;THEAD&quot;</span>, <span class="ruby-string">&quot;TFOOT&quot;</span>, <span class="ruby-string">&quot;TBODY&quot;</span>, <span class="ruby-string">&quot;COLGROUP&quot;</span>, <span class="ruby-string">&quot;TR&quot;</span>, <span class="ruby-string">&quot;TH&quot;</span>, <span class="ruby-string">&quot;TD&quot;</span>, <span class="ruby-string">&quot;HEAD&quot;</span>] <span class="ruby-keyword">do</span>
+     <span class="ruby-identifier">methods</span> = (<span class="ruby-identifier">methods</span> <span class="ruby-operator">+</span> ((<span class="ruby-node">&quot;          def #{element.downcase}(attributes = {})\n&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">nO_element_def</span>(<span class="ruby-identifier">element</span>)) <span class="ruby-operator">+</span> <span class="ruby-string">&quot;          end\n&quot;</span>))
+   <span class="ruby-keyword">end</span>
+<span class="ruby-operator">...</span>
+</pre>
+
+<h2 id="label-REQUIREMENTS%3A">REQUIREMENTS:</h2>
+<ul><li>
+<p>ruby_parser</p>
+</li><li>
+<p>sexp_processor</p>
+</li><li>
+<p>ruby2ruby – soft dependency: only if you want to use –diff</p>
+</li></ul>
+
+<h2 id="label-INSTALL%3A">INSTALL:</h2>
+<ul><li>
+<p>sudo gem install flay</p>
+</li></ul>
+
+<h2 id="label-LICENSE%3A">LICENSE:</h2>
+
+<p>(The MIT License)</p>
+
+<p>Copyright © Ryan Davis, Seattle.rb</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the ‘Software’),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED ‘AS IS’, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.</p>
+
+</div>
+
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

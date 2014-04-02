@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Nokogiri::XML::DTD - nokogiri-1.6.0 Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/nokogiri/xml/dtd.rb
+    <li>ext/nokogiri/html_document.c
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="Node.html">Nokogiri::XML::Node</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-attributes">#attributes</a>
+    
+    <li><a href="#method-i-each">#each</a>
+    
+    <li><a href="#method-i-elements">#elements</a>
+    
+    <li><a href="#method-i-entities">#entities</a>
+    
+    <li><a href="#method-i-external_id">#external_id</a>
+    
+    <li><a href="#method-i-keys">#keys</a>
+    
+    <li><a href="#method-i-notations">#notations</a>
+    
+    <li><a href="#method-i-system_id">#system_id</a>
+    
+    <li><a href="#method-i-validate">#validate</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../CHANGELOG_ja_rdoc.html">CHANGELOG.ja</a>
+  
+    <li class="file"><a href="../../CHANGELOG_rdoc.html">CHANGELOG</a>
+  
+    <li class="file"><a href="../../C_CODING_STYLE_rdoc.html">C_CODING_STYLE</a>
+  
+    <li class="file"><a href="../../Manifest_txt.html">Manifest</a>
+  
+    <li class="file"><a href="../../README_ja_rdoc.html">README.ja</a>
+  
+    <li class="file"><a href="../../README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../Nokogiri.html">Nokogiri</a>
+  
+    <li><a href="../../Nokogiri/CSS.html">Nokogiri::CSS</a>
+  
+    <li><a href="../../Nokogiri/CSS/Node.html">Nokogiri::CSS::Node</a>
+  
+    <li><a href="../../Nokogiri/CSS/Parser.html">Nokogiri::CSS::Parser</a>
+  
+    <li><a href="../../Nokogiri/CSS/SyntaxError.html">Nokogiri::CSS::SyntaxError</a>
+  
+    <li><a href="../../Nokogiri/CSS/Tokenizer.html">Nokogiri::CSS::Tokenizer</a>
+  
+    <li><a href="../../Nokogiri/CSS/Tokenizer/ScanError.html">Nokogiri::CSS::Tokenizer::ScanError</a>
+  
+    <li><a href="../../Nokogiri/Decorators.html">Nokogiri::Decorators</a>
+  
+    <li><a href="../../Nokogiri/Decorators/Slop.html">Nokogiri::Decorators::Slop</a>
+  
+    <li><a href="../../Nokogiri/EncodingHandler.html">Nokogiri::EncodingHandler</a>
+  
+    <li><a href="../../Nokogiri/HTML.html">Nokogiri::HTML</a>
+  
+    <li><a href="../../Nokogiri/HTML/Builder.html">Nokogiri::HTML::Builder</a>
+  
+    <li><a href="../../Nokogiri/HTML/Document.html">Nokogiri::HTML::Document</a>
+  
+    <li><a href="../../Nokogiri/HTML/Document/EncodingReader.html">Nokogiri::HTML::Document::EncodingReader</a>
+  
+    <li><a href="../../Nokogiri/HTML/Document/EncodingReader/JumpSAXHandler.html">Nokogiri::HTML::Document::EncodingReader::JumpSAXHandler</a>
+  
+    <li><a href="../../Nokogiri/HTML/DocumentFragment.html">Nokogiri::HTML::DocumentFragment</a>
+  
+    <li><a href="../../Nokogiri/HTML/ElementDescription.html">Nokogiri::HTML::ElementDescription</a>
+  
+    <li><a href="../../Nokogiri/HTML/EntityDescription.html">Nokogiri::HTML::EntityDescription</a>
+  
+    <li><a href="../../Nokogiri/HTML/EntityLookup.html">Nokogiri::HTML::EntityLookup</a>
+  
+    <li><a href="../../Nokogiri/HTML/SAX.html">Nokogiri::HTML::SAX</a>
+  
+    <li><a href="../../Nokogiri/HTML/SAX/Parser.html">Nokogiri::HTML::SAX::Parser</a>
+  
+    <li><a href="../../Nokogiri/HTML/SAX/ParserContext.html">Nokogiri::HTML::SAX::ParserContext</a>
+  
+    <li><a href="../../Nokogiri/HTML/SAX/PushParser.html">Nokogiri::HTML::SAX::PushParser</a>
+  
+    <li><a href="../../Nokogiri/SyntaxError.html">Nokogiri::SyntaxError</a>
+  
+    <li><a href="../../Nokogiri/XML.html">Nokogiri::XML</a>
+  
+    <li><a href="../../Nokogiri/XML/Attr.html">Nokogiri::XML::Attr</a>
+  
+    <li><a href="../../Nokogiri/XML/AttributeDecl.html">Nokogiri::XML::AttributeDecl</a>
+  
+    <li><a href="../../Nokogiri/XML/Builder.html">Nokogiri::XML::Builder</a>
+  
+    <li><a href="../../Nokogiri/XML/CDATA.html">Nokogiri::XML::CDATA</a>
+  
+    <li><a href="../../Nokogiri/XML/CharacterData.html">Nokogiri::XML::CharacterData</a>
+  
+    <li><a href="../../Nokogiri/XML/Comment.html">Nokogiri::XML::Comment</a>
+  
+    <li><a href="../../Nokogiri/XML/DTD.html">Nokogiri::XML::DTD</a>
+  
+    <li><a href="../../Nokogiri/XML/Document.html">Nokogiri::XML::Document</a>
+  
+    <li><a href="../../Nokogiri/XML/DocumentFragment.html">Nokogiri::XML::DocumentFragment</a>
+  
+    <li><a href="../../Nokogiri/XML/Element.html">Nokogiri::XML::Element</a>
+  
+    <li><a href="../../Nokogiri/XML/ElementContent.html">Nokogiri::XML::ElementContent</a>
+  
+    <li><a href="../../Nokogiri/XML/ElementDecl.html">Nokogiri::XML::ElementDecl</a>
+  
+    <li><a href="../../Nokogiri/XML/EntityDecl.html">Nokogiri::XML::EntityDecl</a>
+  
+    <li><a href="../../Nokogiri/XML/EntityReference.html">Nokogiri::XML::EntityReference</a>
+  
+    <li><a href="../../Nokogiri/XML/Namespace.html">Nokogiri::XML::Namespace</a>
+  
+    <li><a href="../../Nokogiri/XML/Node.html">Nokogiri::XML::Node</a>
+  
+    <li><a href="../../Nokogiri/XML/Node/SaveOptions.html">Nokogiri::XML::Node::SaveOptions</a>
+  
+    <li><a href="../../Nokogiri/XML/NodeSet.html">Nokogiri::XML::NodeSet</a>
+  
+    <li><a href="../../Nokogiri/XML/Notation.html">Nokogiri::XML::Notation</a>
+  
+    <li><a href="../../Nokogiri/XML/PP.html">Nokogiri::XML::PP</a>
+  
+    <li><a href="../../Nokogiri/XML/PP/CharacterData.html">Nokogiri::XML::PP::CharacterData</a>
+  
+    <li><a href="../../Nokogiri/XML/PP/Node.html">Nokogiri::XML::PP::Node</a>
+  
+    <li><a href="../../Nokogiri/XML/ParseOptions.html">Nokogiri::XML::ParseOptions</a>
+  
+    <li><a href="../../Nokogiri/XML/ProcessingInstruction.html">Nokogiri::XML::ProcessingInstruction</a>
+  
+    <li><a href="../../Nokogiri/XML/Reader.html">Nokogiri::XML::Reader</a>
+  
+    <li><a href="../../Nokogiri/XML/RelaxNG.html">Nokogiri::XML::RelaxNG</a>
+  
+    <li><a href="../../Nokogiri/XML/SAX.html">Nokogiri::XML::SAX</a>
+  
+    <li><a href="../../Nokogiri/XML/SAX/Document.html">Nokogiri::XML::SAX::Document</a>
+  
+    <li><a href="../../Nokogiri/XML/SAX/Parser.html">Nokogiri::XML::SAX::Parser</a>
+  
+    <li><a href="../../Nokogiri/XML/SAX/Parser/Attribute.html">Nokogiri::XML::SAX::Parser::Attribute</a>
+  
+    <li><a href="../../Nokogiri/XML/SAX/ParserContext.html">Nokogiri::XML::SAX::ParserContext</a>
+  
+    <li><a href="../../Nokogiri/XML/SAX/PushParser.html">Nokogiri::XML::SAX::PushParser</a>
+  
+    <li><a href="../../Nokogiri/XML/Schema.html">Nokogiri::XML::Schema</a>
+  
+    <li><a href="../../Nokogiri/XML/SyntaxError.html">Nokogiri::XML::SyntaxError</a>
+  
+    <li><a href="../../Nokogiri/XML/Text.html">Nokogiri::XML::Text</a>
+  
+    <li><a href="../../Nokogiri/XML/XPath.html">Nokogiri::XML::XPath</a>
+  
+    <li><a href="../../Nokogiri/XML/XPath/SyntaxError.html">Nokogiri::XML::XPath::SyntaxError</a>
+  
+    <li><a href="../../Nokogiri/XML/XPathContext.html">Nokogiri::XML::XPathContext</a>
+  
+    <li><a href="../../Nokogiri/XSLT.html">Nokogiri::XSLT</a>
+  
+    <li><a href="../../Nokogiri/XSLT/Stylesheet.html">Nokogiri::XSLT::Stylesheet</a>
+  
+    <li><a href="../../XSD.html">XSD</a>
+  
+    <li><a href="../../XSD/XMLParser.html">XSD::XMLParser</a>
+  
+    <li><a href="../../XSD/XMLParser/Nokogiri.html">XSD::XMLParser::Nokogiri</a>
+  
+    <li><a href="../../Object.html">Object</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Nokogiri::XML::DTD</h1>
+
+  <div id="description" class="description">
+    
+<p><a href="DTD.html">Nokogiri::XML::DTD</a> wraps <a href="DTD.html">DTD</a>
+nodes in an <a href="../XML.html">XML</a> document</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-attributes" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            attributes
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Get a hash of the attributes for this <a href="DTD.html">DTD</a>.</p>
+          
+
+          
+          <div class="method-source-code" id="attributes-source">
+            <pre>static VALUE attributes(VALUE self)
+{
+  xmlDtdPtr dtd;
+  VALUE hash;
+
+  Data_Get_Struct(self, xmlDtd, dtd);
+
+  hash = rb_hash_new();
+
+  if(!dtd-&gt;attributes) return hash;
+
+  xmlHashScan((xmlHashTablePtr)dtd-&gt;attributes, element_copier, (void *)hash);
+
+  return hash;
+}</pre>
+          </div><!-- attributes-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- attributes-method -->
+
+    
+      <div id="method-i-each" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">each</span><span
+            class="method-args">(&block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="each-source">
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/dtd.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">each</span> &amp;<span class="ruby-identifier">block</span>
+  <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">block</span>.<span class="ruby-identifier">call</span>([<span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span>])
+  }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- each-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- each-method -->
+
+    
+      <div id="method-i-elements" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            elements
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Get a hash of the elements for this <a href="DTD.html">DTD</a>.</p>
+          
+
+          
+          <div class="method-source-code" id="elements-source">
+            <pre>static VALUE elements(VALUE self)
+{
+  xmlDtdPtr dtd;
+  VALUE hash;
+
+  Data_Get_Struct(self, xmlDtd, dtd);
+
+  if(!dtd-&gt;elements) return Qnil;
+
+  hash = rb_hash_new();
+
+  xmlHashScan((xmlHashTablePtr)dtd-&gt;elements, element_copier, (void *)hash);
+
+  return hash;
+}</pre>
+          </div><!-- elements-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- elements-method -->
+
+    
+      <div id="method-i-entities" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            entities
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Get a hash of the elements for this <a href="DTD.html">DTD</a>.</p>
+          
+
+          
+          <div class="method-source-code" id="entities-source">
+            <pre>static VALUE entities(VALUE self)
+{
+  xmlDtdPtr dtd;
+  VALUE hash;
+
+  Data_Get_Struct(self, xmlDtd, dtd);
+
+  if(!dtd-&gt;entities) return Qnil;
+
+  hash = rb_hash_new();
+
+  xmlHashScan((xmlHashTablePtr)dtd-&gt;entities, element_copier, (void *)hash);
+
+  return hash;
+}</pre>
+          </div><!-- entities-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- entities-method -->
+
+    
+      <div id="method-i-external_id" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            external_id
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Get the External ID for this <a href="DTD.html">DTD</a></p>
+          
+
+          
+          <div class="method-source-code" id="external_id-source">
+            <pre>static VALUE external_id(VALUE self)
+{
+  xmlDtdPtr dtd;
+  Data_Get_Struct(self, xmlDtd, dtd);
+
+  if(!dtd-&gt;ExternalID) return Qnil;
+
+  return NOKOGIRI_STR_NEW2(dtd-&gt;ExternalID);
+}</pre>
+          </div><!-- external_id-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- external_id-method -->
+
+    
+      <div id="method-i-keys" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">keys</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="keys-source">
+            <pre><span class="ruby-comment"># File lib/nokogiri/xml/dtd.rb, line 11</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">keys</span>
+  <span class="ruby-identifier">attributes</span>.<span class="ruby-identifier">keys</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- keys-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- keys-method -->
+
+    
+      <div id="method-i-notations" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            notations
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Get a hash of the notations for this <a href="DTD.html">DTD</a>.</p>
+          
+
+          
+          <div class="method-source-code" id="notations-source">
+            <pre>static VALUE notations(VALUE self)
+{
+  xmlDtdPtr dtd;
+  VALUE hash;
+
+  Data_Get_Struct(self, xmlDtd, dtd);
+
+  if(!dtd-&gt;notations) return Qnil;
+
+  hash = rb_hash_new();
+
+  xmlHashScan((xmlHashTablePtr)dtd-&gt;notations, notation_copier, (void *)hash);
+
+  return hash;
+}</pre>
+          </div><!-- notations-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- notations-method -->
+
+    
+      <div id="method-i-system_id" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            system_id
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Get the System ID for this <a href="DTD.html">DTD</a></p>
+          
+
+          
+          <div class="method-source-code" id="system_id-source">
+            <pre>static VALUE system_id(VALUE self)
+{
+  xmlDtdPtr dtd;
+  Data_Get_Struct(self, xmlDtd, dtd);
+
+  if(!dtd-&gt;SystemID) return Qnil;
+
+  return NOKOGIRI_STR_NEW2(dtd-&gt;SystemID);
+}</pre>
+          </div><!-- system_id-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- system_id-method -->
+
+    
+      <div id="method-i-validate" class="method-detail ">
+        
+        
+        <div class="method-heading">
+          <span class="method-callseq">
+            validate(document)
+          </span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+        
+
+        <div class="method-description">
+          
+          <p>Validate <code>document</code> returning a list of errors</p>
+          
+
+          
+          <div class="method-source-code" id="validate-source">
+            <pre>static VALUE validate(VALUE self, VALUE document)
+{
+  xmlDocPtr doc;
+  xmlDtdPtr dtd;
+  xmlValidCtxtPtr ctxt;
+  VALUE error_list;
+
+  Data_Get_Struct(self, xmlDtd, dtd);
+  Data_Get_Struct(document, xmlDoc, doc);
+  error_list = rb_ary_new();
+
+  ctxt = xmlNewValidCtxt();
+
+  xmlSetStructuredErrorFunc((void *)error_list, Nokogiri_error_array_pusher);
+
+  xmlValidateDtd(ctxt, doc, dtd);
+
+  xmlSetStructuredErrorFunc(NULL, NULL);
+
+  xmlFreeValidCtxt(ctxt);
+
+  return error_list;
+}</pre>
+          </div><!-- validate-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- validate-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

@@ -1,0 +1,12 @@
+Thu, 07 Nov 2013 23:12:11 -0400
+lib/code_analyzer.rb	Thu, 07 Nov 2013 23:09:41 -0400
+lib/code_analyzer/checker.rb	Thu, 07 Nov 2013 23:09:41 -0400
+lib/code_analyzer/warning.rb	Thu, 07 Nov 2013 23:09:41 -0400
+lib/code_analyzer/nil.rb	Thu, 07 Nov 2013 23:09:41 -0400
+lib/code_analyzer/checking_visitor.rb	Thu, 07 Nov 2013 23:09:41 -0400
+lib/code_analyzer/checking_visitor/plain.rb	Thu, 07 Nov 2013 23:09:41 -0400
+lib/code_analyzer/checking_visitor/base.rb	Thu, 07 Nov 2013 23:09:41 -0400
+lib/code_analyzer/checking_visitor/default.rb	Thu, 07 Nov 2013 23:09:41 -0400
+lib/code_analyzer/analyzer_exception.rb	Thu, 07 Nov 2013 23:09:41 -0400
+lib/code_analyzer/version.rb	Thu, 07 Nov 2013 23:09:41 -0400
+lib/code_analyzer/sexp.rb	Thu, 07 Nov 2013 23:09:41 -0400

@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>how_to_use_zentest - ZenTest-4.9.5 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body class="file">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../History_txt.html">History</a>
+  
+    <li class="file"><a href="../Manifest_txt.html">Manifest</a>
+  
+    <li class="file"><a href="../README_txt.html">README</a>
+  
+    <li class="file"><a href="../articles/how_to_use_zentest_txt.html">how_to_use_zentest</a>
+  
+    <li class="file"><a href="../example_txt.html">example</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Autotest.html">Autotest</a>
+  
+    <li><a href="../Autotest/AutoUpdate.html">Autotest::AutoUpdate</a>
+  
+    <li><a href="../Autotest/Bundler.html">Autotest::Bundler</a>
+  
+    <li><a href="../Autotest/Isolate.html">Autotest::Isolate</a>
+  
+    <li><a href="../Autotest/Once.html">Autotest::Once</a>
+  
+    <li><a href="../Autotest/Preload.html">Autotest::Preload</a>
+  
+    <li><a href="../Autotest/RCov.html">Autotest::RCov</a>
+  
+    <li><a href="../Autotest/Restart.html">Autotest::Restart</a>
+  
+    <li><a href="../Autotest/Timestamp.html">Autotest::Timestamp</a>
+  
+    <li><a href="../FunctionalTestMatrix.html">FunctionalTestMatrix</a>
+  
+    <li><a href="../Module.html">Module</a>
+  
+    <li><a href="../Multiruby.html">Multiruby</a>
+  
+    <li><a href="../UnitDiff.html">UnitDiff</a>
+  
+    <li><a href="../ZenTest.html">ZenTest</a>
+  
+    <li><a href="../ZenTestMapping.html">ZenTestMapping</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<p>How to Use <a href="../ZenTest.html">ZenTest</a> with Ruby by Pat Eyler
+&lt;pate@kohalabs.com&gt; <a
+href="http://linuxjournal.com/article.php?sid=7776">linuxjournal.com/article.php?sid=7776</a>
+(included in this package with permission)</p>
+
+<p>Refactoring and unit testing are a great pair of tools for every
+programmer’s workbench.  Sadly, not every programmer knows how to use them.
+My first exposure to them came when I started using Ruby, refactoring and
+unit testing are a big part of the landscape in the Ruby community.</p>
+
+<p>Some time ago, I translated the refactoring example from the first chapter
+of Martin Fowler’s excellent book, Refactoring, out of Java and into Ruby. 
+I felt this would be a great way to learn more about refactoring and brush
+up on my Ruby while I was at it.  Recently, I decided to update the
+translation for Ruby 1.8.X.  One of the things I needed to change was to
+convert the old unit tests to work with Test::Unit, the new unit testing
+framework for Ruby.</p>
+
+<p>I wasn’t really looking forward to building a new test suite though.
+Fortunately, help was available.  Ryan Davis has written a great tool
+called <a href="../ZenTest.html">ZenTest</a>, which creates test suites for
+existing bodies of code.  Since a lot of people are new to refactoring,
+unit testing, and <a href="../ZenTest.html">ZenTest</a>, I thought this
+would be a great chance to introduce you to this trio of tools.</p>
+
+<p>Martin’s example code is built around a video store application.  In his
+original code, there are three classes;  Customer, Movie, and Rental.  I’ll
+focus on just the Customer class in this article. Here’s the original code:</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">Customer</span>
+  <span class="ruby-identifier">attr_accessor</span> :<span class="ruby-identifier">name</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">name</span>)
+    <span class="ruby-ivar">@name</span> = <span class="ruby-identifier">name</span>
+    <span class="ruby-ivar">@rentals</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">addRental</span>(<span class="ruby-identifier">aRental</span>)
+    <span class="ruby-ivar">@rentals</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">aRental</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">statement</span>
+    <span class="ruby-identifier">totalAmount</span> = <span class="ruby-value">0.0</span>
+    <span class="ruby-identifier">frequentRenterPoints</span> = <span class="ruby-value">0</span>
+    <span class="ruby-identifier">rentals</span> = <span class="ruby-ivar">@rentals</span>.<span class="ruby-identifier">length</span>
+    <span class="ruby-identifier">result</span> = <span class="ruby-node">&quot;\nRental Record for #{@name}\n&quot;</span>
+    <span class="ruby-identifier">thisAmount</span> = <span class="ruby-value">0.0</span>
+    <span class="ruby-ivar">@rentals</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">rental</span><span class="ruby-operator">|</span> 
+      <span class="ruby-comment"># determine amounts for each line</span>
+      <span class="ruby-keyword">case</span> <span class="ruby-identifier">rental</span>.<span class="ruby-identifier">aMovie</span>.<span class="ruby-identifier">pricecode</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-constant">Movie</span><span class="ruby-operator">::</span><span class="ruby-constant">REGULAR</span>
+          <span class="ruby-identifier">thisAmount</span> <span class="ruby-operator">+=</span> <span class="ruby-value">2</span>
+          <span class="ruby-keyword">if</span> <span class="ruby-identifier">rental</span>.<span class="ruby-identifier">daysRented</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">2</span>
+            <span class="ruby-identifier">thisAmount</span> <span class="ruby-operator">+=</span> (<span class="ruby-identifier">rental</span>.<span class="ruby-identifier">daysRented</span> <span class="ruby-operator">-</span> <span class="ruby-value">2</span>) * <span class="ruby-value">1.5</span>
+          <span class="ruby-keyword">end</span>
+
+        <span class="ruby-keyword">when</span> <span class="ruby-constant">Movie</span><span class="ruby-operator">::</span><span class="ruby-constant">NEW_RELEASE</span>
+          <span class="ruby-identifier">thisAmount</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">rental</span>.<span class="ruby-identifier">daysRented</span> * <span class="ruby-value">3</span>
+
+        <span class="ruby-keyword">when</span> <span class="ruby-constant">Movie</span><span class="ruby-operator">::</span><span class="ruby-constant">CHILDRENS</span>
+          <span class="ruby-identifier">thisAmount</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1.5</span>
+          <span class="ruby-keyword">if</span> <span class="ruby-identifier">each</span>.<span class="ruby-identifier">daysRented</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">3</span>
+            <span class="ruby-identifier">thisAmount</span> <span class="ruby-operator">+=</span> (<span class="ruby-identifier">rental</span>.<span class="ruby-identifier">daysRented</span> <span class="ruby-operator">-</span> <span class="ruby-value">3</span>) * <span class="ruby-value">1.5</span>
+          <span class="ruby-keyword">end</span>
+
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-comment"># add frequent renter points</span>
+      <span class="ruby-identifier">frequentRenterPoints</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+      <span class="ruby-comment"># add bonus for a two day new release rental</span>
+      <span class="ruby-keyword">if</span> ( <span class="ruby-identifier">rental</span>.<span class="ruby-identifier">daysRented</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>) <span class="ruby-operator">&amp;&amp;</span> 
+         (<span class="ruby-constant">Movie</span><span class="ruby-operator">::</span><span class="ruby-constant">NEW_RELEASE</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">rental</span>.<span class="ruby-identifier">aMovie</span>.<span class="ruby-identifier">pricecode</span>)
+        <span class="ruby-identifier">frequentRenterPoints</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-comment"># show figures for this rental</span>
+      <span class="ruby-identifier">result</span> <span class="ruby-operator">+=</span><span class="ruby-node">&quot;\t#{rental.aMovie.title}\t#{thisAmount}\n&quot;</span>
+      <span class="ruby-identifier">totalAmount</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">thisAmount</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">result</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;Amount owed is #{totalAmount}\n&quot;</span>
+    <span class="ruby-identifier">result</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;You earned #{frequentRenterPoints} frequent renter points&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>Not the cleanest code in the world, but it is supposed to be that way. 
+This represents the code as you get it from the user.  No tests, poorly
+laid out, but working – and it’s your job to make it better without
+breaking it.  So, where to start?  With unit tests of course.</p>
+
+<p>Time to grab <a href="../ZenTest.html">ZenTest</a>.  You can run it like
+this:</p>
+
+<pre>$ zentest videostore.rb &gt; test_videostore.rb</pre>
+
+<p>which produces a file full of tests.  Running the test suite doesn’t do
+quite what we were hoping though:</p>
+
+<pre>$ ruby testVideoStore.rb Loaded suite testVideoStore
+Started
+EEEEEEEEEEE
+Finished in 0.008974 seconds.
+
+  1) Error!!!
+test_addRental(TestCustomer):
+NotImplementedError: Need to write test_addRental
+    testVideoStore.rb:11:in `test_addRental'
+    testVideoStore.rb:54
+
+  2) Error!!!
+test_name=(TestCustomer):
+NotImplementedError: Need to write test_name=
+    testVideoStore.rb:15:in `test_name='
+    testVideoStore.rb:54
+
+  3) Error!!!
+test_statement=(TestCustomer):
+NotImplementedError: Need to write test_statement
+    testVideoStore.rb:19:in `test_statement'
+    testVideoStore.rb:54
+     .
+     .
+     .     
+
+11 tests, 0 assertions, 0 failures, 11 errors
+$</pre>
+
+<p>So what exactly did we get out of this?  Here’s the portion of our new test
+suite that matters for the Customer class:</p>
+
+<pre class="ruby"><span class="ruby-comment"># Code Generated by ZenTest v. 2.1.2</span>
+<span class="ruby-comment">#                 classname: asrt / meth =  ratio%</span>
+<span class="ruby-comment">#                  Customer:    0 /    3 =   0.00%</span>
+
+<span class="ruby-identifier">require</span> <span class="ruby-string">'test/unit'</span>
+
+<span class="ruby-keyword">class</span> <span class="ruby-constant">TestCustomer</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">Test</span><span class="ruby-operator">::</span><span class="ruby-constant">Unit</span><span class="ruby-operator">::</span><span class="ruby-constant">TestCase</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">test_addRental</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>, <span class="ruby-string">'Need to write test_addRental'</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">test_name=</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>, <span class="ruby-string">'Need to write test_name='</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">test_statement</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>, <span class="ruby-string">'Need to write test_statement'</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p><a href="../ZenTest.html">ZenTest</a> built three test methods: one for the
+accessor method, one for the addRental method, and one for the statement
+method.  Why nothing for the initializer?  Well, initializers tend to be
+pretty bulletproof (if they're not, it's pretty easy to add the test method
+yourself). Besides, we'll be testing it indirectly when we write test_name=
+(the tests for the accessor method).  There's one other thing we'll need to
+add, the test suite doesn't load the code we're testing.  Changing the
+beginning of the script to require the videostore.rb file will do the trick
+for us.</p>
+
+<pre class="ruby"><span class="ruby-comment"># Code Generated by ZenTest v. 2.1.2</span>
+<span class="ruby-comment">#                 classname: asrt / meth =  ratio%</span>
+<span class="ruby-comment">#                  Customer:    0 /    3 =   0.00%</span>
+
+<span class="ruby-identifier">require</span> <span class="ruby-string">'test/unit'</span>
+<span class="ruby-identifier">require</span> <span class="ruby-string">'videostore'</span>
+</pre>
+
+<p>That little snippet of comments at the top lets us know that we have three
+methods under test in the Customer class, zero assertions testing them, and
+no coverage.  Let’s fix that.  We’ll start by writing some tests for
+test_name= (no, it really doesn’t matter what order we go in – this is just
+a convenient place to start).</p>
+
+<pre class="ruby"><span class="ruby-keyword">def</span> <span class="ruby-identifier">test_name=</span>
+      <span class="ruby-identifier">aCustomer</span> = <span class="ruby-constant">Customer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Fred Jones&quot;</span>)
+      <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;Fred Jones&quot;</span>,<span class="ruby-identifier">aCustomer</span>.<span class="ruby-identifier">name</span>)
+      <span class="ruby-identifier">aCustomer</span>.<span class="ruby-identifier">name</span> = <span class="ruby-string">&quot;Freddy Jones&quot;</span>
+      <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;Freddy Jones&quot;</span>,<span class="ruby-identifier">aCustomer</span>.<span class="ruby-identifier">name</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>Running testVideoStore.rb again gives us:</p>
+
+<pre>$ ruby testVideoStore.rb 
+Loaded suite testVideoStore
+Started
+E.EEEEEEEEE
+Finished in 0.011233 seconds.
+
+  1) Error!!!
+test_addRental(TestCustomer):
+NotImplementedError: Need to write test_addRental
+    testVideoStore.rb:13:in `test_addRental'
+    testVideoStore.rb:58
+
+  2) Error!!!
+test_statement(TestCustomer):
+NotImplementedError: Need to write test_statement
+    testVideoStore.rb:23:in `test_statement'
+    testVideoStore.rb:58
+.
+.
+.
+11 tests, 2 assertions, 0 failures, 10 errors
+$</pre>
+
+<p>So far, so good.  The line of ‘E’s (which shows errors in the test run) has
+been reduced by one, and the summary line at the bottom tells us roughly
+the same thing.</p>
+
+<p>We really don’t have a way to test addRental directly, so we’ll just  write
+an stub test for now.</p>
+
+<pre class="ruby"><span class="ruby-keyword">def</span> <span class="ruby-identifier">test_addRental</span>
+   <span class="ruby-identifier">assert</span>(<span class="ruby-value">1</span>) <span class="ruby-comment"># stub test, since there is nothing in the method to test</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>When we run the tests again, we get:</p>
+
+<pre>$ ruby testVideoStore.rb 
+Loaded suite testVideoStore
+Started
+..EEEEEEEEE
+Finished in 0.008682 seconds.
+
+  1) Error!!!
+test_statement(TestCustomer):
+NotImplementedError: Need to write test_statement
+    testVideoStore.rb:22:in `test_statement'
+    testVideoStore.rb:57
+.
+.
+.
+11 tests, 3 assertions, 0 failures, 9 errors
+$</pre>
+
+<p>Better and better, just one error left in the TestCustomer class. Let’s
+finish up with a test that will clear our test_statement error and verify
+that addRental works correctly:</p>
+
+<pre class="ruby">  <span class="ruby-keyword">def</span> <span class="ruby-identifier">test_statement</span>
+    <span class="ruby-identifier">aMovie</span> = <span class="ruby-constant">Movie</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Legacy&quot;</span>,<span class="ruby-value">0</span>)
+
+    <span class="ruby-identifier">aRental</span> = <span class="ruby-constant">Rental</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">aMovie</span>,<span class="ruby-value">2</span>)
+
+    <span class="ruby-identifier">aCustomer</span> = <span class="ruby-constant">Customer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Fred Jones&quot;</span>)
+    <span class="ruby-identifier">aCustomer</span>.<span class="ruby-identifier">addRental</span>(<span class="ruby-identifier">aRental</span>)
+    <span class="ruby-identifier">aStatement</span> = <span class="ruby-string">&quot;\nRental Record for Fred Jones\n\tLegacy\t2.0
+Amount owed is 2.0\nYou earned 1 frequent renter points&quot;</span>
+
+    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">aStatement</span>,<span class="ruby-identifier">aCustomer</span>.<span class="ruby-identifier">statement</span>)
+
+  <span class="ruby-keyword">end</span>
+</pre>
+
+<p>We run the tests again, and see:</p>
+
+<pre>$ ruby testVideoStore.rb 
+Loaded suite testVideoStore
+Started
+...EEEEEEEE
+Finished in 0.009378 seconds.
+.
+.
+.
+11 tests, 4 assertions, 0 failures, 8 errors
+$</pre>
+
+<p>Great!  The only errors left are on the Movie and Rental classes, the
+Customer class is clean.</p>
+
+<p>We can continue along like this for the remaining classes, but I’ll not
+bore you with those details.  Instead, I’d like to look at how <a
+href="../ZenTest.html">ZenTest</a> can help when you’ve already got some
+tests in place.  Later  development allows us to do just that – the video
+store owner wants a new web based statement for web using customers.</p>
+
+<p>After a bit of refactoring and new development, the code looks like this:</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">Customer</span>
+  <span class="ruby-identifier">attr_accessor</span> :<span class="ruby-identifier">name</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">name</span>)
+    <span class="ruby-ivar">@name</span> = <span class="ruby-identifier">name</span>
+    <span class="ruby-ivar">@rentals</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">addRental</span>(<span class="ruby-identifier">aRental</span>)
+    <span class="ruby-ivar">@rentals</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">aRental</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">statement</span>
+    <span class="ruby-identifier">result</span> = <span class="ruby-node">&quot;\nRental Record for #{@name}\n&quot;</span>
+    <span class="ruby-ivar">@rentals</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-operator">|</span><span class="ruby-identifier">each</span><span class="ruby-operator">|</span> 
+      <span class="ruby-comment"># show figures for this rental</span>
+      <span class="ruby-identifier">result</span> <span class="ruby-operator">+=</span><span class="ruby-node">&quot;\t#{each.aMovie.title}\t#{each.getCharge}\n&quot;</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">result</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;Amount owed is #{getTotalCharge}\n&quot;</span>
+    <span class="ruby-identifier">result</span> <span class="ruby-operator">+=</span> 
+      <span class="ruby-node">&quot;You earned #{getFrequentRenterPoints} frequent renter points&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">htmlStatement</span>
+    <span class="ruby-identifier">result</span> = <span class="ruby-node">&quot;\n&lt;H1&gt;Rentals for &lt;EM&gt;#{name}&lt;/EM&gt;&lt;/H1&gt;&lt;P&gt;\n&quot;</span>
+    <span class="ruby-ivar">@rentals</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-operator">|</span><span class="ruby-identifier">each</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">result</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;#{each.aMovie.title}: #{each.getCharge}&lt;BR&gt;\n&quot;</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">result</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;You owe &lt;EM&gt;#{getTotalCharge}&lt;/EM&gt;&lt;P&gt;\n&quot;</span>
+    <span class="ruby-identifier">result</span> <span class="ruby-operator">+=</span> 
+       <span class="ruby-node">&quot;On this rental you earned &lt;EM&gt;#{getFrequentRenterPoints}&quot;</span> <span class="ruby-operator">+</span>
+       <span class="ruby-string">&quot;&lt;/EM&gt; frequent renter points&lt;P&gt;&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">getTotalCharge</span>
+    <span class="ruby-identifier">result</span> = <span class="ruby-value">0.0</span>
+    <span class="ruby-ivar">@rentals</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-operator">|</span><span class="ruby-identifier">each</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">result</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">each</span>.<span class="ruby-identifier">getCharge</span>()
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">result</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">getFrequentRenterPoints</span>
+    <span class="ruby-identifier">result</span> = <span class="ruby-value">0</span>
+    <span class="ruby-ivar">@rentals</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-operator">|</span><span class="ruby-identifier">each</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">result</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">each</span>.<span class="ruby-identifier">getFrequentRenterPoints</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">result</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>There’s a lot of new stuff in here.  If we run <a
+href="../ZenTest.html">ZenTest</a> again, it’ll pick up the methods we
+don’t have any coverage on (we should have written them as we wrote the new
+methods, but this is a bit more illustrative).  This time, we’ll invoke <a
+href="../ZenTest.html">ZenTest</a> a little bit differently:</p>
+
+<pre>$ zentest videostore.rb testVideoStore.rb &gt; Missing_tests</pre>
+
+<p>and our (trimmed) output looks like this:</p>
+
+<pre class="ruby"><span class="ruby-comment"># Code Generated by ZenTest v. 2.1.2</span>
+<span class="ruby-comment">#                 classname: asrt / meth =  ratio%</span>
+<span class="ruby-comment">#                  Customer:    4 /    6 =  66.67%</span>
+
+<span class="ruby-identifier">require</span> <span class="ruby-string">'test/unit'</span>
+
+<span class="ruby-keyword">class</span> <span class="ruby-constant">TestCustomer</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">Test</span><span class="ruby-operator">::</span><span class="ruby-constant">Unit</span><span class="ruby-operator">::</span><span class="ruby-constant">TestCase</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">test_getFrequentRenterPoints</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>, 
+          <span class="ruby-string">'Need to write test_getFrequentRenterPoints'</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">test_getTotalCharge</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>, <span class="ruby-string">'Need to write test_getTotalCharge'</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">test_htmlStatement</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>, <span class="ruby-string">'Need to write test_htmlStatement'</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>Hmmm, three more test methods to fill in to get our complete coverage.  As
+we write these, we can just migrate them into our existing
+testVideoStore.rb test suite.  Then we can keep moving ahead with
+refactoring and adding new features.  In the future, let’s just be sure we
+add tests as we go along.  <a href="../ZenTest.html">ZenTest</a> can help
+you here too. You can write stubs for new development, then run <a
+href="../ZenTest.html">ZenTest</a> to create your new test stubs as well. 
+After some refactorings (like ‘extract method’), <a
+href="../ZenTest.html">ZenTest</a> can be used the same way.</p>
+
+<p>Refactoring and unit testing are powerful tools for programmers, and <a
+href="../ZenTest.html">ZenTest</a> provides an easy way to start using them
+in a Ruby environment.  Hopefully, this introduction has whetted your
+appetite.</p>
+
+<p>If you’re interested in learning more about refactoring, please grab a copy
+of ‘Refactoring:  Improving the Design of Existing Code’ and take a look at
+<a href="http://www.refactoring.com.">www.refactoring.com.</a>  For more
+information about unit testing, please see:  c2.com/cgi/wiki?UnitTest, <a
+href="http://www.junit.org/index.htm">www.junit.org/index.htm</a>, and <a
+href="http://www.extremeprogramming.org/rules/unittests.html.">www.extremeprogramming.org/rules/unittests.html.</a></p>
+
+<p>The latest information about Test::Unit and <a
+href="../ZenTest.html">ZenTest</a> are available at their home pages: 
+testunit.talbott.ws (for Test::Unit) and <a
+href="http://www.zenspider.com/ZSS/Products/ZenTest.">www.zenspider.com/ZSS/Products/ZenTest.</a></p>
+
+</div>
+
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

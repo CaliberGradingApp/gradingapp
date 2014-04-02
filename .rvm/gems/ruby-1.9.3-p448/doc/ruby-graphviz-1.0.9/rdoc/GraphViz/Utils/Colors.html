@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class GraphViz::Utils::Colors - ruby-graphviz-1.0.9 Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/graphviz/utils/colors.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="../../Object.html">Object</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-hsv">::hsv</a>
+    
+    <li><a href="#method-c-hsv_to_rgb">::hsv_to_rgb</a>
+    
+    <li><a href="#method-c-name">::name</a>
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-c-rgb">::rgb</a>
+    
+    <li><a href="#method-c-rgb_to_hsv">::rgb_to_hsv</a>
+    
+    <li><a href="#method-i-hsv">#hsv</a>
+    
+    <li><a href="#method-i-hsv_string">#hsv_string</a>
+    
+    <li><a href="#method-i-hsv_to_rgb">#hsv_to_rgb</a>
+    
+    <li><a href="#method-i-name">#name</a>
+    
+    <li><a href="#method-i-rgb">#rgb</a>
+    
+    <li><a href="#method-i-rgb_to_hsv">#rgb_to_hsv</a>
+    
+    <li><a href="#method-i-rgba_string">#rgba_string</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../AUTHORS_rdoc.html">AUTHORS</a>
+  
+    <li class="file"><a href="../../CHANGELOG_rdoc.html">CHANGELOG</a>
+  
+    <li class="file"><a href="../../COPYING_rdoc.html">COPYING</a>
+  
+    <li class="file"><a href="../../README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../GraphViz.html">GraphViz</a>
+  
+    <li><a href="../../GraphViz/Attrs.html">GraphViz::Attrs</a>
+  
+    <li><a href="../../GraphViz/Constants.html">GraphViz::Constants</a>
+  
+    <li><a href="../../GraphViz/DOTScript.html">GraphViz::DOTScript</a>
+  
+    <li><a href="../../GraphViz/DOTScriptData.html">GraphViz::DOTScriptData</a>
+  
+    <li><a href="../../GraphViz/DSL.html">GraphViz::DSL</a>
+  
+    <li><a href="../../GraphViz/Edge.html">GraphViz::Edge</a>
+  
+    <li><a href="../../GraphViz/Elements.html">GraphViz::Elements</a>
+  
+    <li><a href="../../GraphViz/Ext.html">GraphViz::Ext</a>
+  
+    <li><a href="../../GraphViz/FamilyTree.html">GraphViz::FamilyTree</a>
+  
+    <li><a href="../../GraphViz/FamilyTree/Couple.html">GraphViz::FamilyTree::Couple</a>
+  
+    <li><a href="../../GraphViz/FamilyTree/Generation.html">GraphViz::FamilyTree::Generation</a>
+  
+    <li><a href="../../GraphViz/FamilyTree/Person.html">GraphViz::FamilyTree::Person</a>
+  
+    <li><a href="../../GraphViz/FamilyTree/Sibling.html">GraphViz::FamilyTree::Sibling</a>
+  
+    <li><a href="../../GraphViz/GraphML.html">GraphViz::GraphML</a>
+  
+    <li><a href="../../GraphViz/GraphMLError.html">GraphViz::GraphMLError</a>
+  
+    <li><a href="../../GraphViz/Math.html">GraphViz::Math</a>
+  
+    <li><a href="../../GraphViz/Math/CoordinateError.html">GraphViz::Math::CoordinateError</a>
+  
+    <li><a href="../../GraphViz/Math/Matrix.html">GraphViz::Math::Matrix</a>
+  
+    <li><a href="../../GraphViz/Math/ValueError.html">GraphViz::Math::ValueError</a>
+  
+    <li><a href="../../GraphViz/Node.html">GraphViz::Node</a>
+  
+    <li><a href="../../GraphViz/Theory.html">GraphViz::Theory</a>
+  
+    <li><a href="../../GraphViz/Types.html">GraphViz::Types</a>
+  
+    <li><a href="../../GraphViz/Types/ArrowType.html">GraphViz::Types::ArrowType</a>
+  
+    <li><a href="../../GraphViz/Types/Color.html">GraphViz::Types::Color</a>
+  
+    <li><a href="../../GraphViz/Types/ColorList.html">GraphViz::Types::ColorList</a>
+  
+    <li><a href="../../GraphViz/Types/Common.html">GraphViz::Types::Common</a>
+  
+    <li><a href="../../GraphViz/Types/EscString.html">GraphViz::Types::EscString</a>
+  
+    <li><a href="../../GraphViz/Types/GvBool.html">GraphViz::Types::GvBool</a>
+  
+    <li><a href="../../GraphViz/Types/GvDouble.html">GraphViz::Types::GvDouble</a>
+  
+    <li><a href="../../GraphViz/Types/HtmlString.html">GraphViz::Types::HtmlString</a>
+  
+    <li><a href="../../GraphViz/Types/LblString.html">GraphViz::Types::LblString</a>
+  
+    <li><a href="../../GraphViz/Types/Rect.html">GraphViz::Types::Rect</a>
+  
+    <li><a href="../../GraphViz/Types/SplineType.html">GraphViz::Types::SplineType</a>
+  
+    <li><a href="../../GraphViz/Utils.html">GraphViz::Utils</a>
+  
+    <li><a href="../../GraphViz/Utils/Colors.html">GraphViz::Utils::Colors</a>
+  
+    <li><a href="../../GraphViz/XML.html">GraphViz::XML</a>
+  
+    <li><a href="../../AttributeException.html">AttributeException</a>
+  
+    <li><a href="../../BoolException.html">BoolException</a>
+  
+    <li><a href="../../ColorException.html">ColorException</a>
+  
+    <li><a href="../../DoubleException.html">DoubleException</a>
+  
+    <li><a href="../../Hash.html">Hash</a>
+  
+    <li><a href="../../Object.html">Object</a>
+  
+    <li><a href="../../RectException.html">RectException</a>
+  
+    <li><a href="../../SplineTypeException.html">SplineTypeException</a>
+  
+    <li><a href="../../String.html">String</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class GraphViz::Utils::Colors</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="COLORS">COLORS
+        
+        <dd class="description">
+        
+      
+        <dt id="HEX_FOR_COLOR">HEX_FOR_COLOR
+        
+        <dd class="description">
+        
+      
+        <dt id="RGBA">RGBA
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-a" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">a</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-b" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">b</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-g" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">g</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-h" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">h</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-r" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">r</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-s" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">s</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-v" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">v</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-hsv" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">hsv</span><span
+            class="method-args">(h, s, v)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="hsv-source">
+            <pre><span class="ruby-comment"># File lib/graphviz/utils/colors.rb, line 116</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">hsv</span>(<span class="ruby-identifier">h</span>, <span class="ruby-identifier">s</span>, <span class="ruby-identifier">v</span>)
+   <span class="ruby-identifier">color</span> = <span class="ruby-constant">Colors</span>.<span class="ruby-identifier">new</span>
+   <span class="ruby-identifier">color</span>.<span class="ruby-identifier">hsv</span>(<span class="ruby-identifier">h</span>, <span class="ruby-identifier">s</span>, <span class="ruby-identifier">v</span>)
+   <span class="ruby-identifier">color</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- hsv-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- hsv-method -->
+
+    
+      <div id="method-c-hsv_to_rgb" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">hsv_to_rgb</span><span
+            class="method-args">(h, s, v)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="hsv_to_rgb-source">
+            <pre><span class="ruby-comment"># File lib/graphviz/utils/colors.rb, line 162</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">hsv_to_rgb</span>(<span class="ruby-identifier">h</span>, <span class="ruby-identifier">s</span>, <span class="ruby-identifier">v</span>)
+   <span class="ruby-identifier">_h</span>, <span class="ruby-identifier">_s</span>, <span class="ruby-identifier">_v</span> = <span class="ruby-identifier">h</span>.<span class="ruby-identifier">to_f</span> * <span class="ruby-value">360.0</span>, <span class="ruby-identifier">s</span>.<span class="ruby-identifier">to_f</span>, <span class="ruby-identifier">v</span>.<span class="ruby-identifier">to_f</span>
+
+   <span class="ruby-keyword">if</span> <span class="ruby-identifier">_s</span> <span class="ruby-operator">==</span> <span class="ruby-value">0.0</span>
+     <span class="ruby-identifier">r</span> = (<span class="ruby-identifier">_v</span> * <span class="ruby-value">255</span> ).<span class="ruby-identifier">to_i</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">convert_base</span>(<span class="ruby-value">10</span>,<span class="ruby-value">16</span>)
+     <span class="ruby-keyword">return</span> [<span class="ruby-identifier">r</span>, <span class="ruby-identifier">r</span>, <span class="ruby-identifier">r</span>]
+   <span class="ruby-keyword">end</span>
+
+   <span class="ruby-identifier">_h</span> = <span class="ruby-identifier">_h</span> <span class="ruby-operator">/</span> <span class="ruby-value">60.0</span>
+   <span class="ruby-identifier">i</span> = <span class="ruby-identifier">_h</span>.<span class="ruby-identifier">floor</span>
+   <span class="ruby-identifier">f</span> = <span class="ruby-identifier">_h</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">i</span>
+   <span class="ruby-identifier">p</span> = <span class="ruby-identifier">_v</span> * ( <span class="ruby-value">1.0</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">_s</span> )
+   <span class="ruby-identifier">q</span> = <span class="ruby-identifier">_v</span> * ( <span class="ruby-value">1.0</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">_s</span> * <span class="ruby-identifier">f</span> )
+   <span class="ruby-identifier">t</span> = <span class="ruby-identifier">_v</span> * ( <span class="ruby-value">1.0</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">_s</span> * ( <span class="ruby-value">1</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">f</span> ) )
+   <span class="ruby-keyword">case</span> <span class="ruby-identifier">i</span>
+   <span class="ruby-keyword">when</span> <span class="ruby-value">0</span>
+      <span class="ruby-identifier">r</span> = <span class="ruby-identifier">_v</span>
+      <span class="ruby-identifier">g</span> = <span class="ruby-identifier">t</span>
+      <span class="ruby-identifier">b</span> = <span class="ruby-identifier">p</span>
+   <span class="ruby-keyword">when</span> <span class="ruby-value">1</span>
+      <span class="ruby-identifier">r</span> = <span class="ruby-identifier">q</span>
+      <span class="ruby-identifier">g</span> = <span class="ruby-identifier">_v</span>
+      <span class="ruby-identifier">b</span> = <span class="ruby-identifier">p</span>
+   <span class="ruby-keyword">when</span> <span class="ruby-value">2</span>
+      <span class="ruby-identifier">r</span> = <span class="ruby-identifier">p</span>
+      <span class="ruby-identifier">g</span> = <span class="ruby-identifier">_v</span>
+      <span class="ruby-identifier">b</span> = <span class="ruby-identifier">t</span>
+   <span class="ruby-keyword">when</span> <span class="ruby-value">3</span>
+      <span class="ruby-identifier">r</span> = <span class="ruby-identifier">p</span>
+      <span class="ruby-identifier">g</span> = <span class="ruby-identifier">q</span>
+      <span class="ruby-identifier">b</span> = <span class="ruby-identifier">_v</span>
+   <span class="ruby-keyword">when</span> <span class="ruby-value">4</span>
+      <span class="ruby-identifier">r</span> = <span class="ruby-identifier">t</span>
+      <span class="ruby-identifier">g</span> = <span class="ruby-identifier">p</span>
+      <span class="ruby-identifier">b</span> = <span class="ruby-identifier">_v</span>
+   <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">r</span> = <span class="ruby-identifier">_v</span>
+      <span class="ruby-identifier">g</span> = <span class="ruby-identifier">p</span>
+      <span class="ruby-identifier">b</span> = <span class="ruby-identifier">q</span>
+   <span class="ruby-keyword">end</span>
+
+   [
+      (<span class="ruby-identifier">r</span> * <span class="ruby-value">255</span>).<span class="ruby-identifier">to_i</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">convert_base</span>(<span class="ruby-value">10</span>, <span class="ruby-value">16</span>),
+      (<span class="ruby-identifier">g</span> * <span class="ruby-value">255</span>).<span class="ruby-identifier">to_i</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">convert_base</span>(<span class="ruby-value">10</span>, <span class="ruby-value">16</span>),
+      (<span class="ruby-identifier">b</span> * <span class="ruby-value">255</span>).<span class="ruby-identifier">to_i</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">convert_base</span>(<span class="ruby-value">10</span>, <span class="ruby-value">16</span>)
+   ]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- hsv_to_rgb-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- hsv_to_rgb-method -->
+
+    
+      <div id="method-c-name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">name</span><span
+            class="method-args">(c)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="name-source">
+            <pre><span class="ruby-comment"># File lib/graphviz/utils/colors.rb, line 122</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">name</span>(<span class="ruby-identifier">c</span>)
+   <span class="ruby-identifier">color</span> = <span class="ruby-constant">Colors</span>.<span class="ruby-identifier">new</span>
+   <span class="ruby-identifier">color</span>.<span class="ruby-identifier">name</span>(<span class="ruby-identifier">c</span>)
+   <span class="ruby-identifier">color</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- name-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- name-method -->
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/graphviz/utils/colors.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>
+   <span class="ruby-ivar">@r</span>, <span class="ruby-ivar">@g</span>, <span class="ruby-ivar">@b</span>, <span class="ruby-ivar">@a</span>, <span class="ruby-ivar">@h</span>, <span class="ruby-ivar">@s</span>, <span class="ruby-ivar">@v</span>, <span class="ruby-ivar">@color</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+      <div id="method-c-rgb" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">rgb</span><span
+            class="method-args">(r, g, b, a = nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="rgb-source">
+            <pre><span class="ruby-comment"># File lib/graphviz/utils/colors.rb, line 110</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">rgb</span>(<span class="ruby-identifier">r</span>, <span class="ruby-identifier">g</span>, <span class="ruby-identifier">b</span>, <span class="ruby-identifier">a</span> = <span class="ruby-keyword">nil</span>)
+   <span class="ruby-identifier">color</span> = <span class="ruby-constant">Colors</span>.<span class="ruby-identifier">new</span>
+   <span class="ruby-identifier">color</span>.<span class="ruby-identifier">rgb</span>(<span class="ruby-identifier">r</span>, <span class="ruby-identifier">g</span>, <span class="ruby-identifier">b</span>, <span class="ruby-identifier">a</span>)
+   <span class="ruby-identifier">color</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- rgb-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- rgb-method -->
+
+    
+      <div id="method-c-rgb_to_hsv" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">rgb_to_hsv</span><span
+            class="method-args">(r, g, b)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="rgb_to_hsv-source">
+            <pre><span class="ruby-comment"># File lib/graphviz/utils/colors.rb, line 128</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">rgb_to_hsv</span>(<span class="ruby-identifier">r</span>, <span class="ruby-identifier">g</span>, <span class="ruby-identifier">b</span>)
+   <span class="ruby-identifier">h</span>, <span class="ruby-identifier">s</span>, <span class="ruby-identifier">v</span> = <span class="ruby-value">0.0</span>, <span class="ruby-value">0.0</span>, <span class="ruby-value">0.0</span>
+
+   <span class="ruby-identifier">_r</span> = <span class="ruby-identifier">r</span>.<span class="ruby-identifier">convert_base</span>(<span class="ruby-value">16</span>, <span class="ruby-value">10</span>).<span class="ruby-identifier">to_f</span> <span class="ruby-operator">/</span> <span class="ruby-value">255.0</span>
+   <span class="ruby-identifier">_g</span> = <span class="ruby-identifier">g</span>.<span class="ruby-identifier">convert_base</span>(<span class="ruby-value">16</span>, <span class="ruby-value">10</span>).<span class="ruby-identifier">to_f</span> <span class="ruby-operator">/</span> <span class="ruby-value">255.0</span>
+   <span class="ruby-identifier">_b</span> = <span class="ruby-identifier">b</span>.<span class="ruby-identifier">convert_base</span>(<span class="ruby-value">16</span>, <span class="ruby-value">10</span>).<span class="ruby-identifier">to_f</span> <span class="ruby-operator">/</span> <span class="ruby-value">255.0</span>
+   <span class="ruby-identifier">rgb</span> = [ <span class="ruby-identifier">_r</span>, <span class="ruby-identifier">_g</span>, <span class="ruby-identifier">_b</span> ]
+
+   <span class="ruby-identifier">min</span> = <span class="ruby-identifier">rgb</span>.<span class="ruby-identifier">min</span>
+   <span class="ruby-identifier">max</span> = <span class="ruby-identifier">rgb</span>.<span class="ruby-identifier">max</span>
+   <span class="ruby-identifier">v</span> = <span class="ruby-identifier">max</span>
+
+   <span class="ruby-identifier">delta</span> = <span class="ruby-identifier">max</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">min</span>
+   <span class="ruby-keyword">if</span> <span class="ruby-identifier">max</span> <span class="ruby-operator">!=</span> <span class="ruby-value">0.0</span>
+      <span class="ruby-identifier">s</span> = <span class="ruby-identifier">delta</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">max</span>
+   <span class="ruby-keyword">else</span>
+      <span class="ruby-keyword">return</span> [<span class="ruby-value">-1</span>, <span class="ruby-value">0</span>, <span class="ruby-identifier">v</span>]
+   <span class="ruby-keyword">end</span>
+
+   <span class="ruby-keyword">if</span> <span class="ruby-identifier">_r</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">max</span>
+      <span class="ruby-identifier">h</span> = ( <span class="ruby-identifier">_g</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">_b</span> ) <span class="ruby-operator">/</span> <span class="ruby-identifier">delta</span>
+   <span class="ruby-keyword">elsif</span>( <span class="ruby-identifier">_g</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">max</span> )
+      <span class="ruby-identifier">h</span> = <span class="ruby-value">2</span> <span class="ruby-operator">+</span> ( <span class="ruby-identifier">_b</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">_r</span> ) <span class="ruby-operator">/</span> <span class="ruby-identifier">delta</span>
+   <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">h</span> = <span class="ruby-value">4</span> <span class="ruby-operator">+</span> ( <span class="ruby-identifier">_r</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">_g</span> ) <span class="ruby-operator">/</span> <span class="ruby-identifier">delta</span>
+   <span class="ruby-keyword">end</span>
+
+   <span class="ruby-identifier">h</span> = <span class="ruby-identifier">h</span> * <span class="ruby-value">60</span>
+   <span class="ruby-identifier">h</span> = <span class="ruby-identifier">h</span> <span class="ruby-operator">+</span> <span class="ruby-value">360</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">h</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span>
+   <span class="ruby-identifier">h</span> = <span class="ruby-identifier">h</span> <span class="ruby-operator">/</span> <span class="ruby-value">360.0</span>
+
+   [<span class="ruby-identifier">h</span>, <span class="ruby-identifier">s</span>, <span class="ruby-identifier">v</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- rgb_to_hsv-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- rgb_to_hsv-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-hsv" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">hsv</span><span
+            class="method-args">(h, s, v)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="hsv-source">
+            <pre><span class="ruby-comment"># File lib/graphviz/utils/colors.rb, line 55</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">hsv</span>(<span class="ruby-identifier">h</span>, <span class="ruby-identifier">s</span>, <span class="ruby-identifier">v</span>)
+   <span class="ruby-keyword">unless</span> <span class="ruby-identifier">h</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Float</span>) <span class="ruby-keyword">and</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Float</span>) <span class="ruby-keyword">and</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Float</span>)
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ColorException</span>, <span class="ruby-string">&quot;Bas HSV value&quot;</span>
+   <span class="ruby-keyword">end</span>
+
+   <span class="ruby-ivar">@h</span> = <span class="ruby-identifier">h</span>
+   <span class="ruby-ivar">@s</span> = <span class="ruby-identifier">s</span>
+   <span class="ruby-ivar">@v</span> = <span class="ruby-identifier">v</span>
+
+   <span class="ruby-ivar">@r</span>, <span class="ruby-ivar">@g</span>, <span class="ruby-ivar">@b</span> = <span class="ruby-identifier">hsv_to_rgb</span>(<span class="ruby-ivar">@h</span>, <span class="ruby-ivar">@s</span>, <span class="ruby-ivar">@v</span>)
+
+   <span class="ruby-ivar">@color</span> = <span class="ruby-constant">COLORS</span>.<span class="ruby-identifier">key</span>(<span class="ruby-identifier">rgba_string</span>.<span class="ruby-identifier">downcase</span>);
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- hsv-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- hsv-method -->
+
+    
+      <div id="method-i-hsv_string" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">hsv_string</span><span
+            class="method-args">(s = ", ")</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="hsv_string-source">
+            <pre><span class="ruby-comment"># File lib/graphviz/utils/colors.rb, line 93</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">hsv_string</span>(<span class="ruby-identifier">s</span> = <span class="ruby-string">&quot;, &quot;</span>)
+   <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@h</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-node">&quot;#{@h}#{s}#{@s}#{s}#{@v}&quot;</span>
+   <span class="ruby-keyword">else</span>
+      <span class="ruby-keyword">nil</span>
+   <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- hsv_string-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- hsv_string-method -->
+
+    
+      <div id="method-i-hsv_to_rgb" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">hsv_to_rgb</span><span
+            class="method-args">(h, s, v)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="hsv_to_rgb-source">
+            <pre><span class="ruby-comment"># File lib/graphviz/utils/colors.rb, line 105</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">hsv_to_rgb</span>(<span class="ruby-identifier">h</span>, <span class="ruby-identifier">s</span>, <span class="ruby-identifier">v</span>)
+   <span class="ruby-constant">Colors</span>.<span class="ruby-identifier">hsv_to_rgb</span>(<span class="ruby-identifier">h</span>, <span class="ruby-identifier">s</span>, <span class="ruby-identifier">v</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- hsv_to_rgb-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- hsv_to_rgb-method -->
+
+    
+      <div id="method-i-name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">name</span><span
+            class="method-args">(c = nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="name-source">
+            <pre><span class="ruby-comment"># File lib/graphviz/utils/colors.rb, line 69</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">name</span>(<span class="ruby-identifier">c</span> = <span class="ruby-keyword">nil</span>)
+   <span class="ruby-keyword">return</span> <span class="ruby-ivar">@color</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">nil?</span>
+
+   <span class="ruby-ivar">@color</span> = <span class="ruby-identifier">c</span>
+
+   <span class="ruby-identifier">rgb</span> = <span class="ruby-constant">COLORS</span>[<span class="ruby-identifier">c</span>]
+   <span class="ruby-keyword">unless</span> <span class="ruby-identifier">rgb</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-identifier">m</span> = <span class="ruby-constant">RGBA</span>.<span class="ruby-identifier">match</span>(<span class="ruby-identifier">rgb</span>)
+      <span class="ruby-ivar">@r</span> = <span class="ruby-identifier">m</span>[<span class="ruby-value">1</span>]
+      <span class="ruby-ivar">@g</span> = <span class="ruby-identifier">m</span>[<span class="ruby-value">2</span>]
+      <span class="ruby-ivar">@b</span> = <span class="ruby-identifier">m</span>[<span class="ruby-value">3</span>]
+
+      <span class="ruby-ivar">@h</span>, <span class="ruby-ivar">@s</span>, <span class="ruby-ivar">@v</span> = <span class="ruby-identifier">rgb_to_hsv</span>(<span class="ruby-ivar">@r</span>, <span class="ruby-ivar">@g</span>, <span class="ruby-ivar">@b</span>)
+   <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- name-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- name-method -->
+
+    
+      <div id="method-i-rgb" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">rgb</span><span
+            class="method-args">(r, g, b, a = nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="rgb-source">
+            <pre><span class="ruby-comment"># File lib/graphviz/utils/colors.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">rgb</span>(<span class="ruby-identifier">r</span>, <span class="ruby-identifier">g</span>, <span class="ruby-identifier">b</span>, <span class="ruby-identifier">a</span> = <span class="ruby-keyword">nil</span>)
+   <span class="ruby-keyword">if</span> <span class="ruby-identifier">r</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Fixnum</span>)
+      <span class="ruby-identifier">r</span> = <span class="ruby-identifier">r</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">convert_base</span>(<span class="ruby-value">10</span>, <span class="ruby-value">16</span>)
+   <span class="ruby-keyword">end</span>
+   <span class="ruby-keyword">unless</span> <span class="ruby-identifier">r</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>) <span class="ruby-keyword">and</span> <span class="ruby-constant">HEX_FOR_COLOR</span>.<span class="ruby-identifier">match</span>(<span class="ruby-identifier">r</span>)
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ColorException</span>, <span class="ruby-string">&quot;Bad red value&quot;</span>
+   <span class="ruby-keyword">end</span>
+
+   <span class="ruby-keyword">if</span> <span class="ruby-identifier">g</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Fixnum</span>)
+      <span class="ruby-identifier">g</span> = <span class="ruby-identifier">g</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">convert_base</span>(<span class="ruby-value">10</span>, <span class="ruby-value">16</span>)
+   <span class="ruby-keyword">end</span>
+   <span class="ruby-keyword">unless</span> <span class="ruby-identifier">g</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>) <span class="ruby-keyword">and</span> <span class="ruby-constant">HEX_FOR_COLOR</span>.<span class="ruby-identifier">match</span>(<span class="ruby-identifier">g</span>)
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ColorException</span>, <span class="ruby-string">&quot;Bad green value&quot;</span>
+   <span class="ruby-keyword">end</span>
+
+   <span class="ruby-keyword">if</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Fixnum</span>)
+      <span class="ruby-identifier">b</span> = <span class="ruby-identifier">b</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">convert_base</span>(<span class="ruby-value">10</span>, <span class="ruby-value">16</span>)
+   <span class="ruby-keyword">end</span>
+   <span class="ruby-keyword">unless</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>) <span class="ruby-keyword">and</span> <span class="ruby-constant">HEX_FOR_COLOR</span>.<span class="ruby-identifier">match</span>(<span class="ruby-identifier">b</span>)
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ColorException</span>, <span class="ruby-string">&quot;Bad blue value&quot;</span>
+   <span class="ruby-keyword">end</span>
+
+   <span class="ruby-keyword">if</span> <span class="ruby-identifier">a</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Fixnum</span>)
+      <span class="ruby-identifier">a</span> = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">convert_base</span>(<span class="ruby-value">10</span>, <span class="ruby-value">16</span>)
+   <span class="ruby-keyword">end</span>
+   <span class="ruby-keyword">unless</span> <span class="ruby-identifier">a</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword">or</span> (<span class="ruby-identifier">a</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>) <span class="ruby-keyword">and</span> <span class="ruby-constant">HEX_FOR_COLOR</span>.<span class="ruby-identifier">match</span>(<span class="ruby-identifier">a</span>))
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ColorException</span>, <span class="ruby-string">&quot;Bad alpha value&quot;</span>
+   <span class="ruby-keyword">end</span>
+
+   <span class="ruby-ivar">@r</span> = <span class="ruby-identifier">r</span>
+   <span class="ruby-ivar">@g</span> = <span class="ruby-identifier">g</span>
+   <span class="ruby-ivar">@b</span> = <span class="ruby-identifier">b</span>
+   <span class="ruby-ivar">@a</span> = <span class="ruby-identifier">a</span>
+
+   <span class="ruby-ivar">@color</span> = <span class="ruby-constant">COLORS</span>.<span class="ruby-identifier">key</span>(<span class="ruby-identifier">rgba_string</span>.<span class="ruby-identifier">downcase</span>)
+
+   <span class="ruby-ivar">@h</span>, <span class="ruby-ivar">@s</span>, <span class="ruby-ivar">@v</span> = <span class="ruby-identifier">rgb_to_hsv</span>(<span class="ruby-ivar">@r</span>, <span class="ruby-ivar">@g</span>, <span class="ruby-ivar">@b</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- rgb-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- rgb-method -->
+
+    
+      <div id="method-i-rgb_to_hsv" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">rgb_to_hsv</span><span
+            class="method-args">(r, g, b)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="rgb_to_hsv-source">
+            <pre><span class="ruby-comment"># File lib/graphviz/utils/colors.rb, line 101</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">rgb_to_hsv</span>(<span class="ruby-identifier">r</span>, <span class="ruby-identifier">g</span>, <span class="ruby-identifier">b</span>)
+   <span class="ruby-constant">Colors</span>.<span class="ruby-identifier">rgb_to_hsv</span>(<span class="ruby-identifier">r</span>, <span class="ruby-identifier">g</span>, <span class="ruby-identifier">b</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- rgb_to_hsv-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- rgb_to_hsv-method -->
+
+    
+      <div id="method-i-rgba_string" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">rgba_string</span><span
+            class="method-args">(c = "")</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="rgba_string-source">
+            <pre><span class="ruby-comment"># File lib/graphviz/utils/colors.rb, line 85</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">rgba_string</span>(<span class="ruby-identifier">c</span> = <span class="ruby-string">&quot;&quot;</span>)
+   <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@r</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-node">&quot;#{c}#{@r}#{@g}#{@b}#{((@a.nil?)?&quot;&quot;:@a)}&quot;</span>
+   <span class="ruby-keyword">else</span>
+      <span class="ruby-keyword">nil</span>
+   <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- rgba_string-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- rgba_string-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

@@ -1,0 +1,33 @@
+2014-03-02 01:50:57,339 - softwarecenter.ui.gtk3.app - INFO - setting up proxy 'None'
+2014-03-02 01:50:57,415 - softwarecenter.db.database - INFO - open() database: path=None use_axi=True use_agent=True
+2014-03-02 01:50:58,106 - softwarecenter.backend.reviews - WARNING - Could not get usefulness from server, no username in config file
+2014-03-02 01:50:59,030 - softwarecenter.ui.gtk3.app - INFO - show_available_packages: search_text is '', app is None.
+2014-03-02 01:50:59,291 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2014-03-02 01:51:18,863 - softwarecenter.fixme - WARNING - logs to the root logger: '('/usr/share/software-center/softwarecenter/utils.py', 201, 'get_title_from_html')'
+2014-03-02 01:51:18,854 - root - WARNING - failed to parse: '<div style="background-color: #161513; width:1680px; height:200px;">
+ <div style="background: url('/site_media/exhibits/2013/09/AAMFP_Leaderboard_700x200_1.jpg') top left no-repeat; width:700px; height:200px;"></div>
+</div>' ('ascii' codec can't encode character u'\xa0' in position 70: ordinal not in range(128))
+2014-03-02 01:51:23,356 - softwarecenter.db.update - INFO - skipping region restricted app: 'Comentarios Web' (not whitelisted)
+2014-03-02 01:51:25,068 - softwarecenter.db.update - INFO - skipping region restricted app: 'Flaggame' (not whitelisted)
+2014-03-02 01:51:25,498 - softwarecenter.db.update - INFO - skipping region restricted app: 'Bulleti d'esquerra de Calonge i Sant Antoni ' (not whitelisted)
+2014-03-02 01:51:25,646 - softwarecenter.db.update - INFO - skipping region restricted app: 'Source Code Analyzer' (not whitelisted)
+2014-03-02 01:51:27,964 - softwarecenter.ui.gtk3.app - INFO - software-center-agent finished with status 0
+2014-03-02 01:51:27,977 - softwarecenter.db.database - INFO - reopen() database
+2014-03-02 01:51:27,981 - softwarecenter.db.database - INFO - open() database: path=None use_axi=True use_agent=True
+2014-03-16 12:46:48,547 - softwarecenter.ui.gtk3.app - INFO - setting up proxy 'None'
+2014-03-16 12:46:48,729 - softwarecenter.db.database - INFO - open() database: path=None use_axi=True use_agent=True
+2014-03-16 12:46:50,714 - softwarecenter.backend.reviews - WARNING - Could not get usefulness from server, no username in config file
+2014-03-16 12:46:52,103 - softwarecenter.ui.gtk3.app - INFO - show_available_packages: search_text is '', app is None.
+2014-03-16 12:46:52,457 - softwarecenter.db.pkginfo_impl.aptcache - INFO - aptcache.open()
+2014-03-16 12:47:32,912 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'RatingsAndReviewsAPI', 'review_stats', '{"days": 15}']'
+2014-03-16 12:47:32,919 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at reviews.ubuntu.com
+'
+2014-03-16 12:47:43,013 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'SoftwareCenterAgentAPI', 'exhibits', '{"lang": "en", "series": "precise"}']'
+2014-03-16 12:47:43,016 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+'
+2014-03-16 12:47:46,015 - softwarecenter.backend.spawn_helper - WARNING - exit code 1 from helper for '['/usr/share/software-center/piston_generic_helper.py', '--datadir', '/usr/share/software-center/', 'SoftwareCenterAgentAPI', 'available_apps', '{"lang": "en", "series": "precise", "arch": "i386"}']'
+2014-03-16 12:47:46,022 - softwarecenter.backend.spawn_helper - WARNING - got error from helper: 'WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+'
+2014-03-16 12:47:46,022 - softwarecenter.db.update - WARNING - error: WARNING:__main__:Unable to find the server at software-center.ubuntu.com
+
+2014-03-16 12:47:46,118 - softwarecenter.ui.gtk3.app - INFO - software-center-agent finished with status 1

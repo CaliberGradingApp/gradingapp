@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Cane::DocCheck - cane-2.6.1 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/cane/doc_check.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Struct.new(:opts)
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-key">::key</a>
+    
+    <li><a href="#method-c-name">::name</a>
+    
+    <li><a href="#method-c-options">::options</a>
+    
+    <li><a href="#method-i-class_definition">#class_definition</a>
+    
+    <li><a href="#method-i-class_definition-3F">#class_definition?</a>
+    
+    <li><a href="#method-i-class_definitions_in">#class_definitions_in</a>
+    
+    <li><a href="#method-i-comment-3F">#comment?</a>
+    
+    <li><a href="#method-i-excluded-3F">#excluded?</a>
+    
+    <li><a href="#method-i-exclusions">#exclusions</a>
+    
+    <li><a href="#method-i-extract_class_name">#extract_class_name</a>
+    
+    <li><a href="#method-i-file_names">#file_names</a>
+    
+    <li><a href="#method-i-find_violations">#find_violations</a>
+    
+    <li><a href="#method-i-method_definition-3F">#method_definition?</a>
+    
+    <li><a href="#method-i-missing_file_violations">#missing_file_violations</a>
+    
+    <li><a href="#method-i-single_line_class_definition-3F">#single_line_class_definition?</a>
+    
+    <li><a href="#method-i-violations">#violations</a>
+    
+    <li><a href="#method-i-worker">#worker</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Cane.html">Cane</a>
+  
+    <li><a href="../Cane/AbcCheck.html">Cane::AbcCheck</a>
+  
+    <li><a href="../Cane/AbcCheck/InvalidAst.html">Cane::AbcCheck::InvalidAst</a>
+  
+    <li><a href="../Cane/AbcCheck/RubyAst.html">Cane::AbcCheck::RubyAst</a>
+  
+    <li><a href="../Cane/CLI.html">Cane::CLI</a>
+  
+    <li><a href="../Cane/CLI/Parser.html">Cane::CLI::Parser</a>
+  
+    <li><a href="../Cane/CLI/Parser/OptionsHandled.html">Cane::CLI::Parser::OptionsHandled</a>
+  
+    <li><a href="../Cane/DocCheck.html">Cane::DocCheck</a>
+  
+    <li><a href="../Cane/EncodingAwareIterator.html">Cane::EncodingAwareIterator</a>
+  
+    <li><a href="../Cane/File.html">Cane::File</a>
+  
+    <li><a href="../Cane/JsonFormatter.html">Cane::JsonFormatter</a>
+  
+    <li><a href="../Cane/RakeTask.html">Cane::RakeTask</a>
+  
+    <li><a href="../Cane/Runner.html">Cane::Runner</a>
+  
+    <li><a href="../Cane/SimpleTaskRunner.html">Cane::SimpleTaskRunner</a>
+  
+    <li><a href="../Cane/StyleCheck.html">Cane::StyleCheck</a>
+  
+    <li><a href="../Cane/ThresholdCheck.html">Cane::ThresholdCheck</a>
+  
+    <li><a href="../Cane/ThresholdCheck/UnavailableValue.html">Cane::ThresholdCheck::UnavailableValue</a>
+  
+    <li><a href="../Cane/ViolationFormatter.html">Cane::ViolationFormatter</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Cane::DocCheck</h1>
+
+  <div id="description" class="description">
+    
+<p>Creates violations for class definitions that do not have an explantory
+comment immediately preceding.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="CLASS_REGEX">CLASS_REGEX
+        
+        <dd class="description">
+        
+      
+        <dt id="ClassDefinition">ClassDefinition
+        
+        <dd class="description">
+        
+      
+        <dt id="DESCRIPTION">DESCRIPTION
+        
+        <dd class="description">
+        
+      
+        <dt id="MAGIC_COMMENT_REGEX">MAGIC_COMMENT_REGEX
+        
+        <dd class="description"><p>Stolen from ERB source, amended to be slightly stricter to work around some
+known false positives.</p>
+        
+      
+        <dt id="METHOD_REGEX">METHOD_REGEX
+        
+        <dd class="description">
+        
+      
+        <dt id="SINGLE_LINE_CLASS_REGEX">SINGLE_LINE_CLASS_REGEX
+        
+        <dd class="description"><p><a href="http://rubular.com/r/53BapkefdD">rubular.com/r/53BapkefdD</a></p>
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-key" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">key</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="key-source">
+            <pre><span class="ruby-comment"># File lib/cane/doc_check.rb, line 21</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">key</span>; <span class="ruby-value">:doc</span>; <span class="ruby-keyword">end</span></pre>
+          </div><!-- key-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- key-method -->
+
+    
+      <div id="method-c-name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">name</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="name-source">
+            <pre><span class="ruby-comment"># File lib/cane/doc_check.rb, line 22</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">name</span>; <span class="ruby-string">&quot;documentation checking&quot;</span>; <span class="ruby-keyword">end</span></pre>
+          </div><!-- name-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- name-method -->
+
+    
+      <div id="method-c-options" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">options</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="options-source">
+            <pre><span class="ruby-comment"># File lib/cane/doc_check.rb, line 23</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">options</span>
+  {
+    <span class="ruby-identifier">doc_glob</span><span class="ruby-operator">:</span>    [<span class="ruby-string">'Glob to run doc checks over'</span>,
+                    <span class="ruby-identifier">default</span><span class="ruby-operator">:</span>  <span class="ruby-string">'{app,lib}/**/*.rb'</span>,
+                    <span class="ruby-identifier">variable</span><span class="ruby-operator">:</span> <span class="ruby-string">'GLOB'</span>,
+                    <span class="ruby-identifier">clobber</span><span class="ruby-operator">:</span>  <span class="ruby-value">:no_doc</span>],
+    <span class="ruby-identifier">doc_exclude</span><span class="ruby-operator">:</span> [<span class="ruby-string">'Exclude file or glob from documentation checking'</span>,
+                    <span class="ruby-identifier">variable</span><span class="ruby-operator">:</span> <span class="ruby-string">'GLOB'</span>,
+                    <span class="ruby-identifier">type</span><span class="ruby-operator">:</span> <span class="ruby-constant">Array</span>,
+                    <span class="ruby-identifier">default</span><span class="ruby-operator">:</span> [],
+                    <span class="ruby-identifier">clobber</span><span class="ruby-operator">:</span> <span class="ruby-value">:no_doc</span>],
+    <span class="ruby-identifier">no_readme</span><span class="ruby-operator">:</span>   [<span class="ruby-string">'Disable readme checking'</span>, <span class="ruby-identifier">cast</span><span class="ruby-operator">:</span> <span class="ruby-operator">-</span><span class="ruby-operator">&gt;</span>(<span class="ruby-identifier">x</span>) { <span class="ruby-operator">!</span><span class="ruby-identifier">x</span> }],
+    <span class="ruby-identifier">no_doc</span><span class="ruby-operator">:</span>      [<span class="ruby-string">'Disable documentation checking'</span>, <span class="ruby-identifier">cast</span><span class="ruby-operator">:</span> <span class="ruby-operator">-</span><span class="ruby-operator">&gt;</span>(<span class="ruby-identifier">x</span>) { <span class="ruby-operator">!</span><span class="ruby-identifier">x</span> }]
+  }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- options-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- options-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-class_definition" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">class_definition</span><span
+            class="method-args">(number, line, last_line)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="class_definition-source">
+            <pre><span class="ruby-comment"># File lib/cane/doc_check.rb, line 96</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">class_definition</span>(<span class="ruby-identifier">number</span>, <span class="ruby-identifier">line</span>, <span class="ruby-identifier">last_line</span>)
+  <span class="ruby-constant">ClassDefinition</span>.<span class="ruby-identifier">new</span>({
+    <span class="ruby-identifier">line</span><span class="ruby-operator">:</span> (<span class="ruby-identifier">number</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>),
+    <span class="ruby-identifier">label</span><span class="ruby-operator">:</span> <span class="ruby-identifier">extract_class_name</span>(<span class="ruby-identifier">line</span>),
+    <span class="ruby-identifier">has_doc</span><span class="ruby-operator">:</span> <span class="ruby-identifier">comment?</span>(<span class="ruby-identifier">last_line</span>),
+    <span class="ruby-identifier">requires_doc</span><span class="ruby-operator">:</span> <span class="ruby-identifier">method_definition?</span>(<span class="ruby-identifier">line</span>)
+  })
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- class_definition-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- class_definition-method -->
+
+    
+      <div id="method-i-class_definition-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">class_definition?</span><span
+            class="method-args">(line)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="class_definition-3F-source">
+            <pre><span class="ruby-comment"># File lib/cane/doc_check.rb, line 124</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">class_definition?</span>(<span class="ruby-identifier">line</span>)
+  <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-constant">CLASS_REGEX</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-node">$1</span>.<span class="ruby-identifier">index</span>(<span class="ruby-string">'&lt;&lt;'</span>) <span class="ruby-operator">!=</span> <span class="ruby-value">0</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- class_definition-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- class_definition-3F-method -->
+
+    
+      <div id="method-i-class_definitions_in" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">class_definitions_in</span><span
+            class="method-args">(file_name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="class_definitions_in-source">
+            <pre><span class="ruby-comment"># File lib/cane/doc_check.rb, line 73</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">class_definitions_in</span>(<span class="ruby-identifier">file_name</span>)
+  <span class="ruby-identifier">closed_classes</span> = []
+  <span class="ruby-identifier">open_classes</span> = []
+  <span class="ruby-identifier">last_line</span> = <span class="ruby-string">&quot;&quot;</span>
+
+  <span class="ruby-constant">Cane</span><span class="ruby-operator">::</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">iterator</span>(<span class="ruby-identifier">file_name</span>).<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span>, <span class="ruby-identifier">number</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">class_definition?</span> <span class="ruby-identifier">line</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">single_line_class_definition?</span> <span class="ruby-identifier">line</span>
+        <span class="ruby-identifier">closed_classes</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">open_classes</span>
+      <span class="ruby-keyword">end</span>.<span class="ruby-identifier">push</span> <span class="ruby-identifier">class_definition</span>(<span class="ruby-identifier">number</span>, <span class="ruby-identifier">line</span>, <span class="ruby-identifier">last_line</span>)
+
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">method_definition?</span>(<span class="ruby-identifier">line</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">open_classes</span>.<span class="ruby-identifier">empty?</span>
+      <span class="ruby-identifier">open_classes</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">requires_doc</span> = <span class="ruby-keyword">true</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">last_line</span> = <span class="ruby-identifier">line</span>
+  <span class="ruby-keyword">end</span>
+
+  (<span class="ruby-identifier">closed_classes</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">open_classes</span>).<span class="ruby-identifier">sort_by</span>(&amp;<span class="ruby-value">:line</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- class_definitions_in-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- class_definitions_in-method -->
+
+    
+      <div id="method-i-comment-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">comment?</span><span
+            class="method-args">(line)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="comment-3F-source">
+            <pre><span class="ruby-comment"># File lib/cane/doc_check.rb, line 132</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">comment?</span>(<span class="ruby-identifier">line</span>)
+  <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-node">/^\s*#/</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span>(<span class="ruby-constant">MAGIC_COMMENT_REGEX</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">line</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- comment-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- comment-3F-method -->
+
+    
+      <div id="method-i-excluded-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">excluded?</span><span
+            class="method-args">(file)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="excluded-3F-source">
+            <pre><span class="ruby-comment"># File lib/cane/doc_check.rb, line 146</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">excluded?</span>(<span class="ruby-identifier">file</span>)
+  <span class="ruby-identifier">exclusions</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">file</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- excluded-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- excluded-3F-method -->
+
+    
+      <div id="method-i-exclusions" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">exclusions</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="exclusions-source">
+            <pre><span class="ruby-comment"># File lib/cane/doc_check.rb, line 140</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">exclusions</span>
+  <span class="ruby-ivar">@exclusions</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value">:doc_exclude</span>, []).<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+    <span class="ruby-constant">Dir</span>[<span class="ruby-identifier">i</span>]
+  <span class="ruby-keyword">end</span>.<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">to_set</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- exclusions-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- exclusions-method -->
+
+    
+      <div id="method-i-extract_class_name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">extract_class_name</span><span
+            class="method-args">(line)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="extract_class_name-source">
+            <pre><span class="ruby-comment"># File lib/cane/doc_check.rb, line 136</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">extract_class_name</span>(<span class="ruby-identifier">line</span>)
+  <span class="ruby-identifier">line</span>.<span class="ruby-identifier">match</span>(<span class="ruby-constant">CLASS_REGEX</span>)[<span class="ruby-value">1</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- extract_class_name-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- extract_class_name-method -->
+
+    
+      <div id="method-i-file_names" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">file_names</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="file_names-source">
+            <pre><span class="ruby-comment"># File lib/cane/doc_check.rb, line 116</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">file_names</span>
+  <span class="ruby-constant">Dir</span>[<span class="ruby-identifier">opts</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value">:doc_glob</span>)].<span class="ruby-identifier">reject</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span> <span class="ruby-identifier">excluded?</span>(<span class="ruby-identifier">file</span>) }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- file_names-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- file_names-method -->
+
+    
+      <div id="method-i-find_violations" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find_violations</span><span
+            class="method-args">(file_name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="find_violations-source">
+            <pre><span class="ruby-comment"># File lib/cane/doc_check.rb, line 60</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">find_violations</span>(<span class="ruby-identifier">file_name</span>)
+  <span class="ruby-identifier">class_definitions_in</span>(<span class="ruby-identifier">file_name</span>).<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">class_definition</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">class_definition</span>.<span class="ruby-identifier">requires_doc?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">class_definition</span>.<span class="ruby-identifier">missing_doc?</span>
+      {
+        <span class="ruby-identifier">file</span><span class="ruby-operator">:</span>        <span class="ruby-identifier">file_name</span>,
+        <span class="ruby-identifier">line</span><span class="ruby-operator">:</span>        <span class="ruby-identifier">class_definition</span>.<span class="ruby-identifier">line</span>,
+        <span class="ruby-identifier">label</span><span class="ruby-operator">:</span>       <span class="ruby-identifier">class_definition</span>.<span class="ruby-identifier">label</span>,
+        <span class="ruby-identifier">description</span><span class="ruby-operator">:</span> <span class="ruby-constant">DESCRIPTION</span>
+      }
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>.<span class="ruby-identifier">compact</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- find_violations-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- find_violations-method -->
+
+    
+      <div id="method-i-method_definition-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">method_definition?</span><span
+            class="method-args">(line)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="method_definition-3F-source">
+            <pre><span class="ruby-comment"># File lib/cane/doc_check.rb, line 120</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">method_definition?</span>(<span class="ruby-identifier">line</span>)
+  <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-constant">METHOD_REGEX</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- method_definition-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- method_definition-3F-method -->
+
+    
+      <div id="method-i-missing_file_violations" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">missing_file_violations</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="missing_file_violations-source">
+            <pre><span class="ruby-comment"># File lib/cane/doc_check.rb, line 105</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">missing_file_violations</span>
+  <span class="ruby-identifier">result</span> = []
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">opts</span>[<span class="ruby-value">:no_readme</span>]
+
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">Cane</span><span class="ruby-operator">::</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">case_insensitive_glob</span>(<span class="ruby-string">&quot;README*&quot;</span>).<span class="ruby-identifier">none?</span>
+    <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> { <span class="ruby-identifier">description</span><span class="ruby-operator">:</span> <span class="ruby-string">'Missing documentation'</span>,
+                <span class="ruby-identifier">label</span><span class="ruby-operator">:</span> <span class="ruby-string">'No README found'</span> }
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- missing_file_violations-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- missing_file_violations-method -->
+
+    
+      <div id="method-i-single_line_class_definition-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">single_line_class_definition?</span><span
+            class="method-args">(line)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="single_line_class_definition-3F-source">
+            <pre><span class="ruby-comment"># File lib/cane/doc_check.rb, line 128</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">single_line_class_definition?</span>(<span class="ruby-identifier">line</span>)
+  <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-constant">SINGLE_LINE_CLASS_REGEX</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- single_line_class_definition-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- single_line_class_definition-3F-method -->
+
+    
+      <div id="method-i-violations" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">violations</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="violations-source">
+            <pre><span class="ruby-comment"># File lib/cane/doc_check.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">violations</span>
+  <span class="ruby-keyword">return</span> [] <span class="ruby-keyword">if</span> <span class="ruby-identifier">opts</span>[<span class="ruby-value">:no_doc</span>]
+
+  <span class="ruby-identifier">missing_file_violations</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">worker</span>.<span class="ruby-identifier">map</span>(<span class="ruby-identifier">file_names</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">file_name</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">find_violations</span>(<span class="ruby-identifier">file_name</span>)
+  }.<span class="ruby-identifier">flatten</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- violations-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- violations-method -->
+
+    
+      <div id="method-i-worker" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">worker</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="worker-source">
+            <pre><span class="ruby-comment"># File lib/cane/doc_check.rb, line 150</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">worker</span>
+  <span class="ruby-constant">Cane</span>.<span class="ruby-identifier">task_runner</span>(<span class="ruby-identifier">opts</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- worker-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- worker-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

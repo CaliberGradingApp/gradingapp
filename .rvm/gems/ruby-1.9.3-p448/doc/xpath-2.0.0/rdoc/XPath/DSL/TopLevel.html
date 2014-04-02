@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module XPath::DSL::TopLevel - xpath-2.0.0 Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/xpath/dsl.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-anywhere">#anywhere</a>
+    
+    <li><a href="#method-i-attr">#attr</a>
+    
+    <li><a href="#method-i-axis">#axis</a>
+    
+    <li><a href="#method-i-child">#child</a>
+    
+    <li><a href="#method-i-contains">#contains</a>
+    
+    <li><a href="#method-i-css">#css</a>
+    
+    <li><a href="#method-i-current">#current</a>
+    
+    <li><a href="#method-i-descendant">#descendant</a>
+    
+    <li><a href="#method-i-name">#name</a>
+    
+    <li><a href="#method-i-next_sibling">#next_sibling</a>
+    
+    <li><a href="#method-i-previous_sibling">#previous_sibling</a>
+    
+    <li><a href="#method-i-starts_with">#starts_with</a>
+    
+    <li><a href="#method-i-string">#string</a>
+    
+    <li><a href="#method-i-text">#text</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../XPath.html">XPath</a>
+  
+    <li><a href="../../XPath/DSL.html">XPath::DSL</a>
+  
+    <li><a href="../../XPath/DSL/ExpressionLevel.html">XPath::DSL::ExpressionLevel</a>
+  
+    <li><a href="../../XPath/DSL/TopLevel.html">XPath::DSL::TopLevel</a>
+  
+    <li><a href="../../XPath/Expression.html">XPath::Expression</a>
+  
+    <li><a href="../../XPath/HTML.html">XPath::HTML</a>
+  
+    <li><a href="../../XPath/Literal.html">XPath::Literal</a>
+  
+    <li><a href="../../XPath/Renderer.html">XPath::Renderer</a>
+  
+    <li><a href="../../XPath/Union.html">XPath::Union</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module XPath::DSL::TopLevel</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-anywhere" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">anywhere</span><span
+            class="method-args">(*expressions)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="anywhere-source">
+            <pre><span class="ruby-comment"># File lib/xpath/dsl.rb, line 32</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">anywhere</span>(*<span class="ruby-identifier">expressions</span>)
+  <span class="ruby-constant">Expression</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:anywhere</span>, <span class="ruby-identifier">expressions</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- anywhere-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- anywhere-method -->
+
+    
+      <div id="method-i-attr" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">attr</span><span
+            class="method-args">(expression)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="attr-source">
+            <pre><span class="ruby-comment"># File lib/xpath/dsl.rb, line 36</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">attr</span>(<span class="ruby-identifier">expression</span>)
+  <span class="ruby-constant">Expression</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:attribute</span>, <span class="ruby-identifier">current</span>, <span class="ruby-identifier">expression</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- attr-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- attr-method -->
+
+    
+      <div id="method-i-axis" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">axis</span><span
+            class="method-args">(name, tag_name=:*)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="axis-source">
+            <pre><span class="ruby-comment"># File lib/xpath/dsl.rb, line 20</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">axis</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">tag_name</span>=<span class="ruby-value">:*</span>)
+  <span class="ruby-constant">Expression</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:axis</span>, <span class="ruby-identifier">current</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">tag_name</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- axis-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- axis-method -->
+
+    
+      <div id="method-i-child" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">child</span><span
+            class="method-args">(*expressions)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="child-source">
+            <pre><span class="ruby-comment"># File lib/xpath/dsl.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">child</span>(*<span class="ruby-identifier">expressions</span>)
+  <span class="ruby-constant">Expression</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:child</span>, <span class="ruby-identifier">current</span>, <span class="ruby-identifier">expressions</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- child-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- child-method -->
+
+    
+      <div id="method-i-contains" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">contains</span><span
+            class="method-args">(expression)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="contains-source">
+            <pre><span class="ruby-comment"># File lib/xpath/dsl.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">contains</span>(<span class="ruby-identifier">expression</span>)
+  <span class="ruby-constant">Expression</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:contains</span>, <span class="ruby-identifier">current</span>, <span class="ruby-identifier">expression</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- contains-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- contains-method -->
+
+    
+      <div id="method-i-css" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">css</span><span
+            class="method-args">(selector)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="css-source">
+            <pre><span class="ruby-comment"># File lib/xpath/dsl.rb, line 56</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">css</span>(<span class="ruby-identifier">selector</span>)
+  <span class="ruby-constant">Expression</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:css</span>, <span class="ruby-identifier">current</span>, <span class="ruby-constant">Literal</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">selector</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- css-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- css-method -->
+
+    
+      <div id="method-i-current" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">current</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="current-source">
+            <pre><span class="ruby-comment"># File lib/xpath/dsl.rb, line 4</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">current</span>
+  <span class="ruby-constant">Expression</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:this_node</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- current-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- current-method -->
+
+    
+      <div id="method-i-descendant" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">descendant</span><span
+            class="method-args">(*expressions)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="descendant-source">
+            <pre><span class="ruby-comment"># File lib/xpath/dsl.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">descendant</span>(*<span class="ruby-identifier">expressions</span>)
+  <span class="ruby-constant">Expression</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:descendant</span>, <span class="ruby-identifier">current</span>, <span class="ruby-identifier">expressions</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- descendant-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- descendant-method -->
+
+    
+      <div id="method-i-name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">name</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="name-source">
+            <pre><span class="ruby-comment"># File lib/xpath/dsl.rb, line 8</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">name</span>
+  <span class="ruby-constant">Expression</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:node_name</span>, <span class="ruby-identifier">current</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- name-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- name-method -->
+
+    
+      <div id="method-i-next_sibling" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">next_sibling</span><span
+            class="method-args">(*expressions)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="next_sibling-source">
+            <pre><span class="ruby-comment"># File lib/xpath/dsl.rb, line 24</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">next_sibling</span>(*<span class="ruby-identifier">expressions</span>)
+  <span class="ruby-constant">Expression</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:next_sibling</span>, <span class="ruby-identifier">current</span>, <span class="ruby-identifier">expressions</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- next_sibling-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- next_sibling-method -->
+
+    
+      <div id="method-i-previous_sibling" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">previous_sibling</span><span
+            class="method-args">(*expressions)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="previous_sibling-source">
+            <pre><span class="ruby-comment"># File lib/xpath/dsl.rb, line 28</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">previous_sibling</span>(*<span class="ruby-identifier">expressions</span>)
+  <span class="ruby-constant">Expression</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:previous_sibling</span>, <span class="ruby-identifier">current</span>, <span class="ruby-identifier">expressions</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- previous_sibling-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- previous_sibling-method -->
+
+    
+      <div id="method-i-starts_with" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">starts_with</span><span
+            class="method-args">(expression)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="starts_with-source">
+            <pre><span class="ruby-comment"># File lib/xpath/dsl.rb, line 44</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">starts_with</span>(<span class="ruby-identifier">expression</span>)
+  <span class="ruby-constant">Expression</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:starts_with</span>, <span class="ruby-identifier">current</span>, <span class="ruby-identifier">expression</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- starts_with-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- starts_with-method -->
+
+    
+      <div id="method-i-string" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">string</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="string-source">
+            <pre><span class="ruby-comment"># File lib/xpath/dsl.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">string</span>
+  <span class="ruby-constant">Expression</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:string_function</span>, <span class="ruby-identifier">current</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- string-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- string-method -->
+
+    
+      <div id="method-i-text" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">text</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="text-source">
+            <pre><span class="ruby-comment"># File lib/xpath/dsl.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">text</span>
+  <span class="ruby-constant">Expression</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:text</span>, <span class="ruby-identifier">current</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- text-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- text-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

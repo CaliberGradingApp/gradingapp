@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>History - flog-4.2.0 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body class="file">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./History_txt.html">History</a>
+  
+    <li class="file"><a href="./Manifest_txt.html">Manifest</a>
+  
+    <li class="file"><a href="./README_txt.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./File.html">File</a>
+  
+    <li><a href="./Flog.html">Flog</a>
+  
+    <li><a href="./FlogCLI.html">FlogCLI</a>
+  
+    <li><a href="./FlogTask.html">FlogTask</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<h3 id="label-4.2.0+%2F+2013-10-18">4.2.0 / 2013-10-18</h3>
+<ul><li>
+<p>3 minor enhancements:</p>
+<ul><li>
+<p>Added –extended / -e to put file:line output on next line (for rubymine
+&amp; friends)</p>
+</li><li>
+<p>Extracted MethodBasedSexpProcessor and pushed up to sexp_processor gem.</p>
+</li><li>
+<p>Updated dependency on sexp_processor to ~&gt; 4.4.</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-4.1.2+%2F+2013-09-05">4.1.2 / 2013-09-05</h3>
+<ul><li>
+<p>2 bug fixes:</p>
+<ul><li>
+<p>Don’t even record a score if method stack is empty and user used
+–methods-only.</p>
+</li><li>
+<p>Fixed <a href="Flog.html">Flog</a> task’s default method. (jasonrobertfox)</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-4.1.1+%2F+2013-07-11">4.1.1 / 2013-07-11</h3>
+<ul><li>
+<p>1 minor enhancement:</p>
+<ul><li>
+<p>Added max_method to delegators.</p>
+</li></ul>
+</li><li>
+<p>1 bug fix:</p>
+<ul><li>
+<p>Fixed <a href="FlogTask.html">FlogTask</a> to use <a
+href="FlogCLI.html">FlogCLI</a>. (envygeeks)</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-4.1.0+%2F+2013-05-10">4.1.0 / 2013-05-10</h3>
+<ul><li>
+<p>3 minor enhancements:</p>
+<ul><li>
+<p>Cleaned up tests by adding assert_hash_in_epsilon. yay!</p>
+</li><li>
+<p>Fixed method_location is now cleared on reset. (makaroni4)</p>
+</li><li>
+<p>to_proc_normal is now penalized based on RUBY_VERSION. Scores were
+benchmarked.</p>
+</li></ul>
+</li><li>
+<p>1 bug fix:</p>
+<ul><li>
+<p>Fixed code/home urls in readme/gem.</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-4.0.0+%2F+2013-04-18">4.0.0 / 2013-04-18</h3>
+<ul><li>
+<p>1 major enhancement:</p>
+<ul><li>
+<p>Renamed Flog#methods to method_scores. (makaroni4)</p>
+</li></ul>
+</li><li>
+<p>4 minor enhancements:</p>
+<ul><li>
+<p>Added accessors for methods, scores. Now available for CIs! (makaroni4)</p>
+</li><li>
+<p>Refactored calculations down to 2 methods: total_score and totals.
+(makaroni4)</p>
+</li><li>
+<p>Refactored to calculate, threshold. (makaroni4)</p>
+</li><li>
+<p>Track stack of nested sclass scopes for parser (pithyless)</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-3.2.3+%2F+2013-03-21">3.2.3 / 2013-03-21</h3>
+<ul><li>
+<p>1 bug fix:</p>
+<ul><li>
+<p>Don’t blow up if a path doesn’t exist or isn’t readable.</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-3.2.2+%2F+2013-01-22">3.2.2 / 2013-01-22</h3>
+<ul><li>
+<p>1 bug fix:</p>
+<ul><li>
+<p>Fixed stupid error when run on empty file.</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-3.2.1+%2F+2012-12-19">3.2.1 / 2012-12-19</h3>
+<ul><li>
+<p>1 bug fix:</p>
+<ul><li>
+<p>Relaxed (and fixed) the ruby_parser dependency.</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-3.2.0+%2F+2012-12-18">3.2.0 / 2012-12-18</h3>
+<ul><li>
+<p>4 minor enhancements:</p>
+<ul><li>
+<p>Ensure rake/tasklib is loaded when defining <a
+href="FlogTask.html">FlogTask</a>. (ferrous26)</p>
+</li><li>
+<p>Fixed reporting / recording of methods in singleton class blocks. (mihu)</p>
+</li><li>
+<p>Refactored error handling code to flog_ruby. Calls flog_ruby! for actual
+work</p>
+</li><li>
+<p>Refactored ruby processing code to flog_ruby!</p>
+</li></ul>
+</li><li>
+<p>1 bug fix:</p>
+<ul><li>
+<p>Fixed flogging of || iters. (JacobNinja)</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-3.1.0+%2F+2012-11-16">3.1.0 / 2012-11-16</h3>
+<ul><li>
+<p>4 minor enhancements:</p>
+<ul><li>
+<p>–quiet option is now false by default, and changed to silence parse
+warnings.</p>
+</li><li>
+<p>Added max_score and max_method. (aselder)</p>
+</li><li>
+<p><a href="FlogTask.html">FlogTask</a> can now take a method to use to figure
+out score, allowing for total or max_score.</p>
+</li><li>
+<p>Switched to capturing RubyParser::SyntaxError (RP 3.0 change).</p>
+</li></ul>
+</li><li>
+<p>2 bug fixes:</p>
+<ul><li>
+<p>Avoid redefined warning for File::RUBY19. (svendahlstrand)</p>
+</li><li>
+<p>Fixed flog to default to RubyParser if not specified. Allows cleaner
+programmatic access.</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-3.0.0+%2F+2012-11-02">3.0.0 / 2012-11-02</h3>
+<ul><li>
+<p>1 minor enhancement:</p>
+<ul><li>
+<p>Added a timeout handler to skip when RubyParser times out on a large file</p>
+</li></ul>
+</li><li>
+<p>1 bug fix:</p>
+<ul><li>
+<p>Fixed handling of plain literals in masgn in args.</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-3.0.0.b3+%2F+2012-10-22">3.0.0.b3 / 2012-10-22</h3>
+<ul><li>
+<p>4 minor enhancements:</p>
+<ul><li>
+<p>Added .rake as a supported extension.</p>
+</li><li>
+<p>Create a new parser for every file, preventing state barkification</p>
+</li><li>
+<p>Extended DSL support to include hash args (eg task :blah =&gt; :dep).</p>
+</li><li>
+<p>Extended DSL support to report nested names (eg namespace(blah)::task#woot)</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-3.0.0.b2+%2F+2012-08-07">3.0.0.b2 / 2012-08-07</h3>
+<ul><li>
+<p>1 bug fix:</p>
+<ul><li>
+<p>Fix for sexp structure changes (no arglists).</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-3.0.0.b1+%2F+2012-07-26">3.0.0.b1 / 2012-07-26</h3>
+<ul><li>
+<p>4 minor enhancements:</p>
+<ul><li>
+<p>Added –18 and –19 flags to specify parser. Defaults to hybrid.</p>
+</li><li>
+<p>Explicitly use Ruby18Parser to remove deprecation warnings.</p>
+</li><li>
+<p>Modified processor to deal with cleaner sexps from RP 3.x.</p>
+</li><li>
+<p>Use File.binread (File.read in 1.8) to bypass encoding errors</p>
+</li></ul>
+</li><li>
+<p>2 bug fixes:</p>
+<ul><li>
+<p>Cleaned up some 1.9 warnings.</p>
+</li><li>
+<p>Fixed failing tests against ruby_parser 3</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-2.5.3+%2F+2011-09-21">2.5.3 / 2011-09-21</h3>
+<ul><li>
+<p>1 minor enhancement:</p>
+<ul><li>
+<p>class_stack now always pushes on symbols or strings for class names.</p>
+</li></ul>
+</li><li>
+<p>1 bug fix:</p>
+<ul><li>
+<p>Fixed klass_name returning an ugly mix of sexps and strings.</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-2.5.2+%2F+2011-08-11">2.5.2 / 2011-08-11</h3>
+<ul><li>
+<p>1 minor enhancement:</p>
+<ul><li>
+<p>Improved parse error output. (impurist)</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-2.5.1+%2F+2011-02-18">2.5.1 / 2011-02-18</h3>
+<ul><li>
+<p>3 minor enhancements:</p>
+<ul><li>
+<p>Added RegexpError to error handler.</p>
+</li><li>
+<p>Improved error output and suggest –continue</p>
+</li><li>
+<p>Record the flog score for the full class name, not just suffix. (dkubb)</p>
+</li></ul>
+</li><li>
+<p>1 bug fix:</p>
+<ul><li>
+<p>Fixed block_pass when passed a multi-level const (xavier)</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-2.5.0+%2F+2010-09-01">2.5.0 / 2010-09-01</h3>
+<ul><li>
+<p>1 major enhancement:</p>
+<ul><li>
+<p>Added plugin system. Define a module under <a href="Flog.html">Flog</a> to
+extend it.</p>
+</li></ul>
+</li><li>
+<p>3 minor enhancements:</p>
+<ul><li>
+<p>Added special case penalty for wtf to_proc: blah(&amp;b = proc {…})
+(benjaminb)</p>
+</li><li>
+<p>Improved tests and test coverage.</p>
+</li><li>
+<p>Unfactored &amp; refactored report code. Much cleaner and  more
+maintainable now.</p>
+</li></ul>
+</li><li>
+<p>2 bug fixes:</p>
+<ul><li>
+<p>Fixed API change for <a href="FlogTask.html">FlogTask</a> (andreacampi)</p>
+</li><li>
+<p>Fixed bad edgecase handler for block_pass (benjaminb)</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-2.4.0+%2F+2009-12-15">2.4.0 / 2009-12-15</h3>
+<ul><li>
+<p>4 minor enhancements:</p>
+<ul><li>
+<p>Cleaned method_name to return “method” or “::method”.</p>
+</li><li>
+<p>DSL reporting now handles regexp literals for ‘method’ names (Marty
+Andrews)</p>
+</li><li>
+<p>Improved tests for process_iter’s myriad complexities.</p>
+</li><li>
+<p>More doco!</p>
+</li></ul>
+</li><li>
+<p>1 bug fix:</p>
+<ul><li>
+<p>Fixed DSL reporting excluding solo-blocks. (eg a single rake task)</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-2.3.0+%2F+2009-12-09">2.3.0 / 2009-12-09</h3>
+<ul><li>
+<p>1 major enhancement:</p>
+<ul><li>
+<p>Added file:line info to the flog report (Marty Andrews)</p>
+</li></ul>
+</li><li>
+<p>13 minor enhancements:</p>
+<ul><li>
+<p>Added .autotest.</p>
+</li><li>
+<p>Deleted pre-gauntlet scripts.</p>
+</li><li>
+<p>Flog#method_name now at least tries show when it is a class method.</p>
+</li><li>
+<p>Flog.parse_options now takes args directly.</p>
+</li><li>
+<p>Removed Flog#increment_total_score_by.</p>
+</li><li>
+<p>Removed Flog#output_summary.</p>
+</li><li>
+<p>Removed Flog#process_attrset.</p>
+</li><li>
+<p>Removed Flog#record_method_score.</p>
+</li><li>
+<p>Removed Flog#summarize_method.</p>
+</li><li>
+<p>Removed Flog::default_options.</p>
+</li><li>
+<p>Renamed Flog#analyze_list to process_until_empty.</p>
+</li><li>
+<p>Renamed Flog#options to option</p>
+</li><li>
+<p>Rewrote entire test suite (3100 lines down!). Cleaner and less brittle.</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-2.2.0+%2F+2009-08-14">2.2.0 / 2009-08-14</h3>
+<ul><li>
+<p>1 minor enhancement:</p>
+<ul><li>
+<p>mass pushed up to sexp_processor</p>
+</li></ul>
+</li><li>
+<p>5 bug fixes:</p>
+<ul><li>
+<p>–group didn’t use canonical class name.</p>
+</li><li>
+<p>Fixed bin/flog to use flog, not flog_files (removed in last rev)</p>
+</li><li>
+<p>Fixed crasher when processing a block with empty goalposts.</p>
+</li><li>
+<p>Switching to ruby_parser broke ERB syntax error handling. (imccoy)</p>
+</li><li>
+<p>skip empty files instead of crashing. yay?</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-2.1.2+%2F+2009-06-24">2.1.2 / 2009-06-24</h3>
+<ul><li>
+<p>1 bug fix:</p>
+<ul><li>
+<p>Fixed dependency spec on ruby_parser. (jan)</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-2.1.1+%2F+2009-06-23">2.1.1 / 2009-06-23</h3>
+<ul><li>
+<p>2 minor enhancements:</p>
+<ul><li>
+<p>Added mass accessor for gauntlet and other automated processors</p>
+</li><li>
+<p>Switched from ParseTree to ruby_parser. Only 3x slower! :(</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-2.1.0+%2F+2009-03-16">2.1.0 / 2009-03-16</h3>
+<ul><li>
+<p>5 minor enhancements:</p>
+<ul><li>
+<p>Added –group to aggregate and sort by class scores.</p>
+</li><li>
+<p>Added flog_task.rb</p>
+</li><li>
+<p>Made -q default, removed -n.</p>
+</li><li>
+<p>Made report output more readable and processable.</p>
+</li><li>
+<p>Moved option processing from bin/flog to lib/flog.rb for better testing.</p>
+</li></ul>
+</li><li>
+<p>1 bug fix:</p>
+<ul><li>
+<p>removed extra attr_readers for total and average. doh</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-2.0.0+%2F+2009-01-20">2.0.0 / 2009-01-20</h3>
+<ul><li>
+<p>1 major enhancement:</p>
+<ul><li>
+<p>Pulled in and merged Rick Bradley’s awesome flame project into flog.</p>
+</li></ul>
+</li><li>
+<p>1 minor enhancement:</p>
+<ul><li>
+<p>Added gauntlet plugin</p>
+</li></ul>
+</li><li>
+<p>1 bug fix:</p>
+<ul><li>
+<p>“hugh sasse”.split(/s/).map{|x|x.capitalize}.join(“ ”) # :-)</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-1.2.0+%2F+2008-10-22">1.2.0 / 2008-10-22</h3>
+<ul><li>
+<p>14 minor enhancements:</p>
+<ul><li>
+<p>Added -c flag to continue dispite errors.</p>
+</li><li>
+<p>Added -m to only report code in methods (skips none).</p>
+</li><li>
+<p>Added -n flag to give NO method details (summary only)</p>
+</li><li>
+<p>Added -n to skip method details… pussies should learn grep.</p>
+</li><li>
+<p>Added -q to quiet method details (total per method only)</p>
+</li><li>
+<p>Added avg &amp; stddev to total.</p>
+</li><li>
+<p>Added avg score per method to report.</p>
+</li><li>
+<p>Added lots of doco from contributors. Thanks Hugh Sasse!</p>
+</li><li>
+<p>Fixed class names when const2/3.</p>
+</li><li>
+<p>Fixed unified ruby changes</p>
+</li><li>
+<p>Refactored flog with help from flay.</p>
+</li><li>
+<p>Refactored get_source_index</p>
+</li><li>
+<p>Refactored into gem_updater.rb and cleaned up.</p>
+</li><li>
+<p>Works with new incremental rubygems, albiet slower than before.</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-1.1.0+%2F+2007-08-21">1.1.0 / 2007-08-21</h3>
+<ul><li>
+<p>3 major enhancements:</p>
+<ul><li>
+<p>Added assignments and branches and a lot of other stuff. rad.</p>
+</li><li>
+<p>Added process_iter section for DSL style blocks (rake tasks etc).</p>
+</li><li>
+<p>Made <a href="Flog.html">Flog</a> usable as a library.</p>
+</li></ul>
+</li><li>
+<p>12 minor enhancements:</p>
+<ul><li>
+<p>Added -a flag to turn off threshold culling for other tools.</p>
+</li><li>
+<p>Added -s for summarizing the score.</p>
+</li><li>
+<p>Added -v feedback to know what file you’re flogging.</p>
+</li><li>
+<p>Added branching penalty so tons of nested conditionals get beat down.</p>
+</li><li>
+<p>Added send (3).</p>
+</li><li>
+<p>Capture and ignore SyntaxErrors from template/generator code. Stupid DHH.</p>
+</li><li>
+<p>Report can now take an IO object.</p>
+</li><li>
+<p>block_args now penalizes all non-benign forms of block_pass.</p>
+</li><li>
+<p>Added usage to bin/flog. Moved -I processing to bin/flog.</p>
+</li><li>
+<p>Added unpack.rb and update_scores.rb at base level (not installed)</p>
+</li><li>
+<p>Added scoring for block_pass.</p>
+</li><li>
+<p>Converted totals to use distance formula on ABC’s.</p>
+</li></ul>
+</li><li>
+<p>3 bug fixes:</p>
+<ul><li>
+<p>Ran flog on every latest gem available. Found a bunch of problems.</p>
+</li><li>
+<p>Use a stack for both class/module and method accounting.</p>
+</li><li>
+<p>block_args weren’t processing the arg</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-1.0.2+%2F+2007-08-01">1.0.2 / 2007-08-01</h3>
+<ul><li>
+<p>1 bug fix:</p>
+<ul><li>
+<p>stupid rubygems bin wrapper… <strong>sigh</strong></p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-1.0.1+%2F+2007-08-01">1.0.1 / 2007-08-01</h3>
+<ul><li>
+<p>1 bug fix:</p>
+<ul><li>
+<p>New Rule: NEVER release new software when exhausted: Fixed dependency list.</p>
+</li></ul>
+</li></ul>
+
+<h3 id="label-1.0.0+%2F+2007-08-01">1.0.0 / 2007-08-01</h3>
+<ul><li>
+<p>1 major enhancement:</p>
+<ul><li>
+<p>Birthday!</p>
+</li></ul>
+</li></ul>
+
+</div>
+
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

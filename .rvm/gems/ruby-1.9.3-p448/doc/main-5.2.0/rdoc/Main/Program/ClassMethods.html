@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module Main::Program::ClassMethods - main-5.2.0 Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/main/program/class_methods.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-argument">#argument</a>
+    
+    <li><a href="#method-i-can_has">#can_has</a>
+    
+    <li><a href="#method-i-config">#config</a>
+    
+    <li><a href="#method-i-config_path">#config_path</a>
+    
+    <li><a href="#method-i-db">#db</a>
+    
+    <li><a href="#method-i-db_path">#db_path</a>
+    
+    <li><a href="#method-i-default_options-21">#default_options!</a>
+    
+    <li><a href="#method-i-dynamically_extend_via_commandline_modes-21">#dynamically_extend_via_commandline_modes!</a>
+    
+    <li><a href="#method-i-environment">#environment</a>
+    
+    <li><a href="#method-i-evaluate">#evaluate</a>
+    
+    <li><a href="#method-i-factory">#factory</a>
+    
+    <li><a href="#method-i-factory-3D">#factory=</a>
+    
+    <li><a href="#method-i-fully_qualified_mode">#fully_qualified_mode</a>
+    
+    <li><a href="#method-i-has">#has</a>
+    
+    <li><a href="#method-i-input">#input</a>
+    
+    <li><a href="#method-i-io">#io</a>
+    
+    <li><a href="#method-i-keyword">#keyword</a>
+    
+    <li><a href="#method-i-mixin">#mixin</a>
+    
+    <li><a href="#method-i-mode">#mode</a>
+    
+    <li><a href="#method-i-mode_name">#mode_name</a>
+    
+    <li><a href="#method-i-new">#new</a>
+    
+    <li><a href="#method-i-option">#option</a>
+    
+    <li><a href="#method-i-output">#output</a>
+    
+    <li><a href="#method-i-parameter">#parameter</a>
+    
+    <li><a href="#method-i-params">#params</a>
+    
+    <li><a href="#method-i-run">#run</a>
+    
+    <li><a href="#method-i-set_default_options-21">#set_default_options!</a>
+    
+    <li><a href="#method-i-state_basename">#state_basename</a>
+    
+    <li><a href="#method-i-state_dirname">#state_dirname</a>
+    
+    <li><a href="#method-i-state_path">#state_path</a>
+    
+    <li><a href="#method-i-usage">#usage</a>
+    
+    <li><a href="#method-i-wrap_run-21">#wrap_run!</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../Main.html">Main</a>
+  
+    <li><a href="../../Main/Cast.html">Main::Cast</a>
+  
+    <li><a href="../../Main/GetoptLong.html">Main::GetoptLong</a>
+  
+    <li><a href="../../Main/GetoptLong/AmbigousOption.html">Main::GetoptLong::AmbigousOption</a>
+  
+    <li><a href="../../Main/GetoptLong/InvalidOption.html">Main::GetoptLong::InvalidOption</a>
+  
+    <li><a href="../../Main/GetoptLong/MissingArgument.html">Main::GetoptLong::MissingArgument</a>
+  
+    <li><a href="../../Main/GetoptLong/NeedlessArgument.html">Main::GetoptLong::NeedlessArgument</a>
+  
+    <li><a href="../../Main/Logger.html">Main::Logger</a>
+  
+    <li><a href="../../Main/Logger/OnOff.html">Main::Logger::OnOff</a>
+  
+    <li><a href="../../Main/Mode.html">Main::Mode</a>
+  
+    <li><a href="../../Main/Mode/Ambiguous.html">Main::Mode::Ambiguous</a>
+  
+    <li><a href="../../Main/Mode/Duplicate.html">Main::Mode::Duplicate</a>
+  
+    <li><a href="../../Main/Mode/Error.html">Main::Mode::Error</a>
+  
+    <li><a href="../../Main/Mode/List.html">Main::Mode::List</a>
+  
+    <li><a href="../../Main/Parameter.html">Main::Parameter</a>
+  
+    <li><a href="../../Main/Parameter/AmbigousOption.html">Main::Parameter::AmbigousOption</a>
+  
+    <li><a href="../../Main/Parameter/Argument.html">Main::Parameter::Argument</a>
+  
+    <li><a href="../../Main/Parameter/Arity.html">Main::Parameter::Arity</a>
+  
+    <li><a href="../../Main/Parameter/DSL.html">Main::Parameter::DSL</a>
+  
+    <li><a href="../../Main/Parameter/Environment.html">Main::Parameter::Environment</a>
+  
+    <li><a href="../../Main/Parameter/Error.html">Main::Parameter::Error</a>
+  
+    <li><a href="../../Main/Parameter/InValid.html">Main::Parameter::InValid</a>
+  
+    <li><a href="../../Main/Parameter/InvalidOption.html">Main::Parameter::InvalidOption</a>
+  
+    <li><a href="../../Main/Parameter/Keyword.html">Main::Parameter::Keyword</a>
+  
+    <li><a href="../../Main/Parameter/List.html">Main::Parameter::List</a>
+  
+    <li><a href="../../Main/Parameter/MissingArgument.html">Main::Parameter::MissingArgument</a>
+  
+    <li><a href="../../Main/Parameter/NeedlessArgument.html">Main::Parameter::NeedlessArgument</a>
+  
+    <li><a href="../../Main/Parameter/NoneSuch.html">Main::Parameter::NoneSuch</a>
+  
+    <li><a href="../../Main/Parameter/NotGiven.html">Main::Parameter::NotGiven</a>
+  
+    <li><a href="../../Main/Parameter/Option.html">Main::Parameter::Option</a>
+  
+    <li><a href="../../Main/Parameter/Table.html">Main::Parameter::Table</a>
+  
+    <li><a href="../../Main/Parameter/Table/BoundsCheck.html">Main::Parameter::Table::BoundsCheck</a>
+  
+    <li><a href="../../Main/Program.html">Main::Program</a>
+  
+    <li><a href="../../Main/Program/ClassMethods.html">Main::Program::ClassMethods</a>
+  
+    <li><a href="../../Main/Program/ClassMethods/Factory.html">Main::Program::ClassMethods::Factory</a>
+  
+    <li><a href="../../Main/Program/InstanceMethods.html">Main::Program::InstanceMethods</a>
+  
+    <li><a href="../../Main/Softspoken.html">Main::Softspoken</a>
+  
+    <li><a href="../../Main/Usage.html">Main::Usage</a>
+  
+    <li><a href="../../Main/Util.html">Main::Util</a>
+  
+    <li><a href="../../Main/Util/ClassMethods.html">Main::Util::ClassMethods</a>
+  
+    <li><a href="../../Main/Util/InstanceMethods.html">Main::Util::InstanceMethods</a>
+  
+    <li><a href="../../Main/Util/Methods.html">Main::Util::Methods</a>
+  
+    <li><a href="../../Kernel.html">Kernel</a>
+  
+    <li><a href="../../Object.html">Object</a>
+  
+    <li><a href="../../Process.html">Process</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module Main::Program::ClassMethods</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-argument" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">argument</span><span
+            class="method-args">(*a, &b)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="argument-source">
+            <pre><span class="ruby-comment"># File lib/main/program/class_methods.rb, line 196</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">argument</span>(*<span class="ruby-identifier">a</span>, &amp;<span class="ruby-identifier">b</span>)
+  (<span class="ruby-identifier">parameters</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Parameter</span>.<span class="ruby-identifier">create</span>(<span class="ruby-value">:argument</span>, <span class="ruby-identifier">main</span>=<span class="ruby-keyword">self</span>, *<span class="ruby-identifier">a</span>, &amp;<span class="ruby-identifier">b</span>)).<span class="ruby-identifier">last</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- argument-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- argument-method -->
+
+    
+      <div id="method-i-can_has" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">can_has</span><span
+            class="method-args">(ptype, *a, &b)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="can_has-source">
+            <pre><span class="ruby-comment"># File lib/main/program/class_methods.rb, line 224</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">can_has</span>(<span class="ruby-identifier">ptype</span>, *<span class="ruby-identifier">a</span>, &amp;<span class="ruby-identifier">b</span>)
+  <span class="ruby-identifier">key</span> = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">to_s</span>}.<span class="ruby-identifier">sort_by</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-operator">-</span><span class="ruby-identifier">s</span>.<span class="ruby-identifier">size</span> }.<span class="ruby-identifier">first</span>
+  <span class="ruby-identifier">can_has_hash</span>.<span class="ruby-identifier">update</span> <span class="ruby-identifier">key</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-identifier">ptype</span>, <span class="ruby-identifier">a</span>, <span class="ruby-identifier">b</span>]
+  <span class="ruby-identifier">key</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- can_has-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- can_has-method -->
+
+    
+      <div id="method-i-config" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">config</span><span
+            class="method-args">(*args, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="config-source">
+            <pre><span class="ruby-comment"># File lib/main/program/class_methods.rb, line 316</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">config</span>(*<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">unless</span> <span class="ruby-keyword">defined?</span>(<span class="ruby-ivar">@config</span>)
+    <span class="ruby-identifier">require</span> <span class="ruby-string">'yaml'</span> <span class="ruby-keyword">unless</span> <span class="ruby-keyword">defined?</span>(<span class="ruby-constant">YAML</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">test</span>(<span class="ruby-string">s</span>, <span class="ruby-identifier">config_path</span>)
+      <span class="ruby-ivar">@config</span> = <span class="ruby-constant">Map</span>.<span class="ruby-identifier">for</span>(<span class="ruby-constant">YAML</span>.<span class="ruby-identifier">load</span>(<span class="ruby-constant">IO</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">config_path</span>)))
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">config</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">last</span>
+      <span class="ruby-identifier">lines</span> =
+        <span class="ruby-keyword">case</span> <span class="ruby-identifier">config</span>
+          <span class="ruby-keyword">when</span> <span class="ruby-constant">Hash</span>
+            <span class="ruby-identifier">config</span>.<span class="ruby-identifier">to_yaml</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">/\n/</span>)
+          <span class="ruby-keyword">when</span> <span class="ruby-constant">String</span>
+            <span class="ruby-constant">Util</span>.<span class="ruby-identifier">unindent</span>(<span class="ruby-identifier">config</span>).<span class="ruby-identifier">split</span>(<span class="ruby-regexp">/\n/</span>)
+          <span class="ruby-keyword">else</span>
+            []
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">dash</span> = <span class="ruby-identifier">lines</span>.<span class="ruby-identifier">shift</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">lines</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/^---/</span>
+      <span class="ruby-identifier">require</span> <span class="ruby-string">'fileutils'</span> <span class="ruby-keyword">unless</span> <span class="ruby-keyword">defined?</span>(<span class="ruby-constant">FileUtils</span>)
+      <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">mkdir_p</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-identifier">config_path</span>))
+      <span class="ruby-identifier">open</span>(<span class="ruby-identifier">config_path</span>, <span class="ruby-string">'w'</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">fd</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">fd</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;## file: #{ config_path }&quot;</span>
+        <span class="ruby-identifier">fd</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#&quot;</span>
+        <span class="ruby-identifier">fd</span>.<span class="ruby-identifier">puts</span>
+        <span class="ruby-identifier">fd</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">lines</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">editor</span> = <span class="ruby-constant">ENV</span>[<span class="ruby-string">'EDITOR'</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">ENV</span>[<span class="ruby-string">'EDIT'</span>] <span class="ruby-operator">||</span> <span class="ruby-string">'vi'</span>
+      <span class="ruby-identifier">system</span>(<span class="ruby-node">&quot;#{ editor.inspect } #{ config_path }&quot;</span>)
+      <span class="ruby-ivar">@config</span> = <span class="ruby-constant">Map</span>.<span class="ruby-identifier">for</span>(<span class="ruby-constant">YAML</span>.<span class="ruby-identifier">load</span>(<span class="ruby-constant">IO</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">config_path</span>)))
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@config</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- config-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- config-method -->
+
+    
+      <div id="method-i-config_path" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">config_path</span><span
+            class="method-args">(*config_path)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="config_path-source">
+            <pre><span class="ruby-comment"># File lib/main/program/class_methods.rb, line 350</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">config_path</span>(*<span class="ruby-identifier">config_path</span>)
+  <span class="ruby-ivar">@config_path</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">state_path</span>, <span class="ruby-string">'config.yml'</span>) <span class="ruby-keyword">unless</span> <span class="ruby-keyword">defined?</span>(<span class="ruby-ivar">@config_path</span>)
+  <span class="ruby-ivar">@config_path</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(*<span class="ruby-identifier">config_path</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">config_path</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-ivar">@config_path</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- config_path-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- config_path-method -->
+
+    
+      <div id="method-i-db" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">db</span><span
+            class="method-args">(*args, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="db-source">
+            <pre><span class="ruby-comment"># File lib/main/program/class_methods.rb, line 300</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">db</span>(*<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">unless</span> <span class="ruby-keyword">defined?</span>(<span class="ruby-ivar">@db</span>)
+    <span class="ruby-identifier">require</span> <span class="ruby-string">'sequel'</span> <span class="ruby-keyword">unless</span> <span class="ruby-keyword">defined?</span>(<span class="ruby-constant">Sequel</span>)
+    <span class="ruby-identifier">require</span> <span class="ruby-string">'amalgalite'</span> <span class="ruby-keyword">unless</span> <span class="ruby-keyword">defined?</span>(<span class="ruby-constant">Amalgalite</span>)
+    <span class="ruby-ivar">@db</span> = <span class="ruby-identifier">state_path</span>{ <span class="ruby-constant">Sequel</span>.<span class="ruby-identifier">amalgalite</span>(<span class="ruby-identifier">db_path</span>) }
+    <span class="ruby-ivar">@db</span>.<span class="ruby-identifier">instance_eval</span>(&amp;<span class="ruby-identifier">block</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">block</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@db</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- db-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- db-method -->
+
+    
+      <div id="method-i-db_path" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">db_path</span><span
+            class="method-args">(*db_path)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="db_path-source">
+            <pre><span class="ruby-comment"># File lib/main/program/class_methods.rb, line 310</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">db_path</span>(*<span class="ruby-identifier">db_path</span>)
+  <span class="ruby-ivar">@db_path</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">state_path</span>, <span class="ruby-string">'db.sqlite'</span>) <span class="ruby-keyword">unless</span> <span class="ruby-keyword">defined?</span>(<span class="ruby-ivar">@db_path</span>)
+  <span class="ruby-ivar">@db_path</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(*<span class="ruby-identifier">db_path</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">db_path</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-ivar">@db_path</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- db_path-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- db_path-method -->
+
+    
+      <div id="method-i-default_options-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">default_options!</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="default_options-21-source">
+            <pre><span class="ruby-comment"># File lib/main/program/class_methods.rb, line 212</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">default_options!</span>
+  <span class="ruby-identifier">option</span> <span class="ruby-string">'help'</span>, <span class="ruby-string">'h'</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">parameters</span>.<span class="ruby-identifier">has_option?</span>(<span class="ruby-string">'help'</span>, <span class="ruby-string">'h'</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- default_options-21-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- default_options-21-method -->
+
+    
+      <div id="method-i-dynamically_extend_via_commandline_modes-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">dynamically_extend_via_commandline_modes!</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>extend the class based on modules given in argv</p>
+          
+
+          
+          <div class="method-source-code" id="dynamically_extend_via_commandline_modes-21-source">
+            <pre><span class="ruby-comment"># File lib/main/program/class_methods.rb, line 107</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">dynamically_extend_via_commandline_modes!</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">breadth_first_modes</span> = <span class="ruby-identifier">modes</span>.<span class="ruby-identifier">dup</span>
+  <span class="ruby-identifier">size</span> = <span class="ruby-identifier">modes</span>.<span class="ruby-identifier">size</span>
+
+  <span class="ruby-identifier">loop</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">modes</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">mode</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">arg</span> = <span class="ruby-identifier">argv</span>.<span class="ruby-identifier">first</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-node">/^#{ argv.first }/</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">arg</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">mode</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">arg</span>
+        <span class="ruby-identifier">argv</span>.<span class="ruby-identifier">shift</span>
+        <span class="ruby-identifier">modes</span>.<span class="ruby-identifier">clear</span>()
+        <span class="ruby-identifier">breadth_first_modes</span>.<span class="ruby-identifier">clear</span>()
+        <span class="ruby-identifier">evaluate</span>(&amp;<span class="ruby-identifier">mode</span>)
+        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">breadth_first_modes</span> = <span class="ruby-identifier">modes</span>.<span class="ruby-identifier">dup</span>
+        <span class="ruby-identifier">depth_first_modes</span>[<span class="ruby-identifier">mode</span>.<span class="ruby-identifier">name</span>] = <span class="ruby-identifier">mode</span>
+        <span class="ruby-keyword">break</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">arg</span> = <span class="ruby-identifier">argv</span>.<span class="ruby-identifier">first</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-node">/^#{ argv.first }/</span>
+    <span class="ruby-identifier">more_modes</span> = (
+      <span class="ruby-operator">!</span><span class="ruby-identifier">modes</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">modes</span>.<span class="ruby-identifier">any?</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">mode</span><span class="ruby-operator">|</span> <span class="ruby-identifier">arg</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">mode</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">arg</span>}
+    )
+
+    <span class="ruby-keyword">break</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">more_modes</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">modes</span> = <span class="ruby-identifier">depth_first_modes</span>.<span class="ruby-identifier">dup</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- dynamically_extend_via_commandline_modes-21-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- dynamically_extend_via_commandline_modes-21-method -->
+
+    
+      <div id="method-i-environment" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">environment</span><span
+            class="method-args">(*a, &b)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="environment-source">
+            <pre><span class="ruby-comment"># File lib/main/program/class_methods.rb, line 208</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">environment</span>(*<span class="ruby-identifier">a</span>, &amp;<span class="ruby-identifier">b</span>)
+  (<span class="ruby-identifier">parameters</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Parameter</span>.<span class="ruby-identifier">create</span>(<span class="ruby-value">:environment</span>, <span class="ruby-identifier">main</span>=<span class="ruby-keyword">self</span>, *<span class="ruby-identifier">a</span>, &amp;<span class="ruby-identifier">b</span>)).<span class="ruby-identifier">last</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- environment-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- environment-method -->
+
+    
+      <div id="method-i-evaluate" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">evaluate</span><span
+            class="method-args">(&block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="evaluate-source">
+            <pre><span class="ruby-comment"># File lib/main/program/class_methods.rb, line 95</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">evaluate</span>(&amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">module_eval</span>(&amp;<span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- evaluate-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- evaluate-method -->
+
+    
+      <div id="method-i-factory" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">factory</span><span
+            class="method-args">(&block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="factory-source">
+            <pre><span class="ruby-comment"># File lib/main/program/class_methods.rb, line 33</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">factory</span>(&amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-constant">Factory</span>.<span class="ruby-identifier">new</span>(&amp;<span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- factory-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- factory-method -->
+
+    
+      <div id="method-i-factory-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">factory=</span><span
+            class="method-args">(factory)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="factory-3D-source">
+            <pre><span class="ruby-comment"># File lib/main/program/class_methods.rb, line 38</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">factory=</span>(<span class="ruby-identifier">factory</span>)
+  <span class="ruby-ivar">@factory</span> = <span class="ruby-identifier">factory</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- factory-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- factory-3D-method -->
+
+    
+      <div id="method-i-fully_qualified_mode" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">fully_qualified_mode</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>TODO</p>
+          
+
+          
+          <div class="method-source-code" id="fully_qualified_mode-source">
+            <pre><span class="ruby-comment"># File lib/main/program/class_methods.rb, line 174</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">fully_qualified_mode</span>
+  <span class="ruby-identifier">modes</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">mode</span><span class="ruby-operator">|</span> <span class="ruby-identifier">mode</span>.<span class="ruby-identifier">name</span>}
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- fully_qualified_mode-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- fully_qualified_mode-method -->
+
+    
+      <div id="method-i-has" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">has</span><span
+            class="method-args">(key, *keys)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="has-source">
+            <pre><span class="ruby-comment"># File lib/main/program/class_methods.rb, line 230</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">has</span>(<span class="ruby-identifier">key</span>, *<span class="ruby-identifier">keys</span>)
+  <span class="ruby-identifier">keys</span> = [<span class="ruby-identifier">key</span>, *<span class="ruby-identifier">keys</span>].<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">compact</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">k</span><span class="ruby-operator">|</span> <span class="ruby-identifier">k</span>.<span class="ruby-identifier">to_s</span>}
+  <span class="ruby-identifier">keys</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">ptype</span>, <span class="ruby-identifier">a</span>, <span class="ruby-identifier">b</span> = <span class="ruby-identifier">can_has_hash</span>[<span class="ruby-identifier">key</span>]
+    <span class="ruby-identifier">abort</span> <span class="ruby-node">&quot;yo - can *not* has #{ key.inspect }!?&quot;</span> <span class="ruby-keyword">unless</span>(<span class="ruby-identifier">ptype</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">a</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">b</span>)
+    <span class="ruby-identifier">send</span> <span class="ruby-identifier">ptype</span>, *<span class="ruby-identifier">a</span>, &amp;<span class="ruby-identifier">b</span>
+    <span class="ruby-identifier">key</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- has-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- has-method -->
+
+    
+      <div id="method-i-input" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">input</span><span
+            class="method-args">(*args, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="input-source">
+            <pre><span class="ruby-comment"># File lib/main/program/class_methods.rb, line 356</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">input</span>(*<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">first</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>
+  <span class="ruby-identifier">args</span>.<span class="ruby-identifier">push</span>(<span class="ruby-value">:input</span>) <span class="ruby-keyword">unless</span>(<span class="ruby-identifier">first</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Symbol</span>) <span class="ruby-keyword">or</span> <span class="ruby-identifier">first</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>))
+  <span class="ruby-identifier">param</span> = <span class="ruby-identifier">argument</span>(*<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">param</span>.<span class="ruby-identifier">cast</span>(<span class="ruby-value">:input</span>)
+  <span class="ruby-identifier">param</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- input-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- input-method -->
+
+    
+      <div id="method-i-io" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">io</span><span
+            class="method-args">(*args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="io-source">
+            <pre><span class="ruby-comment"># File lib/main/program/class_methods.rb, line 372</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">io</span>(*<span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">i</span> = <span class="ruby-identifier">input</span>(*[<span class="ruby-identifier">args</span>.<span class="ruby-identifier">shift</span>].<span class="ruby-identifier">compact</span>).<span class="ruby-identifier">default</span>(<span class="ruby-string">'-'</span>)
+  <span class="ruby-identifier">o</span> = <span class="ruby-identifier">output</span>(*[<span class="ruby-identifier">args</span>.<span class="ruby-identifier">shift</span>].<span class="ruby-identifier">compact</span>).<span class="ruby-identifier">default</span>(<span class="ruby-string">'-'</span>)
+  [<span class="ruby-identifier">i</span>, <span class="ruby-identifier">o</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- io-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- io-method -->
+
+    
+      <div id="method-i-keyword" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">keyword</span><span
+            class="method-args">(*a, &b)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="keyword-source">
+            <pre><span class="ruby-comment"># File lib/main/program/class_methods.rb, line 204</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">keyword</span>(*<span class="ruby-identifier">a</span>, &amp;<span class="ruby-identifier">b</span>)
+  (<span class="ruby-identifier">parameters</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Parameter</span>.<span class="ruby-identifier">create</span>(<span class="ruby-value">:keyword</span>, <span class="ruby-identifier">main</span>=<span class="ruby-keyword">self</span>, *<span class="ruby-identifier">a</span>, &amp;<span class="ruby-identifier">b</span>)).<span class="ruby-identifier">last</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- keyword-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- keyword-method -->
+
+    
+      <div id="method-i-mixin" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mixin</span><span
+            class="method-args">(name, *names, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="mixin-source">
+            <pre><span class="ruby-comment"># File lib/main/program/class_methods.rb, line 240</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mixin</span>(<span class="ruby-identifier">name</span>, *<span class="ruby-identifier">names</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">names</span> = [<span class="ruby-identifier">name</span>, *<span class="ruby-identifier">names</span>].<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">compact</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">name</span><span class="ruby-operator">|</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>}
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">block</span>
+    <span class="ruby-identifier">names</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">mixin_table</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-identifier">block</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">names</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">module_eval</span>(&amp;<span class="ruby-identifier">mixin_table</span>[<span class="ruby-identifier">name</span>])
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- mixin-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- mixin-method -->
+
+    
+      <div id="method-i-mode" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mode</span><span
+            class="method-args">(name, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="mode-source">
+            <pre><span class="ruby-comment"># File lib/main/program/class_methods.rb, line 216</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mode</span>(<span class="ruby-identifier">name</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">name</span> = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-identifier">block</span>.<span class="ruby-identifier">fattr</span>(<span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">modes</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-identifier">block</span>
+  <span class="ruby-identifier">breadth_first_modes</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-identifier">block</span>
+  <span class="ruby-identifier">block</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- mode-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- mode-method -->
+
+    
+      <div id="method-i-mode_name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mode_name</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="mode_name-source">
+            <pre><span class="ruby-comment"># File lib/main/program/class_methods.rb, line 178</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mode_name</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-string">'main'</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">modes</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-identifier">fully_qualified_mode</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">' '</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- mode_name-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- mode_name-method -->
+
+    
+      <div id="method-i-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/main/program/class_methods.rb, line 78</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">new</span>()
+  <span class="ruby-identifier">instance</span> = <span class="ruby-identifier">allocate</span>
+  <span class="ruby-identifier">instance</span>.<span class="ruby-identifier">instance_eval</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">pre_initialize</span>()
+    <span class="ruby-identifier">before_initialize</span>()
+    <span class="ruby-identifier">main_initialize</span>()
+    <span class="ruby-identifier">initialize</span>()
+    <span class="ruby-identifier">after_initialize</span>()
+    <span class="ruby-identifier">post_initialize</span>()
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">instance</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+      <div id="method-i-option" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">option</span><span
+            class="method-args">(*a, &b)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="option-source">
+            <pre><span class="ruby-comment"># File lib/main/program/class_methods.rb, line 200</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">option</span>(*<span class="ruby-identifier">a</span>, &amp;<span class="ruby-identifier">b</span>)
+  (<span class="ruby-identifier">parameters</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Parameter</span>.<span class="ruby-identifier">create</span>(<span class="ruby-value">:option</span>, <span class="ruby-identifier">main</span>=<span class="ruby-keyword">self</span>, *<span class="ruby-identifier">a</span>, &amp;<span class="ruby-identifier">b</span>)).<span class="ruby-identifier">last</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- option-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- option-method -->
+
+    
+      <div id="method-i-output" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">output</span><span
+            class="method-args">(*args, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="output-source">
+            <pre><span class="ruby-comment"># File lib/main/program/class_methods.rb, line 364</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">output</span>(*<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">first</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>
+  <span class="ruby-identifier">args</span>.<span class="ruby-identifier">push</span>(<span class="ruby-value">:output</span>) <span class="ruby-keyword">unless</span>(<span class="ruby-identifier">first</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Symbol</span>) <span class="ruby-keyword">or</span> <span class="ruby-identifier">first</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>))
+  <span class="ruby-identifier">param</span> = <span class="ruby-identifier">argument</span>(*<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">param</span>.<span class="ruby-identifier">cast</span>(<span class="ruby-value">:output</span>)
+  <span class="ruby-identifier">param</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- output-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- output-method -->
+
+    
+      <div id="method-i-parameter" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">parameter</span><span
+            class="method-args">(*a, &b)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="parameter-source">
+            <pre><span class="ruby-comment"># File lib/main/program/class_methods.rb, line 192</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">parameter</span>(*<span class="ruby-identifier">a</span>, &amp;<span class="ruby-identifier">b</span>)
+  (<span class="ruby-identifier">parameters</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Parameter</span>.<span class="ruby-identifier">create</span>(<span class="ruby-value">:parameter</span>, <span class="ruby-identifier">main</span>=<span class="ruby-keyword">self</span>, *<span class="ruby-identifier">a</span>, &amp;<span class="ruby-identifier">b</span>)).<span class="ruby-identifier">last</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- parameter-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- parameter-method -->
+
+    
+      <div id="method-i-params" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">params</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="params-source">
+            <pre><span class="ruby-comment"># File lib/main/program/class_methods.rb, line 91</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">params</span>
+  <span class="ruby-identifier">parameters</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- params-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- params-method -->
+
+    
+      <div id="method-i-run" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">run</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="run-source">
+            <pre><span class="ruby-comment"># File lib/main/program/class_methods.rb, line 142</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">run</span>()
+  <span class="ruby-identifier">exit_status</span> =
+    <span class="ruby-identifier">catch</span> <span class="ruby-value">:exit</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-keyword">begin</span>
+        <span class="ruby-identifier">parse_parameters</span>
+
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">help?</span>
+          <span class="ruby-identifier">puts</span>(<span class="ruby-identifier">usage</span>.<span class="ruby-identifier">to_s</span>)
+          <span class="ruby-identifier">exit</span>
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-identifier">pre_run</span>
+        <span class="ruby-identifier">before_run</span>
+        <span class="ruby-identifier">run!</span>
+        <span class="ruby-identifier">after_run</span>
+        <span class="ruby-identifier">post_run</span>
+
+        <span class="ruby-identifier">finalize</span>
+      <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Object</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">exception</span>
+        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">exit_status</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">exception</span>.<span class="ruby-identifier">status</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">exception</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:status</span>)
+        <span class="ruby-identifier">handle_exception</span>(<span class="ruby-identifier">exception</span>)
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">nil</span>
+    <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">exit_status</span> <span class="ruby-operator">||=</span> (<span class="ruby-identifier">exit_status</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">exit_success</span>)
+  <span class="ruby-identifier">handle_exit</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">exit_status</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- run-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- run-method -->
+
+    
+      <div id="method-i-set_default_options-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">set_default_options!</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="set_default_options-21-source">
+            <pre><span class="ruby-comment"># File lib/main/program/class_methods.rb, line 99</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">set_default_options!</span>
+  <span class="ruby-identifier">option</span>(<span class="ruby-string">'help'</span>, <span class="ruby-string">'h'</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">parameters</span>.<span class="ruby-identifier">has_option?</span>(<span class="ruby-string">'help'</span>, <span class="ruby-string">'h'</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- set_default_options-21-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- set_default_options-21-method -->
+
+    
+      <div id="method-i-state_basename" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">state_basename</span><span
+            class="method-args">(*args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="state_basename-source">
+            <pre><span class="ruby-comment"># File lib/main/program/class_methods.rb, line 278</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">state_basename</span>(*<span class="ruby-identifier">args</span>)
+  <span class="ruby-ivar">@state_basename</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(*<span class="ruby-identifier">args</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span> 
+  <span class="ruby-ivar">@state_basename</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">ENV</span>[<span class="ruby-string">'STATE_BASENAME'</span>]
+  <span class="ruby-ivar">@state_basename</span> <span class="ruby-operator">||=</span> <span class="ruby-node">&quot;.#{ name }&quot;</span>
+  <span class="ruby-ivar">@state_basename</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- state_basename-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- state_basename-method -->
+
+    
+      <div id="method-i-state_dirname" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">state_dirname</span><span
+            class="method-args">(*args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="state_dirname-source">
+            <pre><span class="ruby-comment"># File lib/main/program/class_methods.rb, line 271</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">state_dirname</span>(*<span class="ruby-identifier">args</span>)
+  <span class="ruby-ivar">@state_dirname</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(*<span class="ruby-identifier">args</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span> 
+  <span class="ruby-ivar">@state_dirname</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">ENV</span>[<span class="ruby-string">'STATE_DIRNAME'</span>]
+  <span class="ruby-ivar">@state_dirname</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Util</span>.<span class="ruby-identifier">home</span>
+  <span class="ruby-ivar">@state_dirname</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- state_dirname-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- state_dirname-method -->
+
+    
+      <div id="method-i-state_path" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">state_path</span><span
+            class="method-args">(*state_path, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="state_path-source">
+            <pre><span class="ruby-comment"># File lib/main/program/class_methods.rb, line 285</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">state_path</span>(*<span class="ruby-identifier">state_path</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-ivar">@state_path</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">state_dirname</span>, <span class="ruby-identifier">state_basename</span>) <span class="ruby-keyword">unless</span> <span class="ruby-keyword">defined?</span>(<span class="ruby-ivar">@state_path</span>)
+
+  <span class="ruby-ivar">@state_path</span> = <span class="ruby-identifier">state_path</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">'/'</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">state_path</span>.<span class="ruby-identifier">empty?</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">block</span>
+    <span class="ruby-identifier">require</span> <span class="ruby-string">'fileutils'</span> <span class="ruby-keyword">unless</span> <span class="ruby-keyword">defined?</span>(<span class="ruby-constant">FileUtils</span>)
+    <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">mkdir_p</span>(<span class="ruby-ivar">@state_path</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">test</span>(<span class="ruby-string">d</span>, <span class="ruby-ivar">@state_path</span>)
+    <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(&amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@state_path</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- state_path-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- state_path-method -->
+
+    
+      <div id="method-i-usage" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">usage</span><span
+            class="method-args">(*args, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="usage-source">
+            <pre><span class="ruby-comment"># File lib/main/program/class_methods.rb, line 184</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">usage</span>(*<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">usage!</span> <span class="ruby-keyword">unless</span> <span class="ruby-keyword">defined?</span> <span class="ruby-ivar">@usage</span> 
+  <span class="ruby-keyword">return</span> <span class="ruby-ivar">@usage</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">block</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span>, *<span class="ruby-identifier">ignored</span> = <span class="ruby-identifier">args</span>
+  <span class="ruby-identifier">value</span> = <span class="ruby-identifier">block</span>.<span class="ruby-identifier">call</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">block</span>
+  <span class="ruby-ivar">@usage</span>[<span class="ruby-identifier">key</span>.<span class="ruby-identifier">to_s</span>] = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_s</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- usage-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- usage-method -->
+
+    
+      <div id="method-i-wrap_run-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">wrap_run!</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>wrap up users run method to handle errors, etc</p>
+          
+
+          
+          <div class="method-source-code" id="wrap_run-21-source">
+            <pre><span class="ruby-comment"># File lib/main/program/class_methods.rb, line 138</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">wrap_run!</span>
+  <span class="ruby-identifier">evaluate</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">alias_method</span> <span class="ruby-string">'run!'</span>, <span class="ruby-string">'run'</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">run</span>()
+      <span class="ruby-identifier">exit_status</span> =
+        <span class="ruby-identifier">catch</span> <span class="ruby-value">:exit</span> <span class="ruby-keyword">do</span>
+          <span class="ruby-keyword">begin</span>
+            <span class="ruby-identifier">parse_parameters</span>
+
+            <span class="ruby-keyword">if</span> <span class="ruby-identifier">help?</span>
+              <span class="ruby-identifier">puts</span>(<span class="ruby-identifier">usage</span>.<span class="ruby-identifier">to_s</span>)
+              <span class="ruby-identifier">exit</span>
+            <span class="ruby-keyword">end</span>
+
+            <span class="ruby-identifier">pre_run</span>
+            <span class="ruby-identifier">before_run</span>
+            <span class="ruby-identifier">run!</span>
+            <span class="ruby-identifier">after_run</span>
+            <span class="ruby-identifier">post_run</span>
+
+            <span class="ruby-identifier">finalize</span>
+          <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Object</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">exception</span>
+            <span class="ruby-keyword">self</span>.<span class="ruby-identifier">exit_status</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">exception</span>.<span class="ruby-identifier">status</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">exception</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:status</span>)
+            <span class="ruby-identifier">handle_exception</span>(<span class="ruby-identifier">exception</span>)
+          <span class="ruby-keyword">end</span>
+          <span class="ruby-keyword">nil</span>
+        <span class="ruby-keyword">end</span>
+
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">exit_status</span> <span class="ruby-operator">||=</span> (<span class="ruby-identifier">exit_status</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">exit_success</span>)
+      <span class="ruby-identifier">handle_exit</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">exit_status</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- wrap_run-21-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- wrap_run-21-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module Capybara::Node::Actions - capybara-2.1.0 Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/capybara/node/actions.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-attach_file">#attach_file</a>
+    
+    <li><a href="#method-i-check">#check</a>
+    
+    <li><a href="#method-i-choose">#choose</a>
+    
+    <li><a href="#method-i-click_button">#click_button</a>
+    
+    <li><a href="#method-i-click_link">#click_link</a>
+    
+    <li><a href="#method-i-click_link_or_button">#click_link_or_button</a>
+    
+    <li><a href="#method-i-click_on">#click_on</a>
+    
+    <li><a href="#method-i-fill_in">#fill_in</a>
+    
+    <li><a href="#method-i-select">#select</a>
+    
+    <li><a href="#method-i-uncheck">#uncheck</a>
+    
+    <li><a href="#method-i-unselect">#unselect</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../lib/capybara/spec/fixtures/another_test_file_txt.html">another_test_file</a>
+  
+    <li class="file"><a href="../../lib/capybara/spec/fixtures/test_file_txt.html">test_file</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../Capybara.html">Capybara</a>
+  
+    <li><a href="../../Capybara/Ambiguous.html">Capybara::Ambiguous</a>
+  
+    <li><a href="../../Capybara/CapybaraError.html">Capybara::CapybaraError</a>
+  
+    <li><a href="../../Capybara/DSL.html">Capybara::DSL</a>
+  
+    <li><a href="../../Capybara/Driver.html">Capybara::Driver</a>
+  
+    <li><a href="../../Capybara/Driver/Base.html">Capybara::Driver::Base</a>
+  
+    <li><a href="../../Capybara/Driver/Node.html">Capybara::Driver::Node</a>
+  
+    <li><a href="../../Capybara/DriverNotFoundError.html">Capybara::DriverNotFoundError</a>
+  
+    <li><a href="../../Capybara/ElementNotFound.html">Capybara::ElementNotFound</a>
+  
+    <li><a href="../../Capybara/ExpectationNotMet.html">Capybara::ExpectationNotMet</a>
+  
+    <li><a href="../../Capybara/Features.html">Capybara::Features</a>
+  
+    <li><a href="../../Capybara/FileNotFound.html">Capybara::FileNotFound</a>
+  
+    <li><a href="../../Capybara/FrozenInTime.html">Capybara::FrozenInTime</a>
+  
+    <li><a href="../../Capybara/Helpers.html">Capybara::Helpers</a>
+  
+    <li><a href="../../Capybara/InfiniteRedirectError.html">Capybara::InfiniteRedirectError</a>
+  
+    <li><a href="../../Capybara/Node.html">Capybara::Node</a>
+  
+    <li><a href="../../Capybara/Node/Actions.html">Capybara::Node::Actions</a>
+  
+    <li><a href="../../Capybara/Node/Base.html">Capybara::Node::Base</a>
+  
+    <li><a href="../../Capybara/Node/Document.html">Capybara::Node::Document</a>
+  
+    <li><a href="../../Capybara/Node/Element.html">Capybara::Node::Element</a>
+  
+    <li><a href="../../Capybara/Node/Finders.html">Capybara::Node::Finders</a>
+  
+    <li><a href="../../Capybara/Node/Matchers.html">Capybara::Node::Matchers</a>
+  
+    <li><a href="../../Capybara/Node/Simple.html">Capybara::Node::Simple</a>
+  
+    <li><a href="../../Capybara/NotSupportedByDriverError.html">Capybara::NotSupportedByDriverError</a>
+  
+    <li><a href="../../Capybara/Query.html">Capybara::Query</a>
+  
+    <li><a href="../../Capybara/RSpecMatchers.html">Capybara::RSpecMatchers</a>
+  
+    <li><a href="../../Capybara/RSpecMatchers/HaveSelector.html">Capybara::RSpecMatchers::HaveSelector</a>
+  
+    <li><a href="../../Capybara/RSpecMatchers/HaveText.html">Capybara::RSpecMatchers::HaveText</a>
+  
+    <li><a href="../../Capybara/RSpecMatchers/HaveTitle.html">Capybara::RSpecMatchers::HaveTitle</a>
+  
+    <li><a href="../../Capybara/RSpecMatchers/Matcher.html">Capybara::RSpecMatchers::Matcher</a>
+  
+    <li><a href="../../Capybara/RackTest.html">Capybara::RackTest</a>
+  
+    <li><a href="../../Capybara/RackTest/Browser.html">Capybara::RackTest::Browser</a>
+  
+    <li><a href="../../Capybara/RackTest/CSSHandlers.html">Capybara::RackTest::CSSHandlers</a>
+  
+    <li><a href="../../Capybara/RackTest/Driver.html">Capybara::RackTest::Driver</a>
+  
+    <li><a href="../../Capybara/RackTest/Form.html">Capybara::RackTest::Form</a>
+  
+    <li><a href="../../Capybara/RackTest/Form/NilUploadedFile.html">Capybara::RackTest::Form::NilUploadedFile</a>
+  
+    <li><a href="../../Capybara/RackTest/Node.html">Capybara::RackTest::Node</a>
+  
+    <li><a href="../../Capybara/Result.html">Capybara::Result</a>
+  
+    <li><a href="../../Capybara/Selector.html">Capybara::Selector</a>
+  
+    <li><a href="../../Capybara/Selector/Filter.html">Capybara::Selector::Filter</a>
+  
+    <li><a href="../../Capybara/Selenium.html">Capybara::Selenium</a>
+  
+    <li><a href="../../Capybara/Selenium/Driver.html">Capybara::Selenium::Driver</a>
+  
+    <li><a href="../../Capybara/Selenium/Node.html">Capybara::Selenium::Node</a>
+  
+    <li><a href="../../Capybara/Server.html">Capybara::Server</a>
+  
+    <li><a href="../../Capybara/Server/Middleware.html">Capybara::Server::Middleware</a>
+  
+    <li><a href="../../Capybara/Session.html">Capybara::Session</a>
+  
+    <li><a href="../../Capybara/SpecHelper.html">Capybara::SpecHelper</a>
+  
+    <li><a href="../../Capybara/UnselectNotAllowed.html">Capybara::UnselectNotAllowed</a>
+  
+    <li><a href="../../TestApp.html">TestApp</a>
+  
+    <li><a href="../../TestApp/TestAppError.html">TestApp::TestAppError</a>
+  
+    <li><a href="../../Object.html">Object</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module Capybara::Node::Actions</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-attach_file" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">attach_file</span><span
+            class="method-args">(locator, path, options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Find a file field on the page and attach a file given its path. The file
+field can be found via its name, id or label text.</p>
+
+<pre>page.attach_file(locator, '/path/to/file.png')</pre>
+
+<p>@param [String] locator       Which field to attach the file to @param
+[String] path          The path of the file that will be attached, or an
+array of paths</p>
+          
+
+          
+          <div class="method-source-code" id="attach_file-source">
+            <pre><span class="ruby-comment"># File lib/capybara/node/actions.rb, line 145</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">attach_file</span>(<span class="ruby-identifier">locator</span>, <span class="ruby-identifier">path</span>, <span class="ruby-identifier">options</span>={})
+  <span class="ruby-constant">Array</span>(<span class="ruby-identifier">path</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">Capybara</span><span class="ruby-operator">::</span><span class="ruby-constant">FileNotFound</span>, <span class="ruby-node">&quot;cannot attach file, #{p} does not exist&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span>(<span class="ruby-identifier">p</span>.<span class="ruby-identifier">to_s</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">find</span>(<span class="ruby-value">:file_field</span>, <span class="ruby-identifier">locator</span>, <span class="ruby-identifier">options</span>).<span class="ruby-identifier">set</span>(<span class="ruby-identifier">path</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- attach_file-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- attach_file-method -->
+
+    
+      <div id="method-i-check" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">check</span><span
+            class="method-args">(locator, options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Find a check box and mark it as checked. The check box can be found via
+name, id or label text.</p>
+
+<pre>page.check('German')</pre>
+
+<p>@param [String] locator           Which check box to check</p>
+          
+
+          
+          <div class="method-source-code" id="check-source">
+            <pre><span class="ruby-comment"># File lib/capybara/node/actions.rb, line 78</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">check</span>(<span class="ruby-identifier">locator</span>, <span class="ruby-identifier">options</span>={})
+  <span class="ruby-identifier">find</span>(<span class="ruby-value">:checkbox</span>, <span class="ruby-identifier">locator</span>, <span class="ruby-identifier">options</span>).<span class="ruby-identifier">set</span>(<span class="ruby-keyword">true</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- check-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- check-method -->
+
+    
+      <div id="method-i-choose" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">choose</span><span
+            class="method-args">(locator, options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Find a radio button and mark it as checked. The radio button can be found
+via name, id or label text.</p>
+
+<pre>page.choose('Male')</pre>
+
+<p>@param [String] locator           Which radio button to choose</p>
+          
+
+          
+          <div class="method-source-code" id="choose-source">
+            <pre><span class="ruby-comment"># File lib/capybara/node/actions.rb, line 65</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">choose</span>(<span class="ruby-identifier">locator</span>, <span class="ruby-identifier">options</span>={})
+  <span class="ruby-identifier">find</span>(<span class="ruby-value">:radio_button</span>, <span class="ruby-identifier">locator</span>, <span class="ruby-identifier">options</span>).<span class="ruby-identifier">set</span>(<span class="ruby-keyword">true</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- choose-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- choose-method -->
+
+    
+      <div id="method-i-click_button" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">click_button</span><span
+            class="method-args">(locator, options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Finds a button by id, text or value and clicks it.</p>
+
+<p>@param [String] locator      Text, id or value of button</p>
+          
+
+          
+          <div class="method-source-code" id="click_button-source">
+            <pre><span class="ruby-comment"># File lib/capybara/node/actions.rb, line 36</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">click_button</span>(<span class="ruby-identifier">locator</span>, <span class="ruby-identifier">options</span>={})
+  <span class="ruby-identifier">find</span>(<span class="ruby-value">:button</span>, <span class="ruby-identifier">locator</span>, <span class="ruby-identifier">options</span>).<span class="ruby-identifier">click</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- click_button-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- click_button-method -->
+
+    
+      <div id="method-i-click_link" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">click_link</span><span
+            class="method-args">(locator, options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Finds a link by id or text and clicks it. Also looks at image alt text
+inside the link.</p>
+
+<p>@param [String] locator      Text, id or text of link @param options
+@option options [String] :href    The value the href attribute must be</p>
+          
+
+          
+          <div class="method-source-code" id="click_link-source">
+            <pre><span class="ruby-comment"># File lib/capybara/node/actions.rb, line 26</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">click_link</span>(<span class="ruby-identifier">locator</span>, <span class="ruby-identifier">options</span>={})
+  <span class="ruby-identifier">find</span>(<span class="ruby-value">:link</span>, <span class="ruby-identifier">locator</span>, <span class="ruby-identifier">options</span>).<span class="ruby-identifier">click</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- click_link-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- click_link-method -->
+
+    
+      <div id="method-i-click_link_or_button" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">click_link_or_button</span><span
+            class="method-args">(locator, options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Finds a button or link by id, text or value and clicks it. Also looks at
+image alt text inside the link.</p>
+
+<p>@param [String] locator      Text, id or value of link or button</p>
+          
+
+          
+          <div class="method-source-code" id="click_link_or_button-source">
+            <pre><span class="ruby-comment"># File lib/capybara/node/actions.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">click_link_or_button</span>(<span class="ruby-identifier">locator</span>, <span class="ruby-identifier">options</span>={})
+  <span class="ruby-identifier">find</span>(<span class="ruby-value">:link_or_button</span>, <span class="ruby-identifier">locator</span>, <span class="ruby-identifier">options</span>).<span class="ruby-identifier">click</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- click_link_or_button-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Actions.html#method-i-click_on">click_on</a>
+        </div>
+        
+
+        
+      </div><!-- click_link_or_button-method -->
+
+    
+      <div id="method-i-click_on" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">click_on</span><span
+            class="method-args">(locator, options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Actions.html#method-i-click_link_or_button">click_link_or_button</a>
+        </div>
+        
+      </div><!-- click_on-method -->
+
+    
+      <div id="method-i-fill_in" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">fill_in</span><span
+            class="method-args">(locator, options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Locate a text field or text area and fill it in with the given text The
+field can be found via its name, id or label text.</p>
+
+<pre class="ruby"><span class="ruby-identifier">page</span>.<span class="ruby-identifier">fill_in</span> <span class="ruby-string">'Name'</span>, :<span class="ruby-identifier">with</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'Bob'</span>
+</pre>
+
+<p>@param [String] locator                 Which field to fill in @param
+[Hash{:with =&gt; String}] options  The value to fill in</p>
+          
+
+          
+          <div class="method-source-code" id="fill_in-source">
+            <pre><span class="ruby-comment"># File lib/capybara/node/actions.rb, line 50</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">fill_in</span>(<span class="ruby-identifier">locator</span>, <span class="ruby-identifier">options</span>={})
+  <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;Must pass a hash containing 'with'&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-keyword">or</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:with</span>)
+  <span class="ruby-identifier">with</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-value">:with</span>)
+  <span class="ruby-identifier">find</span>(<span class="ruby-value">:fillable_field</span>, <span class="ruby-identifier">locator</span>, <span class="ruby-identifier">options</span>).<span class="ruby-identifier">set</span>(<span class="ruby-identifier">with</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- fill_in-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- fill_in-method -->
+
+    
+      <div id="method-i-select" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">select</span><span
+            class="method-args">(value, options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Find a select box on the page and select a particular option from it. If
+the select box is a multiple select, <code>select</code> can be called
+multiple times to select more than one option. The select box can be found
+via its name, id or label text.</p>
+
+<pre class="ruby"><span class="ruby-identifier">page</span>.<span class="ruby-identifier">select</span> <span class="ruby-string">'March'</span>, :<span class="ruby-identifier">from</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'Month'</span>
+</pre>
+
+<p>@param [String] value                   Which option to select @param
+[Hash{:from =&gt; String}] options  The id, name or label of the select box</p>
+          
+
+          
+          <div class="method-source-code" id="select-source">
+            <pre><span class="ruby-comment"># File lib/capybara/node/actions.rb, line 106</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">select</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">options</span>={})
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:from</span>)
+    <span class="ruby-identifier">from</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-value">:from</span>)
+    <span class="ruby-identifier">find</span>(<span class="ruby-value">:select</span>, <span class="ruby-identifier">from</span>, <span class="ruby-identifier">options</span>).<span class="ruby-identifier">find</span>(<span class="ruby-value">:option</span>, <span class="ruby-identifier">value</span>, <span class="ruby-identifier">options</span>).<span class="ruby-identifier">select_option</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">find</span>(<span class="ruby-value">:option</span>, <span class="ruby-identifier">value</span>, <span class="ruby-identifier">options</span>).<span class="ruby-identifier">select_option</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- select-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- select-method -->
+
+    
+      <div id="method-i-uncheck" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">uncheck</span><span
+            class="method-args">(locator, options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Find a check box and mark uncheck it. The check box can be found via name,
+id or label text.</p>
+
+<pre>page.uncheck('German')</pre>
+
+<p>@param [String] locator           Which check box to uncheck</p>
+          
+
+          
+          <div class="method-source-code" id="uncheck-source">
+            <pre><span class="ruby-comment"># File lib/capybara/node/actions.rb, line 91</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">uncheck</span>(<span class="ruby-identifier">locator</span>, <span class="ruby-identifier">options</span>={})
+  <span class="ruby-identifier">find</span>(<span class="ruby-value">:checkbox</span>, <span class="ruby-identifier">locator</span>, <span class="ruby-identifier">options</span>).<span class="ruby-identifier">set</span>(<span class="ruby-keyword">false</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- uncheck-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- uncheck-method -->
+
+    
+      <div id="method-i-unselect" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">unselect</span><span
+            class="method-args">(value, options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Find a select box on the page and unselect a particular option from it. If
+the select box is a multiple select, <code>unselect</code> can be called
+multiple times to unselect more than one option. The select box can be
+found via its name, id or label text.</p>
+
+<pre class="ruby"><span class="ruby-identifier">page</span>.<span class="ruby-identifier">unselect</span> <span class="ruby-string">'March'</span>, :<span class="ruby-identifier">from</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'Month'</span>
+</pre>
+
+<p>@param [String] value                   Which option to unselect @param
+[Hash{:from =&gt; String}] options  The id, name or label of the select box</p>
+          
+
+          
+          <div class="method-source-code" id="unselect-source">
+            <pre><span class="ruby-comment"># File lib/capybara/node/actions.rb, line 126</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">unselect</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">options</span>={})
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-value">:from</span>)
+    <span class="ruby-identifier">from</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-value">:from</span>)
+    <span class="ruby-identifier">find</span>(<span class="ruby-value">:select</span>, <span class="ruby-identifier">from</span>, <span class="ruby-identifier">options</span>).<span class="ruby-identifier">find</span>(<span class="ruby-value">:option</span>, <span class="ruby-identifier">value</span>, <span class="ruby-identifier">options</span>).<span class="ruby-identifier">unselect_option</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">find</span>(<span class="ruby-value">:option</span>, <span class="ruby-identifier">value</span>, <span class="ruby-identifier">options</span>).<span class="ruby-identifier">unselect_option</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- unselect-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- unselect-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Cane::AbcCheck::RubyAst - cane-2.6.1 Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/cane/abc_check.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Struct.new(:file_name, :max_allowed_complexity,                                :sexps, :exclusions)
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-assignment_nodes">#assignment_nodes</a>
+    
+    <li><a href="#method-i-branch_nodes">#branch_nodes</a>
+    
+    <li><a href="#method-i-calculate_abc">#calculate_abc</a>
+    
+    <li><a href="#method-i-condition_nodes">#condition_nodes</a>
+    
+    <li><a href="#method-i-container_label">#container_label</a>
+    
+    <li><a href="#method-i-container_nodes">#container_nodes</a>
+    
+    <li><a href="#method-i-count_nodes">#count_nodes</a>
+    
+    <li><a href="#method-i-exclusions">#exclusions</a>
+    
+    <li><a href="#method-i-file_names">#file_names</a>
+    
+    <li><a href="#method-i-label_for">#label_for</a>
+    
+    <li><a href="#method-i-max_allowed_complexity">#max_allowed_complexity</a>
+    
+    <li><a href="#method-i-method_nodes">#method_nodes</a>
+    
+    <li><a href="#method-i-order">#order</a>
+    
+    <li><a href="#method-i-process_ast">#process_ast</a>
+    
+    <li><a href="#method-i-violations">#violations</a>
+    
+    <li><a href="#method-i-worker">#worker</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../Cane.html">Cane</a>
+  
+    <li><a href="../../Cane/AbcCheck.html">Cane::AbcCheck</a>
+  
+    <li><a href="../../Cane/AbcCheck/InvalidAst.html">Cane::AbcCheck::InvalidAst</a>
+  
+    <li><a href="../../Cane/AbcCheck/RubyAst.html">Cane::AbcCheck::RubyAst</a>
+  
+    <li><a href="../../Cane/CLI.html">Cane::CLI</a>
+  
+    <li><a href="../../Cane/CLI/Parser.html">Cane::CLI::Parser</a>
+  
+    <li><a href="../../Cane/CLI/Parser/OptionsHandled.html">Cane::CLI::Parser::OptionsHandled</a>
+  
+    <li><a href="../../Cane/DocCheck.html">Cane::DocCheck</a>
+  
+    <li><a href="../../Cane/EncodingAwareIterator.html">Cane::EncodingAwareIterator</a>
+  
+    <li><a href="../../Cane/File.html">Cane::File</a>
+  
+    <li><a href="../../Cane/JsonFormatter.html">Cane::JsonFormatter</a>
+  
+    <li><a href="../../Cane/RakeTask.html">Cane::RakeTask</a>
+  
+    <li><a href="../../Cane/Runner.html">Cane::Runner</a>
+  
+    <li><a href="../../Cane/SimpleTaskRunner.html">Cane::SimpleTaskRunner</a>
+  
+    <li><a href="../../Cane/StyleCheck.html">Cane::StyleCheck</a>
+  
+    <li><a href="../../Cane/ThresholdCheck.html">Cane::ThresholdCheck</a>
+  
+    <li><a href="../../Cane/ThresholdCheck/UnavailableValue.html">Cane::ThresholdCheck::UnavailableValue</a>
+  
+    <li><a href="../../Cane/ViolationFormatter.html">Cane::ViolationFormatter</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Cane::AbcCheck::RubyAst</h1>
+
+  <div id="description" class="description">
+    
+<p>Wrapper object around sexps returned from ripper.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="METH_CHARS">METH_CHARS
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-anon_method_add" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">anon_method_add</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Stateful flag used to determine whether we are currently parsing an
+anonymous class. See <a
+href="RubyAst.html#method-i-container_label">container_label</a>.</p>
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(*args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/cane/abc_check.rb, line 67</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(*<span class="ruby-identifier">args</span>)
+  <span class="ruby-keyword">super</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">anon_method_add</span> = <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-violations" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">violations</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="violations-source">
+            <pre><span class="ruby-comment"># File lib/cane/abc_check.rb, line 72</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">violations</span>
+  <span class="ruby-identifier">process_ast</span>(<span class="ruby-identifier">sexps</span>).
+    <span class="ruby-identifier">select</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">nesting</span>, <span class="ruby-identifier">complexity</span><span class="ruby-operator">|</span> <span class="ruby-identifier">complexity</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">max_allowed_complexity</span> }.
+    <span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> {
+      <span class="ruby-identifier">file</span><span class="ruby-operator">:</span>        <span class="ruby-identifier">file_name</span>,
+      <span class="ruby-identifier">label</span><span class="ruby-operator">:</span>       <span class="ruby-identifier">x</span>.<span class="ruby-identifier">first</span>,
+      <span class="ruby-identifier">value</span><span class="ruby-operator">:</span>       <span class="ruby-identifier">x</span>.<span class="ruby-identifier">last</span>,
+      <span class="ruby-identifier">description</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;Methods exceeded maximum allowed ABC complexity&quot;</span>
+    }}
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- violations-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- violations-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+     <section id="protected-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Protected Instance Methods</h3>
+
+    
+      <div id="method-i-assignment_nodes" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">assignment_nodes</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="assignment_nodes-source">
+            <pre><span class="ruby-comment"># File lib/cane/abc_check.rb, line 149</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">assignment_nodes</span>
+  [<span class="ruby-value">:assign</span>, <span class="ruby-value">:opassign</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- assignment_nodes-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- assignment_nodes-method -->
+
+    
+      <div id="method-i-branch_nodes" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">branch_nodes</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="branch_nodes-source">
+            <pre><span class="ruby-comment"># File lib/cane/abc_check.rb, line 161</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">branch_nodes</span>
+  [<span class="ruby-value">:call</span>, <span class="ruby-value">:fcall</span>, <span class="ruby-value">:brace_block</span>, <span class="ruby-value">:do_block</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- branch_nodes-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- branch_nodes-method -->
+
+    
+      <div id="method-i-calculate_abc" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">calculate_abc</span><span
+            class="method-args">(method_node)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="calculate_abc-source">
+            <pre><span class="ruby-comment"># File lib/cane/abc_check.rb, line 108</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">calculate_abc</span>(<span class="ruby-identifier">method_node</span>)
+  <span class="ruby-identifier">a</span> = <span class="ruby-identifier">count_nodes</span>(<span class="ruby-identifier">method_node</span>, <span class="ruby-identifier">assignment_nodes</span>)
+  <span class="ruby-identifier">b</span> = <span class="ruby-identifier">count_nodes</span>(<span class="ruby-identifier">method_node</span>, <span class="ruby-identifier">branch_nodes</span>) <span class="ruby-operator">+</span> <span class="ruby-value">1</span>
+  <span class="ruby-identifier">c</span> = <span class="ruby-identifier">count_nodes</span>(<span class="ruby-identifier">method_node</span>, <span class="ruby-identifier">condition_nodes</span>)
+  <span class="ruby-identifier">abc</span> = <span class="ruby-constant">Math</span>.<span class="ruby-identifier">sqrt</span>(<span class="ruby-identifier">a</span><span class="ruby-operator">**</span><span class="ruby-value">2</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">b</span><span class="ruby-operator">**</span><span class="ruby-value">2</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">c</span><span class="ruby-operator">**</span><span class="ruby-value">2</span>).<span class="ruby-identifier">round</span>
+  <span class="ruby-identifier">abc</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- calculate_abc-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- calculate_abc-method -->
+
+    
+      <div id="method-i-condition_nodes" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">condition_nodes</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="condition_nodes-source">
+            <pre><span class="ruby-comment"># File lib/cane/abc_check.rb, line 165</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">condition_nodes</span>
+  [<span class="ruby-value">:==</span>, <span class="ruby-value">:===</span>, <span class="ruby-value">:&quot;&lt;&gt;&quot;</span>, <span class="ruby-value">:&quot;&lt;=&quot;</span>, <span class="ruby-value">:&quot;&gt;=&quot;</span>, <span class="ruby-value">:&quot;=~&quot;</span>, <span class="ruby-value">:&gt;</span>, <span class="ruby-value">:&lt;</span>, <span class="ruby-value">:else</span>, <span class="ruby-value">:&quot;&lt;=&gt;&quot;</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- condition_nodes-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- condition_nodes-method -->
+
+    
+      <div id="method-i-container_label" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">container_label</span><span
+            class="method-args">(node)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="container_label-source">
+            <pre><span class="ruby-comment"># File lib/cane/abc_check.rb, line 116</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">container_label</span>(<span class="ruby-identifier">node</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">container_nodes</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">node</span>[<span class="ruby-value">0</span>])
+    <span class="ruby-comment"># def foo, def self.foo</span>
+    <span class="ruby-identifier">node</span>[<span class="ruby-value">1</span>][<span class="ruby-value">-1</span>][<span class="ruby-value">1</span>]
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">node</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">==</span> <span class="ruby-value">:method_add_block</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">anon_method_add</span>
+      <span class="ruby-comment"># Class.new do ...</span>
+      <span class="ruby-string">&quot;(anon)&quot;</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-comment"># MyClass = Class.new do ...</span>
+      <span class="ruby-comment"># parent already added when processing a parent node</span>
+      <span class="ruby-identifier">anon_method_add</span> = <span class="ruby-keyword">true</span>
+      <span class="ruby-keyword">nil</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">node</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">==</span> <span class="ruby-value">:assign</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">node</span>[<span class="ruby-value">2</span>][<span class="ruby-value">0</span>] <span class="ruby-operator">==</span> <span class="ruby-value">:method_add_block</span>
+    <span class="ruby-comment"># MyClass = Class.new do ...</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">anon_method_add</span> = <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">node</span>[<span class="ruby-value">1</span>][<span class="ruby-value">-1</span>][<span class="ruby-value">1</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- container_label-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- container_label-method -->
+
+    
+      <div id="method-i-container_nodes" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">container_nodes</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="container_nodes-source">
+            <pre><span class="ruby-comment"># File lib/cane/abc_check.rb, line 157</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">container_nodes</span>
+  [<span class="ruby-value">:class</span>, <span class="ruby-value">:module</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- container_nodes-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- container_nodes-method -->
+
+    
+      <div id="method-i-count_nodes" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">count_nodes</span><span
+            class="method-args">(node, types)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="count_nodes-source">
+            <pre><span class="ruby-comment"># File lib/cane/abc_check.rb, line 145</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">count_nodes</span>(<span class="ruby-identifier">node</span>, <span class="ruby-identifier">types</span>)
+  <span class="ruby-identifier">node</span>.<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">select</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span> <span class="ruby-identifier">types</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">n</span>) }.<span class="ruby-identifier">length</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- count_nodes-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- count_nodes-method -->
+
+    
+      <div id="method-i-exclusions" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">exclusions</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="exclusions-source">
+            <pre><span class="ruby-comment"># File lib/cane/abc_check.rb, line 193</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">exclusions</span>
+  <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value">:abc_exclude</span>, []).<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">to_set</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- exclusions-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- exclusions-method -->
+
+    
+      <div id="method-i-file_names" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">file_names</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="file_names-source">
+            <pre><span class="ruby-comment"># File lib/cane/abc_check.rb, line 181</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">file_names</span>
+  <span class="ruby-constant">Dir</span>[<span class="ruby-identifier">opts</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value">:abc_glob</span>)]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- file_names-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- file_names-method -->
+
+    
+      <div id="method-i-label_for" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">label_for</span><span
+            class="method-args">(node)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="label_for-source">
+            <pre><span class="ruby-comment"># File lib/cane/abc_check.rb, line 137</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">label_for</span>(<span class="ruby-identifier">node</span>)
+  <span class="ruby-comment"># A default case is deliberately omitted since I know of no way this</span>
+  <span class="ruby-comment"># could fail and want it to fail fast.</span>
+  <span class="ruby-identifier">node</span>.<span class="ruby-identifier">detect</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span>
+    [<span class="ruby-value">:@ident</span>, <span class="ruby-value">:@op</span>, <span class="ruby-value">:@kw</span>, <span class="ruby-value">:@const</span>, <span class="ruby-value">:@backtick</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">x</span>[<span class="ruby-value">0</span>])
+  }[<span class="ruby-value">1</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- label_for-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- label_for-method -->
+
+    
+      <div id="method-i-max_allowed_complexity" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">max_allowed_complexity</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="max_allowed_complexity-source">
+            <pre><span class="ruby-comment"># File lib/cane/abc_check.rb, line 189</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">max_allowed_complexity</span>
+  <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value">:abc_max</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- max_allowed_complexity-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- max_allowed_complexity-method -->
+
+    
+      <div id="method-i-method_nodes" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">method_nodes</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="method_nodes-source">
+            <pre><span class="ruby-comment"># File lib/cane/abc_check.rb, line 153</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">method_nodes</span>
+  [<span class="ruby-value">:def</span>, <span class="ruby-value">:defs</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- method_nodes-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- method_nodes-method -->
+
+    
+      <div id="method-i-order" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">order</span><span
+            class="method-args">(result)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="order-source">
+            <pre><span class="ruby-comment"># File lib/cane/abc_check.rb, line 185</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">order</span>(<span class="ruby-identifier">result</span>)
+  <span class="ruby-identifier">result</span>.<span class="ruby-identifier">sort_by</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>[<span class="ruby-value">:value</span>].<span class="ruby-identifier">to_i</span> }.<span class="ruby-identifier">reverse</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- order-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- order-method -->
+
+    
+      <div id="method-i-process_ast" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">process_ast</span><span
+            class="method-args">(node, complexity = {}, nesting = [])</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Recursive function to process an AST. The `complexity` variable mutates,
+which is a bit confusing. `nesting` does not.</p>
+          
+
+          
+          <div class="method-source-code" id="process_ast-source">
+            <pre><span class="ruby-comment"># File lib/cane/abc_check.rb, line 91</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">process_ast</span>(<span class="ruby-identifier">node</span>, <span class="ruby-identifier">complexity</span> = {}, <span class="ruby-identifier">nesting</span> = [])
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">method_nodes</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">node</span>[<span class="ruby-value">0</span>])
+    <span class="ruby-identifier">nesting</span> = <span class="ruby-identifier">nesting</span> <span class="ruby-operator">+</span> [<span class="ruby-identifier">label_for</span>(<span class="ruby-identifier">node</span>)]
+    <span class="ruby-identifier">desc</span> = <span class="ruby-identifier">method_description</span>(<span class="ruby-identifier">node</span>, *<span class="ruby-identifier">nesting</span>)
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">excluded?</span>(<span class="ruby-identifier">desc</span>)
+      <span class="ruby-identifier">complexity</span>[<span class="ruby-identifier">desc</span>] = <span class="ruby-identifier">calculate_abc</span>(<span class="ruby-identifier">node</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">parent</span> = <span class="ruby-identifier">container_label</span>(<span class="ruby-identifier">node</span>)
+    <span class="ruby-identifier">nesting</span> = <span class="ruby-identifier">nesting</span> <span class="ruby-operator">+</span> [<span class="ruby-identifier">parent</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Array</span>
+    <span class="ruby-identifier">node</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>].<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span> <span class="ruby-identifier">process_ast</span>(<span class="ruby-identifier">n</span>, <span class="ruby-identifier">complexity</span>, <span class="ruby-identifier">nesting</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">n</span> }
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">complexity</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- process_ast-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- process_ast-method -->
+
+    
+      <div id="method-i-worker" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">worker</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="worker-source">
+            <pre><span class="ruby-comment"># File lib/cane/abc_check.rb, line 197</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">worker</span>
+  <span class="ruby-constant">Cane</span>.<span class="ruby-identifier">task_runner</span>(<span class="ruby-identifier">opts</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- worker-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- worker-method -->
+
+    
+    </section><!-- protected-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

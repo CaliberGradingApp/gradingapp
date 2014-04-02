@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class MetricFu::Configuration - metric_fu-4.5.1 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/metric_fu/configuration.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="../Object.html">Object</a>
+  
+</nav>
+
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><a class="include" href="Environment.html">MetricFu::Environment</a>
+  
+  
+  </ul>
+</nav>
+
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-run">::run</a>
+    
+    <li><a href="#method-i-configure_formatter">#configure_formatter</a>
+    
+    <li><a href="#method-i-configure_metric">#configure_metric</a>
+    
+    <li><a href="#method-i-configure_metrics">#configure_metrics</a>
+    
+    <li><a href="#method-i-graph_engine">#graph_engine</a>
+    
+    <li><a href="#method-i-graphed_metrics">#graphed_metrics</a>
+    
+    <li><a href="#method-i-metric_manually_configured-3F">#metric_manually_configured?</a>
+    
+    <li><a href="#method-i-mf_debug">#mf_debug</a>
+    
+    <li><a href="#method-i-reset">#reset</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../MIT-LICENSE.html">MIT-LICENSE</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../MetricFu.html">MetricFu</a>
+  
+    <li><a href="../MetricFu/AnalysisError.html">MetricFu::AnalysisError</a>
+  
+    <li><a href="../MetricFu/AnalyzerTables.html">MetricFu::AnalyzerTables</a>
+  
+    <li><a href="../MetricFu/CaneGenerator.html">MetricFu::CaneGenerator</a>
+  
+    <li><a href="../MetricFu/CaneGrapher.html">MetricFu::CaneGrapher</a>
+  
+    <li><a href="../MetricFu/CaneViolations.html">MetricFu::CaneViolations</a>
+  
+    <li><a href="../MetricFu/CaneViolations/AbcComplexity.html">MetricFu::CaneViolations::AbcComplexity</a>
+  
+    <li><a href="../MetricFu/CaneViolations/Comment.html">MetricFu::CaneViolations::Comment</a>
+  
+    <li><a href="../MetricFu/CaneViolations/Documentation.html">MetricFu::CaneViolations::Documentation</a>
+  
+    <li><a href="../MetricFu/CaneViolations/LineStyle.html">MetricFu::CaneViolations::LineStyle</a>
+  
+    <li><a href="../MetricFu/CaneViolations/Others.html">MetricFu::CaneViolations::Others</a>
+  
+    <li><a href="../MetricFu/ChurnGenerator.html">MetricFu::ChurnGenerator</a>
+  
+    <li><a href="../MetricFu/ChurnHotspot.html">MetricFu::ChurnHotspot</a>
+  
+    <li><a href="../MetricFu/ClassMethodNode.html">MetricFu::ClassMethodNode</a>
+  
+    <li><a href="../MetricFu/Cli.html">MetricFu::Cli</a>
+  
+    <li><a href="../MetricFu/Cli/Client.html">MetricFu::Cli::Client</a>
+  
+    <li><a href="../MetricFu/Cli/Helper.html">MetricFu::Cli::Helper</a>
+  
+    <li><a href="../MetricFu/Cli/MicroOptParse.html">MetricFu::Cli::MicroOptParse</a>
+  
+    <li><a href="../MetricFu/Cli/MicroOptParse/Parser.html">MetricFu::Cli::MicroOptParse::Parser</a>
+  
+    <li><a href="../MetricFu/Configuration.html">MetricFu::Configuration</a>
+  
+    <li><a href="../MetricFu/Constantize.html">MetricFu::Constantize</a>
+  
+    <li><a href="../MetricFu/Environment.html">MetricFu::Environment</a>
+  
+    <li><a href="../MetricFu/FlayGenerator.html">MetricFu::FlayGenerator</a>
+  
+    <li><a href="../MetricFu/FlayGrapher.html">MetricFu::FlayGrapher</a>
+  
+    <li><a href="../MetricFu/FlayHotspot.html">MetricFu::FlayHotspot</a>
+  
+    <li><a href="../MetricFu/FlogGenerator.html">MetricFu::FlogGenerator</a>
+  
+    <li><a href="../MetricFu/FlogGrapher.html">MetricFu::FlogGrapher</a>
+  
+    <li><a href="../MetricFu/FlogHotspot.html">MetricFu::FlogHotspot</a>
+  
+    <li><a href="../MetricFu/Formatter.html">MetricFu::Formatter</a>
+  
+    <li><a href="../MetricFu/Formatter/HTML.html">MetricFu::Formatter::HTML</a>
+  
+    <li><a href="../MetricFu/Formatter/Templates.html">MetricFu::Formatter::Templates</a>
+  
+    <li><a href="../MetricFu/Formatter/YAML.html">MetricFu::Formatter::YAML</a>
+  
+    <li><a href="../MetricFu/GemRun.html">MetricFu::GemRun</a>
+  
+    <li><a href="../MetricFu/GemVersion.html">MetricFu::GemVersion</a>
+  
+    <li><a href="../MetricFu/Generator.html">MetricFu::Generator</a>
+  
+    <li><a href="../MetricFu/Graph.html">MetricFu::Graph</a>
+  
+    <li><a href="../MetricFu/Grapher.html">MetricFu::Grapher</a>
+  
+    <li><a href="../MetricFu/Grouping.html">MetricFu::Grouping</a>
+  
+    <li><a href="../MetricFu/Hotspot.html">MetricFu::Hotspot</a>
+  
+    <li><a href="../MetricFu/HotspotAnalyzedProblems.html">MetricFu::HotspotAnalyzedProblems</a>
+  
+    <li><a href="../MetricFu/HotspotAnalyzer.html">MetricFu::HotspotAnalyzer</a>
+  
+    <li><a href="../MetricFu/HotspotGroupings.html">MetricFu::HotspotGroupings</a>
+  
+    <li><a href="../MetricFu/HotspotProblems.html">MetricFu::HotspotProblems</a>
+  
+    <li><a href="../MetricFu/HotspotRankedProblemLocation.html">MetricFu::HotspotRankedProblemLocation</a>
+  
+    <li><a href="../MetricFu/HotspotRankings.html">MetricFu::HotspotRankings</a>
+  
+    <li><a href="../MetricFu/HotspotScoringStrategies.html">MetricFu::HotspotScoringStrategies</a>
+  
+    <li><a href="../MetricFu/HotspotsGenerator.html">MetricFu::HotspotsGenerator</a>
+  
+    <li><a href="../MetricFu/InstanceMethodNode.html">MetricFu::InstanceMethodNode</a>
+  
+    <li><a href="../MetricFu/Io.html">MetricFu::Io</a>
+  
+    <li><a href="../MetricFu/Io/FileSystem.html">MetricFu::Io::FileSystem</a>
+  
+    <li><a href="../MetricFu/LineNumbers.html">MetricFu::LineNumbers</a>
+  
+    <li><a href="../MetricFu/Loader.html">MetricFu::Loader</a>
+  
+    <li><a href="../MetricFu/Location.html">MetricFu::Location</a>
+  
+    <li><a href="../MetricFu/MethodContainer.html">MetricFu::MethodContainer</a>
+  
+    <li><a href="../MetricFu/Metric.html">MetricFu::Metric</a>
+  
+    <li><a href="../MetricFu/MetricCane.html">MetricFu::MetricCane</a>
+  
+    <li><a href="../MetricFu/MetricChurn.html">MetricFu::MetricChurn</a>
+  
+    <li><a href="../MetricFu/MetricFlay.html">MetricFu::MetricFlay</a>
+  
+    <li><a href="../MetricFu/MetricFlog.html">MetricFu::MetricFlog</a>
+  
+    <li><a href="../MetricFu/MetricHotspots.html">MetricFu::MetricHotspots</a>
+  
+    <li><a href="../MetricFu/MetricRailsBestPractices.html">MetricFu::MetricRailsBestPractices</a>
+  
+    <li><a href="../MetricFu/MetricRcov.html">MetricFu::MetricRcov</a>
+  
+    <li><a href="../MetricFu/MetricReek.html">MetricFu::MetricReek</a>
+  
+    <li><a href="../MetricFu/MetricRoodi.html">MetricFu::MetricRoodi</a>
+  
+    <li><a href="../MetricFu/MetricSaikuro.html">MetricFu::MetricSaikuro</a>
+  
+    <li><a href="../MetricFu/MetricStats.html">MetricFu::MetricStats</a>
+  
+    <li><a href="../MetricFu/RailsBestPracticesGenerator.html">MetricFu::RailsBestPracticesGenerator</a>
+  
+    <li><a href="../MetricFu/RailsBestPracticesGrapher.html">MetricFu::RailsBestPracticesGrapher</a>
+  
+    <li><a href="../MetricFu/Ranking.html">MetricFu::Ranking</a>
+  
+    <li><a href="../MetricFu/RcovGenerator.html">MetricFu::RcovGenerator</a>
+  
+    <li><a href="../MetricFu/RcovGenerator/Line.html">MetricFu::RcovGenerator::Line</a>
+  
+    <li><a href="../MetricFu/RcovGrapher.html">MetricFu::RcovGrapher</a>
+  
+    <li><a href="../MetricFu/RcovHotspot.html">MetricFu::RcovHotspot</a>
+  
+    <li><a href="../MetricFu/Record.html">MetricFu::Record</a>
+  
+    <li><a href="../MetricFu/ReekGenerator.html">MetricFu::ReekGenerator</a>
+  
+    <li><a href="../MetricFu/ReekGrapher.html">MetricFu::ReekGrapher</a>
+  
+    <li><a href="../MetricFu/Reporter.html">MetricFu::Reporter</a>
+  
+    <li><a href="../MetricFu/Result.html">MetricFu::Result</a>
+  
+    <li><a href="../MetricFu/RoodiGenerator.html">MetricFu::RoodiGenerator</a>
+  
+    <li><a href="../MetricFu/RoodiGrapher.html">MetricFu::RoodiGrapher</a>
+  
+    <li><a href="../MetricFu/RoodiHotspot.html">MetricFu::RoodiHotspot</a>
+  
+    <li><a href="../MetricFu/Run.html">MetricFu::Run</a>
+  
+    <li><a href="../MetricFu/SaikuroGenerator.html">MetricFu::SaikuroGenerator</a>
+  
+    <li><a href="../MetricFu/SaikuroHotspot.html">MetricFu::SaikuroHotspot</a>
+  
+    <li><a href="../MetricFu/SaikuroParsingElement.html">MetricFu::SaikuroParsingElement</a>
+  
+    <li><a href="../MetricFu/SaikuroScratchFile.html">MetricFu::SaikuroScratchFile</a>
+  
+    <li><a href="../MetricFu/SingletonMethodNode.html">MetricFu::SingletonMethodNode</a>
+  
+    <li><a href="../MetricFu/StatsGenerator.html">MetricFu::StatsGenerator</a>
+  
+    <li><a href="../MetricFu/StatsGrapher.html">MetricFu::StatsGrapher</a>
+  
+    <li><a href="../MetricFu/StatsHotspot.html">MetricFu::StatsHotspot</a>
+  
+    <li><a href="../MetricFu/Table.html">MetricFu::Table</a>
+  
+    <li><a href="../MetricFu/Template.html">MetricFu::Template</a>
+  
+    <li><a href="../MetricFu/Utility.html">MetricFu::Utility</a>
+  
+    <li><a href="../MfDebugger.html">MfDebugger</a>
+  
+    <li><a href="../MfDebugger/Logger.html">MfDebugger::Logger</a>
+  
+    <li><a href="../AwesomeTemplate.html">AwesomeTemplate</a>
+  
+    <li><a href="../Object.html">Object</a>
+  
+    <li><a href="../ReekHotspot.html">ReekHotspot</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class MetricFu::Configuration</h1>
+
+  <div id="description" class="description">
+    
+<h1 id="label-Configuration"><a href="Configuration.html">Configuration</a></h1>
+
+<p>The <a href="Configuration.html">Configuration</a> class, as it sounds,
+provides methods for configuring the behaviour of <a
+href="../MetricFu.html">MetricFu</a>.</p>
+
+<h2 id="label-Customization+for+CruiseControl.rb">Customization for CruiseControl.rb</h2>
+
+<p>The <a href="Configuration.html">Configuration</a> class checks for the
+presence of a ‘CC_BUILD_ARTIFACTS’ environment variable.  If it’s found it
+will change the default output directory from the default “tmp/metric_fu to
+the directory represented by ‘CC_BUILD_ARTIFACTS’</p>
+
+<h2 id="label-Metric+Configuration"><a href="Metric.html">Metric</a> <a href="Configuration.html">Configuration</a></h2>
+
+<p>Each metric can be configured by e.g.</p>
+
+<pre class="ruby"><span class="ruby-identifier">config</span>.<span class="ruby-identifier">configure_metric</span>(:<span class="ruby-identifier">flog</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">flog</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">flog</span>.<span class="ruby-identifier">enable</span>
+  <span class="ruby-identifier">flog</span>.<span class="ruby-identifier">dirs_to_flog</span> = <span class="ruby-node">%w(app lib spec)</span>
+  <span class="ruby-operator">...</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>or iterate over all metrics to configure by e.g.</p>
+
+<pre class="ruby"><span class="ruby-identifier">config</span>.<span class="ruby-identifier">configure_metrics</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">metric</span><span class="ruby-operator">|</span>
+  <span class="ruby-operator">...</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<h2 id="label-Formatter+Configuration"><a href="Formatter.html">Formatter</a> <a href="Configuration.html">Configuration</a></h2>
+
+<p>Formatters can be configured by e.g.</p>
+
+<pre>config.configure_formatter(:html)
+config.configure_formatter(:yaml, &quot;customreport.yml&quot;)
+config.configure_formatter(MyCustomFormatter)</pre>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-formatters" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">formatters</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>TODO review if these code is functionally duplicated in the base generator
+initialize</p>
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-run" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">run</span><span
+            class="method-args">() { |configuration| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>This allows us to have a nice syntax like:</p>
+
+<pre class="ruby"><span class="ruby-constant">MetricFu</span>.<span class="ruby-identifier">run</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">config</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">config</span>.<span class="ruby-identifier">configure_metric</span>(:<span class="ruby-identifier">churn</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-operator">...</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">config</span>.<span class="ruby-identifier">configure_formatter</span>(<span class="ruby-constant">MyCustomFormatter</span>)
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>See the README for more information on configuration options. TODO:
+Consider breaking compatibility by removing this, now unused method</p>
+          
+
+          
+          <div class="method-source-code" id="run-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/configuration.rb, line 94</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">run</span>
+  <span class="ruby-keyword">yield</span> <span class="ruby-constant">MetricFu</span>.<span class="ruby-identifier">configuration</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- run-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- run-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-configure_formatter" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">configure_formatter</span><span
+            class="method-args">(format, output = nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>TODO: Reconsider method name/behavior, as it really adds a formatter</p>
+          
+
+          
+          <div class="method-source-code" id="configure_formatter-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/configuration.rb, line 124</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">configure_formatter</span>(<span class="ruby-identifier">format</span>, <span class="ruby-identifier">output</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-ivar">@formatters</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">MetricFu</span><span class="ruby-operator">::</span><span class="ruby-constant">Formatter</span>.<span class="ruby-identifier">class_for</span>(<span class="ruby-identifier">format</span>).<span class="ruby-identifier">new</span>(<span class="ruby-identifier">output</span><span class="ruby-operator">:</span> <span class="ruby-identifier">output</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- configure_formatter-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- configure_formatter-method -->
+
+    
+      <div id="method-i-configure_metric" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">configure_metric</span><span
+            class="method-args">(name) { |get_metric| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="configure_metric-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/configuration.rb, line 98</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">configure_metric</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-keyword">yield</span> <span class="ruby-constant">MetricFu</span><span class="ruby-operator">::</span><span class="ruby-constant">Metric</span>.<span class="ruby-identifier">get_metric</span>(<span class="ruby-identifier">name</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- configure_metric-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- configure_metric-method -->
+
+    
+      <div id="method-i-configure_metrics" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">configure_metrics</span><span
+            class="method-args">() { |metric| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="configure_metrics-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/configuration.rb, line 102</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">configure_metrics</span>
+  <span class="ruby-constant">MetricFu</span><span class="ruby-operator">::</span><span class="ruby-constant">Io</span><span class="ruby-operator">::</span><span class="ruby-constant">FileSystem</span>.<span class="ruby-identifier">set_directories</span>
+  <span class="ruby-constant">MetricFu</span><span class="ruby-operator">::</span><span class="ruby-constant">Metric</span>.<span class="ruby-identifier">metrics</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">metric</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+      <span class="ruby-keyword">yield</span> <span class="ruby-identifier">metric</span>
+    <span class="ruby-keyword">elsif</span> <span class="ruby-operator">!</span><span class="ruby-identifier">metric_manually_configured?</span>(<span class="ruby-identifier">metric</span>)
+      <span class="ruby-identifier">metric</span>.<span class="ruby-identifier">enabled</span> = <span class="ruby-keyword">false</span>
+      <span class="ruby-identifier">metric</span>.<span class="ruby-identifier">enable</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">metric</span>.<span class="ruby-identifier">activate</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">metric</span>.<span class="ruby-identifier">enabled</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">metric</span>.<span class="ruby-identifier">activated</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- configure_metrics-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- configure_metrics-method -->
+
+    
+      <div id="method-i-graph_engine" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">graph_engine</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="graph_engine-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/configuration.rb, line 134</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">graph_engine</span>
+  <span class="ruby-value">:bluff</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- graph_engine-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- graph_engine-method -->
+
+    
+      <div id="method-i-graphed_metrics" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">graphed_metrics</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@return [Array&lt;Symbol&gt;] names of enabled metrics with graphs</p>
+          
+
+          
+          <div class="method-source-code" id="graphed_metrics-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/configuration.rb, line 129</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">graphed_metrics</span>
+  <span class="ruby-comment"># TODO: This is a common enough need to be pushed into MetricFu::Metric as :enabled_metrics_with_graphs</span>
+  <span class="ruby-constant">MetricFu</span><span class="ruby-operator">::</span><span class="ruby-constant">Metric</span>.<span class="ruby-identifier">enabled_metrics</span>.<span class="ruby-identifier">select</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">metric</span><span class="ruby-operator">|</span><span class="ruby-identifier">metric</span>.<span class="ruby-identifier">has_graph?</span>}.<span class="ruby-identifier">map</span>(&amp;<span class="ruby-value">:name</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- graphed_metrics-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- graphed_metrics-method -->
+
+    
+      <div id="method-i-metric_manually_configured-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">metric_manually_configured?</span><span
+            class="method-args">(metric)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>TODO: Remove this method.  If we run <a
+href="Configuration.html#method-i-configure_metrics">#configure_metrics</a></p>
+
+<pre>and it disabled rcov, we shouldn't have to worry here
+that rcov is a special case that can only be enabled
+manually</pre>
+          
+
+          
+          <div class="method-source-code" id="metric_manually_configured-3F-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/configuration.rb, line 119</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">metric_manually_configured?</span>(<span class="ruby-identifier">metric</span>)
+  [<span class="ruby-value">:rcov</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">metric</span>.<span class="ruby-identifier">name</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- metric_manually_configured-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- metric_manually_configured-3F-method -->
+
+    
+      <div id="method-i-mf_debug" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mf_debug</span><span
+            class="method-args">(msg)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="mf_debug-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/configuration.rb, line 66</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mf_debug</span>(<span class="ruby-identifier">msg</span>)
+  <span class="ruby-constant">MfDebugger</span>.<span class="ruby-identifier">mf_debug</span> <span class="ruby-identifier">msg</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- mf_debug-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- mf_debug-method -->
+
+    
+      <div id="method-i-reset" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">reset</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="reset-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/configuration.rb, line 73</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">reset</span>
+  <span class="ruby-comment"># TODO: Remove calls to self and/or allow querying the</span>
+  <span class="ruby-comment">#   template/filesystem/metric/graph/environment, etc settings</span>
+  <span class="ruby-comment">#   from the configuration instance</span>
+  <span class="ruby-constant">MetricFu</span><span class="ruby-operator">::</span><span class="ruby-constant">Io</span><span class="ruby-operator">::</span><span class="ruby-constant">FileSystem</span>.<span class="ruby-identifier">set_directories</span>
+  <span class="ruby-constant">MetricFu</span><span class="ruby-operator">::</span><span class="ruby-constant">Formatter</span><span class="ruby-operator">::</span><span class="ruby-constant">Templates</span>.<span class="ruby-identifier">configure_template</span>(<span class="ruby-keyword">self</span>)
+  <span class="ruby-ivar">@formatters</span> = []
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- reset-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- reset-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

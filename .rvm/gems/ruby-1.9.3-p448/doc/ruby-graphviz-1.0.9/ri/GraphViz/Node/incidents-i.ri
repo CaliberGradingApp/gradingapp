@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"incidents:EFI"GraphViz::Node#incidents;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"cList of nodes that are incident to the given node (in a directed graph neighbors == incidents);T:
+@fileI"lib/graphviz/node.rb;TF@

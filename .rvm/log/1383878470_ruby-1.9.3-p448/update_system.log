@@ -1,0 +1,104 @@
+[2013-11-07 22:41:11] requirements_debian_update_system
+requirements_debian_update_system () 
+{ 
+    __rvm_try_sudo apt-get --quiet --yes update || { 
+        typeset __ret=$?;
+        case ${__ret} in 
+            100)
+                rvm_error "There has been error while updating 'apt-get', please give it some time and try again later.
+For 404 errors check your sources configured in:
+    /etc/apt/sources.list
+    /etc/apt/sources.list.d/*.list
+"
+            ;;
+        esac;
+        return ${__ret}
+    }
+}
+current path: /home/saasbook/.rvm/src/rvm
+command(2): requirements_debian_update_system ruby-1.9.3-p448
+Hit http://ca.archive.ubuntu.com precise Release.gpg
+Hit http://extras.ubuntu.com precise Release.gpg
+Get:1 http://security.ubuntu.com precise-security Release.gpg [198 B]
+Get:2 http://ca.archive.ubuntu.com precise-updates Release.gpg [198 B]
+Hit http://extras.ubuntu.com precise Release
+Get:3 http://ca.archive.ubuntu.com precise-backports Release.gpg [198 B]
+Hit http://extras.ubuntu.com precise/main Sources
+Hit http://ca.archive.ubuntu.com precise Release
+Get:4 http://security.ubuntu.com precise-security Release [49.6 kB]
+Hit http://extras.ubuntu.com precise/main i386 Packages
+Ign http://extras.ubuntu.com precise/main TranslationIndex
+Get:5 http://ca.archive.ubuntu.com precise-updates Release [49.6 kB]
+Get:6 http://security.ubuntu.com precise-security/main Sources [93.6 kB]
+Get:7 http://ca.archive.ubuntu.com precise-backports Release [49.6 kB]
+Hit http://ca.archive.ubuntu.com precise/main Sources
+Get:8 http://security.ubuntu.com precise-security/restricted Sources [2,494 B]
+Hit http://ca.archive.ubuntu.com precise/restricted Sources
+Hit http://ca.archive.ubuntu.com precise/universe Sources
+Ign http://extras.ubuntu.com precise/main Translation-en_CA
+Hit http://ca.archive.ubuntu.com precise/multiverse Sources
+Get:9 http://security.ubuntu.com precise-security/universe Sources [29.6 kB]
+Ign http://extras.ubuntu.com precise/main Translation-en
+Hit http://ca.archive.ubuntu.com precise/main i386 Packages
+Get:10 http://security.ubuntu.com precise-security/multiverse Sources [1,804 B]
+Hit http://ca.archive.ubuntu.com precise/restricted i386 Packages
+Hit http://ca.archive.ubuntu.com precise/universe i386 Packages
+Hit http://ca.archive.ubuntu.com precise/multiverse i386 Packages
+Hit http://ca.archive.ubuntu.com precise/main TranslationIndex
+Get:11 http://security.ubuntu.com precise-security/main i386 Packages [360 kB]
+Hit http://ca.archive.ubuntu.com precise/multiverse TranslationIndex
+Hit http://ca.archive.ubuntu.com precise/restricted TranslationIndex
+Hit http://ca.archive.ubuntu.com precise/universe TranslationIndex
+Get:12 http://ca.archive.ubuntu.com precise-updates/main Sources [425 kB]
+Get:13 http://security.ubuntu.com precise-security/restricted i386 Packages [4,620 B]
+Get:14 http://ca.archive.ubuntu.com precise-updates/restricted Sources [7,006 B]
+Get:15 http://ca.archive.ubuntu.com precise-updates/universe Sources [99.2 kB]
+Get:16 http://security.ubuntu.com precise-security/universe i386 Packages [88.6 kB]
+Get:17 http://ca.archive.ubuntu.com precise-updates/multiverse Sources [8,354 B]
+Get:18 http://security.ubuntu.com precise-security/multiverse i386 Packages [2,640 B]
+Get:19 http://ca.archive.ubuntu.com precise-updates/main i386 Packages [729 kB]
+Hit http://security.ubuntu.com precise-security/main TranslationIndex
+Hit http://security.ubuntu.com precise-security/multiverse TranslationIndex
+Hit http://security.ubuntu.com precise-security/restricted TranslationIndex
+Hit http://security.ubuntu.com precise-security/universe TranslationIndex
+Hit http://security.ubuntu.com precise-security/main Translation-en
+Hit http://security.ubuntu.com precise-security/multiverse Translation-en
+Hit http://security.ubuntu.com precise-security/restricted Translation-en
+Hit http://security.ubuntu.com precise-security/universe Translation-en
+Get:20 http://ca.archive.ubuntu.com precise-updates/restricted i386 Packages [11.4 kB]
+Get:21 http://ca.archive.ubuntu.com precise-updates/universe i386 Packages [225 kB]
+Get:22 http://ca.archive.ubuntu.com precise-updates/multiverse i386 Packages [14.2 kB]
+Hit http://ca.archive.ubuntu.com precise-updates/main TranslationIndex
+Hit http://ca.archive.ubuntu.com precise-updates/multiverse TranslationIndex
+Hit http://ca.archive.ubuntu.com precise-updates/restricted TranslationIndex
+Hit http://ca.archive.ubuntu.com precise-updates/universe TranslationIndex
+Get:23 http://ca.archive.ubuntu.com precise-backports/main Sources [4,233 B]
+Get:24 http://ca.archive.ubuntu.com precise-backports/restricted Sources [14 B]
+Get:25 http://ca.archive.ubuntu.com precise-backports/universe Sources [36.1 kB]
+Get:26 http://ca.archive.ubuntu.com precise-backports/multiverse Sources [5,311 B]
+Get:27 http://ca.archive.ubuntu.com precise-backports/main i386 Packages [2,838 B]
+Get:28 http://ca.archive.ubuntu.com precise-backports/restricted i386 Packages [14 B]
+Get:29 http://ca.archive.ubuntu.com precise-backports/universe i386 Packages [36.7 kB]
+Get:30 http://ca.archive.ubuntu.com precise-backports/multiverse i386 Packages [5,178 B]
+Hit http://ca.archive.ubuntu.com precise-backports/main TranslationIndex
+Hit http://ca.archive.ubuntu.com precise-backports/multiverse TranslationIndex
+Hit http://ca.archive.ubuntu.com precise-backports/restricted TranslationIndex
+Hit http://ca.archive.ubuntu.com precise-backports/universe TranslationIndex
+Hit http://ca.archive.ubuntu.com precise/main Translation-en_CA
+Hit http://ca.archive.ubuntu.com precise/main Translation-en
+Hit http://ca.archive.ubuntu.com precise/multiverse Translation-en
+Hit http://ca.archive.ubuntu.com precise/restricted Translation-en
+Hit http://ca.archive.ubuntu.com precise/universe Translation-en_CA
+Hit http://ca.archive.ubuntu.com precise/universe Translation-en
+Hit http://ca.archive.ubuntu.com precise-updates/main Translation-en_CA
+Hit http://ca.archive.ubuntu.com precise-updates/main Translation-en
+Hit http://ca.archive.ubuntu.com precise-updates/multiverse Translation-en
+Hit http://ca.archive.ubuntu.com precise-updates/restricted Translation-en
+Hit http://ca.archive.ubuntu.com precise-updates/universe Translation-en_CA
+Hit http://ca.archive.ubuntu.com precise-updates/universe Translation-en
+Hit http://ca.archive.ubuntu.com precise-backports/main Translation-en
+Hit http://ca.archive.ubuntu.com precise-backports/multiverse Translation-en
+Hit http://ca.archive.ubuntu.com precise-backports/restricted Translation-en
+Hit http://ca.archive.ubuntu.com precise-backports/universe Translation-en
+Fetched 2,342 kB in 13s (177 kB/s)
+Reading package lists...

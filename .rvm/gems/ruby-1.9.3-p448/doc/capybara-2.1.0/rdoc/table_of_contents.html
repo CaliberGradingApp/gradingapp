@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>Table of Contents - capybara-2.1.0 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body class="indexpage">
+<h1>Table of Contents - capybara-2.1.0 Documentation</h1>
+
+<h2>Pages</h2>
+<ul>
+  <li class="file">
+    <a href="lib/capybara/spec/fixtures/another_test_file_txt.html">another_test_file</a>
+  </li>
+    <li class="file">
+    <a href="lib/capybara/spec/fixtures/test_file_txt.html">test_file</a>
+  </li>
+  
+</ul>
+
+<h2 id="classes">Classes/Modules</h2>
+<ul>
+  <li class="module">
+    <a href="Capybara.html">Capybara</a>
+  </li>
+    <li class="class">
+    <a href="Capybara/Ambiguous.html">Capybara::Ambiguous</a>
+  </li>
+    <li class="class">
+    <a href="Capybara/CapybaraError.html">Capybara::CapybaraError</a>
+  </li>
+    <li class="module">
+    <a href="Capybara/DSL.html">Capybara::DSL</a>
+  </li>
+    <li class="module">
+    <a href="Capybara/Driver.html">Capybara::Driver</a>
+  </li>
+    <li class="class">
+    <a href="Capybara/Driver/Base.html">Capybara::Driver::Base</a>
+  </li>
+    <li class="class">
+    <a href="Capybara/Driver/Node.html">Capybara::Driver::Node</a>
+  </li>
+    <li class="class">
+    <a href="Capybara/DriverNotFoundError.html">Capybara::DriverNotFoundError</a>
+  </li>
+    <li class="class">
+    <a href="Capybara/ElementNotFound.html">Capybara::ElementNotFound</a>
+  </li>
+    <li class="class">
+    <a href="Capybara/ExpectationNotMet.html">Capybara::ExpectationNotMet</a>
+  </li>
+    <li class="module">
+    <a href="Capybara/Features.html">Capybara::Features</a>
+  </li>
+    <li class="class">
+    <a href="Capybara/FileNotFound.html">Capybara::FileNotFound</a>
+  </li>
+    <li class="class">
+    <a href="Capybara/FrozenInTime.html">Capybara::FrozenInTime</a>
+  </li>
+    <li class="module">
+    <a href="Capybara/Helpers.html">Capybara::Helpers</a>
+  </li>
+    <li class="class">
+    <a href="Capybara/InfiniteRedirectError.html">Capybara::InfiniteRedirectError</a>
+  </li>
+    <li class="module">
+    <a href="Capybara/Node.html">Capybara::Node</a>
+  </li>
+    <li class="module">
+    <a href="Capybara/Node/Actions.html">Capybara::Node::Actions</a>
+  </li>
+    <li class="class">
+    <a href="Capybara/Node/Base.html">Capybara::Node::Base</a>
+  </li>
+    <li class="class">
+    <a href="Capybara/Node/Document.html">Capybara::Node::Document</a>
+  </li>
+    <li class="class">
+    <a href="Capybara/Node/Element.html">Capybara::Node::Element</a>
+  </li>
+    <li class="module">
+    <a href="Capybara/Node/Finders.html">Capybara::Node::Finders</a>
+  </li>
+    <li class="module">
+    <a href="Capybara/Node/Matchers.html">Capybara::Node::Matchers</a>
+  </li>
+    <li class="class">
+    <a href="Capybara/Node/Simple.html">Capybara::Node::Simple</a>
+  </li>
+    <li class="class">
+    <a href="Capybara/NotSupportedByDriverError.html">Capybara::NotSupportedByDriverError</a>
+  </li>
+    <li class="class">
+    <a href="Capybara/Query.html">Capybara::Query</a>
+  </li>
+    <li class="module">
+    <a href="Capybara/RSpecMatchers.html">Capybara::RSpecMatchers</a>
+  </li>
+    <li class="class">
+    <a href="Capybara/RSpecMatchers/HaveSelector.html">Capybara::RSpecMatchers::HaveSelector</a>
+  </li>
+    <li class="class">
+    <a href="Capybara/RSpecMatchers/HaveText.html">Capybara::RSpecMatchers::HaveText</a>
+  </li>
+    <li class="class">
+    <a href="Capybara/RSpecMatchers/HaveTitle.html">Capybara::RSpecMatchers::HaveTitle</a>
+  </li>
+    <li class="class">
+    <a href="Capybara/RSpecMatchers/Matcher.html">Capybara::RSpecMatchers::Matcher</a>
+  </li>
+    <li class="module">
+    <a href="Capybara/RackTest.html">Capybara::RackTest</a>
+  </li>
+    <li class="class">
+    <a href="Capybara/RackTest/Browser.html">Capybara::RackTest::Browser</a>
+  </li>
+    <li class="class">
+    <a href="Capybara/RackTest/CSSHandlers.html">Capybara::RackTest::CSSHandlers</a>
+  </li>
+    <li class="class">
+    <a href="Capybara/RackTest/Driver.html">Capybara::RackTest::Driver</a>
+  </li>
+    <li class="class">
+    <a href="Capybara/RackTest/Form.html">Capybara::RackTest::Form</a>
+  </li>
+    <li class="class">
+    <a href="Capybara/RackTest/Form/NilUploadedFile.html">Capybara::RackTest::Form::NilUploadedFile</a>
+  </li>
+    <li class="class">
+    <a href="Capybara/RackTest/Node.html">Capybara::RackTest::Node</a>
+  </li>
+    <li class="class">
+    <a href="Capybara/Result.html">Capybara::Result</a>
+  </li>
+    <li class="class">
+    <a href="Capybara/Selector.html">Capybara::Selector</a>
+  </li>
+    <li class="class">
+    <a href="Capybara/Selector/Filter.html">Capybara::Selector::Filter</a>
+  </li>
+    <li class="module">
+    <a href="Capybara/Selenium.html">Capybara::Selenium</a>
+  </li>
+    <li class="class">
+    <a href="Capybara/Selenium/Driver.html">Capybara::Selenium::Driver</a>
+  </li>
+    <li class="class">
+    <a href="Capybara/Selenium/Node.html">Capybara::Selenium::Node</a>
+  </li>
+    <li class="class">
+    <a href="Capybara/Server.html">Capybara::Server</a>
+  </li>
+    <li class="class">
+    <a href="Capybara/Server/Middleware.html">Capybara::Server::Middleware</a>
+  </li>
+    <li class="class">
+    <a href="Capybara/Session.html">Capybara::Session</a>
+  </li>
+    <li class="module">
+    <a href="Capybara/SpecHelper.html">Capybara::SpecHelper</a>
+  </li>
+    <li class="class">
+    <a href="Capybara/UnselectNotAllowed.html">Capybara::UnselectNotAllowed</a>
+  </li>
+    <li class="class">
+    <a href="TestApp.html">TestApp</a>
+  </li>
+    <li class="class">
+    <a href="TestApp/TestAppError.html">TestApp::TestAppError</a>
+  </li>
+    <li class="class">
+    <a href="Object.html">Object</a>
+  </li>
+  
+</ul>
+
+<h2 id="methods">Methods</h2>
+<ul>
+  
+    <li class="method"><a href="Capybara/Selector.html#method-c-add">::add &mdash; Capybara::Selector</a>
+  
+    <li class="method"><a href="Capybara.html#method-c-add_selector">::add_selector &mdash; Capybara</a>
+  
+    <li class="method"><a href="Capybara/Selector.html#method-c-all">::all &mdash; Capybara::Selector</a>
+  
+    <li class="method"><a href="Capybara/SpecHelper.html#method-c-configure">::configure &mdash; Capybara::SpecHelper</a>
+  
+    <li class="method"><a href="Capybara.html#method-c-configure">::configure &mdash; Capybara</a>
+  
+    <li class="method"><a href="Capybara.html#method-c-current_driver">::current_driver &mdash; Capybara</a>
+  
+    <li class="method"><a href="Capybara.html#method-c-current_session">::current_session &mdash; Capybara</a>
+  
+    <li class="method"><a href="Capybara.html#method-c-default_driver">::default_driver &mdash; Capybara</a>
+  
+    <li class="method"><a href="Capybara.html#method-c-deprecate">::deprecate &mdash; Capybara</a>
+  
+    <li class="method"><a href="Capybara.html#method-c-drivers">::drivers &mdash; Capybara</a>
+  
+    <li class="method"><a href="Capybara/DSL.html#method-c-extended">::extended &mdash; Capybara::DSL</a>
+  
+    <li class="method"><a href="Object.html#method-c-feature">::feature &mdash; Object</a>
+  
+    <li class="method"><a href="Capybara/SpecHelper.html#method-c-filter">::filter &mdash; Capybara::SpecHelper</a>
+  
+    <li class="method"><a href="Capybara.html#method-c-included">::included &mdash; Capybara</a>
+  
+    <li class="method"><a href="Capybara/DSL.html#method-c-included">::included &mdash; Capybara::DSL</a>
+  
+    <li class="method"><a href="Capybara/Features.html#method-c-included">::included &mdash; Capybara::Features</a>
+  
+    <li class="method"><a href="Capybara.html#method-c-javascript_driver">::javascript_driver &mdash; Capybara</a>
+  
+    <li class="method"><a href="Capybara.html#method-c-mode">::mode &mdash; Capybara</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Browser.html#method-c-new">::new &mdash; Capybara::RackTest::Browser</a>
+  
+    <li class="method"><a href="Capybara/Driver/Node.html#method-c-new">::new &mdash; Capybara::Driver::Node</a>
+  
+    <li class="method"><a href="Capybara/Result.html#method-c-new">::new &mdash; Capybara::Result</a>
+  
+    <li class="method"><a href="Capybara/Query.html#method-c-new">::new &mdash; Capybara::Query</a>
+  
+    <li class="method"><a href="Capybara/RSpecMatchers/HaveTitle.html#method-c-new">::new &mdash; Capybara::RSpecMatchers::HaveTitle</a>
+  
+    <li class="method"><a href="Capybara/Node/Base.html#method-c-new">::new &mdash; Capybara::Node::Base</a>
+  
+    <li class="method"><a href="Capybara/Server/Middleware.html#method-c-new">::new &mdash; Capybara::Server::Middleware</a>
+  
+    <li class="method"><a href="Capybara/RSpecMatchers/HaveText.html#method-c-new">::new &mdash; Capybara::RSpecMatchers::HaveText</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Form/NilUploadedFile.html#method-c-new">::new &mdash; Capybara::RackTest::Form::NilUploadedFile</a>
+  
+    <li class="method"><a href="Capybara/Server.html#method-c-new">::new &mdash; Capybara::Server</a>
+  
+    <li class="method"><a href="Capybara/Node/Element.html#method-c-new">::new &mdash; Capybara::Node::Element</a>
+  
+    <li class="method"><a href="Capybara/RSpecMatchers/HaveSelector.html#method-c-new">::new &mdash; Capybara::RSpecMatchers::HaveSelector</a>
+  
+    <li class="method"><a href="Capybara/Selector/Filter.html#method-c-new">::new &mdash; Capybara::Selector::Filter</a>
+  
+    <li class="method"><a href="Capybara/Selector.html#method-c-new">::new &mdash; Capybara::Selector</a>
+  
+    <li class="method"><a href="Capybara/Selenium/Driver.html#method-c-new">::new &mdash; Capybara::Selenium::Driver</a>
+  
+    <li class="method"><a href="Capybara/Node/Simple.html#method-c-new">::new &mdash; Capybara::Node::Simple</a>
+  
+    <li class="method"><a href="Capybara/Session.html#method-c-new">::new &mdash; Capybara::Session</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Driver.html#method-c-new">::new &mdash; Capybara::RackTest::Driver</a>
+  
+    <li class="method"><a href="Capybara/Server.html#method-c-ports">::ports &mdash; Capybara::Server</a>
+  
+    <li class="method"><a href="Capybara.html#method-c-register_driver">::register_driver &mdash; Capybara</a>
+  
+    <li class="method"><a href="Capybara/Selector.html#method-c-remove">::remove &mdash; Capybara::Selector</a>
+  
+    <li class="method"><a href="Capybara.html#method-c-reset-21">::reset! &mdash; Capybara</a>
+  
+    <li class="method"><a href="Capybara/SpecHelper.html#method-c-reset-21">::reset! &mdash; Capybara::SpecHelper</a>
+  
+    <li class="method"><a href="Capybara.html#method-c-reset_sessions-21">::reset_sessions! &mdash; Capybara</a>
+  
+    <li class="method"><a href="Capybara.html#method-c-run_default_server">::run_default_server &mdash; Capybara</a>
+  
+    <li class="method"><a href="Capybara/SpecHelper.html#method-c-run_specs">::run_specs &mdash; Capybara::SpecHelper</a>
+  
+    <li class="method"><a href="Capybara.html#method-c-server">::server &mdash; Capybara</a>
+  
+    <li class="method"><a href="Capybara.html#method-c-session_name">::session_name &mdash; Capybara</a>
+  
+    <li class="method"><a href="Capybara/SpecHelper.html#method-c-spec">::spec &mdash; Capybara::SpecHelper</a>
+  
+    <li class="method"><a href="Capybara.html#method-c-string">::string &mdash; Capybara</a>
+  
+    <li class="method"><a href="Capybara.html#method-c-use_default_driver">::use_default_driver &mdash; Capybara</a>
+  
+    <li class="method"><a href="Capybara.html#method-c-using_driver">::using_driver &mdash; Capybara</a>
+  
+    <li class="method"><a href="Capybara.html#method-c-using_session">::using_session &mdash; Capybara</a>
+  
+    <li class="method"><a href="Capybara.html#method-c-using_wait_time">::using_wait_time &mdash; Capybara</a>
+  
+    <li class="method"><a href="Capybara/Driver/Node.html#method-i-3D-3D">#== &mdash; Capybara::Driver::Node</a>
+  
+    <li class="method"><a href="Capybara/Selenium/Node.html#method-i-3D-3D">#== &mdash; Capybara::Selenium::Node</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Node.html#method-i-3D-3D">#== &mdash; Capybara::RackTest::Node</a>
+  
+    <li class="method"><a href="Capybara/Node/Matchers.html#method-i-3D-3D">#== &mdash; Capybara::Node::Matchers</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Node.html#method-i-5B-5D">#[] &mdash; Capybara::RackTest::Node</a>
+  
+    <li class="method"><a href="Capybara/Driver/Node.html#method-i-5B-5D">#[] &mdash; Capybara::Driver::Node</a>
+  
+    <li class="method"><a href="Capybara/Node/Simple.html#method-i-5B-5D">#[] &mdash; Capybara::Node::Simple</a>
+  
+    <li class="method"><a href="Capybara/Selenium/Node.html#method-i-5B-5D">#[] &mdash; Capybara::Selenium::Node</a>
+  
+    <li class="method"><a href="Capybara/Node/Element.html#method-i-5B-5D">#[] &mdash; Capybara::Node::Element</a>
+  
+    <li class="method"><a href="Capybara/Node/Finders.html#method-i-all">#all &mdash; Capybara::Node::Finders</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Node.html#method-i-all_text">#all_text &mdash; Capybara::RackTest::Node</a>
+  
+    <li class="method"><a href="Capybara/Driver/Node.html#method-i-all_text">#all_text &mdash; Capybara::Driver::Node</a>
+  
+    <li class="method"><a href="Capybara/Selenium/Node.html#method-i-all_text">#all_text &mdash; Capybara::Selenium::Node</a>
+  
+    <li class="method"><a href="Capybara/Node/Element.html#method-i-allow_reload-21">#allow_reload! &mdash; Capybara::Node::Element</a>
+  
+    <li class="method"><a href="Capybara/Node/Simple.html#method-i-allow_reload-21">#allow_reload! &mdash; Capybara::Node::Simple</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Browser.html#method-i-app">#app &mdash; Capybara::RackTest::Browser</a>
+  
+    <li class="method"><a href="Capybara/Node/Matchers.html#method-i-assert_no_selector">#assert_no_selector &mdash; Capybara::Node::Matchers</a>
+  
+    <li class="method"><a href="Capybara/Node/Matchers.html#method-i-assert_selector">#assert_selector &mdash; Capybara::Node::Matchers</a>
+  
+    <li class="method"><a href="Capybara/Node/Actions.html#method-i-attach_file">#attach_file &mdash; Capybara::Node::Actions</a>
+  
+    <li class="method"><a href="Object.html#method-i-bases">#bases &mdash; Object</a>
+  
+    <li class="method"><a href="Capybara/Session.html#method-i-body">#body &mdash; Capybara::Session</a>
+  
+    <li class="method"><a href="Capybara/Server.html#method-i-boot">#boot &mdash; Capybara::Server</a>
+  
+    <li class="method"><a href="Capybara/Selenium/Driver.html#method-i-browser">#browser &mdash; Capybara::Selenium::Driver</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Driver.html#method-i-browser">#browser &mdash; Capybara::RackTest::Driver</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Browser.html#method-i-build_rack_mock_session">#build_rack_mock_session &mdash; Capybara::RackTest::Browser</a>
+  
+    <li class="method"><a href="Capybara/Server/Middleware.html#method-i-call">#call &mdash; Capybara::Server::Middleware</a>
+  
+    <li class="method"><a href="Capybara/Selector.html#method-i-call">#call &mdash; Capybara::Selector</a>
+  
+    <li class="method"><a href="Capybara/Node/Base.html#method-i-catch_error-3F">#catch_error? &mdash; Capybara::Node::Base</a>
+  
+    <li class="method"><a href="Capybara/Node/Actions.html#method-i-check">#check &mdash; Capybara::Node::Actions</a>
+  
+    <li class="method"><a href="Capybara/Node/Element.html#method-i-checked-3F">#checked? &mdash; Capybara::Node::Element</a>
+  
+    <li class="method"><a href="Capybara/Node/Simple.html#method-i-checked-3F">#checked? &mdash; Capybara::Node::Simple</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Node.html#method-i-checked-3F">#checked? &mdash; Capybara::RackTest::Node</a>
+  
+    <li class="method"><a href="Capybara/Selenium/Node.html#method-i-checked-3F">#checked? &mdash; Capybara::Selenium::Node</a>
+  
+    <li class="method"><a href="Capybara/Driver/Node.html#method-i-checked-3F">#checked? &mdash; Capybara::Driver::Node</a>
+  
+    <li class="method"><a href="Capybara/Node/Actions.html#method-i-choose">#choose &mdash; Capybara::Node::Actions</a>
+  
+    <li class="method"><a href="Capybara/Session.html#method-i-cleanup-21">#cleanup! &mdash; Capybara::Session</a>
+  
+    <li class="method"><a href="Capybara/Node/Element.html#method-i-click">#click &mdash; Capybara::Node::Element</a>
+  
+    <li class="method"><a href="Capybara/Driver/Node.html#method-i-click">#click &mdash; Capybara::Driver::Node</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Node.html#method-i-click">#click &mdash; Capybara::RackTest::Node</a>
+  
+    <li class="method"><a href="Capybara/Selenium/Node.html#method-i-click">#click &mdash; Capybara::Selenium::Node</a>
+  
+    <li class="method"><a href="Capybara/Node/Actions.html#method-i-click_button">#click_button &mdash; Capybara::Node::Actions</a>
+  
+    <li class="method"><a href="Capybara/Node/Actions.html#method-i-click_link">#click_link &mdash; Capybara::Node::Actions</a>
+  
+    <li class="method"><a href="Capybara/Node/Actions.html#method-i-click_link_or_button">#click_link_or_button &mdash; Capybara::Node::Actions</a>
+  
+    <li class="method"><a href="Capybara/Node/Actions.html#method-i-click_on">#click_on &mdash; Capybara::Node::Actions</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Form/NilUploadedFile.html#method-i-content_type">#content_type &mdash; Capybara::RackTest::Form::NilUploadedFile</a>
+  
+    <li class="method"><a href="Capybara/Query.html#method-i-css">#css &mdash; Capybara::Query</a>
+  
+    <li class="method"><a href="Capybara/Selector.html#method-i-css">#css &mdash; Capybara::Selector</a>
+  
+    <li class="method"><a href="Capybara/Session.html#method-i-current_host">#current_host &mdash; Capybara::Session</a>
+  
+    <li class="method"><a href="Capybara/Session.html#method-i-current_path">#current_path &mdash; Capybara::Session</a>
+  
+    <li class="method"><a href="Capybara/Session.html#method-i-current_scope">#current_scope &mdash; Capybara::Session</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Browser.html#method-i-current_url">#current_url &mdash; Capybara::RackTest::Browser</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Driver.html#method-i-current_url">#current_url &mdash; Capybara::RackTest::Driver</a>
+  
+    <li class="method"><a href="Capybara/Driver/Base.html#method-i-current_url">#current_url &mdash; Capybara::Driver::Base</a>
+  
+    <li class="method"><a href="Capybara/Selenium/Driver.html#method-i-current_url">#current_url &mdash; Capybara::Selenium::Driver</a>
+  
+    <li class="method"><a href="Capybara/Session.html#method-i-current_url">#current_url &mdash; Capybara::Session</a>
+  
+    <li class="method"><a href="Capybara/Helpers.html#method-i-declension">#declension &mdash; Capybara::Helpers</a>
+  
+    <li class="method"><a href="Capybara/Selector/Filter.html#method-i-default">#default &mdash; Capybara::Selector::Filter</a>
+  
+    <li class="method"><a href="Capybara/Selector/Filter.html#method-i-default-3F">#default? &mdash; Capybara::Selector::Filter</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Driver.html#method-i-delete">#delete &mdash; Capybara::RackTest::Driver</a>
+  
+    <li class="method"><a href="Capybara/RSpecMatchers/HaveTitle.html#method-i-description">#description &mdash; Capybara::RSpecMatchers::HaveTitle</a>
+  
+    <li class="method"><a href="Capybara/Query.html#method-i-description">#description &mdash; Capybara::Query</a>
+  
+    <li class="method"><a href="Capybara/RSpecMatchers/HaveText.html#method-i-description">#description &mdash; Capybara::RSpecMatchers::HaveText</a>
+  
+    <li class="method"><a href="Capybara/RSpecMatchers/HaveSelector.html#method-i-description">#description &mdash; Capybara::RSpecMatchers::HaveSelector</a>
+  
+    <li class="method"><a href="Capybara/RackTest/CSSHandlers.html#method-i-disabled">#disabled &mdash; Capybara::RackTest::CSSHandlers</a>
+  
+    <li class="method"><a href="Capybara/Node/Simple.html#method-i-disabled-3F">#disabled? &mdash; Capybara::Node::Simple</a>
+  
+    <li class="method"><a href="Capybara/Driver/Node.html#method-i-disabled-3F">#disabled? &mdash; Capybara::Driver::Node</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Node.html#method-i-disabled-3F">#disabled? &mdash; Capybara::RackTest::Node</a>
+  
+    <li class="method"><a href="Capybara/Selenium/Node.html#method-i-disabled-3F">#disabled? &mdash; Capybara::Selenium::Node</a>
+  
+    <li class="method"><a href="Capybara/Node/Element.html#method-i-disabled-3F">#disabled? &mdash; Capybara::Node::Element</a>
+  
+    <li class="method"><a href="Capybara/Session.html#method-i-document">#document &mdash; Capybara::Session</a>
+  
+    <li class="method"><a href="Capybara/RSpecMatchers/HaveSelector.html#method-i-does_not_match-3F">#does_not_match? &mdash; Capybara::RSpecMatchers::HaveSelector</a>
+  
+    <li class="method"><a href="Capybara/RSpecMatchers/HaveTitle.html#method-i-does_not_match-3F">#does_not_match? &mdash; Capybara::RSpecMatchers::HaveTitle</a>
+  
+    <li class="method"><a href="Capybara/RSpecMatchers/HaveText.html#method-i-does_not_match-3F">#does_not_match? &mdash; Capybara::RSpecMatchers::HaveText</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Driver.html#method-i-dom">#dom &mdash; Capybara::RackTest::Driver</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Browser.html#method-i-dom">#dom &mdash; Capybara::RackTest::Browser</a>
+  
+    <li class="method"><a href="Capybara/Selenium/Node.html#method-i-drag_to">#drag_to &mdash; Capybara::Selenium::Node</a>
+  
+    <li class="method"><a href="Capybara/Driver/Node.html#method-i-drag_to">#drag_to &mdash; Capybara::Driver::Node</a>
+  
+    <li class="method"><a href="Capybara/Node/Element.html#method-i-drag_to">#drag_to &mdash; Capybara::Node::Element</a>
+  
+    <li class="method"><a href="Capybara/Node/Base.html#method-i-driver">#driver &mdash; Capybara::Node::Base</a>
+  
+    <li class="method"><a href="Capybara/Session.html#method-i-driver">#driver &mdash; Capybara::Session</a>
+  
+    <li class="method"><a href="Capybara/RackTest/CSSHandlers.html#method-i-enabled">#enabled &mdash; Capybara::RackTest::CSSHandlers</a>
+  
+    <li class="method"><a href="Capybara/Server.html#method-i-error">#error &mdash; Capybara::Server</a>
+  
+    <li class="method"><a href="Capybara/Driver/Base.html#method-i-evaluate_script">#evaluate_script &mdash; Capybara::Driver::Base</a>
+  
+    <li class="method"><a href="Capybara/Session.html#method-i-evaluate_script">#evaluate_script &mdash; Capybara::Session</a>
+  
+    <li class="method"><a href="Capybara/Selenium/Driver.html#method-i-evaluate_script">#evaluate_script &mdash; Capybara::Selenium::Driver</a>
+  
+    <li class="method"><a href="Capybara/Query.html#method-i-exact-3F">#exact? &mdash; Capybara::Query</a>
+  
+    <li class="method"><a href="Capybara/Driver/Base.html#method-i-execute_script">#execute_script &mdash; Capybara::Driver::Base</a>
+  
+    <li class="method"><a href="Capybara/Session.html#method-i-execute_script">#execute_script &mdash; Capybara::Session</a>
+  
+    <li class="method"><a href="Capybara/Selenium/Driver.html#method-i-execute_script">#execute_script &mdash; Capybara::Selenium::Driver</a>
+  
+    <li class="method"><a href="Capybara/SpecHelper.html#method-i-extract_results">#extract_results &mdash; Capybara::SpecHelper</a>
+  
+    <li class="method"><a href="Capybara/Result.html#method-i-failure_message">#failure_message &mdash; Capybara::Result</a>
+  
+    <li class="method"><a href="Capybara/Helpers.html#method-i-failure_message">#failure_message &mdash; Capybara::Helpers</a>
+  
+    <li class="method"><a href="Capybara/RSpecMatchers/HaveTitle.html#method-i-failure_message_for_should">#failure_message_for_should &mdash; Capybara::RSpecMatchers::HaveTitle</a>
+  
+    <li class="method"><a href="Capybara/RSpecMatchers/HaveText.html#method-i-failure_message_for_should">#failure_message_for_should &mdash; Capybara::RSpecMatchers::HaveText</a>
+  
+    <li class="method"><a href="Capybara/RSpecMatchers/HaveTitle.html#method-i-failure_message_for_should_not">#failure_message_for_should_not &mdash; Capybara::RSpecMatchers::HaveTitle</a>
+  
+    <li class="method"><a href="Capybara/RSpecMatchers/HaveText.html#method-i-failure_message_for_should_not">#failure_message_for_should_not &mdash; Capybara::RSpecMatchers::HaveText</a>
+  
+    <li class="method"><a href="Capybara/Node/Finders.html#method-i-field_labeled">#field_labeled &mdash; Capybara::Node::Finders</a>
+  
+    <li class="method"><a href="Capybara/Node/Actions.html#method-i-fill_in">#fill_in &mdash; Capybara::Node::Actions</a>
+  
+    <li class="method"><a href="Capybara/Selector.html#method-i-filter">#filter &mdash; Capybara::Selector</a>
+  
+    <li class="method"><a href="Capybara/Node/Finders.html#method-i-find">#find &mdash; Capybara::Node::Finders</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Browser.html#method-i-find">#find &mdash; Capybara::RackTest::Browser</a>
+  
+    <li class="method"><a href="Capybara/Node/Finders.html#method-i-find_button">#find_button &mdash; Capybara::Node::Finders</a>
+  
+    <li class="method"><a href="Capybara/Node/Finders.html#method-i-find_by_id">#find_by_id &mdash; Capybara::Node::Finders</a>
+  
+    <li class="method"><a href="Capybara/Selenium/Driver.html#method-i-find_css">#find_css &mdash; Capybara::Selenium::Driver</a>
+  
+    <li class="method"><a href="Capybara/Selenium/Node.html#method-i-find_css">#find_css &mdash; Capybara::Selenium::Node</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Node.html#method-i-find_css">#find_css &mdash; Capybara::RackTest::Node</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Driver.html#method-i-find_css">#find_css &mdash; Capybara::RackTest::Driver</a>
+  
+    <li class="method"><a href="Capybara/Driver/Base.html#method-i-find_css">#find_css &mdash; Capybara::Driver::Base</a>
+  
+    <li class="method"><a href="Capybara/Node/Finders.html#method-i-find_field">#find_field &mdash; Capybara::Node::Finders</a>
+  
+    <li class="method"><a href="Capybara/Node/Finders.html#method-i-find_link">#find_link &mdash; Capybara::Node::Finders</a>
+  
+    <li class="method"><a href="Capybara/Selenium/Driver.html#method-i-find_window">#find_window &mdash; Capybara::Selenium::Driver</a>
+  
+    <li class="method"><a href="Capybara/Selenium/Driver.html#method-i-find_xpath">#find_xpath &mdash; Capybara::Selenium::Driver</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Node.html#method-i-find_xpath">#find_xpath &mdash; Capybara::RackTest::Node</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Driver.html#method-i-find_xpath">#find_xpath &mdash; Capybara::RackTest::Driver</a>
+  
+    <li class="method"><a href="Capybara/Driver/Base.html#method-i-find_xpath">#find_xpath &mdash; Capybara::Driver::Base</a>
+  
+    <li class="method"><a href="Capybara/Selenium/Node.html#method-i-find_xpath">#find_xpath &mdash; Capybara::Selenium::Node</a>
+  
+    <li class="method"><a href="Capybara/Node/Finders.html#method-i-first">#first &mdash; Capybara::Node::Finders</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Driver.html#method-i-follow">#follow &mdash; Capybara::RackTest::Driver</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Browser.html#method-i-follow">#follow &mdash; Capybara::RackTest::Browser</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Driver.html#method-i-follow_redirects-3F">#follow_redirects? &mdash; Capybara::RackTest::Driver</a>
+  
+    <li class="method"><a href="Capybara/RSpecMatchers/HaveText.html#method-i-format">#format &mdash; Capybara::RSpecMatchers::HaveText</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Driver.html#method-i-get">#get &mdash; Capybara::RackTest::Driver</a>
+  
+    <li class="method"><a href="Capybara/Node/Matchers.html#method-i-has_button-3F">#has_button? &mdash; Capybara::Node::Matchers</a>
+  
+    <li class="method"><a href="Capybara/Node/Matchers.html#method-i-has_checked_field-3F">#has_checked_field? &mdash; Capybara::Node::Matchers</a>
+  
+    <li class="method"><a href="Capybara/Node/Matchers.html#method-i-has_content-3F">#has_content? &mdash; Capybara::Node::Matchers</a>
+  
+    <li class="method"><a href="Capybara/Node/Matchers.html#method-i-has_css-3F">#has_css? &mdash; Capybara::Node::Matchers</a>
+  
+    <li class="method"><a href="Capybara/Node/Matchers.html#method-i-has_field-3F">#has_field? &mdash; Capybara::Node::Matchers</a>
+  
+    <li class="method"><a href="Capybara/Node/Matchers.html#method-i-has_link-3F">#has_link? &mdash; Capybara::Node::Matchers</a>
+  
+    <li class="method"><a href="Capybara/Node/Matchers.html#method-i-has_no_button-3F">#has_no_button? &mdash; Capybara::Node::Matchers</a>
+  
+    <li class="method"><a href="Capybara/Node/Matchers.html#method-i-has_no_checked_field-3F">#has_no_checked_field? &mdash; Capybara::Node::Matchers</a>
+  
+    <li class="method"><a href="Capybara/Node/Matchers.html#method-i-has_no_content-3F">#has_no_content? &mdash; Capybara::Node::Matchers</a>
+  
+    <li class="method"><a href="Capybara/Node/Matchers.html#method-i-has_no_css-3F">#has_no_css? &mdash; Capybara::Node::Matchers</a>
+  
+    <li class="method"><a href="Capybara/Node/Matchers.html#method-i-has_no_field-3F">#has_no_field? &mdash; Capybara::Node::Matchers</a>
+  
+    <li class="method"><a href="Capybara/Node/Matchers.html#method-i-has_no_link-3F">#has_no_link? &mdash; Capybara::Node::Matchers</a>
+  
+    <li class="method"><a href="Capybara/Node/Matchers.html#method-i-has_no_select-3F">#has_no_select? &mdash; Capybara::Node::Matchers</a>
+  
+    <li class="method"><a href="Capybara/Node/Matchers.html#method-i-has_no_selector-3F">#has_no_selector? &mdash; Capybara::Node::Matchers</a>
+  
+    <li class="method"><a href="Capybara/Node/Matchers.html#method-i-has_no_table-3F">#has_no_table? &mdash; Capybara::Node::Matchers</a>
+  
+    <li class="method"><a href="Capybara/Node/Matchers.html#method-i-has_no_text-3F">#has_no_text? &mdash; Capybara::Node::Matchers</a>
+  
+    <li class="method"><a href="Capybara/Node/Simple.html#method-i-has_no_title-3F">#has_no_title? &mdash; Capybara::Node::Simple</a>
+  
+    <li class="method"><a href="Capybara/Session.html#method-i-has_no_title-3F">#has_no_title? &mdash; Capybara::Session</a>
+  
+    <li class="method"><a href="Capybara/Node/Matchers.html#method-i-has_no_unchecked_field-3F">#has_no_unchecked_field? &mdash; Capybara::Node::Matchers</a>
+  
+    <li class="method"><a href="Capybara/Node/Matchers.html#method-i-has_no_xpath-3F">#has_no_xpath? &mdash; Capybara::Node::Matchers</a>
+  
+    <li class="method"><a href="Capybara/Node/Matchers.html#method-i-has_select-3F">#has_select? &mdash; Capybara::Node::Matchers</a>
+  
+    <li class="method"><a href="Capybara/Node/Matchers.html#method-i-has_selector-3F">#has_selector? &mdash; Capybara::Node::Matchers</a>
+  
+    <li class="method"><a href="Capybara/Node/Matchers.html#method-i-has_table-3F">#has_table? &mdash; Capybara::Node::Matchers</a>
+  
+    <li class="method"><a href="Capybara/Node/Matchers.html#method-i-has_text-3F">#has_text? &mdash; Capybara::Node::Matchers</a>
+  
+    <li class="method"><a href="Capybara/Node/Simple.html#method-i-has_title-3F">#has_title? &mdash; Capybara::Node::Simple</a>
+  
+    <li class="method"><a href="Capybara/Session.html#method-i-has_title-3F">#has_title? &mdash; Capybara::Session</a>
+  
+    <li class="method"><a href="Capybara/Node/Matchers.html#method-i-has_unchecked_field-3F">#has_unchecked_field? &mdash; Capybara::Node::Matchers</a>
+  
+    <li class="method"><a href="Capybara/Node/Matchers.html#method-i-has_xpath-3F">#has_xpath? &mdash; Capybara::Node::Matchers</a>
+  
+    <li class="method"><a href="Capybara/RSpecMatchers.html#method-i-have_button">#have_button &mdash; Capybara::RSpecMatchers</a>
+  
+    <li class="method"><a href="Capybara/RSpecMatchers.html#method-i-have_checked_field">#have_checked_field &mdash; Capybara::RSpecMatchers</a>
+  
+    <li class="method"><a href="Capybara/RSpecMatchers.html#method-i-have_content">#have_content &mdash; Capybara::RSpecMatchers</a>
+  
+    <li class="method"><a href="Capybara/RSpecMatchers.html#method-i-have_css">#have_css &mdash; Capybara::RSpecMatchers</a>
+  
+    <li class="method"><a href="Capybara/RSpecMatchers.html#method-i-have_field">#have_field &mdash; Capybara::RSpecMatchers</a>
+  
+    <li class="method"><a href="Capybara/RSpecMatchers.html#method-i-have_link">#have_link &mdash; Capybara::RSpecMatchers</a>
+  
+    <li class="method"><a href="Capybara/RSpecMatchers.html#method-i-have_select">#have_select &mdash; Capybara::RSpecMatchers</a>
+  
+    <li class="method"><a href="Capybara/RSpecMatchers.html#method-i-have_selector">#have_selector &mdash; Capybara::RSpecMatchers</a>
+  
+    <li class="method"><a href="Capybara/RSpecMatchers.html#method-i-have_table">#have_table &mdash; Capybara::RSpecMatchers</a>
+  
+    <li class="method"><a href="Capybara/RSpecMatchers.html#method-i-have_text">#have_text &mdash; Capybara::RSpecMatchers</a>
+  
+    <li class="method"><a href="Capybara/RSpecMatchers.html#method-i-have_title">#have_title &mdash; Capybara::RSpecMatchers</a>
+  
+    <li class="method"><a href="Capybara/RSpecMatchers.html#method-i-have_unchecked_field">#have_unchecked_field &mdash; Capybara::RSpecMatchers</a>
+  
+    <li class="method"><a href="Capybara/RSpecMatchers.html#method-i-have_xpath">#have_xpath &mdash; Capybara::RSpecMatchers</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Driver.html#method-i-header">#header &mdash; Capybara::RackTest::Driver</a>
+  
+    <li class="method"><a href="Capybara/Server.html#method-i-host">#host &mdash; Capybara::Server</a>
+  
+    <li class="method"><a href="Capybara/Selenium/Node.html#method-i-hover">#hover &mdash; Capybara::Selenium::Node</a>
+  
+    <li class="method"><a href="Capybara/Driver/Node.html#method-i-hover">#hover &mdash; Capybara::Driver::Node</a>
+  
+    <li class="method"><a href="Capybara/Node/Element.html#method-i-hover">#hover &mdash; Capybara::Node::Element</a>
+  
+    <li class="method"><a href="Capybara/Selenium/Driver.html#method-i-html">#html &mdash; Capybara::Selenium::Driver</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Browser.html#method-i-html">#html &mdash; Capybara::RackTest::Browser</a>
+  
+    <li class="method"><a href="Capybara/Driver/Base.html#method-i-html">#html &mdash; Capybara::Driver::Base</a>
+  
+    <li class="method"><a href="Capybara/Session.html#method-i-html">#html &mdash; Capybara::Session</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Driver.html#method-i-html">#html &mdash; Capybara::RackTest::Driver</a>
+  
+    <li class="method"><a href="Capybara/Helpers.html#method-i-inject_asset_host">#inject_asset_host &mdash; Capybara::Helpers</a>
+  
+    <li class="method"><a href="Capybara/Driver/Node.html#method-i-inspect">#inspect &mdash; Capybara::Driver::Node</a>
+  
+    <li class="method"><a href="Capybara/Session.html#method-i-inspect">#inspect &mdash; Capybara::Session</a>
+  
+    <li class="method"><a href="Capybara/Node/Document.html#method-i-inspect">#inspect &mdash; Capybara::Node::Document</a>
+  
+    <li class="method"><a href="Capybara/Node/Element.html#method-i-inspect">#inspect &mdash; Capybara::Node::Element</a>
+  
+    <li class="method"><a href="Capybara/Selenium/Driver.html#method-i-invalid_element_errors">#invalid_element_errors &mdash; Capybara::Selenium::Driver</a>
+  
+    <li class="method"><a href="Capybara/Driver/Base.html#method-i-invalid_element_errors">#invalid_element_errors &mdash; Capybara::Driver::Base</a>
+  
+    <li class="method"><a href="Capybara/Query.html#method-i-label">#label &mdash; Capybara::Query</a>
+  
+    <li class="method"><a href="Capybara/Selector.html#method-i-label">#label &mdash; Capybara::Selector</a>
+  
+    <li class="method"><a href="Capybara/Selector.html#method-i-match">#match &mdash; Capybara::Selector</a>
+  
+    <li class="method"><a href="Capybara/Query.html#method-i-match">#match &mdash; Capybara::Query</a>
+  
+    <li class="method"><a href="Capybara/Selector.html#method-i-match-3F">#match? &mdash; Capybara::Selector</a>
+  
+    <li class="method"><a href="Capybara/RSpecMatchers/HaveText.html#method-i-matches-3F">#matches? &mdash; Capybara::RSpecMatchers::HaveText</a>
+  
+    <li class="method"><a href="Capybara/RSpecMatchers/HaveTitle.html#method-i-matches-3F">#matches? &mdash; Capybara::RSpecMatchers::HaveTitle</a>
+  
+    <li class="method"><a href="Capybara/Selector/Filter.html#method-i-matches-3F">#matches? &mdash; Capybara::Selector::Filter</a>
+  
+    <li class="method"><a href="Capybara/RSpecMatchers/HaveSelector.html#method-i-matches-3F">#matches? &mdash; Capybara::RSpecMatchers::HaveSelector</a>
+  
+    <li class="method"><a href="Capybara/Helpers.html#method-i-matches_count-3F">#matches_count? &mdash; Capybara::Helpers</a>
+  
+    <li class="method"><a href="Capybara/Result.html#method-i-matches_count-3F">#matches_count? &mdash; Capybara::Result</a>
+  
+    <li class="method"><a href="Capybara/Query.html#method-i-matches_filters-3F">#matches_filters? &mdash; Capybara::Query</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Form.html#method-i-multipart-3F">#multipart? &mdash; Capybara::RackTest::Form</a>
+  
+    <li class="method"><a href="Capybara/Query.html#method-i-name">#name &mdash; Capybara::Query</a>
+  
+    <li class="method"><a href="Capybara/Node/Element.html#method-i-native">#native &mdash; Capybara::Node::Element</a>
+  
+    <li class="method"><a href="Capybara/Driver/Base.html#method-i-needs_server-3F">#needs_server? &mdash; Capybara::Driver::Base</a>
+  
+    <li class="method"><a href="Capybara/Selenium/Driver.html#method-i-needs_server-3F">#needs_server? &mdash; Capybara::Selenium::Driver</a>
+  
+    <li class="method"><a href="Capybara/Result.html#method-i-negative_failure_message">#negative_failure_message &mdash; Capybara::Result</a>
+  
+    <li class="method"><a href="Capybara/Helpers.html#method-i-normalize_whitespace">#normalize_whitespace &mdash; Capybara::Helpers</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Browser.html#method-i-options">#options &mdash; Capybara::RackTest::Browser</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Form/NilUploadedFile.html#method-i-original_filename">#original_filename &mdash; Capybara::RackTest::Form::NilUploadedFile</a>
+  
+    <li class="method"><a href="Capybara/DSL.html#method-i-page">#page &mdash; Capybara::DSL</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Form.html#method-i-params">#params &mdash; Capybara::RackTest::Form</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Node.html#method-i-path">#path &mdash; Capybara::RackTest::Node</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Form/NilUploadedFile.html#method-i-path">#path &mdash; Capybara::RackTest::Form::NilUploadedFile</a>
+  
+    <li class="method"><a href="Capybara/Node/Simple.html#method-i-path">#path &mdash; Capybara::Node::Simple</a>
+  
+    <li class="method"><a href="Capybara/Node/Element.html#method-i-path">#path &mdash; Capybara::Node::Element</a>
+  
+    <li class="method"><a href="Capybara/Driver/Node.html#method-i-path">#path &mdash; Capybara::Driver::Node</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Driver.html#method-i-post">#post &mdash; Capybara::RackTest::Driver</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Browser.html#method-i-process">#process &mdash; Capybara::RackTest::Browser</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Browser.html#method-i-process_and_follow_redirects">#process_and_follow_redirects &mdash; Capybara::RackTest::Browser</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Driver.html#method-i-put">#put &mdash; Capybara::RackTest::Driver</a>
+  
+    <li class="method"><a href="Capybara/RSpecMatchers/HaveSelector.html#method-i-query">#query &mdash; Capybara::RSpecMatchers::HaveSelector</a>
+  
+    <li class="method"><a href="Capybara/SpecHelper.html#method-i-quietly">#quietly &mdash; Capybara::SpecHelper</a>
+  
+    <li class="method"><a href="Capybara/Selenium/Driver.html#method-i-quit">#quit &mdash; Capybara::Selenium::Driver</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Driver.html#method-i-redirect_limit">#redirect_limit &mdash; Capybara::RackTest::Driver</a>
+  
+    <li class="method"><a href="Capybara/Node/Element.html#method-i-reload">#reload &mdash; Capybara::Node::Element</a>
+  
+    <li class="method"><a href="Capybara/Node/Base.html#method-i-reload">#reload &mdash; Capybara::Node::Base</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Driver.html#method-i-request">#request &mdash; Capybara::RackTest::Driver</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Browser.html#method-i-request_path">#request_path &mdash; Capybara::RackTest::Browser</a>
+  
+    <li class="method"><a href="Capybara/Selenium/Driver.html#method-i-reset-21">#reset! &mdash; Capybara::Selenium::Driver</a>
+  
+    <li class="method"><a href="Capybara/Session.html#method-i-reset-21">#reset! &mdash; Capybara::Session</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Driver.html#method-i-reset-21">#reset! &mdash; Capybara::RackTest::Driver</a>
+  
+    <li class="method"><a href="Capybara/Driver/Base.html#method-i-reset-21">#reset! &mdash; Capybara::Driver::Base</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Browser.html#method-i-reset_cache-21">#reset_cache! &mdash; Capybara::RackTest::Browser</a>
+  
+    <li class="method"><a href="Capybara/Server.html#method-i-reset_error-21">#reset_error! &mdash; Capybara::Server</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Browser.html#method-i-reset_host-21">#reset_host! &mdash; Capybara::RackTest::Browser</a>
+  
+    <li class="method"><a href="Capybara/Session.html#method-i-reset_session-21">#reset_session! &mdash; Capybara::Session</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Driver.html#method-i-response">#response &mdash; Capybara::RackTest::Driver</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Driver.html#method-i-response_headers">#response_headers &mdash; Capybara::RackTest::Driver</a>
+  
+    <li class="method"><a href="Capybara/Driver/Base.html#method-i-response_headers">#response_headers &mdash; Capybara::Driver::Base</a>
+  
+    <li class="method"><a href="Capybara/Session.html#method-i-response_headers">#response_headers &mdash; Capybara::Session</a>
+  
+    <li class="method"><a href="Capybara/Server.html#method-i-responsive-3F">#responsive? &mdash; Capybara::Server</a>
+  
+    <li class="method"><a href="Capybara/Session.html#method-i-save_and_open_page">#save_and_open_page &mdash; Capybara::Session</a>
+  
+    <li class="method"><a href="Capybara/Session.html#method-i-save_page">#save_page &mdash; Capybara::Session</a>
+  
+    <li class="method"><a href="Capybara/Driver/Base.html#method-i-save_screenshot">#save_screenshot &mdash; Capybara::Driver::Base</a>
+  
+    <li class="method"><a href="Capybara/Session.html#method-i-save_screenshot">#save_screenshot &mdash; Capybara::Session</a>
+  
+    <li class="method"><a href="Capybara/Selenium/Driver.html#method-i-save_screenshot">#save_screenshot &mdash; Capybara::Selenium::Driver</a>
+  
+    <li class="method"><a href="Capybara/Node/Actions.html#method-i-select">#select &mdash; Capybara::Node::Actions</a>
+  
+    <li class="method"><a href="Capybara/Selenium/Node.html#method-i-select_option">#select_option &mdash; Capybara::Selenium::Node</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Node.html#method-i-select_option">#select_option &mdash; Capybara::RackTest::Node</a>
+  
+    <li class="method"><a href="Capybara/Node/Element.html#method-i-select_option">#select_option &mdash; Capybara::Node::Element</a>
+  
+    <li class="method"><a href="Capybara/Driver/Node.html#method-i-select_option">#select_option &mdash; Capybara::Driver::Node</a>
+  
+    <li class="method"><a href="Capybara/Node/Simple.html#method-i-selected-3F">#selected? &mdash; Capybara::Node::Simple</a>
+  
+    <li class="method"><a href="Capybara/Selenium/Node.html#method-i-selected-3F">#selected? &mdash; Capybara::Selenium::Node</a>
+  
+    <li class="method"><a href="Capybara/Node/Element.html#method-i-selected-3F">#selected? &mdash; Capybara::Node::Element</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Node.html#method-i-selected-3F">#selected? &mdash; Capybara::RackTest::Node</a>
+  
+    <li class="method"><a href="Capybara/Driver/Node.html#method-i-selected-3F">#selected? &mdash; Capybara::Driver::Node</a>
+  
+    <li class="method"><a href="Capybara/Driver/Node.html#method-i-set">#set &mdash; Capybara::Driver::Node</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Node.html#method-i-set">#set &mdash; Capybara::RackTest::Node</a>
+  
+    <li class="method"><a href="Capybara/Node/Element.html#method-i-set">#set &mdash; Capybara::Node::Element</a>
+  
+    <li class="method"><a href="Capybara/Selenium/Node.html#method-i-set">#set &mdash; Capybara::Selenium::Node</a>
+  
+    <li class="method"><a href="Object.html#method-i-should_be_on">#should_be_on &mdash; Object</a>
+  
+    <li class="method"><a href="Capybara/SpecHelper.html#method-i-silence_stream">#silence_stream &mdash; Capybara::SpecHelper</a>
+  
+    <li class="method"><a href="Capybara/Session.html#method-i-source">#source &mdash; Capybara::Session</a>
+  
+    <li class="method"><a href="Capybara/Driver/Base.html#method-i-status_code">#status_code &mdash; Capybara::Driver::Base</a>
+  
+    <li class="method"><a href="Capybara/Session.html#method-i-status_code">#status_code &mdash; Capybara::Session</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Driver.html#method-i-status_code">#status_code &mdash; Capybara::RackTest::Driver</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Driver.html#method-i-submit">#submit &mdash; Capybara::RackTest::Driver</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Form.html#method-i-submit">#submit &mdash; Capybara::RackTest::Form</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Browser.html#method-i-submit">#submit &mdash; Capybara::RackTest::Browser</a>
+  
+    <li class="method"><a href="Capybara/Node/Simple.html#method-i-synchronize">#synchronize &mdash; Capybara::Node::Simple</a>
+  
+    <li class="method"><a href="Capybara/Node/Base.html#method-i-synchronize">#synchronize &mdash; Capybara::Node::Base</a>
+  
+    <li class="method"><a href="Capybara/Node/Element.html#method-i-tag_name">#tag_name &mdash; Capybara::Node::Element</a>
+  
+    <li class="method"><a href="Capybara/Selenium/Node.html#method-i-tag_name">#tag_name &mdash; Capybara::Selenium::Node</a>
+  
+    <li class="method"><a href="Capybara/Node/Simple.html#method-i-tag_name">#tag_name &mdash; Capybara::Node::Simple</a>
+  
+    <li class="method"><a href="Capybara/Driver/Node.html#method-i-tag_name">#tag_name &mdash; Capybara::Driver::Node</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Node.html#method-i-tag_name">#tag_name &mdash; Capybara::RackTest::Node</a>
+  
+    <li class="method"><a href="Capybara/Node/Element.html#method-i-text">#text &mdash; Capybara::Node::Element</a>
+  
+    <li class="method"><a href="Capybara/Node/Simple.html#method-i-text">#text &mdash; Capybara::Node::Simple</a>
+  
+    <li class="method"><a href="Capybara/Node/Document.html#method-i-text">#text &mdash; Capybara::Node::Document</a>
+  
+    <li class="method"><a href="Capybara/Node/Document.html#method-i-title">#title &mdash; Capybara::Node::Document</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Driver.html#method-i-title">#title &mdash; Capybara::RackTest::Driver</a>
+  
+    <li class="method"><a href="Capybara/Selenium/Driver.html#method-i-title">#title &mdash; Capybara::Selenium::Driver</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Browser.html#method-i-title">#title &mdash; Capybara::RackTest::Browser</a>
+  
+    <li class="method"><a href="Capybara/Session.html#method-i-title">#title &mdash; Capybara::Session</a>
+  
+    <li class="method"><a href="Capybara/Node/Simple.html#method-i-title">#title &mdash; Capybara::Node::Simple</a>
+  
+    <li class="method"><a href="Capybara/Helpers.html#method-i-to_regexp">#to_regexp &mdash; Capybara::Helpers</a>
+  
+    <li class="method"><a href="Capybara/Node/Element.html#method-i-trigger">#trigger &mdash; Capybara::Node::Element</a>
+  
+    <li class="method"><a href="Capybara/Driver/Node.html#method-i-trigger">#trigger &mdash; Capybara::Driver::Node</a>
+  
+    <li class="method"><a href="Capybara/Node/Actions.html#method-i-uncheck">#uncheck &mdash; Capybara::Node::Actions</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Node.html#method-i-unnormalized_text">#unnormalized_text &mdash; Capybara::RackTest::Node</a>
+  
+    <li class="method"><a href="Capybara/Node/Actions.html#method-i-unselect">#unselect &mdash; Capybara::Node::Actions</a>
+  
+    <li class="method"><a href="Capybara/Driver/Node.html#method-i-unselect_option">#unselect_option &mdash; Capybara::Driver::Node</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Node.html#method-i-unselect_option">#unselect_option &mdash; Capybara::RackTest::Node</a>
+  
+    <li class="method"><a href="Capybara/Selenium/Node.html#method-i-unselect_option">#unselect_option &mdash; Capybara::Selenium::Node</a>
+  
+    <li class="method"><a href="Capybara/Node/Element.html#method-i-unselect_option">#unselect_option &mdash; Capybara::Node::Element</a>
+  
+    <li class="method"><a href="Capybara/DSL.html#method-i-using_session">#using_session &mdash; Capybara::DSL</a>
+  
+    <li class="method"><a href="Capybara/DSL.html#method-i-using_wait_time">#using_wait_time &mdash; Capybara::DSL</a>
+  
+    <li class="method"><a href="Capybara/Driver/Node.html#method-i-value">#value &mdash; Capybara::Driver::Node</a>
+  
+    <li class="method"><a href="Capybara/Selenium/Node.html#method-i-value">#value &mdash; Capybara::Selenium::Node</a>
+  
+    <li class="method"><a href="Capybara/Node/Simple.html#method-i-value">#value &mdash; Capybara::Node::Simple</a>
+  
+    <li class="method"><a href="Capybara/Node/Element.html#method-i-value">#value &mdash; Capybara::Node::Element</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Node.html#method-i-value">#value &mdash; Capybara::RackTest::Node</a>
+  
+    <li class="method"><a href="Capybara/Query.html#method-i-visible">#visible &mdash; Capybara::Query</a>
+  
+    <li class="method"><a href="Capybara/Node/Element.html#method-i-visible-3F">#visible? &mdash; Capybara::Node::Element</a>
+  
+    <li class="method"><a href="Capybara/Driver/Node.html#method-i-visible-3F">#visible? &mdash; Capybara::Driver::Node</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Node.html#method-i-visible-3F">#visible? &mdash; Capybara::RackTest::Node</a>
+  
+    <li class="method"><a href="Capybara/Selenium/Node.html#method-i-visible-3F">#visible? &mdash; Capybara::Selenium::Node</a>
+  
+    <li class="method"><a href="Capybara/Node/Simple.html#method-i-visible-3F">#visible? &mdash; Capybara::Node::Simple</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Node.html#method-i-visible_text">#visible_text &mdash; Capybara::RackTest::Node</a>
+  
+    <li class="method"><a href="Capybara/Selenium/Node.html#method-i-visible_text">#visible_text &mdash; Capybara::Selenium::Node</a>
+  
+    <li class="method"><a href="Capybara/Driver/Node.html#method-i-visible_text">#visible_text &mdash; Capybara::Driver::Node</a>
+  
+    <li class="method"><a href="Capybara/Session.html#method-i-visit">#visit &mdash; Capybara::Session</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Browser.html#method-i-visit">#visit &mdash; Capybara::RackTest::Browser</a>
+  
+    <li class="method"><a href="Capybara/Selenium/Driver.html#method-i-visit">#visit &mdash; Capybara::Selenium::Driver</a>
+  
+    <li class="method"><a href="Capybara/RackTest/Driver.html#method-i-visit">#visit &mdash; Capybara::RackTest::Driver</a>
+  
+    <li class="method"><a href="Capybara/Driver/Base.html#method-i-visit">#visit &mdash; Capybara::Driver::Base</a>
+  
+    <li class="method"><a href="Object.html#method-i-visit_host_links">#visit_host_links &mdash; Object</a>
+  
+    <li class="method"><a href="Capybara/Query.html#method-i-wait">#wait &mdash; Capybara::Query</a>
+  
+    <li class="method"><a href="Capybara/Selenium/Driver.html#method-i-wait-3F">#wait? &mdash; Capybara::Selenium::Driver</a>
+  
+    <li class="method"><a href="Capybara/Driver/Base.html#method-i-wait-3F">#wait? &mdash; Capybara::Driver::Base</a>
+  
+    <li class="method"><a href="Capybara/Session.html#method-i-within">#within &mdash; Capybara::Session</a>
+  
+    <li class="method"><a href="Capybara/Session.html#method-i-within_fieldset">#within_fieldset &mdash; Capybara::Session</a>
+  
+    <li class="method"><a href="Capybara/Session.html#method-i-within_frame">#within_frame &mdash; Capybara::Session</a>
+  
+    <li class="method"><a href="Capybara/Selenium/Driver.html#method-i-within_frame">#within_frame &mdash; Capybara::Selenium::Driver</a>
+  
+    <li class="method"><a href="Capybara/Driver/Base.html#method-i-within_frame">#within_frame &mdash; Capybara::Driver::Base</a>
+  
+    <li class="method"><a href="Capybara/Session.html#method-i-within_table">#within_table &mdash; Capybara::Session</a>
+  
+    <li class="method"><a href="Capybara/Session.html#method-i-within_window">#within_window &mdash; Capybara::Session</a>
+  
+    <li class="method"><a href="Capybara/Selenium/Driver.html#method-i-within_window">#within_window &mdash; Capybara::Selenium::Driver</a>
+  
+    <li class="method"><a href="Capybara/Driver/Base.html#method-i-within_window">#within_window &mdash; Capybara::Driver::Base</a>
+  
+    <li class="method"><a href="Capybara/RSpecMatchers/Matcher.html#method-i-wrap">#wrap &mdash; Capybara::RSpecMatchers::Matcher</a>
+  
+    <li class="method"><a href="Capybara/Selector.html#method-i-xpath">#xpath &mdash; Capybara::Selector</a>
+  
+    <li class="method"><a href="Capybara/Query.html#method-i-xpath">#xpath &mdash; Capybara::Query</a>
+  
+</ul>
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

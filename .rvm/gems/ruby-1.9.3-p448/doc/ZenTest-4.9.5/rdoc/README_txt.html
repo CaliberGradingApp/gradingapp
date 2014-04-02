@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>README - ZenTest-4.9.5 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body class="file">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./History_txt.html">History</a>
+  
+    <li class="file"><a href="./Manifest_txt.html">Manifest</a>
+  
+    <li class="file"><a href="./README_txt.html">README</a>
+  
+    <li class="file"><a href="./articles/how_to_use_zentest_txt.html">how_to_use_zentest</a>
+  
+    <li class="file"><a href="./example_txt.html">example</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Autotest.html">Autotest</a>
+  
+    <li><a href="./Autotest/AutoUpdate.html">Autotest::AutoUpdate</a>
+  
+    <li><a href="./Autotest/Bundler.html">Autotest::Bundler</a>
+  
+    <li><a href="./Autotest/Isolate.html">Autotest::Isolate</a>
+  
+    <li><a href="./Autotest/Once.html">Autotest::Once</a>
+  
+    <li><a href="./Autotest/Preload.html">Autotest::Preload</a>
+  
+    <li><a href="./Autotest/RCov.html">Autotest::RCov</a>
+  
+    <li><a href="./Autotest/Restart.html">Autotest::Restart</a>
+  
+    <li><a href="./Autotest/Timestamp.html">Autotest::Timestamp</a>
+  
+    <li><a href="./FunctionalTestMatrix.html">FunctionalTestMatrix</a>
+  
+    <li><a href="./Module.html">Module</a>
+  
+    <li><a href="./Multiruby.html">Multiruby</a>
+  
+    <li><a href="./UnitDiff.html">UnitDiff</a>
+  
+    <li><a href="./ZenTest.html">ZenTest</a>
+  
+    <li><a href="./ZenTestMapping.html">ZenTestMapping</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<h1 id="label-ZenTest"><a href="ZenTest.html">ZenTest</a></h1>
+<dl class="rdoc-list note-list"><dt>home 
+<dd>
+<p><a
+href="https://github.com/seattlerb/zentest">github.com/seattlerb/zentest</a></p>
+</dd><dt>rdoc 
+<dd>
+<p><a
+href="http://zentest.rubyforge.org/ZenTest">zentest.rubyforge.org/ZenTest</a></p>
+</dd></dl>
+
+<h2 id="label-DESCRIPTION">DESCRIPTION</h2>
+
+<p><a href="ZenTest.html">ZenTest</a> provides 4 different tools: zentest,
+unit_diff, autotest, and multiruby.</p>
+
+<p>zentest scans your target and unit-test code and writes your missing code
+based on simple naming rules, enabling XP at a much quicker pace. zentest
+only works with Ruby and Minitest or Test::Unit. There is enough evidence
+to show that this is still proving useful to users, so it stays.</p>
+
+<p>unit_diff is a command-line filter to diff expected results from actual
+results and allow you to quickly see exactly what is wrong. Do note that
+minitest 2.2+ provides an enhanced assert_equal obviating the need for
+unit_diff</p>
+
+<p>autotest is a continous testing facility meant to be used during
+development. As soon as you save a file, autotest will run the
+corresponding dependent tests.</p>
+
+<p>multiruby runs anything you want on multiple versions of ruby. Great for
+compatibility checking! Use multiruby_setup to manage your installed
+versions.</p>
+
+<h2 id="label-FEATURES">FEATURES</h2>
+<ul><li>
+<p>Scans your ruby code and tests and generates missing methods for you.</p>
+</li><li>
+<p>Includes a very helpful filter for Test/Spec output called unit_diff.</p>
+</li><li>
+<p>Continually and intelligently test only those files you change with
+autotest.</p>
+</li><li>
+<p>Test against multiple versions with multiruby.</p>
+</li><li>
+<p>Includes a LinuxJournal article on testing with <a
+href="ZenTest.html">ZenTest</a> written by Pat Eyler.</p>
+</li><li>
+<p>See also: <a
+href="http://blog.zenspider.com/archives/zentest/">blog.zenspider.com/archives/zentest/</a></p>
+</li><li>
+<p>See also: <a
+href="http://blog.segment7.net/articles/category/zentest">blog.segment7.net/articles/category/zentest</a></p>
+</li></ul>
+
+<h2 id="label-STRATEGERY">STRATEGERY</h2>
+
+<p>There are two strategeries intended for ZenTest: test conformance auditing
+and rapid XP.</p>
+
+<p>For auditing, <a href="ZenTest.html">ZenTest</a> provides an excellent
+means of finding methods that have slipped through the testing process.
+I’ve run it against my own software and found I missed a lot in a well
+tested package. Writing those tests found 4 bugs I had no idea existed.</p>
+
+<p><a href="ZenTest.html">ZenTest</a> can also be used to evaluate generated
+code and execute your tests, allowing for very rapid development of both
+tests and implementation.</p>
+
+<h2 id="label-AUTOTEST+TIPS">AUTOTEST TIPS</h2>
+
+<p>Setting up your project with a custom setup is easily done by creating a
+“.autotest” file in your project. Here is an example of adding some
+plugins, using minitest as your test library, and running rcov on full
+passes:</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">'autotest/restart'</span>
+
+<span class="ruby-constant">Autotest</span>.<span class="ruby-identifier">add_hook</span> :<span class="ruby-identifier">initialize</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">at</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">at</span>.<span class="ruby-identifier">testlib</span> = <span class="ruby-string">&quot;minitest/autorun&quot;</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-constant">Autotest</span>.<span class="ruby-identifier">add_hook</span> :<span class="ruby-identifier">all_good</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">at</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">system</span> <span class="ruby-string">&quot;rake rcov_info&quot;</span>
+<span class="ruby-keyword">end</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">ENV</span>[<span class="ruby-string">'RCOV'</span>]
+</pre>
+
+<p>Do note, since minitest ships with ruby19, if you want to use the latest
+minitest gem you need to ensure that the gem activation occurs! To do this,
+add the gem activation and the proper require to a separate file (like
+“.minitest.rb” or even a test helper if you have one) and use that for your
+testlib instead:</p>
+
+<p>.minitest.rb:</p>
+
+<pre class="ruby"><span class="ruby-identifier">gem</span> <span class="ruby-string">&quot;minitest&quot;</span>
+<span class="ruby-identifier">require</span> <span class="ruby-string">&quot;minitest/autorun&quot;</span>
+</pre>
+
+<p>.autotest:</p>
+
+<pre class="ruby"><span class="ruby-constant">Autotest</span>.<span class="ruby-identifier">add_hook</span> :<span class="ruby-identifier">initialize</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">at</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">at</span>.<span class="ruby-identifier">testlib</span> = <span class="ruby-string">&quot;.minitest&quot;</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>If you prefer to suffix test files with “_test.rb” (instead of the default
+which prefixes test files with “test_”) you can change the mapping by
+installing the autotest-suffix plugin. To do this first install the
+autotest-suffix gem:</p>
+
+<pre>$ gem install autotest-suffix</pre>
+
+<p>Then add the following to the “.autotest” file:</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&quot;autotest/suffix&quot;</span>
+</pre>
+
+<h2 id="label-SYNOPSIS">SYNOPSIS</h2>
+
+<pre>ZenTest MyProject.rb TestMyProject.rb &gt; missing.rb
+
+./TestMyProject.rb | unit_diff
+
+autotest
+
+multiruby_setup mri:svn:current
+multiruby ./TestMyProject.rb</pre>
+
+<h2 id="label-Windows+and+Color">Windows and Color</h2>
+
+<p>Read this: <a
+href="http://blog.mmediasys.com/2010/11/24/we-all-love-colors/">blog.mmediasys.com/2010/11/24/we-all-love-colors/</a></p>
+
+<h2 id="label-REQUIREMENTS">REQUIREMENTS</h2>
+<ul><li>
+<p>Ruby 1.8+, JRuby 1.1.2+, or rubinius</p>
+</li><li>
+<p>A test/spec framework of your choice.</p>
+</li><li>
+<p>Hoe (development)</p>
+</li><li>
+<p>rubygems, 1.8+</p>
+</li><li>
+<p>diff.exe on windows. Use <a
+href="http://gnuwin32.sourceforge.net/packages.html">gnuwin32.sourceforge.net/packages.html</a></p>
+</li></ul>
+
+<h2 id="label-INSTALL">INSTALL</h2>
+<ul><li>
+<p>sudo gem install <a href="ZenTest.html">ZenTest</a></p>
+</li></ul>
+
+<h2 id="label-LICENSE">LICENSE</h2>
+
+<p>(The MIT License)</p>
+
+<p>Copyright © Ryan Davis, Eric Hodel, seattle.rb</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the “Software”),
+to deal in the Software without restriction, including without limitation
+the rights to use, copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+DEALINGS IN THE SOFTWARE.</p>
+
+</div>
+
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

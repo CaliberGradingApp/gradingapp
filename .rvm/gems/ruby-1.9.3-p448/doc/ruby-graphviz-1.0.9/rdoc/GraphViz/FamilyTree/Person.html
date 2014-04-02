@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class GraphViz::FamilyTree::Person - ruby-graphviz-1.0.9 Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/graphviz/family_tree/person.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="../../Object.html">Object</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-id">#id</a>
+    
+    <li><a href="#method-i-is_a_boy">#is_a_boy</a>
+    
+    <li><a href="#method-i-is_a_girl">#is_a_girl</a>
+    
+    <li><a href="#method-i-is_a_man">#is_a_man</a>
+    
+    <li><a href="#method-i-is_a_woman">#is_a_woman</a>
+    
+    <li><a href="#method-i-is_dead">#is_dead</a>
+    
+    <li><a href="#method-i-is_divorced_with">#is_divorced_with</a>
+    
+    <li><a href="#method-i-is_maried_with">#is_maried_with</a>
+    
+    <li><a href="#method-i-is_widower_of">#is_widower_of</a>
+    
+    <li><a href="#method-i-kids">#kids</a>
+    
+    <li><a href="#method-i-name">#name</a>
+    
+    <li><a href="#method-i-sibling">#sibling</a>
+    
+    <li><a href="#method-i-sibling-3D">#sibling=</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../AUTHORS_rdoc.html">AUTHORS</a>
+  
+    <li class="file"><a href="../../CHANGELOG_rdoc.html">CHANGELOG</a>
+  
+    <li class="file"><a href="../../COPYING_rdoc.html">COPYING</a>
+  
+    <li class="file"><a href="../../README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../GraphViz.html">GraphViz</a>
+  
+    <li><a href="../../GraphViz/Attrs.html">GraphViz::Attrs</a>
+  
+    <li><a href="../../GraphViz/Constants.html">GraphViz::Constants</a>
+  
+    <li><a href="../../GraphViz/DOTScript.html">GraphViz::DOTScript</a>
+  
+    <li><a href="../../GraphViz/DOTScriptData.html">GraphViz::DOTScriptData</a>
+  
+    <li><a href="../../GraphViz/DSL.html">GraphViz::DSL</a>
+  
+    <li><a href="../../GraphViz/Edge.html">GraphViz::Edge</a>
+  
+    <li><a href="../../GraphViz/Elements.html">GraphViz::Elements</a>
+  
+    <li><a href="../../GraphViz/Ext.html">GraphViz::Ext</a>
+  
+    <li><a href="../../GraphViz/FamilyTree.html">GraphViz::FamilyTree</a>
+  
+    <li><a href="../../GraphViz/FamilyTree/Couple.html">GraphViz::FamilyTree::Couple</a>
+  
+    <li><a href="../../GraphViz/FamilyTree/Generation.html">GraphViz::FamilyTree::Generation</a>
+  
+    <li><a href="../../GraphViz/FamilyTree/Person.html">GraphViz::FamilyTree::Person</a>
+  
+    <li><a href="../../GraphViz/FamilyTree/Sibling.html">GraphViz::FamilyTree::Sibling</a>
+  
+    <li><a href="../../GraphViz/GraphML.html">GraphViz::GraphML</a>
+  
+    <li><a href="../../GraphViz/GraphMLError.html">GraphViz::GraphMLError</a>
+  
+    <li><a href="../../GraphViz/Math.html">GraphViz::Math</a>
+  
+    <li><a href="../../GraphViz/Math/CoordinateError.html">GraphViz::Math::CoordinateError</a>
+  
+    <li><a href="../../GraphViz/Math/Matrix.html">GraphViz::Math::Matrix</a>
+  
+    <li><a href="../../GraphViz/Math/ValueError.html">GraphViz::Math::ValueError</a>
+  
+    <li><a href="../../GraphViz/Node.html">GraphViz::Node</a>
+  
+    <li><a href="../../GraphViz/Theory.html">GraphViz::Theory</a>
+  
+    <li><a href="../../GraphViz/Types.html">GraphViz::Types</a>
+  
+    <li><a href="../../GraphViz/Types/ArrowType.html">GraphViz::Types::ArrowType</a>
+  
+    <li><a href="../../GraphViz/Types/Color.html">GraphViz::Types::Color</a>
+  
+    <li><a href="../../GraphViz/Types/ColorList.html">GraphViz::Types::ColorList</a>
+  
+    <li><a href="../../GraphViz/Types/Common.html">GraphViz::Types::Common</a>
+  
+    <li><a href="../../GraphViz/Types/EscString.html">GraphViz::Types::EscString</a>
+  
+    <li><a href="../../GraphViz/Types/GvBool.html">GraphViz::Types::GvBool</a>
+  
+    <li><a href="../../GraphViz/Types/GvDouble.html">GraphViz::Types::GvDouble</a>
+  
+    <li><a href="../../GraphViz/Types/HtmlString.html">GraphViz::Types::HtmlString</a>
+  
+    <li><a href="../../GraphViz/Types/LblString.html">GraphViz::Types::LblString</a>
+  
+    <li><a href="../../GraphViz/Types/Rect.html">GraphViz::Types::Rect</a>
+  
+    <li><a href="../../GraphViz/Types/SplineType.html">GraphViz::Types::SplineType</a>
+  
+    <li><a href="../../GraphViz/Utils.html">GraphViz::Utils</a>
+  
+    <li><a href="../../GraphViz/Utils/Colors.html">GraphViz::Utils::Colors</a>
+  
+    <li><a href="../../GraphViz/XML.html">GraphViz::XML</a>
+  
+    <li><a href="../../AttributeException.html">AttributeException</a>
+  
+    <li><a href="../../BoolException.html">BoolException</a>
+  
+    <li><a href="../../ColorException.html">ColorException</a>
+  
+    <li><a href="../../DoubleException.html">DoubleException</a>
+  
+    <li><a href="../../Hash.html">Hash</a>
+  
+    <li><a href="../../Object.html">Object</a>
+  
+    <li><a href="../../RectException.html">RectException</a>
+  
+    <li><a href="../../SplineTypeException.html">SplineTypeException</a>
+  
+    <li><a href="../../String.html">String</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class GraphViz::FamilyTree::Person</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-id" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">id</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="id-source">
+            <pre><span class="ruby-comment"># File lib/graphviz/family_tree/person.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">id</span>
+  <span class="ruby-ivar">@node</span>.<span class="ruby-identifier">id</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- id-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- id-method -->
+
+    
+      <div id="method-i-is_a_boy" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">is_a_boy</span><span
+            class="method-args">( name )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Define the current person as a boy</p>
+
+<pre>greg.is_a_boy( &quot;Greg&quot; )</pre>
+          
+
+          
+          <div class="method-source-code" id="is_a_boy-source">
+            <pre><span class="ruby-comment"># File lib/graphviz/family_tree/person.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">is_a_boy</span>( <span class="ruby-identifier">name</span> )
+  <span class="ruby-identifier">is_a_man</span>( <span class="ruby-identifier">name</span> )
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- is_a_boy-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- is_a_boy-method -->
+
+    
+      <div id="method-i-is_a_girl" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">is_a_girl</span><span
+            class="method-args">( name )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Define the current perdon as a girl</p>
+
+<pre>maia.is_a_girl( &quot;Maia&quot; )</pre>
+          
+
+          
+          <div class="method-source-code" id="is_a_girl-source">
+            <pre><span class="ruby-comment"># File lib/graphviz/family_tree/person.rb, line 66</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">is_a_girl</span>( <span class="ruby-identifier">name</span> )
+  <span class="ruby-identifier">is_a_woman</span>( <span class="ruby-identifier">name</span> )
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- is_a_girl-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- is_a_girl-method -->
+
+    
+      <div id="method-i-is_a_man" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">is_a_man</span><span
+            class="method-args">( name )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Define the current person as a man</p>
+
+<pre>greg.is_a_man( &quot;Greg&quot; )</pre>
+          
+
+          
+          <div class="method-source-code" id="is_a_man-source">
+            <pre><span class="ruby-comment"># File lib/graphviz/family_tree/person.rb, line 44</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">is_a_man</span>( <span class="ruby-identifier">name</span> )
+  <span class="ruby-ivar">@node</span>[<span class="ruby-string">&quot;label&quot;</span>] = <span class="ruby-identifier">name</span>
+  <span class="ruby-ivar">@node</span>[<span class="ruby-string">&quot;color&quot;</span>] = <span class="ruby-string">&quot;blue&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- is_a_man-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- is_a_man-method -->
+
+    
+      <div id="method-i-is_a_woman" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">is_a_woman</span><span
+            class="method-args">( name )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Define the current perdon as a woman</p>
+
+<pre>mu.is_a_woman( &quot;Muriel&quot; )</pre>
+          
+
+          
+          <div class="method-source-code" id="is_a_woman-source">
+            <pre><span class="ruby-comment"># File lib/graphviz/family_tree/person.rb, line 59</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">is_a_woman</span>( <span class="ruby-identifier">name</span> )
+  <span class="ruby-ivar">@node</span>[<span class="ruby-string">&quot;label&quot;</span>] = <span class="ruby-identifier">name</span>
+  <span class="ruby-ivar">@node</span>[<span class="ruby-string">&quot;color&quot;</span>] = <span class="ruby-string">&quot;pink&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- is_a_woman-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- is_a_woman-method -->
+
+    
+      <div id="method-i-is_dead" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">is_dead</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Define the current person as dead</p>
+
+<pre>jack.is_dead</pre>
+          
+
+          
+          <div class="method-source-code" id="is_dead-source">
+            <pre><span class="ruby-comment"># File lib/graphviz/family_tree/person.rb, line 108</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">is_dead</span>
+  <span class="ruby-ivar">@node</span>[<span class="ruby-string">&quot;style&quot;</span>] = <span class="ruby-string">&quot;filled&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- is_dead-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- is_dead-method -->
+
+    
+      <div id="method-i-is_divorced_with" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">is_divorced_with</span><span
+            class="method-args">( x )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Define that’s two persons are divorced</p>
+
+<pre>sophie.is_divorced_with john</pre>
+          
+
+          
+          <div class="method-source-code" id="is_divorced_with-source">
+            <pre><span class="ruby-comment"># File lib/graphviz/family_tree/person.rb, line 84</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">is_divorced_with</span>( <span class="ruby-identifier">x</span> )
+  <span class="ruby-identifier">node</span> = <span class="ruby-ivar">@graph</span>.<span class="ruby-identifier">add_nodes</span>( <span class="ruby-node">&quot;#{@node.id}And#{x.node.id}&quot;</span> )
+  <span class="ruby-identifier">node</span>[<span class="ruby-string">&quot;shape&quot;</span>] = <span class="ruby-string">&quot;point&quot;</span>
+  <span class="ruby-identifier">node</span>[<span class="ruby-string">&quot;color&quot;</span>] = <span class="ruby-string">&quot;red&quot;</span>
+  <span class="ruby-ivar">@graph</span>.<span class="ruby-identifier">add_edges</span>( <span class="ruby-ivar">@node</span>, <span class="ruby-identifier">node</span>, <span class="ruby-string">&quot;dir&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;none&quot;</span>, <span class="ruby-string">&quot;color&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;red&quot;</span> )
+  <span class="ruby-ivar">@graph</span>.<span class="ruby-identifier">add_edges</span>( <span class="ruby-identifier">node</span>, <span class="ruby-identifier">x</span>.<span class="ruby-identifier">node</span>, <span class="ruby-string">&quot;dir&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;none&quot;</span>, <span class="ruby-string">&quot;color&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;red&quot;</span> )
+  <span class="ruby-ivar">@tree</span>.<span class="ruby-identifier">add_couple</span>( <span class="ruby-keyword">self</span>, <span class="ruby-identifier">x</span>, <span class="ruby-identifier">node</span> )
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- is_divorced_with-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- is_divorced_with-method -->
+
+    
+      <div id="method-i-is_maried_with" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">is_maried_with</span><span
+            class="method-args">( x )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Define that’s two persons are maried</p>
+
+<pre>mu.is_maried_with greg</pre>
+          
+
+          
+          <div class="method-source-code" id="is_maried_with-source">
+            <pre><span class="ruby-comment"># File lib/graphviz/family_tree/person.rb, line 73</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">is_maried_with</span>( <span class="ruby-identifier">x</span> )
+  <span class="ruby-identifier">node</span> = <span class="ruby-ivar">@graph</span>.<span class="ruby-identifier">add_nodes</span>( <span class="ruby-node">&quot;#{@node.id}And#{x.node.id}&quot;</span> )
+  <span class="ruby-identifier">node</span>[<span class="ruby-string">&quot;shape&quot;</span>] = <span class="ruby-string">&quot;point&quot;</span>
+  <span class="ruby-ivar">@graph</span>.<span class="ruby-identifier">add_edges</span>( <span class="ruby-ivar">@node</span>, <span class="ruby-identifier">node</span>, <span class="ruby-string">&quot;dir&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;none&quot;</span> )
+  <span class="ruby-ivar">@graph</span>.<span class="ruby-identifier">add_edges</span>( <span class="ruby-identifier">node</span>, <span class="ruby-identifier">x</span>.<span class="ruby-identifier">node</span>, <span class="ruby-string">&quot;dir&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;none&quot;</span> )
+  <span class="ruby-ivar">@tree</span>.<span class="ruby-identifier">add_couple</span>( <span class="ruby-keyword">self</span>, <span class="ruby-identifier">x</span>, <span class="ruby-identifier">node</span> )
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- is_maried_with-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- is_maried_with-method -->
+
+    
+      <div id="method-i-is_widower_of" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">is_widower_of</span><span
+            class="method-args">( x )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Define that’s a person is widower of another</p>
+
+<pre>simon.is_widower_of elisa</pre>
+          
+
+          
+          <div class="method-source-code" id="is_widower_of-source">
+            <pre><span class="ruby-comment"># File lib/graphviz/family_tree/person.rb, line 96</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">is_widower_of</span>( <span class="ruby-identifier">x</span> ) <span class="ruby-comment">#veuf</span>
+  <span class="ruby-identifier">node</span> = <span class="ruby-ivar">@graph</span>.<span class="ruby-identifier">add_nodes</span>( <span class="ruby-node">&quot;#{@node.id}And#{x.node.id}&quot;</span> )
+  <span class="ruby-identifier">node</span>[<span class="ruby-string">&quot;shape&quot;</span>] = <span class="ruby-string">&quot;point&quot;</span>
+  <span class="ruby-identifier">node</span>[<span class="ruby-string">&quot;color&quot;</span>] = <span class="ruby-string">&quot;green&quot;</span>
+  <span class="ruby-ivar">@graph</span>.<span class="ruby-identifier">add_edges</span>( <span class="ruby-ivar">@node</span>, <span class="ruby-identifier">node</span>, <span class="ruby-string">&quot;dir&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;none&quot;</span>, <span class="ruby-string">&quot;color&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;green&quot;</span> )
+  <span class="ruby-ivar">@graph</span>.<span class="ruby-identifier">add_edges</span>( <span class="ruby-identifier">node</span>, <span class="ruby-identifier">x</span>.<span class="ruby-identifier">node</span>, <span class="ruby-string">&quot;dir&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;none&quot;</span>, <span class="ruby-string">&quot;color&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;green&quot;</span> )
+  <span class="ruby-ivar">@tree</span>.<span class="ruby-identifier">add_couple</span>( <span class="ruby-keyword">self</span>, <span class="ruby-identifier">x</span>, <span class="ruby-identifier">node</span> )
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- is_widower_of-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- is_widower_of-method -->
+
+    
+      <div id="method-i-kids" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">kids</span><span
+            class="method-args">( *z )</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Define the kids of a single person</p>
+
+<pre>alice.kids( john, jack, julie )</pre>
+          
+
+          
+          <div class="method-source-code" id="kids-source">
+            <pre><span class="ruby-comment"># File lib/graphviz/family_tree/person.rb, line 115</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">kids</span>( *<span class="ruby-identifier">z</span> )
+  <span class="ruby-constant">GraphViz</span><span class="ruby-operator">::</span><span class="ruby-constant">FamilyTree</span><span class="ruby-operator">::</span><span class="ruby-constant">Couple</span>.<span class="ruby-identifier">new</span>( <span class="ruby-ivar">@graph</span>, <span class="ruby-ivar">@node</span>, [<span class="ruby-keyword">self</span>] ).<span class="ruby-identifier">kids</span>( *<span class="ruby-identifier">z</span> )
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- kids-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- kids-method -->
+
+    
+      <div id="method-i-name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">name</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="name-source">
+            <pre><span class="ruby-comment"># File lib/graphviz/family_tree/person.rb, line 21</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">name</span>
+  <span class="ruby-ivar">@node</span>.<span class="ruby-identifier">label</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@node</span>.<span class="ruby-identifier">id</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- name-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- name-method -->
+
+    
+      <div id="method-i-sibling" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">sibling</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="sibling-source">
+            <pre><span class="ruby-comment"># File lib/graphviz/family_tree/person.rb, line 25</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">sibling</span>
+  <span class="ruby-ivar">@sibling</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- sibling-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- sibling-method -->
+
+    
+      <div id="method-i-sibling-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">sibling=</span><span
+            class="method-args">(x)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="sibling-3D-source">
+            <pre><span class="ruby-comment"># File lib/graphviz/family_tree/person.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">sibling=</span>(<span class="ruby-identifier">x</span>)
+  <span class="ruby-ivar">@sibling</span>=<span class="ruby-identifier">x</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- sibling-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- sibling-3D-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

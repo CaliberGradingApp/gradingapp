@@ -1,0 +1,25 @@
+Thu, 07 Nov 2013 23:08:07 -0400
+lib/spork/forker.rb	Thu, 07 Nov 2013 23:08:07 -0400
+lib/spork/test_framework/cucumber.rb	Thu, 07 Nov 2013 23:08:07 -0400
+lib/spork/test_framework/rspec.rb	Thu, 07 Nov 2013 23:08:07 -0400
+lib/spork/diagnoser.rb	Thu, 07 Nov 2013 23:08:07 -0400
+lib/spork/run_strategy.rb	Thu, 07 Nov 2013 23:08:07 -0400
+lib/spork/test_framework.rb	Thu, 07 Nov 2013 23:08:07 -0400
+lib/spork/app_framework.rb	Thu, 07 Nov 2013 23:08:07 -0400
+lib/spork/app_framework/padrino.rb	Thu, 07 Nov 2013 23:08:07 -0400
+lib/spork/app_framework/rails.rb	Thu, 07 Nov 2013 23:08:07 -0400
+lib/spork/app_framework/unknown.rb	Thu, 07 Nov 2013 23:08:07 -0400
+lib/spork/server.rb	Thu, 07 Nov 2013 23:08:07 -0400
+lib/spork/runner.rb	Thu, 07 Nov 2013 23:08:07 -0400
+lib/spork/custom_io_streams.rb	Thu, 07 Nov 2013 23:08:07 -0400
+lib/spork/run_strategy/forking.rb	Thu, 07 Nov 2013 23:08:07 -0400
+lib/spork/run_strategy/magazine/magazine_slave.rb	Thu, 07 Nov 2013 23:08:07 -0400
+lib/spork/run_strategy/magazine/ring_server.rb	Thu, 07 Nov 2013 23:08:07 -0400
+lib/spork/run_strategy/magazine/magazine_slave_provider.rb	Thu, 07 Nov 2013 23:08:07 -0400
+lib/spork/run_strategy/magazine.rb	Thu, 07 Nov 2013 23:08:07 -0400
+lib/spork/gem_helpers.rb	Thu, 07 Nov 2013 23:08:07 -0400
+lib/spork/ext/ruby-debug.rb	Thu, 07 Nov 2013 23:08:07 -0400
+lib/spork/ext/rails-reloader.rb	Thu, 07 Nov 2013 23:08:07 -0400
+lib/spork.rb	Thu, 07 Nov 2013 23:08:07 -0400
+MIT-LICENSE	Thu, 07 Nov 2013 23:08:07 -0400
+README.rdoc	Thu, 07 Nov 2013 23:08:07 -0400

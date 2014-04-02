@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"backtrace_filter:EFI"MiniTest::backtrace_filter;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I""Filter object for backtraces.;T:
+@fileI"lib/minitest/unit.rb;TT@

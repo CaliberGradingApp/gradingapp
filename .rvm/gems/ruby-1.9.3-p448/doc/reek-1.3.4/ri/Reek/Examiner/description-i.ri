@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"description:EFI"Reek::Examiner#description;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"BA simple description of the source being analysed for smells.;TI"BIf the source is a single File, this will be the file's path.;T:
+@fileI"lib/reek/examiner.rb;TF@

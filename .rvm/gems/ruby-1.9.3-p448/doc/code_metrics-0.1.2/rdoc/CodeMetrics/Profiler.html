@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class CodeMetrics::Profiler - code_metrics-0.1.2 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/code_metrics/profiler.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><a class="include" href="RequireProfiler.html">CodeMetrics::RequireProfiler</a>
+  
+  
+  </ul>
+</nav>
+
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-profile_requires">#profile_requires</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../CodeMetrics.html">CodeMetrics</a>
+  
+    <li><a href="../CodeMetrics/LineStatistics.html">CodeMetrics::LineStatistics</a>
+  
+    <li><a href="../CodeMetrics/Profiler.html">CodeMetrics::Profiler</a>
+  
+    <li><a href="../CodeMetrics/Railtie.html">CodeMetrics::Railtie</a>
+  
+    <li><a href="../CodeMetrics/RequireProfiler.html">CodeMetrics::RequireProfiler</a>
+  
+    <li><a href="../CodeMetrics/Statistics.html">CodeMetrics::Statistics</a>
+  
+    <li><a href="../CodeMetrics/StatsDirectories.html">CodeMetrics::StatsDirectories</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class CodeMetrics::Profiler</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="Error">Error
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-mode" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">mode</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-path" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">path</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(path, mode=nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/code_metrics/profiler.rb, line 7</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">mode</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">assert_ruby_file_exists</span>(<span class="ruby-identifier">path</span>)
+  <span class="ruby-ivar">@path</span>, <span class="ruby-ivar">@mode</span> = <span class="ruby-identifier">path</span>, <span class="ruby-identifier">mode</span>
+  <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">refresh</span>
+  <span class="ruby-comment"># H/T https://github.com/pry/pry/blob/b02d0a4863/lib/pry/plugins.rb#L72</span>
+  <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Specification</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:each</span>) <span class="ruby-operator">?</span> <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Specification</span>.<span class="ruby-identifier">all</span> <span class="ruby-operator">:</span> <span class="ruby-constant">Gem</span>.<span class="ruby-identifier">source_index</span>
+  <span class="ruby-identifier">require</span> <span class="ruby-string">'benchmark'</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-profile_requires" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">profile_requires</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="profile_requires-source">
+            <pre><span class="ruby-comment"># File lib/code_metrics/profiler.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">profile_requires</span>
+  <span class="ruby-constant">GC</span>.<span class="ruby-identifier">start</span>
+  <span class="ruby-identifier">before_rss</span> = <span class="ruby-node">%xps -o rss= -p #{Process.pid}`</span>.<span class="ruby-identifier">to_i</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">mode</span>
+    <span class="ruby-identifier">require</span> <span class="ruby-string">'ruby-prof'</span>
+    <span class="ruby-constant">RubyProf</span>.<span class="ruby-identifier">measure_mode</span> = <span class="ruby-constant">RubyProf</span>.<span class="ruby-identifier">const_get</span>(<span class="ruby-identifier">mode</span>.<span class="ruby-identifier">upcase</span>)
+    <span class="ruby-constant">RubyProf</span>.<span class="ruby-identifier">start</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-constant">Object</span>.<span class="ruby-identifier">instance_eval</span> { <span class="ruby-identifier">include</span> <span class="ruby-constant">RequireProfiler</span> }
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">elapsed</span> = <span class="ruby-constant">Benchmark</span>.<span class="ruby-identifier">realtime</span> { <span class="ruby-identifier">require</span> <span class="ruby-identifier">path</span> }
+  <span class="ruby-identifier">results</span> = <span class="ruby-constant">RubyProf</span>.<span class="ruby-identifier">stop</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">mode</span>
+
+  <span class="ruby-constant">GC</span>.<span class="ruby-identifier">start</span>
+  <span class="ruby-identifier">after_rss</span> = <span class="ruby-node">%xps -o rss= -p #{Process.pid}`</span>.<span class="ruby-identifier">to_i</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">mode</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">printer</span> = <span class="ruby-constant">ARGV</span>.<span class="ruby-identifier">shift</span>
+      <span class="ruby-constant">RubyProf</span>.<span class="ruby-identifier">const_get</span>(<span class="ruby-node">&quot;#{printer.to_s.classify}Printer&quot;</span>).<span class="ruby-identifier">new</span>(<span class="ruby-identifier">results</span>).<span class="ruby-identifier">print</span>(<span class="ruby-identifier">$stdout</span>)
+    <span class="ruby-keyword">elsif</span> <span class="ruby-constant">RubyProf</span>.<span class="ruby-identifier">const_defined?</span>(<span class="ruby-value">:CallStackPrinter</span>)
+      <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-node">&quot;#{File.basename(path, '.rb')}.#{mode}.html&quot;</span>, <span class="ruby-string">'w'</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">out</span><span class="ruby-operator">|</span>
+        <span class="ruby-constant">RubyProf</span><span class="ruby-operator">::</span><span class="ruby-constant">CallStackPrinter</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">results</span>).<span class="ruby-identifier">print</span>(<span class="ruby-identifier">out</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-node">&quot;#{File.basename(path, '.rb')}.#{mode}.callgrind&quot;</span>, <span class="ruby-string">'w'</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">out</span><span class="ruby-operator">|</span>
+        <span class="ruby-constant">RubyProf</span><span class="ruby-operator">::</span><span class="ruby-constant">CallTreePrinter</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">results</span>).<span class="ruby-identifier">print</span>(<span class="ruby-identifier">out</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-constant">RequireProfiler</span>.<span class="ruby-identifier">stats</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file</span>, <span class="ruby-identifier">depth</span>, <span class="ruby-identifier">sec</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">sec</span>
+      <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;%8.1f ms  %s%s&quot;</span> <span class="ruby-operator">%</span> [<span class="ruby-identifier">sec</span> * <span class="ruby-value">1000</span>, <span class="ruby-string">' '</span> * <span class="ruby-identifier">depth</span>, <span class="ruby-identifier">file</span>]
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{' ' * (13 + depth)}#{file}&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;%8.1f ms  %d KB RSS&quot;</span> <span class="ruby-operator">%</span> [<span class="ruby-identifier">elapsed</span> * <span class="ruby-value">1000</span>, <span class="ruby-identifier">after_rss</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">before_rss</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- profile_requires-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- profile_requires-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module Kernel - awesome_print-1.2.0 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/awesome_print/core_ext/kernel.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-ap">::ap</a>
+    
+    <li><a href="#method-i-ai">#ai</a>
+    
+    <li><a href="#method-i-awesome_inspect">#awesome_inspect</a>
+    
+    <li><a href="#method-i-awesome_print">#awesome_print</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./AwesomePrint.html">AwesomePrint</a>
+  
+    <li><a href="./AwesomePrint/ActionView.html">AwesomePrint::ActionView</a>
+  
+    <li><a href="./AwesomePrint/ActiveRecord.html">AwesomePrint::ActiveRecord</a>
+  
+    <li><a href="./AwesomePrint/ActiveSupport.html">AwesomePrint::ActiveSupport</a>
+  
+    <li><a href="./AwesomePrint/Formatter.html">AwesomePrint::Formatter</a>
+  
+    <li><a href="./AwesomePrint/Inspector.html">AwesomePrint::Inspector</a>
+  
+    <li><a href="./AwesomePrint/Logger.html">AwesomePrint::Logger</a>
+  
+    <li><a href="./AwesomePrint/MongoMapper.html">AwesomePrint::MongoMapper</a>
+  
+    <li><a href="./AwesomePrint/Mongoid.html">AwesomePrint::Mongoid</a>
+  
+    <li><a href="./AwesomePrint/NoBrainer.html">AwesomePrint::NoBrainer</a>
+  
+    <li><a href="./AwesomePrint/Nokogiri.html">AwesomePrint::Nokogiri</a>
+  
+    <li><a href="./AwesomePrint/Ripple.html">AwesomePrint::Ripple</a>
+  
+    <li><a href="./AwesomePrint/Sequel.html">AwesomePrint::Sequel</a>
+  
+    <li><a href="./Kernel.html">Kernel</a>
+  
+    <li><a href="./Method.html">Method</a>
+  
+    <li><a href="./String.html">String</a>
+  
+    <li><a href="./UnboundMethod.html">UnboundMethod</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module Kernel</h1>
+
+  <div id="description" class="description">
+    
+<p>Copyright © 2010-2013 Michael Dvorkin</p>
+
+<p>Awesome Print is freely distributable under the terms of MIT license. See
+LICENSE file or <a
+href="http://www.opensource.org/licenses/mit-license.php">www.opensource.org/licenses/mit-license.php</a></p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-ap" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ap</span><span
+            class="method-args">(object, options = {})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="ap-source">
+            <pre><span class="ruby-comment"># File lib/awesome_print/core_ext/kernel.rb, line 19</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ap</span>(<span class="ruby-identifier">object</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">puts</span> <span class="ruby-identifier">object</span>.<span class="ruby-identifier">ai</span>(<span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">object</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">AwesomePrint</span>.<span class="ruby-identifier">console?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- ap-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Kernel.html#method-i-awesome_print">awesome_print</a>
+        </div>
+        
+
+        
+      </div><!-- ap-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-ai" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">ai</span><span
+            class="method-args">(options = {})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="ai-source">
+            <pre><span class="ruby-comment"># File lib/awesome_print/core_ext/kernel.rb, line 8</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ai</span>(<span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">ap</span> = <span class="ruby-constant">AwesomePrint</span><span class="ruby-operator">::</span><span class="ruby-constant">Inspector</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">awesome</span> = <span class="ruby-identifier">ap</span>.<span class="ruby-identifier">awesome</span> <span class="ruby-keyword">self</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:html</span>]
+    <span class="ruby-identifier">awesome</span> = <span class="ruby-node">&quot;&lt;pre&gt;#{awesome}&lt;/pre&gt;&quot;</span>
+    <span class="ruby-identifier">awesome</span> = <span class="ruby-identifier">awesome</span>.<span class="ruby-identifier">html_safe</span> <span class="ruby-keyword">if</span> <span class="ruby-keyword">defined?</span> <span class="ruby-constant">ActiveSupport</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">awesome</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- ai-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Kernel.html#method-i-awesome_inspect">awesome_inspect</a>
+        </div>
+        
+
+        
+      </div><!-- ai-method -->
+
+    
+      <div id="method-i-awesome_inspect" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">awesome_inspect</span><span
+            class="method-args">(options = {})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Kernel.html#method-i-ai">ai</a>
+        </div>
+        
+      </div><!-- awesome_inspect-method -->
+
+    
+      <div id="method-i-awesome_print" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">awesome_print</span><span
+            class="method-args">(object, options = {})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Kernel.html#method-i-ap">ap</a>
+        </div>
+        
+      </div><!-- awesome_print-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

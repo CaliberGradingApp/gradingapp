@@ -15,7 +15,7 @@
     %br/
     %h1{align: "center"} Caliber
     %form{action: "", align: "center", method: "post", name: "Login"}
-      User Name     
+      %span{:style=> 'text-align: center'}User Name     
       %input{name: "username", type: "text", align: "center"}/
       %br/
       Password        

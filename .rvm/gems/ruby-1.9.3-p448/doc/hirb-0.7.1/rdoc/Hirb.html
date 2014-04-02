@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module Hirb - hirb-0.7.1 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/hirb/dynamic_view.rb
+    <li>lib/hirb/helpers/table.rb
+    <li>lib/hirb/string.rb
+    <li>lib/hirb/pager.rb
+    <li>lib/hirb/version.rb
+    <li>lib/hirb/views.rb
+    <li>lib/hirb/util.rb
+    <li>lib/hirb/import_object.rb
+    <li>lib/hirb/helpers.rb
+    <li>lib/hirb/console.rb
+    <li>lib/hirb/formatter.rb
+    <li>lib/hirb/view.rb
+    <li>lib/hirb/menu.rb
+    <li>lib/hirb.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-add_dynamic_view">::add_dynamic_view</a>
+    
+    <li><a href="#method-c-add_view">::add_view</a>
+    
+    <li><a href="#method-c-disable">::disable</a>
+    
+    <li><a href="#method-c-enable">::enable</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./LICENSE_txt.html">LICENSE</a>
+  
+    <li class="file"><a href="./README_rdoc.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Hirb.html">Hirb</a>
+  
+    <li><a href="./Hirb/Console.html">Hirb::Console</a>
+  
+    <li><a href="./Hirb/DynamicView.html">Hirb::DynamicView</a>
+  
+    <li><a href="./Hirb/Formatter.html">Hirb::Formatter</a>
+  
+    <li><a href="./Hirb/Helpers.html">Hirb::Helpers</a>
+  
+    <li><a href="./Hirb/Helpers/AutoTable.html">Hirb::Helpers::AutoTable</a>
+  
+    <li><a href="./Hirb/Helpers/MarkdownTable.html">Hirb::Helpers::MarkdownTable</a>
+  
+    <li><a href="./Hirb/Helpers/ObjectTable.html">Hirb::Helpers::ObjectTable</a>
+  
+    <li><a href="./Hirb/Helpers/ParentChildTree.html">Hirb::Helpers::ParentChildTree</a>
+  
+    <li><a href="./Hirb/Helpers/TabTable.html">Hirb::Helpers::TabTable</a>
+  
+    <li><a href="./Hirb/Helpers/Table.html">Hirb::Helpers::Table</a>
+  
+    <li><a href="./Hirb/Helpers/Table/Filters.html">Hirb::Helpers::Table::Filters</a>
+  
+    <li><a href="./Hirb/Helpers/Table/Resizer.html">Hirb::Helpers::Table::Resizer</a>
+  
+    <li><a href="./Hirb/Helpers/Table/TooManyFieldsForWidthError.html">Hirb::Helpers::Table::TooManyFieldsForWidthError</a>
+  
+    <li><a href="./Hirb/Helpers/Tree.html">Hirb::Helpers::Tree</a>
+  
+    <li><a href="./Hirb/Helpers/Tree/Node.html">Hirb::Helpers::Tree::Node</a>
+  
+    <li><a href="./Hirb/Helpers/Tree/Node/MissingLevelError.html">Hirb::Helpers::Tree::Node::MissingLevelError</a>
+  
+    <li><a href="./Hirb/Helpers/Tree/Node/MissingValueError.html">Hirb::Helpers::Tree::Node::MissingValueError</a>
+  
+    <li><a href="./Hirb/Helpers/Tree/ParentlessNodeError.html">Hirb::Helpers::Tree::ParentlessNodeError</a>
+  
+    <li><a href="./Hirb/Helpers/UnicodeTable.html">Hirb::Helpers::UnicodeTable</a>
+  
+    <li><a href="./Hirb/Helpers/VerticalTable.html">Hirb::Helpers::VerticalTable</a>
+  
+    <li><a href="./Hirb/Menu.html">Hirb::Menu</a>
+  
+    <li><a href="./Hirb/Menu/Error.html">Hirb::Menu::Error</a>
+  
+    <li><a href="./Hirb/ObjectMethods.html">Hirb::ObjectMethods</a>
+  
+    <li><a href="./Hirb/Pager.html">Hirb::Pager</a>
+  
+    <li><a href="./Hirb/String.html">Hirb::String</a>
+  
+    <li><a href="./Hirb/Util.html">Hirb::Util</a>
+  
+    <li><a href="./Hirb/View.html">Hirb::View</a>
+  
+    <li><a href="./Hirb/Views.html">Hirb::Views</a>
+  
+    <li><a href="./Ripl.html">Ripl</a>
+  
+    <li><a href="./Ripl/Hirb.html">Ripl::Hirb</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module Hirb</h1>
+
+  <div id="description" class="description">
+    
+<p>Most of Hirb’s functionality is in <a href="Hirb/View.html">Hirb::View</a>.
+For a tutorial  on configuring and creating views see <a
+href="Hirb/View.html">Hirb::View</a>. For a tutorial on dynamic views see
+<a href="Hirb/DynamicView.html">Hirb::DynamicView</a>.</p>
+
+<h2 id="label-Config+Files">Config Files</h2>
+
+<p><a href="Hirb.html">Hirb</a> can have multiple config files defined by <a
+href="Hirb.html#attribute-c-config_files">::config_files</a>(). These
+config files have the following top level keys:</p>
+<dl class="rdoc-list label-list"><dt><strong>:output</strong>
+<dd>
+<p>This hash is used by the formatter object. See <a
+href="Hirb/Formatter.html#method-i-config">Hirb::Formatter#config</a> for
+its format.</p>
+</dd><dt><strong>:width</strong>
+<dd>
+<p>Width of the terminal/console. Defaults to Hirb::View::DEFAULT_WIDTH or
+possibly autodetected when <a href="Hirb.html">Hirb</a> is enabled.</p>
+</dd><dt><strong>:height</strong>
+<dd>
+<p>Height of the terminal/console. Defaults to Hirb::View::DEFAULT_HEIGHT or
+possibly autodetected when <a href="Hirb.html">Hirb</a> is enabled.</p>
+</dd><dt><strong>:formatter</strong>
+<dd>
+<p>Boolean which determines if the formatter is enabled. Defaults to true.</p>
+</dd><dt><strong>:pager</strong>
+<dd>
+<p>Boolean which determines if the pager is enabled. Defaults to true.</p>
+</dd><dt><strong>:pager_command</strong>
+<dd>
+<p>Command to be used for paging. Command can have options after it i.e. ‘less
+-r’. Defaults to common pagers i.e. less and more if detected.</p>
+</dd><dt><strong>:ignore_errors</strong>
+<dd>
+<p>Boolean which ignores internal view errors and continues with original view
+(i.e. inspect for irb). Defaults to false.</p>
+</dd></dl>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="VERSION">VERSION
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-c-config" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">config</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-c-config_files" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">config_files</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-add_dynamic_view" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_dynamic_view</span><span
+            class="method-args">(view, options, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Adds views. See <a
+href="Hirb/DynamicView.html#method-c-add">Hirb::DynamicView.add</a> for
+details.</p>
+          
+
+          
+          <div class="method-source-code" id="add_dynamic_view-source">
+            <pre><span class="ruby-comment"># File lib/hirb.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_dynamic_view</span>(<span class="ruby-identifier">view</span>, <span class="ruby-identifier">options</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-constant">DynamicView</span>.<span class="ruby-identifier">add</span>(<span class="ruby-identifier">view</span>, <span class="ruby-identifier">options</span>, &amp;<span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_dynamic_view-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_dynamic_view-method -->
+
+    
+      <div id="method-c-add_view" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_view</span><span
+            class="method-args">(view, options, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Adds views. See <a href="Hirb/View.html#method-c-add">Hirb::View.add</a>
+for details.</p>
+          
+
+          
+          <div class="method-source-code" id="add_view-source">
+            <pre><span class="ruby-comment"># File lib/hirb.rb, line 47</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_view</span>(<span class="ruby-identifier">view</span>, <span class="ruby-identifier">options</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-constant">View</span>.<span class="ruby-identifier">add</span>(<span class="ruby-identifier">view</span>, <span class="ruby-identifier">options</span>, &amp;<span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_view-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_view-method -->
+
+    
+      <div id="method-c-disable" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">disable</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Disables view functionality. See <a
+href="Hirb/View.html#method-c-disable">Hirb::View.disable</a> for details.</p>
+          
+
+          
+          <div class="method-source-code" id="disable-source">
+            <pre><span class="ruby-comment"># File lib/hirb.rb, line 42</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">disable</span>
+  <span class="ruby-constant">View</span>.<span class="ruby-identifier">disable</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- disable-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- disable-method -->
+
+    
+      <div id="method-c-enable" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">enable</span><span
+            class="method-args">(options={}, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Enables view functionality. See <a
+href="Hirb/View.html#method-c-enable">Hirb::View.enable</a> for details.</p>
+          
+
+          
+          <div class="method-source-code" id="enable-source">
+            <pre><span class="ruby-comment"># File lib/hirb.rb, line 37</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">enable</span>(<span class="ruby-identifier">options</span>={}, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-constant">View</span>.<span class="ruby-identifier">enable</span>(<span class="ruby-identifier">options</span>, &amp;<span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- enable-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- enable-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

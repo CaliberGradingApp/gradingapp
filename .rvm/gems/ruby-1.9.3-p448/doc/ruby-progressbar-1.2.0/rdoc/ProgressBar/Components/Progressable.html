@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module ProgressBar::Components::Progressable - ruby-progressbar-1.2.0 Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/ruby-progressbar/components/progressable.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-decrement">#decrement</a>
+    
+    <li><a href="#method-i-finish">#finish</a>
+    
+    <li><a href="#method-i-increment">#increment</a>
+    
+    <li><a href="#method-i-percentage_completed">#percentage_completed</a>
+    
+    <li><a href="#method-i-percentage_completed_with_precision">#percentage_completed_with_precision</a>
+    
+    <li><a href="#method-i-progress-3D">#progress=</a>
+    
+    <li><a href="#method-i-reset">#reset</a>
+    
+    <li><a href="#method-i-start">#start</a>
+    
+    <li><a href="#method-i-started-3F">#started?</a>
+    
+    <li><a href="#method-i-total-3D">#total=</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../LICENSE.html">LICENSE</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../ProgressBar.html">ProgressBar</a>
+  
+    <li><a href="../../ProgressBar/Base.html">ProgressBar::Base</a>
+  
+    <li><a href="../../ProgressBar/Components.html">ProgressBar::Components</a>
+  
+    <li><a href="../../ProgressBar/Components/Bar.html">ProgressBar::Components::Bar</a>
+  
+    <li><a href="../../ProgressBar/Components/ElapsedTimer.html">ProgressBar::Components::ElapsedTimer</a>
+  
+    <li><a href="../../ProgressBar/Components/EstimatedTimer.html">ProgressBar::Components::EstimatedTimer</a>
+  
+    <li><a href="../../ProgressBar/Components/EstimatedTimer/As.html">ProgressBar::Components::EstimatedTimer::As</a>
+  
+    <li><a href="../../ProgressBar/Components/Progressable.html">ProgressBar::Components::Progressable</a>
+  
+    <li><a href="../../ProgressBar/Components/Throttle.html">ProgressBar::Components::Throttle</a>
+  
+    <li><a href="../../ProgressBar/Components/Timer.html">ProgressBar::Components::Timer</a>
+  
+    <li><a href="../../ProgressBar/Format.html">ProgressBar::Format</a>
+  
+    <li><a href="../../ProgressBar/Format/Base.html">ProgressBar::Format::Base</a>
+  
+    <li><a href="../../ProgressBar/Format/Molecule.html">ProgressBar::Format::Molecule</a>
+  
+    <li><a href="../../ProgressBar/Formatter.html">ProgressBar::Formatter</a>
+  
+    <li><a href="../../ProgressBar/LengthCalculator.html">ProgressBar::LengthCalculator</a>
+  
+    <li><a href="../../ProgressBar/RunningAverageCalculator.html">ProgressBar::RunningAverageCalculator</a>
+  
+    <li><a href="../../ProgressBar/Time.html">ProgressBar::Time</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module ProgressBar::Components::Progressable</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="DEFAULT_BEGINNING_POSITION">DEFAULT_BEGINNING_POSITION
+        
+        <dd class="description">
+        
+      
+        <dt id="DEFAULT_SMOOTHING">DEFAULT_SMOOTHING
+        
+        <dd class="description">
+        
+      
+        <dt id="DEFAULT_TOTAL">DEFAULT_TOTAL
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-progress" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">progress</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-running_average" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">running_average</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-smoothing" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">smoothing</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-starting_position" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">starting_position</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-total" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">total</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(options = {})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/ruby-progressbar/components/progressable.rb, line 14</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">options</span> = {})
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">total</span>           = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value">:total</span>, <span class="ruby-constant">DEFAULT_TOTAL</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">smoothing</span>       = <span class="ruby-identifier">options</span>[<span class="ruby-value">:smoothing</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">DEFAULT_SMOOTHING</span>
+
+  <span class="ruby-identifier">start</span> <span class="ruby-value">:at</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">DEFAULT_BEGINNING_POSITION</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-decrement" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">decrement</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="decrement-source">
+            <pre><span class="ruby-comment"># File lib/ruby-progressbar/components/progressable.rb, line 36</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">decrement</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">progress</span> <span class="ruby-operator">-=</span> <span class="ruby-value">1</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">progress</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- decrement-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- decrement-method -->
+
+    
+      <div id="method-i-finish" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">finish</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="finish-source">
+            <pre><span class="ruby-comment"># File lib/ruby-progressbar/components/progressable.rb, line 57</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">finish</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">progress</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">total</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- finish-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- finish-method -->
+
+    
+      <div id="method-i-increment" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">increment</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="increment-source">
+            <pre><span class="ruby-comment"># File lib/ruby-progressbar/components/progressable.rb, line 32</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">increment</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">progress</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">progress</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">total</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- increment-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- increment-method -->
+
+    
+      <div id="method-i-percentage_completed" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">percentage_completed</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="percentage_completed-source">
+            <pre><span class="ruby-comment"># File lib/ruby-progressbar/components/progressable.rb, line 61</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">percentage_completed</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-value">100</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">total</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-value">0</span>   <span class="ruby-keyword">if</span> <span class="ruby-identifier">total</span>.<span class="ruby-identifier">nil?</span>
+
+  <span class="ruby-comment"># progress / total * 100</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment"># Doing this way so we can avoid converting each</span>
+  <span class="ruby-comment"># number to a float and then back to an integer.</span>
+  <span class="ruby-comment">#</span>
+  (<span class="ruby-keyword">self</span>.<span class="ruby-identifier">progress</span> * <span class="ruby-value">100</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">total</span>).<span class="ruby-identifier">to_i</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- percentage_completed-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- percentage_completed-method -->
+
+    
+      <div id="method-i-percentage_completed_with_precision" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">percentage_completed_with_precision</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="percentage_completed_with_precision-source">
+            <pre><span class="ruby-comment"># File lib/ruby-progressbar/components/progressable.rb, line 73</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">percentage_completed_with_precision</span>
+  <span class="ruby-identifier">format</span>(<span class="ruby-string">'%5.2f'</span>, (<span class="ruby-identifier">progress</span>.<span class="ruby-identifier">to_f</span> * <span class="ruby-value">100.0</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">total</span> * <span class="ruby-value">100.0</span>).<span class="ruby-identifier">floor</span> <span class="ruby-operator">/</span> <span class="ruby-value">100.0</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- percentage_completed_with_precision-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- percentage_completed_with_precision-method -->
+
+    
+      <div id="method-i-progress-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">progress=</span><span
+            class="method-args">(new_progress)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="progress-3D-source">
+            <pre><span class="ruby-comment"># File lib/ruby-progressbar/components/progressable.rb, line 44</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">progress=</span>(<span class="ruby-identifier">new_progress</span>)
+  <span class="ruby-identifier">validate_progress</span>(<span class="ruby-identifier">new_progress</span>)
+
+  <span class="ruby-ivar">@progress</span> = <span class="ruby-identifier">new_progress</span>
+
+  <span class="ruby-identifier">update_running_average</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- progress-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- progress-3D-method -->
+
+    
+      <div id="method-i-reset" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">reset</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="reset-source">
+            <pre><span class="ruby-comment"># File lib/ruby-progressbar/components/progressable.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">reset</span>
+  <span class="ruby-identifier">start</span> <span class="ruby-value">:at</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">starting_position</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- reset-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- reset-method -->
+
+    
+      <div id="method-i-start" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">start</span><span
+            class="method-args">(options = {})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="start-source">
+            <pre><span class="ruby-comment"># File lib/ruby-progressbar/components/progressable.rb, line 21</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">start</span>(<span class="ruby-identifier">options</span> = {})
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">running_average</span>   = <span class="ruby-value">0</span>
+
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">progress</span>          =          <span class="ruby-keyword">self</span>.<span class="ruby-identifier">starting_position</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:at</span>] <span class="ruby-operator">||</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">progress</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- start-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- start-method -->
+
+    
+      <div id="method-i-started-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">started?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="started-3F-source">
+            <pre><span class="ruby-comment"># File lib/ruby-progressbar/components/progressable.rb, line 28</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">started?</span>
+  <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-keyword">self</span>.<span class="ruby-identifier">starting_position</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- started-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- started-3F-method -->
+
+    
+      <div id="method-i-total-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">total=</span><span
+            class="method-args">(new_total)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="total-3D-source">
+            <pre><span class="ruby-comment"># File lib/ruby-progressbar/components/progressable.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">total=</span>(<span class="ruby-identifier">new_total</span>)
+  <span class="ruby-identifier">validate_total</span>(<span class="ruby-identifier">new_total</span>)
+  <span class="ruby-ivar">@total</span> = <span class="ruby-identifier">new_total</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- total-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- total-3D-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

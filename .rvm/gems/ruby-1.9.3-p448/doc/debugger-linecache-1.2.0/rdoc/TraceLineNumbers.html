@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module TraceLineNumbers - debugger-linecache-1.2.0 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/tracelines19.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-lnums_for_file">::lnums_for_file</a>
+    
+    <li><a href="#method-c-lnums_for_str">::lnums_for_str</a>
+    
+    <li><a href="#method-c-lnums_for_str_array">::lnums_for_str_array</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Debugger.html">Debugger</a>
+  
+    <li><a href="./Debugger/Linecache.html">Debugger::Linecache</a>
+  
+    <li><a href="./LineCache.html">LineCache</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./TraceLineNumbers.html">TraceLineNumbers</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module TraceLineNumbers</h1>
+
+  <div id="description" class="description">
+    
+<p>$Id$</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-lnums_for_file" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">lnums_for_file</span><span
+            class="method-args">(file)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="lnums_for_file-source">
+            <pre><span class="ruby-comment"># File lib/tracelines19.rb, line 24</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">lnums_for_file</span>(<span class="ruby-identifier">file</span>)
+  <span class="ruby-identifier">lnums_for_str</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">file</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- lnums_for_file-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- lnums_for_file-method -->
+
+    
+      <div id="method-c-lnums_for_str" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">lnums_for_str</span><span
+            class="method-args">(src)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Return an array of lines numbers that could be stopped at given a file name
+of a Ruby program.</p>
+          
+
+          
+          <div class="method-source-code" id="lnums_for_str-source">
+            <pre><span class="ruby-comment"># File lib/tracelines19.rb, line 8</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">lnums_for_str</span> <span class="ruby-identifier">src</span>
+  <span class="ruby-identifier">name</span> = <span class="ruby-node">&quot;#{Time.new.to_i}_#{rand(2**31)}&quot;</span>
+  <span class="ruby-identifier">iseq</span> = <span class="ruby-constant">RubyVM</span><span class="ruby-operator">::</span><span class="ruby-constant">InstructionSequence</span>.<span class="ruby-identifier">compile</span>(<span class="ruby-identifier">src</span>, <span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">lines</span> = {}
+  <span class="ruby-identifier">iseq</span>.<span class="ruby-identifier">disasm</span>.<span class="ruby-identifier">each_line</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-regexp">/^\d+ (\w+)\s+.+\(\s*(\d+)\)$/</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">line</span>
+      <span class="ruby-identifier">insn</span> = <span class="ruby-node">$1</span>
+      <span class="ruby-identifier">lineno</span> = <span class="ruby-node">$2</span>.<span class="ruby-identifier">to_i</span>
+      <span class="ruby-keyword">next</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">insn</span> <span class="ruby-operator">==</span> <span class="ruby-string">'trace'</span>
+      <span class="ruby-identifier">lines</span>[<span class="ruby-identifier">lineno</span>] = <span class="ruby-keyword">true</span>
+      <span class="ruby-comment"># p [lineno, line]</span>
+    <span class="ruby-keyword">end</span>
+  }
+  <span class="ruby-identifier">lines</span>.<span class="ruby-identifier">keys</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- lnums_for_str-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- lnums_for_str-method -->
+
+    
+      <div id="method-c-lnums_for_str_array" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">lnums_for_str_array</span><span
+            class="method-args">(string_array, newline='')</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Return an array of lines numbers that could be stopped at given a file name
+of a Ruby program. We assume the each line has n at the end. If not set the
+newline parameters to n.</p>
+          
+
+          
+          <div class="method-source-code" id="lnums_for_str_array-source">
+            <pre><span class="ruby-comment"># File lib/tracelines19.rb, line 33</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">lnums_for_str_array</span>(<span class="ruby-identifier">string_array</span>, <span class="ruby-identifier">newline</span>=<span class="ruby-string">''</span>)
+  <span class="ruby-identifier">lnums_for_str</span>(<span class="ruby-identifier">string_array</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">newline</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- lnums_for_str_array-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- lnums_for_str_array-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

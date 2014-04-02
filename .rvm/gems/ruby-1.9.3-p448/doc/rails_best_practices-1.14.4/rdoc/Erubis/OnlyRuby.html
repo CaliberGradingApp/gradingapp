@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Erubis::OnlyRuby - rails_best_practices-1.14.4 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/rails_best_practices/core_ext/erubis.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Eruby
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-add_expr_debug">#add_expr_debug</a>
+    
+    <li><a href="#method-i-add_expr_escaped">#add_expr_escaped</a>
+    
+    <li><a href="#method-i-add_expr_literal">#add_expr_literal</a>
+    
+    <li><a href="#method-i-add_postamble">#add_postamble</a>
+    
+    <li><a href="#method-i-add_preamble">#add_preamble</a>
+    
+    <li><a href="#method-i-add_stmt">#add_stmt</a>
+    
+    <li><a href="#method-i-add_text">#add_text</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../RailsBestPractices.html">RailsBestPractices</a>
+  
+    <li><a href="../RailsBestPractices/Analyzer.html">RailsBestPractices::Analyzer</a>
+  
+    <li><a href="../RailsBestPractices/Core.html">RailsBestPractices::Core</a>
+  
+    <li><a href="../RailsBestPractices/Core/Check.html">RailsBestPractices::Core::Check</a>
+  
+    <li><a href="../RailsBestPractices/Core/Check/Accessable.html">RailsBestPractices::Core::Check::Accessable</a>
+  
+    <li><a href="../RailsBestPractices/Core/Check/Callable.html">RailsBestPractices::Core::Check::Callable</a>
+  
+    <li><a href="../RailsBestPractices/Core/Check/Classable.html">RailsBestPractices::Core::Check::Classable</a>
+  
+    <li><a href="../RailsBestPractices/Core/Check/Exceptable.html">RailsBestPractices::Core::Check::Exceptable</a>
+  
+    <li><a href="../RailsBestPractices/Core/Check/InheritedResourcesable.html">RailsBestPractices::Core::Check::InheritedResourcesable</a>
+  
+    <li><a href="../RailsBestPractices/Core/Check/Moduleable.html">RailsBestPractices::Core::Check::Moduleable</a>
+  
+    <li><a href="../RailsBestPractices/Core/Configs.html">RailsBestPractices::Core::Configs</a>
+  
+    <li><a href="../RailsBestPractices/Core/Controllers.html">RailsBestPractices::Core::Controllers</a>
+  
+    <li><a href="../RailsBestPractices/Core/Error.html">RailsBestPractices::Core::Error</a>
+  
+    <li><a href="../RailsBestPractices/Core/Gem.html">RailsBestPractices::Core::Gem</a>
+  
+    <li><a href="../RailsBestPractices/Core/Gems.html">RailsBestPractices::Core::Gems</a>
+  
+    <li><a href="../RailsBestPractices/Core/Helpers.html">RailsBestPractices::Core::Helpers</a>
+  
+    <li><a href="../RailsBestPractices/Core/Klass.html">RailsBestPractices::Core::Klass</a>
+  
+    <li><a href="../RailsBestPractices/Core/Klasses.html">RailsBestPractices::Core::Klasses</a>
+  
+    <li><a href="../RailsBestPractices/Core/Mailers.html">RailsBestPractices::Core::Mailers</a>
+  
+    <li><a href="../RailsBestPractices/Core/Method.html">RailsBestPractices::Core::Method</a>
+  
+    <li><a href="../RailsBestPractices/Core/Methods.html">RailsBestPractices::Core::Methods</a>
+  
+    <li><a href="../RailsBestPractices/Core/Mod.html">RailsBestPractices::Core::Mod</a>
+  
+    <li><a href="../RailsBestPractices/Core/ModelAssociations.html">RailsBestPractices::Core::ModelAssociations</a>
+  
+    <li><a href="../RailsBestPractices/Core/ModelAttributes.html">RailsBestPractices::Core::ModelAttributes</a>
+  
+    <li><a href="../RailsBestPractices/Core/Models.html">RailsBestPractices::Core::Models</a>
+  
+    <li><a href="../RailsBestPractices/Core/Modules.html">RailsBestPractices::Core::Modules</a>
+  
+    <li><a href="../RailsBestPractices/Core/Route.html">RailsBestPractices::Core::Route</a>
+  
+    <li><a href="../RailsBestPractices/Core/Routes.html">RailsBestPractices::Core::Routes</a>
+  
+    <li><a href="../RailsBestPractices/Core/Runner.html">RailsBestPractices::Core::Runner</a>
+  
+    <li><a href="../RailsBestPractices/Lexicals.html">RailsBestPractices::Lexicals</a>
+  
+    <li><a href="../RailsBestPractices/Lexicals/LongLineCheck.html">RailsBestPractices::Lexicals::LongLineCheck</a>
+  
+    <li><a href="../RailsBestPractices/Lexicals/RemoveTabCheck.html">RailsBestPractices::Lexicals::RemoveTabCheck</a>
+  
+    <li><a href="../RailsBestPractices/Lexicals/RemoveTrailingWhitespaceCheck.html">RailsBestPractices::Lexicals::RemoveTrailingWhitespaceCheck</a>
+  
+    <li><a href="../RailsBestPractices/Prepares.html">RailsBestPractices::Prepares</a>
+  
+    <li><a href="../RailsBestPractices/Prepares/ConfigPrepare.html">RailsBestPractices::Prepares::ConfigPrepare</a>
+  
+    <li><a href="../RailsBestPractices/Prepares/ControllerPrepare.html">RailsBestPractices::Prepares::ControllerPrepare</a>
+  
+    <li><a href="../RailsBestPractices/Prepares/GemfilePrepare.html">RailsBestPractices::Prepares::GemfilePrepare</a>
+  
+    <li><a href="../RailsBestPractices/Prepares/HelperPrepare.html">RailsBestPractices::Prepares::HelperPrepare</a>
+  
+    <li><a href="../RailsBestPractices/Prepares/InitializerPrepare.html">RailsBestPractices::Prepares::InitializerPrepare</a>
+  
+    <li><a href="../RailsBestPractices/Prepares/MailerPrepare.html">RailsBestPractices::Prepares::MailerPrepare</a>
+  
+    <li><a href="../RailsBestPractices/Prepares/ModelPrepare.html">RailsBestPractices::Prepares::ModelPrepare</a>
+  
+    <li><a href="../RailsBestPractices/Prepares/RoutePrepare.html">RailsBestPractices::Prepares::RoutePrepare</a>
+  
+    <li><a href="../RailsBestPractices/Prepares/SchemaPrepare.html">RailsBestPractices::Prepares::SchemaPrepare</a>
+  
+    <li><a href="../RailsBestPractices/Reviews.html">RailsBestPractices::Reviews</a>
+  
+    <li><a href="../RailsBestPractices/Reviews/AddModelVirtualAttributeReview.html">RailsBestPractices::Reviews::AddModelVirtualAttributeReview</a>
+  
+    <li><a href="../RailsBestPractices/Reviews/AlwaysAddDbIndexReview.html">RailsBestPractices::Reviews::AlwaysAddDbIndexReview</a>
+  
+    <li><a href="../RailsBestPractices/Reviews/CheckSaveReturnValueReview.html">RailsBestPractices::Reviews::CheckSaveReturnValueReview</a>
+  
+    <li><a href="../RailsBestPractices/Reviews/DefaultScopeIsEvilReview.html">RailsBestPractices::Reviews::DefaultScopeIsEvilReview</a>
+  
+    <li><a href="../RailsBestPractices/Reviews/DryBundlerInCapistranoReview.html">RailsBestPractices::Reviews::DryBundlerInCapistranoReview</a>
+  
+    <li><a href="../RailsBestPractices/Reviews/HashSyntaxReview.html">RailsBestPractices::Reviews::HashSyntaxReview</a>
+  
+    <li><a href="../RailsBestPractices/Reviews/IsolateSeedDataReview.html">RailsBestPractices::Reviews::IsolateSeedDataReview</a>
+  
+    <li><a href="../RailsBestPractices/Reviews/KeepFindersOnTheirOwnModelReview.html">RailsBestPractices::Reviews::KeepFindersOnTheirOwnModelReview</a>
+  
+    <li><a href="../RailsBestPractices/Reviews/LawOfDemeterReview.html">RailsBestPractices::Reviews::LawOfDemeterReview</a>
+  
+    <li><a href="../RailsBestPractices/Reviews/MoveCodeIntoControllerReview.html">RailsBestPractices::Reviews::MoveCodeIntoControllerReview</a>
+  
+    <li><a href="../RailsBestPractices/Reviews/MoveCodeIntoHelperReview.html">RailsBestPractices::Reviews::MoveCodeIntoHelperReview</a>
+  
+    <li><a href="../RailsBestPractices/Reviews/MoveCodeIntoModelReview.html">RailsBestPractices::Reviews::MoveCodeIntoModelReview</a>
+  
+    <li><a href="../RailsBestPractices/Reviews/MoveFinderToNamedScopeReview.html">RailsBestPractices::Reviews::MoveFinderToNamedScopeReview</a>
+  
+    <li><a href="../RailsBestPractices/Reviews/MoveModelLogicIntoModelReview.html">RailsBestPractices::Reviews::MoveModelLogicIntoModelReview</a>
+  
+    <li><a href="../RailsBestPractices/Reviews/NeedlessDeepNestingReview.html">RailsBestPractices::Reviews::NeedlessDeepNestingReview</a>
+  
+    <li><a href="../RailsBestPractices/Reviews/NotRescueExceptionReview.html">RailsBestPractices::Reviews::NotRescueExceptionReview</a>
+  
+    <li><a href="../RailsBestPractices/Reviews/NotUseDefaultRouteReview.html">RailsBestPractices::Reviews::NotUseDefaultRouteReview</a>
+  
+    <li><a href="../RailsBestPractices/Reviews/NotUseTimeAgoInWordsReview.html">RailsBestPractices::Reviews::NotUseTimeAgoInWordsReview</a>
+  
+    <li><a href="../RailsBestPractices/Reviews/OveruseRouteCustomizationsReview.html">RailsBestPractices::Reviews::OveruseRouteCustomizationsReview</a>
+  
+    <li><a href="../RailsBestPractices/Reviews/ProtectMassAssignmentReview.html">RailsBestPractices::Reviews::ProtectMassAssignmentReview</a>
+  
+    <li><a href="../RailsBestPractices/Reviews/RemoveEmptyHelpersReview.html">RailsBestPractices::Reviews::RemoveEmptyHelpersReview</a>
+  
+    <li><a href="../RailsBestPractices/Reviews/RemoveUnusedMethodsInControllersReview.html">RailsBestPractices::Reviews::RemoveUnusedMethodsInControllersReview</a>
+  
+    <li><a href="../RailsBestPractices/Reviews/RemoveUnusedMethodsInHelpersReview.html">RailsBestPractices::Reviews::RemoveUnusedMethodsInHelpersReview</a>
+  
+    <li><a href="../RailsBestPractices/Reviews/RemoveUnusedMethodsInModelsReview.html">RailsBestPractices::Reviews::RemoveUnusedMethodsInModelsReview</a>
+  
+    <li><a href="../RailsBestPractices/Reviews/ReplaceComplexCreationWithFactoryMethodReview.html">RailsBestPractices::Reviews::ReplaceComplexCreationWithFactoryMethodReview</a>
+  
+    <li><a href="../RailsBestPractices/Reviews/ReplaceInstanceVariableWithLocalVariableReview.html">RailsBestPractices::Reviews::ReplaceInstanceVariableWithLocalVariableReview</a>
+  
+    <li><a href="../RailsBestPractices/Reviews/RestrictAutoGeneratedRoutesReview.html">RailsBestPractices::Reviews::RestrictAutoGeneratedRoutesReview</a>
+  
+    <li><a href="../RailsBestPractices/Reviews/Review.html">RailsBestPractices::Reviews::Review</a>
+  
+    <li><a href="../RailsBestPractices/Reviews/SimplifyRenderInControllersReview.html">RailsBestPractices::Reviews::SimplifyRenderInControllersReview</a>
+  
+    <li><a href="../RailsBestPractices/Reviews/SimplifyRenderInViewsReview.html">RailsBestPractices::Reviews::SimplifyRenderInViewsReview</a>
+  
+    <li><a href="../RailsBestPractices/Reviews/UseBeforeFilterReview.html">RailsBestPractices::Reviews::UseBeforeFilterReview</a>
+  
+    <li><a href="../RailsBestPractices/Reviews/UseModelAssociationReview.html">RailsBestPractices::Reviews::UseModelAssociationReview</a>
+  
+    <li><a href="../RailsBestPractices/Reviews/UseMultipartAlternativeAsContentTypeOfEmailReview.html">RailsBestPractices::Reviews::UseMultipartAlternativeAsContentTypeOfEmailReview</a>
+  
+    <li><a href="../RailsBestPractices/Reviews/UseObserverReview.html">RailsBestPractices::Reviews::UseObserverReview</a>
+  
+    <li><a href="../RailsBestPractices/Reviews/UseParenthesesInMethodDefReview.html">RailsBestPractices::Reviews::UseParenthesesInMethodDefReview</a>
+  
+    <li><a href="../RailsBestPractices/Reviews/UseQueryAttributeReview.html">RailsBestPractices::Reviews::UseQueryAttributeReview</a>
+  
+    <li><a href="../RailsBestPractices/Reviews/UseSayWithTimeInMigrationsReview.html">RailsBestPractices::Reviews::UseSayWithTimeInMigrationsReview</a>
+  
+    <li><a href="../RailsBestPractices/Reviews/UseScopeAccessReview.html">RailsBestPractices::Reviews::UseScopeAccessReview</a>
+  
+    <li><a href="../RailsBestPractices/Reviews/UseTurboSprocketsRails3Review.html">RailsBestPractices::Reviews::UseTurboSprocketsRails3Review</a>
+  
+    <li><a href="../Erubis.html">Erubis</a>
+  
+    <li><a href="../Erubis/OnlyRuby.html">Erubis::OnlyRuby</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Erubis::OnlyRuby</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-add_expr_debug" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_expr_debug</span><span
+            class="method-args">(src, code)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="add_expr_debug-source">
+            <pre><span class="ruby-comment"># File lib/rails_best_practices/core_ext/erubis.rb, line 27</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_expr_debug</span>(<span class="ruby-identifier">src</span>, <span class="ruby-identifier">code</span>)
+  <span class="ruby-identifier">src</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">code</span>
+  <span class="ruby-identifier">src</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;;&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_expr_debug-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_expr_debug-method -->
+
+    
+      <div id="method-i-add_expr_escaped" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_expr_escaped</span><span
+            class="method-args">(src, code)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="add_expr_escaped-source">
+            <pre><span class="ruby-comment"># File lib/rails_best_practices/core_ext/erubis.rb, line 22</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_expr_escaped</span>(<span class="ruby-identifier">src</span>, <span class="ruby-identifier">code</span>)
+  <span class="ruby-identifier">src</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">code</span>
+  <span class="ruby-identifier">src</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;;&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_expr_escaped-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_expr_escaped-method -->
+
+    
+      <div id="method-i-add_expr_literal" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_expr_literal</span><span
+            class="method-args">(src, code)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="add_expr_literal-source">
+            <pre><span class="ruby-comment"># File lib/rails_best_practices/core_ext/erubis.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_expr_literal</span>(<span class="ruby-identifier">src</span>, <span class="ruby-identifier">code</span>)
+  <span class="ruby-identifier">src</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">code</span>
+  <span class="ruby-identifier">src</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;;&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_expr_literal-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_expr_literal-method -->
+
+    
+      <div id="method-i-add_postamble" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_postamble</span><span
+            class="method-args">(src)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="add_postamble-source">
+            <pre><span class="ruby-comment"># File lib/rails_best_practices/core_ext/erubis.rb, line 32</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_postamble</span>(<span class="ruby-identifier">src</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_postamble-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_postamble-method -->
+
+    
+      <div id="method-i-add_preamble" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_preamble</span><span
+            class="method-args">(src)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="add_preamble-source">
+            <pre><span class="ruby-comment"># File lib/rails_best_practices/core_ext/erubis.rb, line 5</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_preamble</span>(<span class="ruby-identifier">src</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_preamble-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_preamble-method -->
+
+    
+      <div id="method-i-add_stmt" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_stmt</span><span
+            class="method-args">(src, code)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="add_stmt-source">
+            <pre><span class="ruby-comment"># File lib/rails_best_practices/core_ext/erubis.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_stmt</span>(<span class="ruby-identifier">src</span>, <span class="ruby-identifier">code</span>)
+  <span class="ruby-identifier">src</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">code</span>
+  <span class="ruby-identifier">src</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;;&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_stmt-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_stmt-method -->
+
+    
+      <div id="method-i-add_text" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_text</span><span
+            class="method-args">(src, text)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="add_text-source">
+            <pre><span class="ruby-comment"># File lib/rails_best_practices/core_ext/erubis.rb, line 8</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_text</span>(<span class="ruby-identifier">src</span>, <span class="ruby-identifier">text</span>)
+  <span class="ruby-identifier">src</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/[^\s;]/</span>, <span class="ruby-string">''</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_text-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_text-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

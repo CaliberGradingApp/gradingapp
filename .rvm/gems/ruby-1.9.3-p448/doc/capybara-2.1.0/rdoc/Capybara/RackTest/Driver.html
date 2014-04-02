@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Capybara::RackTest::Driver - capybara-2.1.0 Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/capybara/rack_test/driver.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="../Driver/Base.html">Capybara::Driver::Base</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-browser">#browser</a>
+    
+    <li><a href="#method-i-current_url">#current_url</a>
+    
+    <li><a href="#method-i-delete">#delete</a>
+    
+    <li><a href="#method-i-dom">#dom</a>
+    
+    <li><a href="#method-i-find_css">#find_css</a>
+    
+    <li><a href="#method-i-find_xpath">#find_xpath</a>
+    
+    <li><a href="#method-i-follow">#follow</a>
+    
+    <li><a href="#method-i-follow_redirects-3F">#follow_redirects?</a>
+    
+    <li><a href="#method-i-get">#get</a>
+    
+    <li><a href="#method-i-header">#header</a>
+    
+    <li><a href="#method-i-html">#html</a>
+    
+    <li><a href="#method-i-post">#post</a>
+    
+    <li><a href="#method-i-put">#put</a>
+    
+    <li><a href="#method-i-redirect_limit">#redirect_limit</a>
+    
+    <li><a href="#method-i-request">#request</a>
+    
+    <li><a href="#method-i-reset-21">#reset!</a>
+    
+    <li><a href="#method-i-response">#response</a>
+    
+    <li><a href="#method-i-response_headers">#response_headers</a>
+    
+    <li><a href="#method-i-status_code">#status_code</a>
+    
+    <li><a href="#method-i-submit">#submit</a>
+    
+    <li><a href="#method-i-title">#title</a>
+    
+    <li><a href="#method-i-visit">#visit</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../lib/capybara/spec/fixtures/another_test_file_txt.html">another_test_file</a>
+  
+    <li class="file"><a href="../../lib/capybara/spec/fixtures/test_file_txt.html">test_file</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../Capybara.html">Capybara</a>
+  
+    <li><a href="../../Capybara/Ambiguous.html">Capybara::Ambiguous</a>
+  
+    <li><a href="../../Capybara/CapybaraError.html">Capybara::CapybaraError</a>
+  
+    <li><a href="../../Capybara/DSL.html">Capybara::DSL</a>
+  
+    <li><a href="../../Capybara/Driver.html">Capybara::Driver</a>
+  
+    <li><a href="../../Capybara/Driver/Base.html">Capybara::Driver::Base</a>
+  
+    <li><a href="../../Capybara/Driver/Node.html">Capybara::Driver::Node</a>
+  
+    <li><a href="../../Capybara/DriverNotFoundError.html">Capybara::DriverNotFoundError</a>
+  
+    <li><a href="../../Capybara/ElementNotFound.html">Capybara::ElementNotFound</a>
+  
+    <li><a href="../../Capybara/ExpectationNotMet.html">Capybara::ExpectationNotMet</a>
+  
+    <li><a href="../../Capybara/Features.html">Capybara::Features</a>
+  
+    <li><a href="../../Capybara/FileNotFound.html">Capybara::FileNotFound</a>
+  
+    <li><a href="../../Capybara/FrozenInTime.html">Capybara::FrozenInTime</a>
+  
+    <li><a href="../../Capybara/Helpers.html">Capybara::Helpers</a>
+  
+    <li><a href="../../Capybara/InfiniteRedirectError.html">Capybara::InfiniteRedirectError</a>
+  
+    <li><a href="../../Capybara/Node.html">Capybara::Node</a>
+  
+    <li><a href="../../Capybara/Node/Actions.html">Capybara::Node::Actions</a>
+  
+    <li><a href="../../Capybara/Node/Base.html">Capybara::Node::Base</a>
+  
+    <li><a href="../../Capybara/Node/Document.html">Capybara::Node::Document</a>
+  
+    <li><a href="../../Capybara/Node/Element.html">Capybara::Node::Element</a>
+  
+    <li><a href="../../Capybara/Node/Finders.html">Capybara::Node::Finders</a>
+  
+    <li><a href="../../Capybara/Node/Matchers.html">Capybara::Node::Matchers</a>
+  
+    <li><a href="../../Capybara/Node/Simple.html">Capybara::Node::Simple</a>
+  
+    <li><a href="../../Capybara/NotSupportedByDriverError.html">Capybara::NotSupportedByDriverError</a>
+  
+    <li><a href="../../Capybara/Query.html">Capybara::Query</a>
+  
+    <li><a href="../../Capybara/RSpecMatchers.html">Capybara::RSpecMatchers</a>
+  
+    <li><a href="../../Capybara/RSpecMatchers/HaveSelector.html">Capybara::RSpecMatchers::HaveSelector</a>
+  
+    <li><a href="../../Capybara/RSpecMatchers/HaveText.html">Capybara::RSpecMatchers::HaveText</a>
+  
+    <li><a href="../../Capybara/RSpecMatchers/HaveTitle.html">Capybara::RSpecMatchers::HaveTitle</a>
+  
+    <li><a href="../../Capybara/RSpecMatchers/Matcher.html">Capybara::RSpecMatchers::Matcher</a>
+  
+    <li><a href="../../Capybara/RackTest.html">Capybara::RackTest</a>
+  
+    <li><a href="../../Capybara/RackTest/Browser.html">Capybara::RackTest::Browser</a>
+  
+    <li><a href="../../Capybara/RackTest/CSSHandlers.html">Capybara::RackTest::CSSHandlers</a>
+  
+    <li><a href="../../Capybara/RackTest/Driver.html">Capybara::RackTest::Driver</a>
+  
+    <li><a href="../../Capybara/RackTest/Form.html">Capybara::RackTest::Form</a>
+  
+    <li><a href="../../Capybara/RackTest/Form/NilUploadedFile.html">Capybara::RackTest::Form::NilUploadedFile</a>
+  
+    <li><a href="../../Capybara/RackTest/Node.html">Capybara::RackTest::Node</a>
+  
+    <li><a href="../../Capybara/Result.html">Capybara::Result</a>
+  
+    <li><a href="../../Capybara/Selector.html">Capybara::Selector</a>
+  
+    <li><a href="../../Capybara/Selector/Filter.html">Capybara::Selector::Filter</a>
+  
+    <li><a href="../../Capybara/Selenium.html">Capybara::Selenium</a>
+  
+    <li><a href="../../Capybara/Selenium/Driver.html">Capybara::Selenium::Driver</a>
+  
+    <li><a href="../../Capybara/Selenium/Node.html">Capybara::Selenium::Node</a>
+  
+    <li><a href="../../Capybara/Server.html">Capybara::Server</a>
+  
+    <li><a href="../../Capybara/Server/Middleware.html">Capybara::Server::Middleware</a>
+  
+    <li><a href="../../Capybara/Session.html">Capybara::Session</a>
+  
+    <li><a href="../../Capybara/SpecHelper.html">Capybara::SpecHelper</a>
+  
+    <li><a href="../../Capybara/UnselectNotAllowed.html">Capybara::UnselectNotAllowed</a>
+  
+    <li><a href="../../TestApp.html">TestApp</a>
+  
+    <li><a href="../../TestApp/TestAppError.html">TestApp::TestAppError</a>
+  
+    <li><a href="../../Object.html">Object</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Capybara::RackTest::Driver</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="DEFAULT_OPTIONS">DEFAULT_OPTIONS
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-app" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">app</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-options" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">options</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(app, options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/capybara/rack_test/driver.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">app</span>, <span class="ruby-identifier">options</span>={})
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;rack-test requires a rack application, but none was given&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">app</span>
+  <span class="ruby-ivar">@app</span> = <span class="ruby-identifier">app</span>
+  <span class="ruby-ivar">@options</span> = <span class="ruby-constant">DEFAULT_OPTIONS</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-browser" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">browser</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="browser-source">
+            <pre><span class="ruby-comment"># File lib/capybara/rack_test/driver.rb, line 21</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">browser</span>
+  <span class="ruby-ivar">@browser</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Capybara</span><span class="ruby-operator">::</span><span class="ruby-constant">RackTest</span><span class="ruby-operator">::</span><span class="ruby-constant">Browser</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- browser-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- browser-method -->
+
+    
+      <div id="method-i-current_url" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">current_url</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="current_url-source">
+            <pre><span class="ruby-comment"># File lib/capybara/rack_test/driver.rb, line 53</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">current_url</span>
+  <span class="ruby-identifier">browser</span>.<span class="ruby-identifier">current_url</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- current_url-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- current_url-method -->
+
+    
+      <div id="method-i-delete" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">delete</span><span
+            class="method-args">(*args, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="delete-source">
+            <pre><span class="ruby-comment"># File lib/capybara/rack_test/driver.rb, line 92</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">delete</span>(*<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>); <span class="ruby-identifier">browser</span>.<span class="ruby-identifier">delete</span>(*<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>); <span class="ruby-keyword">end</span></pre>
+          </div><!-- delete-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- delete-method -->
+
+    
+      <div id="method-i-dom" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">dom</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="dom-source">
+            <pre><span class="ruby-comment"># File lib/capybara/rack_test/driver.rb, line 77</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">dom</span>
+  <span class="ruby-identifier">browser</span>.<span class="ruby-identifier">dom</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- dom-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- dom-method -->
+
+    
+      <div id="method-i-find_css" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find_css</span><span
+            class="method-args">(selector)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="find_css-source">
+            <pre><span class="ruby-comment"># File lib/capybara/rack_test/driver.rb, line 69</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">find_css</span>(<span class="ruby-identifier">selector</span>)
+  <span class="ruby-identifier">browser</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:css</span>,<span class="ruby-identifier">selector</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- find_css-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- find_css-method -->
+
+    
+      <div id="method-i-find_xpath" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find_xpath</span><span
+            class="method-args">(selector)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="find_xpath-source">
+            <pre><span class="ruby-comment"># File lib/capybara/rack_test/driver.rb, line 65</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">find_xpath</span>(<span class="ruby-identifier">selector</span>)
+  <span class="ruby-identifier">browser</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:xpath</span>, <span class="ruby-identifier">selector</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- find_xpath-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- find_xpath-method -->
+
+    
+      <div id="method-i-follow" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">follow</span><span
+            class="method-args">(method, path, attributes = {})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="follow-source">
+            <pre><span class="ruby-comment"># File lib/capybara/rack_test/driver.rb, line 49</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">follow</span>(<span class="ruby-identifier">method</span>, <span class="ruby-identifier">path</span>, <span class="ruby-identifier">attributes</span> = {})
+  <span class="ruby-identifier">browser</span>.<span class="ruby-identifier">follow</span>(<span class="ruby-identifier">method</span>, <span class="ruby-identifier">path</span>, <span class="ruby-identifier">attributes</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- follow-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- follow-method -->
+
+    
+      <div id="method-i-follow_redirects-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">follow_redirects?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="follow_redirects-3F-source">
+            <pre><span class="ruby-comment"># File lib/capybara/rack_test/driver.rb, line 25</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">follow_redirects?</span>
+  <span class="ruby-ivar">@options</span>[<span class="ruby-value">:follow_redirects</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- follow_redirects-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- follow_redirects-3F-method -->
+
+    
+      <div id="method-i-get" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get</span><span
+            class="method-args">(*args, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="get-source">
+            <pre><span class="ruby-comment"># File lib/capybara/rack_test/driver.rb, line 89</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">get</span>(*<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>); <span class="ruby-identifier">browser</span>.<span class="ruby-identifier">get</span>(*<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>); <span class="ruby-keyword">end</span></pre>
+          </div><!-- get-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get-method -->
+
+    
+      <div id="method-i-header" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">header</span><span
+            class="method-args">(key, value)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="header-source">
+            <pre><span class="ruby-comment"># File lib/capybara/rack_test/driver.rb, line 93</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">header</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span>); <span class="ruby-identifier">browser</span>.<span class="ruby-identifier">header</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span>); <span class="ruby-keyword">end</span></pre>
+          </div><!-- header-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- header-method -->
+
+    
+      <div id="method-i-html" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">html</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="html-source">
+            <pre><span class="ruby-comment"># File lib/capybara/rack_test/driver.rb, line 73</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">html</span>
+  <span class="ruby-identifier">browser</span>.<span class="ruby-identifier">html</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- html-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- html-method -->
+
+    
+      <div id="method-i-post" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">post</span><span
+            class="method-args">(*args, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="post-source">
+            <pre><span class="ruby-comment"># File lib/capybara/rack_test/driver.rb, line 90</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">post</span>(*<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>); <span class="ruby-identifier">browser</span>.<span class="ruby-identifier">post</span>(*<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>); <span class="ruby-keyword">end</span></pre>
+          </div><!-- post-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- post-method -->
+
+    
+      <div id="method-i-put" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">put</span><span
+            class="method-args">(*args, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="put-source">
+            <pre><span class="ruby-comment"># File lib/capybara/rack_test/driver.rb, line 91</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">put</span>(*<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>); <span class="ruby-identifier">browser</span>.<span class="ruby-identifier">put</span>(*<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>); <span class="ruby-keyword">end</span></pre>
+          </div><!-- put-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- put-method -->
+
+    
+      <div id="method-i-redirect_limit" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">redirect_limit</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="redirect_limit-source">
+            <pre><span class="ruby-comment"># File lib/capybara/rack_test/driver.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">redirect_limit</span>
+  <span class="ruby-ivar">@options</span>[<span class="ruby-value">:redirect_limit</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- redirect_limit-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- redirect_limit-method -->
+
+    
+      <div id="method-i-request" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">request</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="request-source">
+            <pre><span class="ruby-comment"># File lib/capybara/rack_test/driver.rb, line 37</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">request</span>
+  <span class="ruby-identifier">browser</span>.<span class="ruby-identifier">last_request</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- request-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- request-method -->
+
+    
+      <div id="method-i-reset-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">reset!</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="reset-21-source">
+            <pre><span class="ruby-comment"># File lib/capybara/rack_test/driver.rb, line 85</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">reset!</span>
+  <span class="ruby-ivar">@browser</span> = <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- reset-21-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- reset-21-method -->
+
+    
+      <div id="method-i-response" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">response</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="response-source">
+            <pre><span class="ruby-comment"># File lib/capybara/rack_test/driver.rb, line 33</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">response</span>
+  <span class="ruby-identifier">browser</span>.<span class="ruby-identifier">last_response</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- response-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- response-method -->
+
+    
+      <div id="method-i-response_headers" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">response_headers</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="response_headers-source">
+            <pre><span class="ruby-comment"># File lib/capybara/rack_test/driver.rb, line 57</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">response_headers</span>
+  <span class="ruby-identifier">response</span>.<span class="ruby-identifier">headers</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- response_headers-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- response_headers-method -->
+
+    
+      <div id="method-i-status_code" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">status_code</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="status_code-source">
+            <pre><span class="ruby-comment"># File lib/capybara/rack_test/driver.rb, line 61</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">status_code</span>
+  <span class="ruby-identifier">response</span>.<span class="ruby-identifier">status</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- status_code-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- status_code-method -->
+
+    
+      <div id="method-i-submit" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">submit</span><span
+            class="method-args">(method, path, attributes)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="submit-source">
+            <pre><span class="ruby-comment"># File lib/capybara/rack_test/driver.rb, line 45</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">submit</span>(<span class="ruby-identifier">method</span>, <span class="ruby-identifier">path</span>, <span class="ruby-identifier">attributes</span>)
+  <span class="ruby-identifier">browser</span>.<span class="ruby-identifier">submit</span>(<span class="ruby-identifier">method</span>, <span class="ruby-identifier">path</span>, <span class="ruby-identifier">attributes</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- submit-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- submit-method -->
+
+    
+      <div id="method-i-title" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">title</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="title-source">
+            <pre><span class="ruby-comment"># File lib/capybara/rack_test/driver.rb, line 81</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">title</span>
+  <span class="ruby-identifier">browser</span>.<span class="ruby-identifier">title</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- title-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- title-method -->
+
+    
+      <div id="method-i-visit" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">visit</span><span
+            class="method-args">(path, attributes = {})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="visit-source">
+            <pre><span class="ruby-comment"># File lib/capybara/rack_test/driver.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">visit</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">attributes</span> = {})
+  <span class="ruby-identifier">browser</span>.<span class="ruby-identifier">visit</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">attributes</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- visit-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- visit-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

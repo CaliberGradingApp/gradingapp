@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class MetricFu::Location - metric_fu-4.5.1 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/metric_fu/data_structures/location.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="../Object.html">Object</a>
+  
+</nav>
+
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><span class="include">Comparable</span>
+  
+  
+  </ul>
+</nav>
+
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-for">::for</a>
+    
+    <li><a href="#method-c-get">::get</a>
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-3C-3D-3E">#&lt;=&gt;</a>
+    
+    <li><a href="#method-i-eql-3F">#eql?</a>
+    
+    <li><a href="#method-i-finalize">#finalize</a>
+    
+    <li><a href="#method-i-to_hash">#to_hash</a>
+    
+    <li><a href="#method-i-to_key">#to_key</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../MIT-LICENSE.html">MIT-LICENSE</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../MetricFu.html">MetricFu</a>
+  
+    <li><a href="../MetricFu/AnalysisError.html">MetricFu::AnalysisError</a>
+  
+    <li><a href="../MetricFu/AnalyzerTables.html">MetricFu::AnalyzerTables</a>
+  
+    <li><a href="../MetricFu/CaneGenerator.html">MetricFu::CaneGenerator</a>
+  
+    <li><a href="../MetricFu/CaneGrapher.html">MetricFu::CaneGrapher</a>
+  
+    <li><a href="../MetricFu/CaneViolations.html">MetricFu::CaneViolations</a>
+  
+    <li><a href="../MetricFu/CaneViolations/AbcComplexity.html">MetricFu::CaneViolations::AbcComplexity</a>
+  
+    <li><a href="../MetricFu/CaneViolations/Comment.html">MetricFu::CaneViolations::Comment</a>
+  
+    <li><a href="../MetricFu/CaneViolations/Documentation.html">MetricFu::CaneViolations::Documentation</a>
+  
+    <li><a href="../MetricFu/CaneViolations/LineStyle.html">MetricFu::CaneViolations::LineStyle</a>
+  
+    <li><a href="../MetricFu/CaneViolations/Others.html">MetricFu::CaneViolations::Others</a>
+  
+    <li><a href="../MetricFu/ChurnGenerator.html">MetricFu::ChurnGenerator</a>
+  
+    <li><a href="../MetricFu/ChurnHotspot.html">MetricFu::ChurnHotspot</a>
+  
+    <li><a href="../MetricFu/ClassMethodNode.html">MetricFu::ClassMethodNode</a>
+  
+    <li><a href="../MetricFu/Cli.html">MetricFu::Cli</a>
+  
+    <li><a href="../MetricFu/Cli/Client.html">MetricFu::Cli::Client</a>
+  
+    <li><a href="../MetricFu/Cli/Helper.html">MetricFu::Cli::Helper</a>
+  
+    <li><a href="../MetricFu/Cli/MicroOptParse.html">MetricFu::Cli::MicroOptParse</a>
+  
+    <li><a href="../MetricFu/Cli/MicroOptParse/Parser.html">MetricFu::Cli::MicroOptParse::Parser</a>
+  
+    <li><a href="../MetricFu/Configuration.html">MetricFu::Configuration</a>
+  
+    <li><a href="../MetricFu/Constantize.html">MetricFu::Constantize</a>
+  
+    <li><a href="../MetricFu/Environment.html">MetricFu::Environment</a>
+  
+    <li><a href="../MetricFu/FlayGenerator.html">MetricFu::FlayGenerator</a>
+  
+    <li><a href="../MetricFu/FlayGrapher.html">MetricFu::FlayGrapher</a>
+  
+    <li><a href="../MetricFu/FlayHotspot.html">MetricFu::FlayHotspot</a>
+  
+    <li><a href="../MetricFu/FlogGenerator.html">MetricFu::FlogGenerator</a>
+  
+    <li><a href="../MetricFu/FlogGrapher.html">MetricFu::FlogGrapher</a>
+  
+    <li><a href="../MetricFu/FlogHotspot.html">MetricFu::FlogHotspot</a>
+  
+    <li><a href="../MetricFu/Formatter.html">MetricFu::Formatter</a>
+  
+    <li><a href="../MetricFu/Formatter/HTML.html">MetricFu::Formatter::HTML</a>
+  
+    <li><a href="../MetricFu/Formatter/Templates.html">MetricFu::Formatter::Templates</a>
+  
+    <li><a href="../MetricFu/Formatter/YAML.html">MetricFu::Formatter::YAML</a>
+  
+    <li><a href="../MetricFu/GemRun.html">MetricFu::GemRun</a>
+  
+    <li><a href="../MetricFu/GemVersion.html">MetricFu::GemVersion</a>
+  
+    <li><a href="../MetricFu/Generator.html">MetricFu::Generator</a>
+  
+    <li><a href="../MetricFu/Graph.html">MetricFu::Graph</a>
+  
+    <li><a href="../MetricFu/Grapher.html">MetricFu::Grapher</a>
+  
+    <li><a href="../MetricFu/Grouping.html">MetricFu::Grouping</a>
+  
+    <li><a href="../MetricFu/Hotspot.html">MetricFu::Hotspot</a>
+  
+    <li><a href="../MetricFu/HotspotAnalyzedProblems.html">MetricFu::HotspotAnalyzedProblems</a>
+  
+    <li><a href="../MetricFu/HotspotAnalyzer.html">MetricFu::HotspotAnalyzer</a>
+  
+    <li><a href="../MetricFu/HotspotGroupings.html">MetricFu::HotspotGroupings</a>
+  
+    <li><a href="../MetricFu/HotspotProblems.html">MetricFu::HotspotProblems</a>
+  
+    <li><a href="../MetricFu/HotspotRankedProblemLocation.html">MetricFu::HotspotRankedProblemLocation</a>
+  
+    <li><a href="../MetricFu/HotspotRankings.html">MetricFu::HotspotRankings</a>
+  
+    <li><a href="../MetricFu/HotspotScoringStrategies.html">MetricFu::HotspotScoringStrategies</a>
+  
+    <li><a href="../MetricFu/HotspotsGenerator.html">MetricFu::HotspotsGenerator</a>
+  
+    <li><a href="../MetricFu/InstanceMethodNode.html">MetricFu::InstanceMethodNode</a>
+  
+    <li><a href="../MetricFu/Io.html">MetricFu::Io</a>
+  
+    <li><a href="../MetricFu/Io/FileSystem.html">MetricFu::Io::FileSystem</a>
+  
+    <li><a href="../MetricFu/LineNumbers.html">MetricFu::LineNumbers</a>
+  
+    <li><a href="../MetricFu/Loader.html">MetricFu::Loader</a>
+  
+    <li><a href="../MetricFu/Location.html">MetricFu::Location</a>
+  
+    <li><a href="../MetricFu/MethodContainer.html">MetricFu::MethodContainer</a>
+  
+    <li><a href="../MetricFu/Metric.html">MetricFu::Metric</a>
+  
+    <li><a href="../MetricFu/MetricCane.html">MetricFu::MetricCane</a>
+  
+    <li><a href="../MetricFu/MetricChurn.html">MetricFu::MetricChurn</a>
+  
+    <li><a href="../MetricFu/MetricFlay.html">MetricFu::MetricFlay</a>
+  
+    <li><a href="../MetricFu/MetricFlog.html">MetricFu::MetricFlog</a>
+  
+    <li><a href="../MetricFu/MetricHotspots.html">MetricFu::MetricHotspots</a>
+  
+    <li><a href="../MetricFu/MetricRailsBestPractices.html">MetricFu::MetricRailsBestPractices</a>
+  
+    <li><a href="../MetricFu/MetricRcov.html">MetricFu::MetricRcov</a>
+  
+    <li><a href="../MetricFu/MetricReek.html">MetricFu::MetricReek</a>
+  
+    <li><a href="../MetricFu/MetricRoodi.html">MetricFu::MetricRoodi</a>
+  
+    <li><a href="../MetricFu/MetricSaikuro.html">MetricFu::MetricSaikuro</a>
+  
+    <li><a href="../MetricFu/MetricStats.html">MetricFu::MetricStats</a>
+  
+    <li><a href="../MetricFu/RailsBestPracticesGenerator.html">MetricFu::RailsBestPracticesGenerator</a>
+  
+    <li><a href="../MetricFu/RailsBestPracticesGrapher.html">MetricFu::RailsBestPracticesGrapher</a>
+  
+    <li><a href="../MetricFu/Ranking.html">MetricFu::Ranking</a>
+  
+    <li><a href="../MetricFu/RcovGenerator.html">MetricFu::RcovGenerator</a>
+  
+    <li><a href="../MetricFu/RcovGenerator/Line.html">MetricFu::RcovGenerator::Line</a>
+  
+    <li><a href="../MetricFu/RcovGrapher.html">MetricFu::RcovGrapher</a>
+  
+    <li><a href="../MetricFu/RcovHotspot.html">MetricFu::RcovHotspot</a>
+  
+    <li><a href="../MetricFu/Record.html">MetricFu::Record</a>
+  
+    <li><a href="../MetricFu/ReekGenerator.html">MetricFu::ReekGenerator</a>
+  
+    <li><a href="../MetricFu/ReekGrapher.html">MetricFu::ReekGrapher</a>
+  
+    <li><a href="../MetricFu/Reporter.html">MetricFu::Reporter</a>
+  
+    <li><a href="../MetricFu/Result.html">MetricFu::Result</a>
+  
+    <li><a href="../MetricFu/RoodiGenerator.html">MetricFu::RoodiGenerator</a>
+  
+    <li><a href="../MetricFu/RoodiGrapher.html">MetricFu::RoodiGrapher</a>
+  
+    <li><a href="../MetricFu/RoodiHotspot.html">MetricFu::RoodiHotspot</a>
+  
+    <li><a href="../MetricFu/Run.html">MetricFu::Run</a>
+  
+    <li><a href="../MetricFu/SaikuroGenerator.html">MetricFu::SaikuroGenerator</a>
+  
+    <li><a href="../MetricFu/SaikuroHotspot.html">MetricFu::SaikuroHotspot</a>
+  
+    <li><a href="../MetricFu/SaikuroParsingElement.html">MetricFu::SaikuroParsingElement</a>
+  
+    <li><a href="../MetricFu/SaikuroScratchFile.html">MetricFu::SaikuroScratchFile</a>
+  
+    <li><a href="../MetricFu/SingletonMethodNode.html">MetricFu::SingletonMethodNode</a>
+  
+    <li><a href="../MetricFu/StatsGenerator.html">MetricFu::StatsGenerator</a>
+  
+    <li><a href="../MetricFu/StatsGrapher.html">MetricFu::StatsGrapher</a>
+  
+    <li><a href="../MetricFu/StatsHotspot.html">MetricFu::StatsHotspot</a>
+  
+    <li><a href="../MetricFu/Table.html">MetricFu::Table</a>
+  
+    <li><a href="../MetricFu/Template.html">MetricFu::Template</a>
+  
+    <li><a href="../MetricFu/Utility.html">MetricFu::Utility</a>
+  
+    <li><a href="../MfDebugger.html">MfDebugger</a>
+  
+    <li><a href="../MfDebugger/Logger.html">MfDebugger::Logger</a>
+  
+    <li><a href="../AwesomeTemplate.html">AwesomeTemplate</a>
+  
+    <li><a href="../Object.html">Object</a>
+  
+    <li><a href="../ReekHotspot.html">ReekHotspot</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class MetricFu::Location</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-class_name" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">class_name</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-file_name" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">file_name</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-file_path" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">file_path</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-hash" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">hash</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-hash_key" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">hash_key</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-line_number" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">line_number</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-method_name" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">method_name</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-simple_method_name" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">simple_method_name</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-for" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">for</span><span
+            class="method-args">(class_or_method_name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="for-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/data_structures/location.rb, line 59</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-keyword">for</span>(<span class="ruby-identifier">class_or_method_name</span>)
+  <span class="ruby-identifier">class_or_method_name</span> = <span class="ruby-identifier">strip_modules</span>(<span class="ruby-identifier">class_or_method_name</span>)
+  <span class="ruby-keyword">if</span>(<span class="ruby-identifier">class_or_method_name</span>)
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-identifier">match</span> = <span class="ruby-identifier">class_or_method_name</span>.<span class="ruby-identifier">match</span>(<span class="ruby-node">/(.*)((\.|\#|\:\:[a-z])(.+))/</span>)
+    <span class="ruby-keyword">rescue</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">error</span>
+      <span class="ruby-comment">#new error during port to metric_fu occasionally a unintialized</span>
+      <span class="ruby-comment">#MatchData object shows up here. Not expected.</span>
+      <span class="ruby-identifier">mf_debug</span> <span class="ruby-node">&quot;ERROR on getting location for #{class_or_method_name} #{error.inspect}&quot;</span>
+      <span class="ruby-identifier">match</span> = <span class="ruby-keyword">nil</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># reek reports the method with :: not # on modules like</span>
+    <span class="ruby-comment"># module ApplicationHelper \n def signed_in?, convert it so it records correctly</span>
+    <span class="ruby-comment"># but classes have to start with a capital letter... HACK for REEK bug, reported underlying issue to REEK</span>
+    <span class="ruby-keyword">if</span>(<span class="ruby-identifier">match</span>)
+      <span class="ruby-identifier">class_name</span> = <span class="ruby-identifier">strip_modules</span>(<span class="ruby-identifier">match</span>[<span class="ruby-value">1</span>])
+      <span class="ruby-identifier">method_name</span> = <span class="ruby-identifier">class_or_method_name</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">/\:\:/</span>,<span class="ruby-node">&quot;#&quot;</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">class_name</span> = <span class="ruby-identifier">strip_modules</span>(<span class="ruby-identifier">class_or_method_name</span>)
+      <span class="ruby-identifier">method_name</span> = <span class="ruby-keyword">nil</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">class_name</span> = <span class="ruby-keyword">nil</span>
+    <span class="ruby-identifier">method_name</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">get</span>(<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">class_name</span>, <span class="ruby-identifier">method_name</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- for-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- for-method -->
+
+    
+      <div id="method-c-get" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get</span><span
+            class="method-args">(file_path, class_name, method_name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="get-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/data_structures/location.rb, line 8</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">get</span>(<span class="ruby-identifier">file_path</span>, <span class="ruby-identifier">class_name</span>, <span class="ruby-identifier">method_name</span>)
+  <span class="ruby-identifier">location</span> = <span class="ruby-identifier">new</span>(<span class="ruby-identifier">file_path</span>, <span class="ruby-identifier">class_name</span>, <span class="ruby-identifier">method_name</span>)
+  <span class="ruby-identifier">@@locations</span> <span class="ruby-operator">||=</span> {}
+  <span class="ruby-identifier">@@locations</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">location</span>.<span class="ruby-identifier">hash_key</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">@@locations</span>[<span class="ruby-identifier">location</span>.<span class="ruby-identifier">hash_key</span>] = <span class="ruby-identifier">location</span>
+    <span class="ruby-identifier">location</span>.<span class="ruby-identifier">finalize</span>
+    <span class="ruby-identifier">location</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get-method -->
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(file_path, class_name, method_name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/data_structures/location.rb, line 18</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">file_path</span>, <span class="ruby-identifier">class_name</span>, <span class="ruby-identifier">method_name</span>)
+  <span class="ruby-ivar">@file_path</span>               = <span class="ruby-identifier">file_path</span>
+  <span class="ruby-ivar">@file_name</span>, <span class="ruby-ivar">@line_number</span> = <span class="ruby-identifier">file_path</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">/:/</span>)
+  <span class="ruby-ivar">@class_name</span>              = <span class="ruby-identifier">class_name</span>
+  <span class="ruby-ivar">@method_name</span>             = <span class="ruby-identifier">method_name</span>
+  <span class="ruby-ivar">@simple_method_name</span>      = <span class="ruby-ivar">@method_name</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-ivar">@class_name</span>.<span class="ruby-identifier">to_s</span>,<span class="ruby-string">''</span>)
+  <span class="ruby-ivar">@hash_key</span>                = <span class="ruby-identifier">to_key</span>
+  <span class="ruby-ivar">@hash</span>                    = <span class="ruby-ivar">@hash_key</span>.<span class="ruby-identifier">hash</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-3C-3D-3E" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">&lt;=&gt;</span><span
+            class="method-args">(other)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="3C-3D-3E-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/data_structures/location.rb, line 50</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">&lt;=&gt;</span>(<span class="ruby-identifier">other</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">hash</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">hash</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- 3C-3D-3E-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- 3C-3D-3E-method -->
+
+    
+      <div id="method-i-eql-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">eql?</span><span
+            class="method-args">(other)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>defining :eql? and :hash to use <a href="Location.html">Location</a> as a
+hash key</p>
+          
+
+          
+          <div class="method-source-code" id="eql-3F-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/data_structures/location.rb, line 46</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">eql?</span>(<span class="ruby-identifier">other</span>)
+  <span class="ruby-ivar">@hash</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">hash</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- eql-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- eql-3F-method -->
+
+    
+      <div id="method-i-finalize" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">finalize</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="finalize-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/data_structures/location.rb, line 88</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">finalize</span>
+  <span class="ruby-ivar">@file_path</span>   <span class="ruby-operator">&amp;&amp;=</span> <span class="ruby-ivar">@file_path</span>.<span class="ruby-identifier">clone</span>
+  <span class="ruby-ivar">@file_name</span>   <span class="ruby-operator">&amp;&amp;=</span> <span class="ruby-ivar">@file_name</span>.<span class="ruby-identifier">clone</span>
+  <span class="ruby-ivar">@line_number</span> <span class="ruby-operator">&amp;&amp;=</span> <span class="ruby-ivar">@line_number</span>.<span class="ruby-identifier">clone</span>
+  <span class="ruby-ivar">@class_name</span>  <span class="ruby-operator">&amp;&amp;=</span> <span class="ruby-ivar">@class_name</span>.<span class="ruby-identifier">clone</span>
+  <span class="ruby-ivar">@method_name</span> <span class="ruby-operator">&amp;&amp;=</span> <span class="ruby-ivar">@method_name</span>.<span class="ruby-identifier">clone</span>
+  <span class="ruby-identifier">freeze</span>  <span class="ruby-comment"># we cache a lot of method call results, so we want location to be immutable</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- finalize-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- finalize-method -->
+
+    
+      <div id="method-i-to_hash" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_hash</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="to_hash-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/data_structures/location.rb, line 28</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_hash</span>
+  <span class="ruby-identifier">hash</span> = {
+    <span class="ruby-string">&quot;class_name&quot;</span>  =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">class_name</span>,
+    <span class="ruby-string">&quot;method_name&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">method_name</span>,
+    <span class="ruby-string">&quot;file_path&quot;</span>   =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">file_path</span>,
+    <span class="ruby-string">'file_name'</span>   =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">file_name</span>,
+    <span class="ruby-string">'line_number'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">line_number</span>,
+    <span class="ruby-string">'hash_key'</span>    =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">hash_key</span>,
+  }
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">method_name</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+    <span class="ruby-identifier">hash</span> = <span class="ruby-identifier">hash</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-string">&quot;simple_method_name&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">simple_method_name</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">hash</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- to_hash-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- to_hash-method -->
+
+    
+      <div id="method-i-to_key" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_key</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Generates the @hash key</p>
+          
+
+          
+          <div class="method-source-code" id="to_key-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/data_structures/location.rb, line 55</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_key</span>
+  [<span class="ruby-ivar">@file_path</span>, <span class="ruby-ivar">@class_name</span>, <span class="ruby-ivar">@method_name</span>].<span class="ruby-identifier">inspect</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- to_key-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- to_key-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

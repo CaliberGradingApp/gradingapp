@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module TestDsl - debugger-1.6.2 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/debugger/test/test_dsl.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><a class="include" href="TestDsl/Shared.html">TestDsl::Shared</a>
+  
+  
+  </ul>
+</nav>
+
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-included">::included</a>
+    
+    <li><a href="#method-i-binding">#binding</a>
+    
+    <li><a href="#method-i-breakpoint">#breakpoint</a>
+    
+    <li><a href="#method-i-change_line_in_file">#change_line_in_file</a>
+    
+    <li><a href="#method-i-check_output">#check_output</a>
+    
+    <li><a href="#method-i-check_output_doesnt_include">#check_output_doesnt_include</a>
+    
+    <li><a href="#method-i-check_output_includes">#check_output_includes</a>
+    
+    <li><a href="#method-i-context">#context</a>
+    
+    <li><a href="#method-i-debug_file">#debug_file</a>
+    
+    <li><a href="#method-i-enter">#enter</a>
+    
+    <li><a href="#method-i-force_set_const">#force_set_const</a>
+    
+    <li><a href="#method-i-interface">#interface</a>
+    
+    <li><a href="#method-i-pi">#pi</a>
+    
+    <li><a href="#method-i-state">#state</a>
+    
+    <li><a href="#method-i-temporary_change_hash_value">#temporary_change_hash_value</a>
+    
+    <li><a href="#method-i-temporary_change_method_value">#temporary_change_method_value</a>
+    
+    <li><a href="#method-i-temporary_set_const">#temporary_set_const</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Debugger.html">Debugger</a>
+  
+    <li><a href="./Debugger/AddBreakpoint.html">Debugger::AddBreakpoint</a>
+  
+    <li><a href="./Debugger/Breakpoint.html">Debugger::Breakpoint</a>
+  
+    <li><a href="./Debugger/Context.html">Debugger::Context</a>
+  
+    <li><a href="./Debugger/ContinueCommand.html">Debugger::ContinueCommand</a>
+  
+    <li><a href="./Debugger/DeleteBreakpointCommand.html">Debugger::DeleteBreakpointCommand</a>
+  
+    <li><a href="./Debugger/FinishCommand.html">Debugger::FinishCommand</a>
+  
+    <li><a href="./Debugger/HelpCommand.html">Debugger::HelpCommand</a>
+  
+    <li><a href="./Debugger/IRBCommand.html">Debugger::IRBCommand</a>
+  
+    <li><a href="./Debugger/InfoCommand.html">Debugger::InfoCommand</a>
+  
+    <li><a href="./Debugger/JumpCommand.html">Debugger::JumpCommand</a>
+  
+    <li><a href="./Debugger/KillCommand.html">Debugger::KillCommand</a>
+  
+    <li><a href="./Debugger/ListCommand.html">Debugger::ListCommand</a>
+  
+    <li><a href="./Debugger/LocalInterface.html">Debugger::LocalInterface</a>
+  
+    <li><a href="./Debugger/LocalInterface/Debugger.html">Debugger::LocalInterface::Debugger</a>
+  
+    <li><a href="./Debugger/MethodCommand.html">Debugger::MethodCommand</a>
+  
+    <li><a href="./Debugger/MethodSigCommand.html">Debugger::MethodSigCommand</a>
+  
+    <li><a href="./Debugger/NextCommand.html">Debugger::NextCommand</a>
+  
+    <li><a href="./Debugger/ParseFunctions.html">Debugger::ParseFunctions</a>
+  
+    <li><a href="./Debugger/Processor.html">Debugger::Processor</a>
+  
+    <li><a href="./Debugger/QuitCommand.html">Debugger::QuitCommand</a>
+  
+    <li><a href="./Debugger/ReloadCommand.html">Debugger::ReloadCommand</a>
+  
+    <li><a href="./Debugger/SetCommand.html">Debugger::SetCommand</a>
+  
+    <li><a href="./Debugger/ShowCommand.html">Debugger::ShowCommand</a>
+  
+    <li><a href="./Debugger/SkipCommand.html">Debugger::SkipCommand</a>
+  
+    <li><a href="./Debugger/SourceCommand.html">Debugger::SourceCommand</a>
+  
+    <li><a href="./Debugger/StepCommand.html">Debugger::StepCommand</a>
+  
+    <li><a href="./Debugger/VarClassVarCommand.html">Debugger::VarClassVarCommand</a>
+  
+    <li><a href="./Debugger/VarInheritCommand.html">Debugger::VarInheritCommand</a>
+  
+    <li><a href="./Debugger/VarLocalCommand.html">Debugger::VarLocalCommand</a>
+  
+    <li><a href="./Debugger/WhereCommand.html">Debugger::WhereCommand</a>
+  
+    <li><a href="./Printers.html">Printers</a>
+  
+    <li><a href="./Printers/Base.html">Printers::Base</a>
+  
+    <li><a href="./Printers/Base/MissedArgument.html">Printers::Base::MissedArgument</a>
+  
+    <li><a href="./Printers/Base/MissedPath.html">Printers::Base::MissedPath</a>
+  
+    <li><a href="./Printers/Plain.html">Printers::Plain</a>
+  
+    <li><a href="./Mocha.html">Mocha</a>
+  
+    <li><a href="./Mocha/Call.html">Mocha::Call</a>
+  
+    <li><a href="./Mocha/Expectation.html">Mocha::Expectation</a>
+  
+    <li><a href="./Mocha/Mock.html">Mocha::Mock</a>
+  
+    <li><a href="./MiniTest.html">MiniTest</a>
+  
+    <li><a href="./MiniTest/Assertions.html">MiniTest::Assertions</a>
+  
+    <li><a href="./MiniTest/Expectations.html">MiniTest::Expectations</a>
+  
+    <li><a href="./TestDsl.html">TestDsl</a>
+  
+    <li><a href="./TestDsl/ClassMethods.html">TestDsl::ClassMethods</a>
+  
+    <li><a href="./TestDsl/Shared.html">TestDsl::Shared</a>
+  
+    <li><a href="./Kernel.html">Kernel</a>
+  
+    <li><a href="./Module.html">Module</a>
+  
+    <li><a href="./PrinterHelpers.html">PrinterHelpers</a>
+  
+    <li><a href="./TestInterface.html">TestInterface</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module TestDsl</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-included" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">included</span><span
+            class="method-args">(base)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="included-source">
+            <pre><span class="ruby-comment"># File lib/debugger/test/test_dsl.rb, line 9</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">included</span>(<span class="ruby-identifier">base</span>)
+  <span class="ruby-identifier">base</span>.<span class="ruby-identifier">class_eval</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">extend</span> <span class="ruby-constant">ClassMethods</span>
+    <span class="ruby-identifier">before</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-constant">Debugger</span>.<span class="ruby-identifier">interface</span> = <span class="ruby-constant">TestInterface</span>.<span class="ruby-identifier">new</span>
+      <span class="ruby-constant">Debugger</span>.<span class="ruby-identifier">handler</span>.<span class="ruby-identifier">display</span>.<span class="ruby-identifier">clear</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">after</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-constant">Debugger</span>.<span class="ruby-identifier">handler</span>.<span class="ruby-identifier">display</span>.<span class="ruby-identifier">clear</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- included-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- included-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-binding" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">binding</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="binding-source">
+            <pre><span class="ruby-comment"># File lib/debugger/test/test_dsl.rb, line 117</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">binding</span>
+  <span class="ruby-identifier">context</span>.<span class="ruby-identifier">frame_binding</span>(<span class="ruby-identifier">state</span>.<span class="ruby-identifier">frame_pos</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- binding-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- binding-method -->
+
+    
+      <div id="method-i-breakpoint" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">breakpoint</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="breakpoint-source">
+            <pre><span class="ruby-comment"># File lib/debugger/test/test_dsl.rb, line 121</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">breakpoint</span>
+  <span class="ruby-constant">Debugger</span>.<span class="ruby-identifier">breakpoints</span>.<span class="ruby-identifier">first</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- breakpoint-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- breakpoint-method -->
+
+    
+      <div id="method-i-change_line_in_file" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">change_line_in_file</span><span
+            class="method-args">(file, line, new_line_content)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="change_line_in_file-source">
+            <pre><span class="ruby-comment"># File lib/debugger/test/test_dsl.rb, line 130</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">change_line_in_file</span>(<span class="ruby-identifier">file</span>, <span class="ruby-identifier">line</span>, <span class="ruby-identifier">new_line_content</span>)
+  <span class="ruby-identifier">old_content</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">file</span>)
+  <span class="ruby-identifier">new_content</span> = <span class="ruby-identifier">old_content</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;\n&quot;</span>).<span class="ruby-identifier">tap</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c</span>[<span class="ruby-identifier">line</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>] = <span class="ruby-identifier">new_line_content</span> }.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;\n&quot;</span>)
+  <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">file</span>, <span class="ruby-string">'w'</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">write</span>(<span class="ruby-identifier">new_content</span>) }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- change_line_in_file-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- change_line_in_file-method -->
+
+    
+      <div id="method-i-check_output" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">check_output</span><span
+            class="method-args">(check_method, *args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Checks the output of the debugger. By default it checks output queue of the
+current interface, but you can check again any queue by providing it as a
+second argument.</p>
+
+<p>Usage:</p>
+
+<pre>enter 'break 4', 'cont'
+debug(&quot;ex1&quot;)
+check_output &quot;Breakpoint 1 at #{fullpath('ex1')}:4&quot;</pre>
+          
+
+          
+          <div class="method-source-code" id="check_output-source">
+            <pre><span class="ruby-comment"># File lib/debugger/test/test_dsl.rb, line 90</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">check_output</span>(<span class="ruby-identifier">check_method</span>, *<span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">queue</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Regexp</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">interface</span>.<span class="ruby-identifier">output_queue</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">pop</span>
+  <span class="ruby-identifier">queue_messages</span> = <span class="ruby-identifier">queue</span>.<span class="ruby-identifier">map</span>(&amp;<span class="ruby-value">:strip</span>)
+  <span class="ruby-identifier">messages</span> = <span class="ruby-constant">Array</span>(<span class="ruby-identifier">args</span>).<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">msg</span><span class="ruby-operator">|</span> <span class="ruby-identifier">msg</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">msg</span>.<span class="ruby-identifier">strip</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">msg</span> }
+  <span class="ruby-identifier">queue_messages</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">check_method</span>, <span class="ruby-identifier">messages</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- check_output-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- check_output-method -->
+
+    
+      <div id="method-i-check_output_doesnt_include" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">check_output_doesnt_include</span><span
+            class="method-args">(*args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="check_output_doesnt_include-source">
+            <pre><span class="ruby-comment"># File lib/debugger/test/test_dsl.rb, line 101</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">check_output_doesnt_include</span>(*<span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">check_output</span> <span class="ruby-value">:wont_include_in_order</span>, *<span class="ruby-identifier">args</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- check_output_doesnt_include-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- check_output_doesnt_include-method -->
+
+    
+      <div id="method-i-check_output_includes" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">check_output_includes</span><span
+            class="method-args">(*args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="check_output_includes-source">
+            <pre><span class="ruby-comment"># File lib/debugger/test/test_dsl.rb, line 97</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">check_output_includes</span>(*<span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">check_output</span> <span class="ruby-value">:must_include_in_order</span>, *<span class="ruby-identifier">args</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- check_output_includes-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- check_output_includes-method -->
+
+    
+      <div id="method-i-context" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">context</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="context-source">
+            <pre><span class="ruby-comment"># File lib/debugger/test/test_dsl.rb, line 113</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">context</span>
+  <span class="ruby-identifier">state</span>.<span class="ruby-identifier">context</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- context-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- context-method -->
+
+    
+      <div id="method-i-debug_file" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">debug_file</span><span
+            class="method-args">(filename, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Runs a debugger with the provided basename for a file. The file should be
+placed to the test/new/examples dir.</p>
+
+<p>You also can specify block, which will be executed when Processor extracts
+all the commands from the input queue. You can use it e.g. for making
+asserts for the current test. If you specified the block, and it never was
+executed, the test will fail.</p>
+
+<p>Usage:</p>
+
+<pre>debug &quot;ex1&quot; # ex1 should be placed in test/new/examples/ex1.rb
+
+enter 'b 4', 'cont'
+debug(&quot;ex1&quot;) { state.line.must_equal 4 } # It will be executed after running 'cont' and stopping at the breakpoint</pre>
+          
+
+          
+          <div class="method-source-code" id="debug_file-source">
+            <pre><span class="ruby-comment"># File lib/debugger/test/test_dsl.rb, line 54</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">debug_file</span>(<span class="ruby-identifier">filename</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">is_test_block_called</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-identifier">debug_completed</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-identifier">exception</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-constant">Debugger</span>.<span class="ruby-identifier">stubs</span>(<span class="ruby-value">:run_init_script</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">block</span>
+    <span class="ruby-identifier">interface</span>.<span class="ruby-identifier">test_block</span> = <span class="ruby-identifier">lambda</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">is_test_block_called</span> = <span class="ruby-keyword">true</span>
+      <span class="ruby-comment"># We need to store exception and reraise it after completing debugging, because</span>
+      <span class="ruby-comment"># Debugger will swallow any exceptions, so e.g. our failed assertions will be ignored</span>
+      <span class="ruby-keyword">begin</span>
+        <span class="ruby-identifier">block</span>.<span class="ruby-identifier">call</span>
+      <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+        <span class="ruby-identifier">exception</span> = <span class="ruby-identifier">e</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-constant">Debugger</span>.<span class="ruby-identifier">start</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-constant">Debugger</span>.<span class="ruby-identifier">debug_load</span>(<span class="ruby-identifier">fullpath</span>(<span class="ruby-identifier">filename</span>))
+    <span class="ruby-identifier">debug_completed</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">flunk</span> <span class="ruby-string">&quot;Debug block was not completed&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">debug_completed</span>
+  <span class="ruby-identifier">flunk</span> <span class="ruby-string">&quot;test block is provided, but not called&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">block</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">is_test_block_called</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-identifier">exception</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">exception</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- debug_file-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- debug_file-method -->
+
+    
+      <div id="method-i-enter" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">enter</span><span
+            class="method-args">(*messages)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Adds commands to the input queue, so they will be retrieved by Processor
+later. I.e. it emulates user’s input.</p>
+
+<p>If a command is a Proc object, it will be executed before retrieving by
+Processor. May be handy when you need build a command depending on the
+current context/state.</p>
+
+<p>Usage:</p>
+
+<pre>enter 'b 12'
+enter 'b 12', 'cont'
+enter ['b 12', 'cont']
+enter 'b 12', -&gt;{&quot;disable #{breakpoint.id}&quot;}, 'cont'</pre>
+          
+
+          
+          <div class="method-source-code" id="enter-source">
+            <pre><span class="ruby-comment"># File lib/debugger/test/test_dsl.rb, line 35</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">enter</span>(*<span class="ruby-identifier">messages</span>)
+  <span class="ruby-identifier">messages</span> = <span class="ruby-identifier">messages</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">messages</span>.<span class="ruby-identifier">first</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">messages</span>
+  <span class="ruby-identifier">interface</span>.<span class="ruby-identifier">input_queue</span>.<span class="ruby-identifier">concat</span>(<span class="ruby-identifier">messages</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- enter-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- enter-method -->
+
+    
+      <div id="method-i-force_set_const" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">force_set_const</span><span
+            class="method-args">(klass, const, value)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="force_set_const-source">
+            <pre><span class="ruby-comment"># File lib/debugger/test/test_dsl.rb, line 125</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">force_set_const</span>(<span class="ruby-identifier">klass</span>, <span class="ruby-identifier">const</span>, <span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:remove_const</span>, <span class="ruby-identifier">const</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">const_defined?</span>(<span class="ruby-identifier">const</span>)
+  <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">const_set</span>(<span class="ruby-identifier">const</span>, <span class="ruby-identifier">value</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- force_set_const-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- force_set_const-method -->
+
+    
+      <div id="method-i-interface" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">interface</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="interface-source">
+            <pre><span class="ruby-comment"># File lib/debugger/test/test_dsl.rb, line 105</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">interface</span>
+  <span class="ruby-constant">Debugger</span>.<span class="ruby-identifier">handler</span>.<span class="ruby-identifier">interface</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- interface-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- interface-method -->
+
+    
+      <div id="method-i-pi" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pi</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="pi-source">
+            <pre><span class="ruby-comment"># File lib/debugger/test/test_dsl.rb, line 168</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">pi</span>
+  <span class="ruby-identifier">puts</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Output Queue:&quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-identifier">interface</span>.<span class="ruby-identifier">output_queue</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;&quot;</span>)
+  <span class="ruby-identifier">puts</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Error Queue:&quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-identifier">interface</span>.<span class="ruby-identifier">error_queue</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;&quot;</span>)
+  <span class="ruby-identifier">puts</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Confirm Queue:&quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-identifier">interface</span>.<span class="ruby-identifier">confirm_queue</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;&quot;</span>)
+  <span class="ruby-identifier">puts</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Print Queue:&quot;</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-identifier">interface</span>.<span class="ruby-identifier">print_queue</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;&quot;</span>)
+  <span class="ruby-identifier">puts</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- pi-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- pi-method -->
+
+    
+      <div id="method-i-state" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">state</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="state-source">
+            <pre><span class="ruby-comment"># File lib/debugger/test/test_dsl.rb, line 109</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">state</span>
+  <span class="ruby-identifier">$rdebug_state</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- state-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- state-method -->
+
+    
+      <div id="method-i-temporary_change_hash_value" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">temporary_change_hash_value</span><span
+            class="method-args">(item, key, value) { || ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="temporary_change_hash_value-source">
+            <pre><span class="ruby-comment"># File lib/debugger/test/test_dsl.rb, line 144</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">temporary_change_hash_value</span>(<span class="ruby-identifier">item</span>, <span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">old_value</span> = <span class="ruby-identifier">item</span>[<span class="ruby-identifier">key</span>]
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">item</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-identifier">value</span>
+    <span class="ruby-keyword">yield</span>
+  <span class="ruby-keyword">ensure</span>
+    <span class="ruby-identifier">item</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-identifier">old_value</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- temporary_change_hash_value-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- temporary_change_hash_value-method -->
+
+    
+      <div id="method-i-temporary_change_method_value" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">temporary_change_method_value</span><span
+            class="method-args">(item, method, value) { || ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="temporary_change_method_value-source">
+            <pre><span class="ruby-comment"># File lib/debugger/test/test_dsl.rb, line 136</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">temporary_change_method_value</span>(<span class="ruby-identifier">item</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">old</span> = <span class="ruby-identifier">item</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">method</span>)
+  <span class="ruby-identifier">item</span>.<span class="ruby-identifier">send</span>(<span class="ruby-node">&quot;#{method}=&quot;</span>, <span class="ruby-identifier">value</span>)
+  <span class="ruby-keyword">yield</span>
+<span class="ruby-keyword">ensure</span>
+  <span class="ruby-identifier">item</span>.<span class="ruby-identifier">send</span>(<span class="ruby-node">&quot;#{method}=&quot;</span>, <span class="ruby-identifier">old</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- temporary_change_method_value-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- temporary_change_method_value-method -->
+
+    
+      <div id="method-i-temporary_set_const" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">temporary_set_const</span><span
+            class="method-args">(klass, const, value) { || ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="temporary_set_const-source">
+            <pre><span class="ruby-comment"># File lib/debugger/test/test_dsl.rb, line 154</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">temporary_set_const</span>(<span class="ruby-identifier">klass</span>, <span class="ruby-identifier">const</span>, <span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">old_value</span> = <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">const_defined?</span>(<span class="ruby-identifier">const</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">const_get</span>(<span class="ruby-identifier">const</span>) <span class="ruby-operator">:</span> <span class="ruby-value">:__undefined__</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">force_set_const</span>(<span class="ruby-identifier">klass</span>, <span class="ruby-identifier">const</span>, <span class="ruby-identifier">value</span>)
+    <span class="ruby-keyword">yield</span>
+  <span class="ruby-keyword">ensure</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">old_value</span> <span class="ruby-operator">==</span> <span class="ruby-value">:__undefined__</span>
+      <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:remove_const</span>, <span class="ruby-identifier">const</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">force_set_const</span>(<span class="ruby-identifier">klass</span>, <span class="ruby-identifier">const</span>, <span class="ruby-identifier">old_value</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- temporary_set_const-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- temporary_set_const-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

@@ -1,0 +1,11 @@
+Thu, 07 Nov 2013 23:21:52 -0400
+lib/fakeweb.rb	Thu, 07 Nov 2013 23:21:51 -0400
+lib/fake_web.rb	Thu, 07 Nov 2013 23:21:51 -0400
+lib/fake_web/utility.rb	Thu, 07 Nov 2013 23:21:51 -0400
+lib/fake_web/registry.rb	Thu, 07 Nov 2013 23:21:51 -0400
+lib/fake_web/stub_socket.rb	Thu, 07 Nov 2013 23:21:51 -0400
+lib/fake_web/response.rb	Thu, 07 Nov 2013 23:21:51 -0400
+lib/fake_web/responder.rb	Thu, 07 Nov 2013 23:21:51 -0400
+lib/fake_web/ext/net_http.rb	Thu, 07 Nov 2013 23:21:51 -0400
+LICENSE.txt	Thu, 07 Nov 2013 23:21:51 -0400
+README.rdoc	Thu, 07 Nov 2013 23:21:51 -0400

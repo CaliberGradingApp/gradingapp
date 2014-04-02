@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"yacc_value:EFI"RubyLexer#yacc_value;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I">Value of last token which had a value associated with it.;T:
+@fileI"lib/ruby_lexer.rb;TF@

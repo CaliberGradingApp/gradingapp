@@ -1,0 +1,381 @@
+OpenGL Warning: Failed to connect to host. Make sure 3D acceleration is enabled for this VM.
+libGL error: failed to load driver: vboxvideo
+libGL error: Try again with LIBGL_DEBUG=verbose for more details.
+gnome-session[1524]: WARNING: Session 'ubuntu' runnable check failed: Exited with code 1
+unity-2d-shell: [DEBUG] bool KeyMonitor::registerEvents(): Could not open device:  Virtual core pointer 
+unity-2d-shell: [DEBUG] bool KeyMonitor::registerEvents(): Could not open device:  Virtual core keyboard 
+unity-2d-panel: [DEBUG] Scanning panel plugin directory "/usr/lib/unity-2d/plugins/panel" 
+unity-2d-panel: [DEBUG] Loading panel plugin: "/usr/lib/unity-2d/plugins/panel/libpanelplugin-appindicator.so" 
+unity-2d-panel: [DEBUG] Loading panel plugin: "/usr/lib/unity-2d/plugins/panel/libpanelplugin-appname.so" 
+unity-2d-panel: [DEBUG] Loading panel plugin: "/usr/lib/unity-2d/plugins/panel/libpanelplugin-indicator.so" 
+unity-2d-panel: [DEBUG] Loading panel plugin: "/usr/lib/unity-2d/plugins/panel/libpanelplugin-legacytray.so" 
+unity-2d-panel: [DEBUG] Loading panel plugin: "/usr/lib/unity-2d/plugins/panel/libpanelplugin-separator.so" 
+unity-2d-panel: [DEBUG] Configured plugins list is: ("appname", "!legacytray", "indicator") 
+unity-2d-shell: [DEBUG] static void WindowImageProvider::activateComposite(): Server supports the Composite extension (ver 0.4)
+unity-2d-panel: [DEBUG] bool KeyMonitor::registerEvents(): Could not open device:  Virtual core pointer 
+unity-2d-panel: [DEBUG] bool KeyMonitor::registerEvents(): Could not open device:  Virtual core keyboard 
+unity-2d-panel: [WARNING] X Error: BadWindow (invalid Window parameter) 3
+  Major opcode: 18 (X_ChangeProperty)
+  Resource id:  0x0
+unity-2d-panel: [DEBUG] virtual void Hotkey::connectNotify(const char*): Grabbing hotkey "Alt+F10" 
+XInput version 2.2 found
+** Message: applet now removed from the notification area
+** Message: using fallback from indicator to GtkStatusIcon
+** Message: moving back from GtkStatusIcon to indicator
+unity-2d-shell: [DEBUG] virtual void Hotkey::connectNotify(const char*): Grabbing hotkey "Meta+S" 
+unity-2d-shell: [DEBUG] virtual void Hotkey::connectNotify(const char*): Grabbing hotkey "Meta+T" 
+unity-2d-shell: [WARNING] Object::connect: No such signal Lenses::roleNamesChanged(QHash<int,QByteArray>) in /build/buildd/unity-2d-5.14.0/libunity-2d-private/src/qsortfilterproxymodelqml.cpp:65
+unity-2d-shell: [WARNING] void QSortFilterProxyModelQML::setSourceModelQObject(QObject*): received a sourceModel that does not notify of changes of its roleNames 
+unity-2d-shell: [WARNING] file:///usr/share/unity-2d/shell/hud/Hud.qml:145: TypeError: Result of expression 'shellManager.hudShell' [null] is not an object.
+unity-2d-shell: [DEBUG] virtual void Hotkey::connectNotify(const char*): Grabbing hotkey "Alt+F1" 
+unity-2d-shell: [DEBUG] virtual void Hotkey::connectNotify(const char*): Grabbing hotkey "Alt+F2" 
+unity-2d-shell: [DEBUG] virtual void Hotkey::connectNotify(const char*): Grabbing hotkey "Meta+0" 
+unity-2d-shell: [DEBUG] virtual void Hotkey::connectNotify(const char*): Grabbing hotkey "Meta+Shift+0" 
+unity-2d-shell: [DEBUG] virtual void Hotkey::connectNotify(const char*): Grabbing hotkey "Meta+ퟀ" 
+unity-2d-shell: [DEBUG] virtual void Hotkey::connectNotify(const char*): Grabbing hotkey "Meta+1" 
+unity-2d-shell: [DEBUG] virtual void Hotkey::connectNotify(const char*): Grabbing hotkey "Meta+Shift+1" 
+unity-2d-shell: [DEBUG] virtual void Hotkey::connectNotify(const char*): Grabbing hotkey "Meta+ퟀ" 
+unity-2d-shell: [DEBUG] virtual void Hotkey::connectNotify(const char*): Grabbing hotkey "Meta+2" 
+unity-2d-shell: [DEBUG] virtual void Hotkey::connectNotify(const char*): Grabbing hotkey "Meta+Shift+2" 
+unity-2d-shell: [DEBUG] virtual void Hotkey::connectNotify(const char*): Grabbing hotkey "Meta+ퟀ" 
+unity-2d-shell: [DEBUG] virtual void Hotkey::connectNotify(const char*): Grabbing hotkey "Meta+3" 
+unity-2d-shell: [DEBUG] virtual void Hotkey::connectNotify(const char*): Grabbing hotkey "Meta+Shift+3" 
+unity-2d-shell: [DEBUG] virtual void Hotkey::connectNotify(const char*): Grabbing hotkey "Meta+ퟀ" 
+unity-2d-shell: [DEBUG] virtual void Hotkey::connectNotify(const char*): Grabbing hotkey "Meta+4" 
+unity-2d-shell: [DEBUG] virtual void Hotkey::connectNotify(const char*): Grabbing hotkey "Meta+Shift+4" 
+unity-2d-shell: [DEBUG] virtual void Hotkey::connectNotify(const char*): Grabbing hotkey "Meta+ퟀ" 
+unity-2d-shell: [DEBUG] virtual void Hotkey::connectNotify(const char*): Grabbing hotkey "Meta+5" 
+unity-2d-shell: [DEBUG] virtual void Hotkey::connectNotify(const char*): Grabbing hotkey "Meta+Shift+5" 
+unity-2d-shell: [DEBUG] virtual void Hotkey::connectNotify(const char*): Grabbing hotkey "Meta+ퟀ" 
+unity-2d-shell: [DEBUG] virtual void Hotkey::connectNotify(const char*): Grabbing hotkey "Meta+6" 
+unity-2d-shell: [DEBUG] virtual void Hotkey::connectNotify(const char*): Grabbing hotkey "Meta+Shift+6" 
+unity-2d-shell: [DEBUG] virtual void Hotkey::connectNotify(const char*): Grabbing hotkey "Meta+ퟀ" 
+unity-2d-shell: [DEBUG] virtual void Hotkey::connectNotify(const char*): Grabbing hotkey "Meta+7" 
+unity-2d-shell: [DEBUG] virtual void Hotkey::connectNotify(const char*): Grabbing hotkey "Meta+Shift+7" 
+unity-2d-shell: [DEBUG] virtual void Hotkey::connectNotify(const char*): Grabbing hotkey "Meta+ퟀ" 
+unity-2d-shell: [DEBUG] virtual void Hotkey::connectNotify(const char*): Grabbing hotkey "Meta+8" 
+unity-2d-shell: [DEBUG] virtual void Hotkey::connectNotify(const char*): Grabbing hotkey "Meta+Shift+8" 
+unity-2d-shell: [DEBUG] virtual void Hotkey::connectNotify(const char*): Grabbing hotkey "Meta+ퟀ" 
+unity-2d-shell: [DEBUG] virtual void Hotkey::connectNotify(const char*): Grabbing hotkey "Meta+9" 
+unity-2d-shell: [DEBUG] virtual void Hotkey::connectNotify(const char*): Grabbing hotkey "Meta+Shift+9" 
+unity-2d-shell: [DEBUG] virtual void Hotkey::connectNotify(const char*): Grabbing hotkey "Meta+ퟀ" 
+unity-2d-shell: [WARNING] void ApplicationsList::remoteEntryUpdated(const QString&, const QString&, const QString&, const QMap<QString, QVariant>&): Application sent an update but we don't seem to have it in the launcher: "application://nautilus.desktop" 
+unity-2d-shell: [WARNING] void ApplicationsList::remoteEntryUpdated(const QString&, const QString&, const QString&, const QMap<QString, QVariant>&): Application sent an update but we don't seem to have it in the launcher: "application://nautilus.desktop" 
+unity-2d-shell: [DEBUG] virtual void Hotkey::connectNotify(const char*): Grabbing hotkey "Meta+A" 
+unity-2d-shell: [DEBUG] virtual void Hotkey::connectNotify(const char*): Grabbing hotkey "Meta+F" 
+unity-2d-shell: [DEBUG] virtual void Hotkey::connectNotify(const char*): Grabbing hotkey "Meta+M" 
+unity-2d-shell: [DEBUG] virtual void Hotkey::connectNotify(const char*): Grabbing hotkey "Meta+V" 
+unity-2d-shell: [WARNING] void ApplicationsList::remoteEntryUpdated(const QString&, const QString&, const QString&, const QMap<QString, QVariant>&): Application sent an update but we don't seem to have it in the launcher: "application://empathy.desktop" 
+unity-2d-shell: [WARNING] void ApplicationsList::remoteEntryUpdated(const QString&, const QString&, const QString&, const QMap<QString, QVariant>&): Application sent an update but we don't seem to have it in the launcher: "application://empathy.desktop" 
+
+** (gsd-backlight-helper:1986): WARNING **: failed to find any devices
+
+(gnome-settings-daemon:1618): power-plugin-WARNING **: failed to set dim backlight to 30%: gsd-backlight-helper failed: 
+
+** (gsd-backlight-helper:2216): WARNING **: failed to find any devices
+
+(gnome-settings-daemon:1618): power-plugin-WARNING **: failed to set dim backlight to 30%: gsd-backlight-helper failed: 
+
+** (gsd-backlight-helper:2228): WARNING **: failed to find any devices
+
+(gnome-settings-daemon:1618): power-plugin-WARNING **: failed to set dim backlight to 30%: gsd-backlight-helper failed: 
+
+** (gsd-backlight-helper:2230): WARNING **: failed to find any devices
+
+(gnome-settings-daemon:1618): power-plugin-WARNING **: failed to set dim backlight to 30%: gsd-backlight-helper failed: 
+
+** (gsd-backlight-helper:2347): WARNING **: failed to find any devices
+
+(gnome-settings-daemon:1618): power-plugin-WARNING **: failed to set dim backlight to 30%: gsd-backlight-helper failed: 
+Nautilus-Share-Message: Called "net usershare info" but it failed: 'net usershare' returned error 255: net usershare: cannot open usershare directory /var/lib/samba/usershares. Error No such file or directory
+Please ask your system administrator to enable user sharing.
+
+Window manager warning: Received a NET_CURRENT_DESKTOP message from a broken (outdated) client who sent a 0 timestamp
+unity-2d-shell: [WARNING] Wnck: Received a timestamp of 0; window activation may not function properly.
+
+Window manager warning: Buggy client sent a _NET_ACTIVE_WINDOW message with a timestamp of 0 for 0x3800005 (saasbook@s)
+Window manager warning: meta_window_activate called by a pager with a 0 timestamp; the pager needs to be fixed.
+
+** (gsd-backlight-helper:2406): WARNING **: failed to find any devices
+
+(gnome-settings-daemon:1618): power-plugin-WARNING **: failed to set dim backlight to 30%: gsd-backlight-helper failed: 
+unity-2d-shell: [WARNING] QDBusError("org.freedesktop.DBus.Error.UnknownMethod", "No such interface `org.ayatana.bamf.application' on object at path /org/ayatana/bamf/application1385522938") 
+unity-2d-shell: [WARNING] QDBusError("org.freedesktop.DBus.Error.UnknownMethod", "No such interface `org.ayatana.bamf.view' on object at path /org/ayatana/bamf/application1385522938") 
+unity-2d-shell: [WARNING] QDBusError("org.freedesktop.DBus.Error.UnknownMethod", "No such interface `org.ayatana.bamf.application' on object at path /org/ayatana/bamf/application1385522938") 
+unity-2d-shell: [WARNING] QDBusError("org.freedesktop.DBus.Error.UnknownMethod", "No such interface `org.ayatana.bamf.view' on object at path /org/ayatana/bamf/application1385522938") 
+unity-2d-shell: [WARNING] QDBusError("org.freedesktop.DBus.Error.UnknownMethod", "No such interface `org.ayatana.bamf.view' on object at path /org/ayatana/bamf/application1385522938") 
+unity-2d-shell: [WARNING] QDBusError("org.freedesktop.DBus.Error.UnknownMethod", "No such interface `org.ayatana.bamf.view' on object at path /org/ayatana/bamf/application1385522938") 
+unity-2d-shell: [WARNING] QDBusError("org.freedesktop.DBus.Error.UnknownMethod", "No such interface `org.ayatana.bamf.view' on object at path /org/ayatana/bamf/application1385522938") 
+unity-2d-shell: [WARNING] QDBusError("org.freedesktop.DBus.Error.UnknownMethod", "No such interface `org.ayatana.bamf.view' on object at path /org/ayatana/bamf/application1385522938") 
+
+** (gsd-backlight-helper:2569): WARNING **: failed to find any devices
+
+(gnome-settings-daemon:1618): power-plugin-WARNING **: failed to set dim backlight to 30%: gsd-backlight-helper failed: 
+Window manager warning: Received a NET_CURRENT_DESKTOP message from a broken (outdated) client who sent a 0 timestamp
+unity-2d-shell: [WARNING] Wnck: Received a timestamp of 0; window activation may not function properly.
+
+Window manager warning: Buggy client sent a _NET_ACTIVE_WINDOW message with a timestamp of 0 for 0x3800005 (saasbook@s)
+Window manager warning: meta_window_activate called by a pager with a 0 timestamp; the pager needs to be fixed.
+
+** (gsd-backlight-helper:2587): WARNING **: failed to find any devices
+
+(gnome-settings-daemon:1618): power-plugin-WARNING **: failed to set dim backlight to 30%: gsd-backlight-helper failed: 
+unity-2d-panel: [CRITICAL] Wnck: wnck_window_is_maximized: assertion `WNCK_IS_WINDOW (window)' failed
+unity-2d-panel: [CRITICAL] Wnck: wnck_window_get_geometry: assertion `WNCK_IS_WINDOW (window)' failed
+unity-2d-panel: [CRITICAL] Wnck: wnck_window_is_maximized: assertion `WNCK_IS_WINDOW (window)' failed
+unity-2d-panel: [CRITICAL] Wnck: wnck_window_get_geometry: assertion `WNCK_IS_WINDOW (window)' failed
+unity-2d-shell: [WARNING] QDBusError("org.freedesktop.DBus.Error.UnknownMethod", "No such interface `org.ayatana.bamf.application' on object at path /org/ayatana/bamf/application62801462") 
+unity-2d-shell: [WARNING] QDBusError("org.freedesktop.DBus.Error.UnknownMethod", "No such interface `org.ayatana.bamf.view' on object at path /org/ayatana/bamf/application62801462") 
+unity-2d-shell: [WARNING] QDBusError("org.freedesktop.DBus.Error.UnknownMethod", "No such interface `org.ayatana.bamf.application' on object at path /org/ayatana/bamf/application62801462") 
+unity-2d-shell: [WARNING] QDBusError("org.freedesktop.DBus.Error.UnknownMethod", "No such interface `org.ayatana.bamf.view' on object at path /org/ayatana/bamf/application62801462") 
+unity-2d-shell: [WARNING] QDBusError("org.freedesktop.DBus.Error.UnknownMethod", "No such interface `org.ayatana.bamf.view' on object at path /org/ayatana/bamf/application62801462") 
+unity-2d-shell: [WARNING] QDBusError("org.freedesktop.DBus.Error.UnknownMethod", "No such interface `org.ayatana.bamf.view' on object at path /org/ayatana/bamf/application62801462") 
+unity-2d-shell: [WARNING] QDBusError("org.freedesktop.DBus.Error.UnknownMethod", "No such interface `org.ayatana.bamf.view' on object at path /org/ayatana/bamf/application62801462") 
+Window manager warning: Received a NET_CURRENT_DESKTOP message from a broken (outdated) client who sent a 0 timestamp
+unity-2d-shell: [WARNING] Wnck: Received a timestamp of 0; window activation may not function properly.
+
+Window manager warning: Buggy client sent a _NET_ACTIVE_WINDOW message with a timestamp of 0 for 0x3800005 (saasbook@s)
+Window manager warning: meta_window_activate called by a pager with a 0 timestamp; the pager needs to be fixed.
+Window manager warning: Received a NET_CURRENT_DESKTOP message from a broken (outdated) client who sent a 0 timestamp
+unity-2d-shell: [WARNING] Wnck: Received a timestamp of 0; window activation may not function properly.
+
+Window manager warning: Buggy client sent a _NET_ACTIVE_WINDOW message with a timestamp of 0 for 0x2e00367 (Documents)
+Window manager warning: meta_window_activate called by a pager with a 0 timestamp; the pager needs to be fixed.
+Window manager warning: Received a NET_CURRENT_DESKTOP message from a broken (outdated) client who sent a 0 timestamp
+unity-2d-shell: [WARNING] Wnck: Received a timestamp of 0; window activation may not function properly.
+
+Window manager warning: Buggy client sent a _NET_ACTIVE_WINDOW message with a timestamp of 0 for 0x48000b6 (Gradingapp)
+Window manager warning: meta_window_activate called by a pager with a 0 timestamp; the pager needs to be fixed.
+Window manager warning: Received a NET_CURRENT_DESKTOP message from a broken (outdated) client who sent a 0 timestamp
+unity-2d-shell: [WARNING] Wnck: Received a timestamp of 0; window activation may not function properly.
+
+Window manager warning: Buggy client sent a _NET_ACTIVE_WINDOW message with a timestamp of 0 for 0x3800005 (saasbook@s)
+Window manager warning: meta_window_activate called by a pager with a 0 timestamp; the pager needs to be fixed.
+
+** (gsd-backlight-helper:2820): WARNING **: failed to find any devices
+
+(gnome-settings-daemon:1618): power-plugin-WARNING **: failed to set dim backlight to 30%: gsd-backlight-helper failed: 
+
+** (gsd-backlight-helper:2821): WARNING **: failed to find any devices
+
+(gnome-settings-daemon:1618): power-plugin-WARNING **: failed to set dim backlight to 30%: gsd-backlight-helper failed: 
+
+(firefox:2239): Gtk-CRITICAL **: IA__gtk_clipboard_set_with_data: assertion `targets != NULL' failed
+Window manager warning: Received a NET_CURRENT_DESKTOP message from a broken (outdated) client who sent a 0 timestamp
+unity-2d-shell: [WARNING] Wnck: Received a timestamp of 0; window activation may not function properly.
+
+Window manager warning: Buggy client sent a _NET_ACTIVE_WINDOW message with a timestamp of 0 for 0x4600081 (index.html)
+Window manager warning: meta_window_activate called by a pager with a 0 timestamp; the pager needs to be fixed.
+Window manager warning: Received a NET_CURRENT_DESKTOP message from a broken (outdated) client who sent a 0 timestamp
+unity-2d-shell: [WARNING] Wnck: Received a timestamp of 0; window activation may not function properly.
+
+Window manager warning: Buggy client sent a _NET_ACTIVE_WINDOW message with a timestamp of 0 for 0x3800798 (saasbook@s)
+Window manager warning: meta_window_activate called by a pager with a 0 timestamp; the pager needs to be fixed.
+
+** (gsd-backlight-helper:2911): WARNING **: failed to find any devices
+
+(gnome-settings-daemon:1618): power-plugin-WARNING **: failed to set dim backlight to 30%: gsd-backlight-helper failed: 
+
+** (gsd-backlight-helper:2913): WARNING **: failed to find any devices
+
+(gnome-settings-daemon:1618): power-plugin-WARNING **: failed to set dim backlight to 30%: gsd-backlight-helper failed: 
+Window manager warning: Received a NET_CURRENT_DESKTOP message from a broken (outdated) client who sent a 0 timestamp
+unity-2d-shell: [WARNING] Wnck: Received a timestamp of 0; window activation may not function properly.
+
+Window manager warning: Buggy client sent a _NET_ACTIVE_WINDOW message with a timestamp of 0 for 0x48000b6 (New Tab - )
+Window manager warning: meta_window_activate called by a pager with a 0 timestamp; the pager needs to be fixed.
+Window manager warning: Received a NET_CURRENT_DESKTOP message from a broken (outdated) client who sent a 0 timestamp
+unity-2d-shell: [WARNING] Wnck: Received a timestamp of 0; window activation may not function properly.
+
+Window manager warning: Buggy client sent a _NET_ACTIVE_WINDOW message with a timestamp of 0 for 0x3800798 (saasbook@s)
+Window manager warning: meta_window_activate called by a pager with a 0 timestamp; the pager needs to be fixed.
+
+(gnome-settings-daemon:1618): libappindicator-CRITICAL **: app_indicator_set_label: assertion `IS_APP_INDICATOR (self)' failed
+
+(gnome-settings-daemon:1618): libappindicator-CRITICAL **: app_indicator_set_label: assertion `IS_APP_INDICATOR (self)' failed
+
+(gnome-settings-daemon:1618): libappindicator-CRITICAL **: app_indicator_set_label: assertion `IS_APP_INDICATOR (self)' failed
+
+(gnome-settings-daemon:1618): libappindicator-CRITICAL **: app_indicator_set_label: assertion `IS_APP_INDICATOR (self)' failed
+
+(gnome-settings-daemon:1618): libappindicator-CRITICAL **: app_indicator_set_label: assertion `IS_APP_INDICATOR (self)' failed
+
+(gnome-settings-daemon:1618): libappindicator-CRITICAL **: app_indicator_set_label: assertion `IS_APP_INDICATOR (self)' failed
+
+(gnome-settings-daemon:1618): libappindicator-CRITICAL **: app_indicator_set_label: assertion `IS_APP_INDICATOR (self)' failed
+
+(gnome-settings-daemon:1618): libappindicator-CRITICAL **: app_indicator_set_label: assertion `IS_APP_INDICATOR (self)' failed
+
+(gnome-settings-daemon:1618): libappindicator-CRITICAL **: app_indicator_set_label: assertion `IS_APP_INDICATOR (self)' failed
+
+(gnome-settings-daemon:1618): libappindicator-CRITICAL **: app_indicator_set_label: assertion `IS_APP_INDICATOR (self)' failed
+
+** (gsd-backlight-helper:2958): WARNING **: failed to find any devices
+
+(gnome-settings-daemon:1618): power-plugin-WARNING **: failed to set dim backlight to 30%: gsd-backlight-helper failed: 
+
+** (gsd-backlight-helper:2960): WARNING **: failed to find any devices
+
+(gnome-settings-daemon:1618): power-plugin-WARNING **: failed to set dim backlight to 30%: gsd-backlight-helper failed: 
+
+** (gsd-backlight-helper:2961): WARNING **: failed to find any devices
+
+(gnome-settings-daemon:1618): power-plugin-WARNING **: failed to set dim backlight to 30%: gsd-backlight-helper failed: 
+
+** (gsd-backlight-helper:2977): WARNING **: failed to find any devices
+
+(gnome-settings-daemon:1618): power-plugin-WARNING **: failed to set dim backlight to 30%: gsd-backlight-helper failed: 
+
+** (gsd-backlight-helper:2978): WARNING **: failed to find any devices
+
+(gnome-settings-daemon:1618): power-plugin-WARNING **: failed to set dim backlight to 30%: gsd-backlight-helper failed: 
+
+** (gsd-backlight-helper:2979): WARNING **: failed to find any devices
+
+(gnome-settings-daemon:1618): power-plugin-WARNING **: failed to set dim backlight to 30%: gsd-backlight-helper failed: 
+
+** (gsd-backlight-helper:3111): WARNING **: failed to find any devices
+
+(gnome-settings-daemon:1618): power-plugin-WARNING **: failed to set dim backlight to 30%: gsd-backlight-helper failed: 
+
+** (gsd-backlight-helper:3155): WARNING **: failed to find any devices
+
+(gnome-settings-daemon:1618): power-plugin-WARNING **: failed to set dim backlight to 30%: gsd-backlight-helper failed: 
+
+** (gsd-backlight-helper:3247): WARNING **: failed to find any devices
+
+(gnome-settings-daemon:1618): power-plugin-WARNING **: failed to set dim backlight to 30%: gsd-backlight-helper failed: 
+
+(gnome-settings-daemon:1618): libappindicator-CRITICAL **: app_indicator_set_label: assertion `IS_APP_INDICATOR (self)' failed
+
+(gnome-settings-daemon:1618): libappindicator-CRITICAL **: app_indicator_set_label: assertion `IS_APP_INDICATOR (self)' failed
+
+(gnome-settings-daemon:1618): libappindicator-CRITICAL **: app_indicator_set_label: assertion `IS_APP_INDICATOR (self)' failed
+
+(gnome-settings-daemon:1618): libappindicator-CRITICAL **: app_indicator_set_label: assertion `IS_APP_INDICATOR (self)' failed
+
+(gnome-settings-daemon:1618): libappindicator-CRITICAL **: app_indicator_set_label: assertion `IS_APP_INDICATOR (self)' failed
+
+(gnome-settings-daemon:1618): libappindicator-CRITICAL **: app_indicator_set_label: assertion `IS_APP_INDICATOR (self)' failed
+
+(gnome-settings-daemon:1618): libappindicator-CRITICAL **: app_indicator_set_label: assertion `IS_APP_INDICATOR (self)' failed
+
+(gnome-settings-daemon:1618): libappindicator-CRITICAL **: app_indicator_set_label: assertion `IS_APP_INDICATOR (self)' failed
+
+** (gsd-backlight-helper:3347): WARNING **: failed to find any devices
+
+(gnome-settings-daemon:1618): power-plugin-WARNING **: failed to set dim backlight to 30%: gsd-backlight-helper failed: 
+
+** (gsd-backlight-helper:3351): WARNING **: failed to find any devices
+
+(gnome-settings-daemon:1618): power-plugin-WARNING **: failed to set dim backlight to 30%: gsd-backlight-helper failed: 
+
+** (gsd-backlight-helper:3356): WARNING **: failed to find any devices
+
+(gnome-settings-daemon:1618): power-plugin-WARNING **: failed to set dim backlight to 30%: gsd-backlight-helper failed: 
+
+** (gsd-backlight-helper:3357): WARNING **: failed to find any devices
+
+(gnome-settings-daemon:1618): power-plugin-WARNING **: failed to set dim backlight to 30%: gsd-backlight-helper failed: 
+Window manager warning: Received a NET_CURRENT_DESKTOP message from a broken (outdated) client who sent a 0 timestamp
+unity-2d-shell: [WARNING] Wnck: Received a timestamp of 0; window activation may not function properly.
+
+Window manager warning: Buggy client sent a _NET_ACTIVE_WINDOW message with a timestamp of 0 for 0x4600081 (index.html)
+Window manager warning: meta_window_activate called by a pager with a 0 timestamp; the pager needs to be fixed.
+Window manager warning: Received a NET_CURRENT_DESKTOP message from a broken (outdated) client who sent a 0 timestamp
+unity-2d-shell: [WARNING] Wnck: Received a timestamp of 0; window activation may not function properly.
+
+Window manager warning: Buggy client sent a _NET_ACTIVE_WINDOW message with a timestamp of 0 for 0x2e00367 (login)
+Window manager warning: meta_window_activate called by a pager with a 0 timestamp; the pager needs to be fixed.
+Window manager warning: Received a NET_CURRENT_DESKTOP message from a broken (outdated) client who sent a 0 timestamp
+unity-2d-shell: [WARNING] Wnck: Received a timestamp of 0; window activation may not function properly.
+
+Window manager warning: Buggy client sent a _NET_ACTIVE_WINDOW message with a timestamp of 0 for 0x4600081 (index.html)
+Window manager warning: meta_window_activate called by a pager with a 0 timestamp; the pager needs to be fixed.
+Window manager warning: Received a NET_CURRENT_DESKTOP message from a broken (outdated) client who sent a 0 timestamp
+unity-2d-shell: [WARNING] Wnck: Received a timestamp of 0; window activation may not function properly.
+
+Window manager warning: Buggy client sent a _NET_ACTIVE_WINDOW message with a timestamp of 0 for 0x3800798 (saasbook@s)
+Window manager warning: meta_window_activate called by a pager with a 0 timestamp; the pager needs to be fixed.
+Window manager warning: Buggy client sent a _NET_ACTIVE_WINDOW message with a timestamp of 0 for 0x5000005 (unity-2d-s)
+Window manager warning: meta_window_activate called by a pager with a 0 timestamp; the pager needs to be fixed.
+Window manager warning: Buggy client sent a _NET_ACTIVE_WINDOW message with a timestamp of 0 for 0x5000005 (unity-2d-s)
+Window manager warning: meta_window_activate called by a pager with a 0 timestamp; the pager needs to be fixed.
+Window manager warning: Buggy client sent a _NET_ACTIVE_WINDOW message with a timestamp of 0 for 0x3800798 (saasbook@s)
+Window manager warning: meta_window_activate called by a pager with a 0 timestamp; the pager needs to be fixed.
+
+** (gsd-backlight-helper:3365): WARNING **: failed to find any devices
+
+(gnome-settings-daemon:1618): power-plugin-WARNING **: failed to set dim backlight to 30%: gsd-backlight-helper failed: 
+Window manager warning: Received a NET_CURRENT_DESKTOP message from a broken (outdated) client who sent a 0 timestamp
+unity-2d-shell: [WARNING] Wnck: Received a timestamp of 0; window activation may not function properly.
+
+Window manager warning: Buggy client sent a _NET_ACTIVE_WINDOW message with a timestamp of 0 for 0x4600081 (index.html)
+Window manager warning: meta_window_activate called by a pager with a 0 timestamp; the pager needs to be fixed.
+Window manager warning: Received a NET_CURRENT_DESKTOP message from a broken (outdated) client who sent a 0 timestamp
+unity-2d-shell: [WARNING] Wnck: Received a timestamp of 0; window activation may not function properly.
+
+Window manager warning: Buggy client sent a _NET_ACTIVE_WINDOW message with a timestamp of 0 for 0x3800798 (saasbook@s)
+Window manager warning: meta_window_activate called by a pager with a 0 timestamp; the pager needs to be fixed.
+Window manager warning: Received a NET_CURRENT_DESKTOP message from a broken (outdated) client who sent a 0 timestamp
+unity-2d-shell: [WARNING] Wnck: Received a timestamp of 0; window activation may not function properly.
+
+Window manager warning: Buggy client sent a _NET_ACTIVE_WINDOW message with a timestamp of 0 for 0x3800798 (saasbook@s)
+Window manager warning: meta_window_activate called by a pager with a 0 timestamp; the pager needs to be fixed.
+Window manager warning: Received a NET_CURRENT_DESKTOP message from a broken (outdated) client who sent a 0 timestamp
+unity-2d-shell: [WARNING] Wnck: Received a timestamp of 0; window activation may not function properly.
+
+Window manager warning: Buggy client sent a _NET_ACTIVE_WINDOW message with a timestamp of 0 for 0x48000b6 (New Tab - )
+Window manager warning: meta_window_activate called by a pager with a 0 timestamp; the pager needs to be fixed.
+Window manager warning: Received a NET_CURRENT_DESKTOP message from a broken (outdated) client who sent a 0 timestamp
+unity-2d-shell: [WARNING] Wnck: Received a timestamp of 0; window activation may not function properly.
+
+Window manager warning: Buggy client sent a _NET_ACTIVE_WINDOW message with a timestamp of 0 for 0x4e002d3 (gedit)
+Window manager warning: meta_window_activate called by a pager with a 0 timestamp; the pager needs to be fixed.
+Window manager warning: Received a NET_CURRENT_DESKTOP message from a broken (outdated) client who sent a 0 timestamp
+unity-2d-shell: [WARNING] Wnck: Received a timestamp of 0; window activation may not function properly.
+
+Window manager warning: Buggy client sent a _NET_ACTIVE_WINDOW message with a timestamp of 0 for 0x2e00367 (login)
+Window manager warning: meta_window_activate called by a pager with a 0 timestamp; the pager needs to be fixed.
+unity-2d-shell: [WARNING] void ApplicationsList::remoteEntryUpdated(const QString&, const QString&, const QString&, const QMap<QString, QVariant>&): Application sent an update but we don't seem to have it in the launcher: "application://nautilus.desktop" 
+unity-2d-shell: [WARNING] void ApplicationsList::remoteEntryUpdated(const QString&, const QString&, const QString&, const QMap<QString, QVariant>&): Application sent an update but we don't seem to have it in the launcher: "application://nautilus.desktop" 
+unity-2d-shell: [WARNING] void ApplicationsList::remoteEntryUpdated(const QString&, const QString&, const QString&, const QMap<QString, QVariant>&): Application sent an update but we don't seem to have it in the launcher: "application://nautilus.desktop" 
+unity-2d-shell: [WARNING] QDBusError("org.freedesktop.DBus.Error.UnknownMethod", "No such interface `org.ayatana.bamf.application' on object at path /org/ayatana/bamf/application829906520") 
+unity-2d-shell: [WARNING] QDBusError("org.freedesktop.DBus.Error.UnknownMethod", "No such interface `org.ayatana.bamf.view' on object at path /org/ayatana/bamf/application829906520") 
+unity-2d-shell: [WARNING] QDBusError("org.freedesktop.DBus.Error.UnknownMethod", "No such interface `org.ayatana.bamf.application' on object at path /org/ayatana/bamf/application829906520") 
+unity-2d-shell: [WARNING] QDBusError("org.freedesktop.DBus.Error.UnknownMethod", "No such interface `org.ayatana.bamf.view' on object at path /org/ayatana/bamf/application829906520") 
+unity-2d-shell: [WARNING] QDBusError("org.freedesktop.DBus.Error.UnknownMethod", "No such interface `org.ayatana.bamf.view' on object at path /org/ayatana/bamf/application829906520") 
+unity-2d-shell: [WARNING] QDBusError("org.freedesktop.DBus.Error.UnknownMethod", "No such interface `org.ayatana.bamf.view' on object at path /org/ayatana/bamf/application829906520") 
+unity-2d-shell: [WARNING] QDBusError("org.freedesktop.DBus.Error.UnknownMethod", "No such interface `org.ayatana.bamf.view' on object at path /org/ayatana/bamf/application829906520") 
+Window manager warning: Received a NET_CURRENT_DESKTOP message from a broken (outdated) client who sent a 0 timestamp
+unity-2d-shell: [WARNING] Wnck: Received a timestamp of 0; window activation may not function properly.
+
+Window manager warning: Buggy client sent a _NET_ACTIVE_WINDOW message with a timestamp of 0 for 0x48000b6 (Gradingapp)
+Window manager warning: meta_window_activate called by a pager with a 0 timestamp; the pager needs to be fixed.
+Window manager warning: Received a NET_CURRENT_DESKTOP message from a broken (outdated) client who sent a 0 timestamp
+unity-2d-shell: [WARNING] Wnck: Received a timestamp of 0; window activation may not function properly.
+
+Window manager warning: Buggy client sent a _NET_ACTIVE_WINDOW message with a timestamp of 0 for 0x3800798 (saasbook@s)
+Window manager warning: meta_window_activate called by a pager with a 0 timestamp; the pager needs to be fixed.
+
+** (gsd-backlight-helper:3392): WARNING **: failed to find any devices
+
+(gnome-settings-daemon:1618): power-plugin-WARNING **: failed to set dim backlight to 30%: gsd-backlight-helper failed: 
+
+** (gsd-backlight-helper:3395): WARNING **: failed to find any devices
+
+(gnome-settings-daemon:1618): power-plugin-WARNING **: failed to set dim backlight to 30%: gsd-backlight-helper failed: 
+
+** (gsd-backlight-helper:3515): WARNING **: failed to find any devices
+
+(gnome-settings-daemon:1618): power-plugin-WARNING **: failed to set dim backlight to 30%: gsd-backlight-helper failed: 
+
+(gedit:2600): Gtk-WARNING **: Ignoring visual set on widget `gtk-tooltip' that is not on the correct screen.
+
+** (gsd-backlight-helper:3555): WARNING **: failed to find any devices
+
+(gnome-settings-daemon:1618): power-plugin-WARNING **: failed to set dim backlight to 30%: gsd-backlight-helper failed: 
+
+** (gsd-backlight-helper:3561): WARNING **: failed to find any devices
+
+(gnome-settings-daemon:1618): power-plugin-WARNING **: failed to set dim backlight to 30%: gsd-backlight-helper failed: 

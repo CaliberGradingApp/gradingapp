@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"config_files:EFI""Reek::Rake::Task#config_files;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"(Glob pattern to match config files.;TI">Setting the REEK_CFG environment variable overrides this.;TI"$Defaults to 'config   /*.reek'.;T:
+@fileI"lib/reek/rake/task.rb;TF@

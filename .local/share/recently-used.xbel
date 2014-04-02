@@ -1,0 +1,1533 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xbel version="1.0"
+      xmlns:bookmark="http://www.freedesktop.org/standards/desktop-bookmarks"
+      xmlns:mime="http://www.freedesktop.org/standards/shared-mime-info"
+>
+  <bookmark href="file:///home/saasbook/Documents/myrottenpotatoes/Gemfile" added="2014-02-21T22:58:54Z" modified="2014-03-18T22:27:49Z" visited="2014-02-21T22:58:54Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-18T22:27:49Z" count="11"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/Documents/myrottenpotatoes/config/routes.rb" added="2014-02-21T23:16:56Z" modified="2014-03-05T00:37:42Z" visited="2014-02-21T23:16:57Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-ruby"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-05T00:37:42Z" count="8"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/Documents/myrottenpotatoes/app/models/movie.rb" added="2014-02-22T00:08:31Z" modified="2014-03-03T11:47:31Z" visited="2014-02-22T00:08:32Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-ruby"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="nautilus" exec="&apos;gedit %U&apos;" modified="2014-03-01T00:13:29Z" count="2"/>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-03T11:47:31Z" count="8"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/Documents/myrottenpotatoes/app/controllers/movies_controller.rb" added="2014-02-22T00:29:32Z" modified="2014-03-05T00:44:21Z" visited="2014-02-22T00:29:32Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-ruby"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-05T00:44:21Z" count="45"/>
+          <bookmark:application name="nautilus" exec="&apos;gedit %U&apos;" modified="2014-03-01T00:10:55Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/Documents/myrottenpotatoes/app/views/movies/index.html.haml" added="2014-02-22T00:33:13Z" modified="2014-03-05T00:52:41Z" visited="2014-02-22T00:33:13Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-05T00:40:20Z" count="13"/>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2014-03-05T00:52:41Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/Documents/myrottenpotatoes/app/views/movies/show.html.haml" added="2014-02-28T20:57:05Z" modified="2014-03-03T11:36:31Z" visited="2014-02-28T20:57:05Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-matlab"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-03T11:36:31Z" count="31"/>
+          <bookmark:application name="nautilus" exec="&apos;gedit %U&apos;" modified="2014-03-03T11:27:48Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/Documents/myrottenpotatoes/app/assets/stylesheets/application.css" added="2014-02-28T21:06:07Z" modified="2014-03-03T11:52:39Z" visited="2014-02-28T21:06:08Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/css"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-03T11:52:39Z" count="7"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/Documents/rottenpotatoes/app/assets/stylesheets/application.css" added="2014-03-02T04:38:31Z" modified="2014-03-03T11:53:41Z" visited="2014-03-02T04:38:31Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/css"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-03T11:53:41Z" count="11"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/Documents/rottenpotatoes/app/controllers/movies_controller.rb" added="2014-03-02T04:58:37Z" modified="2014-03-03T11:52:23Z" visited="2014-03-02T04:58:38Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-ruby"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-03T11:52:23Z" count="25"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/Documents/rottenpotatoes/app/models/movie.rb" added="2014-03-02T05:46:46Z" modified="2014-03-03T11:48:28Z" visited="2014-03-02T05:46:46Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-ruby"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-03T11:48:28Z" count="14"/>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2014-03-03T03:21:08Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/Documents/rottenpotatoes/app/views/movies/index.html.haml" added="2014-03-02T05:52:41Z" modified="2014-03-03T11:46:44Z" visited="2014-03-02T05:52:41Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-03T11:46:44Z" count="34"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/Pictures/Screenshot%20from%202014-03-02%2002%3A27%3A20.png" added="2014-03-02T06:27:27Z" modified="2014-03-02T06:27:27Z" visited="2014-03-02T06:27:27Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="image/png"/>
+        <bookmark:groups>
+          <bookmark:group>Graphics</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="GNOME Screenshot" exec="&apos;eog %u&apos;" modified="2014-03-02T06:27:27Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/Downloads/Hw2_zip.zip" added="2014-03-03T02:30:36Z" modified="2014-03-03T02:38:30Z" visited="2014-03-03T02:30:37Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/zip"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2014-03-03T02:30:36Z" count="1"/>
+          <bookmark:application name="File Roller" exec="&apos;file-roller&apos;" modified="2014-03-03T02:38:30Z" count="4"/>
+          <bookmark:application name="nautilus" exec="&apos;file-roller %U&apos;" modified="2014-03-03T02:38:28Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/.cache/.fr-qXUFow/Hw2/myrottenpotatoes/app/assets/stylesheets/application.css" added="2014-03-03T02:31:10Z" modified="2014-03-03T02:31:10Z" visited="2014-03-03T02:31:10Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/css"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-03T02:31:10Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/.cache/.fr-AMHzR7/Hw2/myrottenpotatoes/app/models/movie.rb" added="2014-03-03T02:40:16Z" modified="2014-03-03T02:40:16Z" visited="2014-03-03T02:40:17Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-ruby"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-03T02:40:16Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/.cache/.fr-wBV7hz/Hw2/myrottenpotatoes/app/views/movies/show.html.haml" added="2014-03-03T02:43:26Z" modified="2014-03-03T02:43:26Z" visited="2014-03-03T02:43:26Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-matlab"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-03T02:43:26Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/Documents/rottenpotatoes/app/views/movies/show.html.haml" added="2014-03-03T02:44:03Z" modified="2014-03-03T11:36:53Z" visited="2014-03-03T02:44:04Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-03T11:36:53Z" count="11"/>
+          <bookmark:application name="nautilus" exec="&apos;gedit %U&apos;" modified="2014-03-03T11:35:55Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/.cache/.fr-EijhyI/Hw2/myrottenpotatoes/app/views/movies/show.html.haml" added="2014-03-03T02:44:55Z" modified="2014-03-03T02:44:55Z" visited="2014-03-03T02:44:55Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/x-matlab"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-03T02:44:55Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/.cache/.fr-K7KG1R/Hw2/myrottenpotatoes/app/controllers/movies_controller.rb" added="2014-03-03T02:55:49Z" modified="2014-03-03T02:55:49Z" visited="2014-03-03T02:55:49Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-ruby"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-03T02:55:49Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/hw2/rottenpotatoes/app/controllers/movies_controller.rb" added="2014-03-03T03:24:56Z" modified="2014-03-03T03:24:58Z" visited="2014-03-03T03:24:56Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-ruby"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="nautilus" exec="&apos;gedit %U&apos;" modified="2014-03-03T03:24:56Z" count="1"/>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-03T03:24:58Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/rottenpotatoes/app/views/movies/show.html.haml" added="2014-03-03T11:28:28Z" modified="2014-03-03T11:29:03Z" visited="2014-03-03T11:28:29Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="nautilus" exec="&apos;gedit %U&apos;" modified="2014-03-03T11:28:28Z" count="1"/>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-03T11:29:03Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/hw2%20del/rails-intro.zip" added="2014-03-03T11:34:37Z" modified="2014-03-03T11:34:39Z" visited="2014-03-03T11:34:37Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/zip"/>
+        <bookmark:applications>
+          <bookmark:application name="nautilus" exec="&apos;file-roller %U&apos;" modified="2014-03-03T11:34:37Z" count="1"/>
+          <bookmark:application name="File Roller" exec="&apos;file-roller&apos;" modified="2014-03-03T11:34:39Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook" added="2014-03-03T12:08:43Z" modified="2014-03-31T23:20:18Z" visited="2014-03-03T12:08:43Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="File Roller" exec="&apos;file-roller %u&apos;" modified="2014-03-31T23:20:18Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/hw2.zip" added="2014-03-03T12:17:28Z" modified="2014-03-03T12:22:48Z" visited="2014-03-03T12:17:28Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/zip"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2014-03-03T12:22:48Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/hw2(Varsha).zip" added="2014-03-03T12:25:56Z" modified="2014-03-17T03:31:25Z" visited="2014-03-03T12:25:56Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/zip"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2014-03-17T03:31:25Z" count="3"/>
+          <bookmark:application name="nautilus" exec="&apos;file-roller %U&apos;" modified="2014-03-03T14:03:20Z" count="3"/>
+          <bookmark:application name="File Roller" exec="&apos;file-roller&apos;" modified="2014-03-03T14:03:21Z" count="8"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/hw2/app.zip" added="2014-03-03T14:04:06Z" modified="2014-03-03T14:06:54Z" visited="2014-03-03T14:04:06Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/zip"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2014-03-03T14:04:06Z" count="1"/>
+          <bookmark:application name="nautilus" exec="&apos;file-roller %U&apos;" modified="2014-03-03T14:06:53Z" count="1"/>
+          <bookmark:application name="File Roller" exec="&apos;file-roller&apos;" modified="2014-03-03T14:06:54Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/Documents/myrottenpotatoes/features/AddMovie.feature" added="2014-03-05T00:06:35Z" modified="2014-03-05T00:24:52Z" visited="2014-03-05T00:06:36Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-05T00:24:52Z" count="4"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/Documents/myrottenpotatoes/features/support/paths.rb" added="2014-03-05T00:10:25Z" modified="2014-03-05T00:23:50Z" visited="2014-03-05T00:10:25Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-ruby"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-05T00:23:50Z" count="10"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/Documents/myrottenpotatoes/features/search_tmdb.feature" added="2014-03-05T00:32:45Z" modified="2014-03-05T00:57:52Z" visited="2014-03-05T00:32:46Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-05T00:57:52Z" count="7"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/hw3/rottenpotatoes/app/views/movies/index.html.haml" added="2014-03-16T04:09:32Z" modified="2014-03-16T04:11:33Z" visited="2014-03-16T04:09:33Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-16T04:11:33Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/hw3/rottenpotatoes/config/routes.rb" added="2014-03-16T04:12:08Z" modified="2014-03-16T21:55:06Z" visited="2014-03-16T04:12:08Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-ruby"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-16T21:55:06Z" count="6"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/hw3/rottenpotatoes/features/sort_movie_list.feature" added="2014-03-16T04:13:52Z" modified="2014-03-18T18:29:48Z" visited="2014-03-16T04:13:53Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-18T18:29:48Z" count="6"/>
+          <bookmark:application name="nautilus" exec="&apos;gedit %U&apos;" modified="2014-03-18T18:28:15Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/hw3/rottenpotatoes/features/step_definitions/movie_steps.rb" added="2014-03-16T04:15:06Z" modified="2014-03-18T19:19:08Z" visited="2014-03-16T04:15:06Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-ruby"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-18T19:19:08Z" count="9"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/hw3/rottenpotatoes/features/support/paths.rb" added="2014-03-16T04:16:49Z" modified="2014-03-18T19:11:20Z" visited="2014-03-16T04:16:50Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-ruby"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-18T19:11:20Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/hw3/rottenpotatoes/autotest/discover.rb" added="2014-03-16T14:19:06Z" modified="2014-03-18T19:09:01Z" visited="2014-03-16T14:19:06Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-ruby"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-18T19:09:01Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///tmp/development.sqlite3" added="2014-03-16T14:34:47Z" modified="2014-03-16T14:34:54Z" visited="2014-03-16T14:34:47Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-sqlite3"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2014-03-16T14:34:47Z" count="1"/>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-16T14:34:54Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/hw3/rottenpotatoes/.gitignore" added="2014-03-16T14:53:16Z" modified="2014-03-16T14:55:07Z" visited="2014-03-16T14:53:16Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-16T14:55:07Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/hw3/rottenpotatoes/Gemfile" added="2014-03-16T14:56:21Z" modified="2014-03-16T15:18:25Z" visited="2014-03-16T14:56:21Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-16T15:18:25Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/hw3/rottenpotatoes/README" added="2014-03-16T15:19:15Z" modified="2014-03-16T16:33:20Z" visited="2014-03-16T15:19:15Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-16T16:33:20Z" count="5"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/hw3/rottenpotatoes/Rakefile" added="2014-03-16T16:34:47Z" modified="2014-03-16T17:32:27Z" visited="2014-03-16T16:34:47Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-16T17:32:27Z" count="5"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/hw3/rottenpotatoes/app/controllers/application_controller.rb" added="2014-03-16T16:36:37Z" modified="2014-03-16T17:33:04Z" visited="2014-03-16T16:36:37Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-ruby"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-16T17:33:04Z" count="6"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/hw3/rottenpotatoes/app/controllers/movies_controller.rb" added="2014-03-16T16:39:43Z" modified="2014-03-18T18:18:05Z" visited="2014-03-16T16:39:43Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-ruby"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-18T18:18:05Z" count="4"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/hw3/rottenpotatoes/app/helpers/application_helper.rb" added="2014-03-16T17:26:20Z" modified="2014-03-16T17:35:37Z" visited="2014-03-16T17:26:21Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-ruby"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-16T17:35:37Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/hw3/rottenpotatoes/app/models/movie.rb" added="2014-03-16T17:29:15Z" modified="2014-03-16T17:37:32Z" visited="2014-03-16T17:29:16Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-ruby"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-16T17:37:32Z" count="5"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/hw3/rottenpotatoes/app/controllers/movie_controller.rb" added="2014-03-16T17:34:26Z" modified="2014-03-16T17:34:49Z" visited="2014-03-16T17:34:26Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-ruby"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-16T17:34:49Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/hw3/rottenpotatoes/app/helpers/movies_helper.rb" added="2014-03-16T17:36:06Z" modified="2014-03-16T17:36:06Z" visited="2014-03-16T17:36:06Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-ruby"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-16T17:36:06Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/hw3/rottenpotatoes/app/views/layouts/application.html.erb" added="2014-03-16T17:38:31Z" modified="2014-03-16T17:43:24Z" visited="2014-03-16T17:38:31Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/html"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-16T17:43:24Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/hw3/rottenpotatoes/config.ru" added="2014-03-16T17:44:02Z" modified="2014-03-16T17:44:13Z" visited="2014-03-16T17:44:02Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-16T17:44:13Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/hw3/rottenpotatoes/config/application.rb" added="2014-03-16T17:44:59Z" modified="2014-03-16T17:56:10Z" visited="2014-03-16T17:44:59Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-ruby"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-16T17:56:10Z" count="6"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/hw3/rottenpotatoes/config/boot.rb" added="2014-03-16T17:56:42Z" modified="2014-03-16T17:56:54Z" visited="2014-03-16T17:56:42Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-ruby"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-16T17:56:54Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/hw3/rottenpotatoes/config/database.yml" added="2014-03-16T17:57:25Z" modified="2014-03-16T17:58:58Z" visited="2014-03-16T17:57:25Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-yaml"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-16T17:58:58Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/hw3/rottenpotatoes/config/environment.rb" added="2014-03-16T17:59:35Z" modified="2014-03-16T17:59:50Z" visited="2014-03-16T17:59:35Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-ruby"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-16T17:59:50Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/hw3/rottenpotatoes/config/environments/development.rb" added="2014-03-16T18:00:34Z" modified="2014-03-16T18:02:11Z" visited="2014-03-16T18:00:35Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-ruby"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-16T18:02:11Z" count="4"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/hw3/rottenpotatoes/config/environments/production.rb" added="2014-03-16T18:03:12Z" modified="2014-03-16T21:35:35Z" visited="2014-03-16T18:03:12Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-ruby"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-16T21:35:35Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/hw3/rottenpotatoes/config/environments/test.rb" added="2014-03-16T21:36:12Z" modified="2014-03-16T21:39:40Z" visited="2014-03-16T21:36:12Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-ruby"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-16T21:39:40Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/hw3/rottenpotatoes/config/initializers/backtrace_silencers.rb" added="2014-03-16T21:40:53Z" modified="2014-03-18T19:09:49Z" visited="2014-03-16T21:40:54Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-ruby"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-18T19:09:49Z" count="3"/>
+          <bookmark:application name="nautilus" exec="&apos;gedit %U&apos;" modified="2014-03-18T19:09:46Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/hw3/rottenpotatoes/config/initializers/inflections.rb" added="2014-03-16T21:42:41Z" modified="2014-03-16T21:43:11Z" visited="2014-03-16T21:42:41Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-ruby"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-16T21:43:11Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/hw3/rottenpotatoes/config/initializers/mime_types.rb" added="2014-03-16T21:44:01Z" modified="2014-03-16T21:44:13Z" visited="2014-03-16T21:44:01Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-ruby"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-16T21:44:13Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/hw3/rottenpotatoes/config/initializers/secret_token.rb" added="2014-03-16T21:44:43Z" modified="2014-03-16T21:45:29Z" visited="2014-03-16T21:44:43Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-ruby"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-16T21:45:29Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/hw3/rottenpotatoes/config/initializers/session_store.rb" added="2014-03-16T21:46:04Z" modified="2014-03-16T21:46:04Z" visited="2014-03-16T21:46:04Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-ruby"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-16T21:46:04Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/hw3/rottenpotatoes/config/locales/en.yml" added="2014-03-16T21:47:09Z" modified="2014-03-16T21:47:20Z" visited="2014-03-16T21:47:09Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-yaml"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-16T21:47:20Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/hw3/rottenpotatoes/db/migrate/20111119180638_create_movies.rb" added="2014-03-16T21:55:50Z" modified="2014-03-16T21:57:02Z" visited="2014-03-16T21:55:50Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-ruby"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-16T21:57:02Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/hw3/rottenpotatoes/db/seeds.rb" added="2014-03-16T21:58:22Z" modified="2014-03-16T22:00:30Z" visited="2014-03-16T21:58:22Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-ruby"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-16T22:00:30Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/hw3/rottenpotatoes/doc/README_FOR_APP" added="2014-03-16T22:01:00Z" modified="2014-03-16T22:01:56Z" visited="2014-03-16T22:01:00Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-16T22:01:56Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/hw3/rottenpotatoes/public/404.html" added="2014-03-16T22:02:42Z" modified="2014-03-16T22:03:24Z" visited="2014-03-16T22:02:42Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/html"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-16T22:03:24Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/hw3/rottenpotatoes/public/422.html" added="2014-03-16T22:04:03Z" modified="2014-03-16T22:06:02Z" visited="2014-03-16T22:04:03Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/html"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-16T22:06:02Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/hw3/rottenpotatoes/public/500.html" added="2014-03-16T22:06:22Z" modified="2014-03-16T22:06:29Z" visited="2014-03-16T22:06:22Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/html"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-16T22:06:29Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/hw3/rottenpotatoes/public/index.html" added="2014-03-16T22:20:33Z" modified="2014-03-16T22:56:00Z" visited="2014-03-16T22:20:33Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/html"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-16T22:56:00Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/hw3/rottenpotatoes/public/robots.txt" added="2014-03-16T22:56:30Z" modified="2014-03-16T22:56:37Z" visited="2014-03-16T22:56:30Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-16T22:56:37Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/hw3/rottenpotatoes/script/rails" added="2014-03-16T22:57:08Z" modified="2014-03-16T22:57:08Z" visited="2014-03-16T22:57:08Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-ruby"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-16T22:57:08Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/Documents.zip" added="2014-03-17T03:26:31Z" modified="2014-03-17T03:26:31Z" visited="2014-03-17T03:26:31Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/zip"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2014-03-17T03:26:31Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/Downloads/HW3_swetha.zip" added="2014-03-18T18:08:41Z" modified="2014-03-18T18:45:13Z" visited="2014-03-18T18:08:41Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/zip"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2014-03-18T18:08:41Z" count="1"/>
+          <bookmark:application name="File Roller" exec="&apos;file-roller&apos;" modified="2014-03-18T18:45:13Z" count="6"/>
+          <bookmark:application name="nautilus" exec="&apos;file-roller %U&apos;" modified="2014-03-18T18:45:11Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/.cache/.fr-WJfZG8/HW3_swetha/rottenpotatoes/app/assets/javascripts/application.js" added="2014-03-18T18:16:10Z" modified="2014-03-18T18:16:10Z" visited="2014-03-18T18:16:10Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/javascript"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-18T18:16:10Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/.cache/.fr-kyacCg/HW3_swetha/rottenpotatoes/app/assets/javascripts/application.js" added="2014-03-18T18:16:10Z" modified="2014-03-18T18:16:10Z" visited="2014-03-18T18:16:10Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/javascript"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-18T18:16:10Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/.cache/.fr-pAe2us/HW3_swetha/rottenpotatoes/app/assets/javascripts/application.js" added="2014-03-18T18:16:10Z" modified="2014-03-18T18:16:10Z" visited="2014-03-18T18:16:10Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/javascript"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-18T18:16:10Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/.cache/.fr-hJE1Ni/HW3_swetha/rottenpotatoes/app/assets/stylesheets/application.css" added="2014-03-18T18:16:27Z" modified="2014-03-18T18:16:27Z" visited="2014-03-18T18:16:27Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/css"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-18T18:16:27Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/.cache/.fr-lBWgno/HW3_swetha/rottenpotatoes/app/controllers/application_controller.rb" added="2014-03-18T18:17:01Z" modified="2014-03-18T18:17:01Z" visited="2014-03-18T18:17:02Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-ruby"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-18T18:17:01Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/.cache/.fr-FQ8Csa/HW3_swetha/rottenpotatoes/app/controllers/movies_controller.rb" added="2014-03-18T18:17:11Z" modified="2014-03-18T18:17:11Z" visited="2014-03-18T18:17:11Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-ruby"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-18T18:17:11Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/.cache/.fr-ZIX94v/HW3_swetha/rottenpotatoes/app/helpers/application_helper.rb" added="2014-03-18T18:18:58Z" modified="2014-03-18T18:18:58Z" visited="2014-03-18T18:18:58Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-ruby"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-18T18:18:58Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/.cache/.fr-T5fSA3/HW3_swetha/rottenpotatoes/app/helpers/movies_helper.rb" added="2014-03-18T18:19:26Z" modified="2014-03-18T18:19:26Z" visited="2014-03-18T18:19:27Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-ruby"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-18T18:19:26Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/hw3/rottenpotatoes/features/filter_movie_list.feature" added="2014-03-18T18:23:23Z" modified="2014-03-18T19:32:50Z" visited="2014-03-18T18:23:24Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="nautilus" exec="&apos;gedit %U&apos;" modified="2014-03-18T19:29:49Z" count="4"/>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-18T19:32:50Z" count="8"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/.cache/.fr-oLncS1/HW3_swetha/rottenpotatoes/features/filter_movie_list.feature" added="2014-03-18T18:23:30Z" modified="2014-03-18T18:23:30Z" visited="2014-03-18T18:23:30Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-18T18:23:30Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/.cache/.fr-pxAYOI/HW3_swetha/rottenpotatoes/features/filter_movie_list.feature" added="2014-03-18T18:24:53Z" modified="2014-03-18T18:24:53Z" visited="2014-03-18T18:24:53Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-18T18:24:53Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/.cache/.fr-5DNa3H/HW3_swetha/rottenpotatoes/features/sort_movie_list.feature" added="2014-03-18T18:27:50Z" modified="2014-03-18T18:27:50Z" visited="2014-03-18T18:27:51Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-18T18:27:50Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/.cache/.fr-LDvNNl/HW3_swetha/rottenpotatoes/features/sort_movie_list.feature" added="2014-03-18T18:28:23Z" modified="2014-03-18T18:28:23Z" visited="2014-03-18T18:28:24Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-18T18:28:23Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/.cache/.fr-B7dM4D/HW3_swetha/rottenpotatoes/features/filter_movie_list.feature" added="2014-03-18T18:34:52Z" modified="2014-03-18T18:34:52Z" visited="2014-03-18T18:34:53Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-18T18:34:52Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/.cache/.fr-hkWZB2/HW3_swetha/rottenpotatoes/features/sort_movie_list.feature" added="2014-03-18T18:35:18Z" modified="2014-03-18T18:35:18Z" visited="2014-03-18T18:35:18Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-18T18:35:18Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/Hw3(varsha)" added="2014-03-18T18:46:09Z" modified="2014-03-18T18:46:09Z" visited="2014-03-18T18:46:09Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="File Roller" exec="&apos;file-roller %u&apos;" modified="2014-03-18T18:46:09Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/HW3_swetha/rottenpotatoes/features.tar.gz" added="2014-03-18T18:48:53Z" modified="2014-03-18T18:50:55Z" visited="2014-03-18T18:48:53Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-compressed-tar"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2014-03-18T18:50:55Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/HW3_Nikita.zip" added="2014-03-18T18:54:42Z" modified="2014-03-18T18:55:07Z" visited="2014-03-18T18:54:42Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/zip"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2014-03-18T18:54:42Z" count="1"/>
+          <bookmark:application name="nautilus" exec="&apos;file-roller %U&apos;" modified="2014-03-18T18:55:05Z" count="1"/>
+          <bookmark:application name="File Roller" exec="&apos;file-roller&apos;" modified="2014-03-18T18:55:07Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/Hw3_Nikita.zip" added="2014-03-18T18:56:17Z" modified="2014-03-18T18:56:17Z" visited="2014-03-18T18:56:17Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/zip"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2014-03-18T18:56:17Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/hw3(varsha).zip" added="2014-03-18T18:58:37Z" modified="2014-03-18T21:54:37Z" visited="2014-03-18T18:58:37Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/zip"/>
+        <bookmark:applications>
+          <bookmark:application name="nautilus" exec="&apos;file-roller %U&apos;" modified="2014-03-18T19:07:54Z" count="2"/>
+          <bookmark:application name="File Roller" exec="&apos;file-roller&apos;" modified="2014-03-18T19:07:56Z" count="6"/>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2014-03-18T21:54:37Z" count="4"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/.cache/.fr-ENCBu1/hw3(varsha)/rottenpotatoes/autotest/discover.rb" added="2014-03-18T19:08:06Z" modified="2014-03-18T19:08:06Z" visited="2014-03-18T19:08:06Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-ruby"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-18T19:08:06Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/.cache/.fr-opcClE/hw3(varsha)/rottenpotatoes/config/initializers/backtrace_silencers.rb" added="2014-03-18T19:09:39Z" modified="2014-03-18T19:09:39Z" visited="2014-03-18T19:09:39Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-ruby"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-18T19:09:39Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/.cache/.fr-UcBrVi/hw3(varsha)/rottenpotatoes/config/database.yml" added="2014-03-18T19:10:03Z" modified="2014-03-18T19:10:03Z" visited="2014-03-18T19:10:03Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-yaml"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-18T19:10:03Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/.cache/.fr-Akr6B3/hw3(varsha)/rottenpotatoes/features/support/paths.rb" added="2014-03-18T19:11:15Z" modified="2014-03-18T19:11:15Z" visited="2014-03-18T19:11:16Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-ruby"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-18T19:11:15Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/.cache/.fr-516zuH/hw3(varsha)/rottenpotatoes/features/step_definitions/movie_steps.rb" added="2014-03-18T19:13:33Z" modified="2014-03-18T19:13:33Z" visited="2014-03-18T19:13:33Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-ruby"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-18T19:13:33Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/.cache/.fr-imfJPO/hw3(varsha)/rottenpotatoes/features/step_definitions/web_steps.rb" added="2014-03-18T19:20:21Z" modified="2014-03-18T19:20:21Z" visited="2014-03-18T19:20:21Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-ruby"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-18T19:20:21Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/hw3/rottenpotatoes/features/step_definitions/web_steps.rb" added="2014-03-18T19:22:58Z" modified="2014-03-18T19:23:00Z" visited="2014-03-18T19:22:58Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-ruby"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="nautilus" exec="&apos;gedit %U&apos;" modified="2014-03-18T19:22:58Z" count="1"/>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-18T19:23:00Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/.cache/.fr-LwLfmE/hw3(varsha)/rottenpotatoes/features/step_definitions/web_steps.rb" added="2014-03-18T19:23:43Z" modified="2014-03-18T19:23:43Z" visited="2014-03-18T19:23:43Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-ruby"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-18T19:23:43Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/.cache/.fr-m8N9CU/hw3(varsha)/rottenpotatoes/features/support/selectors.rb" added="2014-03-18T19:27:01Z" modified="2014-03-18T19:29:03Z" visited="2014-03-18T19:27:02Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-ruby"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-18T19:29:03Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/hw3/rottenpotatoes/features/support/selectors.rb" added="2014-03-18T19:27:46Z" modified="2014-03-18T19:27:49Z" visited="2014-03-18T19:27:46Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-ruby"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="nautilus" exec="&apos;gedit %U&apos;" modified="2014-03-18T19:27:46Z" count="1"/>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-18T19:27:49Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/.cache/.fr-8gcixT/hw3(varsha)/rottenpotatoes/features/filter_movie_list.feature" added="2014-03-18T19:30:03Z" modified="2014-03-18T19:30:03Z" visited="2014-03-18T19:30:03Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-18T19:30:03Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/Downloads/ch7-walthrough-complete.zip" added="2014-03-18T21:48:07Z" modified="2014-03-18T21:48:07Z" visited="2014-03-18T21:48:07Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/zip"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2014-03-18T21:48:07Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///tmp/07-Ch8.pptx" added="2014-03-18T21:50:49Z" modified="2014-03-18T21:52:15Z" visited="2014-03-18T21:50:49Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/vnd.openxmlformats-officedocument.presentationml.presentation"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2014-03-18T21:50:49Z" count="1"/>
+          <bookmark:application name="LibreOffice 3.5" exec="&apos;soffice %u&apos;" modified="2014-03-18T21:52:15Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/Downloads/07-HW4-Setup(1)" added="2014-03-18T21:52:35Z" modified="2014-03-18T21:52:35Z" visited="2014-03-18T21:52:35Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2014-03-18T21:52:35Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/Downloads/07-HW4-Setup(1)(1)" added="2014-03-18T21:52:52Z" modified="2014-03-18T22:21:00Z" visited="2014-03-18T21:52:52Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2014-03-18T21:52:52Z" count="1"/>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-18T22:21:00Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/Documents/myrottenpotatoes/spec/controllers/movies_controller_spec.rb" added="2014-03-18T22:31:12Z" modified="2014-03-19T02:27:13Z" visited="2014-03-18T22:31:13Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-ruby"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-19T02:27:13Z" count="8"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/Documents/myrottenpotatoes/.autotest" added="2014-03-18T23:10:16Z" modified="2014-03-19T02:27:05Z" visited="2014-03-18T23:10:16Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-19T02:27:05Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/Documents/myrottenpotatoes/.rspec" added="2014-03-18T23:12:11Z" modified="2014-03-19T02:27:10Z" visited="2014-03-18T23:12:11Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-03-19T02:27:10Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/Downloads/07-HW4-Setup(1)(2)" added="2014-03-25T22:03:10Z" modified="2014-03-25T22:03:10Z" visited="2014-03-25T22:03:10Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/octet-stream"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2014-03-25T22:03:10Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/Downloads/saas-homework-master.zip" added="2014-03-31T23:19:27Z" modified="2014-03-31T23:19:41Z" visited="2014-03-31T23:19:27Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/zip"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2014-03-31T23:19:27Z" count="1"/>
+          <bookmark:application name="nautilus" exec="&apos;file-roller %U&apos;" modified="2014-03-31T23:19:38Z" count="1"/>
+          <bookmark:application name="File Roller" exec="&apos;file-roller&apos;" modified="2014-03-31T23:19:41Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/hw4_rottenpotatoes/hw4.tar.gz" added="2014-03-31T23:20:37Z" modified="2014-03-31T23:21:13Z" visited="2014-03-31T23:20:37Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-compressed-tar"/>
+        <bookmark:applications>
+          <bookmark:application name="nautilus" exec="&apos;file-roller %U&apos;" modified="2014-03-31T23:20:37Z" count="1"/>
+          <bookmark:application name="File Roller" exec="&apos;file-roller&apos;" modified="2014-03-31T23:20:39Z" count="2"/>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2014-03-31T23:21:13Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/hw4(varsha).zip" added="2014-04-01T00:32:25Z" modified="2014-04-01T00:41:12Z" visited="2014-04-01T00:32:25Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/zip"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2014-04-01T00:41:12Z" count="3"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/hw4(varsha)/hw4.tar.gz" added="2014-04-01T00:33:50Z" modified="2014-04-01T00:33:50Z" visited="2014-04-01T00:33:50Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/x-compressed-tar"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2014-04-01T00:33:50Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/Downloads/gradingapp-master.zip" added="2014-04-01T22:48:46Z" modified="2014-04-01T22:49:03Z" visited="2014-04-01T22:48:46Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="application/zip"/>
+        <bookmark:applications>
+          <bookmark:application name="Firefox" exec="&apos;firefox %u&apos;" modified="2014-04-01T22:48:46Z" count="1"/>
+          <bookmark:application name="nautilus" exec="&apos;file-roller %U&apos;" modified="2014-04-01T22:49:01Z" count="1"/>
+          <bookmark:application name="File Roller" exec="&apos;file-roller&apos;" modified="2014-04-01T22:49:03Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/Documents" added="2014-04-01T22:49:14Z" modified="2014-04-01T22:49:14Z" visited="2014-04-01T22:49:14Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="inode/directory"/>
+        <bookmark:applications>
+          <bookmark:application name="File Roller" exec="&apos;file-roller %u&apos;" modified="2014-04-01T22:49:14Z" count="1"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/Documents/gradingapp-master/app/views/login/index.html.haml" added="2014-04-01T22:54:50Z" modified="2014-04-02T00:04:43Z" visited="2014-04-01T22:54:50Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="nautilus" exec="&apos;gedit %U&apos;" modified="2014-04-01T22:54:50Z" count="1"/>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-04-02T00:04:43Z" count="4"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/Documents/gradingapp-master/doc/README_FOR_APP" added="2014-04-01T23:48:34Z" modified="2014-04-01T23:48:46Z" visited="2014-04-01T23:48:34Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-04-01T23:48:46Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+  <bookmark href="file:///home/saasbook/app/views/login/index.html.haml" added="2014-04-02T00:15:03Z" modified="2014-04-02T00:15:10Z" visited="2014-04-02T00:15:03Z">
+    <info>
+      <metadata owner="http://freedesktop.org">
+        <mime:mime-type type="text/plain"/>
+        <bookmark:groups>
+          <bookmark:group>gedit</bookmark:group>
+        </bookmark:groups>
+        <bookmark:applications>
+          <bookmark:application name="gedit" exec="&apos;gedit %u&apos;" modified="2014-04-02T00:15:10Z" count="2"/>
+        </bookmark:applications>
+      </metadata>
+    </info>
+  </bookmark>
+</xbel>

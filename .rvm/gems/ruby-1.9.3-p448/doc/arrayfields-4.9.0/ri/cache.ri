@@ -1,0 +1,10 @@
+{:ancestors{I"ArrayFields::FieldSet:EF[I"Object;FI"Object;F[I"BasicObject;FI"
+Array;F[I"ArrayFields;FI"Fieldable;F@	I"FieldedArray;F[@@	I"PseudoHash;F[I"
+Array;FI"Object::Fieldedarray;F[@@	I"Object::Pseudohash;F[@:attributes{@[I"attr_reader fieldpos;FI"attr_reader fields;F:class_methods{@[I"init_sets;FI"new;FI"
+Array;F[	I"[];FI"fields;FI"initialize;FI"struct;F@[I"[];FI"new;FI"PseudoHash;F[I"[];FI"new;F@[@)@*@[@-@.I"ArrayFields;F[	I"[];FI"
+index;FI"new;FI"version;FI"Object::Arrayfields;F[	@3@4@5@6:encodingIu:Encoding
+UTF-8;F:instance_methods{@[I"fieldpos;FI"fields;FI"pos;FI"Object;F[I"Arrayfields;F@[I"method_missing;FI"PseudoHash;F[I"to_yaml;F@[@C@[@FI"ArrayFields;F[%I"[];FI"[]=;FI"at;FI"
+clone;FI"deepcopy;FI"delete_at;FI"dup;FI"each_key;FI"each_pair;FI"each_value;FI"each_with_field;FI"
+fetch;FI"	fill;FI"has_key?;FI"has_value?;FI"indexes;FI"indices;FI"invert;FI"	key?;FI"	keys;FI"member?;FI"replace;FI"
+slice;FI"slice!;FI"
+store;FI"	to_h;FI"to_hash;FI"to_pairs;FI"update;FI"value?;FI"values;FI"values_at;FI"Fieldable;F[I"fields;FI"fields=;FI"fieldset;F@7[%@K@L@M@N@O@P@Q@R@S@T@U@V@W@X@Y@Z@[@\@]@^@_@`@a@b@c@d@e@f@g@h@i@j:modules[@@I"ArrayFields::FieldSet;F@I"FieldedArray;F@	I"Object::Arrayfields;FI"Object::Fieldedarray;FI"Object::Pseudohash;FI"PseudoHash;F

@@ -1,0 +1,20 @@
+Thu, 07 Nov 2013 23:12:13 -0400
+lib/ruby-progressbar/components/timer.rb	Thu, 07 Nov 2013 23:09:43 -0400
+lib/ruby-progressbar/components/bar.rb	Thu, 07 Nov 2013 23:09:43 -0400
+lib/ruby-progressbar/components/progressable.rb	Thu, 07 Nov 2013 23:09:43 -0400
+lib/ruby-progressbar/components/estimated_timer.rb	Thu, 07 Nov 2013 23:09:43 -0400
+lib/ruby-progressbar/components/throttle.rb	Thu, 07 Nov 2013 23:09:43 -0400
+lib/ruby-progressbar/components/elapsed_timer.rb	Thu, 07 Nov 2013 23:09:43 -0400
+lib/ruby-progressbar/components.rb	Thu, 07 Nov 2013 23:09:43 -0400
+lib/ruby-progressbar/time.rb	Thu, 07 Nov 2013 23:09:43 -0400
+lib/ruby-progressbar/format/molecule.rb	Thu, 07 Nov 2013 23:09:43 -0400
+lib/ruby-progressbar/format/base.rb	Thu, 07 Nov 2013 23:09:43 -0400
+lib/ruby-progressbar/length_calculator.rb	Thu, 07 Nov 2013 23:09:43 -0400
+lib/ruby-progressbar/base.rb	Thu, 07 Nov 2013 23:09:43 -0400
+lib/ruby-progressbar/version.rb	Thu, 07 Nov 2013 23:09:43 -0400
+lib/ruby-progressbar/running_average_calculator.rb	Thu, 07 Nov 2013 23:09:43 -0400
+lib/ruby-progressbar/formatter.rb	Thu, 07 Nov 2013 23:09:43 -0400
+lib/ruby-progressbar/format.rb	Thu, 07 Nov 2013 23:09:43 -0400
+lib/ruby-progressbar.rb	Thu, 07 Nov 2013 23:09:43 -0400
+README.md	Thu, 07 Nov 2013 23:09:43 -0400
+LICENSE	Thu, 07 Nov 2013 23:09:43 -0400

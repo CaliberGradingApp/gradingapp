@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Capybara::Selenium::Node - capybara-2.1.0 Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/capybara/selenium/node.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="../Driver/Node.html">Capybara::Driver::Node</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-3D-3D">#==</a>
+    
+    <li><a href="#method-i-5B-5D">#[]</a>
+    
+    <li><a href="#method-i-all_text">#all_text</a>
+    
+    <li><a href="#method-i-checked-3F">#checked?</a>
+    
+    <li><a href="#method-i-click">#click</a>
+    
+    <li><a href="#method-i-disabled-3F">#disabled?</a>
+    
+    <li><a href="#method-i-drag_to">#drag_to</a>
+    
+    <li><a href="#method-i-find_css">#find_css</a>
+    
+    <li><a href="#method-i-find_xpath">#find_xpath</a>
+    
+    <li><a href="#method-i-hover">#hover</a>
+    
+    <li><a href="#method-i-select_option">#select_option</a>
+    
+    <li><a href="#method-i-selected-3F">#selected?</a>
+    
+    <li><a href="#method-i-set">#set</a>
+    
+    <li><a href="#method-i-tag_name">#tag_name</a>
+    
+    <li><a href="#method-i-unselect_option">#unselect_option</a>
+    
+    <li><a href="#method-i-value">#value</a>
+    
+    <li><a href="#method-i-visible-3F">#visible?</a>
+    
+    <li><a href="#method-i-visible_text">#visible_text</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../lib/capybara/spec/fixtures/another_test_file_txt.html">another_test_file</a>
+  
+    <li class="file"><a href="../../lib/capybara/spec/fixtures/test_file_txt.html">test_file</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../Capybara.html">Capybara</a>
+  
+    <li><a href="../../Capybara/Ambiguous.html">Capybara::Ambiguous</a>
+  
+    <li><a href="../../Capybara/CapybaraError.html">Capybara::CapybaraError</a>
+  
+    <li><a href="../../Capybara/DSL.html">Capybara::DSL</a>
+  
+    <li><a href="../../Capybara/Driver.html">Capybara::Driver</a>
+  
+    <li><a href="../../Capybara/Driver/Base.html">Capybara::Driver::Base</a>
+  
+    <li><a href="../../Capybara/Driver/Node.html">Capybara::Driver::Node</a>
+  
+    <li><a href="../../Capybara/DriverNotFoundError.html">Capybara::DriverNotFoundError</a>
+  
+    <li><a href="../../Capybara/ElementNotFound.html">Capybara::ElementNotFound</a>
+  
+    <li><a href="../../Capybara/ExpectationNotMet.html">Capybara::ExpectationNotMet</a>
+  
+    <li><a href="../../Capybara/Features.html">Capybara::Features</a>
+  
+    <li><a href="../../Capybara/FileNotFound.html">Capybara::FileNotFound</a>
+  
+    <li><a href="../../Capybara/FrozenInTime.html">Capybara::FrozenInTime</a>
+  
+    <li><a href="../../Capybara/Helpers.html">Capybara::Helpers</a>
+  
+    <li><a href="../../Capybara/InfiniteRedirectError.html">Capybara::InfiniteRedirectError</a>
+  
+    <li><a href="../../Capybara/Node.html">Capybara::Node</a>
+  
+    <li><a href="../../Capybara/Node/Actions.html">Capybara::Node::Actions</a>
+  
+    <li><a href="../../Capybara/Node/Base.html">Capybara::Node::Base</a>
+  
+    <li><a href="../../Capybara/Node/Document.html">Capybara::Node::Document</a>
+  
+    <li><a href="../../Capybara/Node/Element.html">Capybara::Node::Element</a>
+  
+    <li><a href="../../Capybara/Node/Finders.html">Capybara::Node::Finders</a>
+  
+    <li><a href="../../Capybara/Node/Matchers.html">Capybara::Node::Matchers</a>
+  
+    <li><a href="../../Capybara/Node/Simple.html">Capybara::Node::Simple</a>
+  
+    <li><a href="../../Capybara/NotSupportedByDriverError.html">Capybara::NotSupportedByDriverError</a>
+  
+    <li><a href="../../Capybara/Query.html">Capybara::Query</a>
+  
+    <li><a href="../../Capybara/RSpecMatchers.html">Capybara::RSpecMatchers</a>
+  
+    <li><a href="../../Capybara/RSpecMatchers/HaveSelector.html">Capybara::RSpecMatchers::HaveSelector</a>
+  
+    <li><a href="../../Capybara/RSpecMatchers/HaveText.html">Capybara::RSpecMatchers::HaveText</a>
+  
+    <li><a href="../../Capybara/RSpecMatchers/HaveTitle.html">Capybara::RSpecMatchers::HaveTitle</a>
+  
+    <li><a href="../../Capybara/RSpecMatchers/Matcher.html">Capybara::RSpecMatchers::Matcher</a>
+  
+    <li><a href="../../Capybara/RackTest.html">Capybara::RackTest</a>
+  
+    <li><a href="../../Capybara/RackTest/Browser.html">Capybara::RackTest::Browser</a>
+  
+    <li><a href="../../Capybara/RackTest/CSSHandlers.html">Capybara::RackTest::CSSHandlers</a>
+  
+    <li><a href="../../Capybara/RackTest/Driver.html">Capybara::RackTest::Driver</a>
+  
+    <li><a href="../../Capybara/RackTest/Form.html">Capybara::RackTest::Form</a>
+  
+    <li><a href="../../Capybara/RackTest/Form/NilUploadedFile.html">Capybara::RackTest::Form::NilUploadedFile</a>
+  
+    <li><a href="../../Capybara/RackTest/Node.html">Capybara::RackTest::Node</a>
+  
+    <li><a href="../../Capybara/Result.html">Capybara::Result</a>
+  
+    <li><a href="../../Capybara/Selector.html">Capybara::Selector</a>
+  
+    <li><a href="../../Capybara/Selector/Filter.html">Capybara::Selector::Filter</a>
+  
+    <li><a href="../../Capybara/Selenium.html">Capybara::Selenium</a>
+  
+    <li><a href="../../Capybara/Selenium/Driver.html">Capybara::Selenium::Driver</a>
+  
+    <li><a href="../../Capybara/Selenium/Node.html">Capybara::Selenium::Node</a>
+  
+    <li><a href="../../Capybara/Server.html">Capybara::Server</a>
+  
+    <li><a href="../../Capybara/Server/Middleware.html">Capybara::Server::Middleware</a>
+  
+    <li><a href="../../Capybara/Session.html">Capybara::Session</a>
+  
+    <li><a href="../../Capybara/SpecHelper.html">Capybara::SpecHelper</a>
+  
+    <li><a href="../../Capybara/UnselectNotAllowed.html">Capybara::UnselectNotAllowed</a>
+  
+    <li><a href="../../TestApp.html">TestApp</a>
+  
+    <li><a href="../../TestApp/TestAppError.html">TestApp::TestAppError</a>
+  
+    <li><a href="../../Object.html">Object</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Capybara::Selenium::Node</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-3D-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">==</span><span
+            class="method-args">(other)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="3D-3D-source">
+            <pre><span class="ruby-comment"># File lib/capybara/selenium/node.rb, line 97</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">==</span>(<span class="ruby-identifier">other</span>)
+  <span class="ruby-identifier">native</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">native</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- 3D-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- 3D-3D-method -->
+
+    
+      <div id="method-i-5B-5D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">[]</span><span
+            class="method-args">(name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="5B-5D-source">
+            <pre><span class="ruby-comment"># File lib/capybara/selenium/node.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">[]</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">native</span>.<span class="ruby-identifier">attribute</span>(<span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>)
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">Selenium</span><span class="ruby-operator">::</span><span class="ruby-constant">WebDriver</span><span class="ruby-operator">::</span><span class="ruby-constant">Error</span><span class="ruby-operator">::</span><span class="ruby-constant">WebDriverError</span>
+  <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- 5B-5D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- 5B-5D-method -->
+
+    
+      <div id="method-i-all_text" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">all_text</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="all_text-source">
+            <pre><span class="ruby-comment"># File lib/capybara/selenium/node.rb, line 7</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">all_text</span>
+  <span class="ruby-identifier">text</span> = <span class="ruby-identifier">driver</span>.<span class="ruby-identifier">browser</span>.<span class="ruby-identifier">execute_script</span>(<span class="ruby-string">&quot;return arguments[0].textContent&quot;</span>, <span class="ruby-identifier">native</span>)
+  <span class="ruby-constant">Capybara</span><span class="ruby-operator">::</span><span class="ruby-constant">Helpers</span>.<span class="ruby-identifier">normalize_whitespace</span>(<span class="ruby-identifier">text</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- all_text-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- all_text-method -->
+
+    
+      <div id="method-i-checked-3F" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">checked?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Node.html#method-i-selected-3F">selected?</a>
+        </div>
+        
+      </div><!-- checked-3F-method -->
+
+    
+      <div id="method-i-click" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">click</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="click-source">
+            <pre><span class="ruby-comment"># File lib/capybara/selenium/node.rb, line 57</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">click</span>
+  <span class="ruby-identifier">native</span>.<span class="ruby-identifier">click</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- click-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- click-method -->
+
+    
+      <div id="method-i-disabled-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">disabled?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="disabled-3F-source">
+            <pre><span class="ruby-comment"># File lib/capybara/selenium/node.rb, line 83</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">disabled?</span>
+  <span class="ruby-operator">!</span><span class="ruby-identifier">native</span>.<span class="ruby-identifier">enabled?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- disabled-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- disabled-3F-method -->
+
+    
+      <div id="method-i-drag_to" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">drag_to</span><span
+            class="method-args">(element)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="drag_to-source">
+            <pre><span class="ruby-comment"># File lib/capybara/selenium/node.rb, line 65</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">drag_to</span>(<span class="ruby-identifier">element</span>)
+  <span class="ruby-identifier">driver</span>.<span class="ruby-identifier">browser</span>.<span class="ruby-identifier">action</span>.<span class="ruby-identifier">drag_and_drop</span>(<span class="ruby-identifier">native</span>, <span class="ruby-identifier">element</span>.<span class="ruby-identifier">native</span>).<span class="ruby-identifier">perform</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- drag_to-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- drag_to-method -->
+
+    
+      <div id="method-i-find_css" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find_css</span><span
+            class="method-args">(locator)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="find_css-source">
+            <pre><span class="ruby-comment"># File lib/capybara/selenium/node.rb, line 93</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">find_css</span>(<span class="ruby-identifier">locator</span>)
+  <span class="ruby-identifier">native</span>.<span class="ruby-identifier">find_elements</span>(<span class="ruby-value">:css</span>, <span class="ruby-identifier">locator</span>).<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">driver</span>, <span class="ruby-identifier">n</span>) }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- find_css-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- find_css-method -->
+
+    
+      <div id="method-i-find_xpath" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find_xpath</span><span
+            class="method-args">(locator)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="find_xpath-source">
+            <pre><span class="ruby-comment"># File lib/capybara/selenium/node.rb, line 89</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">find_xpath</span>(<span class="ruby-identifier">locator</span>)
+  <span class="ruby-identifier">native</span>.<span class="ruby-identifier">find_elements</span>(<span class="ruby-value">:xpath</span>, <span class="ruby-identifier">locator</span>).<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">driver</span>, <span class="ruby-identifier">n</span>) }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- find_xpath-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- find_xpath-method -->
+
+    
+      <div id="method-i-hover" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">hover</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="hover-source">
+            <pre><span class="ruby-comment"># File lib/capybara/selenium/node.rb, line 61</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">hover</span>
+  <span class="ruby-identifier">driver</span>.<span class="ruby-identifier">browser</span>.<span class="ruby-identifier">action</span>.<span class="ruby-identifier">move_to</span>(<span class="ruby-identifier">native</span>).<span class="ruby-identifier">perform</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- hover-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- hover-method -->
+
+    
+      <div id="method-i-select_option" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">select_option</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="select_option-source">
+            <pre><span class="ruby-comment"># File lib/capybara/selenium/node.rb, line 46</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">select_option</span>
+  <span class="ruby-identifier">native</span>.<span class="ruby-identifier">click</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">selected?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- select_option-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- select_option-method -->
+
+    
+      <div id="method-i-selected-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">selected?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="selected-3F-source">
+            <pre><span class="ruby-comment"># File lib/capybara/selenium/node.rb, line 78</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">selected?</span>
+  <span class="ruby-identifier">selected</span> = <span class="ruby-identifier">native</span>.<span class="ruby-identifier">selected?</span>
+  <span class="ruby-identifier">selected</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">selected</span> <span class="ruby-operator">!=</span> <span class="ruby-string">&quot;false&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- selected-3F-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Node.html#method-i-checked-3F">checked?</a>
+        </div>
+        
+
+        
+      </div><!-- selected-3F-method -->
+
+    
+      <div id="method-i-set" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">set</span><span
+            class="method-args">(value)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="set-source">
+            <pre><span class="ruby-comment"># File lib/capybara/selenium/node.rb, line 26</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">set</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">tag_name</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">tag_name</span>
+  <span class="ruby-identifier">type</span> = <span class="ruby-keyword">self</span>[<span class="ruby-value">:type</span>]
+  <span class="ruby-keyword">if</span> (<span class="ruby-constant">Array</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">value</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-keyword">self</span>[<span class="ruby-value">:multiple</span>]
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>.<span class="ruby-identifier">new</span> <span class="ruby-node">&quot;Value cannot be an Array when 'multiple' attribute is not present. Not a #{value.class}&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">tag_name</span> <span class="ruby-operator">==</span> <span class="ruby-string">'input'</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-string">'radio'</span>
+    <span class="ruby-identifier">click</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">tag_name</span> <span class="ruby-operator">==</span> <span class="ruby-string">'input'</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-string">'checkbox'</span>
+    <span class="ruby-identifier">click</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">^</span> <span class="ruby-identifier">native</span>.<span class="ruby-identifier">attribute</span>(<span class="ruby-string">'checked'</span>).<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">eql?</span>(<span class="ruby-string">&quot;true&quot;</span>)
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">tag_name</span> <span class="ruby-operator">==</span> <span class="ruby-string">'input'</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-string">'file'</span>
+    <span class="ruby-identifier">path_names</span> = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">?</span> [] <span class="ruby-operator">:</span> <span class="ruby-identifier">value</span>
+    <span class="ruby-identifier">native</span>.<span class="ruby-identifier">send_keys</span>(*<span class="ruby-identifier">path_names</span>)
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">tag_name</span> <span class="ruby-operator">==</span> <span class="ruby-string">'textarea'</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">tag_name</span> <span class="ruby-operator">==</span> <span class="ruby-string">'input'</span>
+    <span class="ruby-comment">#script can change a readonly element which user input cannot, so dont execute if readonly</span>
+    <span class="ruby-identifier">driver</span>.<span class="ruby-identifier">browser</span>.<span class="ruby-identifier">execute_script</span> <span class="ruby-string">&quot;arguments[0].value = ''&quot;</span>, <span class="ruby-identifier">native</span> <span class="ruby-keyword">unless</span> <span class="ruby-keyword">self</span>[<span class="ruby-value">:readonly</span>]
+    <span class="ruby-identifier">native</span>.<span class="ruby-identifier">send_keys</span>(<span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_s</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- set-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- set-method -->
+
+    
+      <div id="method-i-tag_name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">tag_name</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="tag_name-source">
+            <pre><span class="ruby-comment"># File lib/capybara/selenium/node.rb, line 69</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">tag_name</span>
+  <span class="ruby-identifier">native</span>.<span class="ruby-identifier">tag_name</span>.<span class="ruby-identifier">downcase</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- tag_name-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- tag_name-method -->
+
+    
+      <div id="method-i-unselect_option" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">unselect_option</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="unselect_option-source">
+            <pre><span class="ruby-comment"># File lib/capybara/selenium/node.rb, line 50</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">unselect_option</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">select_node</span>[<span class="ruby-string">'multiple'</span>] <span class="ruby-operator">!=</span> <span class="ruby-string">'multiple'</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">select_node</span>[<span class="ruby-string">'multiple'</span>] <span class="ruby-operator">!=</span> <span class="ruby-string">'true'</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">Capybara</span><span class="ruby-operator">::</span><span class="ruby-constant">UnselectNotAllowed</span>, <span class="ruby-string">&quot;Cannot unselect option from single select box.&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">native</span>.<span class="ruby-identifier">click</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">selected?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- unselect_option-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- unselect_option-method -->
+
+    
+      <div id="method-i-value" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">value</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="value-source">
+            <pre><span class="ruby-comment"># File lib/capybara/selenium/node.rb, line 18</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">tag_name</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;select&quot;</span> <span class="ruby-keyword">and</span> <span class="ruby-keyword">self</span>[<span class="ruby-value">:multiple</span>] <span class="ruby-keyword">and</span> <span class="ruby-keyword">not</span> <span class="ruby-keyword">self</span>[<span class="ruby-value">:multiple</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&quot;false&quot;</span>
+    <span class="ruby-identifier">native</span>.<span class="ruby-identifier">find_elements</span>(<span class="ruby-value">:xpath</span>, <span class="ruby-string">&quot;.//option&quot;</span>).<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span> <span class="ruby-identifier">n</span>.<span class="ruby-identifier">selected?</span> }.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span> <span class="ruby-identifier">n</span>[<span class="ruby-value">:value</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">n</span>.<span class="ruby-identifier">text</span> }
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">native</span>[<span class="ruby-value">:value</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- value-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- value-method -->
+
+    
+      <div id="method-i-visible-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">visible?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="visible-3F-source">
+            <pre><span class="ruby-comment"># File lib/capybara/selenium/node.rb, line 73</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">visible?</span>
+  <span class="ruby-identifier">displayed</span> = <span class="ruby-identifier">native</span>.<span class="ruby-identifier">displayed?</span>
+  <span class="ruby-identifier">displayed</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">displayed</span> <span class="ruby-operator">!=</span> <span class="ruby-string">&quot;false&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- visible-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- visible-3F-method -->
+
+    
+      <div id="method-i-visible_text" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">visible_text</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="visible_text-source">
+            <pre><span class="ruby-comment"># File lib/capybara/selenium/node.rb, line 2</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">visible_text</span>
+  <span class="ruby-comment"># Selenium doesn't normalize Unicode whitespace.</span>
+  <span class="ruby-constant">Capybara</span><span class="ruby-operator">::</span><span class="ruby-constant">Helpers</span>.<span class="ruby-identifier">normalize_whitespace</span>(<span class="ruby-identifier">native</span>.<span class="ruby-identifier">text</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- visible_text-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- visible_text-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

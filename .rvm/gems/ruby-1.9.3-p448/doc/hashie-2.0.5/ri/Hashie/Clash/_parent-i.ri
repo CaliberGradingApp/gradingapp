@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"_parent:EFI"Hashie::Clash#_parent;FI"R;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"=The parent Clash if this Clash was created via chaining.;T:
+@fileI"lib/hashie/clash.rb;TF@

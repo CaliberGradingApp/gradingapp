@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>README - oauth-0.4.7 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body class="file">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./LICENSE.html">LICENSE</a>
+  
+    <li class="file"><a href="./README_rdoc.html">README</a>
+  
+    <li class="file"><a href="./TODO.html">TODO</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./OAuth.html">OAuth</a>
+  
+    <li><a href="./OAuth/AccessToken.html">OAuth::AccessToken</a>
+  
+    <li><a href="./OAuth/CLI.html">OAuth::CLI</a>
+  
+    <li><a href="./OAuth/Client.html">OAuth::Client</a>
+  
+    <li><a href="./OAuth/Client/Helper.html">OAuth::Client::Helper</a>
+  
+    <li><a href="./OAuth/Consumer.html">OAuth::Consumer</a>
+  
+    <li><a href="./OAuth/ConsumerToken.html">OAuth::ConsumerToken</a>
+  
+    <li><a href="./OAuth/Error.html">OAuth::Error</a>
+  
+    <li><a href="./OAuth/Helper.html">OAuth::Helper</a>
+  
+    <li><a href="./OAuth/OAuthTestHelper.html">OAuth::OAuthTestHelper</a>
+  
+    <li><a href="./OAuth/Problem.html">OAuth::Problem</a>
+  
+    <li><a href="./OAuth/RequestProxy.html">OAuth::RequestProxy</a>
+  
+    <li><a href="./OAuth/RequestProxy/ActionControllerRequest.html">OAuth::RequestProxy::ActionControllerRequest</a>
+  
+    <li><a href="./OAuth/RequestProxy/Base.html">OAuth::RequestProxy::Base</a>
+  
+    <li><a href="./OAuth/RequestProxy/Curl.html">OAuth::RequestProxy::Curl</a>
+  
+    <li><a href="./OAuth/RequestProxy/Curl/Easy.html">OAuth::RequestProxy::Curl::Easy</a>
+  
+    <li><a href="./OAuth/RequestProxy/EventMachine.html">OAuth::RequestProxy::EventMachine</a>
+  
+    <li><a href="./OAuth/RequestProxy/EventMachine/HttpRequest.html">OAuth::RequestProxy::EventMachine::HttpRequest</a>
+  
+    <li><a href="./OAuth/RequestProxy/JabberRequest.html">OAuth::RequestProxy::JabberRequest</a>
+  
+    <li><a href="./OAuth/RequestProxy/MockRequest.html">OAuth::RequestProxy::MockRequest</a>
+  
+    <li><a href="./OAuth/RequestProxy/Net.html">OAuth::RequestProxy::Net</a>
+  
+    <li><a href="./OAuth/RequestProxy/Net/HTTP.html">OAuth::RequestProxy::Net::HTTP</a>
+  
+    <li><a href="./OAuth/RequestProxy/Net/HTTP/HTTPRequest.html">OAuth::RequestProxy::Net::HTTP::HTTPRequest</a>
+  
+    <li><a href="./OAuth/RequestProxy/RackRequest.html">OAuth::RequestProxy::RackRequest</a>
+  
+    <li><a href="./OAuth/RequestProxy/Typhoeus.html">OAuth::RequestProxy::Typhoeus</a>
+  
+    <li><a href="./OAuth/RequestProxy/Typhoeus/Request.html">OAuth::RequestProxy::Typhoeus::Request</a>
+  
+    <li><a href="./OAuth/RequestProxy/UnknownRequestType.html">OAuth::RequestProxy::UnknownRequestType</a>
+  
+    <li><a href="./OAuth/RequestToken.html">OAuth::RequestToken</a>
+  
+    <li><a href="./OAuth/Server.html">OAuth::Server</a>
+  
+    <li><a href="./OAuth/ServerToken.html">OAuth::ServerToken</a>
+  
+    <li><a href="./OAuth/Signature.html">OAuth::Signature</a>
+  
+    <li><a href="./OAuth/Signature/Base.html">OAuth::Signature::Base</a>
+  
+    <li><a href="./OAuth/Signature/HMAC.html">OAuth::Signature::HMAC</a>
+  
+    <li><a href="./OAuth/Signature/HMAC/Base.html">OAuth::Signature::HMAC::Base</a>
+  
+    <li><a href="./OAuth/Signature/HMAC/MD5.html">OAuth::Signature::HMAC::MD5</a>
+  
+    <li><a href="./OAuth/Signature/HMAC/RMD160.html">OAuth::Signature::HMAC::RMD160</a>
+  
+    <li><a href="./OAuth/Signature/HMAC/SHA1.html">OAuth::Signature::HMAC::SHA1</a>
+  
+    <li><a href="./OAuth/Signature/HMAC/SHA2.html">OAuth::Signature::HMAC::SHA2</a>
+  
+    <li><a href="./OAuth/Signature/MD5.html">OAuth::Signature::MD5</a>
+  
+    <li><a href="./OAuth/Signature/PLAINTEXT.html">OAuth::Signature::PLAINTEXT</a>
+  
+    <li><a href="./OAuth/Signature/RSA.html">OAuth::Signature::RSA</a>
+  
+    <li><a href="./OAuth/Signature/RSA/SHA1.html">OAuth::Signature::RSA::SHA1</a>
+  
+    <li><a href="./OAuth/Signature/SHA1.html">OAuth::Signature::SHA1</a>
+  
+    <li><a href="./OAuth/Signature/UnknownSignatureMethod.html">OAuth::Signature::UnknownSignatureMethod</a>
+  
+    <li><a href="./OAuth/Token.html">OAuth::Token</a>
+  
+    <li><a href="./OAuth/Unauthorized.html">OAuth::Unauthorized</a>
+  
+    <li><a href="./ActionController.html">ActionController</a>
+  
+    <li><a href="./ActionController/Base.html">ActionController::Base</a>
+  
+    <li><a href="./ActionController/TestRequest.html">ActionController::TestRequest</a>
+  
+    <li><a href="./Digest.html">Digest</a>
+  
+    <li><a href="./Digest/HMAC.html">Digest::HMAC</a>
+  
+    <li><a href="./EventMachine.html">EventMachine</a>
+  
+    <li><a href="./EventMachine/HttpClient.html">EventMachine::HttpClient</a>
+  
+    <li><a href="./Net.html">Net</a>
+  
+    <li><a href="./Net/HTTPGenericRequest.html">Net::HTTPGenericRequest</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./String.html">String</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<h1 id="label-Ruby+OAuth">Ruby <a href="OAuth.html">OAuth</a></h1>
+
+<h2 id="label-What">What</h2>
+
+<p>This is a RubyGem for implementing both <a href="OAuth.html">OAuth</a>
+clients and servers in Ruby applications.</p>
+
+<p>See the <a href="OAuth.html">OAuth</a> specs <a
+href="http://oauth.net/core/1.0/">oauth.net/core/1.0/</a></p>
+
+<h2 id="label-Installing">Installing</h2>
+
+<pre>sudo gem install oauth</pre>
+
+<p>The source code is now hosted on the <a href="OAuth.html">OAuth</a> GitHub
+Project <a
+href="http://github.com/oauth/oauth-ruby">github.com/oauth/oauth-ruby</a></p>
+
+<h2 id="label-The+basics">The basics</h2>
+
+<p>This is a ruby library which is intended to be used in creating Ruby
+Consumer and Service Provider applications. It is NOT a Rails plugin, but
+could easily be used for the foundation for such a Rails plugin.</p>
+
+<p>As a matter of fact it has been pulled out from an <a
+href="OAuth.html">OAuth</a> Rails Plugin <a
+href="http://code.google.com/p/oauth-plugin/">code.google.com/p/oauth-plugin/</a>
+which now requires this GEM.</p>
+
+<h2 id="label-Demonstration+of+usage">Demonstration of usage</h2>
+
+<p>We need to specify the oauth_callback url explicitly, otherwise it defaults
+to “oob” (Out of Band)</p>
+
+<pre>@callback_url = &quot;http://127.0.0.1:3000/oauth/callback&quot;</pre>
+
+<p>Create a new consumer instance by passing it a configuration hash:</p>
+
+<pre class="ruby"><span class="ruby-ivar">@consumer</span> = <span class="ruby-constant">OAuth</span><span class="ruby-operator">::</span><span class="ruby-constant">Consumer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;key&quot;</span>,<span class="ruby-string">&quot;secret&quot;</span>, :<span class="ruby-identifier">site</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;https://agree2&quot;</span>)
+</pre>
+
+<p>Start the process by requesting a token</p>
+
+<pre class="ruby"><span class="ruby-ivar">@request_token</span> = <span class="ruby-ivar">@consumer</span>.<span class="ruby-identifier">get_request_token</span>(:<span class="ruby-identifier">oauth_callback</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@callback_url</span>)
+<span class="ruby-identifier">session</span>[:<span class="ruby-identifier">request_token</span>] = <span class="ruby-ivar">@request_token</span>
+<span class="ruby-identifier">redirect_to</span> <span class="ruby-ivar">@request_token</span>.<span class="ruby-identifier">authorize_url</span>(:<span class="ruby-identifier">oauth_callback</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@callback_url</span>)
+</pre>
+
+<p>When user returns create an access_token</p>
+
+<pre>@access_token = @request_token.get_access_token
+@photos = @access_token.get('/photos.xml')</pre>
+
+<p>Now that you have an access token, you can use Typhoeus to interact with
+the <a href="OAuth.html">OAuth</a> provider if you choose.</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">'oauth/request_proxy/typhoeus_request'</span>
+<span class="ruby-identifier">oauth_params</span> = {:<span class="ruby-identifier">consumer</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">oauth_consumer</span>, :<span class="ruby-identifier">token</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">access_token</span>}
+<span class="ruby-identifier">hydra</span> = <span class="ruby-constant">Typhoeus</span><span class="ruby-operator">::</span><span class="ruby-constant">Hydra</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-identifier">req</span> = <span class="ruby-constant">Typhoeus</span><span class="ruby-operator">::</span><span class="ruby-constant">Request</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">uri</span>, <span class="ruby-identifier">options</span>) 
+<span class="ruby-identifier">oauth_helper</span> = <span class="ruby-constant">OAuth</span><span class="ruby-operator">::</span><span class="ruby-constant">Client</span><span class="ruby-operator">::</span><span class="ruby-constant">Helper</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">req</span>, <span class="ruby-identifier">oauth_params</span>.<span class="ruby-identifier">merge</span>(:<span class="ruby-identifier">request_uri</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">uri</span>))
+<span class="ruby-identifier">req</span>.<span class="ruby-identifier">headers</span>.<span class="ruby-identifier">merge!</span>({<span class="ruby-string">&quot;Authorization&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">oauth_helper</span>.<span class="ruby-identifier">header</span>}) <span class="ruby-comment"># Signs the request</span>
+<span class="ruby-identifier">hydra</span>.<span class="ruby-identifier">queue</span>(<span class="ruby-identifier">req</span>)
+<span class="ruby-identifier">hydra</span>.<span class="ruby-identifier">run</span>
+<span class="ruby-ivar">@response</span> = <span class="ruby-identifier">req</span>.<span class="ruby-identifier">response</span>
+</pre>
+
+<h2 id="label-More+Information">More Information</h2>
+<ul><li>
+<p>RDoc: <a
+href="http://rdoc.info/projects/oauth/oauth-ruby/">rdoc.info/projects/oauth/oauth-ruby/</a></p>
+</li><li>
+<p>Mailing List/Google Group: <a
+href="http://groups.google.com/group/oauth-ruby">groups.google.com/group/oauth-ruby</a></p>
+</li></ul>
+
+<h2 id="label-How+to+submit+patches">How to submit patches</h2>
+
+<p>The source code is now hosted on the <a href="OAuth.html">OAuth</a> GitHub
+Project <a
+href="http://github.com/oauth/oauth-ruby">github.com/oauth/oauth-ruby</a></p>
+
+<p>To submit a patch, please fork the oauth project and create a patch with
+tests. Once you’re happy with it send a pull request and post a message to
+the google group.</p>
+
+<h2 id="label-License">License</h2>
+
+<p>This code is free to use under the terms of the MIT license.</p>
+
+<h2 id="label-Contact">Contact</h2>
+
+<p><a href="OAuth.html">OAuth</a> Ruby has been created and maintained by a
+large number of talented individuals.  The current maintainer is Aaron
+Quint (quirkey).</p>
+
+<p>Comments are welcome. Send an email to via the <a
+href="OAuth.html">OAuth</a> Ruby mailing list <a
+href="http://groups.google.com/group/oauth-ruby">groups.google.com/group/oauth-ruby</a></p>
+
+</div>
+
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

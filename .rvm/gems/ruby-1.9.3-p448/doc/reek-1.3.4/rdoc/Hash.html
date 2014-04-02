@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Hash - reek-1.3.4 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/reek/core/hash_extensions.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="Object.html">Object</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-adopt">#adopt</a>
+    
+    <li><a href="#method-i-adopt-21">#adopt!</a>
+    
+    <li><a href="#method-i-deep_copy">#deep_copy</a>
+    
+    <li><a href="#method-i-push_keys">#push_keys</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./CHANGELOG.html">CHANGELOG</a>
+  
+    <li class="file"><a href="./License_txt.html">License</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Reek.html">Reek</a>
+  
+    <li><a href="./Reek/CandidateMethod.html">Reek::CandidateMethod</a>
+  
+    <li><a href="./Reek/Cli.html">Reek::Cli</a>
+  
+    <li><a href="./Reek/Cli/Application.html">Reek::Cli::Application</a>
+  
+    <li><a href="./Reek/Cli/HelpCommand.html">Reek::Cli::HelpCommand</a>
+  
+    <li><a href="./Reek/Cli/Options.html">Reek::Cli::Options</a>
+  
+    <li><a href="./Reek/Cli/QuietReport.html">Reek::Cli::QuietReport</a>
+  
+    <li><a href="./Reek/Cli/ReekCommand.html">Reek::Cli::ReekCommand</a>
+  
+    <li><a href="./Reek/Cli/ReportFormatter.html">Reek::Cli::ReportFormatter</a>
+  
+    <li><a href="./Reek/Cli/SimpleWarningFormatter.html">Reek::Cli::SimpleWarningFormatter</a>
+  
+    <li><a href="./Reek/Cli/SingleLineWarningFormatter.html">Reek::Cli::SingleLineWarningFormatter</a>
+  
+    <li><a href="./Reek/Cli/VerboseReport.html">Reek::Cli::VerboseReport</a>
+  
+    <li><a href="./Reek/Cli/VersionCommand.html">Reek::Cli::VersionCommand</a>
+  
+    <li><a href="./Reek/Cli/WarningFormatterWithLineNumbers.html">Reek::Cli::WarningFormatterWithLineNumbers</a>
+  
+    <li><a href="./Reek/Cli/YamlCommand.html">Reek::Cli::YamlCommand</a>
+  
+    <li><a href="./Reek/Core.html">Reek::Core</a>
+  
+    <li><a href="./Reek/Core/CodeContext.html">Reek::Core::CodeContext</a>
+  
+    <li><a href="./Reek/Core/CodeParser.html">Reek::Core::CodeParser</a>
+  
+    <li><a href="./Reek/Core/MethodContext.html">Reek::Core::MethodContext</a>
+  
+    <li><a href="./Reek/Core/MethodParameters.html">Reek::Core::MethodParameters</a>
+  
+    <li><a href="./Reek/Core/ModuleContext.html">Reek::Core::ModuleContext</a>
+  
+    <li><a href="./Reek/Core/Overrides.html">Reek::Core::Overrides</a>
+  
+    <li><a href="./Reek/Core/SingletonMethodContext.html">Reek::Core::SingletonMethodContext</a>
+  
+    <li><a href="./Reek/Core/SmellConfiguration.html">Reek::Core::SmellConfiguration</a>
+  
+    <li><a href="./Reek/Core/SmellRepository.html">Reek::Core::SmellRepository</a>
+  
+    <li><a href="./Reek/Core/Sniffer.html">Reek::Core::Sniffer</a>
+  
+    <li><a href="./Reek/Core/StopContext.html">Reek::Core::StopContext</a>
+  
+    <li><a href="./Reek/Core/WarningCollector.html">Reek::Core::WarningCollector</a>
+  
+    <li><a href="./Reek/Examiner.html">Reek::Examiner</a>
+  
+    <li><a href="./Reek/MethodGroup.html">Reek::MethodGroup</a>
+  
+    <li><a href="./Reek/Rake.html">Reek::Rake</a>
+  
+    <li><a href="./Reek/Rake/Task.html">Reek::Rake::Task</a>
+  
+    <li><a href="./Reek/SmellWarning.html">Reek::SmellWarning</a>
+  
+    <li><a href="./Reek/Smells.html">Reek::Smells</a>
+  
+    <li><a href="./Reek/Smells/Attribute.html">Reek::Smells::Attribute</a>
+  
+    <li><a href="./Reek/Smells/BooleanParameter.html">Reek::Smells::BooleanParameter</a>
+  
+    <li><a href="./Reek/Smells/ClassVariable.html">Reek::Smells::ClassVariable</a>
+  
+    <li><a href="./Reek/Smells/ControlParameter.html">Reek::Smells::ControlParameter</a>
+  
+    <li><a href="./Reek/Smells/DataClump.html">Reek::Smells::DataClump</a>
+  
+    <li><a href="./Reek/Smells/DuplicateMethodCall.html">Reek::Smells::DuplicateMethodCall</a>
+  
+    <li><a href="./Reek/Smells/ExcludeInitialize.html">Reek::Smells::ExcludeInitialize</a>
+  
+    <li><a href="./Reek/Smells/FeatureEnvy.html">Reek::Smells::FeatureEnvy</a>
+  
+    <li><a href="./Reek/Smells/IrresponsibleModule.html">Reek::Smells::IrresponsibleModule</a>
+  
+    <li><a href="./Reek/Smells/LongParameterList.html">Reek::Smells::LongParameterList</a>
+  
+    <li><a href="./Reek/Smells/LongYieldList.html">Reek::Smells::LongYieldList</a>
+  
+    <li><a href="./Reek/Smells/NestedIterators.html">Reek::Smells::NestedIterators</a>
+  
+    <li><a href="./Reek/Smells/NilCheck.html">Reek::Smells::NilCheck</a>
+  
+    <li><a href="./Reek/Smells/NilCheck/CallNodeFinder.html">Reek::Smells::NilCheck::CallNodeFinder</a>
+  
+    <li><a href="./Reek/Smells/NilCheck/CaseNodeFinder.html">Reek::Smells::NilCheck::CaseNodeFinder</a>
+  
+    <li><a href="./Reek/Smells/NilCheck/NodeFinder.html">Reek::Smells::NilCheck::NodeFinder</a>
+  
+    <li><a href="./Reek/Smells/RepeatedConditional.html">Reek::Smells::RepeatedConditional</a>
+  
+    <li><a href="./Reek/Smells/SmellDetector.html">Reek::Smells::SmellDetector</a>
+  
+    <li><a href="./Reek/Smells/TooManyInstanceVariables.html">Reek::Smells::TooManyInstanceVariables</a>
+  
+    <li><a href="./Reek/Smells/TooManyMethods.html">Reek::Smells::TooManyMethods</a>
+  
+    <li><a href="./Reek/Smells/TooManyStatements.html">Reek::Smells::TooManyStatements</a>
+  
+    <li><a href="./Reek/Smells/UncommunicativeMethodName.html">Reek::Smells::UncommunicativeMethodName</a>
+  
+    <li><a href="./Reek/Smells/UncommunicativeModuleName.html">Reek::Smells::UncommunicativeModuleName</a>
+  
+    <li><a href="./Reek/Smells/UncommunicativeParameterName.html">Reek::Smells::UncommunicativeParameterName</a>
+  
+    <li><a href="./Reek/Smells/UncommunicativeVariableName.html">Reek::Smells::UncommunicativeVariableName</a>
+  
+    <li><a href="./Reek/Smells/UnusedParameters.html">Reek::Smells::UnusedParameters</a>
+  
+    <li><a href="./Reek/Smells/UtilityFunction.html">Reek::Smells::UtilityFunction</a>
+  
+    <li><a href="./Reek/Source.html">Reek::Source</a>
+  
+    <li><a href="./Reek/Source/CodeComment.html">Reek::Source::CodeComment</a>
+  
+    <li><a href="./Reek/Source/ConfigFile.html">Reek::Source::ConfigFile</a>
+  
+    <li><a href="./Reek/Source/ReferenceCollector.html">Reek::Source::ReferenceCollector</a>
+  
+    <li><a href="./Reek/Source/SexpExtensions.html">Reek::Source::SexpExtensions</a>
+  
+    <li><a href="./Reek/Source/SexpExtensions/AttrasgnNode.html">Reek::Source::SexpExtensions::AttrasgnNode</a>
+  
+    <li><a href="./Reek/Source/SexpExtensions/CallNode.html">Reek::Source::SexpExtensions::CallNode</a>
+  
+    <li><a href="./Reek/Source/SexpExtensions/CaseNode.html">Reek::Source::SexpExtensions::CaseNode</a>
+  
+    <li><a href="./Reek/Source/SexpExtensions/ClassNode.html">Reek::Source::SexpExtensions::ClassNode</a>
+  
+    <li><a href="./Reek/Source/SexpExtensions/CvarNode.html">Reek::Source::SexpExtensions::CvarNode</a>
+  
+    <li><a href="./Reek/Source/SexpExtensions/CvarNode.html">Reek::Source::SexpExtensions::CvasgnNode</a>
+  
+    <li><a href="./Reek/Source/SexpExtensions/CvarNode.html">Reek::Source::SexpExtensions::CvdeclNode</a>
+  
+    <li><a href="./Reek/Source/SexpExtensions/DefnNode.html">Reek::Source::SexpExtensions::DefnNode</a>
+  
+    <li><a href="./Reek/Source/SexpExtensions/DefsNode.html">Reek::Source::SexpExtensions::DefsNode</a>
+  
+    <li><a href="./Reek/Source/SexpExtensions/IfNode.html">Reek::Source::SexpExtensions::IfNode</a>
+  
+    <li><a href="./Reek/Source/SexpExtensions/IterNode.html">Reek::Source::SexpExtensions::IterNode</a>
+  
+    <li><a href="./Reek/Source/SexpExtensions/LitNode.html">Reek::Source::SexpExtensions::LitNode</a>
+  
+    <li><a href="./Reek/Source/SexpExtensions/MethodNode.html">Reek::Source::SexpExtensions::MethodNode</a>
+  
+    <li><a href="./Reek/Source/SexpExtensions/ModuleNode.html">Reek::Source::SexpExtensions::ModuleNode</a>
+  
+    <li><a href="./Reek/Source/SexpExtensions/YieldNode.html">Reek::Source::SexpExtensions::YieldNode</a>
+  
+    <li><a href="./Reek/Source/SexpFormatter.html">Reek::Source::SexpFormatter</a>
+  
+    <li><a href="./Reek/Source/SexpNode.html">Reek::Source::SexpNode</a>
+  
+    <li><a href="./Reek/Source/SourceCode.html">Reek::Source::SourceCode</a>
+  
+    <li><a href="./Reek/Source/SourceFile.html">Reek::Source::SourceFile</a>
+  
+    <li><a href="./Reek/Source/SourceLocator.html">Reek::Source::SourceLocator</a>
+  
+    <li><a href="./Reek/Source/SourceRepository.html">Reek::Source::SourceRepository</a>
+  
+    <li><a href="./Reek/Source/TreeDresser.html">Reek::Source::TreeDresser</a>
+  
+    <li><a href="./Reek/Spec.html">Reek::Spec</a>
+  
+    <li><a href="./File.html">File</a>
+  
+    <li><a href="./Hash.html">Hash</a>
+  
+    <li><a href="./IO.html">IO</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./String.html">String</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Hash</h1>
+
+  <div id="description" class="description">
+    
+<p>Extensions to <code>Hash</code> needed by <a href="Reek.html">Reek</a>.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-adopt" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">adopt</span><span
+            class="method-args">(other)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="adopt-source">
+            <pre><span class="ruby-comment"># File lib/reek/core/hash_extensions.rb, line 21</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">adopt</span>(<span class="ruby-identifier">other</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">deep_copy</span>.<span class="ruby-identifier">adopt!</span>(<span class="ruby-identifier">other</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- adopt-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- adopt-method -->
+
+    
+      <div id="method-i-adopt-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">adopt!</span><span
+            class="method-args">(other)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="adopt-21-source">
+            <pre><span class="ruby-comment"># File lib/reek/core/hash_extensions.rb, line 9</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">adopt!</span>(<span class="ruby-identifier">other</span>)
+  <span class="ruby-identifier">other</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">ov</span> = <span class="ruby-identifier">other</span>[<span class="ruby-identifier">key</span>]
+    <span class="ruby-keyword">if</span> <span class="ruby-constant">Array</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">ov</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">key</span>)
+      <span class="ruby-keyword">self</span>[<span class="ruby-identifier">key</span>] <span class="ruby-operator">+=</span> <span class="ruby-identifier">ov</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-keyword">self</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-identifier">ov</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- adopt-21-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- adopt-21-method -->
+
+    
+      <div id="method-i-deep_copy" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">deep_copy</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="deep_copy-source">
+            <pre><span class="ruby-comment"># File lib/reek/core/hash_extensions.rb, line 25</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">deep_copy</span>
+  <span class="ruby-constant">YAML</span><span class="ruby-operator">::</span><span class="ruby-identifier">load</span>(<span class="ruby-constant">YAML</span><span class="ruby-operator">::</span><span class="ruby-identifier">dump</span>(<span class="ruby-keyword">self</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- deep_copy-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- deep_copy-method -->
+
+    
+      <div id="method-i-push_keys" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">push_keys</span><span
+            class="method-args">(hash)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="push_keys-source">
+            <pre><span class="ruby-comment"># File lib/reek/core/hash_extensions.rb, line 5</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">push_keys</span>(<span class="ruby-identifier">hash</span>)
+  <span class="ruby-identifier">keys</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span> <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">key</span>].<span class="ruby-identifier">adopt!</span>(<span class="ruby-keyword">self</span>[<span class="ruby-identifier">key</span>]) }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- push_keys-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- push_keys-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

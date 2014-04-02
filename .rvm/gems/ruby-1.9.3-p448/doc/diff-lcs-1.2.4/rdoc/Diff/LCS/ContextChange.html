@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Diff::LCS::ContextChange - diff-lcs-1.2.4 Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/diff/lcs/change.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="Change.html">Diff::LCS::Change</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-from_a">::from_a</a>
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-c-simplify">::simplify</a>
+    
+    <li><a href="#method-i-3C-3D-3E">#&lt;=&gt;</a>
+    
+    <li><a href="#method-i-3D-3D">#==</a>
+    
+    <li><a href="#method-i-inspect">#inspect</a>
+    
+    <li><a href="#method-i-to_a">#to_a</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../Contributing_rdoc.html">Contributing</a>
+  
+    <li class="file"><a href="../../History_rdoc.html">History</a>
+  
+    <li class="file"><a href="../../License_rdoc.html">License</a>
+  
+    <li class="file"><a href="../../Manifest_txt.html">Manifest</a>
+  
+    <li class="file"><a href="../../README_rdoc.html">README</a>
+  
+    <li class="file"><a href="../../docs/COPYING_txt.html">COPYING</a>
+  
+    <li class="file"><a href="../../docs/artistic_txt.html">artistic</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../Diff.html">Diff</a>
+  
+    <li><a href="../../Diff/LCS.html">Diff::LCS</a>
+  
+    <li><a href="../../Diff/LCS/DefaultCallbacks.html">Diff::LCS::BalancedCallbacks</a>
+  
+    <li><a href="../../Diff/LCS/Block.html">Diff::LCS::Block</a>
+  
+    <li><a href="../../Diff/LCS/Change.html">Diff::LCS::Change</a>
+  
+    <li><a href="../../Diff/LCS/ContextChange.html">Diff::LCS::ContextChange</a>
+  
+    <li><a href="../../Diff/LCS/ContextDiffCallbacks.html">Diff::LCS::ContextDiffCallbacks</a>
+  
+    <li><a href="../../Diff/LCS/DefaultCallbacks.html">Diff::LCS::DefaultCallbacks</a>
+  
+    <li><a href="../../Diff/LCS/DiffCallbacks.html">Diff::LCS::DiffCallbacks</a>
+  
+    <li><a href="../../Diff/LCS/HTMLDiff.html">Diff::LCS::HTMLDiff</a>
+  
+    <li><a href="../../Diff/LCS/HTMLDiff/Callbacks.html">Diff::LCS::HTMLDiff::Callbacks</a>
+  
+    <li><a href="../../Diff/LCS/Hunk.html">Diff::LCS::Hunk</a>
+  
+    <li><a href="../../Diff/LCS/Ldiff.html">Diff::LCS::Ldiff</a>
+  
+    <li><a href="../../Diff/LCS/SDiffCallbacks.html">Diff::LCS::SDiffCallbacks</a>
+  
+    <li><a href="../../Diff/LCS/DefaultCallbacks.html">Diff::LCS::SequenceCallbacks</a>
+  
+    <li><a href="../../Array.html">Array</a>
+  
+    <li><a href="../../String.html">String</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Diff::LCS::ContextChange</h1>
+
+  <div id="description" class="description">
+    
+<p>Represents a contextual change. Contains the position and values of the
+elements in the old and the new sequenced enumerables as well as the action
+taken.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-new_element" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">new_element</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Returns the new element being changed.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-new_position" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">new_position</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Returns the new position being changed.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-old_element" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">old_element</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Returns the old element being changed.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-old_position" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">old_position</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Returns the old position being changed.</p>
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-from_a" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">from_a</span><span
+            class="method-args">(arr)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="from_a-source">
+            <pre><span class="ruby-comment"># File lib/diff/lcs/change.rb, line 135</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">from_a</span>(<span class="ruby-identifier">arr</span>)
+  <span class="ruby-constant">Diff</span><span class="ruby-operator">::</span><span class="ruby-constant">LCS</span><span class="ruby-operator">::</span><span class="ruby-constant">Change</span>.<span class="ruby-identifier">from_a</span>(<span class="ruby-identifier">arr</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- from_a-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- from_a-method -->
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(*args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/diff/lcs/change.rb, line 110</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(*<span class="ruby-identifier">args</span>)
+  <span class="ruby-ivar">@action</span>, <span class="ruby-ivar">@old_position</span>, <span class="ruby-ivar">@old_element</span>, <span class="ruby-ivar">@new_position</span>, <span class="ruby-ivar">@new_element</span> = *<span class="ruby-identifier">args</span>
+
+  <span class="ruby-keyword">unless</span> <span class="ruby-constant">Diff</span><span class="ruby-operator">::</span><span class="ruby-constant">LCS</span><span class="ruby-operator">::</span><span class="ruby-constant">Change</span>.<span class="ruby-identifier">valid_action?</span>(<span class="ruby-ivar">@action</span>)
+    <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;Invalid Change Action '#{@action}'&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@old_position</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword">or</span> <span class="ruby-ivar">@old_position</span>.<span class="ruby-identifier">kind_of?</span> <span class="ruby-constant">Fixnum</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;Invalid (Old) Position Type&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@new_position</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-keyword">or</span> <span class="ruby-ivar">@new_position</span>.<span class="ruby-identifier">kind_of?</span> <span class="ruby-constant">Fixnum</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;Invalid (New) Position Type&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+      <div id="method-c-simplify" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">simplify</span><span
+            class="method-args">(event)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Simplifies a context change for use in some diff callbacks. ‘&lt;’ actions
+are converted to ‘-’ and ‘&gt;’ actions are converted to ‘+’.</p>
+          
+
+          
+          <div class="method-source-code" id="simplify-source">
+            <pre><span class="ruby-comment"># File lib/diff/lcs/change.rb, line 141</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">simplify</span>(<span class="ruby-identifier">event</span>)
+  <span class="ruby-identifier">ea</span> = <span class="ruby-identifier">event</span>.<span class="ruby-identifier">to_a</span>
+
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">ea</span>[<span class="ruby-value">0</span>]
+  <span class="ruby-keyword">when</span> <span class="ruby-string">'-'</span>
+    <span class="ruby-identifier">ea</span>[<span class="ruby-value">2</span>][<span class="ruby-value">1</span>] = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">'&lt;'</span>
+    <span class="ruby-identifier">ea</span>[<span class="ruby-value">0</span>] = <span class="ruby-string">'-'</span>
+    <span class="ruby-identifier">ea</span>[<span class="ruby-value">2</span>][<span class="ruby-value">1</span>] = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">'+'</span>
+    <span class="ruby-identifier">ea</span>[<span class="ruby-value">1</span>][<span class="ruby-value">1</span>] = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">'&gt;'</span>
+    <span class="ruby-identifier">ea</span>[<span class="ruby-value">0</span>] = <span class="ruby-string">'+'</span>
+    <span class="ruby-identifier">ea</span>[<span class="ruby-value">1</span>][<span class="ruby-value">1</span>] = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-constant">Diff</span><span class="ruby-operator">::</span><span class="ruby-constant">LCS</span><span class="ruby-operator">::</span><span class="ruby-constant">ContextChange</span>.<span class="ruby-identifier">from_a</span>(<span class="ruby-identifier">ea</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- simplify-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- simplify-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-3C-3D-3E" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">&lt;=&gt;</span><span
+            class="method-args">(other)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="3C-3D-3E-source">
+            <pre><span class="ruby-comment"># File lib/diff/lcs/change.rb, line 168</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">&lt;=&gt;</span>(<span class="ruby-identifier">other</span>)
+  <span class="ruby-identifier">r</span> = <span class="ruby-ivar">@action</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">action</span>
+  <span class="ruby-identifier">r</span> = <span class="ruby-ivar">@old_position</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">old_position</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">r</span>.<span class="ruby-identifier">zero?</span>
+  <span class="ruby-identifier">r</span> = <span class="ruby-ivar">@new_position</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">new_position</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">r</span>.<span class="ruby-identifier">zero?</span>
+  <span class="ruby-identifier">r</span> = <span class="ruby-ivar">@old_element</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">old_element</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">r</span>.<span class="ruby-identifier">zero?</span>
+  <span class="ruby-identifier">r</span> = <span class="ruby-ivar">@new_element</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">new_element</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">r</span>.<span class="ruby-identifier">zero?</span>
+  <span class="ruby-identifier">r</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- 3C-3D-3E-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- 3C-3D-3E-method -->
+
+    
+      <div id="method-i-3D-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">==</span><span
+            class="method-args">(other)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="3D-3D-source">
+            <pre><span class="ruby-comment"># File lib/diff/lcs/change.rb, line 160</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">==</span>(<span class="ruby-identifier">other</span>)
+  (<span class="ruby-ivar">@action</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">action</span>) <span class="ruby-keyword">and</span>
+  (<span class="ruby-ivar">@old_position</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">old_position</span>) <span class="ruby-keyword">and</span>
+  (<span class="ruby-ivar">@new_position</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">new_position</span>) <span class="ruby-keyword">and</span>
+  (<span class="ruby-ivar">@old_element</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">old_element</span>) <span class="ruby-keyword">and</span>
+  (<span class="ruby-ivar">@new_element</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">new_element</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- 3D-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- 3D-3D-method -->
+
+    
+      <div id="method-i-inspect" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">inspect</span><span
+            class="method-args">(*args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="inspect-source">
+            <pre><span class="ruby-comment"># File lib/diff/lcs/change.rb, line 131</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">inspect</span>(*<span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">to_a</span>.<span class="ruby-identifier">inspect</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- inspect-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- inspect-method -->
+
+    
+      <div id="method-i-to_a" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_a</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="to_a-source">
+            <pre><span class="ruby-comment"># File lib/diff/lcs/change.rb, line 124</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_a</span>
+  [ <span class="ruby-ivar">@action</span>,
+    [ <span class="ruby-ivar">@old_position</span>, <span class="ruby-ivar">@old_element</span> ],
+    [ <span class="ruby-ivar">@new_position</span>, <span class="ruby-ivar">@new_element</span> ]
+  ]
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- to_a-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- to_a-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

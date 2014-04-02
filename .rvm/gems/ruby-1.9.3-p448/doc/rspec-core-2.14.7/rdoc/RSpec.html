@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module RSpec - rspec-core-2.14.7 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/rspec/core.rb
+    <li>lib/rspec/core/backtrace_cleaner.rb
+    <li>lib/rspec/core/pending.rb
+    <li>lib/rspec/core/extensions/ordered.rb
+    <li>lib/rspec/core/extensions/module_eval_with_args.rb
+    <li>lib/rspec/core/extensions/instance_eval_with_args.rb
+    <li>lib/rspec/core/shared_example_group.rb
+    <li>lib/rspec/core/configuration_options.rb
+    <li>lib/rspec/core/filter_manager.rb
+    <li>lib/rspec/core/backward_compatibility.rb
+    <li>lib/rspec/core/drb_command_line.rb
+    <li>lib/rspec/core/memoized_helpers.rb
+    <li>lib/rspec/core/deprecation.rb
+    <li>lib/rspec/core/metadata.rb
+    <li>lib/rspec/core/example_group.rb
+    <li>lib/rspec/core/dsl.rb
+    <li>lib/rspec/core/configuration.rb
+    <li>lib/rspec/core/runner.rb
+    <li>lib/rspec/core/formatters/documentation_formatter.rb
+    <li>lib/rspec/core/formatters/snippet_extractor.rb
+    <li>lib/rspec/core/formatters/text_mate_formatter.rb
+    <li>lib/rspec/core/formatters/html_printer.rb
+    <li>lib/rspec/core/formatters/deprecation_formatter.rb
+    <li>lib/rspec/core/formatters/base_formatter.rb
+    <li>lib/rspec/core/formatters/base_text_formatter.rb
+    <li>lib/rspec/core/formatters/html_formatter.rb
+    <li>lib/rspec/core/formatters/helpers.rb
+    <li>lib/rspec/core/formatters/json_formatter.rb
+    <li>lib/rspec/core/formatters/progress_formatter.rb
+    <li>lib/rspec/core/rake_task.rb
+    <li>lib/rspec/core/world.rb
+    <li>lib/rspec/core/version.rb
+    <li>lib/rspec/core/project_initializer.rb
+    <li>lib/rspec/core/metadata_hash_builder.rb
+    <li>lib/rspec/core/command_line.rb
+    <li>lib/rspec/core/ruby_project.rb
+    <li>lib/rspec/core/mocking/with_mocha.rb
+    <li>lib/rspec/core/mocking/with_rr.rb
+    <li>lib/rspec/core/mocking/with_flexmock.rb
+    <li>lib/rspec/core/mocking/with_rspec.rb
+    <li>lib/rspec/core/mocking/with_absolutely_nothing.rb
+    <li>lib/rspec/core/example.rb
+    <li>lib/rspec/core/hooks.rb
+    <li>lib/rspec/core/shared_example_group/collection.rb
+    <li>lib/rspec/core/shared_context.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-clear_remaining_example_groups">::clear_remaining_example_groups</a>
+    
+    <li><a href="#method-c-configuration">::configuration</a>
+    
+    <li><a href="#method-c-configuration-3D">::configuration=</a>
+    
+    <li><a href="#method-c-configure">::configure</a>
+    
+    <li><a href="#method-c-const_missing">::const_missing</a>
+    
+    <li><a href="#method-c-reset">::reset</a>
+    
+    <li><a href="#method-c-wants_to_quit">::wants_to_quit</a>
+    
+    <li><a href="#method-c-wants_to_quit-3D">::wants_to_quit=</a>
+    
+    <li><a href="#method-c-windows_os-3F">::windows_os?</a>
+    
+    <li><a href="#method-c-world">::world</a>
+    
+    <li><a href="#method-c-world-3D">::world=</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./RSpec.html">RSpec</a>
+  
+    <li><a href="./RSpec/Core.html">RSpec::Core</a>
+  
+    <li><a href="./RSpec/Core/BacktraceCleaner.html">RSpec::Core::BacktraceCleaner</a>
+  
+    <li><a href="./RSpec/Core/BacktraceFormatter.html">RSpec::Core::BacktraceFormatter</a>
+  
+    <li><a href="./RSpec/Core/CommandLine.html">RSpec::Core::CommandLine</a>
+  
+    <li><a href="./RSpec/Core/Configuration.html">RSpec::Core::Configuration</a>
+  
+    <li><a href="./RSpec/Core/Configuration/MustBeConfiguredBeforeExampleGroupsError.html">RSpec::Core::Configuration::MustBeConfiguredBeforeExampleGroupsError</a>
+  
+    <li><a href="./RSpec/Core/ConfigurationOptions.html">RSpec::Core::ConfigurationOptions</a>
+  
+    <li><a href="./RSpec/Core/ConstMissing.html">RSpec::Core::ConstMissing</a>
+  
+    <li><a href="./RSpec/Core/DRbCommandLine.html">RSpec::Core::DRbCommandLine</a>
+  
+    <li><a href="./RSpec/Core/DSL.html">RSpec::Core::DSL</a>
+  
+    <li><a href="./RSpec/Core/Deprecation.html">RSpec::Core::Deprecation</a>
+  
+    <li><a href="./RSpec/Core/DrbOptions.html">RSpec::Core::DrbOptions</a>
+  
+    <li><a href="./RSpec/Core/Example.html">RSpec::Core::Example</a>
+  
+    <li><a href="./RSpec/Core/Example/Procsy.html">RSpec::Core::Example::Procsy</a>
+  
+    <li><a href="./RSpec/Core/ExampleGroup.html">RSpec::Core::ExampleGroup</a>
+  
+    <li><a href="./RSpec/Core/Extensions.html">RSpec::Core::Extensions</a>
+  
+    <li><a href="./RSpec/Core/Extensions/InstanceEvalWithArgs.html">RSpec::Core::Extensions::InstanceEvalWithArgs</a>
+  
+    <li><a href="./RSpec/Core/Extensions/ModuleEvalWithArgs.html">RSpec::Core::Extensions::ModuleEvalWithArgs</a>
+  
+    <li><a href="./RSpec/Core/Extensions/Ordered.html">RSpec::Core::Extensions::Ordered</a>
+  
+    <li><a href="./RSpec/Core/Extensions/Ordered/ExampleGroups.html">RSpec::Core::Extensions::Ordered::ExampleGroups</a>
+  
+    <li><a href="./RSpec/Core/Extensions/Ordered/Examples.html">RSpec::Core::Extensions::Ordered::Examples</a>
+  
+    <li><a href="./RSpec/Core/FilterManager.html">RSpec::Core::FilterManager</a>
+  
+    <li><a href="./RSpec/Core/FilterManager/BackwardCompatibility.html">RSpec::Core::FilterManager::BackwardCompatibility</a>
+  
+    <li><a href="./RSpec/Core/FilterManager/Describable.html">RSpec::Core::FilterManager::Describable</a>
+  
+    <li><a href="./RSpec/Core/Formatters.html">RSpec::Core::Formatters</a>
+  
+    <li><a href="./RSpec/Core/Formatters/BaseFormatter.html">RSpec::Core::Formatters::BaseFormatter</a>
+  
+    <li><a href="./RSpec/Core/Formatters/BaseTextFormatter.html">RSpec::Core::Formatters::BaseTextFormatter</a>
+  
+    <li><a href="./RSpec/Core/Formatters/DeprecationFormatter.html">RSpec::Core::Formatters::DeprecationFormatter</a>
+  
+    <li><a href="./RSpec/Core/Formatters/DocumentationFormatter.html">RSpec::Core::Formatters::DocumentationFormatter</a>
+  
+    <li><a href="./RSpec/Core/Formatters/Helpers.html">RSpec::Core::Formatters::Helpers</a>
+  
+    <li><a href="./RSpec/Core/Formatters/HtmlFormatter.html">RSpec::Core::Formatters::HtmlFormatter</a>
+  
+    <li><a href="./RSpec/Core/Formatters/HtmlPrinter.html">RSpec::Core::Formatters::HtmlPrinter</a>
+  
+    <li><a href="./RSpec/Core/Formatters/JsonFormatter.html">RSpec::Core::Formatters::JsonFormatter</a>
+  
+    <li><a href="./RSpec/Core/Formatters/ProgressFormatter.html">RSpec::Core::Formatters::ProgressFormatter</a>
+  
+    <li><a href="./RSpec/Core/Formatters/SnippetExtractor.html">RSpec::Core::Formatters::SnippetExtractor</a>
+  
+    <li><a href="./RSpec/Core/Formatters/SnippetExtractor/NullConverter.html">RSpec::Core::Formatters::SnippetExtractor::NullConverter</a>
+  
+    <li><a href="./RSpec/Core/Formatters/TextMateFormatter.html">RSpec::Core::Formatters::TextMateFormatter</a>
+  
+    <li><a href="./RSpec/Core/Hooks.html">RSpec::Core::Hooks</a>
+  
+    <li><a href="./RSpec/Core/Hooks/AfterAllHook.html">RSpec::Core::Hooks::AfterAllHook</a>
+  
+    <li><a href="./RSpec/Core/Hooks/AfterHook.html">RSpec::Core::Hooks::AfterHook</a>
+  
+    <li><a href="./RSpec/Core/Hooks/AroundHook.html">RSpec::Core::Hooks::AroundHook</a>
+  
+    <li><a href="./RSpec/Core/Hooks/AroundHookCollection.html">RSpec::Core::Hooks::AroundHookCollection</a>
+  
+    <li><a href="./RSpec/Core/Hooks/BeforeHook.html">RSpec::Core::Hooks::BeforeHook</a>
+  
+    <li><a href="./RSpec/Core/Hooks/GroupHookCollection.html">RSpec::Core::Hooks::GroupHookCollection</a>
+  
+    <li><a href="./RSpec/Core/Hooks/Hook.html">RSpec::Core::Hooks::Hook</a>
+  
+    <li><a href="./RSpec/Core/Hooks/HookCollection.html">RSpec::Core::Hooks::HookCollection</a>
+  
+    <li><a href="./RSpec/Core/Hooks/HookCollectionAliases.html">RSpec::Core::Hooks::HookCollectionAliases</a>
+  
+    <li><a href="./RSpec/Core/Hooks/RegistersGlobals.html">RSpec::Core::Hooks::RegistersGlobals</a>
+  
+    <li><a href="./RSpec/Core/MemoizedHelpers.html">RSpec::Core::MemoizedHelpers</a>
+  
+    <li><a href="./RSpec/Core/MemoizedHelpers/BeforeAllMemoizedHash.html">RSpec::Core::MemoizedHelpers::BeforeAllMemoizedHash</a>
+  
+    <li><a href="./RSpec/Core/MemoizedHelpers/ClassMethods.html">RSpec::Core::MemoizedHelpers::ClassMethods</a>
+  
+    <li><a href="./RSpec/Core/Metadata.html">RSpec::Core::Metadata</a>
+  
+    <li><a href="./RSpec/Core/Metadata/ExampleMetadataHash.html">RSpec::Core::Metadata::ExampleMetadataHash</a>
+  
+    <li><a href="./RSpec/Core/Metadata/GroupMetadataHash.html">RSpec::Core::Metadata::GroupMetadataHash</a>
+  
+    <li><a href="./RSpec/Core/Metadata/MetadataHash.html">RSpec::Core::Metadata::MetadataHash</a>
+  
+    <li><a href="./RSpec/Core/MetadataHashBuilder.html">RSpec::Core::MetadataHashBuilder</a>
+  
+    <li><a href="./RSpec/Core/MetadataHashBuilder/Common.html">RSpec::Core::MetadataHashBuilder::Common</a>
+  
+    <li><a href="./RSpec/Core/MetadataHashBuilder/WithConfigWarning.html">RSpec::Core::MetadataHashBuilder::WithConfigWarning</a>
+  
+    <li><a href="./RSpec/Core/MetadataHashBuilder/WithDeprecationWarning.html">RSpec::Core::MetadataHashBuilder::WithDeprecationWarning</a>
+  
+    <li><a href="./RSpec/Core/MockFrameworkAdapter.html">RSpec::Core::MockFrameworkAdapter</a>
+  
+    <li><a href="./RSpec/Core/Parser.html">RSpec::Core::Parser</a>
+  
+    <li><a href="./RSpec/Core/Pending.html">RSpec::Core::Pending</a>
+  
+    <li><a href="./RSpec/Core/Pending/PendingDeclaredInExample.html">RSpec::Core::Pending::PendingDeclaredInExample</a>
+  
+    <li><a href="./RSpec/Core/Pending/PendingExampleFixedError.html">RSpec::Core::Pending::PendingExampleFixedError</a>
+  
+    <li><a href="./RSpec/Core/ProjectInitializer.html">RSpec::Core::ProjectInitializer</a>
+  
+    <li><a href="./RSpec/Core/RakeTask.html">RSpec::Core::RakeTask</a>
+  
+    <li><a href="./RSpec/Core/Reporter.html">RSpec::Core::Reporter</a>
+  
+    <li><a href="./RSpec/Core/RubyProject.html">RSpec::Core::RubyProject</a>
+  
+    <li><a href="./RSpec/Core/Runner.html">RSpec::Core::Runner</a>
+  
+    <li><a href="./RSpec/Core/SharedContext.html">RSpec::Core::SharedContext</a>
+  
+    <li><a href="./RSpec/Core/SharedExampleGroup.html">RSpec::Core::SharedExampleGroup</a>
+  
+    <li><a href="./RSpec/Core/SharedExampleGroup/Collection.html">RSpec::Core::SharedExampleGroup::Collection</a>
+  
+    <li><a href="./RSpec/Core/SharedExampleGroup/Registry.html">RSpec::Core::SharedExampleGroup::Registry</a>
+  
+    <li><a href="./RSpec/Core/SharedExampleGroup/TopLevelDSL.html">RSpec::Core::SharedExampleGroup::TopLevelDSL</a>
+  
+    <li><a href="./RSpec/Core/Time.html">RSpec::Core::Time</a>
+  
+    <li><a href="./RSpec/Core/Version.html">RSpec::Core::Version</a>
+  
+    <li><a href="./RSpec/Core/World.html">RSpec::Core::World</a>
+  
+    <li><a href="./RSpec/Rake.html">RSpec::Rake</a>
+  
+    <li><a href="./RSpec/Runner.html">RSpec::Runner</a>
+  
+    <li><a href="./Autotest.html">Autotest</a>
+  
+    <li><a href="./Autotest/Rspec2.html">Autotest::Rspec2</a>
+  
+    <li><a href="./Kernel.html">Kernel</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module RSpec</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="MODULES_TO_AUTOLOAD">MODULES_TO_AUTOLOAD
+        
+        <dd class="description">
+        
+      
+        <dt id="SharedContext">SharedContext
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-clear_remaining_example_groups" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">clear_remaining_example_groups</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@private Used internally to clear remaining groups when fail_fast is set</p>
+          
+
+          
+          <div class="method-source-code" id="clear_remaining_example_groups-source">
+            <pre><span class="ruby-comment"># File lib/rspec/core.rb, line 125</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">clear_remaining_example_groups</span>
+  <span class="ruby-identifier">world</span>.<span class="ruby-identifier">example_groups</span>.<span class="ruby-identifier">clear</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- clear_remaining_example_groups-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- clear_remaining_example_groups-method -->
+
+    
+      <div id="method-c-configuration" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">configuration</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the global [Configuration](RSpec/Core/Configuration) object. While
+you <em>can</em> use this method to access the configuration, the more
+common convention is to use [<a
+href="RSpec.html#method-c-configure">::configure</a>](RSpec#configure-class_method).</p>
+
+<p>@example</p>
+
+<pre>RSpec.configuration.drb_port = 1234</pre>
+
+<p>@see <a href="RSpec.html#method-c-configure">::configure</a> @see <a
+href="RSpec/Core/Configuration.html">Core::Configuration</a></p>
+          
+
+          
+          <div class="method-source-code" id="configuration-source">
+            <pre><span class="ruby-comment"># File lib/rspec/core.rb, line 87</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">configuration</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+      <span class="ruby-constant">RSpec</span>.<span class="ruby-identifier">warn_deprecation</span> <span class="ruby-value">&lt;&lt;-WARNING
+
+*****************************************************************
+DEPRECATION WARNING
+
+* RSpec.configuration with a block is deprecated and has no effect.
+* please use RSpec.configure with a block instead.
+
+Called from #{caller(0)[1]}
+*****************************************************************
+
+WARNING</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-ivar">@configuration</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">RSpec</span><span class="ruby-operator">::</span><span class="ruby-constant">Core</span><span class="ruby-operator">::</span><span class="ruby-constant">Configuration</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-keyword">end</span></pre>
+          </div><!-- configuration-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- configuration-method -->
+
+    
+      <div id="method-c-configuration-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">configuration=</span><span
+            class="method-args">(new_configuration)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@private Used internally to set the global object</p>
+          
+
+          
+          <div class="method-source-code" id="configuration-3D-source">
+            <pre><span class="ruby-comment"># File lib/rspec/core.rb, line 107</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">configuration=</span>(<span class="ruby-identifier">new_configuration</span>)
+  <span class="ruby-ivar">@configuration</span> = <span class="ruby-identifier">new_configuration</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- configuration-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- configuration-3D-method -->
+
+    
+      <div id="method-c-configure" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">configure</span><span
+            class="method-args">() { |configuration| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Yields the global configuration to a block. @yield [Configuration] global
+configuration</p>
+
+<p>@example</p>
+
+<pre class="ruby"><span class="ruby-constant">RSpec</span>.<span class="ruby-identifier">configure</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">config</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">config</span>.<span class="ruby-identifier">add_formatter</span> <span class="ruby-string">'documentation'</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>@see <a href="RSpec/Core/Configuration.html">Core::Configuration</a></p>
+          
+
+          
+          <div class="method-source-code" id="configure-source">
+            <pre><span class="ruby-comment"># File lib/rspec/core.rb, line 119</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">configure</span>
+  <span class="ruby-keyword">yield</span> <span class="ruby-identifier">configuration</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- configure-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- configure-method -->
+
+    
+      <div id="method-c-const_missing" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">const_missing</span><span
+            class="method-args">(name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="const_missing-source">
+            <pre><span class="ruby-comment"># File lib/rspec/core.rb, line 152</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">const_missing</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-comment"># Load rspec-expectations when RSpec::Matchers is referenced. This allows</span>
+  <span class="ruby-comment"># people to define custom matchers (using `RSpec::Matchers.define`) before</span>
+  <span class="ruby-comment"># rspec-core has loaded rspec-expectations (since it delays the loading of</span>
+  <span class="ruby-comment"># it to allow users to configure a different assertion/expectation</span>
+  <span class="ruby-comment"># framework). `autoload` can't be used since it works with ruby's built-in</span>
+  <span class="ruby-comment"># require (e.g. for files that are available relative to a load path dir),</span>
+  <span class="ruby-comment"># but not with rubygems' extended require.</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment"># As of rspec 2.14.1, we no longer require `rspec/mocks` and</span>
+  <span class="ruby-comment"># `rspec/expectations` when `rspec` is required, so we want</span>
+  <span class="ruby-comment"># to make them available as an autoload. For more info, see:</span>
+  <span class="ruby-identifier">require</span> <span class="ruby-constant">MODULES_TO_AUTOLOAD</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">name</span>) { <span class="ruby-keyword">return</span> <span class="ruby-keyword">super</span> }
+  <span class="ruby-operator">::</span><span class="ruby-constant">RSpec</span>.<span class="ruby-identifier">const_get</span>(<span class="ruby-identifier">name</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- const_missing-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- const_missing-method -->
+
+    
+      <div id="method-c-reset" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">reset</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@private Used internally to ensure examples get reloaded between multiple
+runs in the same process.</p>
+          
+
+          
+          <div class="method-source-code" id="reset-source">
+            <pre><span class="ruby-comment"># File lib/rspec/core.rb, line 74</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">reset</span>
+  <span class="ruby-ivar">@world</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@configuration</span> = <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- reset-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- reset-method -->
+
+    
+      <div id="method-c-wants_to_quit" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">wants_to_quit</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@private</p>
+          
+
+          
+          <div class="method-source-code" id="wants_to_quit-source">
+            <pre><span class="ruby-comment"># File lib/rspec/core.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">wants_to_quit</span>
+<span class="ruby-comment"># Used internally to determine what to do when a SIGINT is received</span>
+  <span class="ruby-identifier">world</span>.<span class="ruby-identifier">wants_to_quit</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- wants_to_quit-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- wants_to_quit-method -->
+
+    
+      <div id="method-c-wants_to_quit-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">wants_to_quit=</span><span
+            class="method-args">(maybe)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@private Used internally to determine what to do when a SIGINT is received</p>
+          
+
+          
+          <div class="method-source-code" id="wants_to_quit-3D-source">
+            <pre><span class="ruby-comment"># File lib/rspec/core.rb, line 55</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">wants_to_quit=</span>(<span class="ruby-identifier">maybe</span>)
+  <span class="ruby-identifier">world</span>.<span class="ruby-identifier">wants_to_quit</span>=(<span class="ruby-identifier">maybe</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- wants_to_quit-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- wants_to_quit-3D-method -->
+
+    
+      <div id="method-c-windows_os-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">windows_os?</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@private</p>
+          
+
+          
+          <div class="method-source-code" id="windows_os-3F-source">
+            <pre><span class="ruby-comment"># File lib/rspec/core.rb, line 130</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">windows_os?</span>
+  <span class="ruby-constant">RbConfig</span><span class="ruby-operator">::</span><span class="ruby-constant">CONFIG</span>[<span class="ruby-string">'host_os'</span>] <span class="ruby-operator">=~</span> <span class="ruby-regexp">/cygwin|mswin|mingw|bccwin|wince|emx/</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- windows_os-3F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- windows_os-3F-method -->
+
+    
+      <div id="method-c-world" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">world</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@private Internal container for global non-configuration data</p>
+          
+
+          
+          <div class="method-source-code" id="world-source">
+            <pre><span class="ruby-comment"># File lib/rspec/core.rb, line 61</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">world</span>
+  <span class="ruby-ivar">@world</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">RSpec</span><span class="ruby-operator">::</span><span class="ruby-constant">Core</span><span class="ruby-operator">::</span><span class="ruby-constant">World</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- world-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- world-method -->
+
+    
+      <div id="method-c-world-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">world=</span><span
+            class="method-args">(new_world)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@private Used internally to set the global object</p>
+          
+
+          
+          <div class="method-source-code" id="world-3D-source">
+            <pre><span class="ruby-comment"># File lib/rspec/core.rb, line 67</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">world=</span>(<span class="ruby-identifier">new_world</span>)
+  <span class="ruby-ivar">@world</span> = <span class="ruby-identifier">new_world</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- world-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- world-3D-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

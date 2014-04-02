@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Chronic::Parser - chronic-0.10.2 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/chronic/parser.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><a class="include" href="Handlers.html">Chronic::Handlers</a>
+  
+  
+  </ul>
+</nav>
+
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-i-definitions">#definitions</a>
+    
+    <li><a href="#method-i-guess">#guess</a>
+    
+    <li><a href="#method-i-parse">#parse</a>
+    
+    <li><a href="#method-i-pre_normalize">#pre_normalize</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../LICENSE.html">LICENSE</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Chronic.html">Chronic</a>
+  
+    <li><a href="../Chronic/Date.html">Chronic::Date</a>
+  
+    <li><a href="../Chronic/Grabber.html">Chronic::Grabber</a>
+  
+    <li><a href="../Chronic/Handler.html">Chronic::Handler</a>
+  
+    <li><a href="../Chronic/Handlers.html">Chronic::Handlers</a>
+  
+    <li><a href="../Chronic/MiniDate.html">Chronic::MiniDate</a>
+  
+    <li><a href="../Chronic/Numerizer.html">Chronic::Numerizer</a>
+  
+    <li><a href="../Chronic/Ordinal.html">Chronic::Ordinal</a>
+  
+    <li><a href="../Chronic/Parser.html">Chronic::Parser</a>
+  
+    <li><a href="../Chronic/Pointer.html">Chronic::Pointer</a>
+  
+    <li><a href="../Chronic/Repeater.html">Chronic::Repeater</a>
+  
+    <li><a href="../Chronic/Scalar.html">Chronic::Scalar</a>
+  
+    <li><a href="../Chronic/Season.html">Chronic::Season</a>
+  
+    <li><a href="../Chronic/Separator.html">Chronic::Separator</a>
+  
+    <li><a href="../Chronic/Sign.html">Chronic::Sign</a>
+  
+    <li><a href="../Chronic/Span.html">Chronic::Span</a>
+  
+    <li><a href="../Chronic/Tag.html">Chronic::Tag</a>
+  
+    <li><a href="../Chronic/Time.html">Chronic::Time</a>
+  
+    <li><a href="../Chronic/TimeZone.html">Chronic::TimeZone</a>
+  
+    <li><a href="../Chronic/Token.html">Chronic::Token</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Chronic::Parser</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="DEFAULT_OPTIONS">DEFAULT_OPTIONS
+        
+        <dd class="description"><p>Hash of default configuration options.</p>
+        
+      
+      </dl>
+    </section>
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-now" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">now</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-options" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">options</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(options = {})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>options - An optional Hash of configuration options:</p>
+
+<pre class="ruby">:<span class="ruby-identifier">context</span> <span class="ruby-operator">-</span> <span class="ruby-constant">If</span> <span class="ruby-identifier">your</span> <span class="ruby-identifier">string</span> <span class="ruby-identifier">represents</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">birthday</span>, <span class="ruby-identifier">you</span> <span class="ruby-identifier">can</span> <span class="ruby-identifier">set</span>
+           <span class="ruby-identifier">this</span> <span class="ruby-identifier">value</span> <span class="ruby-identifier">to</span> :<span class="ruby-identifier">past</span> <span class="ruby-keyword">and</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">an</span> <span class="ruby-identifier">ambiguous</span> <span class="ruby-identifier">string</span> <span class="ruby-identifier">is</span>
+           <span class="ruby-identifier">given</span>, <span class="ruby-identifier">it</span> <span class="ruby-identifier">will</span> <span class="ruby-identifier">assume</span> <span class="ruby-identifier">it</span> <span class="ruby-identifier">is</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">past</span>.
+:<span class="ruby-identifier">now</span> <span class="ruby-operator">-</span> <span class="ruby-constant">Time</span>, <span class="ruby-identifier">all</span> <span class="ruby-identifier">computations</span> <span class="ruby-identifier">will</span> <span class="ruby-identifier">be</span> <span class="ruby-identifier">based</span> <span class="ruby-identifier">off</span> <span class="ruby-identifier">of</span> <span class="ruby-identifier">time</span>
+       <span class="ruby-identifier">instead</span> <span class="ruby-identifier">of</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.
+:<span class="ruby-identifier">hours24</span> <span class="ruby-operator">-</span> <span class="ruby-constant">Time</span> <span class="ruby-identifier">will</span> <span class="ruby-identifier">be</span> <span class="ruby-identifier">parsed</span> <span class="ruby-identifier">as</span> <span class="ruby-identifier">it</span> <span class="ruby-identifier">would</span> <span class="ruby-identifier">be</span> <span class="ruby-value">24</span> <span class="ruby-identifier">hour</span> <span class="ruby-identifier">clock</span>.
+:<span class="ruby-identifier">guess</span> <span class="ruby-operator">-</span> <span class="ruby-constant">By</span> <span class="ruby-identifier">default</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">parser</span> <span class="ruby-identifier">will</span> <span class="ruby-identifier">guess</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">single</span> <span class="ruby-identifier">point</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">time</span>
+         <span class="ruby-keyword">for</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">given</span> <span class="ruby-identifier">date</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">time</span>. <span class="ruby-constant">If</span> <span class="ruby-identifier">you</span><span class="ruby-string">'d rather have the
+         entire time span returned, set this to false
+         and a Chronic::Span will be returned. Setting :guess to :end
+         will return last time from Span, to :middle for middle (same as just true)
+         and :begin for first time from span.
+:ambiguous_time_range - If an Integer is given, ambiguous times
+          (like 5:00) will be assumed to be within the range of
+          that time in the AM to that time in the PM. For
+          example, if you set it to `7`, then the parser will
+          look for the time between 7am and 7pm. In the case of
+          5:00, it would assume that means 5:00pm. If `:none`
+          is given, no assumption will be made, and the first
+          matching instance of that time will be used.
+:endian_precedence - By default, Chronic will parse &quot;03/04/2011&quot;
+         as the fourth day of the third month. Alternatively you
+         can tell Chronic to parse this as the third day of the
+         fourth month by setting this to [:little, :middle].
+:ambiguous_year_future_bias - When parsing two digit years
+         (ie 79) unlike Rubys Time class, Chronic will attempt
+         to assume the full year using this figure. Chronic will
+         look x amount of years into the future and past. If the
+         two digit year is `now + x years` it'</span><span class="ruby-identifier">s</span> <span class="ruby-identifier">assumed</span> <span class="ruby-identifier">to</span> <span class="ruby-identifier">be</span> <span class="ruby-identifier">the</span>
+         <span class="ruby-identifier">future</span>, <span class="ruby-value">%xnow - x years`</span> <span class="ruby-identifier">is</span> <span class="ruby-identifier">assumed</span> <span class="ruby-identifier">to</span> <span class="ruby-identifier">be</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">past</span>.
+</pre>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/chronic/parser.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">options</span> = {})
+  <span class="ruby-ivar">@options</span> = <span class="ruby-constant">DEFAULT_OPTIONS</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">options</span>)
+  <span class="ruby-ivar">@now</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-value">:now</span>) <span class="ruby-operator">||</span> <span class="ruby-constant">Chronic</span>.<span class="ruby-identifier">time_class</span>.<span class="ruby-identifier">now</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-definitions" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">definitions</span><span
+            class="method-args">(options = {})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>List of <a href="Handler.html">Handler</a> definitions. See <a
+href="../Chronic.html#method-c-parse">Chronic.parse</a> for a list of
+options this method accepts.</p>
+
+<p>options - An optional Hash of configuration options.</p>
+
+<p>Returns a Hash of <a href="Handler.html">Handler</a> definitions.</p>
+          
+
+          
+          <div class="method-source-code" id="definitions-source">
+            <pre><span class="ruby-comment"># File lib/chronic/parser.rb, line 146</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">definitions</span>(<span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:endian_precedence</span>] <span class="ruby-operator">||=</span> [<span class="ruby-value">:middle</span>, <span class="ruby-value">:little</span>]
+
+  <span class="ruby-identifier">@@definitions</span> <span class="ruby-operator">||=</span> {
+    <span class="ruby-value">:time</span> =<span class="ruby-operator">&gt;</span> [
+      <span class="ruby-constant">Handler</span>.<span class="ruby-identifier">new</span>([<span class="ruby-value">:repeater_time</span>, <span class="ruby-value">:repeater_day_portion?</span>], <span class="ruby-keyword">nil</span>)
+    ],
+
+    <span class="ruby-value">:date</span> =<span class="ruby-operator">&gt;</span> [
+      <span class="ruby-constant">Handler</span>.<span class="ruby-identifier">new</span>([<span class="ruby-value">:repeater_day_name</span>, <span class="ruby-value">:repeater_month_name</span>, <span class="ruby-value">:scalar_day</span>, <span class="ruby-value">:repeater_time</span>, [<span class="ruby-value">:separator_slash?</span>, <span class="ruby-value">:separator_dash?</span>], <span class="ruby-value">:time_zone</span>, <span class="ruby-value">:scalar_year</span>], <span class="ruby-value">:handle_generic</span>),
+      <span class="ruby-constant">Handler</span>.<span class="ruby-identifier">new</span>([<span class="ruby-value">:repeater_day_name</span>, <span class="ruby-value">:repeater_month_name</span>, <span class="ruby-value">:scalar_day</span>], <span class="ruby-value">:handle_rdn_rmn_sd</span>),
+      <span class="ruby-constant">Handler</span>.<span class="ruby-identifier">new</span>([<span class="ruby-value">:repeater_day_name</span>, <span class="ruby-value">:repeater_month_name</span>, <span class="ruby-value">:scalar_day</span>, <span class="ruby-value">:scalar_year</span>], <span class="ruby-value">:handle_rdn_rmn_sd_sy</span>),
+      <span class="ruby-constant">Handler</span>.<span class="ruby-identifier">new</span>([<span class="ruby-value">:repeater_day_name</span>, <span class="ruby-value">:repeater_month_name</span>, <span class="ruby-value">:ordinal_day</span>], <span class="ruby-value">:handle_rdn_rmn_od</span>),
+      <span class="ruby-constant">Handler</span>.<span class="ruby-identifier">new</span>([<span class="ruby-value">:repeater_day_name</span>, <span class="ruby-value">:repeater_month_name</span>, <span class="ruby-value">:ordinal_day</span>, <span class="ruby-value">:scalar_year</span>], <span class="ruby-value">:handle_rdn_rmn_od_sy</span>),
+      <span class="ruby-constant">Handler</span>.<span class="ruby-identifier">new</span>([<span class="ruby-value">:repeater_day_name</span>, <span class="ruby-value">:repeater_month_name</span>, <span class="ruby-value">:scalar_day</span>, <span class="ruby-value">:separator_at?</span>, <span class="ruby-string">'time?'</span>], <span class="ruby-value">:handle_rdn_rmn_sd</span>),
+      <span class="ruby-constant">Handler</span>.<span class="ruby-identifier">new</span>([<span class="ruby-value">:repeater_day_name</span>, <span class="ruby-value">:repeater_month_name</span>, <span class="ruby-value">:ordinal_day</span>, <span class="ruby-value">:separator_at?</span>, <span class="ruby-string">'time?'</span>], <span class="ruby-value">:handle_rdn_rmn_od</span>),
+      <span class="ruby-constant">Handler</span>.<span class="ruby-identifier">new</span>([<span class="ruby-value">:repeater_day_name</span>, <span class="ruby-value">:ordinal_day</span>, <span class="ruby-value">:separator_at?</span>, <span class="ruby-string">'time?'</span>], <span class="ruby-value">:handle_rdn_od</span>),
+      <span class="ruby-constant">Handler</span>.<span class="ruby-identifier">new</span>([<span class="ruby-value">:scalar_year</span>, [<span class="ruby-value">:separator_slash</span>, <span class="ruby-value">:separator_dash</span>], <span class="ruby-value">:scalar_month</span>, [<span class="ruby-value">:separator_slash</span>, <span class="ruby-value">:separator_dash</span>], <span class="ruby-value">:scalar_day</span>, <span class="ruby-value">:repeater_time</span>, <span class="ruby-value">:time_zone</span>], <span class="ruby-value">:handle_generic</span>),
+      <span class="ruby-constant">Handler</span>.<span class="ruby-identifier">new</span>([<span class="ruby-value">:ordinal_day</span>], <span class="ruby-value">:handle_generic</span>),
+      <span class="ruby-constant">Handler</span>.<span class="ruby-identifier">new</span>([<span class="ruby-value">:repeater_month_name</span>, <span class="ruby-value">:scalar_day</span>, <span class="ruby-value">:scalar_year</span>], <span class="ruby-value">:handle_rmn_sd_sy</span>),
+      <span class="ruby-constant">Handler</span>.<span class="ruby-identifier">new</span>([<span class="ruby-value">:repeater_month_name</span>, <span class="ruby-value">:ordinal_day</span>, <span class="ruby-value">:scalar_year</span>], <span class="ruby-value">:handle_rmn_od_sy</span>),
+      <span class="ruby-constant">Handler</span>.<span class="ruby-identifier">new</span>([<span class="ruby-value">:repeater_month_name</span>, <span class="ruby-value">:scalar_day</span>, <span class="ruby-value">:scalar_year</span>, <span class="ruby-value">:separator_at?</span>, <span class="ruby-string">'time?'</span>], <span class="ruby-value">:handle_rmn_sd_sy</span>),
+      <span class="ruby-constant">Handler</span>.<span class="ruby-identifier">new</span>([<span class="ruby-value">:repeater_month_name</span>, <span class="ruby-value">:ordinal_day</span>, <span class="ruby-value">:scalar_year</span>, <span class="ruby-value">:separator_at?</span>, <span class="ruby-string">'time?'</span>], <span class="ruby-value">:handle_rmn_od_sy</span>),
+      <span class="ruby-constant">Handler</span>.<span class="ruby-identifier">new</span>([<span class="ruby-value">:repeater_month_name</span>, [<span class="ruby-value">:separator_slash?</span>, <span class="ruby-value">:separator_dash?</span>], <span class="ruby-value">:scalar_day</span>, <span class="ruby-value">:separator_at?</span>, <span class="ruby-string">'time?'</span>], <span class="ruby-value">:handle_rmn_sd</span>),
+      <span class="ruby-constant">Handler</span>.<span class="ruby-identifier">new</span>([<span class="ruby-value">:repeater_time</span>, <span class="ruby-value">:repeater_day_portion?</span>, <span class="ruby-value">:separator_on?</span>, <span class="ruby-value">:repeater_month_name</span>, <span class="ruby-value">:scalar_day</span>], <span class="ruby-value">:handle_rmn_sd_on</span>),
+      <span class="ruby-constant">Handler</span>.<span class="ruby-identifier">new</span>([<span class="ruby-value">:repeater_month_name</span>, <span class="ruby-value">:ordinal_day</span>, <span class="ruby-value">:separator_at?</span>, <span class="ruby-string">'time?'</span>], <span class="ruby-value">:handle_rmn_od</span>),
+      <span class="ruby-constant">Handler</span>.<span class="ruby-identifier">new</span>([<span class="ruby-value">:ordinal_day</span>, <span class="ruby-value">:repeater_month_name</span>, <span class="ruby-value">:scalar_year</span>, <span class="ruby-value">:separator_at?</span>, <span class="ruby-string">'time?'</span>], <span class="ruby-value">:handle_od_rmn_sy</span>),
+      <span class="ruby-constant">Handler</span>.<span class="ruby-identifier">new</span>([<span class="ruby-value">:ordinal_day</span>, <span class="ruby-value">:repeater_month_name</span>, <span class="ruby-value">:separator_at?</span>, <span class="ruby-string">'time?'</span>], <span class="ruby-value">:handle_od_rmn</span>),
+      <span class="ruby-constant">Handler</span>.<span class="ruby-identifier">new</span>([<span class="ruby-value">:ordinal_day</span>, <span class="ruby-value">:grabber?</span>, <span class="ruby-value">:repeater_month</span>, <span class="ruby-value">:separator_at?</span>, <span class="ruby-string">'time?'</span>], <span class="ruby-value">:handle_od_rm</span>),
+      <span class="ruby-constant">Handler</span>.<span class="ruby-identifier">new</span>([<span class="ruby-value">:scalar_year</span>, <span class="ruby-value">:repeater_month_name</span>, <span class="ruby-value">:ordinal_day</span>], <span class="ruby-value">:handle_sy_rmn_od</span>),
+      <span class="ruby-constant">Handler</span>.<span class="ruby-identifier">new</span>([<span class="ruby-value">:repeater_time</span>, <span class="ruby-value">:repeater_day_portion?</span>, <span class="ruby-value">:separator_on?</span>, <span class="ruby-value">:repeater_month_name</span>, <span class="ruby-value">:ordinal_day</span>], <span class="ruby-value">:handle_rmn_od_on</span>),
+      <span class="ruby-constant">Handler</span>.<span class="ruby-identifier">new</span>([<span class="ruby-value">:repeater_month_name</span>, <span class="ruby-value">:scalar_year</span>], <span class="ruby-value">:handle_rmn_sy</span>),
+      <span class="ruby-constant">Handler</span>.<span class="ruby-identifier">new</span>([<span class="ruby-value">:scalar_day</span>, <span class="ruby-value">:repeater_month_name</span>, <span class="ruby-value">:scalar_year</span>, <span class="ruby-value">:separator_at?</span>, <span class="ruby-string">'time?'</span>], <span class="ruby-value">:handle_sd_rmn_sy</span>),
+      <span class="ruby-constant">Handler</span>.<span class="ruby-identifier">new</span>([<span class="ruby-value">:scalar_day</span>, [<span class="ruby-value">:separator_slash?</span>, <span class="ruby-value">:separator_dash?</span>], <span class="ruby-value">:repeater_month_name</span>, <span class="ruby-value">:separator_at?</span>, <span class="ruby-string">'time?'</span>], <span class="ruby-value">:handle_sd_rmn</span>),
+      <span class="ruby-constant">Handler</span>.<span class="ruby-identifier">new</span>([<span class="ruby-value">:scalar_year</span>, [<span class="ruby-value">:separator_slash</span>, <span class="ruby-value">:separator_dash</span>], <span class="ruby-value">:scalar_month</span>, [<span class="ruby-value">:separator_slash</span>, <span class="ruby-value">:separator_dash</span>], <span class="ruby-value">:scalar_day</span>, <span class="ruby-value">:separator_at?</span>, <span class="ruby-string">'time?'</span>], <span class="ruby-value">:handle_sy_sm_sd</span>),
+      <span class="ruby-constant">Handler</span>.<span class="ruby-identifier">new</span>([<span class="ruby-value">:scalar_year</span>, [<span class="ruby-value">:separator_slash</span>, <span class="ruby-value">:separator_dash</span>], <span class="ruby-value">:scalar_month</span>], <span class="ruby-value">:handle_sy_sm</span>),
+      <span class="ruby-constant">Handler</span>.<span class="ruby-identifier">new</span>([<span class="ruby-value">:scalar_month</span>, [<span class="ruby-value">:separator_slash</span>, <span class="ruby-value">:separator_dash</span>], <span class="ruby-value">:scalar_year</span>], <span class="ruby-value">:handle_sm_sy</span>),
+      <span class="ruby-constant">Handler</span>.<span class="ruby-identifier">new</span>([<span class="ruby-value">:scalar_day</span>, [<span class="ruby-value">:separator_slash</span>, <span class="ruby-value">:separator_dash</span>], <span class="ruby-value">:repeater_month_name</span>, [<span class="ruby-value">:separator_slash</span>, <span class="ruby-value">:separator_dash</span>], <span class="ruby-value">:scalar_year</span>, <span class="ruby-value">:repeater_time?</span>], <span class="ruby-value">:handle_sm_rmn_sy</span>),
+      <span class="ruby-constant">Handler</span>.<span class="ruby-identifier">new</span>([<span class="ruby-value">:scalar_year</span>, [<span class="ruby-value">:separator_slash</span>, <span class="ruby-value">:separator_dash</span>], <span class="ruby-value">:scalar_month</span>, [<span class="ruby-value">:separator_slash</span>, <span class="ruby-value">:separator_dash</span>], <span class="ruby-value">:scalar?</span>, <span class="ruby-value">:time_zone</span>], <span class="ruby-value">:handle_generic</span>),
+    ],
+
+    <span class="ruby-value">:anchor</span> =<span class="ruby-operator">&gt;</span> [
+      <span class="ruby-constant">Handler</span>.<span class="ruby-identifier">new</span>([<span class="ruby-value">:separator_on?</span>, <span class="ruby-value">:grabber?</span>, <span class="ruby-value">:repeater</span>, <span class="ruby-value">:separator_at?</span>, <span class="ruby-value">:repeater?</span>, <span class="ruby-value">:repeater?</span>], <span class="ruby-value">:handle_r</span>),
+      <span class="ruby-constant">Handler</span>.<span class="ruby-identifier">new</span>([<span class="ruby-value">:grabber?</span>, <span class="ruby-value">:repeater</span>, <span class="ruby-value">:repeater</span>, <span class="ruby-value">:separator?</span>, <span class="ruby-value">:repeater?</span>, <span class="ruby-value">:repeater?</span>], <span class="ruby-value">:handle_r</span>),
+      <span class="ruby-constant">Handler</span>.<span class="ruby-identifier">new</span>([<span class="ruby-value">:repeater</span>, <span class="ruby-value">:grabber</span>, <span class="ruby-value">:repeater</span>], <span class="ruby-value">:handle_r_g_r</span>)
+    ],
+
+    <span class="ruby-value">:arrow</span> =<span class="ruby-operator">&gt;</span> [
+      <span class="ruby-constant">Handler</span>.<span class="ruby-identifier">new</span>([<span class="ruby-value">:scalar</span>, <span class="ruby-value">:repeater</span>, <span class="ruby-value">:pointer</span>], <span class="ruby-value">:handle_s_r_p</span>),
+      <span class="ruby-constant">Handler</span>.<span class="ruby-identifier">new</span>([<span class="ruby-value">:scalar</span>, <span class="ruby-value">:repeater</span>, <span class="ruby-value">:separator_and?</span>, <span class="ruby-value">:scalar</span>, <span class="ruby-value">:repeater</span>, <span class="ruby-value">:pointer</span>, <span class="ruby-value">:separator_at?</span>, <span class="ruby-string">'anchor'</span>], <span class="ruby-value">:handle_s_r_a_s_r_p_a</span>),
+      <span class="ruby-constant">Handler</span>.<span class="ruby-identifier">new</span>([<span class="ruby-value">:pointer</span>, <span class="ruby-value">:scalar</span>, <span class="ruby-value">:repeater</span>], <span class="ruby-value">:handle_p_s_r</span>),
+      <span class="ruby-constant">Handler</span>.<span class="ruby-identifier">new</span>([<span class="ruby-value">:scalar</span>, <span class="ruby-value">:repeater</span>, <span class="ruby-value">:pointer</span>, <span class="ruby-value">:separator_at?</span>, <span class="ruby-string">'anchor'</span>], <span class="ruby-value">:handle_s_r_p_a</span>)
+    ],
+
+    <span class="ruby-value">:narrow</span> =<span class="ruby-operator">&gt;</span> [
+      <span class="ruby-constant">Handler</span>.<span class="ruby-identifier">new</span>([<span class="ruby-value">:ordinal</span>, <span class="ruby-value">:repeater</span>, <span class="ruby-value">:separator_in</span>, <span class="ruby-value">:repeater</span>], <span class="ruby-value">:handle_o_r_s_r</span>),
+      <span class="ruby-constant">Handler</span>.<span class="ruby-identifier">new</span>([<span class="ruby-value">:ordinal</span>, <span class="ruby-value">:repeater</span>, <span class="ruby-value">:grabber</span>, <span class="ruby-value">:repeater</span>], <span class="ruby-value">:handle_o_r_g_r</span>)
+    ]
+  }
+
+  <span class="ruby-identifier">endians</span> = [
+    <span class="ruby-constant">Handler</span>.<span class="ruby-identifier">new</span>([<span class="ruby-value">:scalar_month</span>, [<span class="ruby-value">:separator_slash</span>, <span class="ruby-value">:separator_dash</span>], <span class="ruby-value">:scalar_day</span>, [<span class="ruby-value">:separator_slash</span>, <span class="ruby-value">:separator_dash</span>], <span class="ruby-value">:scalar_year</span>, <span class="ruby-value">:separator_at?</span>, <span class="ruby-string">'time?'</span>], <span class="ruby-value">:handle_sm_sd_sy</span>),
+    <span class="ruby-constant">Handler</span>.<span class="ruby-identifier">new</span>([<span class="ruby-value">:scalar_month</span>, [<span class="ruby-value">:separator_slash</span>, <span class="ruby-value">:separator_dash</span>], <span class="ruby-value">:scalar_day</span>, <span class="ruby-value">:separator_at?</span>, <span class="ruby-string">'time?'</span>], <span class="ruby-value">:handle_sm_sd</span>),
+    <span class="ruby-constant">Handler</span>.<span class="ruby-identifier">new</span>([<span class="ruby-value">:scalar_day</span>, [<span class="ruby-value">:separator_slash</span>, <span class="ruby-value">:separator_dash</span>], <span class="ruby-value">:scalar_month</span>, <span class="ruby-value">:separator_at?</span>, <span class="ruby-string">'time?'</span>], <span class="ruby-value">:handle_sd_sm</span>),
+    <span class="ruby-constant">Handler</span>.<span class="ruby-identifier">new</span>([<span class="ruby-value">:scalar_day</span>, [<span class="ruby-value">:separator_slash</span>, <span class="ruby-value">:separator_dash</span>], <span class="ruby-value">:scalar_month</span>, [<span class="ruby-value">:separator_slash</span>, <span class="ruby-value">:separator_dash</span>], <span class="ruby-value">:scalar_year</span>, <span class="ruby-value">:separator_at?</span>, <span class="ruby-string">'time?'</span>], <span class="ruby-value">:handle_sd_sm_sy</span>)
+  ]
+
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">endian</span> = <span class="ruby-constant">Array</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:endian_precedence</span>]).<span class="ruby-identifier">first</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:little</span>
+    <span class="ruby-identifier">@@definitions</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:endian</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">endians</span>.<span class="ruby-identifier">reverse</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-value">:middle</span>
+    <span class="ruby-identifier">@@definitions</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:endian</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">endians</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;Unknown endian option '#{endian}'&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- definitions-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- definitions-method -->
+
+    
+      <div id="method-i-guess" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">guess</span><span
+            class="method-args">(span, mode = :middle)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Guess a specific time within the given span.</p>
+
+<p>span - The <a href="Span.html">Chronic::Span</a> object to calcuate a guess
+from.</p>
+
+<p>Returns a new <a href="Time.html">Time</a> object.</p>
+          
+
+          
+          <div class="method-source-code" id="guess-source">
+            <pre><span class="ruby-comment"># File lib/chronic/parser.rb, line 133</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">guess</span>(<span class="ruby-identifier">span</span>, <span class="ruby-identifier">mode</span> = <span class="ruby-value">:middle</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">span</span> <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">mode</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">span</span>.<span class="ruby-identifier">begin</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">span</span>.<span class="ruby-identifier">width</span> <span class="ruby-operator">/</span> <span class="ruby-value">2</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">span</span>.<span class="ruby-identifier">width</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span> <span class="ruby-keyword">and</span> (<span class="ruby-identifier">mode</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">mode</span> <span class="ruby-operator">==</span> <span class="ruby-value">:middle</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">span</span>.<span class="ruby-identifier">end</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">mode</span> <span class="ruby-operator">==</span> <span class="ruby-value">:end</span>
+  <span class="ruby-identifier">span</span>.<span class="ruby-identifier">begin</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- guess-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- guess-method -->
+
+    
+      <div id="method-i-parse" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">parse</span><span
+            class="method-args">(text)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Parse “text” with the given options Returns either a <a
+href="Time.html">Time</a> or <a href="Span.html">Chronic::Span</a>,
+depending on the value of <a href="http://:guess">options</a></p>
+          
+
+          
+          <div class="method-source-code" id="parse-source">
+            <pre><span class="ruby-comment"># File lib/chronic/parser.rb, line 59</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">parse</span>(<span class="ruby-identifier">text</span>)
+  <span class="ruby-identifier">tokens</span> = <span class="ruby-identifier">tokenize</span>(<span class="ruby-identifier">text</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">span</span> = <span class="ruby-identifier">tokens_to_span</span>(<span class="ruby-identifier">tokens</span>, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:text</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">text</span>))
+
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;+#{'-' * 51}\n| #{tokens}\n+#{'-' * 51}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">Chronic</span>.<span class="ruby-identifier">debug</span>
+
+  <span class="ruby-identifier">guess</span>(<span class="ruby-identifier">span</span>, <span class="ruby-identifier">options</span>[<span class="ruby-value">:guess</span>]) <span class="ruby-keyword">if</span> <span class="ruby-identifier">span</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- parse-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- parse-method -->
+
+    
+      <div id="method-i-pre_normalize" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pre_normalize</span><span
+            class="method-args">(text)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Clean up the specified text ready for parsing.</p>
+
+<p>Clean up the string by stripping unwanted characters, converting idioms to
+their canonical form, converting number words to numbers (three =&gt; 3),
+and converting ordinal words to numeric ordinals (third =&gt; 3rd)</p>
+
+<p>text - The String text to normalize.</p>
+
+<p>Examples:</p>
+
+<pre class="ruby"><span class="ruby-constant">Chronic</span>.<span class="ruby-identifier">pre_normalize</span>(<span class="ruby-string">'first day in May'</span>)
+  <span class="ruby-comment">#=&gt; &quot;1st day in may&quot;</span>
+
+<span class="ruby-constant">Chronic</span>.<span class="ruby-identifier">pre_normalize</span>(<span class="ruby-string">'tomorrow after noon'</span>)
+  <span class="ruby-comment">#=&gt; &quot;next day future 12:00&quot;</span>
+
+<span class="ruby-constant">Chronic</span>.<span class="ruby-identifier">pre_normalize</span>(<span class="ruby-string">'one hundred and thirty six days from now'</span>)
+  <span class="ruby-comment">#=&gt; &quot;136 days future this second&quot;</span>
+</pre>
+
+<p>Returns a new String ready for <a href="../Chronic.html">Chronic</a> to
+parse.</p>
+          
+
+          
+          <div class="method-source-code" id="pre_normalize-source">
+            <pre><span class="ruby-comment"># File lib/chronic/parser.rb, line 89</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">pre_normalize</span>(<span class="ruby-identifier">text</span>)
+  <span class="ruby-identifier">text</span> = <span class="ruby-identifier">text</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">downcase</span>
+  <span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/\b(\d{2})\.(\d{2})\.(\d{4})\b/</span>, <span class="ruby-string">'\3 / \2 / \1'</span>)
+  <span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/\b([ap])\.m\.?/</span>, <span class="ruby-string">'\1m'</span>)
+  <span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/(\s+|:\d{2}|:\d{2}\.\d{3})\-(\d{2}:?\d{2})\b/</span>, <span class="ruby-string">'\1tzminus\2'</span>)
+  <span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/\./</span>, <span class="ruby-string">':'</span>)
+  <span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/([ap]):m:?/</span>, <span class="ruby-string">'\1m'</span>)
+  <span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/['&quot;]/</span>, <span class="ruby-string">''</span>)
+  <span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/,/</span>, <span class="ruby-string">' '</span>)
+  <span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/^second /</span>, <span class="ruby-string">'2nd '</span>)
+  <span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/\bsecond (of|day|month|hour|minute|second)\b/</span>, <span class="ruby-string">'2nd \1'</span>)
+  <span class="ruby-identifier">text</span> = <span class="ruby-constant">Numerizer</span>.<span class="ruby-identifier">numerize</span>(<span class="ruby-identifier">text</span>)
+  <span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/([\/\-\,\@])/</span>) { <span class="ruby-string">' '</span> <span class="ruby-operator">+</span> <span class="ruby-node">$1</span> <span class="ruby-operator">+</span> <span class="ruby-string">' '</span> }
+  <span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/(?:^|\s)0(\d+:\d+\s*pm?\b)/</span>, <span class="ruby-string">' \1'</span>)
+  <span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/\btoday\b/</span>, <span class="ruby-string">'this day'</span>)
+  <span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/\btomm?orr?ow\b/</span>, <span class="ruby-string">'next day'</span>)
+  <span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/\byesterday\b/</span>, <span class="ruby-string">'last day'</span>)
+  <span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/\bnoon\b/</span>, <span class="ruby-string">'12:00pm'</span>)
+  <span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/\bmidnight\b/</span>, <span class="ruby-string">'24:00'</span>)
+  <span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/\bnow\b/</span>, <span class="ruby-string">'this second'</span>)
+  <span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-string">'quarter'</span>, <span class="ruby-string">'15'</span>)
+  <span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-string">'half'</span>, <span class="ruby-string">'30'</span>)
+  <span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/(\d{1,2}) (to|till|prior to|before)\b/</span>, <span class="ruby-string">'\1 minutes past'</span>)
+  <span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/(\d{1,2}) (after|past)\b/</span>, <span class="ruby-string">'\1 minutes future'</span>)
+  <span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/\b(?:ago|before(?: now)?)\b/</span>, <span class="ruby-string">'past'</span>)
+  <span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/\bthis (?:last|past)\b/</span>, <span class="ruby-string">'last'</span>)
+  <span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/\b(?:in|during) the (morning)\b/</span>, <span class="ruby-string">'\1'</span>)
+  <span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/\b(?:in the|during the|at) (afternoon|evening|night)\b/</span>, <span class="ruby-string">'\1'</span>)
+  <span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/\btonight\b/</span>, <span class="ruby-string">'this night'</span>)
+  <span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/\b\d+:?\d*[ap]\b/</span>,<span class="ruby-string">'\0m'</span>)
+  <span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/\b(\d{2})(\d{2})(am|pm)\b/</span>, <span class="ruby-string">'\1:\2\3'</span>)
+  <span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/(\d)([ap]m|oclock)\b/</span>, <span class="ruby-string">'\1 \2'</span>)
+  <span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/\b(hence|after|from)\b/</span>, <span class="ruby-string">'future'</span>)
+  <span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/^\s?an? /</span>, <span class="ruby-string">'1 '</span>)
+  <span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/\b(\d{4}):(\d{2}):(\d{2})\b/</span>, <span class="ruby-string">'\1 / \2 / \3'</span>) <span class="ruby-comment"># DTOriginal</span>
+  <span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">/\b0(\d+):(\d{2}):(\d{2}) ([ap]m)\b/</span>, <span class="ruby-string">'\1:\2:\3 \4'</span>)
+  <span class="ruby-identifier">text</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- pre_normalize-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- pre_normalize-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

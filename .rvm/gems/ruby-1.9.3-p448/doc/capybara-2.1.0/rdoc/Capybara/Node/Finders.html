@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module Capybara::Node::Finders - capybara-2.1.0 Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/capybara/node/finders.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-all">#all</a>
+    
+    <li><a href="#method-i-field_labeled">#field_labeled</a>
+    
+    <li><a href="#method-i-find">#find</a>
+    
+    <li><a href="#method-i-find_button">#find_button</a>
+    
+    <li><a href="#method-i-find_by_id">#find_by_id</a>
+    
+    <li><a href="#method-i-find_field">#find_field</a>
+    
+    <li><a href="#method-i-find_link">#find_link</a>
+    
+    <li><a href="#method-i-first">#first</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../lib/capybara/spec/fixtures/another_test_file_txt.html">another_test_file</a>
+  
+    <li class="file"><a href="../../lib/capybara/spec/fixtures/test_file_txt.html">test_file</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../Capybara.html">Capybara</a>
+  
+    <li><a href="../../Capybara/Ambiguous.html">Capybara::Ambiguous</a>
+  
+    <li><a href="../../Capybara/CapybaraError.html">Capybara::CapybaraError</a>
+  
+    <li><a href="../../Capybara/DSL.html">Capybara::DSL</a>
+  
+    <li><a href="../../Capybara/Driver.html">Capybara::Driver</a>
+  
+    <li><a href="../../Capybara/Driver/Base.html">Capybara::Driver::Base</a>
+  
+    <li><a href="../../Capybara/Driver/Node.html">Capybara::Driver::Node</a>
+  
+    <li><a href="../../Capybara/DriverNotFoundError.html">Capybara::DriverNotFoundError</a>
+  
+    <li><a href="../../Capybara/ElementNotFound.html">Capybara::ElementNotFound</a>
+  
+    <li><a href="../../Capybara/ExpectationNotMet.html">Capybara::ExpectationNotMet</a>
+  
+    <li><a href="../../Capybara/Features.html">Capybara::Features</a>
+  
+    <li><a href="../../Capybara/FileNotFound.html">Capybara::FileNotFound</a>
+  
+    <li><a href="../../Capybara/FrozenInTime.html">Capybara::FrozenInTime</a>
+  
+    <li><a href="../../Capybara/Helpers.html">Capybara::Helpers</a>
+  
+    <li><a href="../../Capybara/InfiniteRedirectError.html">Capybara::InfiniteRedirectError</a>
+  
+    <li><a href="../../Capybara/Node.html">Capybara::Node</a>
+  
+    <li><a href="../../Capybara/Node/Actions.html">Capybara::Node::Actions</a>
+  
+    <li><a href="../../Capybara/Node/Base.html">Capybara::Node::Base</a>
+  
+    <li><a href="../../Capybara/Node/Document.html">Capybara::Node::Document</a>
+  
+    <li><a href="../../Capybara/Node/Element.html">Capybara::Node::Element</a>
+  
+    <li><a href="../../Capybara/Node/Finders.html">Capybara::Node::Finders</a>
+  
+    <li><a href="../../Capybara/Node/Matchers.html">Capybara::Node::Matchers</a>
+  
+    <li><a href="../../Capybara/Node/Simple.html">Capybara::Node::Simple</a>
+  
+    <li><a href="../../Capybara/NotSupportedByDriverError.html">Capybara::NotSupportedByDriverError</a>
+  
+    <li><a href="../../Capybara/Query.html">Capybara::Query</a>
+  
+    <li><a href="../../Capybara/RSpecMatchers.html">Capybara::RSpecMatchers</a>
+  
+    <li><a href="../../Capybara/RSpecMatchers/HaveSelector.html">Capybara::RSpecMatchers::HaveSelector</a>
+  
+    <li><a href="../../Capybara/RSpecMatchers/HaveText.html">Capybara::RSpecMatchers::HaveText</a>
+  
+    <li><a href="../../Capybara/RSpecMatchers/HaveTitle.html">Capybara::RSpecMatchers::HaveTitle</a>
+  
+    <li><a href="../../Capybara/RSpecMatchers/Matcher.html">Capybara::RSpecMatchers::Matcher</a>
+  
+    <li><a href="../../Capybara/RackTest.html">Capybara::RackTest</a>
+  
+    <li><a href="../../Capybara/RackTest/Browser.html">Capybara::RackTest::Browser</a>
+  
+    <li><a href="../../Capybara/RackTest/CSSHandlers.html">Capybara::RackTest::CSSHandlers</a>
+  
+    <li><a href="../../Capybara/RackTest/Driver.html">Capybara::RackTest::Driver</a>
+  
+    <li><a href="../../Capybara/RackTest/Form.html">Capybara::RackTest::Form</a>
+  
+    <li><a href="../../Capybara/RackTest/Form/NilUploadedFile.html">Capybara::RackTest::Form::NilUploadedFile</a>
+  
+    <li><a href="../../Capybara/RackTest/Node.html">Capybara::RackTest::Node</a>
+  
+    <li><a href="../../Capybara/Result.html">Capybara::Result</a>
+  
+    <li><a href="../../Capybara/Selector.html">Capybara::Selector</a>
+  
+    <li><a href="../../Capybara/Selector/Filter.html">Capybara::Selector::Filter</a>
+  
+    <li><a href="../../Capybara/Selenium.html">Capybara::Selenium</a>
+  
+    <li><a href="../../Capybara/Selenium/Driver.html">Capybara::Selenium::Driver</a>
+  
+    <li><a href="../../Capybara/Selenium/Node.html">Capybara::Selenium::Node</a>
+  
+    <li><a href="../../Capybara/Server.html">Capybara::Server</a>
+  
+    <li><a href="../../Capybara/Server/Middleware.html">Capybara::Server::Middleware</a>
+  
+    <li><a href="../../Capybara/Session.html">Capybara::Session</a>
+  
+    <li><a href="../../Capybara/SpecHelper.html">Capybara::SpecHelper</a>
+  
+    <li><a href="../../Capybara/UnselectNotAllowed.html">Capybara::UnselectNotAllowed</a>
+  
+    <li><a href="../../TestApp.html">TestApp</a>
+  
+    <li><a href="../../TestApp/TestAppError.html">TestApp::TestAppError</a>
+  
+    <li><a href="../../Object.html">Object</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module Capybara::Node::Finders</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-all" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">all</span><span
+            class="method-args">(*args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Find all elements on the page matching the given selector and options.</p>
+
+<p>Both XPath and CSS expressions are supported, but <a
+href="../../Capybara.html">Capybara</a> does not try to automatically
+distinguish between them. The following statements are equivalent:</p>
+
+<pre>page.all(:css, 'a#person_123')
+page.all(:xpath, '//a[@id=&quot;person_123&quot;]')</pre>
+
+<p>If the type of selector is left out, <a
+href="../../Capybara.html">Capybara</a> uses {<a
+href="../../Capybara.html#attribute-c-default_selector">Capybara.default_selector</a>}.
+It’s set to :css by default.</p>
+
+<pre>page.all(&quot;a#person_123&quot;)
+
+Capybara.default_selector = :xpath
+page.all('//a[@id=&quot;person_123&quot;]')</pre>
+
+<p>The set of found elements can further be restricted by specifying options.
+It’s possible to select elements by their text or visibility:</p>
+
+<pre class="ruby"><span class="ruby-identifier">page</span>.<span class="ruby-identifier">all</span>(<span class="ruby-string">'a'</span>, :<span class="ruby-identifier">text</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'Home'</span>)
+<span class="ruby-identifier">page</span>.<span class="ruby-identifier">all</span>(<span class="ruby-string">'#menu li'</span>, :<span class="ruby-identifier">visible</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>)
+</pre>
+
+<p>@overload <a href="http://kind">all(</a>, locator, options)</p>
+
+<pre>@param [:css, :xpath] kind                 The type of selector
+@param [String] locator                    The selector
+@option options [String, Regexp] text      Only find elements which contain this text or match this regexp
+@option options [Boolean] visible          Only find elements that are visible on the page. Setting this to false
+                                           finds invisible _and_ visible elements.
+@option options [Boolean] exact            Control whether `is` expressions in the given XPath match exactly or partially</pre>
+
+<p>@return [Capybara::Result]                   A collection of found elements</p>
+          
+
+          
+          <div class="method-source-code" id="all-source">
+            <pre><span class="ruby-comment"># File lib/capybara/node/finders.rb, line 128</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">all</span>(*<span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">resolve_query</span>(<span class="ruby-constant">Capybara</span><span class="ruby-operator">::</span><span class="ruby-constant">Query</span>.<span class="ruby-identifier">new</span>(*<span class="ruby-identifier">args</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- all-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- all-method -->
+
+    
+      <div id="method-i-field_labeled" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">field_labeled</span><span
+            class="method-args">(locator, options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Finders.html#method-i-find_field">find_field</a>
+        </div>
+        
+      </div><!-- field_labeled-method -->
+
+    
+      <div id="method-i-find" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find</span><span
+            class="method-args">(*args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Find an {Capybara::Element} based on the given arguments. <code>find</code>
+will raise an error if the element is not found.</p>
+
+<p>If the driver is capable of executing JavaScript, <code>find</code> will
+wait for a set amount of time and continuously retry finding the element
+until either the element is found or the time expires. The length of time
+<code>find</code> will wait is controlled through {<a
+href="../../Capybara.html#attribute-c-default_wait_time">Capybara.default_wait_time</a>}
+and defaults to 2 seconds.</p>
+
+<p><code>find</code> takes the same options as <code>all</code>.</p>
+
+<pre class="ruby"><span class="ruby-identifier">page</span>.<span class="ruby-identifier">find</span>(<span class="ruby-string">'#foo'</span>).<span class="ruby-identifier">find</span>(<span class="ruby-string">'.bar'</span>)
+<span class="ruby-identifier">page</span>.<span class="ruby-identifier">find</span>(:<span class="ruby-identifier">xpath</span>, <span class="ruby-string">'//div[contains(., &quot;bar&quot;)]'</span>)
+<span class="ruby-identifier">page</span>.<span class="ruby-identifier">find</span>(<span class="ruby-string">'li'</span>, :<span class="ruby-identifier">text</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'Quox'</span>).<span class="ruby-identifier">click_link</span>(<span class="ruby-string">'Delete'</span>)
+</pre>
+
+<p>@param (see <a href="Finders.html#method-i-all">#all</a>) @option options
+[Boolean] match        The matching strategy to use. @option options
+[false, Numeric] wait  How long to wait for the element to appear.</p>
+
+<p>@return [Capybara::Element]            The found element @raise 
+[Capybara::ElementNotFound]    If the element can’t be found before time
+expires</p>
+          
+
+          
+          <div class="method-source-code" id="find-source">
+            <pre><span class="ruby-comment"># File lib/capybara/node/finders.rb, line 28</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">find</span>(*<span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">query</span> = <span class="ruby-constant">Capybara</span><span class="ruby-operator">::</span><span class="ruby-constant">Query</span>.<span class="ruby-identifier">new</span>(*<span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">synchronize</span>(<span class="ruby-identifier">query</span>.<span class="ruby-identifier">wait</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">query</span>.<span class="ruby-identifier">match</span> <span class="ruby-operator">==</span> <span class="ruby-value">:smart</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">query</span>.<span class="ruby-identifier">match</span> <span class="ruby-operator">==</span> <span class="ruby-value">:prefer_exact</span>
+      <span class="ruby-identifier">result</span> = <span class="ruby-identifier">resolve_query</span>(<span class="ruby-identifier">query</span>, <span class="ruby-keyword">true</span>)
+      <span class="ruby-identifier">result</span> = <span class="ruby-identifier">resolve_query</span>(<span class="ruby-identifier">query</span>, <span class="ruby-keyword">false</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span> <span class="ruby-keyword">and</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">query</span>.<span class="ruby-identifier">exact?</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">result</span> = <span class="ruby-identifier">resolve_query</span>(<span class="ruby-identifier">query</span>)
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">query</span>.<span class="ruby-identifier">match</span> <span class="ruby-operator">==</span> <span class="ruby-value">:one</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">query</span>.<span class="ruby-identifier">match</span> <span class="ruby-operator">==</span> <span class="ruby-value">:smart</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">1</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">Capybara</span><span class="ruby-operator">::</span><span class="ruby-constant">Ambiguous</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">&quot;Ambiguous match, found #{result.size} elements matching #{query.description}&quot;</span>)
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">Capybara</span><span class="ruby-operator">::</span><span class="ruby-constant">ElementNotFound</span>.<span class="ruby-identifier">new</span>(<span class="ruby-node">&quot;Unable to find #{query.description}&quot;</span>)
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">result</span>.<span class="ruby-identifier">first</span>
+  <span class="ruby-keyword">end</span>.<span class="ruby-identifier">tap</span>(&amp;<span class="ruby-value">:allow_reload!</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- find-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- find-method -->
+
+    
+      <div id="method-i-find_button" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find_button</span><span
+            class="method-args">(locator, options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Find a button on the page. The button can be found by its id, name or
+value.</p>
+
+<p>@param [String] locator       Which button to find @return
+[Capybara::Element]   The found element</p>
+          
+
+          
+          <div class="method-source-code" id="find_button-source">
+            <pre><span class="ruby-comment"># File lib/capybara/node/finders.rb, line 77</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">find_button</span>(<span class="ruby-identifier">locator</span>, <span class="ruby-identifier">options</span>={})
+  <span class="ruby-identifier">find</span>(<span class="ruby-value">:button</span>, <span class="ruby-identifier">locator</span>, <span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- find_button-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- find_button-method -->
+
+    
+      <div id="method-i-find_by_id" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find_by_id</span><span
+            class="method-args">(id, options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Find a element on the page, given its id.</p>
+
+<p>@param [String] id            Which element to find @return
+[Capybara::Element]   The found element</p>
+          
+
+          
+          <div class="method-source-code" id="find_by_id-source">
+            <pre><span class="ruby-comment"># File lib/capybara/node/finders.rb, line 88</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">find_by_id</span>(<span class="ruby-identifier">id</span>, <span class="ruby-identifier">options</span>={})
+  <span class="ruby-identifier">find</span>(<span class="ruby-value">:id</span>, <span class="ruby-identifier">id</span>, <span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- find_by_id-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- find_by_id-method -->
+
+    
+      <div id="method-i-find_field" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find_field</span><span
+            class="method-args">(locator, options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Find a form field on the page. The field can be found by its name, id or
+label text.</p>
+
+<p>@param [String] locator       Which field to find @return
+[Capybara::Element]   The found element</p>
+          
+
+          
+          <div class="method-source-code" id="find_field-source">
+            <pre><span class="ruby-comment"># File lib/capybara/node/finders.rb, line 54</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">find_field</span>(<span class="ruby-identifier">locator</span>, <span class="ruby-identifier">options</span>={})
+  <span class="ruby-identifier">find</span>(<span class="ruby-value">:field</span>, <span class="ruby-identifier">locator</span>, <span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- find_field-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Finders.html#method-i-field_labeled">field_labeled</a>
+        </div>
+        
+
+        
+      </div><!-- find_field-method -->
+
+    
+      <div id="method-i-find_link" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find_link</span><span
+            class="method-args">(locator, options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Find a link on the page. The link can be found by its id or text.</p>
+
+<p>@param [String] locator       Which link to find @return
+[Capybara::Element]   The found element</p>
+          
+
+          
+          <div class="method-source-code" id="find_link-source">
+            <pre><span class="ruby-comment"># File lib/capybara/node/finders.rb, line 66</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">find_link</span>(<span class="ruby-identifier">locator</span>, <span class="ruby-identifier">options</span>={})
+  <span class="ruby-identifier">find</span>(<span class="ruby-value">:link</span>, <span class="ruby-identifier">locator</span>, <span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- find_link-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- find_link-method -->
+
+    
+      <div id="method-i-first" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">first</span><span
+            class="method-args">(*args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Find the first element on the page matching the given selector and options,
+or nil if no element matches.</p>
+
+<p>@overload <a href="http://kind">first(</a>, locator, options)</p>
+
+<pre>@param [:css, :xpath] kind                 The type of selector
+@param [String] locator                    The selector
+@param [Hash] options                      Additional options; see {#all}</pre>
+
+<p>@return [Capybara::Element]                  The found element or nil</p>
+          
+
+          
+          <div class="method-source-code" id="first-source">
+            <pre><span class="ruby-comment"># File lib/capybara/node/finders.rb, line 143</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">first</span>(*<span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">all</span>(*<span class="ruby-identifier">args</span>).<span class="ruby-identifier">first</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- first-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- first-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

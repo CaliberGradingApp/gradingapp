@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Object - main-5.2.0 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/main/dsl.rb
+    <li>lib/main/stdext.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">BasicObject
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-argument">#argument</a>
+    
+    <li><a href="#method-i-can_has">#can_has</a>
+    
+    <li><a href="#method-i-default_options-21">#default_options!</a>
+    
+    <li><a href="#method-i-environment">#environment</a>
+    
+    <li><a href="#method-i-has">#has</a>
+    
+    <li><a href="#method-i-keyword">#keyword</a>
+    
+    <li><a href="#method-i-mixin">#mixin</a>
+    
+    <li><a href="#method-i-mode">#mode</a>
+    
+    <li><a href="#method-i-option">#option</a>
+    
+    <li><a href="#method-i-parameter">#parameter</a>
+    
+    <li><a href="#method-i-singleton_class">#singleton_class</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Main.html">Main</a>
+  
+    <li><a href="./Main/Cast.html">Main::Cast</a>
+  
+    <li><a href="./Main/GetoptLong.html">Main::GetoptLong</a>
+  
+    <li><a href="./Main/GetoptLong/AmbigousOption.html">Main::GetoptLong::AmbigousOption</a>
+  
+    <li><a href="./Main/GetoptLong/InvalidOption.html">Main::GetoptLong::InvalidOption</a>
+  
+    <li><a href="./Main/GetoptLong/MissingArgument.html">Main::GetoptLong::MissingArgument</a>
+  
+    <li><a href="./Main/GetoptLong/NeedlessArgument.html">Main::GetoptLong::NeedlessArgument</a>
+  
+    <li><a href="./Main/Logger.html">Main::Logger</a>
+  
+    <li><a href="./Main/Logger/OnOff.html">Main::Logger::OnOff</a>
+  
+    <li><a href="./Main/Mode.html">Main::Mode</a>
+  
+    <li><a href="./Main/Mode/Ambiguous.html">Main::Mode::Ambiguous</a>
+  
+    <li><a href="./Main/Mode/Duplicate.html">Main::Mode::Duplicate</a>
+  
+    <li><a href="./Main/Mode/Error.html">Main::Mode::Error</a>
+  
+    <li><a href="./Main/Mode/List.html">Main::Mode::List</a>
+  
+    <li><a href="./Main/Parameter.html">Main::Parameter</a>
+  
+    <li><a href="./Main/Parameter/AmbigousOption.html">Main::Parameter::AmbigousOption</a>
+  
+    <li><a href="./Main/Parameter/Argument.html">Main::Parameter::Argument</a>
+  
+    <li><a href="./Main/Parameter/Arity.html">Main::Parameter::Arity</a>
+  
+    <li><a href="./Main/Parameter/DSL.html">Main::Parameter::DSL</a>
+  
+    <li><a href="./Main/Parameter/Environment.html">Main::Parameter::Environment</a>
+  
+    <li><a href="./Main/Parameter/Error.html">Main::Parameter::Error</a>
+  
+    <li><a href="./Main/Parameter/InValid.html">Main::Parameter::InValid</a>
+  
+    <li><a href="./Main/Parameter/InvalidOption.html">Main::Parameter::InvalidOption</a>
+  
+    <li><a href="./Main/Parameter/Keyword.html">Main::Parameter::Keyword</a>
+  
+    <li><a href="./Main/Parameter/List.html">Main::Parameter::List</a>
+  
+    <li><a href="./Main/Parameter/MissingArgument.html">Main::Parameter::MissingArgument</a>
+  
+    <li><a href="./Main/Parameter/NeedlessArgument.html">Main::Parameter::NeedlessArgument</a>
+  
+    <li><a href="./Main/Parameter/NoneSuch.html">Main::Parameter::NoneSuch</a>
+  
+    <li><a href="./Main/Parameter/NotGiven.html">Main::Parameter::NotGiven</a>
+  
+    <li><a href="./Main/Parameter/Option.html">Main::Parameter::Option</a>
+  
+    <li><a href="./Main/Parameter/Table.html">Main::Parameter::Table</a>
+  
+    <li><a href="./Main/Parameter/Table/BoundsCheck.html">Main::Parameter::Table::BoundsCheck</a>
+  
+    <li><a href="./Main/Program.html">Main::Program</a>
+  
+    <li><a href="./Main/Program/ClassMethods.html">Main::Program::ClassMethods</a>
+  
+    <li><a href="./Main/Program/ClassMethods/Factory.html">Main::Program::ClassMethods::Factory</a>
+  
+    <li><a href="./Main/Program/InstanceMethods.html">Main::Program::InstanceMethods</a>
+  
+    <li><a href="./Main/Softspoken.html">Main::Softspoken</a>
+  
+    <li><a href="./Main/Usage.html">Main::Usage</a>
+  
+    <li><a href="./Main/Util.html">Main::Util</a>
+  
+    <li><a href="./Main/Util/ClassMethods.html">Main::Util::ClassMethods</a>
+  
+    <li><a href="./Main/Util/InstanceMethods.html">Main::Util::InstanceMethods</a>
+  
+    <li><a href="./Main/Util/Methods.html">Main::Util::Methods</a>
+  
+    <li><a href="./Kernel.html">Kernel</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./Process.html">Process</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Object</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-argument" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">argument</span><span
+            class="method-args">(*a, &b)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="argument-source">
+            <pre><span class="ruby-comment"># File lib/main/dsl.rb, line 5</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">argument</span>(*<span class="ruby-identifier">a</span>, &amp;<span class="ruby-identifier">b</span>)
+  (<span class="ruby-identifier">parameters</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Parameter</span>.<span class="ruby-identifier">create</span>(<span class="ruby-value">:argument</span>, <span class="ruby-keyword">self</span>, *<span class="ruby-identifier">a</span>, &amp;<span class="ruby-identifier">b</span>)).<span class="ruby-identifier">last</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- argument-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- argument-method -->
+
+    
+      <div id="method-i-can_has" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">can_has</span><span
+            class="method-args">(ptype, *a, &b)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="can_has-source">
+            <pre><span class="ruby-comment"># File lib/main/dsl.rb, line 37</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">can_has</span>(<span class="ruby-identifier">ptype</span>, *<span class="ruby-identifier">a</span>, &amp;<span class="ruby-identifier">b</span>)
+  <span class="ruby-identifier">key</span> = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">to_s</span>}.<span class="ruby-identifier">sort_by</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-operator">-</span><span class="ruby-identifier">s</span>.<span class="ruby-identifier">size</span> }.<span class="ruby-identifier">first</span>
+  <span class="ruby-identifier">can_has_hash</span>.<span class="ruby-identifier">update</span> <span class="ruby-identifier">key</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-identifier">ptype</span>, <span class="ruby-identifier">a</span>, <span class="ruby-identifier">b</span>]
+  <span class="ruby-identifier">key</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- can_has-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- can_has-method -->
+
+    
+      <div id="method-i-default_options-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">default_options!</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="default_options-21-source">
+            <pre><span class="ruby-comment"># File lib/main/dsl.rb, line 26</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">default_options!</span>
+  <span class="ruby-identifier">option</span> <span class="ruby-string">'help'</span>, <span class="ruby-string">'h'</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">parameters</span>.<span class="ruby-identifier">has_option?</span>(<span class="ruby-string">'help'</span>, <span class="ruby-string">'h'</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- default_options-21-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- default_options-21-method -->
+
+    
+      <div id="method-i-environment" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">environment</span><span
+            class="method-args">(*a, &b)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="environment-source">
+            <pre><span class="ruby-comment"># File lib/main/dsl.rb, line 21</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">environment</span>(*<span class="ruby-identifier">a</span>, &amp;<span class="ruby-identifier">b</span>)
+  (<span class="ruby-identifier">parameters</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Parameter</span>.<span class="ruby-identifier">create</span>(<span class="ruby-value">:environment</span>, <span class="ruby-keyword">self</span>, *<span class="ruby-identifier">a</span>, &amp;<span class="ruby-identifier">b</span>)).<span class="ruby-identifier">last</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- environment-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- environment-method -->
+
+    
+      <div id="method-i-has" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">has</span><span
+            class="method-args">(key, *keys)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="has-source">
+            <pre><span class="ruby-comment"># File lib/main/dsl.rb, line 43</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">has</span>(<span class="ruby-identifier">key</span>, *<span class="ruby-identifier">keys</span>)
+  <span class="ruby-identifier">keys</span> = [<span class="ruby-identifier">key</span>, *<span class="ruby-identifier">keys</span>].<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">compact</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">k</span><span class="ruby-operator">|</span> <span class="ruby-identifier">k</span>.<span class="ruby-identifier">to_s</span>}
+  <span class="ruby-identifier">keys</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">ptype</span>, <span class="ruby-identifier">a</span>, <span class="ruby-identifier">b</span> = <span class="ruby-identifier">can_has_hash</span>[<span class="ruby-identifier">key</span>]
+    <span class="ruby-identifier">abort</span> <span class="ruby-node">&quot;yo - can *not* has #{ key.inspect }!?&quot;</span> <span class="ruby-keyword">unless</span>(<span class="ruby-identifier">ptype</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">a</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">b</span>)
+    <span class="ruby-identifier">send</span> <span class="ruby-identifier">ptype</span>, *<span class="ruby-identifier">a</span>, &amp;<span class="ruby-identifier">b</span>
+    <span class="ruby-identifier">key</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- has-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- has-method -->
+
+    
+      <div id="method-i-keyword" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">keyword</span><span
+            class="method-args">(*a, &b)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="keyword-source">
+            <pre><span class="ruby-comment"># File lib/main/dsl.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">keyword</span>(*<span class="ruby-identifier">a</span>, &amp;<span class="ruby-identifier">b</span>)
+  (<span class="ruby-identifier">parameters</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Parameter</span>.<span class="ruby-identifier">create</span>(<span class="ruby-value">:keyword</span>, <span class="ruby-keyword">self</span>, *<span class="ruby-identifier">a</span>, &amp;<span class="ruby-identifier">b</span>)).<span class="ruby-identifier">last</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- keyword-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- keyword-method -->
+
+    
+      <div id="method-i-mixin" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mixin</span><span
+            class="method-args">(name, *names, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="mixin-source">
+            <pre><span class="ruby-comment"># File lib/main/dsl.rb, line 53</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mixin</span>(<span class="ruby-identifier">name</span>, *<span class="ruby-identifier">names</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">names</span> = [<span class="ruby-identifier">name</span>, *<span class="ruby-identifier">names</span>].<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">compact</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">name</span><span class="ruby-operator">|</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>}
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">block</span>
+    <span class="ruby-identifier">names</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">mixin_table</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-identifier">block</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">names</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">module_eval</span>(&amp;<span class="ruby-identifier">mixin_table</span>[<span class="ruby-identifier">name</span>])
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- mixin-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- mixin-method -->
+
+    
+      <div id="method-i-mode" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mode</span><span
+            class="method-args">(name, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="mode-source">
+            <pre><span class="ruby-comment"># File lib/main/dsl.rb, line 30</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mode</span>(<span class="ruby-identifier">name</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">name</span> = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-identifier">modes</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-identifier">block</span>
+  <span class="ruby-identifier">block</span>.<span class="ruby-identifier">fattr</span>(<span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">block</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- mode-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- mode-method -->
+
+    
+      <div id="method-i-option" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">option</span><span
+            class="method-args">(*a, &b)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="option-source">
+            <pre><span class="ruby-comment"># File lib/main/dsl.rb, line 10</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">option</span>(*<span class="ruby-identifier">a</span>, &amp;<span class="ruby-identifier">b</span>)
+  (<span class="ruby-identifier">parameters</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Parameter</span>.<span class="ruby-identifier">create</span>(<span class="ruby-value">:option</span>, <span class="ruby-keyword">self</span>, *<span class="ruby-identifier">a</span>, &amp;<span class="ruby-identifier">b</span>)).<span class="ruby-identifier">last</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- option-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- option-method -->
+
+    
+      <div id="method-i-parameter" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">parameter</span><span
+            class="method-args">(*a, &b)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="parameter-source">
+            <pre><span class="ruby-comment"># File lib/main/dsl.rb, line 1</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">parameter</span>(*<span class="ruby-identifier">a</span>, &amp;<span class="ruby-identifier">b</span>)
+  (<span class="ruby-identifier">parameters</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Parameter</span>.<span class="ruby-identifier">create</span>(<span class="ruby-value">:parameter</span>, <span class="ruby-keyword">self</span>, *<span class="ruby-identifier">a</span>, &amp;<span class="ruby-identifier">b</span>)).<span class="ruby-identifier">last</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- parameter-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- parameter-method -->
+
+    
+      <div id="method-i-singleton_class" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">singleton_class</span><span
+            class="method-args">(object = self, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="singleton_class-source">
+            <pre><span class="ruby-comment"># File lib/main/stdext.rb, line 2</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">singleton_class</span>(<span class="ruby-identifier">object</span> = <span class="ruby-keyword">self</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">singleton_class</span> =
+    <span class="ruby-keyword">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">object</span>
+      <span class="ruby-keyword">self</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">block</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">singleton_class</span>.<span class="ruby-identifier">module_eval</span>(&amp;<span class="ruby-identifier">block</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">singleton_class</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- singleton_class-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- singleton_class-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

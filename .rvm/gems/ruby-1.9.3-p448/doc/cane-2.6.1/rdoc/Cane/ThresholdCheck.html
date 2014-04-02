@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Cane::ThresholdCheck - cane-2.6.1 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/cane/threshold_check.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Struct.new(:opts)
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-key">::key</a>
+    
+    <li><a href="#method-c-options">::options</a>
+    
+    <li><a href="#method-i-normalized_limit">#normalized_limit</a>
+    
+    <li><a href="#method-i-thresholds">#thresholds</a>
+    
+    <li><a href="#method-i-value_from_file">#value_from_file</a>
+    
+    <li><a href="#method-i-violations">#violations</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Cane.html">Cane</a>
+  
+    <li><a href="../Cane/AbcCheck.html">Cane::AbcCheck</a>
+  
+    <li><a href="../Cane/AbcCheck/InvalidAst.html">Cane::AbcCheck::InvalidAst</a>
+  
+    <li><a href="../Cane/AbcCheck/RubyAst.html">Cane::AbcCheck::RubyAst</a>
+  
+    <li><a href="../Cane/CLI.html">Cane::CLI</a>
+  
+    <li><a href="../Cane/CLI/Parser.html">Cane::CLI::Parser</a>
+  
+    <li><a href="../Cane/CLI/Parser/OptionsHandled.html">Cane::CLI::Parser::OptionsHandled</a>
+  
+    <li><a href="../Cane/DocCheck.html">Cane::DocCheck</a>
+  
+    <li><a href="../Cane/EncodingAwareIterator.html">Cane::EncodingAwareIterator</a>
+  
+    <li><a href="../Cane/File.html">Cane::File</a>
+  
+    <li><a href="../Cane/JsonFormatter.html">Cane::JsonFormatter</a>
+  
+    <li><a href="../Cane/RakeTask.html">Cane::RakeTask</a>
+  
+    <li><a href="../Cane/Runner.html">Cane::Runner</a>
+  
+    <li><a href="../Cane/SimpleTaskRunner.html">Cane::SimpleTaskRunner</a>
+  
+    <li><a href="../Cane/StyleCheck.html">Cane::StyleCheck</a>
+  
+    <li><a href="../Cane/ThresholdCheck.html">Cane::ThresholdCheck</a>
+  
+    <li><a href="../Cane/ThresholdCheck/UnavailableValue.html">Cane::ThresholdCheck::UnavailableValue</a>
+  
+    <li><a href="../Cane/ViolationFormatter.html">Cane::ViolationFormatter</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Cane::ThresholdCheck</h1>
+
+  <div id="description" class="description">
+    
+<p>Configurable check that allows the contents of a file to be compared
+against a given value.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="THRESHOLDS">THRESHOLDS
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-key" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">key</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="key-source">
+            <pre><span class="ruby-comment"># File lib/cane/threshold_check.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">key</span>; <span class="ruby-value">:threshold</span>; <span class="ruby-keyword">end</span></pre>
+          </div><!-- key-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- key-method -->
+
+    
+      <div id="method-c-options" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">options</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="options-source">
+            <pre><span class="ruby-comment"># File lib/cane/threshold_check.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">options</span>
+  <span class="ruby-constant">THRESHOLDS</span>.<span class="ruby-identifier">each_with_object</span>({}) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span>), <span class="ruby-identifier">h</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">h</span>[<span class="ruby-identifier">key</span>] = [<span class="ruby-node">&quot;Check the number in FILE is #{value} to THRESHOLD &quot;</span> <span class="ruby-operator">+</span>
+              <span class="ruby-string">&quot;(a number or another file name)&quot;</span>,
+                <span class="ruby-identifier">variable</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;FILE,THRESHOLD&quot;</span>,
+                <span class="ruby-identifier">type</span><span class="ruby-operator">:</span>     <span class="ruby-constant">Array</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- options-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- options-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-normalized_limit" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">normalized_limit</span><span
+            class="method-args">(limit)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="normalized_limit-source">
+            <pre><span class="ruby-comment"># File lib/cane/threshold_check.rb, line 49</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">normalized_limit</span>(<span class="ruby-identifier">limit</span>)
+  <span class="ruby-constant">Float</span>(<span class="ruby-identifier">limit</span>)
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">ArgumentError</span>
+  <span class="ruby-identifier">value_from_file</span>(<span class="ruby-identifier">limit</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- normalized_limit-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- normalized_limit-method -->
+
+    
+      <div id="method-i-thresholds" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">thresholds</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="thresholds-source">
+            <pre><span class="ruby-comment"># File lib/cane/threshold_check.rb, line 63</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">thresholds</span>
+  <span class="ruby-constant">THRESHOLDS</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-identifier">k</span>, []).<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">x</span>.<span class="ruby-identifier">unshift</span>(<span class="ruby-identifier">v</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>.<span class="ruby-identifier">reduce</span>(<span class="ruby-value">:+</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- thresholds-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- thresholds-method -->
+
+    
+      <div id="method-i-value_from_file" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">value_from_file</span><span
+            class="method-args">(file)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="value_from_file-source">
+            <pre><span class="ruby-comment"># File lib/cane/threshold_check.rb, line 55</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">value_from_file</span>(<span class="ruby-identifier">file</span>)
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">contents</span> = <span class="ruby-constant">Cane</span><span class="ruby-operator">::</span><span class="ruby-constant">File</span>.<span class="ruby-identifier">contents</span>(<span class="ruby-identifier">file</span>).<span class="ruby-identifier">scan</span>(<span class="ruby-regexp">/\d+\.?\d*/</span>).<span class="ruby-identifier">first</span>.<span class="ruby-identifier">to_f</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">ENOENT</span>
+    <span class="ruby-constant">UnavailableValue</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- value_from_file-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- value_from_file-method -->
+
+    
+      <div id="method-i-violations" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">violations</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="violations-source">
+            <pre><span class="ruby-comment"># File lib/cane/threshold_check.rb, line 26</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">violations</span>
+  <span class="ruby-identifier">thresholds</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">operator</span>, <span class="ruby-identifier">file</span>, <span class="ruby-identifier">threshold</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">value</span> = <span class="ruby-identifier">normalized_limit</span>(<span class="ruby-identifier">file</span>)
+    <span class="ruby-identifier">limit</span> = <span class="ruby-identifier">normalized_limit</span>(<span class="ruby-identifier">threshold</span>)
+
+    <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">limit</span>.<span class="ruby-identifier">real?</span>
+      {
+        <span class="ruby-identifier">description</span><span class="ruby-operator">:</span> <span class="ruby-string">'Quality threshold could not be read'</span>,
+        <span class="ruby-identifier">label</span><span class="ruby-operator">:</span>       <span class="ruby-string">&quot;%s is not a number or a file&quot;</span> <span class="ruby-operator">%</span> [
+          <span class="ruby-identifier">threshold</span>
+        ]
+      }
+    <span class="ruby-keyword">elsif</span> <span class="ruby-operator">!</span><span class="ruby-identifier">value</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">operator</span>, <span class="ruby-identifier">limit</span>)
+      {
+        <span class="ruby-identifier">description</span><span class="ruby-operator">:</span> <span class="ruby-string">'Quality threshold crossed'</span>,
+        <span class="ruby-identifier">label</span><span class="ruby-operator">:</span>       <span class="ruby-string">&quot;%s is %s, should be %s %s&quot;</span> <span class="ruby-operator">%</span> [
+          <span class="ruby-identifier">file</span>, <span class="ruby-identifier">value</span>, <span class="ruby-identifier">operator</span>, <span class="ruby-identifier">limit</span>
+        ]
+      }
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>.<span class="ruby-identifier">compact</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- violations-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- violations-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"auto_shift_type:EFI""SexpProcessor#auto_shift_type;FI"RW;F:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I">Automatically shifts off the Sexp type before handing the;TI"Sexp to process_<type>;T:
+@fileI"lib/sexp_processor.rb;TF@

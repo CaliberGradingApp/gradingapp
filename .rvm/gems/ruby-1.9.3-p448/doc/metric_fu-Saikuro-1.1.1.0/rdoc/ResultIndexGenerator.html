@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module ResultIndexGenerator - metric_fu-Saikuro-1.1.1.0 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/saikuro.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-list_analyzed_files">#list_analyzed_files</a>
+    
+    <li><a href="#method-i-print_summary_table_rows">#print_summary_table_rows</a>
+    
+    <li><a href="#method-i-summarize_errors_and_warnings">#summarize_errors_and_warnings</a>
+    
+    <li><a href="#method-i-write_cyclo_index">#write_cyclo_index</a>
+    
+    <li><a href="#method-i-write_index">#write_index</a>
+    
+    <li><a href="#method-i-write_token_index">#write_token_index</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./README.html">README</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./BaseFormater.html">BaseFormater</a>
+  
+    <li><a href="./EndableParseState.html">EndableParseState</a>
+  
+    <li><a href="./Filter.html">Filter</a>
+  
+    <li><a href="./HTMLStyleSheet.html">HTMLStyleSheet</a>
+  
+    <li><a href="./HTMLTokenCounterFormater.html">HTMLTokenCounterFormater</a>
+  
+    <li><a href="./ParseBlock.html">ParseBlock</a>
+  
+    <li><a href="./ParseClass.html">ParseClass</a>
+  
+    <li><a href="./ParseComment.html">ParseComment</a>
+  
+    <li><a href="./ParseCond.html">ParseCond</a>
+  
+    <li><a href="./ParseDef.html">ParseDef</a>
+  
+    <li><a href="./ParseDoCond.html">ParseDoCond</a>
+  
+    <li><a href="./ParseModule.html">ParseModule</a>
+  
+    <li><a href="./ParseState.html">ParseState</a>
+  
+    <li><a href="./ParseStateFormater.html">ParseStateFormater</a>
+  
+    <li><a href="./ParseSymbol.html">ParseSymbol</a>
+  
+    <li><a href="./RDoc.html">RDoc</a>
+  
+    <li><a href="./ResultIndexGenerator.html">ResultIndexGenerator</a>
+  
+    <li><a href="./Saikuro.html">Saikuro</a>
+  
+    <li><a href="./SaikuroCMDLineRunner.html">SaikuroCMDLineRunner</a>
+  
+    <li><a href="./StateHTMLComplexityFormater.html">StateHTMLComplexityFormater</a>
+  
+    <li><a href="./TokenCounter.html">TokenCounter</a>
+  
+    <li><a href="./TokenCounterFormater.html">TokenCounterFormater</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module ResultIndexGenerator</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-list_analyzed_files" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">list_analyzed_files</span><span
+            class="method-args">(files)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="list_analyzed_files-source">
+            <pre><span class="ruby-comment"># File lib/saikuro.rb, line 969</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">list_analyzed_files</span>(<span class="ruby-identifier">files</span>)
+  <span class="ruby-identifier">f</span> = <span class="ruby-constant">StringIO</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;&lt;h2 class=\&quot;class_name\&quot;&gt;Analyzed Files&lt;/h2&gt;&quot;</span>
+  <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;&lt;ul&gt;&quot;</span>
+  <span class="ruby-identifier">files</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">fname</span>, <span class="ruby-identifier">warnings</span>, <span class="ruby-identifier">errors</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">readname</span> = <span class="ruby-identifier">fname</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;_&quot;</span>)[<span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-value">-1</span>].<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;_&quot;</span>)
+    <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;&lt;li&gt;&quot;</span>
+    <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;&lt;p class=\&quot;file_name\&quot;&gt;&lt;a href=\&quot;./#{fname}\&quot;&gt;#{readname}&lt;/a&gt;&quot;</span>
+    <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;&lt;/li&gt;&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;&lt;/ul&gt;&quot;</span>
+  <span class="ruby-identifier">f</span>.<span class="ruby-identifier">string</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- list_analyzed_files-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- list_analyzed_files-method -->
+
+    
+      <div id="method-i-print_summary_table_rows" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">print_summary_table_rows</span><span
+            class="method-args">(ewvals, klass_type)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="print_summary_table_rows-source">
+            <pre><span class="ruby-comment"># File lib/saikuro.rb, line 958</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">print_summary_table_rows</span>(<span class="ruby-identifier">ewvals</span>, <span class="ruby-identifier">klass_type</span>)
+  <span class="ruby-identifier">f</span> = <span class="ruby-constant">StringIO</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">ewvals</span>.<span class="ruby-identifier">sort</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">a</span>,<span class="ruby-identifier">b</span><span class="ruby-operator">|</span> <span class="ruby-identifier">b</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">a</span>}.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">v</span>, <span class="ruby-identifier">vals</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">vals</span>.<span class="ruby-identifier">sort</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">fname</span>, <span class="ruby-identifier">c</span>, <span class="ruby-identifier">m</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;&lt;tr&gt;&lt;td&gt;&lt;a href=\&quot;./#{fname}\&quot;&gt;#{c}&lt;/a&gt;&lt;/td&gt;&lt;td&gt;#{m}&lt;/td&gt;&quot;</span>
+      <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;&lt;td class=\&quot;#{klass_type}\&quot;&gt;#{v}&lt;/td&gt;&lt;/tr&gt;&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">f</span>.<span class="ruby-identifier">string</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- print_summary_table_rows-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- print_summary_table_rows-method -->
+
+    
+      <div id="method-i-summarize_errors_and_warnings" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">summarize_errors_and_warnings</span><span
+            class="method-args">(enw, header)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="summarize_errors_and_warnings-source">
+            <pre><span class="ruby-comment"># File lib/saikuro.rb, line 932</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">summarize_errors_and_warnings</span>(<span class="ruby-identifier">enw</span>, <span class="ruby-identifier">header</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">enw</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-identifier">f</span> = <span class="ruby-constant">StringIO</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">erval</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">h</span>,<span class="ruby-identifier">k</span><span class="ruby-operator">|</span> <span class="ruby-identifier">h</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span> }
+  <span class="ruby-identifier">wval</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">h</span>,<span class="ruby-identifier">k</span><span class="ruby-operator">|</span> <span class="ruby-identifier">h</span>[<span class="ruby-identifier">k</span>] = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span> }
+
+  <span class="ruby-identifier">enw</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">fname</span>, <span class="ruby-identifier">warnings</span>, <span class="ruby-identifier">errors</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">errors</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">c</span>,<span class="ruby-identifier">m</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">erval</span>[<span class="ruby-identifier">v</span>] <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">fname</span>, <span class="ruby-identifier">c</span>, <span class="ruby-identifier">m</span>]
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">warnings</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">c</span>,<span class="ruby-identifier">m</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">wval</span>[<span class="ruby-identifier">v</span>] <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">fname</span>, <span class="ruby-identifier">c</span>, <span class="ruby-identifier">m</span>]
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;&lt;h2 class=\&quot;class_name\&quot;&gt;Errors and Warnings&lt;/h2&gt;&quot;</span>
+  <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;&lt;table width=\&quot;100%\&quot; border=\&quot;1\&quot;&gt;&quot;</span>
+  <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">header</span>
+
+  <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">print_summary_table_rows</span>(<span class="ruby-identifier">erval</span>, <span class="ruby-string">&quot;error&quot;</span>)
+  <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">print_summary_table_rows</span>(<span class="ruby-identifier">wval</span>, <span class="ruby-string">&quot;warning&quot;</span>)
+  <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;&lt;/table&gt;&quot;</span>
+
+  <span class="ruby-identifier">f</span>.<span class="ruby-identifier">string</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- summarize_errors_and_warnings-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- summarize_errors_and_warnings-method -->
+
+    
+      <div id="method-i-write_cyclo_index" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">write_cyclo_index</span><span
+            class="method-args">(files, output_dir)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="write_cyclo_index-source">
+            <pre><span class="ruby-comment"># File lib/saikuro.rb, line 1001</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">write_cyclo_index</span>(<span class="ruby-identifier">files</span>, <span class="ruby-identifier">output_dir</span>)
+  <span class="ruby-identifier">header</span> = <span class="ruby-string">&quot;&lt;tr&gt;&lt;th&gt;Class&lt;/th&gt;&lt;th&gt;Method&lt;/th&gt;&lt;th&gt;Complexity&lt;/th&gt;&lt;/tr&gt;&quot;</span>
+  <span class="ruby-identifier">write_index</span>(<span class="ruby-identifier">files</span>,
+              <span class="ruby-node">&quot;#{output_dir}/index_cyclo.html&quot;</span>,
+              <span class="ruby-string">&quot;Index for cyclomatic complexity&quot;</span>,
+              <span class="ruby-identifier">header</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- write_cyclo_index-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- write_cyclo_index-method -->
+
+    
+      <div id="method-i-write_index" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">write_index</span><span
+            class="method-args">(files, filename, title, header)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="write_index-source">
+            <pre><span class="ruby-comment"># File lib/saikuro.rb, line 983</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">write_index</span>(<span class="ruby-identifier">files</span>, <span class="ruby-identifier">filename</span>, <span class="ruby-identifier">title</span>, <span class="ruby-identifier">header</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">files</span>.<span class="ruby-identifier">empty?</span>
+
+  <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">filename</span>,<span class="ruby-string">&quot;w&quot;</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;&lt;html&gt;&lt;head&gt;&lt;title&gt;#{title}&lt;/title&gt;&lt;/head&gt;&quot;</span>
+    <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{HTMLStyleSheet.style_sheet}\n&lt;body&gt;&quot;</span>
+    <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;&lt;h1&gt;#{title}&lt;/h1&gt;&quot;</span>
+
+    <span class="ruby-identifier">enw</span> = <span class="ruby-identifier">files</span>.<span class="ruby-identifier">find_all</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">fn</span>,<span class="ruby-identifier">w</span>,<span class="ruby-identifier">e</span><span class="ruby-operator">|</span> (<span class="ruby-operator">!</span><span class="ruby-identifier">w</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">||</span> <span class="ruby-operator">!</span><span class="ruby-identifier">e</span>.<span class="ruby-identifier">empty?</span>) }
+
+    <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">summarize_errors_and_warnings</span>(<span class="ruby-identifier">enw</span>, <span class="ruby-identifier">header</span>)
+
+    <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;&lt;hr/&gt;&quot;</span>
+    <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">list_analyzed_files</span>(<span class="ruby-identifier">files</span>)
+    <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;&lt;/body&gt;&lt;/html&gt;&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- write_index-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- write_index-method -->
+
+    
+      <div id="method-i-write_token_index" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">write_token_index</span><span
+            class="method-args">(files, output_dir)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="write_token_index-source">
+            <pre><span class="ruby-comment"># File lib/saikuro.rb, line 1009</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">write_token_index</span>(<span class="ruby-identifier">files</span>, <span class="ruby-identifier">output_dir</span>)
+  <span class="ruby-identifier">header</span> = <span class="ruby-node">&quot;&lt;tr&gt;&lt;th&gt;File&lt;/th&gt;&lt;th&gt;Line #&lt;/th&gt;&lt;th&gt;Tokens&lt;/th&gt;&lt;/tr&gt;&quot;</span>
+  <span class="ruby-identifier">write_index</span>(<span class="ruby-identifier">files</span>,
+              <span class="ruby-node">&quot;#{output_dir}/index_token.html&quot;</span>,
+              <span class="ruby-string">&quot;Index for tokens per line&quot;</span>,
+              <span class="ruby-identifier">header</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- write_token_index-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- write_token_index-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module Capybara - capybara-2.1.0 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/capybara.rb
+    <li>lib/capybara/spec/spec_helper.rb
+    <li>lib/capybara/node/document.rb
+    <li>lib/capybara/node/finders.rb
+    <li>lib/capybara/node/base.rb
+    <li>lib/capybara/node/element.rb
+    <li>lib/capybara/node/simple.rb
+    <li>lib/capybara/node/matchers.rb
+    <li>lib/capybara/node/actions.rb
+    <li>lib/capybara/session.rb
+    <li>lib/capybara/selector.rb
+    <li>lib/capybara/rspec/matchers.rb
+    <li>lib/capybara/rspec/features.rb
+    <li>lib/capybara/driver/node.rb
+    <li>lib/capybara/server.rb
+    <li>lib/capybara/dsl.rb
+    <li>lib/capybara/version.rb
+    <li>lib/capybara/helpers.rb
+    <li>lib/capybara/result.rb
+    <li>lib/capybara/query.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-add_selector">::add_selector</a>
+    
+    <li><a href="#method-c-configure">::configure</a>
+    
+    <li><a href="#method-c-current_driver">::current_driver</a>
+    
+    <li><a href="#method-c-current_session">::current_session</a>
+    
+    <li><a href="#method-c-default_driver">::default_driver</a>
+    
+    <li><a href="#method-c-deprecate">::deprecate</a>
+    
+    <li><a href="#method-c-drivers">::drivers</a>
+    
+    <li><a href="#method-c-included">::included</a>
+    
+    <li><a href="#method-c-javascript_driver">::javascript_driver</a>
+    
+    <li><a href="#method-c-mode">::mode</a>
+    
+    <li><a href="#method-c-register_driver">::register_driver</a>
+    
+    <li><a href="#method-c-reset-21">::reset!</a>
+    
+    <li><a href="#method-c-reset_sessions-21">::reset_sessions!</a>
+    
+    <li><a href="#method-c-run_default_server">::run_default_server</a>
+    
+    <li><a href="#method-c-server">::server</a>
+    
+    <li><a href="#method-c-session_name">::session_name</a>
+    
+    <li><a href="#method-c-string">::string</a>
+    
+    <li><a href="#method-c-use_default_driver">::use_default_driver</a>
+    
+    <li><a href="#method-c-using_driver">::using_driver</a>
+    
+    <li><a href="#method-c-using_session">::using_session</a>
+    
+    <li><a href="#method-c-using_wait_time">::using_wait_time</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./lib/capybara/spec/fixtures/another_test_file_txt.html">another_test_file</a>
+  
+    <li class="file"><a href="./lib/capybara/spec/fixtures/test_file_txt.html">test_file</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Capybara.html">Capybara</a>
+  
+    <li><a href="./Capybara/Ambiguous.html">Capybara::Ambiguous</a>
+  
+    <li><a href="./Capybara/CapybaraError.html">Capybara::CapybaraError</a>
+  
+    <li><a href="./Capybara/DSL.html">Capybara::DSL</a>
+  
+    <li><a href="./Capybara/Driver.html">Capybara::Driver</a>
+  
+    <li><a href="./Capybara/Driver/Base.html">Capybara::Driver::Base</a>
+  
+    <li><a href="./Capybara/Driver/Node.html">Capybara::Driver::Node</a>
+  
+    <li><a href="./Capybara/DriverNotFoundError.html">Capybara::DriverNotFoundError</a>
+  
+    <li><a href="./Capybara/ElementNotFound.html">Capybara::ElementNotFound</a>
+  
+    <li><a href="./Capybara/ExpectationNotMet.html">Capybara::ExpectationNotMet</a>
+  
+    <li><a href="./Capybara/Features.html">Capybara::Features</a>
+  
+    <li><a href="./Capybara/FileNotFound.html">Capybara::FileNotFound</a>
+  
+    <li><a href="./Capybara/FrozenInTime.html">Capybara::FrozenInTime</a>
+  
+    <li><a href="./Capybara/Helpers.html">Capybara::Helpers</a>
+  
+    <li><a href="./Capybara/InfiniteRedirectError.html">Capybara::InfiniteRedirectError</a>
+  
+    <li><a href="./Capybara/Node.html">Capybara::Node</a>
+  
+    <li><a href="./Capybara/Node/Actions.html">Capybara::Node::Actions</a>
+  
+    <li><a href="./Capybara/Node/Base.html">Capybara::Node::Base</a>
+  
+    <li><a href="./Capybara/Node/Document.html">Capybara::Node::Document</a>
+  
+    <li><a href="./Capybara/Node/Element.html">Capybara::Node::Element</a>
+  
+    <li><a href="./Capybara/Node/Finders.html">Capybara::Node::Finders</a>
+  
+    <li><a href="./Capybara/Node/Matchers.html">Capybara::Node::Matchers</a>
+  
+    <li><a href="./Capybara/Node/Simple.html">Capybara::Node::Simple</a>
+  
+    <li><a href="./Capybara/NotSupportedByDriverError.html">Capybara::NotSupportedByDriverError</a>
+  
+    <li><a href="./Capybara/Query.html">Capybara::Query</a>
+  
+    <li><a href="./Capybara/RSpecMatchers.html">Capybara::RSpecMatchers</a>
+  
+    <li><a href="./Capybara/RSpecMatchers/HaveSelector.html">Capybara::RSpecMatchers::HaveSelector</a>
+  
+    <li><a href="./Capybara/RSpecMatchers/HaveText.html">Capybara::RSpecMatchers::HaveText</a>
+  
+    <li><a href="./Capybara/RSpecMatchers/HaveTitle.html">Capybara::RSpecMatchers::HaveTitle</a>
+  
+    <li><a href="./Capybara/RSpecMatchers/Matcher.html">Capybara::RSpecMatchers::Matcher</a>
+  
+    <li><a href="./Capybara/RackTest.html">Capybara::RackTest</a>
+  
+    <li><a href="./Capybara/RackTest/Browser.html">Capybara::RackTest::Browser</a>
+  
+    <li><a href="./Capybara/RackTest/CSSHandlers.html">Capybara::RackTest::CSSHandlers</a>
+  
+    <li><a href="./Capybara/RackTest/Driver.html">Capybara::RackTest::Driver</a>
+  
+    <li><a href="./Capybara/RackTest/Form.html">Capybara::RackTest::Form</a>
+  
+    <li><a href="./Capybara/RackTest/Form/NilUploadedFile.html">Capybara::RackTest::Form::NilUploadedFile</a>
+  
+    <li><a href="./Capybara/RackTest/Node.html">Capybara::RackTest::Node</a>
+  
+    <li><a href="./Capybara/Result.html">Capybara::Result</a>
+  
+    <li><a href="./Capybara/Selector.html">Capybara::Selector</a>
+  
+    <li><a href="./Capybara/Selector/Filter.html">Capybara::Selector::Filter</a>
+  
+    <li><a href="./Capybara/Selenium.html">Capybara::Selenium</a>
+  
+    <li><a href="./Capybara/Selenium/Driver.html">Capybara::Selenium::Driver</a>
+  
+    <li><a href="./Capybara/Selenium/Node.html">Capybara::Selenium::Node</a>
+  
+    <li><a href="./Capybara/Server.html">Capybara::Server</a>
+  
+    <li><a href="./Capybara/Server/Middleware.html">Capybara::Server::Middleware</a>
+  
+    <li><a href="./Capybara/Session.html">Capybara::Session</a>
+  
+    <li><a href="./Capybara/SpecHelper.html">Capybara::SpecHelper</a>
+  
+    <li><a href="./Capybara/UnselectNotAllowed.html">Capybara::UnselectNotAllowed</a>
+  
+    <li><a href="./TestApp.html">TestApp</a>
+  
+    <li><a href="./TestApp/TestAppError.html">TestApp::TestAppError</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module Capybara</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="VERSION">VERSION
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-c-always_include_port" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">always_include_port</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-c-app" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">app</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-c-app_host" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">app_host</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-c-asset_host" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">asset_host</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-c-automatic_reload" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">automatic_reload</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-c-current_driver" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">current_driver</span><span
+            class="attribute-access-type">[W]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-c-default_driver" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">default_driver</span><span
+            class="attribute-access-type">[W]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-c-default_host" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">default_host</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-c-default_selector" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">default_selector</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-c-default_wait_time" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">default_wait_time</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-c-exact" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">exact</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-c-exact_options" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">exact_options</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-c-ignore_hidden_elements" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">ignore_hidden_elements</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-c-javascript_driver" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">javascript_driver</span><span
+            class="attribute-access-type">[W]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-c-match" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">match</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-c-raise_server_errors" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">raise_server_errors</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-c-run_server" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">run_server</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-c-save_and_open_page_path" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">save_and_open_page_path</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-c-server_host" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">server_host</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-c-server_port" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">server_port</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-c-session_name" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">session_name</span><span
+            class="attribute-access-type">[W]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-c-visible_text_only" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">visible_text_only</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-add_selector" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_selector</span><span
+            class="method-args">(name, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Add a new selector to <a href="Capybara.html">Capybara</a>. Selectors can
+be used by various methods in <a href="Capybara.html">Capybara</a> to find
+certain elements on the page in a more convenient way. For example adding a
+selector to find certain table rows might look like this:</p>
+
+<pre class="ruby"><span class="ruby-constant">Capybara</span>.<span class="ruby-identifier">add_selector</span>(:<span class="ruby-identifier">row</span>) <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">xpath</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">num</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot;.//tbody/tr[#{num}]&quot;</span> }
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>This makes it possible to use this selector in a variety of ways:</p>
+
+<pre>find(:row, 3)
+page.find('table#myTable').find(:row, 3).text
+page.find('table#myTable').has_selector?(:row, 3)
+within(:row, 3) { page.should have_content('$100.000') }</pre>
+
+<p>Here is another example:</p>
+
+<pre class="ruby"><span class="ruby-constant">Capybara</span>.<span class="ruby-identifier">add_selector</span>(:<span class="ruby-identifier">id</span>) <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">xpath</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">id</span><span class="ruby-operator">|</span> <span class="ruby-constant">XPath</span>.<span class="ruby-identifier">descendant</span>[<span class="ruby-constant">XPath</span>.<span class="ruby-identifier">attr</span>(:<span class="ruby-identifier">id</span>) <span class="ruby-operator">==</span> <span class="ruby-identifier">id</span>.<span class="ruby-identifier">to_s</span>] }
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>Note that this particular selector already ships with <a
+href="Capybara.html">Capybara</a>.</p>
+
+<p>@param [Symbol] name    The name of the selector to add @yield             
+A block executed in the context of the new {Capybara::Selector}</p>
+          
+
+          
+          <div class="method-source-code" id="add_selector-source">
+            <pre><span class="ruby-comment"># File lib/capybara.rb, line 102</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">add_selector</span>(<span class="ruby-identifier">name</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-constant">Capybara</span><span class="ruby-operator">::</span><span class="ruby-constant">Selector</span>.<span class="ruby-identifier">add</span>(<span class="ruby-identifier">name</span>, &amp;<span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- add_selector-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- add_selector-method -->
+
+    
+      <div id="method-c-configure" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">configure</span><span
+            class="method-args">() { |self| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Configure <a href="Capybara.html">Capybara</a> to suit your needs.</p>
+
+<pre class="ruby"><span class="ruby-constant">Capybara</span>.<span class="ruby-identifier">configure</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">config</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">config</span>.<span class="ruby-identifier">run_server</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-identifier">config</span>.<span class="ruby-identifier">app_host</span>   = <span class="ruby-string">'http://www.google.com'</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<h3 id="method-c-configure-label-Configurable+options">Configurable options</h3>
+<dl class="rdoc-list label-list"><dt><a href="Capybara.html#attribute-c-app_host">::app_host</a> = String
+<dd>
+<p>The default host to use when giving a relative URL to visit</p>
+</dd><dt><a href="Capybara.html#attribute-c-always_include_port">::always_include_port</a> = Boolean
+<dd>
+<p>Whether the Rack server’s port should automatically be inserted into every
+visited URL (Default: false)</p>
+</dd><dt><a href="Capybara.html#attribute-c-asset_host">::asset_host</a> = String
+<dd>
+<p>Where dynamic assets are hosted - will be prepended to relative asset
+locations if present (Default: nil)</p>
+</dd><dt><a href="Capybara.html#attribute-c-run_server">::run_server</a> = Boolean
+<dd>
+<p>Whether to start a Rack server for the given Rack app (Default: true)</p>
+</dd><dt><a href="Capybara.html#attribute-c-default_selector">::default_selector</a> = :css/:xpath
+<dd>
+<p>Methods which take a selector use the given type by default (Default: CSS)</p>
+</dd><dt><a href="Capybara.html#attribute-c-default_wait_time">::default_wait_time</a> = Integer
+<dd>
+<p>The number of seconds to wait for asynchronous processes to finish
+(Default: 2)</p>
+</dd><dt><a href="Capybara.html#attribute-c-ignore_hidden_elements">::ignore_hidden_elements</a> = Boolean
+<dd>
+<p>Whether to ignore hidden elements on the page (Default: false)</p>
+</dd><dt><a href="Capybara.html#attribute-c-automatic_reload">::automatic_reload</a> = Boolean
+<dd>
+<p>Whether to automatically reload elements as <a
+href="Capybara.html">Capybara</a> is waiting (Default: true)</p>
+</dd><dt><a href="Capybara.html#attribute-c-save_and_open_page_path">::save_and_open_page_path</a> = String
+<dd>
+<p>Where to put pages saved through save_and_open_page (Default: Dir.pwd)</p>
+</dd></dl>
+
+<h3 id="method-c-configure-label-DSL+Options"><a href="Capybara/DSL.html">DSL</a> Options</h3>
+
+<p>when using capybara/dsl, the following options are also available:</p>
+<dl class="rdoc-list label-list"><dt><a href="Capybara.html#method-c-default_driver">::default_driver</a> = Symbol
+<dd>
+<p>The name of the driver to use by default. (Default: :rack_test)</p>
+</dd><dt><a href="Capybara.html#method-c-javascript_driver">::javascript_driver</a> = Symbol
+<dd>
+<p>The name of a driver to use for JavaScript enabled tests. (Default:
+:selenium)</p>
+</dd></dl>
+          
+
+          
+          <div class="method-source-code" id="configure-source">
+            <pre><span class="ruby-comment"># File lib/capybara.rb, line 53</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">configure</span>
+  <span class="ruby-keyword">yield</span> <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- configure-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- configure-method -->
+
+    
+      <div id="method-c-current_driver" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">current_driver</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@return [Symbol]    The name of the driver currently in use</p>
+          
+
+          
+          <div class="method-source-code" id="current_driver-source">
+            <pre><span class="ruby-comment"># File lib/capybara.rb, line 184</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">current_driver</span>
+  <span class="ruby-ivar">@current_driver</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">default_driver</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- current_driver-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Capybara.html#method-c-mode">mode</a>
+        </div>
+        
+
+        
+      </div><!-- current_driver-method -->
+
+    
+      <div id="method-c-current_session" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">current_session</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>The current <a href="Capybara/Session.html">Capybara::Session</a> based on
+what is set as <a href="Capybara.html#attribute-c-app">::app</a> and <a
+href="Capybara.html#method-c-current_driver">::current_driver</a></p>
+
+<p>@return [Capybara::Session]     The currently used session</p>
+          
+
+          
+          <div class="method-source-code" id="current_session-source">
+            <pre><span class="ruby-comment"># File lib/capybara.rb, line 235</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">current_session</span>
+  <span class="ruby-identifier">session_pool</span>[<span class="ruby-node">&quot;#{current_driver}:#{session_name}:#{app.object_id}&quot;</span>] <span class="ruby-operator">||=</span> <span class="ruby-constant">Capybara</span><span class="ruby-operator">::</span><span class="ruby-constant">Session</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">current_driver</span>, <span class="ruby-identifier">app</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- current_session-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- current_session-method -->
+
+    
+      <div id="method-c-default_driver" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">default_driver</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@return [Symbol]    The name of the driver to use by default</p>
+          
+
+          
+          <div class="method-source-code" id="default_driver-source">
+            <pre><span class="ruby-comment"># File lib/capybara.rb, line 176</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">default_driver</span>
+  <span class="ruby-ivar">@default_driver</span> <span class="ruby-operator">||</span> <span class="ruby-value">:rack_test</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- default_driver-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- default_driver-method -->
+
+    
+      <div id="method-c-deprecate" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">deprecate</span><span
+            class="method-args">(method, alternate_method)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="deprecate-source">
+            <pre><span class="ruby-comment"># File lib/capybara.rb, line 275</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">deprecate</span>(<span class="ruby-identifier">method</span>, <span class="ruby-identifier">alternate_method</span>)
+  <span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;DEPRECATED: ##{method} is deprecated, please use ##{alternate_method} instead&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- deprecate-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- deprecate-method -->
+
+    
+      <div id="method-c-drivers" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">drivers</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="drivers-source">
+            <pre><span class="ruby-comment"># File lib/capybara.rb, line 106</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">drivers</span>
+  <span class="ruby-ivar">@drivers</span> <span class="ruby-operator">||=</span> {}
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- drivers-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- drivers-method -->
+
+    
+      <div id="method-c-included" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">included</span><span
+            class="method-args">(base)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="included-source">
+            <pre><span class="ruby-comment"># File lib/capybara.rb, line 270</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">included</span>(<span class="ruby-identifier">base</span>)
+  <span class="ruby-identifier">base</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:include</span>, <span class="ruby-constant">Capybara</span><span class="ruby-operator">::</span><span class="ruby-constant">DSL</span>)
+  <span class="ruby-identifier">warn</span> <span class="ruby-string">&quot;`include Capybara` is deprecated. Please use `include Capybara::DSL` instead.&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- included-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- included-method -->
+
+    
+      <div id="method-c-javascript_driver" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">javascript_driver</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@return [Symbol]    The name of the driver used when JavaScript is needed</p>
+          
+
+          
+          <div class="method-source-code" id="javascript_driver-source">
+            <pre><span class="ruby-comment"># File lib/capybara.rb, line 193</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">javascript_driver</span>
+  <span class="ruby-ivar">@javascript_driver</span> <span class="ruby-operator">||</span> <span class="ruby-value">:selenium</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- javascript_driver-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- javascript_driver-method -->
+
+    
+      <div id="method-c-mode" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">mode</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Capybara.html#method-c-current_driver">current_driver</a>
+        </div>
+        
+      </div><!-- mode-method -->
+
+    
+      <div id="method-c-register_driver" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">register_driver</span><span
+            class="method-args">(name, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Register a new driver for <a href="Capybara.html">Capybara</a>.</p>
+
+<pre class="ruby"><span class="ruby-constant">Capybara</span>.<span class="ruby-identifier">register_driver</span> :<span class="ruby-identifier">rack_test</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">app</span><span class="ruby-operator">|</span>
+  <span class="ruby-constant">Capybara</span><span class="ruby-operator">::</span><span class="ruby-constant">Driver</span><span class="ruby-operator">::</span><span class="ruby-constant">RackTest</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">app</span>)
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>@param [Symbol] name                    The name of the new driver @yield
+[app]                            This block takes a rack app and returns a
+<a href="Capybara.html">Capybara</a> driver @yieldparam [&lt;Rack&gt;] app 
+The rack application that this driver runs agains. May be nil. @yieldreturn
+[Capybara::Driver::Base]   A <a href="Capybara.html">Capybara</a> driver
+instance</p>
+          
+
+          
+          <div class="method-source-code" id="register_driver-source">
+            <pre><span class="ruby-comment"># File lib/capybara.rb, line 70</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">register_driver</span>(<span class="ruby-identifier">name</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">drivers</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-identifier">block</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- register_driver-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- register_driver-method -->
+
+    
+      <div id="method-c-reset-21" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">reset!</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Capybara.html#method-c-reset_sessions-21">reset_sessions!</a>
+        </div>
+        
+      </div><!-- reset-21-method -->
+
+    
+      <div id="method-c-reset_sessions-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">reset_sessions!</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Reset sessions, cleaning out the pool of sessions. This will remove any
+session information such as cookies.</p>
+          
+
+          
+          <div class="method-source-code" id="reset_sessions-21-source">
+            <pre><span class="ruby-comment"># File lib/capybara.rb, line 244</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">reset_sessions!</span>
+  <span class="ruby-identifier">session_pool</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">mode</span>, <span class="ruby-identifier">session</span><span class="ruby-operator">|</span> <span class="ruby-identifier">session</span>.<span class="ruby-identifier">reset!</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- reset_sessions-21-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Capybara.html#method-c-reset-21">reset!</a>
+        </div>
+        
+
+        
+      </div><!-- reset_sessions-21-method -->
+
+    
+      <div id="method-c-run_default_server" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">run_default_server</span><span
+            class="method-args">(app, port)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Runs Capybara’s default server for the given application and port under
+most circumstances you should not have to call this method manually.</p>
+
+<p>@param [Rack Application] app    The rack application to run @param
+[Fixnum] port              The port to run the application on</p>
+          
+
+          
+          <div class="method-source-code" id="run_default_server-source">
+            <pre><span class="ruby-comment"># File lib/capybara.rb, line 167</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">run_default_server</span>(<span class="ruby-identifier">app</span>, <span class="ruby-identifier">port</span>)
+  <span class="ruby-identifier">require</span> <span class="ruby-string">'rack/handler/webrick'</span>
+  <span class="ruby-constant">Rack</span><span class="ruby-operator">::</span><span class="ruby-constant">Handler</span><span class="ruby-operator">::</span><span class="ruby-constant">WEBrick</span>.<span class="ruby-identifier">run</span>(<span class="ruby-identifier">app</span>, <span class="ruby-value">:Port</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">port</span>, <span class="ruby-value">:AccessLog</span> =<span class="ruby-operator">&gt;</span> [], <span class="ruby-value">:Logger</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">WEBrick</span><span class="ruby-operator">::</span><span class="ruby-constant">Log</span><span class="ruby-operator">::</span><span class="ruby-identifier">new</span>(<span class="ruby-keyword">nil</span>, <span class="ruby-value">0</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- run_default_server-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- run_default_server-method -->
+
+    
+      <div id="method-c-server" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">server</span><span
+            class="method-args">(&block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Register a proc that <a href="Capybara.html">Capybara</a> will call to run
+the Rack application.</p>
+
+<pre class="ruby"><span class="ruby-constant">Capybara</span>.<span class="ruby-identifier">server</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">app</span>, <span class="ruby-identifier">port</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">require</span> <span class="ruby-string">'rack/handler/mongrel'</span>
+  <span class="ruby-constant">Rack</span><span class="ruby-operator">::</span><span class="ruby-constant">Handler</span><span class="ruby-operator">::</span><span class="ruby-constant">Mongrel</span>.<span class="ruby-identifier">run</span>(<span class="ruby-identifier">app</span>, :<span class="ruby-constant">Port</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">port</span>)
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>By default, <a href="Capybara.html">Capybara</a> will try to run webrick.</p>
+
+<p>@yield [app, port]                      This block recieves a rack app and
+port and should run a Rack handler</p>
+          
+
+          
+          <div class="method-source-code" id="server-source">
+            <pre><span class="ruby-comment"># File lib/capybara.rb, line 123</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">server</span>(&amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+    <span class="ruby-ivar">@server</span> = <span class="ruby-identifier">block</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@server</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- server-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- server-method -->
+
+    
+      <div id="method-c-session_name" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">session_name</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>The current session name.</p>
+
+<p>@return [Symbol]    The name of the currently used session.</p>
+          
+
+          
+          <div class="method-source-code" id="session_name-source">
+            <pre><span class="ruby-comment"># File lib/capybara.rb, line 255</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">session_name</span>
+  <span class="ruby-ivar">@session_name</span> <span class="ruby-operator">||=</span> <span class="ruby-value">:default</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- session_name-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- session_name-method -->
+
+    
+      <div id="method-c-string" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">string</span><span
+            class="method-args">(html)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Wraps the given string, which should contain an HTML document or fragment
+in a {Capybara::Node::Simple} which exposes all {Capybara::Node::Matchers}
+and {Capybara::Node::Finders}. This allows you to query any string
+containing HTML in the exact same way you would query the current document
+in a <a href="Capybara.html">Capybara</a> session. For example:</p>
+
+<pre class="ruby"><span class="ruby-identifier">node</span> = <span class="ruby-constant">Capybara</span>.<span class="ruby-identifier">string</span> <span class="ruby-value">&lt;&lt;-HTML
+  &lt;ul&gt;
+    &lt;li id=&quot;home&quot;&gt;Home&lt;/li&gt;
+    &lt;li id=&quot;projects&quot;&gt;Projects&lt;/li&gt;
+  &lt;/ul&gt;
+HTML</span>
+
+<span class="ruby-identifier">node</span>.<span class="ruby-identifier">find</span>(<span class="ruby-string">'#projects'</span>).<span class="ruby-identifier">text</span> <span class="ruby-comment"># =&gt; 'Projects'</span>
+<span class="ruby-identifier">node</span>.<span class="ruby-identifier">has_selector?</span>(<span class="ruby-string">'li#home'</span>, :<span class="ruby-identifier">text</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'Home'</span>)
+<span class="ruby-identifier">node</span>.<span class="ruby-identifier">has_selector?</span>(:<span class="ruby-identifier">projects</span>)
+<span class="ruby-identifier">node</span>.<span class="ruby-identifier">find</span>(<span class="ruby-string">'ul'</span>).<span class="ruby-identifier">find</span>(<span class="ruby-string">'li'</span>).<span class="ruby-identifier">text</span> <span class="ruby-comment"># =&gt; 'Home'</span>
+</pre>
+
+<p>@param [String] html              An html fragment or document @return
+[Capybara::Node::Simple]   A node which has Capybara’s finders and matchers</p>
+          
+
+          
+          <div class="method-source-code" id="string-source">
+            <pre><span class="ruby-comment"># File lib/capybara.rb, line 154</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">string</span>(<span class="ruby-identifier">html</span>)
+  <span class="ruby-constant">Capybara</span><span class="ruby-operator">::</span><span class="ruby-constant">Node</span><span class="ruby-operator">::</span><span class="ruby-constant">Simple</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">html</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- string-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- string-method -->
+
+    
+      <div id="method-c-use_default_driver" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">use_default_driver</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Use the default driver as the current driver</p>
+          
+
+          
+          <div class="method-source-code" id="use_default_driver-source">
+            <pre><span class="ruby-comment"># File lib/capybara.rb, line 201</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">use_default_driver</span>
+  <span class="ruby-ivar">@current_driver</span> = <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- use_default_driver-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- use_default_driver-method -->
+
+    
+      <div id="method-c-using_driver" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">using_driver</span><span
+            class="method-args">(driver) { || ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Yield a block using a specific driver</p>
+          
+
+          
+          <div class="method-source-code" id="using_driver-source">
+            <pre><span class="ruby-comment"># File lib/capybara.rb, line 209</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">using_driver</span>(<span class="ruby-identifier">driver</span>)
+  <span class="ruby-identifier">previous_driver</span> = <span class="ruby-constant">Capybara</span>.<span class="ruby-identifier">current_driver</span>
+  <span class="ruby-constant">Capybara</span>.<span class="ruby-identifier">current_driver</span> = <span class="ruby-identifier">driver</span>
+  <span class="ruby-keyword">yield</span>
+<span class="ruby-keyword">ensure</span>
+  <span class="ruby-ivar">@current_driver</span> = <span class="ruby-identifier">previous_driver</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- using_driver-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- using_driver-method -->
+
+    
+      <div id="method-c-using_session" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">using_session</span><span
+            class="method-args">(name) { || ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Yield a block using a specific session name.</p>
+          
+
+          
+          <div class="method-source-code" id="using_session-source">
+            <pre><span class="ruby-comment"># File lib/capybara.rb, line 263</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">using_session</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">session_name</span> = <span class="ruby-identifier">name</span>
+  <span class="ruby-keyword">yield</span>
+<span class="ruby-keyword">ensure</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">session_name</span> = <span class="ruby-value">:default</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- using_session-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- using_session-method -->
+
+    
+      <div id="method-c-using_wait_time" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">using_wait_time</span><span
+            class="method-args">(seconds) { || ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Yield a block using a specific wait time</p>
+          
+
+          
+          <div class="method-source-code" id="using_wait_time-source">
+            <pre><span class="ruby-comment"># File lib/capybara.rb, line 221</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">using_wait_time</span>(<span class="ruby-identifier">seconds</span>)
+  <span class="ruby-identifier">previous_wait_time</span> = <span class="ruby-constant">Capybara</span>.<span class="ruby-identifier">default_wait_time</span>
+  <span class="ruby-constant">Capybara</span>.<span class="ruby-identifier">default_wait_time</span> = <span class="ruby-identifier">seconds</span>
+  <span class="ruby-keyword">yield</span>
+<span class="ruby-keyword">ensure</span>
+  <span class="ruby-constant">Capybara</span>.<span class="ruby-identifier">default_wait_time</span> = <span class="ruby-identifier">previous_wait_time</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- using_wait_time-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- using_wait_time-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

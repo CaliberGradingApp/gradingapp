@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class MetricFu::Generator - metric_fu-4.5.1 Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/metric_fu/metrics/generator.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="../Object.html">Object</a>
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-generators">::generators</a>
+    
+    <li><a href="#method-c-get_generator">::get_generator</a>
+    
+    <li><a href="#method-c-inherited">::inherited</a>
+    
+    <li><a href="#method-c-metric">::metric</a>
+    
+    <li><a href="#method-c-metric_directory">::metric_directory</a>
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-c-not_implemented">::not_implemented</a>
+    
+    <li><a href="#method-i-generate_result">#generate_result</a>
+    
+    <li><a href="#method-i-metric">#metric</a>
+    
+    <li><a href="#method-i-metric_config">#metric_config</a>
+    
+    <li><a href="#method-i-metric_directory">#metric_directory</a>
+    
+    <li><a href="#method-i-remove_excluded_files">#remove_excluded_files</a>
+    
+    <li><a href="#method-i-round_to_tenths">#round_to_tenths</a>
+    
+    <li><a href="#method-i-run-21">#run!</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../MIT-LICENSE.html">MIT-LICENSE</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../MetricFu.html">MetricFu</a>
+  
+    <li><a href="../MetricFu/AnalysisError.html">MetricFu::AnalysisError</a>
+  
+    <li><a href="../MetricFu/AnalyzerTables.html">MetricFu::AnalyzerTables</a>
+  
+    <li><a href="../MetricFu/CaneGenerator.html">MetricFu::CaneGenerator</a>
+  
+    <li><a href="../MetricFu/CaneGrapher.html">MetricFu::CaneGrapher</a>
+  
+    <li><a href="../MetricFu/CaneViolations.html">MetricFu::CaneViolations</a>
+  
+    <li><a href="../MetricFu/CaneViolations/AbcComplexity.html">MetricFu::CaneViolations::AbcComplexity</a>
+  
+    <li><a href="../MetricFu/CaneViolations/Comment.html">MetricFu::CaneViolations::Comment</a>
+  
+    <li><a href="../MetricFu/CaneViolations/Documentation.html">MetricFu::CaneViolations::Documentation</a>
+  
+    <li><a href="../MetricFu/CaneViolations/LineStyle.html">MetricFu::CaneViolations::LineStyle</a>
+  
+    <li><a href="../MetricFu/CaneViolations/Others.html">MetricFu::CaneViolations::Others</a>
+  
+    <li><a href="../MetricFu/ChurnGenerator.html">MetricFu::ChurnGenerator</a>
+  
+    <li><a href="../MetricFu/ChurnHotspot.html">MetricFu::ChurnHotspot</a>
+  
+    <li><a href="../MetricFu/ClassMethodNode.html">MetricFu::ClassMethodNode</a>
+  
+    <li><a href="../MetricFu/Cli.html">MetricFu::Cli</a>
+  
+    <li><a href="../MetricFu/Cli/Client.html">MetricFu::Cli::Client</a>
+  
+    <li><a href="../MetricFu/Cli/Helper.html">MetricFu::Cli::Helper</a>
+  
+    <li><a href="../MetricFu/Cli/MicroOptParse.html">MetricFu::Cli::MicroOptParse</a>
+  
+    <li><a href="../MetricFu/Cli/MicroOptParse/Parser.html">MetricFu::Cli::MicroOptParse::Parser</a>
+  
+    <li><a href="../MetricFu/Configuration.html">MetricFu::Configuration</a>
+  
+    <li><a href="../MetricFu/Constantize.html">MetricFu::Constantize</a>
+  
+    <li><a href="../MetricFu/Environment.html">MetricFu::Environment</a>
+  
+    <li><a href="../MetricFu/FlayGenerator.html">MetricFu::FlayGenerator</a>
+  
+    <li><a href="../MetricFu/FlayGrapher.html">MetricFu::FlayGrapher</a>
+  
+    <li><a href="../MetricFu/FlayHotspot.html">MetricFu::FlayHotspot</a>
+  
+    <li><a href="../MetricFu/FlogGenerator.html">MetricFu::FlogGenerator</a>
+  
+    <li><a href="../MetricFu/FlogGrapher.html">MetricFu::FlogGrapher</a>
+  
+    <li><a href="../MetricFu/FlogHotspot.html">MetricFu::FlogHotspot</a>
+  
+    <li><a href="../MetricFu/Formatter.html">MetricFu::Formatter</a>
+  
+    <li><a href="../MetricFu/Formatter/HTML.html">MetricFu::Formatter::HTML</a>
+  
+    <li><a href="../MetricFu/Formatter/Templates.html">MetricFu::Formatter::Templates</a>
+  
+    <li><a href="../MetricFu/Formatter/YAML.html">MetricFu::Formatter::YAML</a>
+  
+    <li><a href="../MetricFu/GemRun.html">MetricFu::GemRun</a>
+  
+    <li><a href="../MetricFu/GemVersion.html">MetricFu::GemVersion</a>
+  
+    <li><a href="../MetricFu/Generator.html">MetricFu::Generator</a>
+  
+    <li><a href="../MetricFu/Graph.html">MetricFu::Graph</a>
+  
+    <li><a href="../MetricFu/Grapher.html">MetricFu::Grapher</a>
+  
+    <li><a href="../MetricFu/Grouping.html">MetricFu::Grouping</a>
+  
+    <li><a href="../MetricFu/Hotspot.html">MetricFu::Hotspot</a>
+  
+    <li><a href="../MetricFu/HotspotAnalyzedProblems.html">MetricFu::HotspotAnalyzedProblems</a>
+  
+    <li><a href="../MetricFu/HotspotAnalyzer.html">MetricFu::HotspotAnalyzer</a>
+  
+    <li><a href="../MetricFu/HotspotGroupings.html">MetricFu::HotspotGroupings</a>
+  
+    <li><a href="../MetricFu/HotspotProblems.html">MetricFu::HotspotProblems</a>
+  
+    <li><a href="../MetricFu/HotspotRankedProblemLocation.html">MetricFu::HotspotRankedProblemLocation</a>
+  
+    <li><a href="../MetricFu/HotspotRankings.html">MetricFu::HotspotRankings</a>
+  
+    <li><a href="../MetricFu/HotspotScoringStrategies.html">MetricFu::HotspotScoringStrategies</a>
+  
+    <li><a href="../MetricFu/HotspotsGenerator.html">MetricFu::HotspotsGenerator</a>
+  
+    <li><a href="../MetricFu/InstanceMethodNode.html">MetricFu::InstanceMethodNode</a>
+  
+    <li><a href="../MetricFu/Io.html">MetricFu::Io</a>
+  
+    <li><a href="../MetricFu/Io/FileSystem.html">MetricFu::Io::FileSystem</a>
+  
+    <li><a href="../MetricFu/LineNumbers.html">MetricFu::LineNumbers</a>
+  
+    <li><a href="../MetricFu/Loader.html">MetricFu::Loader</a>
+  
+    <li><a href="../MetricFu/Location.html">MetricFu::Location</a>
+  
+    <li><a href="../MetricFu/MethodContainer.html">MetricFu::MethodContainer</a>
+  
+    <li><a href="../MetricFu/Metric.html">MetricFu::Metric</a>
+  
+    <li><a href="../MetricFu/MetricCane.html">MetricFu::MetricCane</a>
+  
+    <li><a href="../MetricFu/MetricChurn.html">MetricFu::MetricChurn</a>
+  
+    <li><a href="../MetricFu/MetricFlay.html">MetricFu::MetricFlay</a>
+  
+    <li><a href="../MetricFu/MetricFlog.html">MetricFu::MetricFlog</a>
+  
+    <li><a href="../MetricFu/MetricHotspots.html">MetricFu::MetricHotspots</a>
+  
+    <li><a href="../MetricFu/MetricRailsBestPractices.html">MetricFu::MetricRailsBestPractices</a>
+  
+    <li><a href="../MetricFu/MetricRcov.html">MetricFu::MetricRcov</a>
+  
+    <li><a href="../MetricFu/MetricReek.html">MetricFu::MetricReek</a>
+  
+    <li><a href="../MetricFu/MetricRoodi.html">MetricFu::MetricRoodi</a>
+  
+    <li><a href="../MetricFu/MetricSaikuro.html">MetricFu::MetricSaikuro</a>
+  
+    <li><a href="../MetricFu/MetricStats.html">MetricFu::MetricStats</a>
+  
+    <li><a href="../MetricFu/RailsBestPracticesGenerator.html">MetricFu::RailsBestPracticesGenerator</a>
+  
+    <li><a href="../MetricFu/RailsBestPracticesGrapher.html">MetricFu::RailsBestPracticesGrapher</a>
+  
+    <li><a href="../MetricFu/Ranking.html">MetricFu::Ranking</a>
+  
+    <li><a href="../MetricFu/RcovGenerator.html">MetricFu::RcovGenerator</a>
+  
+    <li><a href="../MetricFu/RcovGenerator/Line.html">MetricFu::RcovGenerator::Line</a>
+  
+    <li><a href="../MetricFu/RcovGrapher.html">MetricFu::RcovGrapher</a>
+  
+    <li><a href="../MetricFu/RcovHotspot.html">MetricFu::RcovHotspot</a>
+  
+    <li><a href="../MetricFu/Record.html">MetricFu::Record</a>
+  
+    <li><a href="../MetricFu/ReekGenerator.html">MetricFu::ReekGenerator</a>
+  
+    <li><a href="../MetricFu/ReekGrapher.html">MetricFu::ReekGrapher</a>
+  
+    <li><a href="../MetricFu/Reporter.html">MetricFu::Reporter</a>
+  
+    <li><a href="../MetricFu/Result.html">MetricFu::Result</a>
+  
+    <li><a href="../MetricFu/RoodiGenerator.html">MetricFu::RoodiGenerator</a>
+  
+    <li><a href="../MetricFu/RoodiGrapher.html">MetricFu::RoodiGrapher</a>
+  
+    <li><a href="../MetricFu/RoodiHotspot.html">MetricFu::RoodiHotspot</a>
+  
+    <li><a href="../MetricFu/Run.html">MetricFu::Run</a>
+  
+    <li><a href="../MetricFu/SaikuroGenerator.html">MetricFu::SaikuroGenerator</a>
+  
+    <li><a href="../MetricFu/SaikuroHotspot.html">MetricFu::SaikuroHotspot</a>
+  
+    <li><a href="../MetricFu/SaikuroParsingElement.html">MetricFu::SaikuroParsingElement</a>
+  
+    <li><a href="../MetricFu/SaikuroScratchFile.html">MetricFu::SaikuroScratchFile</a>
+  
+    <li><a href="../MetricFu/SingletonMethodNode.html">MetricFu::SingletonMethodNode</a>
+  
+    <li><a href="../MetricFu/StatsGenerator.html">MetricFu::StatsGenerator</a>
+  
+    <li><a href="../MetricFu/StatsGrapher.html">MetricFu::StatsGrapher</a>
+  
+    <li><a href="../MetricFu/StatsHotspot.html">MetricFu::StatsHotspot</a>
+  
+    <li><a href="../MetricFu/Table.html">MetricFu::Table</a>
+  
+    <li><a href="../MetricFu/Template.html">MetricFu::Template</a>
+  
+    <li><a href="../MetricFu/Utility.html">MetricFu::Utility</a>
+  
+    <li><a href="../MfDebugger.html">MfDebugger</a>
+  
+    <li><a href="../MfDebugger/Logger.html">MfDebugger::Logger</a>
+  
+    <li><a href="../AwesomeTemplate.html">AwesomeTemplate</a>
+  
+    <li><a href="../Object.html">Object</a>
+  
+    <li><a href="../ReekHotspot.html">ReekHotspot</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class MetricFu::Generator</h1>
+
+  <div id="description" class="description">
+    
+<h1 id="label-Generator"><a href="Generator.html">Generator</a></h1>
+
+<p>The <a href="Generator.html">Generator</a> class is an abstract class that
+provides the skeleton for producing different types of metrics.</p>
+
+<p>It drives the production of the metrics through a template method - <a
+href="Generator.html#method-i-generate_result">generate_result</a>(options={}).
+This method calls emit, analyze and to_h in order to produce the metrics.</p>
+
+<p>To implement a concrete class to generate a metric, therefore, the class
+must implement those three methods.</p>
+<ul><li>
+<p>emit should take care of running the metric tool and gathering its output.</p>
+</li><li>
+<p>analyze should take care of manipulating the output from emit and making it
+possible to store it in a programmatic way.</p>
+</li><li>
+<p>to_h should provide a hash representation of the output from analyze ready
+to be serialized into yaml at some point.</p>
+</li></ul>
+
+<h2 id="label-Pre-conditions">Pre-conditions</h2>
+
+<p>Based on the class name of the concrete class implementing a <a
+href="Generator.html">Generator</a>, the <a
+href="Generator.html">Generator</a> class will create a ‘<a
+href="Generator.html#method-c-metric_directory">::metric_directory</a>’
+named after the metric under the scratch_directory, where any output from
+the emit method should go.</p>
+
+<p>It will also create the output_directory if neccessary, and in general
+setup the directory structure that the <a
+href="../MetricFu.html">MetricFu</a> system expects.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-options" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">options</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-result" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">result</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-template" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">template</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-generators" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">generators</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@return all subclassed generators [Array&lt;MetricFu::Generator&gt;]</p>
+          
+
+          
+          <div class="method-source-code" id="generators-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/metrics/generator.rb, line 51</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">generators</span>
+  <span class="ruby-ivar">@generators</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- generators-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- generators-method -->
+
+    
+      <div id="method-c-get_generator" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_generator</span><span
+            class="method-args">(metric)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="get_generator-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/metrics/generator.rb, line 59</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">get_generator</span>(<span class="ruby-identifier">metric</span>)
+  <span class="ruby-identifier">generators</span>.<span class="ruby-identifier">find</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">generator</span><span class="ruby-operator">|</span><span class="ruby-identifier">generator</span>.<span class="ruby-identifier">metric</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">metric</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">downcase</span>}
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- get_generator-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- get_generator-method -->
+
+    
+      <div id="method-c-inherited" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">inherited</span><span
+            class="method-args">(subclass)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="inherited-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/metrics/generator.rb, line 63</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">inherited</span>(<span class="ruby-identifier">subclass</span>)
+  <span class="ruby-ivar">@generators</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">subclass</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- inherited-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- inherited-method -->
+
+    
+      <div id="method-c-metric" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">metric</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="metric-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/metrics/generator.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">metric</span>
+  <span class="ruby-identifier">not_implemented</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- metric-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- metric-method -->
+
+    
+      <div id="method-c-metric_directory" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">metric_directory</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the directory where the <a href="Generator.html">Generator</a> will
+write any output</p>
+          
+
+          
+          <div class="method-source-code" id="metric_directory-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/metrics/generator.rb, line 68</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">metric_directory</span>
+  <span class="ruby-ivar">@metric_directory</span> <span class="ruby-operator">||=</span>
+    <span class="ruby-constant">MetricFu</span><span class="ruby-operator">::</span><span class="ruby-constant">Metric</span>.<span class="ruby-identifier">get_metric</span>(<span class="ruby-identifier">metric</span>).<span class="ruby-identifier">run_options</span>[<span class="ruby-value">:output_directory</span>] <span class="ruby-operator">||</span>
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-identifier">metric_directory</span> = <span class="ruby-constant">MetricFu</span><span class="ruby-operator">::</span><span class="ruby-constant">Io</span><span class="ruby-operator">::</span><span class="ruby-constant">FileSystem</span>.<span class="ruby-identifier">scratch_directory</span>(<span class="ruby-identifier">metric</span>)
+      <span class="ruby-constant">MetricFu</span><span class="ruby-operator">::</span><span class="ruby-constant">Utility</span>.<span class="ruby-identifier">mkdir_p</span>(<span class="ruby-identifier">metric_directory</span>, <span class="ruby-value">:verbose</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">false</span>)
+    <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- metric_directory-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- metric_directory-method -->
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(options={})</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/metrics/generator.rb, line 37</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">options</span>={})
+  <span class="ruby-ivar">@options</span> = <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+      <div id="method-c-not_implemented" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">not_implemented</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="not_implemented-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/metrics/generator.rb, line 136</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">not_implemented</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-value">&lt;&lt;-EOF
+    Required method #{caller[0]} not implemented in #{__FILE__}.
+    This method must be implemented by a concrete class descending
+    from Generator.  See generator class documentation for more
+    information.
+  EOF</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- not_implemented-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- not_implemented-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-generate_result" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">generate_result</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Provides a template method to drive the production of a metric from a
+concrete implementation of this class.  Each concrete class must implement
+the three methods that this template method calls: emit, analyze and to_h. 
+For more details, see the class documentation.</p>
+
+<p>This template method also calls before_emit, after_emit… etc. methods to
+allow extra hooks into the processing methods, and help to keep the logic
+of your Generators clean.</p>
+          
+
+          
+          <div class="method-source-code" id="generate_result-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/metrics/generator.rb, line 112</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">generate_result</span>
+  <span class="ruby-identifier">mf_debug</span> <span class="ruby-node">&quot;Executing #{metric}&quot;</span>
+  <span class="ruby-identifier">emit</span>
+  <span class="ruby-identifier">analyze</span>
+  <span class="ruby-identifier">to_h</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- generate_result-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- generate_result-method -->
+
+    
+      <div id="method-i-metric" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">metric</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="metric-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/metrics/generator.rb, line 45</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">metric</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">metric</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- metric-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- metric-method -->
+
+    
+      <div id="method-i-metric_config" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">metric_config</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="metric_config-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/metrics/generator.rb, line 95</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">metric_config</span>
+  <span class="ruby-constant">MetricFu</span><span class="ruby-operator">::</span><span class="ruby-constant">Metric</span>.<span class="ruby-identifier">get_metric</span>(<span class="ruby-identifier">metric</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- metric_config-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- metric_config-method -->
+
+    
+      <div id="method-i-metric_directory" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">metric_directory</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@return [String] The path of the metric directory this class is using.</p>
+          
+
+          
+          <div class="method-source-code" id="metric_directory-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/metrics/generator.rb, line 79</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">metric_directory</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">metric_directory</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- metric_directory-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- metric_directory-method -->
+
+    
+      <div id="method-i-remove_excluded_files" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">remove_excluded_files</span><span
+            class="method-args">(paths, globs_to_remove = MetricFu::Io::FileSystem.file_globs_to_ignore)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="remove_excluded_files-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/metrics/generator.rb, line 83</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">remove_excluded_files</span>(<span class="ruby-identifier">paths</span>, <span class="ruby-identifier">globs_to_remove</span> = <span class="ruby-constant">MetricFu</span><span class="ruby-operator">::</span><span class="ruby-constant">Io</span><span class="ruby-operator">::</span><span class="ruby-constant">FileSystem</span>.<span class="ruby-identifier">file_globs_to_ignore</span>)
+  <span class="ruby-identifier">files_to_remove</span> = []
+  <span class="ruby-identifier">globs_to_remove</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">glob</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">files_to_remove</span>.<span class="ruby-identifier">concat</span>(<span class="ruby-constant">Dir</span>[<span class="ruby-identifier">glob</span>])
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">paths</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">files_to_remove</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- remove_excluded_files-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- remove_excluded_files-method -->
+
+    
+      <div id="method-i-round_to_tenths" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">round_to_tenths</span><span
+            class="method-args">(decimal)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="round_to_tenths-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/metrics/generator.rb, line 119</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">round_to_tenths</span>(<span class="ruby-identifier">decimal</span>)
+  <span class="ruby-identifier">decimal</span> = <span class="ruby-value">0.0</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">decimal</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">eql?</span>(<span class="ruby-string">'NaN'</span>)
+  (<span class="ruby-identifier">decimal</span> * <span class="ruby-value">10</span>).<span class="ruby-identifier">round</span> <span class="ruby-operator">/</span> <span class="ruby-value">10.0</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- round_to_tenths-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- round_to_tenths-method -->
+
+    
+      <div id="method-i-run-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">run!</span><span
+            class="method-args">(args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="run-21-source">
+            <pre><span class="ruby-comment"># File lib/metric_fu/metrics/generator.rb, line 99</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">run!</span>(<span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">metric_config</span>.<span class="ruby-identifier">run_external</span>(<span class="ruby-identifier">args</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- run-21-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- run-21-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

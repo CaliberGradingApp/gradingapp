@@ -1,0 +1,18 @@
+Thu, 07 Nov 2013 23:12:09 -0400
+lib/cane.rb	Thu, 07 Nov 2013 23:09:39 -0400
+lib/cane/encoding_aware_iterator.rb	Thu, 07 Nov 2013 23:09:39 -0400
+lib/cane/file.rb	Thu, 07 Nov 2013 23:09:39 -0400
+lib/cane/threshold_check.rb	Thu, 07 Nov 2013 23:09:39 -0400
+lib/cane/runner.rb	Thu, 07 Nov 2013 23:09:39 -0400
+lib/cane/rake_task.rb	Thu, 07 Nov 2013 23:09:39 -0400
+lib/cane/task_runner.rb	Thu, 07 Nov 2013 23:09:39 -0400
+lib/cane/cli.rb	Thu, 07 Nov 2013 23:09:39 -0400
+lib/cane/version.rb	Thu, 07 Nov 2013 23:09:39 -0400
+lib/cane/cli/parser.rb	Thu, 07 Nov 2013 23:09:39 -0400
+lib/cane/cli/options.rb	Thu, 07 Nov 2013 23:09:39 -0400
+lib/cane/default_checks.rb	Thu, 07 Nov 2013 23:09:39 -0400
+lib/cane/violation_formatter.rb	Thu, 07 Nov 2013 23:09:39 -0400
+lib/cane/json_formatter.rb	Thu, 07 Nov 2013 23:09:39 -0400
+lib/cane/style_check.rb	Thu, 07 Nov 2013 23:09:39 -0400
+lib/cane/abc_check.rb	Thu, 07 Nov 2013 23:09:39 -0400
+lib/cane/doc_check.rb	Thu, 07 Nov 2013 23:09:39 -0400

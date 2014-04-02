@@ -1,0 +1,20 @@
+Thu, 07 Nov 2013 22:57:47 -0400
+lib/sqlite3/errors.rb	Thu, 07 Nov 2013 22:57:38 -0400
+lib/sqlite3/pragmas.rb	Thu, 07 Nov 2013 22:57:38 -0400
+lib/sqlite3/value.rb	Thu, 07 Nov 2013 22:57:38 -0400
+lib/sqlite3/translator.rb	Thu, 07 Nov 2013 22:57:38 -0400
+lib/sqlite3/resultset.rb	Thu, 07 Nov 2013 22:57:38 -0400
+lib/sqlite3/statement.rb	Thu, 07 Nov 2013 22:57:38 -0400
+lib/sqlite3/version.rb	Thu, 07 Nov 2013 22:57:38 -0400
+lib/sqlite3/database.rb	Thu, 07 Nov 2013 22:57:38 -0400
+lib/sqlite3/constants.rb	Thu, 07 Nov 2013 22:57:38 -0400
+lib/sqlite3.rb	Thu, 07 Nov 2013 22:57:38 -0400
+API_CHANGES.rdoc	Thu, 07 Nov 2013 22:57:38 -0400
+CHANGELOG.rdoc	Thu, 07 Nov 2013 22:57:38 -0400
+Manifest.txt	Thu, 07 Nov 2013 22:57:38 -0400
+README.rdoc	Thu, 07 Nov 2013 22:57:38 -0400
+ext/sqlite3/backup.c	Thu, 07 Nov 2013 22:57:38 -0400
+ext/sqlite3/database.c	Thu, 07 Nov 2013 22:57:38 -0400
+ext/sqlite3/exception.c	Thu, 07 Nov 2013 22:57:38 -0400
+ext/sqlite3/sqlite3.c	Thu, 07 Nov 2013 22:57:38 -0400
+ext/sqlite3/statement.c	Thu, 07 Nov 2013 22:57:38 -0400

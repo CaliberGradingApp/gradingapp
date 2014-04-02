@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Atomic - atomic-1.1.14 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/atomic/direct_update.rb
+    <li>lib/atomic/concurrent_update_error.rb
+    <li>lib/atomic/rbx.rb
+    <li>lib/atomic/numeric_cas_wrapper.rb
+    <li>lib/atomic/delegated_update.rb
+    <li>lib/atomic/fallback.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Rubinius::AtomicReference
+  
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-i-_compare_and_set">#_compare_and_set</a>
+    
+    <li><a href="#method-i-compare_and_set">#compare_and_set</a>
+    
+    <li><a href="#method-i-compare_and_swap">#compare_and_swap</a>
+    
+    <li><a href="#method-i-try_update">#try_update</a>
+    
+    <li><a href="#method-i-update">#update</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Atomic.html">Atomic</a>
+  
+    <li><a href="./Atomic/ConcurrentUpdateError.html">Atomic::ConcurrentUpdateError</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Atomic</h1>
+
+  <div id="description" class="description">
+    
+<p>Define update methods that use direct paths</p>
+
+<p>Licensed under the Apache License, Version 2.0 (the “License”); you may not
+use this file except in compliance with the License. You may obtain a copy
+of the License at</p>
+
+<pre>http://www.apache.org/licenses/LICENSE-2.0</pre>
+
+<p>Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+License for the specific language governing permissions and limitations
+under the License.</p>
+
+<p>extend Rubinius’s version adding aliases and numeric logic</p>
+
+<p>Licensed under the Apache License, Version 2.0 (the “License”); you may not
+use this file except in compliance with the License. You may obtain a copy
+of the License at</p>
+
+<pre>http://www.apache.org/licenses/LICENSE-2.0</pre>
+
+<p>Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an “AS IS” BASIS, WITHOUT
+WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+License for the specific language governing permissions and limitations
+under the License.</p>
+
+<p>Define update methods that delegate to @ref field</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-_compare_and_set" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">_compare_and_set</span><span
+            class="method-args">(expected, new)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Atomic.html#method-i-compare_and_set">compare_and_set</a>
+        </div>
+        
+      </div><!-- _compare_and_set-method -->
+
+    
+      <div id="method-i-compare_and_set" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">compare_and_set</span><span
+            class="method-args">(expected, new)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="compare_and_set-source">
+            <pre><span class="ruby-comment"># File lib/atomic/numeric_cas_wrapper.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">compare_and_set</span>(<span class="ruby-identifier">expected</span>, <span class="ruby-identifier">new</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">expected</span>.<span class="ruby-identifier">kind_of?</span> <span class="ruby-constant">Numeric</span>
+    <span class="ruby-keyword">while</span> <span class="ruby-keyword">true</span>
+      <span class="ruby-identifier">old</span> = <span class="ruby-identifier">get</span>
+      
+      <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">old</span>.<span class="ruby-identifier">kind_of?</span> <span class="ruby-constant">Numeric</span>
+      
+      <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">old</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">expected</span>
+      
+      <span class="ruby-identifier">result</span> = <span class="ruby-identifier">_compare_and_set</span>(<span class="ruby-identifier">old</span>, <span class="ruby-identifier">new</span>)
+      <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">result</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">_compare_and_set</span>(<span class="ruby-identifier">expected</span>, <span class="ruby-identifier">new</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- compare_and_set-source -->
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Atomic.html#method-i-_compare_and_set">_compare_and_set</a>, <a href="Atomic.html#method-i-compare_and_swap">compare_and_swap</a>
+        </div>
+        
+
+        
+      </div><!-- compare_and_set-method -->
+
+    
+      <div id="method-i-compare_and_swap" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">compare_and_swap</span><span
+            class="method-args">(expected, new)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Atomic.html#method-i-compare_and_set">compare_and_set</a>
+        </div>
+        
+      </div><!-- compare_and_swap-method -->
+
+    
+      <div id="method-i-try_update" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">try_update</span><span
+            class="method-args">() { |old_value| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="try_update-source">
+            <pre><span class="ruby-comment"># File lib/atomic/direct_update.rb, line 25</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">try_update</span>
+  <span class="ruby-identifier">old_value</span> = <span class="ruby-identifier">get</span>
+  <span class="ruby-identifier">new_value</span> = <span class="ruby-keyword">yield</span> <span class="ruby-identifier">old_value</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">compare_and_set</span>(<span class="ruby-identifier">old_value</span>, <span class="ruby-identifier">new_value</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">$VERBOSE</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ConcurrentUpdateError</span>, <span class="ruby-string">&quot;Update failed&quot;</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ConcurrentUpdateError</span>, <span class="ruby-string">&quot;Update failed&quot;</span>, <span class="ruby-constant">ConcurrentUpdateError</span><span class="ruby-operator">::</span><span class="ruby-constant">CONC_UP_ERR_BACKTRACE</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">new_value</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- try_update-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- try_update-method -->
+
+    
+      <div id="method-i-update" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update</span><span
+            class="method-args">() { |old_value| ... }</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Pass the current value to the given block, replacing it with the block’s
+result. May retry if the value changes during the block’s execution.</p>
+          
+
+          
+          <div class="method-source-code" id="update-source">
+            <pre><span class="ruby-comment"># File lib/atomic/direct_update.rb, line 20</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">update</span>
+  <span class="ruby-keyword">true</span> <span class="ruby-keyword">until</span> <span class="ruby-identifier">compare_and_set</span>(<span class="ruby-identifier">old_value</span> = <span class="ruby-identifier">get</span>, <span class="ruby-identifier">new_value</span> = <span class="ruby-keyword">yield</span>(<span class="ruby-identifier">old_value</span>))
+  <span class="ruby-identifier">new_value</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- update-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- update-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

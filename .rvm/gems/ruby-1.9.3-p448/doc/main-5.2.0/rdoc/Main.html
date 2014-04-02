@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module Main - main-5.2.0 Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/main/cast.rb
+    <li>lib/main/softspoken.rb
+    <li>lib/main/getoptlong.rb
+    <li>lib/main/logger.rb
+    <li>lib/main/usage.rb
+    <li>lib/main/test.rb
+    <li>lib/main/program/class_methods.rb
+    <li>lib/main/program/instance_methods.rb
+    <li>lib/main/util.rb
+    <li>lib/main/mode.rb
+    <li>lib/main/parameter.rb
+    <li>lib/main/factories.rb
+    <li>lib/main/program.rb
+    <li>lib/main.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-create">::create</a>
+    
+    <li><a href="#method-c-dependencies">::dependencies</a>
+    
+    <li><a href="#method-c-factory">::factory</a>
+    
+    <li><a href="#method-c-libdir">::libdir</a>
+    
+    <li><a href="#method-c-load">::load</a>
+    
+    <li><a href="#method-c-new">::new</a>
+    
+    <li><a href="#method-c-pop_ios-21">::pop_ios!</a>
+    
+    <li><a href="#method-c-push_ios-21">::push_ios!</a>
+    
+    <li><a href="#method-c-run">::run</a>
+    
+    <li><a href="#method-c-test">::test</a>
+    
+    <li><a href="#method-c-version">::version</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Main.html">Main</a>
+  
+    <li><a href="./Main/Cast.html">Main::Cast</a>
+  
+    <li><a href="./Main/GetoptLong.html">Main::GetoptLong</a>
+  
+    <li><a href="./Main/GetoptLong/AmbigousOption.html">Main::GetoptLong::AmbigousOption</a>
+  
+    <li><a href="./Main/GetoptLong/InvalidOption.html">Main::GetoptLong::InvalidOption</a>
+  
+    <li><a href="./Main/GetoptLong/MissingArgument.html">Main::GetoptLong::MissingArgument</a>
+  
+    <li><a href="./Main/GetoptLong/NeedlessArgument.html">Main::GetoptLong::NeedlessArgument</a>
+  
+    <li><a href="./Main/Logger.html">Main::Logger</a>
+  
+    <li><a href="./Main/Logger/OnOff.html">Main::Logger::OnOff</a>
+  
+    <li><a href="./Main/Mode.html">Main::Mode</a>
+  
+    <li><a href="./Main/Mode/Ambiguous.html">Main::Mode::Ambiguous</a>
+  
+    <li><a href="./Main/Mode/Duplicate.html">Main::Mode::Duplicate</a>
+  
+    <li><a href="./Main/Mode/Error.html">Main::Mode::Error</a>
+  
+    <li><a href="./Main/Mode/List.html">Main::Mode::List</a>
+  
+    <li><a href="./Main/Parameter.html">Main::Parameter</a>
+  
+    <li><a href="./Main/Parameter/AmbigousOption.html">Main::Parameter::AmbigousOption</a>
+  
+    <li><a href="./Main/Parameter/Argument.html">Main::Parameter::Argument</a>
+  
+    <li><a href="./Main/Parameter/Arity.html">Main::Parameter::Arity</a>
+  
+    <li><a href="./Main/Parameter/DSL.html">Main::Parameter::DSL</a>
+  
+    <li><a href="./Main/Parameter/Environment.html">Main::Parameter::Environment</a>
+  
+    <li><a href="./Main/Parameter/Error.html">Main::Parameter::Error</a>
+  
+    <li><a href="./Main/Parameter/InValid.html">Main::Parameter::InValid</a>
+  
+    <li><a href="./Main/Parameter/InvalidOption.html">Main::Parameter::InvalidOption</a>
+  
+    <li><a href="./Main/Parameter/Keyword.html">Main::Parameter::Keyword</a>
+  
+    <li><a href="./Main/Parameter/List.html">Main::Parameter::List</a>
+  
+    <li><a href="./Main/Parameter/MissingArgument.html">Main::Parameter::MissingArgument</a>
+  
+    <li><a href="./Main/Parameter/NeedlessArgument.html">Main::Parameter::NeedlessArgument</a>
+  
+    <li><a href="./Main/Parameter/NoneSuch.html">Main::Parameter::NoneSuch</a>
+  
+    <li><a href="./Main/Parameter/NotGiven.html">Main::Parameter::NotGiven</a>
+  
+    <li><a href="./Main/Parameter/Option.html">Main::Parameter::Option</a>
+  
+    <li><a href="./Main/Parameter/Table.html">Main::Parameter::Table</a>
+  
+    <li><a href="./Main/Parameter/Table/BoundsCheck.html">Main::Parameter::Table::BoundsCheck</a>
+  
+    <li><a href="./Main/Program.html">Main::Program</a>
+  
+    <li><a href="./Main/Program/ClassMethods.html">Main::Program::ClassMethods</a>
+  
+    <li><a href="./Main/Program/ClassMethods/Factory.html">Main::Program::ClassMethods::Factory</a>
+  
+    <li><a href="./Main/Program/InstanceMethods.html">Main::Program::InstanceMethods</a>
+  
+    <li><a href="./Main/Softspoken.html">Main::Softspoken</a>
+  
+    <li><a href="./Main/Usage.html">Main::Usage</a>
+  
+    <li><a href="./Main/Util.html">Main::Util</a>
+  
+    <li><a href="./Main/Util/ClassMethods.html">Main::Util::ClassMethods</a>
+  
+    <li><a href="./Main/Util/InstanceMethods.html">Main::Util::InstanceMethods</a>
+  
+    <li><a href="./Main/Util/Methods.html">Main::Util::Methods</a>
+  
+    <li><a href="./Kernel.html">Kernel</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./Process.html">Process</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module Main</h1>
+
+  <div id="description" class="description">
+    
+<p>Parse command line options just like GNU getopt_long().</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="EXIT_FAILURE">EXIT_FAILURE
+        
+        <dd class="description">
+        
+      
+        <dt id="EXIT_SUCCESS">EXIT_SUCCESS
+        
+        <dd class="description">
+        
+      
+        <dt id="EXIT_WARN">EXIT_WARN
+        
+        <dd class="description">
+        
+      
+        <dt id="EXIT_WARNING">EXIT_WARNING
+        
+        <dd class="description">
+        
+      
+        <dt id="LIBDIR">LIBDIR
+        
+        <dd class="description">
+        
+      
+        <dt id="VERSION">VERSION
+        
+        <dd class="description">
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-create" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create</span><span
+            class="method-args">(&block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="create-source">
+            <pre><span class="ruby-comment"># File lib/main/factories.rb, line 2</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Main</span>.<span class="ruby-identifier">create</span>(&amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">factory</span>(&amp;<span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- create-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- create-method -->
+
+    
+      <div id="method-c-dependencies" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">dependencies</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>deps</p>
+          
+
+          
+          <div class="method-source-code" id="dependencies-source">
+            <pre><span class="ruby-comment"># File lib/main.rb, line 19</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Main</span>.<span class="ruby-identifier">dependencies</span>
+  {
+    <span class="ruby-string">'chronic'</span>     =<span class="ruby-operator">&gt;</span> [ <span class="ruby-string">'chronic'</span>     , <span class="ruby-string">'&gt;= 0.6.2'</span> ] ,
+    <span class="ruby-string">'fattr'</span>       =<span class="ruby-operator">&gt;</span> [ <span class="ruby-string">'fattr'</span>       , <span class="ruby-string">'&gt;= 2.2.0'</span> ] ,
+    <span class="ruby-string">'arrayfields'</span> =<span class="ruby-operator">&gt;</span> [ <span class="ruby-string">'arrayfields'</span> , <span class="ruby-string">'&gt;= 4.7.4'</span> ] ,
+    <span class="ruby-string">'map'</span>         =<span class="ruby-operator">&gt;</span> [ <span class="ruby-string">'map'</span>         , <span class="ruby-string">'&gt;= 5.1.0'</span> ]
+  }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- dependencies-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- dependencies-method -->
+
+    
+      <div id="method-c-factory" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">factory</span><span
+            class="method-args">(&block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="factory-source">
+            <pre><span class="ruby-comment"># File lib/main/factories.rb, line 6</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Main</span>.<span class="ruby-identifier">factory</span>(&amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-constant">Program</span>.<span class="ruby-identifier">factory</span>(&amp;<span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- factory-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- factory-method -->
+
+    
+      <div id="method-c-libdir" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">libdir</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="libdir-source">
+            <pre><span class="ruby-comment"># File lib/main.rb, line 10</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">libdir</span>() <span class="ruby-constant">Main</span><span class="ruby-operator">::</span><span class="ruby-constant">LIBDIR</span> <span class="ruby-keyword">end</span></pre>
+          </div><!-- libdir-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- libdir-method -->
+
+    
+      <div id="method-c-load" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">load</span><span
+            class="method-args">(*libs)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="load-source">
+            <pre><span class="ruby-comment"># File lib/main.rb, line 42</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Main</span>.<span class="ruby-identifier">load</span>(*<span class="ruby-identifier">libs</span>)
+  <span class="ruby-identifier">libs</span> = <span class="ruby-identifier">libs</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">' '</span>).<span class="ruby-identifier">scan</span>(<span class="ruby-regexp">/[^\s+]+/</span>)
+  <span class="ruby-constant">Main</span>.<span class="ruby-identifier">libdir</span>{ <span class="ruby-identifier">libs</span>.<span class="ruby-identifier">each</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">lib</span><span class="ruby-operator">|</span> <span class="ruby-constant">Kernel</span>.<span class="ruby-identifier">load</span>(<span class="ruby-identifier">lib</span>) } }
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- load-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- load-method -->
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(*args, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/main/factories.rb, line 10</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Main</span>.<span class="ruby-identifier">new</span>(*<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">program</span> = <span class="ruby-identifier">factory</span>(&amp;<span class="ruby-identifier">block</span>).<span class="ruby-identifier">build</span>(*<span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">program</span>.<span class="ruby-identifier">new</span>()
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+      <div id="method-c-pop_ios-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pop_ios!</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="pop_ios-21-source">
+            <pre><span class="ruby-comment"># File lib/main/test.rb, line 76</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">pop_ios!</span>
+  <span class="ruby-ivar">@ios</span> <span class="ruby-operator">||=</span> []
+  (<span class="ruby-ivar">@ios</span>.<span class="ruby-identifier">pop</span><span class="ruby-operator">||</span>{}).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">const</span>, <span class="ruby-identifier">dup</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">dst</span> = <span class="ruby-identifier">eval</span>(<span class="ruby-identifier">const</span>.<span class="ruby-identifier">to_s</span>)
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-identifier">dst</span>.<span class="ruby-identifier">reopen</span>(<span class="ruby-identifier">dup</span>)
+    <span class="ruby-keyword">rescue</span>
+      <span class="ruby-operator">::</span><span class="ruby-constant">Object</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:remove_const</span>, <span class="ruby-identifier">const</span>)
+      <span class="ruby-operator">::</span><span class="ruby-constant">Object</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:const_set</span>, <span class="ruby-identifier">const</span>, <span class="ruby-identifier">dup</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- pop_ios-21-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- pop_ios-21-method -->
+
+    
+      <div id="method-c-push_ios-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">push_ios!</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="push_ios-21-source">
+            <pre><span class="ruby-comment"># File lib/main/test.rb, line 69</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">push_ios!</span>
+  <span class="ruby-ivar">@ios</span> <span class="ruby-operator">||=</span> []
+  <span class="ruby-ivar">@ios</span>.<span class="ruby-identifier">push</span>({
+    <span class="ruby-value">:STDIN</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">STDIN</span>.<span class="ruby-identifier">dup</span>, <span class="ruby-value">:STDOUT</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">STDOUT</span>.<span class="ruby-identifier">dup</span>, <span class="ruby-value">:STDERR</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">STDERR</span>.<span class="ruby-identifier">dup</span>
+  })
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- push_ios-21-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- push_ios-21-method -->
+
+    
+      <div id="method-c-run" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">run</span><span
+            class="method-args">(*args, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="run-source">
+            <pre><span class="ruby-comment"># File lib/main/factories.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-constant">Main</span>.<span class="ruby-identifier">run</span>(*<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">program</span> = <span class="ruby-identifier">factory</span>(&amp;<span class="ruby-identifier">block</span>).<span class="ruby-identifier">build</span>(*<span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">main</span> = <span class="ruby-identifier">program</span>.<span class="ruby-identifier">new</span>()
+  <span class="ruby-identifier">main</span>.<span class="ruby-identifier">run</span>()
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- run-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- run-method -->
+
+    
+      <div id="method-c-test" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test</span><span
+            class="method-args">(options = {}, &block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="test-source">
+            <pre><span class="ruby-comment"># File lib/main/test.rb, line 4</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">test</span>(<span class="ruby-identifier">options</span> = {}, &amp;<span class="ruby-identifier">block</span>)
+<span class="ruby-comment">#    at_exit{ exit! }</span>
+      <span class="ruby-identifier">opts</span> = {}
+      <span class="ruby-identifier">options</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">val</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">key</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">to_sym</span>] = <span class="ruby-identifier">val</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">options</span>.<span class="ruby-identifier">replace</span>(<span class="ruby-identifier">opts</span>)
+
+      <span class="ruby-identifier">argv</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:argv</span>]
+      <span class="ruby-identifier">env</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:env</span>]
+      <span class="ruby-identifier">logger</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:logger</span>]
+      <span class="ruby-identifier">stdin</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:stdin</span>]
+      <span class="ruby-identifier">stdout</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:stdout</span>]
+      <span class="ruby-identifier">stderr</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:stderr</span>]
+
+      <span class="ruby-constant">Main</span>.<span class="ruby-identifier">push_ios!</span>
+
+      <span class="ruby-identifier">factory</span> = <span class="ruby-constant">Main</span>.<span class="ruby-identifier">factory</span>(&amp;<span class="ruby-identifier">block</span>)
+
+      <span class="ruby-identifier">program</span> = <span class="ruby-identifier">factory</span>.<span class="ruby-identifier">build</span>(<span class="ruby-identifier">argv</span>, <span class="ruby-identifier">env</span>)
+
+      <span class="ruby-identifier">main</span> = <span class="ruby-identifier">program</span>.<span class="ruby-identifier">new</span>
+
+      <span class="ruby-identifier">program</span>.<span class="ruby-identifier">evaluate</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">define_method</span> <span class="ruby-value">:handle_exception</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">exception</span><span class="ruby-operator">|</span>
+          <span class="ruby-keyword">if</span> <span class="ruby-identifier">exception</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:status</span>)
+            <span class="ruby-identifier">main</span>.<span class="ruby-identifier">status</span> = <span class="ruby-identifier">exception</span>.<span class="ruby-identifier">status</span>
+          <span class="ruby-keyword">else</span>
+            <span class="ruby-identifier">raise</span>(<span class="ruby-identifier">exception</span>)
+          <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-identifier">define_method</span> <span class="ruby-value">:handle_exit</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">status</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">main</span>.<span class="ruby-identifier">status</span> = <span class="ruby-identifier">status</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">keys</span> = [<span class="ruby-value">:logger</span>, <span class="ruby-value">:stdin</span>, <span class="ruby-value">:stdout</span>, <span class="ruby-value">:stderr</span>]
+      <span class="ruby-identifier">keys</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">key</span>)
+          <span class="ruby-identifier">val</span> = <span class="ruby-identifier">options</span>[<span class="ruby-identifier">key</span>]
+          <span class="ruby-identifier">main</span>.<span class="ruby-identifier">send</span>(<span class="ruby-node">&quot;#{ key }=&quot;</span>, <span class="ruby-identifier">val</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">key</span>)
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">run</span> = <span class="ruby-identifier">main</span>.<span class="ruby-identifier">method</span>(<span class="ruby-value">:run</span>)
+
+      <span class="ruby-identifier">singleton_class</span> =
+        <span class="ruby-keyword">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">main</span>
+          <span class="ruby-keyword">self</span>
+        <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">singleton_class</span>.<span class="ruby-identifier">module_eval</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">define_method</span>(<span class="ruby-value">:run</span>) <span class="ruby-keyword">do</span>
+          <span class="ruby-keyword">begin</span>
+            <span class="ruby-identifier">run</span>.<span class="ruby-identifier">call</span>()
+          <span class="ruby-keyword">ensure</span>
+            <span class="ruby-constant">Main</span>.<span class="ruby-identifier">pop_ios!</span>
+          <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">main</span>
+    <span class="ruby-keyword">end</span></pre>
+          </div><!-- test-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- test-method -->
+
+    
+      <div id="method-c-version" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">version</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="version-source">
+            <pre><span class="ruby-comment"># File lib/main.rb, line 6</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">version</span>() <span class="ruby-constant">Main</span><span class="ruby-operator">::</span><span class="ruby-constant">VERSION</span> <span class="ruby-keyword">end</span></pre>
+          </div><!-- version-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- version-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.2.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+
